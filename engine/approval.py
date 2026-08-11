@@ -34,6 +34,9 @@ def _enrich_for_quality(packet: dict, article: dict) -> dict:
         "provider_id": facts.get("provider_id") or existing.get("provider_id"),
         "lottery": facts.get("lottery") or existing.get("lottery"),
         "play": facts.get("play") or existing.get("play"),
+        "content_type": facts.get("content_type") or existing.get("content_type"),
+        "site_category_key": facts.get("site_category_key") or existing.get("site_category_key"),
+        "content_format": facts.get("content_format") or existing.get("content_format"),
         "technique_atoms": facts.get("technique_atoms") or existing.get("technique_atoms", []),
         "case_scope": facts.get("case_scope") or existing.get("case_scope"),
         "rule_refs": facts.get("rule_refs") or existing.get("rule_refs", []),
@@ -67,23 +70,38 @@ def _seo_contract(packet: dict, article: dict) -> tuple[list[str], list[str]]:
     return errors, warnings
 
 
+def _semantic_category(content_type: str | None) -> str:
+    return {
+        "technique_article": "投注技巧",
+        "hangup_scheme": "挂机方案",
+        "resource_article": "资源应用",
+        "seo_topic": "SEO文章",
+    }.get(content_type or "", content_type or "彩票技巧")
+
+
 def _publish_package(packet: dict, article: dict) -> dict:
     facts = packet["immutable_facts"]
     seo = packet["seo"]
     existing = _existing_identity(article.get("article_id"))
     secondary = article.get("secondary_keywords") or seo.get("secondary_keywords", [])
-    category = article.get("category") or facts.get("lottery") or existing.get("lottery") or "彩票技巧"
+    content_type = facts.get("content_type") or existing.get("content_type")
+    category = article.get("category") or _semantic_category(content_type)
     tags = article.get("tags") or list(dict.fromkeys([facts.get("play") or existing.get("play"), *secondary]))
     tags = [x for x in tags if x]
     return {
         "article_id": article["article_id"],
         "title": article["title"],
+        "seo_title": article.get("seo_title") or article["title"],
         "slug": article["slug"],
         "meta_description": article["meta_description"],
         "primary_keyword": article["primary_keyword"],
         "secondary_keywords": secondary,
         "search_intent": article["search_intent"],
+        "summary": article.get("summary", ""),
         "category": category,
+        "site_category_key": facts.get("site_category_key") or existing.get("site_category_key"),
+        "content_type": content_type,
+        "content_format": facts.get("content_format") or existing.get("content_format"),
         "tags": tags,
         "content": article["content"],
         "internal_links": article.get("internal_links", []),
@@ -113,6 +131,9 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "search_intent": article.get("search_intent") or packet.get("seo", {}).get("search_intent"),
         "lottery": facts.get("lottery"),
         "play": facts.get("play"),
+        "content_type": facts.get("content_type"),
+        "site_category_key": facts.get("site_category_key"),
+        "content_format": facts.get("content_format"),
         "technique_family": facts.get("technique_family"),
         "technique_atoms": facts.get("technique_atoms", []),
         "case_scope": facts.get("case_scope"),

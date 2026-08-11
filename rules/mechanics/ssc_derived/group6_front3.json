@@ -1,0 +1,21 @@
+{
+  "rule_id": "SSC-DERIVED-MECH-FRONT3-GROUP6-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "前三组选6",
+  "aliases": ["前三组六"],
+  "positions": ["万位", "千位", "百位"],
+  "number_domain": "从0..9选择三个互不相同的数字",
+  "bet_format": "一个三个不同数字的无序集合构成一注",
+  "bet_count_formula": "候选池含n个不同数字时为C(n,3)",
+  "win_condition": "开奖号码前三位由所选三个不同数字组成，顺序不限",
+  "covered_ordered_outcomes_per_single_bet": 6,
+  "theoretical_single_bet_probability": "6/1000",
+  "status": "verified",
+  "source": "由已验证后三组选6机制做位置同构数学推导",
+  "source_type": "mathematical_position_window_derivation",
+  "verified_at": "2026-08-11",
+  "derivation_refs": ["SSC-HIST-MECH-3STAR-GROUP6-V1"],
+  "provider_mapping_required": true,
+  "economics_inherited": false
+}

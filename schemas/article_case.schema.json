@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LotteryArticleCase",
+  "type": "object",
+  "required": ["case_id", "case_type", "selector", "technique_atoms", "input_draws", "calculations", "rule_refs", "claim_scope"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "case_type": {"enum": ["historical", "illustrative", "synthetic_validation"]},
+    "selector": {"type": "string"},
+    "technique_atoms": {"type": "array", "items": {"type": "string"}},
+    "input_draws": {"type": "array", "items": {"type": "string", "pattern": "^[0-9]{5}$"}},
+    "lookback": {"type": ["integer", "null"]},
+    "parameters": {"type": "object"},
+    "calculations": {"type": "object"},
+    "candidate_output": {"type": ["object", "array", "null"]},
+    "rule_refs": {"type": "array", "items": {"type": "string"}},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "claim_scope": {"enum": ["descriptive_only", "tested_historical"]},
+    "predictive_guarantee": {"const": false}
+  }
+}

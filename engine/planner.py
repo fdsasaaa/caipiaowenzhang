@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .rules import rule_capability
 from .knowledge_io import iter_brbcw_families
+from .technique_semantics import case_requirements
 
 ROOT = Path(__file__).resolve().parents[1]
 CLUSTERS = ROOT / "knowledge" / "technique_clusters" / "brbcw.jsonl"
@@ -13,10 +14,12 @@ ARTICLES = ROOT / "registry" / "articles.jsonl"
 
 PLAY_CLASS_ALIASES = {
     "定位胆": "定位胆", "一星": "定位胆", "组选": "组选", "组三": "组选", "组六": "组选",
+    "后二组选": "组选", "前二组选": "组选", "后三组选3": "组选", "后三组选6": "组选",
+    "前三组选3": "组选", "前三组选6": "组选", "中三组选3": "组选", "中三组选6": "组选",
     "杀号": "杀号", "杀码": "杀号", "胆码": "胆码", "定胆": "胆码", "和值": "和值",
     "跨度": "跨度", "冷热": "冷热", "遗漏": "遗漏", "奇偶大小": "奇偶大小",
-    "大小单双": "奇偶大小", "复式": "复式组合", "组合": "复式组合", "倍投": "倍投资金",
-    "资金管理": "倍投资金",
+    "大小单双": "奇偶大小", "后二大小单双": "奇偶大小", "复式": "复式组合", "组合": "复式组合",
+    "倍投": "倍投资金", "资金管理": "倍投资金",
 }
 PLAY_FORBIDDEN_ATOMS = {"定位胆": {"group3_group6"}}
 
@@ -83,13 +86,16 @@ def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) ->
     rule_refs = cap["mechanics_rule_refs"] + cap["economics_rule_refs"]
     plans = []
     for _, _, _, angle_hash, c in ranked[:count]:
+        atoms = c.get("technique_atoms", [])
+        case_plan = case_requirements(atoms)
         plans.append({
             "angle_signature": angle_hash, "provider_id": provider_id, "lottery": lottery, "play": play,
-            "technique_family": c.get("family_id"), "technique_atoms": c.get("technique_atoms", []),
+            "technique_family": c.get("family_id"), "technique_atoms": atoms,
             "positions": c.get("positions", []), "source_refs": c.get("example_source_ids", []),
             "source_support_count": c.get("source_count", 0), "source_risk_rate": c.get("risk_rate", 0),
             "status": status, "rule_refs": rule_refs,
             "allowed_case_scope": "economics" if cap["economics_verified"] else ("mechanics_only" if cap["mechanics_verified"] else "idea_only"),
+            "case_plan": case_plan,
         })
     gaps = []
     if not cap["mechanics_verified"]:

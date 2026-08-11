@@ -16,3 +16,5 @@ knowledge/source_articles/*
 
 # Generated local reports
 reports/
+knowledge/private_sources/
+*.source.zip

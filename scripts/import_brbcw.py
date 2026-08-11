@@ -23,12 +23,8 @@ def normalize(row: dict) -> dict:
         "thread_id": row.get("thread_id"),
         "title": row.get("title"),
         "classification": row.get("classification"),
-        "author": row.get("author"),
         "published_at": row.get("published_at"),
         "url": row.get("url"),
-        "keywords": row.get("keywords", ""),
-        "source_quality_score": row.get("quality_score"),
-        "content_length": row.get("content_length", len(content)),
         "content_sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
         "claim_status": "unverified",
         "usage": "idea_and_case_source_only"
@@ -51,23 +47,42 @@ def read_rows(path: Path):
             yield json.loads(line)
 
 
+def write_sharded_jsonl(output: Path, rows: list[dict], max_part_bytes: int = 600_000) -> list[Path]:
+    output.parent.mkdir(parents=True, exist_ok=True)
+    for old in output.parent.glob(output.stem + ".part-*.jsonl"):
+        old.unlink()
+    if output.exists():
+        output.unlink()
+    parts, buffer, size, part_no = [], [], 0, 1
+    for row in rows:
+        line = json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n"
+        n = len(line.encode("utf-8"))
+        if buffer and size + n > max_part_bytes:
+            part = output.parent / f"{output.stem}.part-{part_no:03d}.jsonl"
+            part.write_text("".join(buffer), encoding="utf-8")
+            parts.append(part); part_no += 1; buffer = []; size = 0
+        buffer.append(line); size += n
+    if buffer:
+        part = output.parent / f"{output.stem}.part-{part_no:03d}.jsonl"
+        part.write_text("".join(buffer), encoding="utf-8")
+        parts.append(part)
+    return parts
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("input", type=Path)
     ap.add_argument("--output", type=Path, default=Path("knowledge/source_manifests/brbcw.jsonl"))
+    ap.add_argument("--max-part-bytes", type=int, default=600_000)
     args = ap.parse_args()
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    count = 0
-    seen = set()
-    with args.output.open("w", encoding="utf-8", newline="\n") as out:
-        for row in read_rows(args.input):
-            item = normalize(row)
-            if item["source_id"] in seen:
-                continue
-            seen.add(item["source_id"])
-            out.write(json.dumps(item, ensure_ascii=False, sort_keys=True) + "\n")
-            count += 1
-    print(json.dumps({"written": count, "output": str(args.output)}, ensure_ascii=False))
+    seen, normalized = set(), []
+    for row in read_rows(args.input):
+        item = normalize(row)
+        if item["source_id"] in seen:
+            continue
+        seen.add(item["source_id"]); normalized.append(item)
+    parts = write_sharded_jsonl(args.output, normalized, args.max_part_bytes)
+    print(json.dumps({"written": len(normalized), "parts": [str(p) for p in parts]}, ensure_ascii=False))
     return 0
 
 

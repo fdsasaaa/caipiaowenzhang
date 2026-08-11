@@ -1,28 +1,29 @@
 # 老财迷彩票内容引擎（caipiaowenzhang）
 
-这是 `laocaimi.org` 的独立内容研发仓库。它不是网站生产仓库，而是用于长期维护：
+这是 `laocaimi.org` 的独立内容研发仓库。它负责 Research/Content，不直接承担生产网站运行。
 
-- 彩票玩法与投注规则库（规则优先、来源可追溯）
-- 彩票技巧来源库与“技巧原子”库
-- 已生成/已发布文章永久登记与去重
-- Google SEO 文章规范
-- 案例与数学校验
-- 草稿 → 审核 → 发布的内容流水线
+## 当前版本
+
+`v0.2.0-knowledge-ingestion`
+
+当前已接入首批 **2406篇 brbcw 精选来源**。它们被转成长期可维护的知识记忆，而不是把论坛全文直接塞进Git：
+
+- 2406 个精选来源ID，可重建原始公开URL
+- 2294 篇能识别出明确技巧原子
+- 759 个方法家族，作为未来文章规划的经验层
+- 1389 个精细方法簇已在抽取审计中统计
+- 1321 篇带盈利、百分比或保证性等风险声明，统一隔离为来源声称
+- Google SEO 官方政策快照与内容质量门禁
+- `provider_id + 彩种 + 玩法` 三重规则门禁
 
 ## 核心原则
 
-1. **规则先于文案**：玩法、注数、中奖条件、赔率/奖金、返点等未核验时，不生成确定性描述。
-2. **来源文章不是事实库**：论坛/历史文章中的命中率、稳赚、倍投收益等只作为“待验证观点”。
-3. **禁止换皮重复**：标题不同但核心技巧、案例结构和搜索意图高度重合，也视为重复。
-4. **案例必须可复算**：例子需标明玩法、选号、注数计算和中奖条件；不能把示例包装成盈利承诺。
-5. **SEO 服务于信息价值**：不为关键词堆砌而生产页面，不制造无新增价值的大规模近重复内容。
-6. **生产隔离**：本仓库负责 Research/Content；网站仓库负责 Publishing；生产服务器负责展示。
-
-## 仓库状态
-
-当前版本：`v0.1.0-bootstrap`
-
-当前阶段：搭建内容引擎骨架。原始采集文章尚未进入仓库；在来源数据导入前应先确认仓库为 Private。
+1. **规则先于文案**：玩法、注数、中奖条件、赔率/奖金、返点等必须绑定具体 `provider_id + lottery + play` 并核验。
+2. **来源文章不是事实库**：论坛/历史文章中的命中率、稳赚、倍投收益只作为 `unverified_source`。
+3. **禁止换皮重复**：标题不同但技巧原子、案例结构、搜索意图高度重合，也视为重复。
+4. **案例必须可复算**：没有 verified rule 时，只能提出文章角度，不得输出确定性投注成本、奖金或合法性结论。
+5. **SEO必须增加信息价值**：不通过同义改写、抓取拼接、关键词变体批量制造页面。
+6. **生产隔离**：本仓库 → Approved Draft → 网站仓库 → WordPress/发布器 → `laocaimi.org`。
 
 ## 快速开始
 
@@ -32,28 +33,47 @@ python -m engine.cli status
 python -m engine.cli audit
 ```
 
-导入 brbcw 精选资料：
+查看某个平台/彩种/玩法的候选文章角度：
 
 ```bash
-python scripts/import_brbcw.py /path/to/brbcw_有价值文章_筛选版.zip --output knowledge/source_manifests/brbcw.jsonl
-python -m engine.cli rebuild
+python -m engine.cli plan --provider <provider_id> --lottery 时时彩 --play 定位胆 --count 10
 ```
 
-> 导入脚本默认只生成结构化来源清单，不会把论坛全文直接写入 Git。原始资料建议保留在受控存储中。
+如果没有对应 verified rule，规划器会返回 `blocked_rule_verification`。这是设计行为，不是报错。
 
-## 目录
+## 知识层
 
-- `SYSTEM.md`：未来任何 AI/Codex/WorkBuddy 的总接管协议
-- `AGENTS.md`：仓库工程规则
-- `rules/`：玩法与平台规则
-- `knowledge/`：来源清单、技巧原子
-- `registry/`：文章/技巧永久登记
-- `seo/`：laocaimi.org SEO 配置
-- `engine/`：去重、校验、质量门禁、索引
-- `articles/`：草稿/审核/发布/拒绝生命周期
-- `schemas/`：结构化数据协议
-- `tests/`：本地自动测试
+- `knowledge/source_sets/`：2406个精选来源ID
+- `knowledge/family_archives/brbcw_families_v1.bz2.b64`：759个方法家族的紧凑知识档案
+- `knowledge/coverage/brbcw.json`：2406篇来源的整体覆盖统计
+- `knowledge/coverage/brbcw_report.md`：人类可读审计报告
+- `knowledge/TECHNIQUE_TAXONOMY.json`：技巧原子词典
+- `scripts/extract_technique_candidates.py`：从受控原始资料重建候选/精细方法簇的工具
 
-## 发布架构
+Git默认不保存2406篇论坛全文。方法家族保留技巧原子、位置、彩种、来源分类、来源支持数、风险声明率和代表来源ID；需要回看案例时，再按来源ID定位原公开帖子。
 
-`Content Engine（本仓库） → Approved Draft → 网站 GitHub 仓库 → WordPress/发布器 → laocaimi.org`
+## 规则层
+
+- `rules/PROVIDER_RULE_POLICY.md`：平台感知规则政策
+- `schemas/rule.schema.json`：规则数据协议
+- `rules/**/*.json`：具体已核验或待核验规则
+
+> 同名彩种在不同平台上的单注金额、奖金/赔率、返点和限额可能不同。系统禁止把“通用印象”当平台规则。
+
+## SEO层
+
+- `seo/seo_profile.toml`：`laocaimi.org` 内容SEO配置
+- `seo/google_policy_snapshot.toml`：Google官方政策快照
+
+## 文章生命周期
+
+`idea → draft → validated → approved → queued → published → monitored`
+
+发布后必须写入 `registry/articles.jsonl`，永久参与后续去重。
+
+## 测试
+
+```bash
+pytest -q
+python -m engine.cli audit
+```

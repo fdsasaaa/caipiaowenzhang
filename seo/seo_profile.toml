@@ -34,3 +34,16 @@ required_fields = [
   "play", "technique_atoms", "meta_description", "summary", "content",
   "rule_refs", "fingerprint", "status"
 ]
+
+[quality_gate]
+require_verified_rule_for_bet_examples = true
+require_source_transformation_value = true
+reject_synonym_only_rewrite = true
+reject_scrape_stitching_without_value = true
+reject_unverified_hit_rate_as_fact = true
+reject_guaranteed_profit_language = true
+require_distinct_angle_signature = true
+require_case_explanation = true
+require_rule_refs = true
+minimum_information_gain_types = 1
+information_gain_types = ["new_mechanism", "new_case", "new_comparison", "new_misconception", "new_test_result", "new_combination_logic"]

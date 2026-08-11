@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceTechniqueCandidate",
+  "type": "object",
+  "required": ["candidate_id", "source_id", "title", "verification_status", "publishable", "technique_atoms"],
+  "properties": {
+    "candidate_id": {"type": "string"},
+    "source_id": {"type": "string"},
+    "title": {"type": "string"},
+    "source_classification": {"type": "string"},
+    "lotteries": {"type": "array", "items": {"type": "string"}},
+    "positions": {"type": "array", "items": {"type": "string"}},
+    "technique_atoms": {"type": "array", "items": {"type": "string"}},
+    "topic_tags": {"type": "array", "items": {"type": "string"}},
+    "claimed_percentages": {"type": "array"},
+    "risk_flags": {"type": "array", "items": {"type": "string"}},
+    "case_numbers": {"type": "array", "items": {"type": "string"}},
+    "verification_status": {"enum": ["unverified_source", "rules_verified", "tested"]},
+    "publishable": {"type": "boolean"},
+    "requires_rule_binding": {"type": "boolean"},
+    "source_url": {"type": "string"}
+  }
+}

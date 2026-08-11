@@ -14,6 +14,7 @@ from .format_rules import validate_format
 from .internal_links import audit_internal_link_plan, plan_all_internal_links, plan_internal_links
 from .link_revision import build_internal_link_revision
 from .planner import plan_articles
+from .publication_receipts import import_publication_receipt
 from .rule_gaps import list_gaps, record_gap
 from .rules import load_rules, rule_capability
 from .seo_keywords import keyword_ownership_conflicts
@@ -148,6 +149,13 @@ def cmd_internal_link_revision(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_publication_receipt(args: argparse.Namespace) -> int:
+    receipt = json.loads(Path(args.file).read_text(encoding="utf-8"))
+    result = import_publication_receipt(receipt, record=args.record)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_capability(args: argparse.Namespace) -> int:
     result = rule_capability(args.provider, args.lottery, args.play)
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -250,6 +258,10 @@ def main() -> int:
     p.add_argument("--output", required=True, help="write draft revision JSON here")
     p.add_argument("--max-links", type=int, default=3)
     p.set_defaults(func=cmd_internal_link_revision)
+    p = sub.add_parser("publication-receipt")
+    p.add_argument("--file", required=True, help="validated website publication receipt JSON path")
+    p.add_argument("--record", action="store_true", help="append published lifecycle state to article registry")
+    p.set_defaults(func=cmd_publication_receipt)
     p = sub.add_parser("capability")
     p.add_argument("--provider")
     p.add_argument("--lottery", required=True)

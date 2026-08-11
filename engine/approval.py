@@ -4,6 +4,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
 from .article_memory import append_article_state, get_article_record
+from .claim_evidence import audit_claim_evidence
 from .draft_packets import review_draft
 from .quality import evaluate as evaluate_quality
 from .seo_keywords import keyword_owners
@@ -131,6 +132,9 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "approved_at": datetime.now(timezone.utc).isoformat(),
         "status": "approved",
     }
+    if article.get("generation_contract_version"):
+        package["generation_contract_version"] = article["generation_contract_version"]
+        package["claim_evidence"] = article.get("claim_evidence", [])
     for field in ("revision_reason", "revision_of_content_hash"):
         if article.get(field):
             package[field] = article[field]
@@ -159,8 +163,13 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "case_scope": facts.get("case_scope"),
         "rule_refs": facts.get("rule_refs", []),
         "source_refs": facts.get("source_refs", []),
+        "case_structure": facts.get("case_structure"),
+        "information_gain_type": facts.get("information_gain_type"),
         "content_hash": sha256_text(article.get("content", "")) if article.get("content") else None,
     }
+    if article.get("generation_contract_version"):
+        changes["generation_contract_version"] = article.get("generation_contract_version")
+        changes["claim_evidence"] = article.get("claim_evidence", [])
     for field in ("revision_reason", "revision_of_content_hash"):
         if article.get(field):
             changes[field] = article[field]
@@ -169,13 +178,14 @@ def _registry_changes(packet: dict, article: dict) -> dict:
 
 def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
     draft_review = review_draft(packet, article)
+    evidence_report = audit_claim_evidence(packet, article)
     enriched = _enrich_for_quality(packet, article)
     quality_report = evaluate_quality(enriched)
     seo_errors, seo_warnings = _seo_contract(packet, article)
 
-    errors = list(dict.fromkeys([*draft_review.errors, *quality_report.errors, *seo_errors]))
-    warnings = list(dict.fromkeys([*draft_review.warnings, *quality_report.warnings, *seo_warnings]))
-    approved = not errors and draft_review.passed and quality_report.passed
+    errors = list(dict.fromkeys([*draft_review.errors, *evidence_report.errors, *quality_report.errors, *seo_errors]))
+    warnings = list(dict.fromkeys([*draft_review.warnings, *evidence_report.warnings, *quality_report.warnings, *seo_warnings]))
+    approved = not errors and draft_review.passed and evidence_report.passed and quality_report.passed
     status = "approved" if approved else "rejected_for_revision"
     package = _publish_package(packet, enriched) if approved else None
     existing = _existing_identity(enriched.get("article_id"))

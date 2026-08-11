@@ -7,8 +7,10 @@ from dataclasses import dataclass, field
 from .analysis_metrics import POSITION_INDEX, WINDOW_INDEXES
 from .blueprints import generate_blueprints
 from .casebook import descriptive_case, frequency_case, omission_case
+from .site_contract import required_content_format
 
 GUARANTEE_TERMS = ["稳赚", "必中", "包赢", "必赚", "百分百中奖", "100%中奖", "无风险"]
+FORBIDDEN_HTML = ("<script", "<iframe", "<form", "<object", "<embed")
 
 
 @dataclass
@@ -72,8 +74,11 @@ def build_draft_packet(blueprint: dict) -> dict:
         raise ValueError(f"blueprint is not ready_for_draft: {blueprint.get('status')}")
     if not blueprint.get("rule_refs"):
         raise ValueError("draft packet requires rule_refs")
+    if not blueprint.get("site_category_key"):
+        raise ValueError("draft packet requires explicit site_category_key")
     case_bundle = build_case_bundle(blueprint)
     economics_allowed = blueprint.get("case_scope") == "economics"
+    content_format = required_content_format()
     packet_id = "DP-" + (blueprint.get("fingerprint") or hashlib.sha256(str(blueprint).encode()).hexdigest())[:16]
     return {
         "packet_id": packet_id,
@@ -84,6 +89,9 @@ def build_draft_packet(blueprint: dict) -> dict:
             "provider_id": blueprint.get("provider_id"),
             "lottery": blueprint.get("lottery"),
             "play": blueprint.get("play"),
+            "content_type": blueprint.get("content_type"),
+            "site_category_key": blueprint.get("site_category_key"),
+            "content_format": content_format,
             "technique_family": blueprint.get("technique_family"),
             "technique_atoms": blueprint.get("technique_atoms", []),
             "rule_refs": blueprint.get("rule_refs", []),
@@ -108,6 +116,9 @@ def build_draft_packet(blueprint: dict) -> dict:
             "avoid_empty_intro": True,
             "explain_with_example": True,
             "tone": "clear_practical_research",
+            "content_format": content_format,
+            "preferred_html_tags": ["p", "h2", "h3", "ul", "ol", "li", "strong", "em", "code"],
+            "forbidden_html_tags": ["script", "iframe", "form", "object", "embed"],
         },
         "outline": blueprint.get("outline", []),
         "case_bundle": case_bundle,
@@ -134,7 +145,10 @@ def build_draft_packet(blueprint: dict) -> dict:
             "source_claims_must_remain_unverified_unless_rule_refs_support_them": True,
         },
         "output_contract": {
-            "required_fields": ["article_id", "title", "slug", "meta_description", "primary_keyword", "search_intent", "summary", "content", "rule_refs", "case_scope", "status"],
+            "required_fields": [
+                "article_id", "title", "slug", "meta_description", "primary_keyword", "search_intent",
+                "summary", "content", "content_format", "site_category_key", "rule_refs", "case_scope", "status"
+            ],
             "status_after_generation": "draft",
             "must_include_case_label": case_bundle["must_label_as"],
         },
@@ -172,6 +186,7 @@ def review_draft(packet: dict, article: dict) -> DraftReview:
     content = article.get("content", "") or ""
     title = article.get("title", "") or ""
     seo = packet.get("seo", {})
+    facts = packet.get("immutable_facts", {})
     required = packet.get("output_contract", {}).get("required_fields", [])
     missing = [field for field in required if not article.get(field)]
     if missing:
@@ -189,6 +204,17 @@ def review_draft(packet: dict, article: dict) -> DraftReview:
         for term in ("赔率", "返点"):
             if term in content:
                 errors.append(f"provider economics not verified; factual {term} statement is blocked")
-    if article.get("rule_refs") != packet.get("immutable_facts", {}).get("rule_refs"):
+    if article.get("rule_refs") != facts.get("rule_refs"):
         errors.append("article rule_refs differ from immutable draft packet")
-    return DraftReview(passed=not errors, errors=errors, warnings=warnings)
+    if article.get("site_category_key") != facts.get("site_category_key"):
+        errors.append("article site_category_key differs from immutable draft packet")
+    if str(article.get("content_format", "")).lower() != str(facts.get("content_format", "")).lower():
+        errors.append("article content_format differs from immutable draft packet")
+    if str(facts.get("content_format", "")).lower() == "html":
+        lowered = content.lower()
+        if "<p" not in lowered and "<h2" not in lowered:
+            errors.append("HTML content contract requires paragraph or heading markup")
+        for prefix in FORBIDDEN_HTML:
+            if prefix in lowered:
+                errors.append(f"forbidden HTML element present: {prefix[1:]}")
+    return DraftReview(passed=not errors, errors=list(dict.fromkeys(errors)), warnings=warnings)

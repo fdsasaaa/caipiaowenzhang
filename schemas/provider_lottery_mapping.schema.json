@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProviderLotteryMechanicsMapping",
+  "type": "object",
+  "required": ["mapping_id", "provider_id", "lottery", "mechanics_base_lottery", "position_order", "digit_domain", "play_mappings", "status", "source", "verified_at"],
+  "properties": {
+    "mapping_id": {"type": "string"},
+    "provider_id": {"type": "string"},
+    "lottery": {"type": "string"},
+    "mechanics_base_lottery": {"type": "string"},
+    "position_order": {"type": "array", "items": {"type": "string"}},
+    "digit_domain": {"type": "string"},
+    "play_mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["provider_play", "base_play", "status"],
+        "properties": {
+          "provider_play": {"type": "string"},
+          "base_play": {"type": "string"},
+          "status": {"enum": ["verified", "unverified", "incompatible"]},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+    "status": {"enum": ["verified", "partial", "unverified", "deprecated"]},
+    "source": {"type": "string"},
+    "verified_at": {"type": ["string", "null"]}
+  }
+}

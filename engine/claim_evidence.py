@@ -6,10 +6,16 @@ from dataclasses import dataclass, field
 from .text import jaccard
 
 _CN_NUMBER = r"[零〇一二三四五六七八九十百千万两点]+"
+# For Chinese-word bet counts we intentionally start at quantities greater than
+# one. Phrases such as “一注组选” are common rule definitions and are already
+# governed by rule_refs; treating every occurrence as a separate high-risk
+# quantitative claim creates noisy evidence duplication. Arabic numeric counts
+# (including 1注) remain strict, and Chinese quantities such as 三注/十注 are strict.
+_CN_BET_COUNT = r"[二三四五六七八九十百千万两]+"
 HARD_CLAIM_PATTERNS = (
     re.compile(r"\d{1,3}(?:\.\d+)?\s*%"),
     re.compile(rf"百分之(?:\d+(?:\.\d+)?|{_CN_NUMBER})"),
-    re.compile(rf"(?:\d+|{_CN_NUMBER})\s*注"),
+    re.compile(rf"(?:\d+|{_CN_BET_COUNT})\s*注"),
     re.compile(r"命中率|准确率|成功率|胜率"),
     re.compile(r"赔率|返点|奖金|返奖|收益率|利润|盈利"),
     re.compile(r"下一期会|下期会|一定会出|肯定会出"),

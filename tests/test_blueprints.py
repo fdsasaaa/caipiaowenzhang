@@ -35,6 +35,8 @@ def test_blueprint_is_deterministic_and_seo_structured(monkeypatch):
     assert a["article_id"] == b["article_id"]
     assert a["status"] == "ready_for_draft"
     assert a["primary_keyword"] == "时时彩后三直选技巧"
+    assert a["content_type"] == "technique_article"
+    assert a["site_category_key"] == "tzjq"
     assert len(a["outline"]) >= 6
     assert "current_omission" in a["case_structure"]
     assert "digit_sum" in a["case_structure"]

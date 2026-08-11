@@ -5,9 +5,11 @@ from dataclasses import dataclass, field
 
 from .text import jaccard
 
+_CN_NUMBER = r"[零〇一二三四五六七八九十百千万两点]+"
 HARD_CLAIM_PATTERNS = (
     re.compile(r"\d{1,3}(?:\.\d+)?\s*%"),
-    re.compile(r"\d+\s*注"),
+    re.compile(rf"百分之(?:\d+(?:\.\d+)?|{_CN_NUMBER})"),
+    re.compile(rf"(?:\d+|{_CN_NUMBER})\s*注"),
     re.compile(r"命中率|准确率|成功率|胜率"),
     re.compile(r"赔率|返点|奖金|返奖|收益率|利润|盈利"),
     re.compile(r"下一期会|下期会|一定会出|肯定会出"),
@@ -45,7 +47,8 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         claim = re.sub(r"\s+", "", str(entry.get("claim_text") or ""))
         if not claim:
             continue
-        # Claim text can be a concise restatement; require meaningful textual overlap.
+        # Exact sentence copies are preferred by the generation prompt. Concise
+        # restatements remain supported for older V2 fixtures.
         if claim in compact or compact in claim:
             return True
         if jaccard(claim, compact, n=2) >= 0.48:

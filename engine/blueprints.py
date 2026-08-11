@@ -148,6 +148,7 @@ def blueprint_from_plan(plan: dict) -> dict:
         "status": status,
         "blockers": blockers,
         "article_status": "idea",
+        "editorial_contract_version": "1.0",
         "seo_requirements": {
             "plain_chinese": True,
             "example_required": True,

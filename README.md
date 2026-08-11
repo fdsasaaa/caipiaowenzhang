@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-`v0.3.0-rule-layer`
+`v0.4.0-ssc-mechanics`
 
 当前基础资产：
 
@@ -15,16 +15,41 @@
 - 1321 篇带盈利、百分比或保证性风险声明，统一隔离为来源声称
 - Google SEO 官方政策快照与内容质量门禁
 - 玩法机制 / 平台经济参数 双层规则系统
+- 首批9类 时时彩 历史官方玩法机制基线
 - `caipiaowenzhang → fdsasaaa/xyptdq → www.laocaimi.org` 草稿发布协议
 
 ## 核心原则
 
-1. **玩法机制与经济参数分开**：选号范围、投注格式、注数公式、中奖条件可以建立通用玩法规则；单注金额、奖金/赔率、返点、限额必须绑定具体平台。
-2. **来源文章不是事实库**：论坛/历史文章中的命中率、稳赚、倍投收益只作为 `unverified_source`。
-3. **禁止换皮重复**：标题不同但技巧原子、案例结构、搜索意图高度重合，也视为重复。
-4. **案例必须可复算**：玩法机制未核验时只能提出选题；机制核验后可写规则案例；只有平台经济参数核验后才能写金额、奖金、赔率、返点。
-5. **SEO必须增加信息价值**：不通过同义改写、抓取拼接、关键词变体批量制造页面。
-6. **生产隔离**：本仓库 → Approved Package → `fdsasaaa/xyptdq` → 迅睿CMS草稿 → `www.laocaimi.org`。
+1. **玩法机制与经济参数分开**：选号范围、投注格式、注数公式、中奖条件可以建立玩法规则；单注金额、奖金/赔率、返点、限额必须绑定具体平台。
+2. **历史时时彩不是当前官方在售产品**：财政部等已要求高频快开彩票在2021年春节休市结束后全部停止销售。历史规则只作为玩法机制基线。
+3. **分分彩等不得自动继承时时彩规则**：必须通过 provider/lottery/play 显式映射确认开奖结构与玩法判定一致。
+4. **来源文章不是事实库**：论坛文章中的命中率、稳赚、倍投收益只作为 `unverified_source`。
+5. **禁止换皮重复**：标题不同但技巧原子、案例结构、搜索意图高度重合，也视为重复。
+6. **案例必须可复算**：机制核验后可写选号、注数和中奖条件；只有 economics 核验后才能写金额、奖金、赔率、返点。
+7. **SEO必须增加信息价值**：不通过同义改写、抓取拼接、关键词变体批量制造页面。
+8. **生产隔离**：本仓库 → Approved Package → `fdsasaaa/xyptdq` → 迅睿CMS草稿 → `www.laocaimi.org`。
+
+## 首批 时时彩 mechanics
+
+当前 verified mechanics 覆盖：
+
+- 一星直选 / 个位定位胆
+- 后二直选
+- 后三直选
+- 五星直选
+- 后二组选
+- 后三组选3 / 组三
+- 后三组选6 / 组六
+- 单位置定位胆
+- 后二大小单双
+
+规则目录：`rules/mechanics/ssc/`
+
+数学与判定实现：
+
+- `engine/betmath.py`：直选笛卡尔积、组选组合数、理论直选覆盖率
+- `engine/mechanics.py`：直选、后二组选、组三、组六、定位胆、大小单双判定
+- `docs/SSC_HISTORICAL_MECHANICS_BASELINE.md`：来源、退市状态和应用边界
 
 ## 快速开始
 
@@ -32,8 +57,8 @@
 python -m engine.cli init
 python -m engine.cli status
 python -m engine.cli audit
-python -m engine.cli capability --provider <provider_id> --lottery 时时彩 --play 定位胆
-python -m engine.cli plan --provider <provider_id> --lottery 时时彩 --play 定位胆 --count 10
+python -m engine.cli capability --provider <provider_id> --lottery 时时彩 --play 组三
+python -m engine.cli plan --provider <provider_id> --lottery 时时彩 --play 组三 --count 10
 ```
 
 规划结果有三档：
@@ -41,6 +66,13 @@ python -m engine.cli plan --provider <provider_id> --lottery 时时彩 --play �
 - `blocked_mechanics_verification`：玩法机制未核验，只能保留选题想法。
 - `ready_mechanics_only`：可写玩法、选号、注数和中奖条件案例，但不能陈述未核验的金额/奖金/返点。
 - `ready_full`：玩法机制和具体平台经济参数都已核验，可以生成完整案例。
+
+## Provider 映射
+
+- `schemas/provider_lottery_mapping.schema.json`：彩种/玩法映射数据协议
+- `mappings/PROVIDER_MAPPING_POLICY.md`：分分彩、哈希分分彩等继承 mechanics 前的强制核验条件
+
+即使 mapping 为 verified，经济参数仍不得从历史时时彩继承。
 
 ## 知识层
 

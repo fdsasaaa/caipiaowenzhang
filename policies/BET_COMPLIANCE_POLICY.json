@@ -1,0 +1,32 @@
+{
+  "policy_id": "USER-BET-COMPLIANCE-90-V1",
+  "status": "active_internal_policy",
+  "origin": "user_supplied_2026-08-11",
+  "classification": "internal_guardrail_not_platform_fact",
+  "amount_ratio_limit": 0.90,
+  "coverage_ratio_limit": 0.90,
+  "comparison_scope": ["draw_id", "lottery_id", "target_space_id"],
+  "requirements": {
+    "single_scheme_check": true,
+    "portfolio_check": true,
+    "cross_play_union": true,
+    "deduplicate_covered_outcomes": true,
+    "advanced_staking_phase_check": true,
+    "export_gate": true,
+    "fail_closed_when_mapping_missing": true
+  },
+  "violation_codes": [
+    "amount_limit_exceeded",
+    "coverage_limit_exceeded",
+    "cross_play_near_full_cover",
+    "advanced_staking_amount_exceeded",
+    "missing_target_space_mapping",
+    "ambiguous_target_space_size",
+    "ambiguous_prize_reference"
+  ],
+  "notes": [
+    "This is a user-defined internal safety/compliance rule, not evidence of any platform's official rule.",
+    "A bet/play must be mapped to an explicit mathematical target outcome space before export.",
+    "Exactly 90% is allowed; values greater than 90% are blocked under the supplied policy."
+  ]
+}

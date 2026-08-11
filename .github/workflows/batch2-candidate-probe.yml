@@ -15,4 +15,4 @@ jobs:
         with:
           python-version: '3.10'
       - name: Probe verified source-backed candidates
-        run: python scripts/probe_batch2_candidates.py
+        run: PYTHONPATH=. python scripts/probe_batch2_candidates.py

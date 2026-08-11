@@ -30,6 +30,8 @@
     "provider_id": {"type": ["string", "null"]},
     "lottery": {"type": ["string", "null"]},
     "play": {"type": ["string", "null"]},
+    "subject_lottery": {"type": ["string", "null"]},
+    "subject_play": {"type": ["string", "null"]},
     "technique_atoms": {"type": "array", "items": {"type": "string"}},
     "fingerprint": {"type": "string"},
     "content_hash": {"type": "string"},

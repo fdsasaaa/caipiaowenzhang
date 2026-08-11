@@ -48,9 +48,14 @@ def test_claims_keep_evidence_pointer_and_remain_unverified():
 
 
 def test_exact_duplicate_is_removed_during_file_ingestion(tmp_path: Path):
+    body = (
+        "最近20期观察个位遗漏，记录每个数字距离最近一次出现的期数作为研究样本。"
+        "当某个号码遗漏达到3期时，只把它记入候选观察表，再结合下一步规则继续筛选。"
+        "这只是历史数据整理案例，不代表遗漏越大下一期越容易出现。"
+    )
     rows = [
-        {"source_name": "x", "id": "a", "title": "遗漏技巧", "content": "最近20期观察个位遗漏，记录遗漏达到3期的号码作为研究样本。"},
-        {"source_name": "x", "id": "b", "title": "另一标题", "content": "最近20期观察个位遗漏，记录遗漏达到3期的号码作为研究样本。"},
+        {"source_name": "x", "id": "a", "title": "遗漏技巧", "content": body},
+        {"source_name": "x", "id": "b", "title": "另一标题", "content": body},
     ]
     src = tmp_path / "in.jsonl"
     src.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")

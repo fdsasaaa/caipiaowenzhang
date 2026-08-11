@@ -1,0 +1,21 @@
+{
+  "run_id": "v2-quality-smoke-001",
+  "purpose": "first human-quality review of a V2-generated article before any website publication",
+  "generation_mode": "current_chat_model_using_v2_draft_contract",
+  "real_openai_api_called": false,
+  "reason_real_api_not_called": "No OPENAI_API_KEY is available to this session. The article is generated under the same Draft Packet constraints and then validated by the repository's real V2 approval code.",
+  "subject": {
+    "lottery": "分分彩",
+    "play": "定位胆",
+    "technique": "omission_threshold",
+    "selector": "个位"
+  },
+  "rule_refs": ["SSC-MECH-LOCATED-1D-V1"],
+  "source_refs": ["BRBCW-001428"],
+  "source_use": "idea_only_unverified_claims_remain_qualified",
+  "production_effect": "none",
+  "registry_write": false,
+  "website_draft_write": false,
+  "scheduled_write": false,
+  "published": false
+}

@@ -1,0 +1,28 @@
+checked_at = "2026-08-11"
+search_engine = "Google"
+source_type = "official_google_search_central"
+
+[[policies]]
+id = "people_first"
+source = "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+rule = "内容的首要目的必须帮助用户，而不是为了操纵搜索排名。"
+
+[[policies]]
+id = "gen_ai_value_add"
+source = "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content"
+rule = "可以使用生成式AI辅助研究和组织，但批量页面必须有真实新增价值。"
+
+[[policies]]
+id = "scaled_content_abuse"
+source = "https://developers.google.com/search/docs/essentials/spam-policies"
+rule = "禁止把抓取内容通过同义改写、拼接或规模化低价值生成包装成大量页面。"
+
+[[policies]]
+id = "search_terms_natural"
+source = "https://developers.google.com/search/docs/essentials"
+rule = "用户会搜索的词应自然出现在标题、主标题、链接文本和描述性位置，不做关键词堆砌。"
+
+[[policies]]
+id = "title_quality"
+source = "https://developers.google.com/search/docs/appearance/title-link"
+rule = "每页标题必须具体、简洁、描述页面真实内容，避免模板化和冗长标题。"

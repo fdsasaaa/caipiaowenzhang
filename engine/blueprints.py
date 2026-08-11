@@ -85,9 +85,12 @@ def _case_structure(plan: dict) -> str:
 
 
 def _angle_key(plan: dict) -> str:
+    subject_lottery = str(plan.get("subject_lottery") or plan.get("lottery") or "")
+    subject_play = str(plan.get("subject_play") or plan.get("play") or "")
     raw = "|".join([
-        plan.get("provider_id", ""), plan.get("lottery", ""), plan.get("play", ""),
-        plan.get("technique_family", ""), ",".join(sorted(plan.get("technique_atoms", []))),
+        str(plan.get("provider_id") or ""), str(plan.get("lottery") or ""), str(plan.get("play") or ""),
+        subject_lottery, subject_play,
+        str(plan.get("technique_family") or ""), ",".join(sorted(plan.get("technique_atoms", []))),
         ",".join(plan.get("positions", [])),
     ])
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
@@ -96,13 +99,18 @@ def _angle_key(plan: dict) -> str:
 def blueprint_from_plan(plan: dict) -> dict:
     atoms = plan.get("technique_atoms", [])
     case_plan = plan.get("case_plan", {})
-    title = _title(plan["lottery"], plan["play"], atoms)
-    primary_keyword = _primary_keyword(plan["lottery"], plan["play"])
+    rule_lottery = plan["lottery"]
+    rule_play = plan["play"]
+    subject_lottery = str(plan.get("subject_lottery") or rule_lottery)
+    subject_play = str(plan.get("subject_play") or rule_play)
+    title = _title(subject_lottery, subject_play, atoms)
+    primary_keyword = _primary_keyword(subject_lottery, subject_play)
     case_structure = _case_structure(plan)
     content_type = str(plan.get("content_type") or default_content_type())
     site_category_key = site_category_for(content_type)
     fp = fingerprint(
-        plan.get("provider_id", ""), plan["lottery"], plan["play"],
+        plan.get("provider_id", ""), rule_lottery, rule_play,
+        subject_lottery, subject_play,
         plan.get("technique_family", ""), " ".join(sorted(atoms)), case_structure,
     )
     status = "ready_for_draft"
@@ -117,21 +125,23 @@ def blueprint_from_plan(plan: dict) -> dict:
         "blueprint_id": "BP-" + fp[:16],
         "article_id": "LCM-IDEA-" + fp[:16],
         "provider_id": plan.get("provider_id"),
-        "lottery": plan["lottery"],
-        "play": plan["play"],
+        "lottery": rule_lottery,
+        "play": rule_play,
+        "subject_lottery": subject_lottery,
+        "subject_play": subject_play,
         "content_type": content_type,
         "site_category_key": site_category_key,
         "technique_family": plan.get("technique_family"),
         "technique_atoms": atoms,
         "angle_signature": plan.get("angle_signature") or _angle_key(plan),
         "title": title,
-        "slug_seed": "-".join([plan["lottery"], plan["play"], *atoms[:2]]),
+        "slug_seed": "-".join([subject_lottery, subject_play, *atoms[:2]]),
         "primary_keyword": primary_keyword,
-        "secondary_keywords": _secondary_keywords(plan["lottery"], plan["play"], atoms),
+        "secondary_keywords": _secondary_keywords(subject_lottery, subject_play, atoms),
         "search_intent": "学习具体投注技巧并看懂可复算案例",
         "information_gain_type": "method_mechanics_and_reproducible_case",
-        "summary_goal": f"用简单中文解释{plan['play']}中的{_method_phrase(atoms)}，并给出可复算案例。",
-        "outline": _outline(plan["play"], atoms, case_plan.get("case_engine_ready", False)),
+        "summary_goal": f"用简单中文解释{subject_play}中的{_method_phrase(atoms)}，并给出可复算案例。",
+        "outline": _outline(subject_play, atoms, case_plan.get("case_engine_ready", False)),
         "case_structure": case_structure,
         "case_plan": case_plan,
         "case_scope": plan.get("allowed_case_scope"),

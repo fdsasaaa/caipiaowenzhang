@@ -22,6 +22,14 @@ HARD_CLAIM_PATTERNS = (
 )
 QUALIFIERS = ("来源提到", "来源声称", "原文提到", "原文声称", "未验证", "资料中提到", "资料声称")
 _BLOCK_TAG = re.compile(r"</?(?:p|h[1-6]|li|ul|ol|div|section|article|br)\b[^>]*>", re.IGNORECASE)
+_ECONOMICS_DISCLAIMERS = (
+    "不讨论", "不涉及", "不提供", "不说明", "不引用", "不使用",
+    "未核验的", "未经核验的", "没有核验", "尚未核验",
+)
+_SYNTHETIC_NEGATIONS = (
+    "不是真实开奖", "不是真实开奖记录", "并非真实开奖", "非真实开奖",
+    "不是实盘结果", "并非实盘结果", "不是历史开奖", "演示数据",
+)
 
 
 @dataclass
@@ -45,11 +53,24 @@ def _sentences(text: str) -> list[str]:
     return [x.strip() for x in re.split(r"[。！？!?]+", text) if x.strip()]
 
 
+def _pure_economics_disclaimer(sentence: str) -> bool:
+    if not any(marker in sentence for marker in _ECONOMICS_DISCLAIMERS):
+        return False
+    # A disclaimer that also states a numeric economics fact is still a hard
+    # claim and must carry evidence. Example: “赔率2.0，尚未核验”.
+    return not bool(re.search(r"\d|%|百分之|\b倍\b|元|每注|单注", sentence))
+
+
 def _hard_sentences(content: str) -> list[str]:
     out = []
     for sentence in _sentences(_plain(content)):
-        if any(pattern.search(sentence) for pattern in HARD_CLAIM_PATTERNS):
-            out.append(sentence)
+        if not any(pattern.search(sentence) for pattern in HARD_CLAIM_PATTERNS):
+            continue
+        if _pure_economics_disclaimer(sentence):
+            # Pure “we do not discuss unverified odds/rebate” wording is a
+            # boundary statement, not a factual economics claim.
+            continue
+        out.append(sentence)
     return out
 
 
@@ -70,6 +91,12 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         if tokens and len(tokens & sentence_tokens) / len(tokens) >= 0.6:
             return True
     return False
+
+
+def _presents_synthetic_as_real(claim: str) -> bool:
+    if any(marker in claim for marker in _SYNTHETIC_NEGATIONS):
+        return False
+    return any(term in claim for term in ("真实开奖", "实盘结果", "历史开奖证明"))
 
 
 def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
@@ -117,7 +144,7 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
         elif support_type == "synthetic_case":
             if refs_set != {"case_bundle"}:
                 errors.append(f"claim_evidence[{index}] synthetic_case must reference only case_bundle")
-            if any(term in claim for term in ("真实开奖", "实盘结果", "历史开奖证明")):
+            if _presents_synthetic_as_real(claim):
                 errors.append(f"claim_evidence[{index}] synthetic case cannot be presented as real history")
         elif support_type == "editorial":
             if refs_set:

@@ -10,6 +10,7 @@ from .technique_semantics import case_requirements, selector_variants
 
 ROOT = Path(__file__).resolve().parents[1]
 CLUSTERS = ROOT / "knowledge" / "technique_clusters" / "brbcw.jsonl"
+DYNAMIC_FAMILIES = ROOT / "knowledge" / "dynamic_families"
 ARTICLES = ROOT / "registry" / "articles.jsonl"
 
 PLAY_CLASS_ALIASES = {
@@ -43,6 +44,30 @@ def _rows(path: Path):
     return rows
 
 
+def _dynamic_rows() -> list[dict]:
+    if not DYNAMIC_FAMILIES.exists():
+        return []
+    rows: list[dict] = []
+    for path in sorted(DYNAMIC_FAMILIES.glob("*.jsonl")):
+        rows.extend(json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
+    return rows
+
+
+def _all_clusters() -> list[dict]:
+    static = _rows(CLUSTERS)
+    dynamic = _dynamic_rows()
+    seen: set[str] = set()
+    out: list[dict] = []
+    for row in [*static, *dynamic]:
+        family_id = str(row.get("family_id") or "")
+        if family_id and family_id in seen:
+            continue
+        if family_id:
+            seen.add(family_id)
+        out.append(row)
+    return out
+
+
 def _matches_play(c: dict, play: str) -> bool:
     target_class = PLAY_CLASS_ALIASES.get(play)
     if not target_class:
@@ -68,7 +93,7 @@ def _angle_hash(provider_id: str, lottery: str, play: str, family: str, selector
 
 def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) -> dict:
     cap = rule_capability(provider_id, lottery, play)
-    clusters = _rows(CLUSTERS)
+    clusters = _all_clusters()
     existing = _rows(ARTICLES)
     used = {x.get("angle_signature") for x in existing if x.get("angle_signature")}
     ranked = []
@@ -115,6 +140,7 @@ def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) ->
                 "source_refs": c.get("example_source_ids", []),
                 "source_support_count": c.get("source_count", 0),
                 "source_risk_rate": c.get("risk_rate", 0),
+                "knowledge_origin": c.get("origin") or "legacy_static",
                 "status": status,
                 "rule_refs": rule_refs,
                 "allowed_case_scope": "economics" if cap["economics_verified"] else ("mechanics_only" if cap["mechanics_verified"] else "idea_only"),
@@ -138,4 +164,8 @@ def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) ->
         "capability": cap,
         "plans": plans,
         "rule_gaps": gaps,
+        "knowledge_sources": {
+            "static_families": len(_rows(CLUSTERS)),
+            "dynamic_families": len(_dynamic_rows()),
+        },
     }

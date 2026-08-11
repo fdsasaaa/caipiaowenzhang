@@ -1,12 +1,12 @@
 # Source Intelligence v2
 
-目标：把未来持续采集的原始文章转换成可审计的知识卡，而不是把原文直接交给AI自由改写。
+目标：把未来持续采集的原始文章转换成可审计的知识卡，并自动反哺 Planner，而不是把原文直接交给AI自由改写。
 
 ## 输入
 
 支持 JSON 或 JSONL。正文可使用 `cleaned_content / content_text / content / body / text` 任一字段。
 
-## 流程
+## 完整流程
 
 ```text
 raw source
@@ -24,6 +24,12 @@ case features
 source claims + exact evidence snippets
   ↓
 Source Knowledge Card v2
+  ↓ aggregate by technique atoms
+Dynamic Technique Families v2
+  ↓
+Planner static families + dynamic families
+  ↓
+Blueprint / SEO Priority / Draft Packet
 ```
 
 ## 质量分流
@@ -73,14 +79,38 @@ Source Knowledge Card v2
 
 这只是来源证据索引，不代表该声明成立。
 
-## 命令
+## Dynamic Technique Families v2
+
+`engine/knowledge_families_v2.py` 会把 eligible knowledge cards 按 technique atoms 聚合成动态方法家族，并计算：
+
+- source_count；
+- risk_rate；
+- lotteries；
+- positions；
+- source classifications；
+- representative source IDs；
+- `origin=dynamic_source_intelligence_v2`。
+
+Planner 会同时读取：
+
+1. 既有 brbcw static/compact family knowledge；
+2. `knowledge/dynamic_families/*.jsonl`。
+
+因此以后新增来源不需要重新生成原来的 compact brbcw archive。动态来源只有在玩法规则、selector 和 case semantics 同样通过时才会成为可生成文章。
+
+## 一步摄取并接入 Planner
 
 ```bash
 python scripts/ingest_sources_v2.py input.jsonl \
   --output knowledge/incoming/cards.jsonl \
-  --quarantine knowledge/incoming/quarantine.jsonl
+  --quarantine knowledge/incoming/quarantine.jsonl \
+  --families-output knowledge/dynamic_families/incoming.jsonl
 ```
+
+不指定 `--families-output` 时只生成知识卡，不改变 Planner 的动态知识输入。
 
 ## 数据边界
 
 Knowledge Card 默认不保存整篇原文，只保存结构化知识、hash、风险声明及短 evidence snippets。原始材料可以继续保存在独立采集存储中。
+
+Dynamic Family 也不保存整篇原文，只保存聚合后的方法结构和代表 source IDs。

@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from engine.knowledge_families_v2 import write_dynamic_families
 from engine.source_intelligence import ingest_file
 
 
@@ -17,8 +18,15 @@ def main() -> int:
     parser.add_argument("input", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--quarantine", type=Path)
+    parser.add_argument(
+        "--families-output",
+        type=Path,
+        help="optional dynamic family JSONL; when set, eligible knowledge cards are immediately indexed for Planner",
+    )
     args = parser.parse_args()
     result = ingest_file(args.input, args.output, args.quarantine)
+    if args.families_output:
+        result["family_index"] = write_dynamic_families(args.output, args.families_output)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0
 

@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from .dedup import duplicate_candidates
-from .rules import verified_rules
+from .rules import rule_capability
 
 PROMISE_WORDS = ("稳赚", "必中", "包赢", "必赚", "100%中奖", "百分百中奖", "无风险")
 
@@ -32,14 +32,23 @@ def evaluate(article: dict) -> QualityReport:
     if found:
         errors.append("guaranteed-outcome language: " + ", ".join(found))
         score -= 35
-    provider_id = article.get("provider_id")
+
     if article.get("lottery") and article.get("play"):
-        if not provider_id:
-            errors.append("missing provider_id for rule-bound article")
-            score -= 20
-        elif not verified_rules(provider_id, article["lottery"], article["play"]):
-            errors.append("no verified provider-aware rule for declared provider/lottery/play")
+        case_scope = article.get("case_scope", "mechanics_only")
+        cap = rule_capability(article.get("provider_id"), article["lottery"], article["play"])
+        if not cap["mechanics_verified"]:
+            errors.append("no verified gameplay mechanics for declared lottery/play")
             score -= 35
+        if case_scope == "economics":
+            if not article.get("provider_id"):
+                errors.append("economics case requires provider_id")
+                score -= 20
+            elif not cap["economics_verified"]:
+                errors.append("no verified provider economics for stake/payout/rebate case")
+                score -= 35
+        elif not cap["economics_verified"]:
+            warnings.append("provider economics unverified: do not state stake/payout/rebate as fact")
+
     hits = duplicate_candidates(article)
     if hits:
         errors.append(f"duplicate risk: {hits[0].article_id} score={hits[0].score:.2f}")

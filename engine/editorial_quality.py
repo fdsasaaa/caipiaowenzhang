@@ -25,6 +25,18 @@ def _first_int(value: object) -> int | None:
     return int(match.group(1)) if match else None
 
 
+def _structured_filter_counts(packet: dict) -> tuple[int | None, int | None, int | None]:
+    practicality = packet.get("practicality") or {}
+    spec = practicality.get("primary_filter_spec") if isinstance(practicality, dict) else None
+    if not isinstance(spec, dict):
+        return None, None, None
+    values = []
+    for key in ("starting_space", "after_filter_space", "excluded_space"):
+        value = spec.get(key)
+        values.append(value if isinstance(value, int) and value >= 0 else None)
+    return values[0], values[1], values[2]
+
+
 def evaluate_editorial(packet: dict, article: dict) -> EditorialQualityReport:
     """V2.1 reader-value gate. Legacy packets without an editorial contract pass unchanged."""
     version = packet.get("editorial_contract_version")
@@ -85,14 +97,30 @@ def evaluate_editorial(packet: dict, article: dict) -> EditorialQualityReport:
             warnings.append("filter article does not quantify candidate-space change")
             score -= 8
         else:
-            start_n = _first_int(start)
-            after_n = _first_int(after)
+            spec_start, spec_after, spec_excluded = _structured_filter_counts(packet)
+            if spec_start is not None and spec_after is not None:
+                start_n, after_n = spec_start, spec_after
+                reduction = spec_excluded if spec_excluded is not None else start_n - after_n
+                # The human-readable guidance may contain the filter range (e.g.
+                # 10–17) before the candidate count. Do not parse that first
+                # number as the result-space size when a structured contract is
+                # available.
+                if str(start_n) not in start:
+                    errors.append("starting_space does not reflect primary_filter_spec.starting_space")
+                    score -= 15
+                if str(after_n) not in after:
+                    errors.append("after_primary_filter_space does not reflect primary_filter_spec.after_filter_space")
+                    score -= 15
+            else:
+                start_n = _first_int(start)
+                after_n = _first_int(after)
+                reduction = (start_n - after_n) if start_n is not None and after_n is not None else None
+
             if start_n is not None and after_n is not None:
                 if after_n >= start_n:
                     errors.append("primary filter must demonstrate an actual reduction in candidate space")
                     score -= 20
-                reduction = start_n - after_n
-                if reduction > 0 and str(reduction) not in content:
+                if reduction is not None and reduction > 0 and str(reduction) not in content:
                     warnings.append("content does not explicitly state the number of candidates removed")
                     score -= 5
             elif start == after:

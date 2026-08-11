@@ -1,0 +1,69 @@
+{
+  "packet_id": "DP-9d55831533a78e01",
+  "article_id": "LCM-SMOKE-20260811-01",
+  "blueprint_id": "BP-9d55831533a78e01",
+  "status": "ready_for_ai_draft",
+  "immutable_facts": {
+    "provider_id": null,
+    "lottery": null,
+    "play": null,
+    "content_type": "technique_article",
+    "site_category_key": "tzjq",
+    "content_format": "html",
+    "technique_family": "SMOKE-FORMAT-MECHANICS",
+    "technique_atoms": ["format_mechanics", "combination_counting"],
+    "rule_refs": ["DINGMA-ROTATION-FORMAT-V1", "DINGMA-ROTATION-COUNT-V1"],
+    "source_refs": ["USER-SUPPLIED-DINGMA-RULES-2026-08-11"],
+    "case_scope": "mechanics_only",
+    "fingerprint": "9d55831533a78e01fac2543d13b6b4920016b97f18e483ae3152174a4d8304dc",
+    "case_structure": "format_demo_nonhistorical",
+    "information_gain_type": "format_mechanics_and_reproducible_math_case"
+  },
+  "seo": {
+    "title": "分分彩前三直选怎么区分单式和复式？两种投注格式一次看懂",
+    "slug_seed": "ffc-qiansan-direct-single-vs-compound",
+    "primary_keyword": "分分彩前三直选",
+    "secondary_keywords": ["分分彩直选单式", "分分彩直选复式", "前三直选投注格式", "彩票投注技巧"],
+    "search_intent": "了解分分彩前三直选单式与复式的格式区别和组合数量计算",
+    "meta_description": "讲清分分彩前三直选单式与复式的格式区别：单式写完整三位号码，复式按三个位置拆分数字池，并用3×3×3案例说明组合数量。"
+  },
+  "style": {
+    "language": "zh-CN",
+    "plain_chinese": true,
+    "short_paragraphs": true,
+    "avoid_empty_intro": true,
+    "explain_with_example": true,
+    "tone": "clear_practical_research",
+    "content_format": "html",
+    "preferred_html_tags": ["p", "h2", "h3", "ul", "ol", "li", "strong", "em", "code"],
+    "forbidden_html_tags": ["script", "iframe", "form", "object", "embed"]
+  },
+  "outline": ["先说明格式差异", "用一个可复算例子展开", "解释组合数学或解析边界", "列出常见错误", "给出系统校验提醒"],
+  "case_bundle": {
+    "case_type": "format_math_demo",
+    "must_label_as": "格式演示，不代表实际开奖记录。"
+  },
+  "claims": {
+    "allowed": ["explain user-confirmed format registry", "explain math-verified count registry", "explain calculation steps and limitations"],
+    "forbidden_terms": ["稳赚", "必中", "包赢", "必赚", "百分百中奖", "100%中奖", "无风险"],
+    "economics_allowed": false,
+    "unverified_hit_rate_as_fact": false,
+    "historical_pattern_as_future_guarantee": false
+  },
+  "compliance": {
+    "policy_ref": "USER-BET-COMPLIANCE-90-V1",
+    "normalized_bets_required_for_executable_bet_examples": true,
+    "export_requires_pass": true,
+    "example_scope": "syntax_and_math_only_no_stake"
+  },
+  "source_use": {
+    "paraphrase_required": true,
+    "copy_source_article_verbatim": false,
+    "source_claims_must_remain_unverified_unless_rule_refs_support_them": true
+  },
+  "output_contract": {
+    "required_fields": ["article_id", "title", "slug", "meta_description", "primary_keyword", "search_intent", "summary", "content", "content_format", "site_category_key", "rule_refs", "case_scope", "status"],
+    "status_after_generation": "draft",
+    "must_include_case_label": "格式演示，不代表实际开奖记录。"
+  }
+}

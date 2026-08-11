@@ -14,6 +14,8 @@ def _bp(status="ready_for_draft", article_id="LCM-IDEA-1"):
         "information_gain_type": "method_mechanics_and_reproducible_case",
         "lottery": "时时彩",
         "play": "后三直选",
+        "content_type": "technique_article",
+        "site_category_key": "tzjq",
         "technique_family": "F1",
         "technique_atoms": ["omission_threshold"],
         "angle_signature": "A1",
@@ -36,6 +38,9 @@ def test_reserve_ready_blueprint(monkeypatch):
     assert written[0][0] == "articles"
     assert written[0][1]["status"] == "idea"
     assert written[0][1]["fingerprint"] == "FP1"
+    assert written[0][1]["content_type"] == "technique_article"
+    assert written[0][1]["site_category_key"] == "tzjq"
+    assert written[0][1]["content_format"] == "html"
 
 
 def test_reservation_skips_blocked_or_existing(monkeypatch):
@@ -61,3 +66,13 @@ def test_reservation_rechecks_duplicate_at_write_time(monkeypatch):
     result = article_memory.reserve_blueprints([_bp()])
     assert result["reserved_count"] == 0
     assert result["skipped"][0]["reason"] == "duplicate"
+
+
+def test_reservation_fails_closed_when_site_contract_missing(monkeypatch):
+    monkeypatch.setattr(article_memory, "known_article_ids", lambda: set())
+    monkeypatch.setattr(article_memory, "duplicate_candidates", lambda candidate: [])
+    bp = _bp()
+    del bp["site_category_key"]
+    result = article_memory.reserve_blueprints([bp])
+    assert result["reserved_count"] == 0
+    assert result["skipped"][0]["reason"] == "missing_site_contract"

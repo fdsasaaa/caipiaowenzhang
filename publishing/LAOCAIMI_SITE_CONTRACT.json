@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "site": "www.laocaimi.org",
+  "required_content_format": "html",
+  "content_types": {
+    "technique_article": {"site_category_key": "tzjq"},
+    "hangup_scheme": {"site_category_key": "gjfa"},
+    "resource_article": {"site_category_key": "zyyy"},
+    "seo_topic": {"site_category_key": "seo-articles"}
+  },
+  "current_generator_default": {
+    "content_type": "technique_article",
+    "site_category_key": "tzjq"
+  },
+  "policy": {
+    "category_must_be_decided_by_content_engine": true,
+    "website_must_not_guess_category_from_title": true,
+    "unknown_content_type_fails_closed": true,
+    "website_repo_is_source_of_truth_for_numeric_catid": true
+  }
+}

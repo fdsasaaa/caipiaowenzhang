@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SEODemandSignal",
+  "type": "object",
+  "required": ["source"],
+  "anyOf": [
+    {"required": ["primary_keyword"]},
+    {"required": ["query"]},
+    {"required": ["keyword"]}
+  ],
+  "properties": {
+    "source": {"type": "string"},
+    "primary_keyword": {"type": "string"},
+    "query": {"type": "string"},
+    "keyword": {"type": "string"},
+    "impressions": {"type": "number", "minimum": 0},
+    "clicks": {"type": "number", "minimum": 0},
+    "position": {"type": "number", "minimum": 0},
+    "search_volume": {"type": "number", "minimum": 0},
+    "competition": {"type": "number", "minimum": 0}
+  }
+}

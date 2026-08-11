@@ -111,6 +111,13 @@ def test_revision_changes_content_hash_but_stays_draft():
     }]
 
 
+def test_exact_native_cms_show_route_is_allowed_in_revision():
+    url = "https://www.laocaimi.org/index.php?c=show&id=321"
+    revision = link_revision.build_internal_link_revision(_package(), _resolved_plan(url))
+    assert revision["internal_links"][0]["url"] == url
+    assert 'href="https://www.laocaimi.org/index.php?c=show&amp;id=321"' in revision["content"]
+
+
 def test_current_eight_drafts_cannot_be_revised_before_any_target_is_published():
     package = json.loads((ROOT / "smoke/batch2/approved/LCM-IDEA-48eb8743fbbbad11.json").read_text(encoding="utf-8"))
     plan = plan_internal_links(package["article_id"], limit=3)
@@ -132,9 +139,10 @@ def test_revision_rejects_tampered_approved_package_hash():
     [
         ("http://www.laocaimi.org/article/a", "must use https"),
         ("https://evil.example/article/a", "host is not allowed"),
-        ("https://www.laocaimi.org/article/a?ref=x", "without query or fragment"),
-        ("https://www.laocaimi.org/article/a#part", "without query or fragment"),
+        ("https://www.laocaimi.org/article/a?ref=x", "query is allowed only"),
+        ("https://www.laocaimi.org/article/a#part", "must not contain fragment"),
         ("https://user:pass@www.laocaimi.org/article/a", "must not contain credentials"),
+        ("https://www.laocaimi.org/index.php?c=show&id=321&ref=x", "exactly c and id"),
     ],
 )
 def test_revision_rejects_noncanonical_or_external_urls(url, message):

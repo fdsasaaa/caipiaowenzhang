@@ -1,29 +1,12 @@
 from __future__ import annotations
 
 from html import escape
-from urllib.parse import urlparse
 
 from .internal_links import audit_internal_link_plan
+from .site_urls import ALLOWED_SITE_HOSTS, validate_published_url
 from .text import sha256_text
 
-ALLOWED_INTERNAL_LINK_HOSTS = {"laocaimi.org", "www.laocaimi.org"}
 RELATED_MARKER = 'data-lcm-related-reading="1"'
-
-
-def _validate_internal_url(url: str, allowed_hosts: set[str]) -> str:
-    parsed = urlparse(url)
-    host = (parsed.hostname or "").lower()
-    if parsed.scheme.lower() != "https":
-        raise ValueError("internal link URL must use https")
-    if host not in allowed_hosts:
-        raise ValueError("internal link URL host is not allowed: " + host)
-    if parsed.username or parsed.password:
-        raise ValueError("internal link URL must not contain credentials")
-    if not parsed.path or parsed.path == "/":
-        raise ValueError("internal link URL must target a concrete article path")
-    if parsed.query or parsed.fragment:
-        raise ValueError("internal link URL must be canonical without query or fragment")
-    return url
 
 
 def _revision_article_from_package(package: dict, content: str, links: list[dict]) -> dict:
@@ -71,11 +54,11 @@ def build_internal_link_revision(
 ) -> dict:
     """Create a draft revision; never return an approved package.
 
-    Only resolved, canonical internal URLs are rendered. The revised HTML must be
+    Only resolved, validated internal URLs are rendered. The revised HTML must be
     sent back through the normal Draft Review + Approval Pipeline because its
     content hash differs from the previously approved content.
     """
-    allowed_hosts = set(allowed_hosts or ALLOWED_INTERNAL_LINK_HOSTS)
+    allowed_hosts = set(allowed_hosts or ALLOWED_SITE_HOSTS)
     if package.get("status") != "approved":
         raise ValueError("internal link revision requires an approved package")
     article_id = str(package.get("article_id") or "")
@@ -118,7 +101,7 @@ def build_internal_link_revision(
             raise ValueError("resolved internal link missing anchor_hint")
         if len(anchor) > 100:
             raise ValueError("internal link anchor_hint is too long")
-        url = _validate_internal_url(url, allowed_hosts)
+        url = validate_published_url(url, allowed_hosts)
         if target_id in seen_targets or url in seen_urls:
             raise ValueError("duplicate internal link target/url")
         seen_targets.add(target_id)

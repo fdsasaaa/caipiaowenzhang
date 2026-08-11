@@ -4,6 +4,7 @@ import hashlib
 
 from .dedup import duplicate_candidates
 from .planner import plan_articles
+from .semantic_dedup import structural_duplicate_candidates
 from .seo_keywords import keyword_owners, primary_keyword_for
 from .site_contract import default_content_type, site_category_for
 from .text import fingerprint
@@ -174,6 +175,16 @@ def blueprint_from_plan(plan: dict) -> dict:
     if duplicate_hits:
         blueprint["status"] = "duplicate_blocked"
         blueprint["blockers"].append("existing_article_overlap")
+
+    structural_hits = structural_duplicate_candidates(blueprint)
+    blueprint["structural_duplicate_hits"] = [
+        {"article_id": h.article_id, "title": h.title, "score": h.score, "reasons": h.reasons}
+        for h in structural_hits[:5]
+    ]
+    if structural_hits:
+        blueprint["status"] = "duplicate_blocked"
+        if "structural_method_overlap" not in blueprint["blockers"]:
+            blueprint["blockers"].append("structural_method_overlap")
     return blueprint
 
 

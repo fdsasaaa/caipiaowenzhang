@@ -1,0 +1,67 @@
+{
+  "batch_id": "SMOKE-BATCH2-20260811",
+  "purpose": "verify real 2406-source technique families through planner, synthetic cases and approval pipeline",
+  "publication_policy": "draft_only_no_schedule_no_publish",
+  "subject_lottery": "分分彩",
+  "rule_scope_lottery": "时时彩",
+  "site_category_key": "tzjq",
+  "content_format": "html",
+  "case_scope": "mechanics_only",
+  "articles": [
+    {
+      "article_id": "LCM-IDEA-bf5a9864b004ae17",
+      "family_id": "FAM-32137acbb90340b9",
+      "rule_play": "后二大小单双",
+      "subject_play": "后二大小单双",
+      "resolved_selector": "后二",
+      "source_ref": "BRBCW-003787",
+      "source_support_count": 6,
+      "source_risk_rate": 0.167,
+      "atoms": ["big_small_filter", "odd_even_filter"]
+    },
+    {
+      "article_id": "LCM-IDEA-48eb8743fbbbad11",
+      "family_id": "FAM-66e3a5bb1e229e8a",
+      "rule_play": "定位胆",
+      "subject_play": "定位胆",
+      "resolved_selector": "个位",
+      "source_ref": "BRBCW-008754",
+      "source_support_count": 11,
+      "source_risk_rate": 0.273,
+      "atoms": ["cold_hot_split"]
+    },
+    {
+      "article_id": "LCM-IDEA-9ea1859cc88b2682",
+      "family_id": "FAM-c9d752aac7c51169",
+      "rule_play": "后三组选3",
+      "subject_play": "后三组选3",
+      "resolved_selector": "后三",
+      "source_ref": "BRBCW-001458",
+      "source_support_count": 14,
+      "source_risk_rate": 0.5,
+      "atoms": ["sum_range"]
+    },
+    {
+      "article_id": "LCM-IDEA-62bfa71c95642c9d",
+      "family_id": "FAM-c93cfcc1527bf6f8",
+      "rule_play": "后三直选",
+      "subject_play": "后三直选",
+      "resolved_selector": "后三",
+      "source_ref": "BRBCW-002590",
+      "source_support_count": 29,
+      "source_risk_rate": 0.379,
+      "atoms": ["position_filter", "span_range"]
+    },
+    {
+      "article_id": "LCM-IDEA-07838cdf108296a7",
+      "family_id": "FAM-bee5958fb0d2f766",
+      "rule_play": "定位胆",
+      "subject_play": "定位胆",
+      "resolved_selector": "个位",
+      "source_ref": "BRBCW-003939",
+      "source_support_count": 16,
+      "source_risk_rate": 0.562,
+      "atoms": ["omission_threshold", "position_filter"]
+    }
+  ]
+}

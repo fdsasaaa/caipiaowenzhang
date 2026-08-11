@@ -8,6 +8,7 @@ from .article_memory import reserve_blueprints
 from .blueprints import generate_blueprints
 from .casebook import descriptive_case, frequency_case, omission_case
 from .compliance import validate_portfolio
+from .draft_packets import generate_draft_packets
 from .format_rules import validate_format
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
@@ -61,6 +62,12 @@ def cmd_blueprints(args: argparse.Namespace) -> int:
         result["reservation"] = reserve_blueprints(result["blueprints"])
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["ready"] > 0 else 3
+
+
+def cmd_draft_packets(args: argparse.Namespace) -> int:
+    result = generate_draft_packets(args.provider, args.lottery, args.play, args.count)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["generated"] > 0 else 3
 
 
 def cmd_capability(args: argparse.Namespace) -> int:
@@ -138,6 +145,9 @@ def main() -> int:
     _add_article_scope_args(p)
     p.add_argument("--reserve", action="store_true", help="persist ready non-duplicate angles as idea records")
     p.set_defaults(func=cmd_blueprints)
+    p = sub.add_parser("draft-packets")
+    _add_article_scope_args(p)
+    p.set_defaults(func=cmd_draft_packets)
     p = sub.add_parser("capability")
     p.add_argument("--provider")
     p.add_argument("--lottery", required=True)

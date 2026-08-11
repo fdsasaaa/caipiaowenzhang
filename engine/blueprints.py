@@ -4,6 +4,7 @@ import hashlib
 
 from .dedup import duplicate_candidates
 from .planner import plan_articles
+from .seo_keywords import keyword_owners, primary_keyword_for
 from .site_contract import default_content_type, site_category_for
 from .text import fingerprint
 
@@ -40,10 +41,6 @@ def _method_phrase(atoms: list[str]) -> str:
 
 def _title(lottery: str, play: str, atoms: list[str]) -> str:
     return f"{lottery}{play}技巧：用{_method_phrase(atoms)}一步步筛选号码"
-
-
-def _primary_keyword(lottery: str, play: str) -> str:
-    return f"{lottery}{play}技巧"
 
 
 def _secondary_keywords(lottery: str, play: str, atoms: list[str]) -> list[str]:
@@ -98,7 +95,7 @@ def blueprint_from_plan(plan: dict) -> dict:
     subject_lottery = str(plan.get("subject_lottery") or rule_lottery)
     subject_play = str(plan.get("subject_play") or rule_play)
     title = _title(subject_lottery, subject_play, atoms)
-    primary_keyword = _primary_keyword(subject_lottery, subject_play)
+    primary_keyword = primary_keyword_for(subject_lottery, subject_play, atoms)
     case_structure = _case_structure(plan)
     content_type = str(plan.get("content_type") or default_content_type())
     site_category_key = site_category_for(content_type)
@@ -154,10 +151,21 @@ def blueprint_from_plan(plan: dict) -> dict:
             "plain_chinese": True,
             "example_required": True,
             "unique_information_gain_required": True,
+            "unique_exact_primary_keyword_required": True,
             "avoid_keyword_stuffing": True,
             "avoid_guaranteed_outcomes": True,
         },
     }
+
+    keyword_hits = keyword_owners(primary_keyword, exclude_article_id=blueprint["article_id"])
+    blueprint["keyword_owner_hits"] = [
+        {"article_id": row.get("article_id"), "primary_keyword": primary_keyword, "status": row.get("status")}
+        for row in keyword_hits[:5]
+    ]
+    if keyword_hits:
+        blueprint["status"] = "keyword_blocked"
+        blueprint["blockers"].append("exact_primary_keyword_owned")
+
     duplicate_hits = duplicate_candidates(blueprint)
     blueprint["duplicate_hits"] = [
         {"article_id": h.article_id, "title": h.title, "score": h.score, "reason": h.reason}

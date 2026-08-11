@@ -37,7 +37,7 @@ def test_blueprint_separates_subject_from_rule_scope(monkeypatch):
     assert bp["subject_lottery"] == "分分彩"
     assert bp["subject_play"] == "前三直选"
     assert bp["title"].startswith("分分彩前三直选技巧")
-    assert bp["primary_keyword"] == "分分彩前三直选技巧"
+    assert bp["primary_keyword"] == "分分彩前三直选和值技巧"
 
 
 def test_draft_packet_freezes_subject_and_rejects_tampering(monkeypatch):

@@ -14,6 +14,7 @@ from .format_rules import validate_format
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
 from .rules import load_rules, rule_capability
+from .seo_keywords import keyword_ownership_conflicts
 from .store import counts, ensure_layout, rebuild_index
 
 
@@ -46,7 +47,21 @@ def cmd_audit(_: argparse.Namespace) -> int:
                 problems.append(f"rule missing {field}: {rule}")
         if rule.get("status") == "verified" and not rule.get("verified_at"):
             problems.append(f"verified rule missing verified_at: {rule.get('rule_id')}")
-    result = {"ok": not problems, "problems": problems, "registry": counts(), "rule_gaps": len(list_gaps())}
+    keyword_conflicts = keyword_ownership_conflicts()
+    for conflict in keyword_conflicts:
+        problems.append(
+            "exact primary keyword has multiple active owners: "
+            + conflict["primary_keyword"]
+            + " -> "
+            + ",".join(conflict["article_ids"])
+        )
+    result = {
+        "ok": not problems,
+        "problems": problems,
+        "registry": counts(),
+        "rule_gaps": len(list_gaps()),
+        "keyword_conflicts": len(keyword_conflicts),
+    }
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if not problems else 2
 
@@ -138,7 +153,7 @@ def cmd_check_portfolio(args: argparse.Namespace) -> int:
     payload = json.loads(Path(args.file).read_text(encoding="utf-8"))
     bets = payload.get("bets", []) if isinstance(payload, dict) else payload
     if not isinstance(bets, list):
-        raise ValueError("portfolio JSON must be a list or an object with a bets list")
+        raise ValueError("portfolio JSON must be a list or an object with bets list")
     report = validate_portfolio(bets)
     print(json.dumps({"passed": report.passed, "violations": report.violations, "groups": report.groups}, ensure_ascii=False, indent=2))
     return 0 if report.passed else 5

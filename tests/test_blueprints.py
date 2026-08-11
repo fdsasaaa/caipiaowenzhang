@@ -34,7 +34,7 @@ def test_blueprint_is_deterministic_and_seo_structured(monkeypatch):
     assert a["fingerprint"] == b["fingerprint"]
     assert a["article_id"] == b["article_id"]
     assert a["status"] == "ready_for_draft"
-    assert a["primary_keyword"] == "时时彩后三直选技巧"
+    assert a["primary_keyword"] == "时时彩后三直选遗漏技巧"
     assert a["content_type"] == "technique_article"
     assert a["site_category_key"] == "tzjq"
     assert len(a["outline"]) >= 6

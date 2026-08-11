@@ -48,3 +48,12 @@ def test_same_article_lifecycle_is_excluded(monkeypatch):
     monkeypatch.setattr(semantic_dedup, "iter_registry", lambda name: iter([old]))
     candidate = _record("SAME", "新状态", ["span_range"], "selector=后三;metrics=span;scope=mechanics_only")
     assert semantic_dedup.structural_duplicate_candidates(candidate) == []
+
+
+def test_empty_atoms_and_metrics_do_not_count_as_similarity_evidence():
+    a = _record("A", "通用说明A", [], "selector=;metrics=;scope=mechanics_only", play="通用")
+    b = _record("B", "通用说明B", [], "selector=;metrics=;scope=mechanics_only", play="通用")
+    score, reasons = semantic_dedup.structural_similarity(a, b)
+    assert score < 0.82
+    assert not any(reason.startswith("technique_atoms=") for reason in reasons)
+    assert not any(reason.startswith("case_metrics=") for reason in reasons)

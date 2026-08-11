@@ -110,7 +110,26 @@ def _default_transport(url: str, headers: dict[str, str], payload: dict, timeout
         raise GenerationError("model provider returned non-JSON response") from exc
 
 
+def _check_response_state(response: dict) -> None:
+    error = response.get("error")
+    if error:
+        message = error.get("message") if isinstance(error, dict) else str(error)
+        raise GenerationError("model response error: " + str(message or "unknown error"))
+    status = response.get("status")
+    if status and status != "completed":
+        details = response.get("incomplete_details") or {}
+        raise GenerationError(f"model response not completed: status={status} details={details}")
+    for item in response.get("output", []) or []:
+        if item.get("type") != "message":
+            continue
+        for content in item.get("content", []) or []:
+            if content.get("type") == "refusal":
+                refusal = content.get("refusal") or content.get("text") or "model refused the request"
+                raise GenerationError("model response refused: " + str(refusal)[:500])
+
+
 def _response_output_text(response: dict) -> str:
+    _check_response_state(response)
     for item in response.get("output", []) or []:
         if item.get("type") != "message":
             continue

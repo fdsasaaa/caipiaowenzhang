@@ -23,8 +23,7 @@ def _set(value) -> set[str]:
 
 
 def _jaccard(a: set[str], b: set[str]) -> float:
-    if not a and not b:
-        return 1.0
+    # Missing structure is absence of evidence, not evidence of similarity.
     if not a or not b:
         return 0.0
     return len(a & b) / len(a | b)
@@ -89,7 +88,7 @@ def structural_similarity(candidate: dict, old: dict) -> tuple[float, list[str]]
         score += 0.15; reasons.append("same_case_selector")
     metric_sim = _jaccard(cand_metrics, old_metrics)
     score += 0.15 * metric_sim
-    if metric_sim >= 0.75 and (cand_metrics or old_metrics):
+    if metric_sim >= 0.75:
         reasons.append(f"case_metrics={metric_sim:.2f}")
 
     cand_type, old_type = str(candidate.get("content_type") or ""), str(old.get("content_type") or "")

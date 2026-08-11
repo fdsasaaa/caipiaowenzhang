@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import random
+import re
 from dataclasses import dataclass, field
 
 from .analysis_metrics import POSITION_INDEX, WINDOW_INDEXES
@@ -11,6 +12,11 @@ from .site_contract import required_content_format
 
 GUARANTEE_TERMS = ["稳赚", "必中", "包赢", "必赚", "百分百中奖", "100%中奖", "无风险"]
 FORBIDDEN_HTML = ("<script", "<iframe", "<form", "<object", "<embed")
+_BLOCK_TAG = re.compile(r"</?(?:p|h[1-6]|li|ul|ol|div|section|article|br)\b[^>]*>", re.IGNORECASE)
+_ECONOMICS_DISCLAIMERS = (
+    "不讨论", "不涉及", "不提供", "不说明", "不引用", "不使用",
+    "未核验的", "未经核验的", "没有核验", "尚未核验",
+)
 
 
 @dataclass
@@ -59,6 +65,9 @@ def build_case_bundle(blueprint: dict) -> dict:
         bundle["omission"] = omission_case(draws, selector, threshold=2, lookback=min(12, len(draws)))
     if atoms.intersection({"cold_hot_split", "frequency_window"}):
         bundle["frequency"] = frequency_case(draws, selector, lookback=min(12, len(draws)), hot_top_n=3)
+    primary_filter_spec = blueprint.get("primary_filter_spec")
+    if isinstance(primary_filter_spec, dict) and primary_filter_spec:
+        bundle["primary_filter_spec"] = dict(primary_filter_spec)
     return bundle
 
 
@@ -67,6 +76,26 @@ def _meta_description(blueprint: dict) -> str:
     play = blueprint.get("subject_play") or blueprint.get("play") or "玩法"
     primary = blueprint.get("primary_keyword", f"{lottery}{play}技巧")
     return f"{primary}案例讲解：先说明{play}规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。"
+
+
+def _plain_sentences(html: str) -> list[str]:
+    text = _BLOCK_TAG.sub("。", html or "")
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    return [x.strip() for x in re.split(r"[。！？!?]+", text) if x.strip()]
+
+
+def _contains_factual_economics_statement(content: str, term: str) -> bool:
+    """Ignore pure disclaimers while still blocking factual economics claims."""
+    for sentence in _plain_sentences(content):
+        if term not in sentence:
+            continue
+        is_disclaimer = any(marker in sentence for marker in _ECONOMICS_DISCLAIMERS)
+        has_numeric_fact = bool(re.search(r"\d|%|百分之|\b倍\b|元|每注|单注", sentence))
+        if is_disclaimer and not has_numeric_fact:
+            continue
+        return True
+    return False
 
 
 def build_draft_packet(blueprint: dict) -> dict:
@@ -169,6 +198,9 @@ def build_draft_packet(blueprint: dict) -> dict:
             "must_not_invent_unverified_second_filter": True,
             "reader_goal": "读者看完后能按固定步骤复算，并知道筛选到哪一步必须停止。",
         }
+        primary_filter_spec = blueprint.get("primary_filter_spec")
+        if isinstance(primary_filter_spec, dict) and primary_filter_spec:
+            packet["practicality"]["primary_filter_spec"] = dict(primary_filter_spec)
     return packet
 
 
@@ -214,7 +246,7 @@ def review_draft(packet: dict, article: dict) -> DraftReview:
         errors.append("synthetic case label missing")
     if not packet.get("claims", {}).get("economics_allowed", False):
         for term in ("赔率", "返点"):
-            if term in content:
+            if _contains_factual_economics_statement(content, term):
                 errors.append(f"provider economics not verified; factual {term} statement is blocked")
     if article.get("rule_refs") != facts.get("rule_refs"):
         errors.append("article rule_refs differ from immutable draft packet")

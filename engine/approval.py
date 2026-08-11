@@ -34,6 +34,8 @@ def _enrich_for_quality(packet: dict, article: dict) -> dict:
         "provider_id": facts.get("provider_id") or existing.get("provider_id"),
         "lottery": facts.get("lottery") or existing.get("lottery"),
         "play": facts.get("play") or existing.get("play"),
+        "subject_lottery": facts.get("subject_lottery") or existing.get("subject_lottery") or facts.get("lottery") or existing.get("lottery"),
+        "subject_play": facts.get("subject_play") or existing.get("subject_play") or facts.get("play") or existing.get("play"),
         "content_type": facts.get("content_type") or existing.get("content_type"),
         "site_category_key": facts.get("site_category_key") or existing.get("site_category_key"),
         "content_format": facts.get("content_format") or existing.get("content_format"),
@@ -86,7 +88,8 @@ def _publish_package(packet: dict, article: dict) -> dict:
     secondary = article.get("secondary_keywords") or seo.get("secondary_keywords", [])
     content_type = facts.get("content_type") or existing.get("content_type")
     category = article.get("category") or _semantic_category(content_type)
-    tags = article.get("tags") or list(dict.fromkeys([facts.get("play") or existing.get("play"), *secondary]))
+    subject_play = facts.get("subject_play") or existing.get("subject_play") or facts.get("play") or existing.get("play")
+    tags = article.get("tags") or list(dict.fromkeys([subject_play, *secondary]))
     tags = [x for x in tags if x]
     return {
         "article_id": article["article_id"],
@@ -111,6 +114,8 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "provider_id": facts.get("provider_id") or existing.get("provider_id"),
         "lottery": facts.get("lottery") or existing.get("lottery"),
         "play": facts.get("play") or existing.get("play"),
+        "subject_lottery": facts.get("subject_lottery") or existing.get("subject_lottery") or facts.get("lottery") or existing.get("lottery"),
+        "subject_play": subject_play,
         "technique_atoms": facts.get("technique_atoms") or existing.get("technique_atoms", []),
         "fingerprint": facts.get("fingerprint") or existing.get("fingerprint"),
         "content_hash": sha256_text(article["content"]),
@@ -131,6 +136,8 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "search_intent": article.get("search_intent") or packet.get("seo", {}).get("search_intent"),
         "lottery": facts.get("lottery"),
         "play": facts.get("play"),
+        "subject_lottery": facts.get("subject_lottery") or facts.get("lottery"),
+        "subject_play": facts.get("subject_play") or facts.get("play"),
         "content_type": facts.get("content_type"),
         "site_category_key": facts.get("site_category_key"),
         "content_format": facts.get("content_format"),

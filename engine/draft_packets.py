@@ -37,7 +37,7 @@ def _selector(blueprint: dict) -> str:
         value = case_structure.split("selector=", 1)[1].split(";", 1)[0].split("/", 1)[0]
         if value in WINDOW_INDEXES or value in POSITION_INDEX:
             return value
-    play = blueprint.get("play", "")
+    play = blueprint.get("play", "") or blueprint.get("subject_play", "")
     for value in ("前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星", "万位", "千位", "百位", "十位", "个位"):
         if value in play:
             return value
@@ -63,8 +63,8 @@ def build_case_bundle(blueprint: dict) -> dict:
 
 
 def _meta_description(blueprint: dict) -> str:
-    lottery = blueprint.get("lottery", "彩票")
-    play = blueprint.get("play", "玩法")
+    lottery = blueprint.get("subject_lottery") or blueprint.get("lottery") or "彩票"
+    play = blueprint.get("subject_play") or blueprint.get("play") or "玩法"
     primary = blueprint.get("primary_keyword", f"{lottery}{play}技巧")
     return f"{primary}案例讲解：先说明{play}规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。"
 
@@ -89,6 +89,8 @@ def build_draft_packet(blueprint: dict) -> dict:
             "provider_id": blueprint.get("provider_id"),
             "lottery": blueprint.get("lottery"),
             "play": blueprint.get("play"),
+            "subject_lottery": blueprint.get("subject_lottery") or blueprint.get("lottery"),
+            "subject_play": blueprint.get("subject_play") or blueprint.get("play"),
             "content_type": blueprint.get("content_type"),
             "site_category_key": blueprint.get("site_category_key"),
             "content_format": content_format,
@@ -208,6 +210,9 @@ def review_draft(packet: dict, article: dict) -> DraftReview:
         errors.append("article rule_refs differ from immutable draft packet")
     if article.get("site_category_key") != facts.get("site_category_key"):
         errors.append("article site_category_key differs from immutable draft packet")
+    for field in ("subject_lottery", "subject_play"):
+        if field in article and article.get(field) != facts.get(field):
+            errors.append(f"article {field} differs from immutable draft packet")
     if str(article.get("content_format", "")).lower() != str(facts.get("content_format", "")).lower():
         errors.append("article content_format differs from immutable draft packet")
     if str(facts.get("content_format", "")).lower() == "html":

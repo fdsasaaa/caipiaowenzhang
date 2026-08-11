@@ -24,13 +24,18 @@ def _atoms(value) -> str:
     return " ".join(_text(item) for item in value if item is not None)
 
 
+def _subject(record: dict, subject_key: str, rule_key: str) -> str:
+    value = record.get(subject_key)
+    return _text(value if value not in (None, "") else record.get(rule_key))
+
+
 def _core(record: dict) -> str:
     return "|".join([
         _text(record.get("title")),
         _text(record.get("primary_keyword")),
         _text(record.get("search_intent")),
-        _text(record.get("lottery")),
-        _text(record.get("play")),
+        _subject(record, "subject_lottery", "lottery"),
+        _subject(record, "subject_play", "play"),
         _atoms(record.get("technique_atoms")),
         _text(record.get("case_structure")),
     ])

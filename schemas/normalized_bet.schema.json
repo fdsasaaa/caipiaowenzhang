@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NormalizedBet",
+  "type": "object",
+  "required": ["bet_id", "draw_id", "lottery_id", "play_id", "target_space_id", "target_space_size", "covered_outcomes", "prize_amount"],
+  "properties": {
+    "bet_id": {"type": "string"},
+    "draw_id": {"type": "string"},
+    "lottery_id": {"type": "string"},
+    "play_id": {"type": "string"},
+    "target_space_id": {"type": "string"},
+    "target_space_size": {"type": "integer", "minimum": 1},
+    "covered_outcomes": {"type": "array", "items": {"type": ["string", "integer"]}},
+    "stake_amount": {"type": "number", "minimum": 0},
+    "phase_amounts": {"type": "object", "additionalProperties": {"type": "number", "minimum": 0}},
+    "prize_amount": {"type": "number", "minimum": 0},
+    "mapping_ref": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

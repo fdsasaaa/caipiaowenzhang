@@ -5,6 +5,8 @@ import sqlite3
 from pathlib import Path
 from typing import Iterable
 
+from .knowledge_io import archive_path, iter_archive_jsonl
+
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "registry"
 VAR = ROOT / "var"
@@ -36,12 +38,7 @@ def iter_jsonl(path: Path) -> Iterable[dict]:
 
 
 def iter_registry(kind: str):
-    """Iterate canonical registry plus optional sharded registry files, deduplicated.
-
-    Shards use registry/<kind>.*.jsonl and exist to keep Git/API file sizes
-    manageable as the knowledge base grows. Canonical files may later receive
-    incremental records, so IDs are deduplicated across both layers.
-    """
+    """Iterate canonical registry plus optional sharded/archived knowledge, deduplicated."""
     ensure_layout()
     canonical = REGISTRY_FILES[kind]
     key_field = {"articles": "article_id", "techniques": "technique_id", "sources": "source_id"}[kind]
@@ -52,6 +49,14 @@ def iter_registry(kind: str):
         paths.extend(sorted(manifest_dir.glob("*.jsonl")))
     for path in paths:
         for row in iter_jsonl(path):
+            key = row.get(key_field)
+            if key and key in seen:
+                continue
+            if key:
+                seen.add(key)
+            yield row
+    if kind == "sources":
+        for row in iter_archive_jsonl(archive_path("brbcw_sources")):
             key = row.get(key_field)
             if key and key in seen:
                 continue

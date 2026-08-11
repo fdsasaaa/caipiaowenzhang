@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from datetime import datetime, timezone
+
 from .dedup import duplicate_candidates
 from .store import append_jsonl, iter_registry
 
@@ -8,12 +10,15 @@ def known_article_ids() -> set[str]:
     return {row.get("article_id") for row in iter_registry("articles") if row.get("article_id")}
 
 
-def reserve_blueprints(blueprints: list[dict]) -> dict:
-    """Persist non-duplicate ready blueprints as `idea` records.
+def get_article_record(article_id: str) -> dict | None:
+    for row in iter_registry("articles"):
+        if row.get("article_id") == article_id:
+            return row
+    return None
 
-    Reservation is intentional permanent memory: once an angle is reserved it
-    participates in future dedup even before a full draft is written.
-    """
+
+def reserve_blueprints(blueprints: list[dict]) -> dict:
+    """Persist non-duplicate ready blueprints as `idea` records."""
     existing_ids = known_article_ids()
     reserved = []
     skipped = []
@@ -56,8 +61,21 @@ def reserve_blueprints(blueprints: list[dict]) -> dict:
             "content_hash": None,
             "published_url": None,
             "published_at": None,
+            "updated_at": datetime.now(timezone.utc).isoformat(),
         }
         append_jsonl("articles", record)
         existing_ids.add(article_id)
         reserved.append(article_id)
     return {"reserved": reserved, "reserved_count": len(reserved), "skipped": skipped, "skipped_count": len(skipped)}
+
+
+def append_article_state(article_id: str, status: str, changes: dict | None = None) -> dict:
+    """Append a lifecycle state update while preserving the article's identity fields."""
+    current = get_article_record(article_id) or {"article_id": article_id}
+    updated = dict(current)
+    updated.update(changes or {})
+    updated["article_id"] = article_id
+    updated["status"] = status
+    updated["updated_at"] = datetime.now(timezone.utc).isoformat()
+    append_jsonl("articles", updated)
+    return updated

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceKnowledgeCardV2",
+  "type": "object",
+  "required": ["schema_version", "source_id", "content_sha256", "quality", "technique_atoms", "claims", "verification_status", "knowledge_status", "publishable"],
+  "properties": {
+    "schema_version": {"const": "2.0"},
+    "source_id": {"type": "string"},
+    "source_name": {"type": ["string", "null"]},
+    "native_id": {},
+    "url": {"type": ["string", "null"]},
+    "title": {"type": "string"},
+    "classification": {"type": "string"},
+    "published_at": {"type": ["string", "null"]},
+    "content_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "content_length": {"type": "integer", "minimum": 0},
+    "quality": {
+      "type": "object",
+      "required": ["score", "decision", "signals"],
+      "properties": {
+        "score": {"type": "integer", "minimum": 0, "maximum": 100},
+        "decision": {"enum": ["keep", "quarantine", "reject"]},
+        "signals": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "lotteries": {"type": "array", "items": {"type": "string"}},
+    "positions": {"type": "array", "items": {"type": "string"}},
+    "technique_atoms": {"type": "array", "items": {"type": "string"}},
+    "topic_tags": {"type": "array", "items": {"type": "string"}},
+    "case_features": {"type": "object"},
+    "claims": {"type": "array", "items": {"type": "object"}},
+    "claim_risk_max": {"type": "integer", "minimum": 0, "maximum": 100},
+    "verification_status": {"const": "unverified_source"},
+    "knowledge_status": {"enum": ["eligible_after_rule_binding", "idea_only", "quarantine", "reject"]},
+    "requires_rule_binding": {"const": true},
+    "publishable": {"const": false}
+  }
+}

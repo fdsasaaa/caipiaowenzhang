@@ -35,6 +35,31 @@ def iter_jsonl(path: Path) -> Iterable[dict]:
             yield json.loads(line)
 
 
+def iter_registry(kind: str):
+    """Iterate canonical registry plus optional sharded registry files, deduplicated.
+
+    Shards use registry/<kind>.*.jsonl and exist to keep Git/API file sizes
+    manageable as the knowledge base grows. Canonical files may later receive
+    incremental records, so IDs are deduplicated across both layers.
+    """
+    ensure_layout()
+    canonical = REGISTRY_FILES[kind]
+    key_field = {"articles": "article_id", "techniques": "technique_id", "sources": "source_id"}[kind]
+    seen = set()
+    paths = [canonical, *sorted(REGISTRY.glob(canonical.stem + ".*.jsonl"))]
+    if kind == "sources":
+        manifest_dir = ROOT / "knowledge" / "source_manifests"
+        paths.extend(sorted(manifest_dir.glob("*.jsonl")))
+    for path in paths:
+        for row in iter_jsonl(path):
+            key = row.get(key_field)
+            if key and key in seen:
+                continue
+            if key:
+                seen.add(key)
+            yield row
+
+
 def append_jsonl(kind: str, record: dict) -> None:
     ensure_layout()
     path = REGISTRY_FILES[kind]
@@ -83,7 +108,7 @@ def rebuild_index() -> dict:
         """
     )
     counts = {"articles": 0, "techniques": 0, "sources": 0}
-    for r in iter_jsonl(REGISTRY_FILES["articles"]):
+    for r in iter_registry("articles"):
         con.execute(
             "INSERT OR REPLACE INTO articles VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (
@@ -94,13 +119,13 @@ def rebuild_index() -> dict:
             ),
         )
         counts["articles"] += 1
-    for r in iter_jsonl(REGISTRY_FILES["techniques"]):
+    for r in iter_registry("techniques"):
         con.execute(
             "INSERT OR REPLACE INTO techniques VALUES (?,?,?,?,?)",
             (r.get("technique_id"), r.get("name"), r.get("status"), r.get("logic"), json.dumps(r, ensure_ascii=False)),
         )
         counts["techniques"] += 1
-    for r in iter_jsonl(REGISTRY_FILES["sources"]):
+    for r in iter_registry("sources"):
         con.execute(
             "INSERT OR REPLACE INTO sources VALUES (?,?,?,?,?)",
             (r.get("source_id"), r.get("source_type"), r.get("title"), r.get("url"), json.dumps(r, ensure_ascii=False)),
@@ -113,4 +138,4 @@ def rebuild_index() -> dict:
 
 def counts() -> dict:
     ensure_layout()
-    return {k: sum(1 for _ in iter_jsonl(v)) for k, v in REGISTRY_FILES.items()}
+    return {k: sum(1 for _ in iter_registry(k)) for k in REGISTRY_FILES}

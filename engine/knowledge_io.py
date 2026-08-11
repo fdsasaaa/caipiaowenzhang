@@ -39,10 +39,12 @@ def _decode_mask(mask: int, values: list[str]) -> list[str]:
 
 
 def iter_brbcw_families():
-    path = ROOT / "knowledge" / "family_archives" / "brbcw_families_v1.bz2.b64"
-    if not path.exists():
+    archive_dir = ROOT / "knowledge" / "family_archives"
+    parts = sorted(archive_dir.glob("brbcw_families_v1.part-*.b64"))
+    if not parts:
         return
-    raw = bz2.decompress(base64.b64decode(path.read_text(encoding="ascii").strip()))
+    encoded = "".join(p.read_text(encoding="ascii").strip() for p in parts)
+    raw = bz2.decompress(base64.b64decode(encoded))
     if len(raw) % BRBCW_FAMILY_RECORD.size:
         raise ValueError("Invalid brbcw compact family archive length")
     for offset in range(0, len(raw), BRBCW_FAMILY_RECORD.size):

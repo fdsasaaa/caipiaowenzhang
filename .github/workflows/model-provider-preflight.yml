@@ -11,9 +11,6 @@ on:
         description: Optional explicit model id; leave blank to auto-pick a low-cost-looking model from /models
         required: false
         type: string
-  push:
-    paths:
-      - '.github/provider-preflight.trigger'
 
 permissions:
   contents: read
@@ -24,8 +21,8 @@ jobs:
     timeout-minutes: 5
     env:
       OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
-      OPENAI_BASE_URL: ${{ github.event_name == 'workflow_dispatch' && inputs.base_url || 'https://api.synapai.top/v1' }}
-      OPENAI_MODEL: ${{ github.event_name == 'workflow_dispatch' && inputs.model || '' }}
+      OPENAI_BASE_URL: ${{ inputs.base_url }}
+      OPENAI_MODEL: ${{ inputs.model }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

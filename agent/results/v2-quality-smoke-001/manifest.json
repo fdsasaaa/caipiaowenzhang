@@ -6,13 +6,21 @@
   "reason_real_api_not_called": "No OPENAI_API_KEY is available to this session. The article is generated under the same Draft Packet constraints and then validated by the repository's real V2 approval code.",
   "subject": {
     "lottery": "分分彩",
-    "play": "定位胆",
-    "technique": "omission_threshold",
-    "selector": "个位"
+    "play": "后三直选",
+    "technique": "sum_range",
+    "selector": "后三",
+    "research_range": "10-17"
   },
-  "rule_refs": ["SSC-MECH-LOCATED-1D-V1"],
-  "source_refs": ["BRBCW-001428"],
+  "rule_refs": ["SSC-HIST-MECH-3STAR-LAST-V1"],
+  "source_refs": ["BRBCW-003412"],
   "source_use": "idea_only_unverified_claims_remain_qualified",
+  "quality_focus": [
+    "source claim is not upgraded to fact",
+    "theoretical outcome-space coverage is independently recomputed",
+    "synthetic case is labeled and reproducible",
+    "SEO primary keyword must be unique",
+    "full approval and duplicate gates remain active"
+  ],
   "production_effect": "none",
   "registry_write": false,
   "website_draft_write": false,

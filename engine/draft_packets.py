@@ -5,6 +5,7 @@ import random
 from dataclasses import dataclass, field
 
 from .analysis_metrics import POSITION_INDEX, WINDOW_INDEXES
+from .blueprints import generate_blueprints
 from .casebook import descriptive_case, frequency_case, omission_case
 
 GUARANTEE_TERMS = ["稳赚", "必中", "包赢", "必赚", "百分百中奖", "100%中奖", "无风险"]
@@ -134,6 +135,31 @@ def build_draft_packet(blueprint: dict) -> dict:
             "status_after_generation": "draft",
             "must_include_case_label": case_bundle["must_label_as"],
         },
+    }
+
+
+def generate_draft_packets(provider_id: str, lottery: str, play: str, count: int = 10) -> dict:
+    blueprint_result = generate_blueprints(provider_id, lottery, play, max(count * 2, count))
+    packets = []
+    skipped = []
+    for blueprint in blueprint_result.get("blueprints", []):
+        if blueprint.get("status") != "ready_for_draft":
+            skipped.append({"blueprint_id": blueprint.get("blueprint_id"), "status": blueprint.get("status"), "blockers": blueprint.get("blockers", [])})
+            continue
+        try:
+            packets.append(build_draft_packet(blueprint))
+        except ValueError as exc:
+            skipped.append({"blueprint_id": blueprint.get("blueprint_id"), "status": "packet_blocked", "reason": str(exc)})
+        if len(packets) >= count:
+            break
+    return {
+        "provider_id": provider_id,
+        "lottery": lottery,
+        "play": play,
+        "requested": count,
+        "generated": len(packets),
+        "skipped": skipped,
+        "packets": packets,
     }
 
 

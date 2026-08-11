@@ -79,6 +79,15 @@ def test_batch2_uses_real_source_families_and_passes_full_approval():
         assert spec["source_ref"] in package["source_refs"]
         assert "publish_at" not in package
 
+        expected = _load(BATCH / "approved" / f"{spec['article_id']}.json")
+        assert expected["approved_at"] == "2026-08-11T12:45:00+00:00"
+        assert package["content_hash"] == expected["content_hash"]
+        actual_cmp = dict(package)
+        expected_cmp = dict(expected)
+        actual_cmp.pop("approved_at", None)
+        expected_cmp.pop("approved_at", None)
+        assert actual_cmp == expected_cmp, f"{spec['article_id']}: frozen Approved Package drifted"
+
         fingerprints.add(package["fingerprint"])
         source_refs.add(spec["source_ref"])
         approved_packages.append(package)

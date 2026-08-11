@@ -5,14 +5,23 @@ from dataclasses import dataclass, field
 
 from .text import jaccard
 
+_CN_NUMBER = r"[零〇一二三四五六七八九十百千万两点]+"
+# For Chinese-word bet counts we intentionally start at quantities greater than
+# one. Phrases such as “一注组选” are common rule definitions and are already
+# governed by rule_refs; treating every occurrence as a separate high-risk
+# quantitative claim creates noisy evidence duplication. Arabic numeric counts
+# (including 1注) remain strict, and Chinese quantities such as 三注/十注 are strict.
+_CN_BET_COUNT = r"[二三四五六七八九十百千万两]+"
 HARD_CLAIM_PATTERNS = (
     re.compile(r"\d{1,3}(?:\.\d+)?\s*%"),
-    re.compile(r"\d+\s*注"),
+    re.compile(rf"百分之(?:\d+(?:\.\d+)?|{_CN_NUMBER})"),
+    re.compile(rf"(?:\d+|{_CN_BET_COUNT})\s*注"),
     re.compile(r"命中率|准确率|成功率|胜率"),
     re.compile(r"赔率|返点|奖金|返奖|收益率|利润|盈利"),
     re.compile(r"下一期会|下期会|一定会出|肯定会出"),
 )
 QUALIFIERS = ("来源提到", "来源声称", "原文提到", "原文声称", "未验证", "资料中提到", "资料声称")
+_BLOCK_TAG = re.compile(r"</?(?:p|h[1-6]|li|ul|ol|div|section|article|br)\b[^>]*>", re.IGNORECASE)
 
 
 @dataclass
@@ -23,8 +32,13 @@ class ClaimEvidenceReport:
 
 
 def _plain(html: str) -> str:
-    text = re.sub(r"<[^>]+>", " ", html or "")
-    return re.sub(r"\s+", " ", text).strip()
+    # Preserve sentence boundaries between block-level HTML elements. Without
+    # this, a heading and the following paragraph can become one artificial
+    # hard-claim sentence after tag stripping.
+    text = _BLOCK_TAG.sub("。", html or "")
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"。+", "。", text)
+    return re.sub(r"\s+", " ", text).strip(" 。")
 
 
 def _sentences(text: str) -> list[str]:
@@ -45,7 +59,8 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         claim = re.sub(r"\s+", "", str(entry.get("claim_text") or ""))
         if not claim:
             continue
-        # Claim text can be a concise restatement; require meaningful textual overlap.
+        # Exact sentence copies are preferred by the generation prompt. Concise
+        # restatements remain supported for older V2 fixtures.
         if claim in compact or compact in claim:
             return True
         if jaccard(claim, compact, n=2) >= 0.48:

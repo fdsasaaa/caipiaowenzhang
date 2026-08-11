@@ -128,6 +128,9 @@ def build_generation_prompt(packet: dict) -> str:
         "6. synthetic_case 只引用 case_bundle，不能声称是真实开奖或实盘结果。\n"
         "7. 文章用简单中文、短段落、HTML正文；禁止<script>/<iframe>/<form>/<object>/<embed>。\n"
         + editorial_rules
+        + "12. 对正文中包含百分比、注数、命中率/准确率/成功率/胜率、赔率/返点/奖金/收益/利润/盈利或明确未来预测的每一个完整句子，claim_evidence.claim_text 必须复制该正文句子的完整文字（去掉HTML标签即可），不要改写成概括句。\n"
+        "13. 同一数学事实如果在正文用不同句子重复出现，每个硬声明句都要分别登记；不能假设一条概括证据自动覆盖其他表述。\n"
+        "14. 中文数字写法（如“三注”“百分之六”）与阿拉伯数字写法同样属于硬声明，不能通过换写法绕过证据登记。\n"
         + "\nDraft Packet:\n" + json.dumps(packet, ensure_ascii=False, sort_keys=True)
     )
 

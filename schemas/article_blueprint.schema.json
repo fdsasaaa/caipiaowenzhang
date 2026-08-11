@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LotteryArticleBlueprint",
+  "type": "object",
+  "required": ["blueprint_id", "article_id", "lottery", "play", "technique_atoms", "title", "primary_keyword", "search_intent", "outline", "case_plan", "rule_refs", "fingerprint", "status"],
+  "properties": {
+    "blueprint_id": {"type": "string"},
+    "article_id": {"type": "string"},
+    "provider_id": {"type": ["string", "null"]},
+    "lottery": {"type": "string"},
+    "play": {"type": "string"},
+    "technique_family": {"type": ["string", "null"]},
+    "technique_atoms": {"type": "array", "items": {"type": "string"}},
+    "angle_signature": {"type": "string"},
+    "title": {"type": "string"},
+    "slug_seed": {"type": "string"},
+    "primary_keyword": {"type": "string"},
+    "secondary_keywords": {"type": "array", "items": {"type": "string"}},
+    "search_intent": {"type": "string"},
+    "information_gain_type": {"type": "string"},
+    "summary_goal": {"type": "string"},
+    "outline": {"type": "array", "items": {"type": "string"}},
+    "case_structure": {"type": "string"},
+    "case_plan": {"type": "object"},
+    "case_scope": {"type": "string"},
+    "rule_refs": {"type": "array", "items": {"type": "string"}},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "fingerprint": {"type": "string"},
+    "duplicate_hits": {"type": "array"},
+    "status": {"enum": ["ready_for_draft", "blocked", "duplicate_blocked"]},
+    "blockers": {"type": "array", "items": {"type": "string"}}
+  }
+}

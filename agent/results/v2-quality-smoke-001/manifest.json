@@ -1,26 +1,19 @@
 {
   "run_id": "v2-quality-smoke-001",
-  "purpose": "first human-quality review of a V2-generated article before any website publication",
-  "generation_mode": "current_chat_model_using_v2_draft_contract",
+  "purpose": "first human-quality review of a V2.1-generated article before any website publication",
+  "generation_mode": "current_chat_model_using_v2.1_draft_and_editorial_contract",
   "real_openai_api_called": false,
-  "reason_real_api_not_called": "No OPENAI_API_KEY is available to this session. The article is generated under the same Draft Packet constraints and then validated by the repository's real V2 approval code.",
+  "reason_real_api_not_called": "No OPENAI_API_KEY is available to this session. The article is generated under the same Draft Packet, claim-evidence and editorial-practicality constraints and then validated by the repository's real approval code.",
   "subject": {
     "lottery": "分分彩",
     "play": "后三直选",
     "technique": "sum_range",
-    "selector": "后三",
-    "research_range": "10-17"
+    "selector": "后三"
   },
   "rule_refs": ["SSC-HIST-MECH-3STAR-LAST-V1"],
   "source_refs": ["BRBCW-003412"],
   "source_use": "idea_only_unverified_claims_remain_qualified",
-  "quality_focus": [
-    "source claim is not upgraded to fact",
-    "theoretical outcome-space coverage is independently recomputed",
-    "synthetic case is labeled and reproducible",
-    "SEO primary keyword must be unique",
-    "full approval and duplicate gates remain active"
-  ],
+  "editorial_contract_version": "1.0",
   "production_effect": "none",
   "registry_write": false,
   "website_draft_write": false,

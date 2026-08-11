@@ -89,6 +89,9 @@ def build_draft_packet(blueprint: dict) -> dict:
             "rule_refs": blueprint.get("rule_refs", []),
             "source_refs": blueprint.get("source_refs", []),
             "case_scope": blueprint.get("case_scope"),
+            "fingerprint": blueprint.get("fingerprint"),
+            "case_structure": blueprint.get("case_structure"),
+            "information_gain_type": blueprint.get("information_gain_type"),
         },
         "seo": {
             "title": blueprint.get("title"),

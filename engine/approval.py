@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from .article_memory import append_article_state, get_article_record
 from .claim_evidence import audit_claim_evidence
 from .draft_packets import review_draft
+from .editorial_quality import evaluate_editorial
 from .quality import evaluate as evaluate_quality
 from .seo_keywords import keyword_owners
 from .text import sha256_text
@@ -18,6 +19,7 @@ class ApprovalResult:
     errors: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
     quality_score: int = 0
+    editorial_score: int = 100
     publish_package: dict | None = None
     registry_record: dict | None = None
 
@@ -135,6 +137,9 @@ def _publish_package(packet: dict, article: dict) -> dict:
     if article.get("generation_contract_version"):
         package["generation_contract_version"] = article["generation_contract_version"]
         package["claim_evidence"] = article.get("claim_evidence", [])
+    if article.get("editorial_contract_version"):
+        package["editorial_contract_version"] = article["editorial_contract_version"]
+        package["practical_guidance"] = article.get("practical_guidance", {})
     for field in ("revision_reason", "revision_of_content_hash"):
         if article.get(field):
             package[field] = article[field]
@@ -170,6 +175,9 @@ def _registry_changes(packet: dict, article: dict) -> dict:
     if article.get("generation_contract_version"):
         changes["generation_contract_version"] = article.get("generation_contract_version")
         changes["claim_evidence"] = article.get("claim_evidence", [])
+    if article.get("editorial_contract_version"):
+        changes["editorial_contract_version"] = article.get("editorial_contract_version")
+        changes["practical_guidance"] = article.get("practical_guidance", {})
     for field in ("revision_reason", "revision_of_content_hash"):
         if article.get(field):
             changes[field] = article[field]
@@ -181,11 +189,24 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
     evidence_report = audit_claim_evidence(packet, article)
     enriched = _enrich_for_quality(packet, article)
     quality_report = evaluate_quality(enriched)
+    editorial_report = evaluate_editorial(packet, article)
     seo_errors, seo_warnings = _seo_contract(packet, article)
 
-    errors = list(dict.fromkeys([*draft_review.errors, *evidence_report.errors, *quality_report.errors, *seo_errors]))
-    warnings = list(dict.fromkeys([*draft_review.warnings, *evidence_report.warnings, *quality_report.warnings, *seo_warnings]))
-    approved = not errors and draft_review.passed and evidence_report.passed and quality_report.passed
+    errors = list(dict.fromkeys([
+        *draft_review.errors, *evidence_report.errors, *quality_report.errors,
+        *editorial_report.errors, *seo_errors,
+    ]))
+    warnings = list(dict.fromkeys([
+        *draft_review.warnings, *evidence_report.warnings, *quality_report.warnings,
+        *editorial_report.warnings, *seo_warnings,
+    ]))
+    approved = (
+        not errors
+        and draft_review.passed
+        and evidence_report.passed
+        and quality_report.passed
+        and editorial_report.passed
+    )
     status = "approved" if approved else "rejected_for_revision"
     package = _publish_package(packet, enriched) if approved else None
     existing = _existing_identity(enriched.get("article_id"))
@@ -199,6 +220,7 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
         errors=errors,
         warnings=warnings,
         quality_score=quality_report.score,
+        editorial_score=editorial_report.score,
         publish_package=package,
         registry_record=preview_registry,
     )

@@ -1,0 +1,25 @@
+{
+  "rule_id": "SSC-HIST-MECH-5STAR-DIRECT-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "五星直选",
+  "aliases": ["五星"],
+  "positions": ["万位", "千位", "百位", "十位", "个位"],
+  "number_domain": "五个位置各为0..9",
+  "bet_format": "分别在万、千、百、十、个位选择数字；每个有序五位组合构成一注",
+  "bet_count_formula": "n_万位 * n_千位 * n_百位 * n_十位 * n_个位",
+  "win_condition": "投注五位号码与开奖号码五位按位全部相同",
+  "theoretical_single_bet_probability": "1/100000",
+  "status": "verified",
+  "source": "财政部2009分时时彩规则批准文件附件2 + 历史时时彩投注指南交叉核对",
+  "source_type": "official_historical_plus_corroboration",
+  "verified_at": "2026-08-11",
+  "lifecycle_status": "historical_reference_only",
+  "provider_mapping_required": true,
+  "economics_inherited": false,
+  "sources": [
+    "https://zhs.mof.gov.cn/zhengcefabu/201811/t20181122_3073513.htm",
+    "https://news.sina.com.cn/c/2004-12-23/05534602380s.shtml"
+  ],
+  "notes": "只验证五位按位机制；不继承历史奖金。"
+}

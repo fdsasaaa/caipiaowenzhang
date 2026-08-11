@@ -19,8 +19,13 @@ def load_rules() -> list[dict]:
 
 
 def _scope(rule: dict) -> str:
-    # v0.2 provider rules had no explicit scope and are treated as full rules.
     return rule.get("scope", "full")
+
+
+def _play_matches(rule: dict, play: str | None) -> bool:
+    if not play:
+        return True
+    return play == rule.get("play") or play in (rule.get("aliases") or [])
 
 
 def verified_mechanics(lottery: str | None = None, play: str | None = None) -> list[dict]:
@@ -30,7 +35,7 @@ def verified_mechanics(lottery: str | None = None, play: str | None = None) -> l
             continue
         if lottery and r.get("lottery") != lottery:
             continue
-        if play and r.get("play") != play:
+        if not _play_matches(r, play):
             continue
         out.append(r)
     return out
@@ -45,14 +50,13 @@ def verified_economics(provider_id: str | None = None, lottery: str | None = Non
             continue
         if lottery and r.get("lottery") != lottery:
             continue
-        if play and r.get("play") != play:
+        if not _play_matches(r, play):
             continue
         out.append(r)
     return out
 
 
 def verified_rules(provider_id: str | None = None, lottery: str | None = None, play: str | None = None) -> list[dict]:
-    """Backward-compatible full/economic lookup used by v0.2 callers."""
     return verified_economics(provider_id, lottery, play)
 
 

@@ -1,0 +1,25 @@
+{
+  "rule_id": "SSC-HIST-MECH-2STAR-GROUP-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "后二组选",
+  "aliases": ["二星组选"],
+  "positions": ["十位", "个位"],
+  "number_domain": "从0..9选择两个不同数字",
+  "bet_format": "一个不同数字对构成一注组选；顺序不作为不同注",
+  "bet_count_formula": "候选池含n个不同数字时为C(n,2)",
+  "win_condition": "所选两个不同数字与开奖号码十位、个位两个数字相同，顺序不限",
+  "covered_ordered_outcomes_per_single_bet": 2,
+  "theoretical_single_bet_probability": "2/100 = 1/50",
+  "status": "verified",
+  "source": "财政部2006年重庆时时彩附加玩法规则直接定义二星组选",
+  "source_type": "official_historical",
+  "verified_at": "2026-08-11",
+  "lifecycle_status": "historical_reference_only",
+  "provider_mapping_required": true,
+  "economics_inherited": false,
+  "sources": [
+    "https://zhs.mof.gov.cn/zhengcefabu/200808/t20080807_61472.htm"
+  ],
+  "notes": "若开奖号码十位、个位为相同数字，则不属于此历史二星组选定义的可中结果。概率按00..99共100个有序结果数学枚举。"
+}

@@ -1,0 +1,25 @@
+{
+  "rule_id": "SSC-HIST-MECH-3STAR-LAST-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "后三直选",
+  "aliases": ["三星", "三星直选"],
+  "positions": ["百位", "十位", "个位"],
+  "number_domain": "百位、十位、个位各为0..9",
+  "bet_format": "分别在百位、十位、个位选择数字；每个有序组合构成一注",
+  "bet_count_formula": "n_百位 * n_十位 * n_个位",
+  "win_condition": "投注百位、十位、个位与开奖号码后三位按位全部相同",
+  "theoretical_single_bet_probability": "1/1000",
+  "status": "verified",
+  "source": "财政部2009分时时彩规则批准文件附件2 + 历史时时彩投注指南交叉核对",
+  "source_type": "official_historical_plus_corroboration",
+  "verified_at": "2026-08-11",
+  "lifecycle_status": "historical_reference_only",
+  "provider_mapping_required": true,
+  "economics_inherited": false,
+  "sources": [
+    "https://zhs.mof.gov.cn/zhengcefabu/201811/t20181122_3073513.htm",
+    "https://news.sina.com.cn/c/2004-12-23/05534602380s.shtml"
+  ],
+  "notes": "历史规则中的三星对应连续后三位。"
+}

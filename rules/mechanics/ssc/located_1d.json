@@ -1,0 +1,25 @@
+{
+  "rule_id": "SSC-MECH-LOCATED-1D-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "定位胆",
+  "aliases": ["定位1D", "任选一", "单位置定位胆"],
+  "positions": ["万位", "千位", "百位", "十位", "个位"],
+  "number_domain": "指定任一位置，数字为0..9",
+  "bet_format": "指定一个位置并选择一个数字构成一注；同一位置选择n个不同数字时为n注",
+  "bet_count_formula": "单位置=n；若平台把多个位置分别计为独立1D投注，总注数为各位置候选数之和，具体计费须由provider规则确认",
+  "win_condition": "所选数字与开奖号码指定位置数字相同",
+  "theoretical_single_bet_probability": "1/10",
+  "status": "verified",
+  "source": "中国福利彩票3D官方1D规则验证固定位置数字机制；时时彩五位置结构由财政部时时彩规则历史基线确认",
+  "source_type": "official_historical_cross_game_mechanics",
+  "verified_at": "2026-08-11",
+  "lifecycle_status": "historical_reference_only",
+  "provider_mapping_required": true,
+  "economics_inherited": false,
+  "sources": [
+    "https://zhs.mof.gov.cn/zhengcefabu/201409/t20140925_1144249.htm",
+    "https://zhs.mof.gov.cn/zhengcefabu/201811/t20181122_3073513.htm"
+  ],
+  "notes": "‘定位胆’是当前内容领域常用名称；历史官方时时彩不同地区可能使用一星/任选一等名称。必须通过目标平台映射确认其具体支持位置和计费方式。"
+}

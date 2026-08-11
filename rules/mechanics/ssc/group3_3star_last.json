@@ -1,0 +1,26 @@
+{
+  "rule_id": "SSC-HIST-MECH-3STAR-GROUP3-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "后三组选3",
+  "aliases": ["三星组选三", "组选3", "组三"],
+  "positions": ["百位", "十位", "个位"],
+  "number_domain": "三个数字中恰有两个相同，另一个不同，数字均为0..9",
+  "bet_format": "一个形如{a,a,b}且a!=b的多重集合构成一注组选3，顺序不限",
+  "bet_count_formula": "候选池含n个不同数字并允许每个数字分别作为重号时，为n*(n-1)；单一{a,a,b}为1注",
+  "win_condition": "开奖号码后三位恰为同一多重集合，顺序不限",
+  "covered_ordered_outcomes_per_single_bet": 3,
+  "theoretical_single_bet_probability": "3/1000",
+  "status": "verified",
+  "source": "财政部2009分时时彩规则批准文件 + 中国福利彩票3D官方组选3规则交叉验证排列组合机制",
+  "source_type": "official_historical_cross_game_mechanics",
+  "verified_at": "2026-08-11",
+  "lifecycle_status": "historical_reference_only",
+  "provider_mapping_required": true,
+  "economics_inherited": false,
+  "sources": [
+    "https://zhs.mof.gov.cn/zhengcefabu/201811/t20181122_3073513.htm",
+    "https://zhs.mof.gov.cn/zhengcefabu/201409/t20140925_1144249.htm"
+  ],
+  "notes": "3D官方规则明确组选3为三位中两位相同、覆盖3种排列。应用到时时彩后三位时仍需确认目标平台存在同名玩法。"
+}

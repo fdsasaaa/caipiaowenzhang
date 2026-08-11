@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from .article_memory import append_article_state, get_article_record
 from .draft_packets import review_draft
 from .quality import evaluate as evaluate_quality
+from .seo_keywords import keyword_owners
 from .text import sha256_text
 
 
@@ -56,7 +57,8 @@ def _seo_contract(packet: dict, article: dict) -> tuple[list[str], list[str]]:
     errors: list[str] = []
     warnings: list[str] = []
     seo = packet.get("seo", {})
-    if article.get("primary_keyword") != seo.get("primary_keyword"):
+    primary_keyword = str(article.get("primary_keyword") or "").strip()
+    if primary_keyword != seo.get("primary_keyword"):
         errors.append("primary_keyword differs from draft packet")
     if article.get("search_intent") != seo.get("search_intent"):
         errors.append("search_intent differs from draft packet")
@@ -69,6 +71,13 @@ def _seo_contract(packet: dict, article: dict) -> tuple[list[str], list[str]]:
         errors.append("title missing")
     elif seo.get("primary_keyword") and seo["primary_keyword"] not in title:
         warnings.append("title does not contain exact primary keyword; verify natural SEO wording")
+    if primary_keyword:
+        owners = keyword_owners(primary_keyword, exclude_article_id=article.get("article_id") or packet.get("article_id"))
+        if owners:
+            errors.append(
+                "exact primary_keyword already owned by active article: "
+                + str(owners[0].get("article_id") or "unknown")
+            )
     return errors, warnings
 
 

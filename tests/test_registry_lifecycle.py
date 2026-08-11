@@ -1,4 +1,4 @@
-from engine import dedup, store
+from engine import article_memory, dedup, store
 
 
 def _redirect_store(monkeypatch, tmp_path):
@@ -25,6 +25,20 @@ def test_registry_last_write_wins(monkeypatch, tmp_path):
     assert len(rows) == 1
     assert rows[0]["status"] == "approved"
     assert rows[0]["title"] == "new"
+
+
+def test_append_article_state_preserves_identity(monkeypatch, tmp_path):
+    _redirect_store(monkeypatch, tmp_path)
+    store.append_jsonl("articles", {
+        "article_id": "A1", "status": "idea", "fingerprint": "FP-ORIGINAL",
+        "angle_signature": "ANGLE-1", "technique_atoms": ["sum_range"]
+    })
+    updated = article_memory.append_article_state("A1", "approved", {"title": "final"})
+    assert updated["fingerprint"] == "FP-ORIGINAL"
+    assert updated["angle_signature"] == "ANGLE-1"
+    effective = list(store.iter_registry("articles"))[0]
+    assert effective["status"] == "approved"
+    assert effective["fingerprint"] == "FP-ORIGINAL"
 
 
 def test_dedup_skips_same_article_lifecycle(monkeypatch):

@@ -4,7 +4,7 @@
 
 ## 当前版本
 
-`v0.7.0-user-rules-compliance`
+`v0.8.0-draft-packets`
 
 当前基础资产：
 
@@ -17,9 +17,10 @@
 - 和值、跨度、频率、遗漏、奇偶、大小、重号、邻号等可执行分析指标
 - 可复算案例引擎
 - 正文生成前的文章蓝图、SEO结构、去重指纹和永久角度占位
-- **90%金额 + 90%目标空间覆盖的用户内部硬门禁**
-- **定码轮换三级玩法格式Registry与可执行语法校验**
-- **用户研究指标体系的优先级与防过拟合验证协议**
+- **模型无关 Draft Packet：冻结SEO、规则、案例、来源、禁止项后再交给AI写正文**
+- 90%金额 + 90%目标空间覆盖的用户内部硬门禁
+- 定码轮换三级玩法格式Registry与可执行语法校验
+- 用户研究指标体系的优先级与防过拟合验证协议
 - `caipiaowenzhang → fdsasaaa/xyptdq → www.laocaimi.org` 草稿发布协议
 
 ## 核心原则
@@ -30,11 +31,48 @@
 4. **分分彩等不得自动继承时时彩规则**：必须显式完成 provider / lottery / play mapping。
 5. **统计指标不是预测保证**：冷热是频率，遗漏是间隔，和值与跨度是描述/筛选指标。
 6. **来源文章不是事实库**：论坛命中率、稳赚、盈利说法不自动升级为事实。
-7. **先蓝图、后正文**：搜索意图、技巧原子、案例算法、规则引用和去重指纹先确定，再写长文。
+7. **先蓝图、再Draft Packet、后正文**：搜索意图、技巧原子、案例算法、规则引用、SEO字段和禁止项全部冻结后，AI才允许写长文。
 8. **idea 也参与永久去重**：通过 `--reserve` 占位的文章即使尚未写完，也会阻止未来生成同一角度。
 9. **可执行投注案例也必须过合规门禁**：文章若携带 `normalized_bets`，质量审核会执行单方案、组合方案、跨玩法覆盖及高级倍投阶段检查。
 10. **SEO必须有信息增量**：不为关键词变体批量制造低价值页面。
 11. **生产隔离**：本仓库 → Approved Package → `fdsasaaa/xyptdq` → 迅睿CMS草稿 → 网站发布。
+
+## Draft Packet 层
+
+实现：`engine/draft_packets.py`
+
+协议：`schemas/draft_packet.schema.json`
+
+标准：`docs/DRAFT_PACKET_STANDARD.md`
+
+每个 Packet 固定：
+
+- provider / lottery / play；
+- technique family / atoms；
+- rule_refs / source_refs；
+- SEO title / slug seed / primary keyword / secondary keywords / search intent / meta description；
+- 简单中文、短段落、案例优先等写作风格；
+- outline；
+- 可复算 case bundle；
+- 保证性表述黑名单；
+- economics 是否允许；
+- 90%合规 policy ref；
+- 最终输出字段合同。
+
+没有真实开奖数据时，系统生成可复现的 `synthetic_validation` 案例，并强制正文写明：
+
+`演示数据，不是真实开奖记录`
+
+因此AI不能把演示数据包装成历史实盘结果。
+
+CLI：
+
+```bash
+python -m engine.cli draft-packets \
+  --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10
+```
+
+只有 `ready_for_draft` 的蓝图会进入 packets；blocked / duplicate_blocked 会被跳过并返回原因。
 
 ## 90% 投注组合硬门禁
 
@@ -105,7 +143,7 @@ python -m engine.cli validate-format \
 
 ## 文章生成流水线
 
-`方法家族 → 玩法规则校验 → case_plan → article blueprint → pre-draft dedup → reserve idea → draft → quality/SEO/compliance gate → approved package → xyptdq → CMS草稿 → published → 回写Registry`
+`方法家族 → 玩法规则校验 → case_plan → article blueprint → pre-draft dedup → reserve idea → Draft Packet → AI draft → Draft Review → quality/SEO/compliance gate → approved package → xyptdq → CMS草稿 → published → 回写Registry`
 
 完整说明：`docs/ARTICLE_GENERATION_PIPELINE.md`
 
@@ -138,6 +176,9 @@ python -m engine.cli plan \
 
 python -m engine.cli blueprints \
   --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10 --reserve
+
+python -m engine.cli draft-packets \
+  --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10
 
 python -m engine.cli case \
   --draw 12345 --draw 22346 --draw 92347 --draw 02348 \

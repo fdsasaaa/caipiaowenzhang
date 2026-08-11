@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 
 from .dedup import duplicate_candidates
+from .seo_keywords import keyword_owners
 from .site_contract import required_content_format
 from .store import append_jsonl, iter_registry
 
@@ -37,6 +38,19 @@ def reserve_blueprints(blueprints: list[dict]) -> dict:
         if not bp.get("site_category_key") or not bp.get("content_type"):
             skipped.append({"article_id": article_id, "reason": "missing_site_contract"})
             continue
+        primary_keyword = str(bp.get("primary_keyword") or "").strip()
+        if not primary_keyword:
+            skipped.append({"article_id": article_id, "reason": "missing_primary_keyword"})
+            continue
+        owners = keyword_owners(primary_keyword, exclude_article_id=article_id)
+        if owners:
+            skipped.append({
+                "article_id": article_id,
+                "reason": "primary_keyword_owned",
+                "owner": owners[0].get("article_id"),
+                "primary_keyword": primary_keyword,
+            })
+            continue
         hits = duplicate_candidates(bp)
         if hits:
             skipped.append({"article_id": article_id, "reason": "duplicate", "hit": hits[0].article_id})
@@ -47,7 +61,7 @@ def reserve_blueprints(blueprints: list[dict]) -> dict:
             "provider_id": bp.get("provider_id"),
             "title": bp.get("title"),
             "slug": bp.get("slug_seed"),
-            "primary_keyword": bp.get("primary_keyword"),
+            "primary_keyword": primary_keyword,
             "secondary_keywords": bp.get("secondary_keywords", []),
             "search_intent": bp.get("search_intent"),
             "information_gain_type": bp.get("information_gain_type"),

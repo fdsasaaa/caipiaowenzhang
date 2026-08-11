@@ -1,7 +1,13 @@
 {
-  "version": "0.5.0",
-  "principle": "统计指标用于描述、筛选和构造可复算案例，不自动证明未来预测优势。",
+  "version": "1.2.0",
+  "principle": "统计指标用于描述、筛选和构造可复算案例，不自动证明未来预测优势。位置筛选只决定分析作用在哪个位置或窗口，本身不是预测信号。",
   "atoms": {
+    "position_filter": {
+      "metric": "selector",
+      "definition": "把后续统计或筛选限定在一个明确的位置或窗口，例如个位、后三、前二。",
+      "valid_selectors": ["万位", "千位", "百位", "十位", "个位", "前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星"],
+      "safe_article_use": "必须明确写出分析位置/窗口；位置本身只定义计算作用域，不能写成某位置因此更容易中奖。"
+    },
     "sum_range": {
       "metric": "digit_sum",
       "definition": "所选位置数字之和",
@@ -17,36 +23,43 @@
     "odd_even_filter": {
       "metric": "parity_pattern",
       "definition": "0/2/4/6/8为双，1/3/5/7/9为单",
+      "valid_selectors": ["万位", "千位", "百位", "十位", "个位", "前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星"],
       "safe_article_use": "可做结构分类和组合过滤。"
     },
     "big_small_filter": {
       "metric": "size_pattern",
       "definition": "0-4为小，5-9为大",
+      "valid_selectors": ["万位", "千位", "百位", "十位", "个位", "前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星"],
       "safe_article_use": "可做结构分类和组合过滤；若目标平台大小定义不同，必须以provider mapping为准。"
     },
     "cold_hot_split": {
       "metric": "frequency",
-      "definition": "指定样本窗口内0-9各数字出现次数",
-      "safe_article_use": "系统只输出频率；冷/温/热阈值必须在文章方法中显式定义，不能由模型临时拍脑袋。"
+      "definition": "指定样本窗口、明确位置或号码窗口内0-9各数字出现次数",
+      "valid_selectors": ["万位", "千位", "百位", "十位", "个位", "前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星"],
+      "safe_article_use": "系统只输出频率；冷/温/热阈值必须在文章方法中显式定义，不能由模型临时拍脑袋，也不能把热号写成下一期更容易出现。"
     },
     "omission_threshold": {
       "metric": "current_omission",
-      "definition": "固定位置某数字距离最近一次出现已连续间隔多少期，最新一期出现则为0",
+      "definition": "固定单一位置某数字距离最近一次出现已连续间隔多少期，最新一期出现则为0",
+      "valid_selectors": ["万位", "千位", "百位", "十位", "个位"],
       "safe_article_use": "可按预设阈值筛选候选；遗漏越大并不自动意味着下一期更可能出现。"
     },
     "repeat_number": {
       "metric": "repeat_pattern",
       "definition": "二位可分重号/两不同；三位可分豹子/组三/组六",
+      "valid_selectors": ["前二", "后二", "前三", "中三", "后三"],
       "safe_article_use": "可解释号码结构和过滤规则。"
     },
     "neighbor_number": {
       "metric": "has_neighbor_pair",
       "definition": "同一分析窗口内至少存在一对差值为1的不同数字；默认0与9不视为相邻",
+      "valid_selectors": ["前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星"],
       "safe_article_use": "若文章使用0-9循环邻号，必须显式声明circular=true。"
     },
     "frequency_window": {
       "metric": "frequency",
       "definition": "必须明确近N期，N是方法参数的一部分",
+      "valid_selectors": ["万位", "千位", "百位", "十位", "个位", "前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星"],
       "safe_article_use": "不同N得到不同结果；文章必须写出样本窗口，不能只说近期。"
     }
   }

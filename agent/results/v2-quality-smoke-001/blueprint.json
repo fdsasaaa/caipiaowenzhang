@@ -47,6 +47,7 @@
   "status": "ready_for_draft",
   "blockers": [],
   "article_status": "idea",
+  "editorial_contract_version": "1.0",
   "seo_requirements": {
     "plain_chinese": true,
     "example_required": true,

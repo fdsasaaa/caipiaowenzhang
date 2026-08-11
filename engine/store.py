@@ -38,36 +38,54 @@ def iter_jsonl(path: Path) -> Iterable[dict]:
 
 
 def iter_registry(kind: str):
-    """Iterate canonical registry plus optional sharded registry files, deduplicated.
+    """Iterate the effective registry state with last-write-wins semantics.
 
-    Shards use registry/<kind>.*.jsonl and exist to keep Git/API file sizes
-    manageable as the knowledge base grows. Canonical files may later receive
-    incremental records, so IDs are deduplicated across both layers.
+    Sharded/manifests are baseline history; the canonical registry file is the
+    append-only lifecycle log and is read last, so newer records for the same ID
+    replace older idea/draft/approved/published states without mutating history.
     """
     ensure_layout()
     canonical = REGISTRY_FILES[kind]
     key_field = {"articles": "article_id", "techniques": "technique_id", "sources": "source_id"}[kind]
-    seen = set()
-    paths = [canonical, *sorted(REGISTRY.glob(canonical.stem + ".*.jsonl"))]
-    if kind == "sources":
-        manifest_dir = ROOT / "knowledge" / "source_manifests"
-        paths.extend(sorted(manifest_dir.glob("*.jsonl")))
-    for path in paths:
-        for row in iter_jsonl(path):
-            key = row.get(key_field)
-            if key and key in seen:
-                continue
-            if key:
-                seen.add(key)
-            yield row
+    keyed: dict[str, dict] = {}
+    unkeyed: list[dict] = []
+
+    # Baseline data first.
     if kind == "sources":
         for row in iter_brbcw_sources():
             key = row.get(key_field)
-            if key and key in seen:
-                continue
             if key:
-                seen.add(key)
-            yield row
+                keyed[key] = row
+            else:
+                unkeyed.append(row)
+        manifest_dir = ROOT / "knowledge" / "source_manifests"
+        for path in sorted(manifest_dir.glob("*.jsonl")):
+            for row in iter_jsonl(path):
+                key = row.get(key_field)
+                if key:
+                    keyed[key] = row
+                else:
+                    unkeyed.append(row)
+
+    # Shards are older snapshots; later shard names replace earlier ones.
+    for path in sorted(REGISTRY.glob(canonical.stem + ".*.jsonl")):
+        for row in iter_jsonl(path):
+            key = row.get(key_field)
+            if key:
+                keyed[key] = row
+            else:
+                unkeyed.append(row)
+
+    # Canonical append-only log is authoritative and read linearly last.
+    for row in iter_jsonl(canonical):
+        key = row.get(key_field)
+        if key:
+            keyed[key] = row
+        else:
+            unkeyed.append(row)
+
+    yield from keyed.values()
+    yield from unkeyed
 
 
 def append_jsonl(kind: str, record: dict) -> None:

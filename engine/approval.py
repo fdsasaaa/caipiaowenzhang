@@ -100,7 +100,7 @@ def _publish_package(packet: dict, article: dict) -> dict:
     subject_play = facts.get("subject_play") or existing.get("subject_play") or facts.get("play") or existing.get("play")
     tags = article.get("tags") or list(dict.fromkeys([subject_play, *secondary]))
     tags = [x for x in tags if x]
-    return {
+    package = {
         "article_id": article["article_id"],
         "title": article["title"],
         "seo_title": article.get("seo_title") or article["title"],
@@ -131,11 +131,15 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "approved_at": datetime.now(timezone.utc).isoformat(),
         "status": "approved",
     }
+    for field in ("revision_reason", "revision_of_content_hash"):
+        if article.get(field):
+            package[field] = article[field]
+    return package
 
 
 def _registry_changes(packet: dict, article: dict) -> dict:
     facts = packet.get("immutable_facts", {})
-    return {
+    changes = {
         "blueprint_id": packet.get("blueprint_id"),
         "provider_id": facts.get("provider_id"),
         "title": article.get("title") or packet.get("seo", {}).get("title"),
@@ -157,6 +161,10 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "source_refs": facts.get("source_refs", []),
         "content_hash": sha256_text(article.get("content", "")) if article.get("content") else None,
     }
+    for field in ("revision_reason", "revision_of_content_hash"):
+        if article.get(field):
+            changes[field] = article[field]
+    return changes
 
 
 def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:

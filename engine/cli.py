@@ -12,6 +12,7 @@ from .compliance import validate_portfolio
 from .draft_packets import generate_draft_packets
 from .format_rules import validate_format
 from .internal_links import audit_internal_link_plan, plan_all_internal_links, plan_internal_links
+from .link_revision import build_internal_link_revision
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
 from .rules import load_rules, rule_capability
@@ -127,6 +128,26 @@ def cmd_internal_links_all(args: argparse.Namespace) -> int:
     return 0 if not errors else 7
 
 
+def cmd_internal_link_revision(args: argparse.Namespace) -> int:
+    package = json.loads(Path(args.package).read_text(encoding="utf-8"))
+    plan = json.loads(Path(args.plan).read_text(encoding="utf-8"))
+    revision = build_internal_link_revision(package, plan, max_links=args.max_links)
+    out = Path(args.output)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(revision, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps({
+        "status": "draft_revision_created",
+        "article_id": revision.get("article_id"),
+        "revision_reason": revision.get("revision_reason"),
+        "revision_of_content_hash": revision.get("revision_of_content_hash"),
+        "proposed_content_hash": revision.get("proposed_content_hash"),
+        "links": len(revision.get("internal_links", [])),
+        "written_to": str(out),
+        "requires_reapproval": True,
+    }, ensure_ascii=False, indent=2))
+    return 0
+
+
 def cmd_capability(args: argparse.Namespace) -> int:
     result = rule_capability(args.provider, args.lottery, args.play)
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -223,6 +244,12 @@ def main() -> int:
     p = sub.add_parser("internal-links-all")
     _add_link_args(p)
     p.set_defaults(func=cmd_internal_links_all)
+    p = sub.add_parser("internal-link-revision")
+    p.add_argument("--package", required=True, help="approved package JSON path")
+    p.add_argument("--plan", required=True, help="resolved internal link plan JSON path")
+    p.add_argument("--output", required=True, help="write draft revision JSON here")
+    p.add_argument("--max-links", type=int, default=3)
+    p.set_defaults(func=cmd_internal_link_revision)
     p = sub.add_parser("capability")
     p.add_argument("--provider")
     p.add_argument("--lottery", required=True)

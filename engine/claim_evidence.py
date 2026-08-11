@@ -64,6 +64,10 @@ def _hard_sentences(content: str) -> list[str]:
 def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
     compact = re.sub(r"\s+", "", sentence)
     for entry in entries:
+        # Editorial notes are never evidence for hard factual claims. This keeps
+        # harmless boundary statements separate from quantitative support.
+        if str(entry.get("support_type") or "") == "editorial":
+            continue
         claim = re.sub(r"\s+", "", str(entry.get("claim_text") or ""))
         if not claim:
             continue
@@ -85,7 +89,6 @@ def _presents_synthetic_as_real(claim: str) -> bool:
 
 
 def _has_unverified_qualifier(claim: str) -> bool:
-    """Accept natural source-attribution variants without weakening the requirement."""
     compact = re.sub(r"\s+", "", claim)
     source_attributed = bool(re.search(r"(?:来源(?:文章|资料)?|原文|资料中).{0,8}(?:提到|声称|认为|写到)", compact))
     uncertainty = any(term in compact for term in (
@@ -108,6 +111,7 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
     facts = packet.get("immutable_facts", {})
     allowed_rules = set(facts.get("rule_refs", []) or [])
     allowed_sources = set(facts.get("source_refs", []) or [])
+    allowed_refs = allowed_rules | allowed_sources | {"case_bundle"}
     economics_allowed = facts.get("case_scope") == "economics"
 
     for index, entry in enumerate(entries):
@@ -142,8 +146,10 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
             if _presents_synthetic_as_real(claim):
                 errors.append(f"claim_evidence[{index}] synthetic case cannot be presented as real history")
         elif support_type == "editorial":
-            if refs_set:
-                errors.append(f"claim_evidence[{index}] editorial claim must not carry support_refs")
+            if not refs_set.issubset(allowed_refs):
+                errors.append(f"claim_evidence[{index}] editorial claim references unknown support_ref")
+            elif refs_set:
+                warnings.append(f"claim_evidence[{index}] editorial support_refs are non-evidentiary and should be empty")
         else:
             errors.append(f"claim_evidence[{index}] unknown support_type")
 
@@ -161,4 +167,4 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
 
     if not entries:
         warnings.append("v2 draft contains no explicit claims; verify that article is purely explanatory")
-    return ClaimEvidenceReport(passed=not errors, errors=list(dict.fromkeys(errors)), warnings=warnings)
+    return ClaimEvidenceReport(passed=not errors, errors=list(dict.fromkeys(errors)), warnings=list(dict.fromkeys(warnings)))

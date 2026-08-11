@@ -78,21 +78,21 @@
       "evidence_note": "3个无序投注与6个有序结果是不同口径。"
     },
     {
-      "claim_text": "后二开奖号码从00到99，一共有100个有序结果；本例覆盖6个，所以覆盖率是6/100=6%，还有94个有序结果不在这个集合里。",
+      "claim_text": "0、8、9这个候选池展开后只覆盖其中6个，因此从完整有序结果空间看，覆盖率是6/100=6%，还有94个有序结果不在这个集合里。",
       "claim_type": "calculation",
       "support_type": "verified_rule",
       "support_refs": ["SSC-HIST-MECH-2STAR-GROUP-V1"],
-      "evidence_note": "由00..99完整空间和6个展开结果计算。"
+      "evidence_note": "由00..99完整空间和0、8、9展开出的6个唯一有序结果计算。"
     },
     {
-      "claim_text": "本例用了3种不同数字对，所以从45种完整组选注数空间看是3/45，约6.67%。",
+      "claim_text": "本例用了其中3种，所以从组选注数空间看是3/45，约6.67%。",
       "claim_type": "calculation",
       "support_type": "verified_rule",
       "support_refs": ["SSC-HIST-MECH-2STAR-GROUP-V1"],
       "evidence_note": "C(10,2)=45，本例C(3,2)=3。"
     },
     {
-      "claim_text": "6%和约6.67%都可以计算，但它们代表不同分母：前者是100个有序开奖号空间，后者是45种不同数字对的组选注数空间。",
+      "claim_text": "6%和约6.67%都可以计算，但它们代表不同分母：前者是全部00–99有序开奖号空间，后者是45种不同数字对的组选注数空间。",
       "claim_type": "calculation",
       "support_type": "verified_rule",
       "support_refs": ["SSC-HIST-MECH-2STAR-GROUP-V1"],

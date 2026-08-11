@@ -11,6 +11,7 @@ from .casebook import descriptive_case, frequency_case, omission_case
 from .compliance import validate_portfolio
 from .draft_packets import generate_draft_packets
 from .format_rules import validate_format
+from .internal_links import audit_internal_link_plan, plan_all_internal_links, plan_internal_links
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
 from .rules import load_rules, rule_capability
@@ -108,6 +109,24 @@ def cmd_approve_draft(args: argparse.Namespace) -> int:
     return 0 if result.approved else 6
 
 
+def cmd_internal_links(args: argparse.Namespace) -> int:
+    result = plan_internal_links(args.article_id, limit=args.limit, min_score=args.min_score)
+    result["audit_errors"] = audit_internal_link_plan(result)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result.get("status") == "planned" and not result["audit_errors"] else 7
+
+
+def cmd_internal_links_all(args: argparse.Namespace) -> int:
+    result = plan_all_internal_links(limit=args.limit, min_score=args.min_score)
+    errors = []
+    for plan in result["plans"]:
+        for error in audit_internal_link_plan(plan):
+            errors.append(f"{plan.get('article_id')}: {error}")
+    result["audit_errors"] = errors
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if not errors else 7
+
+
 def cmd_capability(args: argparse.Namespace) -> int:
     result = rule_capability(args.provider, args.lottery, args.play)
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -153,7 +172,7 @@ def cmd_check_portfolio(args: argparse.Namespace) -> int:
     payload = json.loads(Path(args.file).read_text(encoding="utf-8"))
     bets = payload.get("bets", []) if isinstance(payload, dict) else payload
     if not isinstance(bets, list):
-        raise ValueError("portfolio JSON must be a list or an object with bets list")
+        raise ValueError("portfolio JSON must be a list or an object with a bets list")
     report = validate_portfolio(bets)
     print(json.dumps({"passed": report.passed, "violations": report.violations, "groups": report.groups}, ensure_ascii=False, indent=2))
     return 0 if report.passed else 5
@@ -168,6 +187,11 @@ def _add_article_scope_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--lottery", required=True)
     p.add_argument("--play", required=True)
     p.add_argument("--count", type=int, default=10)
+
+
+def _add_link_args(p: argparse.ArgumentParser) -> None:
+    p.add_argument("--limit", type=int, default=3)
+    p.add_argument("--min-score", type=int, default=45)
 
 
 def main() -> int:
@@ -192,6 +216,13 @@ def main() -> int:
     p.add_argument("--output", help="write Approved Package JSON here when approved")
     p.add_argument("--record", action="store_true", help="append approved/rejected lifecycle state to article registry")
     p.set_defaults(func=cmd_approve_draft)
+    p = sub.add_parser("internal-links")
+    p.add_argument("--article-id", required=True)
+    _add_link_args(p)
+    p.set_defaults(func=cmd_internal_links)
+    p = sub.add_parser("internal-links-all")
+    _add_link_args(p)
+    p.set_defaults(func=cmd_internal_links_all)
     p = sub.add_parser("capability")
     p.add_argument("--provider")
     p.add_argument("--lottery", required=True)

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 
+from .casebook import descriptive_case, frequency_case, omission_case
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
 from .rules import load_rules, rule_capability
@@ -66,6 +67,28 @@ def cmd_rule_gaps(_: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_case(args: argparse.Namespace) -> int:
+    result = descriptive_case(args.draw, args.selector, args.lookback)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_omission_case(args: argparse.Namespace) -> int:
+    result = omission_case(args.draw, args.position, args.threshold, args.lookback)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_frequency_case(args: argparse.Namespace) -> int:
+    result = frequency_case(args.draw, args.selector, args.lookback, args.top)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0
+
+
+def _add_draw_args(p: argparse.ArgumentParser) -> None:
+    p.add_argument("--draw", action="append", required=True, help="chronological draw, oldest to newest; repeat option")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(prog="laocaimi-content-engine")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -90,6 +113,23 @@ def main() -> int:
     p.add_argument("--play", required=True)
     p.add_argument("--reason", default="")
     p.set_defaults(func=cmd_record_gap)
+    p = sub.add_parser("case")
+    _add_draw_args(p)
+    p.add_argument("--selector", required=True)
+    p.add_argument("--lookback", type=int)
+    p.set_defaults(func=cmd_case)
+    p = sub.add_parser("omission-case")
+    _add_draw_args(p)
+    p.add_argument("--position", required=True)
+    p.add_argument("--threshold", type=int, required=True)
+    p.add_argument("--lookback", type=int)
+    p.set_defaults(func=cmd_omission_case)
+    p = sub.add_parser("frequency-case")
+    _add_draw_args(p)
+    p.add_argument("--selector", required=True)
+    p.add_argument("--lookback", type=int, required=True)
+    p.add_argument("--top", type=int)
+    p.set_defaults(func=cmd_frequency_case)
     args = parser.parse_args()
     return args.func(args)
 

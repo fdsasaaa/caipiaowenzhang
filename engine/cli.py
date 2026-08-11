@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import argparse
 import json
-from pathlib import Path
 
-from .rules import load_rules
 from .planner import plan_articles
+from .rule_gaps import list_gaps, record_gap
+from .rules import load_rules, rule_capability
 from .store import counts, ensure_layout, rebuild_index
 
 
@@ -17,7 +17,7 @@ def cmd_init(_: argparse.Namespace) -> int:
 
 
 def cmd_status(_: argparse.Namespace) -> int:
-    print(json.dumps({"registries": counts(), "rules": len(load_rules())}, ensure_ascii=False, indent=2))
+    print(json.dumps({"registries": counts(), "rules": len(load_rules()), "rule_gaps": len(list_gaps())}, ensure_ascii=False, indent=2))
     return 0
 
 
@@ -29,12 +29,16 @@ def cmd_rebuild(_: argparse.Namespace) -> int:
 def cmd_audit(_: argparse.Namespace) -> int:
     problems = []
     for rule in load_rules():
-        for field in ("rule_id", "provider_id", "lottery", "play", "status", "source"):
+        scope = rule.get("scope", "full")
+        required = ["rule_id", "lottery", "play", "status", "source"]
+        if scope in {"economics", "full"}:
+            required.append("provider_id")
+        for field in required:
             if field not in rule:
                 problems.append(f"rule missing {field}: {rule}")
         if rule.get("status") == "verified" and not rule.get("verified_at"):
             problems.append(f"verified rule missing verified_at: {rule.get('rule_id')}")
-    result = {"ok": not problems, "problems": problems, "registry": counts()}
+    result = {"ok": not problems, "problems": problems, "registry": counts(), "rule_gaps": len(list_gaps())}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if not problems else 2
 
@@ -42,13 +46,30 @@ def cmd_audit(_: argparse.Namespace) -> int:
 def cmd_plan(args: argparse.Namespace) -> int:
     result = plan_articles(args.provider, args.lottery, args.play, args.count)
     print(json.dumps(result, ensure_ascii=False, indent=2))
-    return 0 if result["status"] == "ready" else 3
+    return 0 if result["status"] != "blocked_mechanics_verification" else 3
+
+
+def cmd_capability(args: argparse.Namespace) -> int:
+    result = rule_capability(args.provider, args.lottery, args.play)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["mechanics_verified"] else 3
+
+
+def cmd_record_gap(args: argparse.Namespace) -> int:
+    row = record_gap(args.type, args.lottery, args.play, args.provider, args.reason)
+    print(json.dumps(row, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_rule_gaps(_: argparse.Namespace) -> int:
+    print(json.dumps(list_gaps(), ensure_ascii=False, indent=2))
+    return 0
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(prog="laocaimi-content-engine")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name, fn in (("init", cmd_init), ("status", cmd_status), ("rebuild", cmd_rebuild), ("audit", cmd_audit)):
+    for name, fn in (("init", cmd_init), ("status", cmd_status), ("rebuild", cmd_rebuild), ("audit", cmd_audit), ("rule-gaps", cmd_rule_gaps)):
         p = sub.add_parser(name)
         p.set_defaults(func=fn)
     p = sub.add_parser("plan")
@@ -57,6 +78,18 @@ def main() -> int:
     p.add_argument("--play", required=True)
     p.add_argument("--count", type=int, default=10)
     p.set_defaults(func=cmd_plan)
+    p = sub.add_parser("capability")
+    p.add_argument("--provider")
+    p.add_argument("--lottery", required=True)
+    p.add_argument("--play", required=True)
+    p.set_defaults(func=cmd_capability)
+    p = sub.add_parser("record-gap")
+    p.add_argument("--type", choices=["mechanics", "economics"], required=True)
+    p.add_argument("--provider")
+    p.add_argument("--lottery", required=True)
+    p.add_argument("--play", required=True)
+    p.add_argument("--reason", default="")
+    p.set_defaults(func=cmd_record_gap)
     args = parser.parse_args()
     return args.func(args)
 

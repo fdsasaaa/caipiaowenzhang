@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LotteryMechanicsRule",
+  "type": "object",
+  "required": ["rule_id", "scope", "lottery", "play", "bet_format", "bet_count_formula", "win_condition", "status", "source", "verified_at"],
+  "properties": {
+    "rule_id": {"type": "string"},
+    "scope": {"const": "mechanics"},
+    "lottery": {"type": "string"},
+    "play": {"type": "string"},
+    "positions": {"type": "array", "items": {"type": "string"}},
+    "number_domain": {"type": "string"},
+    "bet_format": {"type": "string"},
+    "bet_count_formula": {"type": "string"},
+    "win_condition": {"type": "string"},
+    "status": {"enum": ["unverified", "verified", "deprecated"]},
+    "source": {"type": "string"},
+    "source_type": {"type": "string"},
+    "verified_at": {"type": ["string", "null"]}
+  }
+}

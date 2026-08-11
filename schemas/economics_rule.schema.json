@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LotteryEconomicsRule",
+  "type": "object",
+  "required": ["rule_id", "scope", "provider_id", "lottery", "play", "unit_stake", "payout", "payout_basis", "status", "source", "verified_at"],
+  "properties": {
+    "rule_id": {"type": "string"},
+    "scope": {"const": "economics"},
+    "provider_id": {"type": "string"},
+    "lottery": {"type": "string"},
+    "play": {"type": "string"},
+    "unit_stake": {"type": "number"},
+    "payout": {"type": "number"},
+    "payout_basis": {"type": "string"},
+    "rebate": {"type": ["number", "null"]},
+    "min_bet_unit": {"type": ["number", "null"]},
+    "limits": {"type": ["object", "null"]},
+    "rule_version": {"type": "string"},
+    "effective_date": {"type": ["string", "null"]},
+    "status": {"enum": ["unverified", "verified", "deprecated"]},
+    "source": {"type": "string"},
+    "source_type": {"type": "string"},
+    "verified_at": {"type": ["string", "null"]}
+  }
+}

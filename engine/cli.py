@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 import json
 
+from .article_memory import reserve_blueprints
+from .blueprints import generate_blueprints
 from .casebook import descriptive_case, frequency_case, omission_case
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
@@ -50,6 +52,14 @@ def cmd_plan(args: argparse.Namespace) -> int:
     return 0 if result["status"] != "blocked_mechanics_verification" else 3
 
 
+def cmd_blueprints(args: argparse.Namespace) -> int:
+    result = generate_blueprints(args.provider, args.lottery, args.play, args.count)
+    if args.reserve:
+        result["reservation"] = reserve_blueprints(result["blueprints"])
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    return 0 if result["ready"] > 0 else 3
+
+
 def cmd_capability(args: argparse.Namespace) -> int:
     result = rule_capability(args.provider, args.lottery, args.play)
     print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -89,6 +99,13 @@ def _add_draw_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--draw", action="append", required=True, help="chronological draw, oldest to newest; repeat option")
 
 
+def _add_article_scope_args(p: argparse.ArgumentParser) -> None:
+    p.add_argument("--provider", required=True)
+    p.add_argument("--lottery", required=True)
+    p.add_argument("--play", required=True)
+    p.add_argument("--count", type=int, default=10)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(prog="laocaimi-content-engine")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -96,11 +113,12 @@ def main() -> int:
         p = sub.add_parser(name)
         p.set_defaults(func=fn)
     p = sub.add_parser("plan")
-    p.add_argument("--provider", required=True)
-    p.add_argument("--lottery", required=True)
-    p.add_argument("--play", required=True)
-    p.add_argument("--count", type=int, default=10)
+    _add_article_scope_args(p)
     p.set_defaults(func=cmd_plan)
+    p = sub.add_parser("blueprints")
+    _add_article_scope_args(p)
+    p.add_argument("--reserve", action="store_true", help="persist ready non-duplicate angles as idea records")
+    p.set_defaults(func=cmd_blueprints)
     p = sub.add_parser("capability")
     p.add_argument("--provider")
     p.add_argument("--lottery", required=True)

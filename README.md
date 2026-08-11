@@ -240,5 +240,6 @@ PR #30 中的 V2.1 质量样本仅用于人工审稿与自动门禁回归；在�
 - `docs/SOURCE_INTELLIGENCE_V2.md`
 - `docs/AUTO_GENERATION_V2.md`
 - `docs/SEO_PRIORITY_V2.md`
+- `docs/EDITORIAL_QUALITY_V21.md`
 - `docs/CONTENT_LIFECYCLE_V1.md`
 - `publishing/XYPTDQ_BRIDGE.md`

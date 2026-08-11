@@ -1,0 +1,88 @@
+{
+  "taxonomy_id": "USER-LOTTERY-RESEARCH-TAXONOMY-V1",
+  "origin": "user_uploaded_2026-08-11",
+  "purpose": "research_and_article_idea_layer_not_verified_prediction_rules",
+  "foundational_principle": {
+    "descriptive_history": "allowed",
+    "future_repeatability": "requires independent evidence",
+    "default_claim_scope": "descriptive_only"
+  },
+  "priority_1_foundational": [
+    "data_completeness_and_integrity",
+    "game_rule_version_segmentation",
+    "sample_window_design",
+    "position_frequency",
+    "current_and_historical_omission",
+    "sum_and_span",
+    "repeat_neighbor_consecutive",
+    "exact_theoretical_probability",
+    "monte_carlo_baseline",
+    "randomness_audit",
+    "out_of_sample_validation"
+  ],
+  "priority_2_experiment_content": [
+    "run_length_and_reversal",
+    "single_jump_double_jump",
+    "cold_hot_transition",
+    "extreme_sum_reversion_study",
+    "cooccurrence",
+    "markov_transition",
+    "periodicity_and_spectrum",
+    "shape_clustering",
+    "multi_metric_rule_experiments"
+  ],
+  "priority_3_high_overfit_risk": [
+    "high_order_markov",
+    "neural_networks",
+    "genetic_algorithm_rule_search",
+    "large_cross_product_metric_search",
+    "narrow_threshold_optimization",
+    "single_period_only_rules"
+  ],
+  "priority_4_cultural_research_only": [
+    "five_elements",
+    "zodiac",
+    "astrology",
+    "dream_number_mapping",
+    "numerology",
+    "riddle_mapping",
+    "folk_kill_number_formulas"
+  ],
+  "position_game_metrics": [
+    "position_frequency",
+    "position_omission",
+    "big_small",
+    "odd_even",
+    "mod3_012",
+    "sum",
+    "span",
+    "pair_group3_group6_triple",
+    "dragon_tiger",
+    "position_jump_distance",
+    "state_runs",
+    "position_transition_matrix",
+    "cross_position_exchange",
+    "relative_order_pattern",
+    "autocorrelation",
+    "runs_test"
+  ],
+  "validation_protocol": [
+    "define_metric_before_looking_at_result",
+    "state_hypothesis",
+    "lock_parameters",
+    "build_random_baseline",
+    "time_ordered_train_validation_test_split",
+    "walk_forward_or_multiple_out_of_sample_segments",
+    "compare_effect_size_and_confidence_interval",
+    "correct_for_multiple_testing",
+    "replicate_on_second_and_third_segments",
+    "record_failed_experiments",
+    "final_conclusion_must_be_evidence_supported_or_no_evidence_or_insufficient_sample"
+  ],
+  "article_generation_policy": {
+    "research_metric_can_generate_article_idea": true,
+    "historical_pattern_can_be_presented_as_prediction_fact": false,
+    "high_overfit_methods_require_explicit_warning": true,
+    "folk_methods_default_hypothesis": "no_better_than_equal_size_random_baseline"
+  }
+}

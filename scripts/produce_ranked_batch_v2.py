@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -10,6 +11,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from engine.batch_production_v2 import produce_ranked_batch
+from engine.provider_transport import make_responses_transport, normalize_base_url
 from engine.seo_priority import read_demand_signals
 
 
@@ -26,11 +28,13 @@ def main() -> int:
     parser.add_argument("--count", type=int, default=5)
     parser.add_argument("--signals", type=Path)
     parser.add_argument("--model")
+    parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"), help="OpenAI-compatible base URL ending at /v1")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--record", action="store_true", help="append each review lifecycle result to Registry")
     args = parser.parse_args()
 
     signals = read_demand_signals(args.signals)
+    transport = make_responses_transport(args.base_url) if args.base_url else None
     result = produce_ranked_batch(
         args.provider,
         args.lottery,
@@ -38,11 +42,13 @@ def main() -> int:
         count=args.count,
         signals=signals,
         model=args.model,
+        transport=transport,
         record=args.record,
     )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     manifest = dict(result)
     manifest["results"] = []
+    manifest["model_base_url"] = normalize_base_url(args.base_url) if args.base_url else "https://api.openai.com/v1"
     for item in result["results"]:
         article_id = str(item.get("article_id") or "unknown")
         folder = args.output_dir / article_id
@@ -77,6 +83,7 @@ def main() -> int:
         "approved": result["approved"],
         "failed": result["failed"],
         "signal_mode": result["signal_mode"],
+        "model_base_url": manifest["model_base_url"],
         "output_dir": str(args.output_dir),
     }, ensure_ascii=False, indent=2))
     return 0 if result["approved"] > 0 else 6

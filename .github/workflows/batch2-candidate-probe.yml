@@ -1,0 +1,18 @@
+name: batch2-candidate-probe
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/probe_batch2_candidates.py'
+      - '.github/workflows/batch2-candidate-probe.yml'
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Probe verified source-backed candidates
+        run: python scripts/probe_batch2_candidates.py

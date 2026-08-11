@@ -6,15 +6,15 @@
 
 `v0.2.0-knowledge-ingestion`
 
-当前已接入首批 **2406篇 brbcw 精选来源**（以结构化来源清单和技巧候选形式保存，不把来源命中率/盈利声称当事实）：
+当前已接入首批 **2406篇 brbcw 精选来源**。它们被转成长期可维护的知识记忆，而不是把论坛全文直接塞进Git：
 
-- 2406 条来源注册
-- 2294 条可识别技巧原子的来源
-- 759 个方法家族
-- 1389 个精细方法簇
-- 1321 条带风险声明标记的来源
+- 2406 个精选来源ID，可重建原始公开URL
+- 2294 篇能识别出明确技巧原子
+- 759 个方法家族，作为未来文章规划的经验层
+- 1389 个精细方法簇已在抽取审计中统计
+- 1321 篇带盈利、百分比或保证性等风险声明，统一隔离为来源声称
 - Google SEO 官方政策快照与内容质量门禁
-- Provider + 彩种 + 玩法 三重规则门禁
+- `provider_id + 彩种 + 玩法` 三重规则门禁
 
 ## 核心原则
 
@@ -43,12 +43,14 @@ python -m engine.cli plan --provider <provider_id> --lottery 时时彩 --play �
 
 ## 知识层
 
-- `knowledge/source_manifests/brbcw.jsonl`：2406条来源元数据/Hash
-- `knowledge/technique_candidates/brbcw.jsonl`：逐来源技巧候选、位置、数字案例、风险声明
-- `knowledge/technique_clusters/brbcw.jsonl`：近似方法聚类
-- `knowledge/coverage/brbcw.json`：覆盖统计
-- `knowledge/coverage/brbcw_report.md`：人类可读报告
+- `knowledge/source_sets/`：2406个精选来源ID
+- `knowledge/family_archives/brbcw_families_v1.bz2.b64`：759个方法家族的紧凑知识档案
+- `knowledge/coverage/brbcw.json`：2406篇来源的整体覆盖统计
+- `knowledge/coverage/brbcw_report.md`：人类可读审计报告
 - `knowledge/TECHNIQUE_TAXONOMY.json`：技巧原子词典
+- `scripts/extract_technique_candidates.py`：从受控原始资料重建候选/精细方法簇的工具
+
+Git默认不保存2406篇论坛全文。方法家族保留技巧原子、位置、彩种、来源分类、来源支持数、风险声明率和代表来源ID；需要回看案例时，再按来源ID定位原公开帖子。
 
 ## 规则层
 

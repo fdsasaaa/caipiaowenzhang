@@ -3,6 +3,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
+from .text import jaccard
+
 HARD_CLAIM_PATTERNS = (
     re.compile(r"\d{1,3}(?:\.\d+)?\s*%"),
     re.compile(r"\d+\s*注"),
@@ -43,8 +45,10 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         claim = re.sub(r"\s+", "", str(entry.get("claim_text") or ""))
         if not claim:
             continue
-        # Claim text can be a concise restatement; require a meaningful overlap.
+        # Claim text can be a concise restatement; require meaningful textual overlap.
         if claim in compact or compact in claim:
+            return True
+        if jaccard(claim, compact, n=2) >= 0.48:
             return True
         tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", claim))
         sentence_tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", compact))

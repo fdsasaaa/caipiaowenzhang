@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from .compliance import validate_portfolio
 from .dedup import duplicate_candidates
 from .rules import rule_capability
 
@@ -48,6 +49,18 @@ def evaluate(article: dict) -> QualityReport:
                 score -= 35
         elif not cap["economics_verified"]:
             warnings.append("provider economics unverified: do not state stake/payout/rebate as fact")
+
+    normalized_bets = article.get("normalized_bets")
+    if normalized_bets is not None:
+        if not isinstance(normalized_bets, list):
+            errors.append("normalized_bets must be a list")
+            score -= 35
+        else:
+            compliance = validate_portfolio(normalized_bets)
+            if not compliance.passed:
+                codes = sorted({v.get("code", "unknown") for v in compliance.violations})
+                errors.append("bet compliance failed: " + ", ".join(codes))
+                score -= 40
 
     hits = duplicate_candidates(article)
     if hits:

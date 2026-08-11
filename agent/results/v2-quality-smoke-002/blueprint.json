@@ -1,0 +1,62 @@
+{
+  "blueprint_id": "BP-1ccbcae739b3a534",
+  "article_id": "LCM-IDEA-1ccbcae739b3a534",
+  "provider_id": null,
+  "lottery": "时时彩",
+  "play": "后二组选",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二组选复式",
+  "content_type": "technique_article",
+  "site_category_key": "tzjq",
+  "technique_family": "QUALITY-SMOKE-2STAR-GROUP-COMPOUND",
+  "technique_atoms": ["compound_selection"],
+  "resolved_selector": "后二",
+  "selector_basis": "verified_play",
+  "source_positions": ["十位", "个位"],
+  "angle_signature": "quality-smoke-v21-last2-group-compound",
+  "title": "分分彩后二组选复式技巧：用候选数字池计算注数与覆盖结果",
+  "slug_seed": "分分彩-后二组选复式-compound_selection",
+  "primary_keyword": "分分彩后二组选复式技巧",
+  "secondary_keywords": ["分分彩后二组选", "后二组选复式", "二星组选注数", "彩票注数计算"],
+  "search_intent": "看懂分分彩后二组选复式的输入格式、注数计算和实际覆盖结果",
+  "information_gain_type": "format_mechanics_and_outcome_space_case",
+  "summary_goal": "用0 8 9的简单案例解释为什么3个候选数字是3注组选，却覆盖6个有序开奖号结果。",
+  "outline": [
+    "后二组选先看规则：顺序为什么不算不同注",
+    "输入0 8 9：先算C(3,2)到底有几注",
+    "再展开覆盖结果：3注为什么对应6个有序结果",
+    "实际怎么操作：注数口径和覆盖口径分开记录",
+    "平台格式与通用玩法规则要分开",
+    "常见误区：输入3个数字不等于3个开奖号结果"
+  ],
+  "case_structure": "selector=后二;metrics=combination_count,ordered_coverage;scope=mechanics_only",
+  "case_plan": {
+    "supported": [
+      {"atom": "compound_selection", "metric": "combination_count"},
+      {"atom": "compound_selection", "metric": "ordered_coverage"}
+    ],
+    "unsupported": [],
+    "case_engine_ready": true,
+    "resolved_selector": "后二",
+    "selector_basis": "verified_play",
+    "source_position_supported": true
+  },
+  "case_scope": "mechanics_only",
+  "rule_refs": ["SSC-HIST-MECH-2STAR-GROUP-V1"],
+  "source_refs": ["USER-SUPPLIED-DINGMA-RULES-2026-08-11"],
+  "source_support_count": 1,
+  "source_risk_rate": 0.0,
+  "fingerprint": "1ccbcae739b3a534955dbcc54cc8a79840a39591bd6484a711e27fb3342530be",
+  "status": "ready_for_draft",
+  "blockers": [],
+  "article_status": "idea",
+  "editorial_contract_version": "1.0",
+  "seo_requirements": {
+    "plain_chinese": true,
+    "example_required": true,
+    "unique_information_gain_required": true,
+    "unique_exact_primary_keyword_required": true,
+    "avoid_keyword_stuffing": true,
+    "avoid_guaranteed_outcomes": true
+  }
+}

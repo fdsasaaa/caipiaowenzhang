@@ -8,7 +8,8 @@ These rules apply to the entire repository.
 - Prefer changes through a feature branch + PR once the repository is bootstrapped.
 - Keep canonical registries in JSONL; SQLite under `var/` is a rebuildable local index and must not be treated as the source of truth.
 - Do not commit secrets, API keys, WordPress passwords, cookies, or session tokens.
-- Do not commit scraped full-text corpora while this repository is public.
+- Repository is private, but prefer structured/distilled knowledge over committing raw scraped full-text corpora.
+- Provider-specific rule facts require provenance; never infer payout/odds/rebate from a forum source.
 - All rule records must carry provenance and verification status.
 - New generators/validators require tests.
 

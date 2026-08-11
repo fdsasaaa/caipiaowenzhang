@@ -1,0 +1,25 @@
+{
+  "rule_id": "SSC-HIST-MECH-2STAR-LAST-V1",
+  "scope": "mechanics",
+  "lottery": "时时彩",
+  "play": "后二直选",
+  "aliases": ["二星", "二星直选"],
+  "positions": ["十位", "个位"],
+  "number_domain": "十位、个位各为0..9",
+  "bet_format": "分别在十位和个位选择数字；每个有序组合构成一注",
+  "bet_count_formula": "n_十位 * n_个位",
+  "win_condition": "投注十位、个位与开奖号码十位、个位按位全部相同",
+  "theoretical_single_bet_probability": "1/100",
+  "status": "verified",
+  "source": "财政部2009分时时彩规则批准文件附件2 + 历史时时彩投注指南交叉核对",
+  "source_type": "official_historical_plus_corroboration",
+  "verified_at": "2026-08-11",
+  "lifecycle_status": "historical_reference_only",
+  "provider_mapping_required": true,
+  "economics_inherited": false,
+  "sources": [
+    "https://zhs.mof.gov.cn/zhengcefabu/201811/t20181122_3073513.htm",
+    "https://news.sina.com.cn/c/2004-12-23/05534602380s.shtml"
+  ],
+  "notes": "直选强调位置和顺序。"
+}

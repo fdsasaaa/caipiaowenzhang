@@ -1,0 +1,46 @@
+name: model-provider-preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: OpenAI-compatible base URL ending at /v1
+        required: true
+        type: string
+      model:
+        description: Optional explicit model id; leave blank to auto-pick a low-cost-looking model from /models
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: ${{ inputs.base_url }}
+      OPENAI_MODEL: ${{ inputs.model }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify secret exists without printing it
+        shell: bash
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "MODEL_PROVIDER_API_KEY secret is not configured" >&2
+            exit 2
+          fi
+          echo "API key secret detected; value will not be printed."
+      - name: Run low-cost Structured Outputs preflight
+        shell: bash
+        run: |
+          args=(--base-url "$OPENAI_BASE_URL")
+          if [ -n "$OPENAI_MODEL" ]; then
+            args+=(--model "$OPENAI_MODEL")
+          fi
+          python scripts/model_provider_preflight_v21.py "${args[@]}"

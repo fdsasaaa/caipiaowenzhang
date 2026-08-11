@@ -5,6 +5,7 @@ from dataclasses import dataclass, field
 from .compliance import validate_portfolio
 from .dedup import duplicate_candidates
 from .rules import rule_capability
+from .semantic_dedup import structural_duplicate_candidates
 
 PROMISE_WORDS = ("稳赚", "必中", "包赢", "必赚", "100%中奖", "百分百中奖", "无风险")
 
@@ -66,6 +67,15 @@ def evaluate(article: dict) -> QualityReport:
     if hits:
         errors.append(f"duplicate risk: {hits[0].article_id} score={hits[0].score:.2f}")
         score -= 35
+
+    structural_hits = structural_duplicate_candidates(article)
+    if structural_hits:
+        hit = structural_hits[0]
+        errors.append(
+            f"structural duplicate risk: {hit.article_id} score={hit.score:.2f} reasons={','.join(hit.reasons)}"
+        )
+        score -= 40
+
     if not article.get("rule_refs"):
         warnings.append("no rule_refs")
         score -= 5

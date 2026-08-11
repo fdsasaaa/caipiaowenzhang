@@ -15,6 +15,7 @@ HARD_CLAIM_PATTERNS = (
     re.compile(r"下一期会|下期会|一定会出|肯定会出"),
 )
 QUALIFIERS = ("来源提到", "来源声称", "原文提到", "原文声称", "未验证", "资料中提到", "资料声称")
+_BLOCK_TAG = re.compile(r"</?(?:p|h[1-6]|li|ul|ol|div|section|article|br)\b[^>]*>", re.IGNORECASE)
 
 
 @dataclass
@@ -25,8 +26,13 @@ class ClaimEvidenceReport:
 
 
 def _plain(html: str) -> str:
-    text = re.sub(r"<[^>]+>", " ", html or "")
-    return re.sub(r"\s+", " ", text).strip()
+    # Preserve sentence boundaries between block-level HTML elements. Without
+    # this, a heading and the following paragraph can become one artificial
+    # hard-claim sentence after tag stripping.
+    text = _BLOCK_TAG.sub("。", html or "")
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"。+", "。", text)
+    return re.sub(r"\s+", " ", text).strip(" 。")
 
 
 def _sentences(text: str) -> list[str]:

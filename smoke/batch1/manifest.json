@@ -1,0 +1,31 @@
+{
+  "batch_id": "SMOKE-BATCH1-20260811",
+  "purpose": "first real end-to-end content smoke batch",
+  "publication_policy": "draft_only_no_schedule_no_publish",
+  "site_category_key": "tzjq",
+  "content_format": "html",
+  "case_scope": "mechanics_only",
+  "articles": [
+    {
+      "article_id": "LCM-SMOKE-20260811-01",
+      "slug": "ffc-qiansan-direct-single-vs-compound",
+      "angle": "前三直选单式与复式的文本解析和组合数量"
+    },
+    {
+      "article_id": "LCM-SMOKE-20260811-02",
+      "slug": "ffc-dingweidan-five-vs-single-position",
+      "angle": "定位胆五位置格式与单位置格式的语义边界"
+    },
+    {
+      "article_id": "LCM-SMOKE-20260811-03",
+      "slug": "ffc-group-banker-counts",
+      "angle": "组选包胆单胆码展开为二星9类与三星54类的组合数学"
+    }
+  ],
+  "hard_boundaries": [
+    "no provider payout or rebate claims",
+    "no future prediction advantage claim",
+    "format examples are not historical draw records",
+    "approved package may only enter website drafts in this smoke batch"
+  ]
+}

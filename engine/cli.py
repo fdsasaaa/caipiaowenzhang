@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 
 from .article_memory import reserve_blueprints
 from .blueprints import generate_blueprints
 from .casebook import descriptive_case, frequency_case, omission_case
+from .compliance import validate_portfolio
+from .format_rules import validate_format
 from .planner import plan_articles
 from .rule_gaps import list_gaps, record_gap
 from .rules import load_rules, rule_capability
@@ -95,6 +98,22 @@ def cmd_frequency_case(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_validate_format(args: argparse.Namespace) -> int:
+    report = validate_format(args.play_type, args.play_name, args.content)
+    print(json.dumps(report.__dict__, ensure_ascii=False, indent=2))
+    return 0 if report.passed else 4
+
+
+def cmd_check_portfolio(args: argparse.Namespace) -> int:
+    payload = json.loads(Path(args.file).read_text(encoding="utf-8"))
+    bets = payload.get("bets", []) if isinstance(payload, dict) else payload
+    if not isinstance(bets, list):
+        raise ValueError("portfolio JSON must be a list or an object with a bets list")
+    report = validate_portfolio(bets)
+    print(json.dumps({"passed": report.passed, "violations": report.violations, "groups": report.groups}, ensure_ascii=False, indent=2))
+    return 0 if report.passed else 5
+
+
 def _add_draw_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--draw", action="append", required=True, help="chronological draw, oldest to newest; repeat option")
 
@@ -148,6 +167,14 @@ def main() -> int:
     p.add_argument("--lookback", type=int, required=True)
     p.add_argument("--top", type=int)
     p.set_defaults(func=cmd_frequency_case)
+    p = sub.add_parser("validate-format")
+    p.add_argument("--play-type", required=True)
+    p.add_argument("--play-name", required=True)
+    p.add_argument("--content", required=True)
+    p.set_defaults(func=cmd_validate_format)
+    p = sub.add_parser("check-portfolio")
+    p.add_argument("--file", required=True, help="JSON list of normalized bets, or object with bets list")
+    p.set_defaults(func=cmd_check_portfolio)
     args = parser.parse_args()
     return args.func(args)
 

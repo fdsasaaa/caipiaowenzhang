@@ -1,0 +1,53 @@
+{
+  "registry_id": "DINGMA-ROTATION-FORMAT-V1",
+  "origin": "user_supplied_2026-08-11",
+  "status": "usable_format_reference_with_validation_gaps",
+  "key_dimensions": ["一级类别", "玩法类型", "玩法名称"],
+  "level1": "定码轮换",
+  "rules": [
+    {"play_type":"前三/中三/后三/任三","play_name":"直选单式","syntax":"three_digit_tokens_space_separated","example":"079 707 796","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"直选复式","syntax":"three_position_digit_sets_hyphen_separated","example":"089-145-689","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"组三单式","syntax":"three_digit_tokens_space_separated_exactly_one_pair","example":"007 011 778","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"组三复式","syntax":"digit_pool_space_separated","example":"1 2 6","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"组六单式","syntax":"three_digit_tokens_space_separated_all_distinct","example":"023 048 469","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"组六复式","syntax":"digit_pool_space_separated","example":"0 2 4","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"混合组选","syntax":"three_digit_tokens_space_separated","example":"013 127 134","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"组选包胆","syntax":"single_digit","example":"7","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"直选和值","syntax":"sum_values_space_separated_keep_multidigit_atomic","example":"1 5 8","format_status":"user_confirmed"},
+    {"play_type":"前三/中三/后三/任三","play_name":"组选和值","syntax":"sum_values_space_separated_keep_multidigit_atomic","example":"9 12 21","format_status":"user_confirmed"},
+
+    {"play_type":"前二/后二/任二","play_name":"直选单式","syntax":"two_digit_tokens_space_separated","example":"08 50 89","format_status":"user_confirmed"},
+    {"play_type":"前二/后二/任二","play_name":"直选复式","syntax":"two_position_digit_sets_hyphen_separated","example":"019-349","format_status":"user_confirmed"},
+    {"play_type":"前二/后二/任二","play_name":"组选单式","syntax":"two_digit_tokens_space_separated","example":"05 34 78","format_status":"user_confirmed"},
+    {"play_type":"前二/后二/任二","play_name":"组选复式","syntax":"digit_pool_space_separated","example":"0 8 9","format_status":"user_confirmed"},
+    {"play_type":"前二/后二/任二","play_name":"组选包胆","syntax":"single_digit","example":"0","format_status":"user_confirmed"},
+    {"play_type":"前二/后二/任二","play_name":"直选和值","syntax":"sum_values_space_separated_keep_multidigit_atomic","example":"0 3 7","format_status":"user_confirmed"},
+    {"play_type":"前二/后二/任二","play_name":"组选和值","syntax":"sum_values_space_separated_keep_multidigit_atomic","example":"3 5 6","format_status":"user_confirmed"},
+
+    {"play_type":"定位胆","play_name":"定位胆","syntax":"five_position_digit_sets_hyphen_separated","example":"458-578-569-178-056","format_status":"user_confirmed"},
+    {"play_type":"定位胆","play_name":"万位/千位/百位/十位/个位","syntax":"digit_pool_space_separated","example":"5 7 9","format_status":"user_confirmed"},
+
+    {"play_type":"前四/后四/任四","play_name":"直选单式","syntax":"four_digit_tokens_space_separated","example":"0978 1063 4993","format_status":"user_confirmed"},
+    {"play_type":"前四/后四/任四","play_name":"直选复式","syntax":"four_position_digit_sets_hyphen_separated","example":"479-469-578-129","format_status":"user_confirmed"},
+    {"play_type":"前四/后四/任四","play_name":"组选4","syntax":"combination_tokens_space_separated","example":"016 678","format_status":"user_confirmed_pending_import_validation"},
+    {"play_type":"前四/后四/任四","play_name":"组选6","syntax":"digit_pool_space_separated","example":"0 6 7","format_status":"user_confirmed_pending_import_validation"},
+    {"play_type":"前四/后四/任四","play_name":"组选12","syntax":"combination_tokens_space_separated","example":"789 023","format_status":"user_confirmed_pending_import_validation"},
+    {"play_type":"前四/后四/任四","play_name":"组选24","syntax":"digit_pool_space_separated","example":"2 5 7","format_status":"user_confirmed_pending_import_validation"},
+
+    {"play_type":"五星","play_name":"直选单式","syntax":"five_digit_tokens_space_separated","example":"48675 87515 89005","format_status":"user_confirmed"},
+    {"play_type":"五星","play_name":"直选复式","syntax":"five_position_digit_sets_hyphen_separated","example":"137-149-356-567-069","format_status":"user_confirmed"},
+    {"play_type":"五星","play_name":"组选60","syntax":"combination_tokens_space_separated","example":"013 156","format_status":"pending_import_validation"},
+    {"play_type":"五星","play_name":"组选120","syntax":"digit_pool_space_separated","example":"0 5 8","format_status":"pending_import_validation"},
+
+    {"play_type":"不定位","play_name":"一码/二码/三码","syntax":"digit_pool_space_separated","example":"1 2","format_status":"user_confirmed","notes":"digit count must be controlled by the concrete subtype"},
+    {"play_type":"龙虎/新龙虎","play_name":"龙虎","syntax":"two_tokens_space_separated","example":"龙 虎","format_status":"user_confirmed_pending_platform_validation"},
+    {"play_type":"龙虎/新龙虎","play_name":"虎龙","syntax":"two_tokens_space_separated","example":"虎 龙","format_status":"user_confirmed_pending_platform_validation"}
+  ],
+  "special_rules": [
+    "和值中的两位数（如21）必须作为一个原子值，不能拆成2和1。",
+    "组选包胆虽然只写一个数字，注数换算不能按1注处理。",
+    "定位胆的五位置格式与单一万/千/百/十/个位格式不同。",
+    "直选单式与直选复式必须使用不同解析器。",
+    "任何格式记录都不能自动证明目标平台当前支持该玩法。"
+  ]
+}

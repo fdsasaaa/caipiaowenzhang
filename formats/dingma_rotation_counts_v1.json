@@ -1,0 +1,42 @@
+{
+  "registry_id": "DINGMA-ROTATION-COUNT-V1",
+  "origin": "user_supplied_2026-08-11",
+  "records": [
+    {"scope":"三星固定三位","play":"直选","max_count":1000,"status":"math_verified","formula":"10^3"},
+    {"scope":"三星固定三位","play":"组三","max_count":90,"status":"math_verified","formula":"10*9"},
+    {"scope":"三星固定三位","play":"组六","max_count":120,"status":"math_verified","formula":"C(10,3)"},
+    {"scope":"三星固定三位","play":"混合组选","max_count":210,"status":"math_verified","formula":"90+120"},
+    {"scope":"三星固定三位","play":"组选包胆-单胆码","max_count":54,"status":"math_verified","formula":"18组三形态+36组六形态"},
+
+    {"scope":"二星固定二位","play":"直选","max_count":100,"status":"math_verified","formula":"10^2"},
+    {"scope":"二星固定二位","play":"组选","max_count":45,"status":"math_verified","formula":"C(10,2)"},
+    {"scope":"二星固定二位","play":"组选包胆-单胆码","max_count":9,"status":"math_verified","formula":"choose one of remaining 9 digits"},
+
+    {"scope":"定位胆单位置","play":"定位胆","max_count":10,"status":"math_verified","formula":"10 digits"},
+    {"scope":"定位胆五位置格式容量","play":"定位胆","max_count":50,"status":"math_verified_as_format_capacity_not_one_target_space","formula":"5 positions * 10 digits"},
+
+    {"scope":"四星固定四位","play":"直选","max_count":10000,"status":"math_verified","formula":"10^4"},
+    {"scope":"四星固定四位","play":"组选4","max_count":90,"status":"math_verified","formula":"AAAB: 10*9"},
+    {"scope":"四星固定四位","play":"组选6","max_count":45,"status":"math_verified","formula":"AABB: C(10,2)"},
+    {"scope":"四星固定四位","play":"组选12","max_count":360,"status":"math_verified","formula":"AABC: 10*C(9,2)"},
+    {"scope":"四星固定四位","play":"组选24","max_count":210,"status":"math_verified","formula":"ABCD: C(10,4)"},
+
+    {"scope":"五星","play":"直选","max_count":100000,"status":"math_verified","formula":"10^5"},
+    {"scope":"五星","play":"组选60","max_count":840,"status":"derived_candidate_pending_platform_semantics","formula":"AABCD: 10*C(9,3)"},
+    {"scope":"五星","play":"组选120","max_count":252,"status":"derived_candidate_pending_platform_semantics","formula":"ABCDE: C(10,5)"},
+
+    {"scope":"不定位候选池","play":"一码","max_count":10,"status":"math_verified_selection_space","formula":"C(10,1)"},
+    {"scope":"不定位候选池","play":"二码","max_count":45,"status":"math_verified_selection_space","formula":"C(10,2)"},
+    {"scope":"不定位候选池","play":"三码","max_count":120,"status":"math_verified_selection_space","formula":"C(10,3)"},
+
+    {"scope":"任二","play":"直选/组选/包胆","max_count":null,"status":"user_supplied_values_pending_position_semantics_validation","user_claims":{"直选":100,"组选":45,"包胆":9}},
+    {"scope":"任三","play":"直选/组选","max_count":null,"status":"user_supplied_values_pending_position_semantics_validation","user_claims":{"直选":1000,"组三":90,"组六":120,"混合组选":210}},
+    {"scope":"任四","play":"直选/组选","max_count":null,"status":"user_supplied_values_pending_position_semantics_validation","user_claims":{"直选":20000,"组选4":180,"组选6":90,"组选12":720,"组选24":420}},
+    {"scope":"和值","play":"任二/任三直选和值与组选和值","max_count":null,"status":"user_supplied_pending_semantics_validation","user_claims":{"任二直选和值":55,"任二组选和值":45,"任三直选和值":220,"任三组选和值":210}},
+    {"scope":"龙虎/新龙虎","play":"龙虎","max_count":null,"status":"user_supplied_pending_platform_validation","user_claims":{"新龙虎":2,"龙虎":3}}
+  ],
+  "notes": [
+    "max_count may describe mathematical outcome classes, parser capacity, or platform bet count; these meanings must not be conflated.",
+    "Pending records cannot be used as verified cost/coverage facts until their exact platform semantics are validated."
+  ]
+}

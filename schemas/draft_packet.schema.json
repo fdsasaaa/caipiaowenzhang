@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DraftPacket",
+  "type": "object",
+  "required": ["packet_id", "article_id", "blueprint_id", "status", "immutable_facts", "seo", "style", "outline", "case_bundle", "claims", "compliance", "output_contract"],
+  "properties": {
+    "packet_id": {"type": "string"},
+    "article_id": {"type": "string"},
+    "blueprint_id": {"type": "string"},
+    "status": {"const": "ready_for_ai_draft"},
+    "immutable_facts": {"type": "object"},
+    "seo": {"type": "object"},
+    "style": {"type": "object"},
+    "outline": {"type": "array", "items": {"type": "string"}},
+    "case_bundle": {"type": "object"},
+    "claims": {"type": "object"},
+    "compliance": {"type": "object"},
+    "source_use": {"type": "object"},
+    "output_contract": {"type": "object"}
+  },
+  "additionalProperties": true
+}

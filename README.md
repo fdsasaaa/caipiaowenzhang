@@ -1,236 +1,155 @@
 # 老财迷彩票内容引擎（caipiaowenzhang）
 
-这是 `laocaimi.org` 的独立内容研发仓库。它负责 Research/Content，不直接承担生产网站运行。
+`caipiaowenzhang` 是 `www.laocaimi.org` 的独立内容研发与审核引擎。它负责知识、规则、研究、文章规划、AI写作约束、去重和批准；生产网站运行由 `fdsasaaa/xyptdq` 承担。
 
 ## 当前版本
 
-`v0.8.0-draft-packets`
+`v0.9.0-approval-pipeline`
 
-当前基础资产：
+## 当前正式能力
 
-- 2406 个 brbcw 精选来源ID
-- 2294 篇可识别技巧原子的来源
-- 759 个方法家族、1389 个精细方法簇
-- 1321 篇风险声明来源已隔离为未验证声称
-- 玩法机制 / 平台经济参数双层规则系统
-- 时时彩历史官方机制基线及位置同构规则
-- 和值、跨度、频率、遗漏、奇偶、大小、重号、邻号等可执行分析指标
-- 可复算案例引擎
-- 正文生成前的文章蓝图、SEO结构、去重指纹和永久角度占位
-- **模型无关 Draft Packet：冻结SEO、规则、案例、来源、禁止项后再交给AI写正文**
-- 90%金额 + 90%目标空间覆盖的用户内部硬门禁
-- 定码轮换三级玩法格式Registry与可执行语法校验
-- 用户研究指标体系的优先级与防过拟合验证协议
-- `caipiaowenzhang → fdsasaaa/xyptdq → www.laocaimi.org` 草稿发布协议
+- 2406 个 brbcw 精选来源ID；2294篇可识别技巧原子；759个方法家族、1389个精细方法簇。
+- 玩法机制 mechanics 与平台经济参数 economics 分层；未核验奖金、赔率、返点、限额不得当事实。
+- 时时彩历史玩法机制基线及前/中/后位置同构规则；分分彩等必须显式 provider mapping。
+- 和值、跨度、频率、遗漏、奇偶、大小、重号、邻号等可执行指标与可复算案例。
+- Article Blueprint：正文生成前固定搜索意图、技巧原子、SEO字段、案例算法和 fingerprint。
+- 永久角度记忆：`idea / draft / approved / queued / published` 全生命周期参与去重。
+- Draft Packet：冻结规则、来源、SEO、案例和禁止表述后再交给AI写正文。
+- Approval Pipeline：Draft Review + Quality/Dedup + SEO Contract + Bet Compliance 全部通过后才能生成 Approved Package。
+- 用户内部 90%金额 + 90%目标空间覆盖硬门禁；支持跨玩法目标空间并集与高级倍投阶段检查。
+- 定码轮换三级玩法格式Registry与可执行语法校验。
+- 用户研究指标体系、防过拟合、随机基准和样本外验证协议。
 
-## 核心原则
+## 主流水线
 
-1. **规则先于文案**：玩法机制核验后才能写合法投注案例；金额、奖金、返点、限额必须有具体平台 economics。
-2. **用户内部策略与平台事实分层**：90%金额/覆盖门禁属于 internal policy，不能描述成某个平台官方规则。
-3. **历史时时彩不是当前中国官方在售产品**：历史规则只作为玩法机制基线。
-4. **分分彩等不得自动继承时时彩规则**：必须显式完成 provider / lottery / play mapping。
-5. **统计指标不是预测保证**：冷热是频率，遗漏是间隔，和值与跨度是描述/筛选指标。
-6. **来源文章不是事实库**：论坛命中率、稳赚、盈利说法不自动升级为事实。
-7. **先蓝图、再Draft Packet、后正文**：搜索意图、技巧原子、案例算法、规则引用、SEO字段和禁止项全部冻结后，AI才允许写长文。
-8. **idea 也参与永久去重**：通过 `--reserve` 占位的文章即使尚未写完，也会阻止未来生成同一角度。
-9. **可执行投注案例也必须过合规门禁**：文章若携带 `normalized_bets`，质量审核会执行单方案、组合方案、跨玩法覆盖及高级倍投阶段检查。
-10. **SEO必须有信息增量**：不为关键词变体批量制造低价值页面。
-11. **生产隔离**：本仓库 → Approved Package → `fdsasaaa/xyptdq` → 迅睿CMS草稿 → 网站发布。
-
-## Draft Packet 层
-
-实现：`engine/draft_packets.py`
-
-协议：`schemas/draft_packet.schema.json`
-
-标准：`docs/DRAFT_PACKET_STANDARD.md`
-
-每个 Packet 固定：
-
-- provider / lottery / play；
-- technique family / atoms；
-- rule_refs / source_refs；
-- SEO title / slug seed / primary keyword / secondary keywords / search intent / meta description；
-- 简单中文、短段落、案例优先等写作风格；
-- outline；
-- 可复算 case bundle；
-- 保证性表述黑名单；
-- economics 是否允许；
-- 90%合规 policy ref；
-- 最终输出字段合同。
-
-没有真实开奖数据时，系统生成可复现的 `synthetic_validation` 案例，并强制正文写明：
-
-`演示数据，不是真实开奖记录`
-
-因此AI不能把演示数据包装成历史实盘结果。
-
-CLI：
-
-```bash
-python -m engine.cli draft-packets \
-  --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10
+```text
+来源资料
+  ↓
+技巧原子 / 方法家族
+  ↓
+玩法规则校验
+  ↓
+Article Blueprint
+  ↓
+预写作查重
+  ↓
+reserve idea
+  ↓
+Draft Packet
+  ↓
+AI Draft
+  ↓
+Draft Review
+  ↓
+Quality + Dedup + SEO + Bet Compliance
+  ↓
+Approved Package
+  ↓
+fdsasaaa/xyptdq
+  ↓
+迅睿CMS草稿
+  ↓
+发布
+  ↓
+最终URL/状态回写Registry
 ```
 
-只有 `ready_for_draft` 的蓝图会进入 packets；blocked / duplicate_blocked 会被跳过并返回原因。
+## 不可绕过的边界
 
-## 90% 投注组合硬门禁
+1. **规则先于文案**：mechanics 未核验不能写确定性玩法案例；economics 未核验不能写平台金额、奖金、返点、限额事实。
+2. **用户策略与平台事实分开**：90%金额/覆盖阈值是内部硬门禁，不宣称为某个平台官方规定。
+3. **统计不是预测保证**：冷热是窗口频率，遗漏是等待距离；历史结构不能自动推导下一期更容易发生。
+4. **来源不是事实库**：论坛中的命中率、稳赚、盈利说法只保留为未验证来源声称。
+5. **禁止换皮重复**：同一核心方法只换标题、数字或同义词仍视为重复。
+6. **AI不能自由改事实**：Draft Packet 中的 rule_refs、玩法、案例边界和身份字段属于冻结输入。
+7. **违规案例不能批准**：可执行投注案例若违反金额、覆盖、跨玩法或高级倍投门禁，不能进入 Approved Package。
+8. **生产隔离**：内容引擎不直接修改生产服务器数据库。
 
-用户提供的规则被保存为：`policies/BET_COMPLIANCE_POLICY.json`。
+## Registry 生命周期
 
-系统实现：`engine/compliance.py`。
+`registry/articles.jsonl` 是 append-only 历史日志。
 
-核心要求：
+同一个 `article_id` 的状态可以依次更新：
 
-- 单方案和多方案都检查；
-- 先统一映射为 `target_space_id + covered_outcomes`；
-- 同一期、同彩种、同目标中奖空间跨玩法合并；
-- 覆盖号码先去重再计算；
-- 总金额不得高于参考奖金的90%；
-- 唯一目标结果覆盖率不得高于目标空间的90%；
-- 高级倍投按 `phase_amounts` 分阶段检查；
-- 缺少目标空间映射时 fail-closed；
-- 违规时 `assert_exportable` 禁止导出。
+`idea → draft → approved → queued → published`
 
-> 这是一套用户定义的内部约束，不是任何平台官方规则的证据。
+读取时采用 **last-write-wins**，所以当前状态始终是最后一条记录；更新状态时保留原 fingerprint、angle_signature、technique_atoms 等身份信息。去重器会忽略同一个 `article_id` 自己，但继续与其他文章比较。
 
-标准化投注协议：`schemas/normalized_bet.schema.json`。
+说明：`docs/APPROVAL_PIPELINE.md`
 
-CLI：
-
-```bash
-python -m engine.cli check-portfolio --file portfolio.json
-```
-
-## 定码轮换格式层
-
-- `formats/dingma_rotation_v1.json`：一级类别 + 玩法类型 + 玩法名称的三级格式Registry
-- `formats/dingma_rotation_counts_v1.json`：最大注数/组合空间的分层核验
-- `engine/format_rules.py`：可执行语法校验
-
-特别固定：
-
-- 直选单式与直选复式使用不同格式；
-- 五位置 `定位胆` 与单独万/千/百/十/个位使用不同格式；
-- 组选包胆不能因只输入一个数字就按1注理解；
-- 和值 `21` 是一个整体和值，不能拆成 `2 1`；
-- 前四/后四组选、五星组选60/120、任二/任三/任四、和值、龙虎等平台行为仍按状态字段保留验证缺口。
-
-数学层已经验证并编码：三星直选/组三/组六/混合组选/单胆码包胆、二星直选/组选/包胆、固定四星组选4/6/12/24，以及五星组选60/120的组合数学候选值。平台是否提供同名玩法仍需独立 mapping。
-
-CLI：
+## 文章生成与审核 CLI
 
 ```bash
-python -m engine.cli validate-format \
-  --play-type 前三 --play-name 直选复式 --content "089-145-689"
-```
-
-## 用户研究指标体系
-
-用户上传的研究资料没有被当成“预测规则”，而是压缩为：
-
-`knowledge/research/USER_RESEARCH_TAXONOMY_V1.json`
-
-优先吸收：
-
-- 数据完整性与规则版本分段；
-- 定位频率、遗漏、和值、跨度、重号/邻号；
-- 理论概率、蒙特卡洛基准、随机性审计；
-- 时间顺序样本外、walk-forward、多段复验；
-- 多重检验修正与失败实验记录。
-
-高阶马尔可夫、神经网络、遗传算法大规模搜规则等标记为高过拟合风险；民间/文化型方法只允许作为 research-only 题材，默认假设是不优于同数量随机基准。
-
-## 文章生成流水线
-
-`方法家族 → 玩法规则校验 → case_plan → article blueprint → pre-draft dedup → reserve idea → Draft Packet → AI draft → Draft Review → quality/SEO/compliance gate → approved package → xyptdq → CMS草稿 → published → 回写Registry`
-
-完整说明：`docs/ARTICLE_GENERATION_PIPELINE.md`
-
-### Blueprint 固定字段
-
-正文生成前至少确定：
-
-- article_id / blueprint_id
-- provider / lottery / play
-- technique family / technique atoms
-- title / slug seed
-- primary / secondary keywords
-- search intent
-- information gain type
-- outline
-- case structure / case plan
-- rule refs / source refs
-- fingerprint
-- blockers / duplicate hits
-
-如果技巧原子没有可执行案例算法，蓝图会标记 `blocked`；如果与历史文章高度重叠，则标记 `duplicate_blocked`。
-
-## CLI 示例
-
-```bash
+# 规则/仓库自检
 python -m engine.cli audit
 
-python -m engine.cli plan \
-  --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10
-
+# 生成候选蓝图并永久占位
 python -m engine.cli blueprints \
   --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10 --reserve
 
+# 生成受约束的AI写作包
 python -m engine.cli draft-packets \
   --provider <provider_id> --lottery 时时彩 --play 后三直选 --count 10
 
-python -m engine.cli case \
-  --draw 12345 --draw 22346 --draw 92347 --draw 02348 \
-  --selector 后三
+# 审核AI正文；通过才写 Approved Package
+python -m engine.cli approve-draft \
+  --packet packet.json \
+  --article article.json \
+  --output approved.json \
+  --record
 ```
 
-## 玩法机制层
+## 投注组合硬门禁
 
-历史官方基线：`rules/mechanics/ssc/`
+配置：`policies/BET_COMPLIANCE_POLICY.json`
 
-位置同构推导：`rules/mechanics/ssc_derived/`
+实现：`engine/compliance.py`
 
-当前包括定位胆、一星、前/后二、前/中/后三、前/后四、五星直选，以及二星/三星常见组选结构和后二大小单双。位置推导规则都要求 provider mapping，且不继承 economics。
+标准化投注：`schemas/normalized_bet.schema.json`
 
-## 分析与案例层
+核心逻辑：
 
+- 同一期 + 同彩种 + 同目标中奖空间联合校验；
+- 不同玩法先映射到 `target_space_id + covered_outcomes`；
+- 覆盖集合去重后求并集；
+- 覆盖率 > 90% 阻断；
+- 同目标空间当期金额 > 参考奖金90% 阻断；
+- `phase_amounts` 对高级倍投各阶段分别汇总；
+- 缺少目标空间映射时 fail-closed；
+- 违规时禁止导出。
+
+跨玩法目标空间基础实现：`engine/target_spaces.py`。
+
+## 定码轮换格式
+
+- `formats/dingma_rotation_v1.json`
+- `formats/dingma_rotation_counts_v1.json`
+- `engine/format_rules.py`
+
+已固定：直选单式/复式不同；五位置定位胆/单位置不同；和值多位数字保持原子；组选包胆不能按“输入一个数字=1注”理解。
+
+平台行为未确认的四星/五星组选、任选、和值、龙虎等继续保持 pending，不能自动升级为 verified。
+
+## 研究层
+
+- `knowledge/research/USER_RESEARCH_TAXONOMY_V1.json`
 - `engine/analysis_metrics.py`
 - `engine/casebook.py`
 - `knowledge/TECHNIQUE_SEMANTICS.json`
-- `schemas/article_case.schema.json`
-- `docs/ARTICLE_CASE_STANDARD.md`
 
-普通案例默认：
+研究优先级强调：数据质量、规则版本、理论概率、随机基准、样本外、walk-forward、多重检验和失败记录。高阶机器学习/遗传搜索属于高过拟合风险；民间文化方法仅作为 research-only 题材。
 
-- `claim_scope = descriptive_only`
-- `predictive_guarantee = false`
+## 关键协议与文档
 
-## 蓝图与永久记忆层
-
-- `engine/blueprints.py`
-- `engine/article_memory.py`
+- `docs/ARTICLE_GENERATION_PIPELINE.md` — 总文章生成流水线
+- `docs/ARTICLE_CASE_STANDARD.md` — 案例标准
+- `docs/DRAFT_PACKET_STANDARD.md` — AI写作冻结包
+- `docs/APPROVAL_PIPELINE.md` — 正文批准与生命周期
+- `docs/USER_RULES_INGEST_2026-08-11.md` — 用户规则摄取审计
 - `schemas/article_blueprint.schema.json`
-- `registry/articles.jsonl`
-
-正文尚未产生时就先做查重，是为了避免把Token和审核成本浪费在已写过的角度上。
-
-## Provider 映射与Economics
-
-- `schemas/provider_lottery_mapping.schema.json`
-- `mappings/PROVIDER_MAPPING_POLICY.md`
-- `schemas/economics_rule.schema.json`
-
-即使 mechanics mapping 为 verified，金额、奖金、返点、最低投注单位和限额仍必须单独核验。
-
-## 发布层
-
-- 网站仓库：`fdsasaaa/xyptdq`
-- CMS：迅睿CMS
+- `schemas/draft_packet.schema.json`
 - `schemas/publish_package.schema.json`
 - `publishing/XYPTDQ_BRIDGE.md`
-
-发布后必须把最终URL、发布日期、最终标题、内容Hash和fingerprint回写文章Registry。
 
 ## 测试
 
@@ -238,3 +157,5 @@ python -m engine.cli case \
 pytest -q
 python -m engine.cli audit
 ```
+
+所有正式变更通过独立分支、PR和 GitHub Actions 后再进入 `main`。

@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .approval import evaluate_and_record, evaluate_for_approval
 from .article_memory import reserve_blueprints
 from .blueprints import generate_blueprints
 from .casebook import descriptive_case, frequency_case, omission_case
@@ -68,6 +69,28 @@ def cmd_draft_packets(args: argparse.Namespace) -> int:
     result = generate_draft_packets(args.provider, args.lottery, args.play, args.count)
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["generated"] > 0 else 3
+
+
+def cmd_approve_draft(args: argparse.Namespace) -> int:
+    packet = json.loads(Path(args.packet).read_text(encoding="utf-8"))
+    article = json.loads(Path(args.article).read_text(encoding="utf-8"))
+    result = evaluate_and_record(packet, article) if args.record else evaluate_for_approval(packet, article)
+    payload = {
+        "approved": result.approved,
+        "status": result.status,
+        "quality_score": result.quality_score,
+        "errors": result.errors,
+        "warnings": result.warnings,
+        "registry_record": result.registry_record,
+        "publish_package": result.publish_package,
+    }
+    if args.output and result.publish_package:
+        out = Path(args.output)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(result.publish_package, ensure_ascii=False, indent=2), encoding="utf-8")
+        payload["written_to"] = str(out)
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0 if result.approved else 6
 
 
 def cmd_capability(args: argparse.Namespace) -> int:
@@ -148,6 +171,12 @@ def main() -> int:
     p = sub.add_parser("draft-packets")
     _add_article_scope_args(p)
     p.set_defaults(func=cmd_draft_packets)
+    p = sub.add_parser("approve-draft")
+    p.add_argument("--packet", required=True, help="Draft Packet JSON path")
+    p.add_argument("--article", required=True, help="AI draft article JSON path")
+    p.add_argument("--output", help="write Approved Package JSON here when approved")
+    p.add_argument("--record", action="store_true", help="append approved/rejected lifecycle state to article registry")
+    p.set_defaults(func=cmd_approve_draft)
     p = sub.add_parser("capability")
     p.add_argument("--provider")
     p.add_argument("--lottery", required=True)

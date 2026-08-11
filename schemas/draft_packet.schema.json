@@ -8,7 +8,21 @@
     "article_id": {"type": "string"},
     "blueprint_id": {"type": "string"},
     "status": {"const": "ready_for_ai_draft"},
-    "immutable_facts": {"type": "object"},
+    "immutable_facts": {
+      "type": "object",
+      "required": ["lottery", "play", "content_type", "site_category_key", "content_format", "rule_refs", "case_scope", "fingerprint"],
+      "properties": {
+        "lottery": {"type": "string"},
+        "play": {"type": "string"},
+        "content_type": {"type": "string"},
+        "site_category_key": {"type": "string"},
+        "content_format": {"const": "html"},
+        "rule_refs": {"type": "array", "items": {"type": "string"}},
+        "case_scope": {"type": "string"},
+        "fingerprint": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
     "seo": {"type": "object"},
     "style": {"type": "object"},
     "outline": {"type": "array", "items": {"type": "string"}},

@@ -10,6 +10,7 @@ from typing import Callable
 from .ai_generation import GenerationError
 
 DEFAULT_OPENAI_BASE_URL = "https://api.openai.com/v1"
+DEFAULT_USER_AGENT = "openai-python/1.0 laocaimi-content-engine/2.1"
 
 
 def normalize_base_url(base_url: str | None) -> str:
@@ -52,7 +53,15 @@ def request_json(
     payload: dict | None = None,
     timeout: int = 30,
 ) -> dict:
-    headers = {"Authorization": f"Bearer {api_key}", "Accept": "application/json"}
+    # Some OpenAI-compatible gateways apply browser/bot heuristics to the
+    # default Python urllib signature. Send a stable SDK-style User-Agent and
+    # explicit JSON Accept headers without weakening TLS or auth requirements.
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Accept": "application/json",
+        "User-Agent": DEFAULT_USER_AGENT,
+        "Accept-Encoding": "identity",
+    }
     data = None
     method = "GET"
     if payload is not None:

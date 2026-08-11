@@ -8,6 +8,7 @@ from .site_contract import default_content_type, site_category_for
 from .text import fingerprint
 
 ATOM_LABELS = {
+    "position_filter": "位置筛选",
     "sum_range": "和值区间",
     "span_range": "跨度筛选",
     "odd_even_filter": "奇偶筛选",
@@ -35,15 +36,6 @@ def _method_phrase(atoms: list[str]) -> str:
     if not labels:
         return "基础规则"
     return " + ".join(labels)
-
-
-def _selector(positions: list[str], play: str) -> str:
-    if positions:
-        return "/".join(positions)
-    for name in ("前二", "后二", "前三", "中三", "后三", "前四", "后四", "五星", "个位", "十位", "百位", "千位", "万位"):
-        if name in play:
-            return name
-    return play
 
 
 def _title(lottery: str, play: str, atoms: list[str]) -> str:
@@ -79,19 +71,21 @@ def _outline(play: str, atoms: list[str], case_ready: bool) -> list[str]:
 
 
 def _case_structure(plan: dict) -> str:
-    metrics = [x.get("metric", "") for x in plan.get("case_plan", {}).get("supported", [])]
-    selector = _selector(plan.get("positions", []), plan.get("play", ""))
+    case_plan = plan.get("case_plan", {})
+    metrics = [x.get("metric", "") for x in case_plan.get("supported", [])]
+    selector = case_plan.get("resolved_selector") or plan.get("resolved_selector") or "unresolved"
     return f"selector={selector};metrics={','.join(metrics)};scope={plan.get('allowed_case_scope')}"
 
 
 def _angle_key(plan: dict) -> str:
     subject_lottery = str(plan.get("subject_lottery") or plan.get("lottery") or "")
     subject_play = str(plan.get("subject_play") or plan.get("play") or "")
+    selector = str(plan.get("resolved_selector") or plan.get("case_plan", {}).get("resolved_selector") or "")
     raw = "|".join([
         str(plan.get("provider_id") or ""), str(plan.get("lottery") or ""), str(plan.get("play") or ""),
         subject_lottery, subject_play,
         str(plan.get("technique_family") or ""), ",".join(sorted(plan.get("technique_atoms", []))),
-        ",".join(plan.get("positions", [])),
+        selector,
     ])
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
 
@@ -133,6 +127,9 @@ def blueprint_from_plan(plan: dict) -> dict:
         "site_category_key": site_category_key,
         "technique_family": plan.get("technique_family"),
         "technique_atoms": atoms,
+        "resolved_selector": case_plan.get("resolved_selector") or plan.get("resolved_selector"),
+        "selector_basis": case_plan.get("selector_basis") or plan.get("selector_basis"),
+        "source_positions": plan.get("positions", []),
         "angle_signature": plan.get("angle_signature") or _angle_key(plan),
         "title": title,
         "slug_seed": "-".join([subject_lottery, subject_play, *atoms[:2]]),

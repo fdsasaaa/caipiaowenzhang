@@ -6,7 +6,7 @@ from pathlib import Path
 
 from .rules import rule_capability
 from .knowledge_io import iter_brbcw_families
-from .technique_semantics import case_requirements
+from .technique_semantics import case_requirements, selector_variants
 
 ROOT = Path(__file__).resolve().parents[1]
 CLUSTERS = ROOT / "knowledge" / "technique_clusters" / "brbcw.jsonl"
@@ -61,12 +61,16 @@ def _plan_status(cap: dict) -> str:
     return "ready_mechanics_only"
 
 
+def _angle_hash(provider_id: str, lottery: str, play: str, family: str, selector: str | None) -> str:
+    raw = f"{provider_id}|{lottery}|{play}|{family}|selector={selector or ''}"
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
+
+
 def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) -> dict:
     cap = rule_capability(provider_id, lottery, play)
     clusters = _rows(CLUSTERS)
     existing = _rows(ARTICLES)
     used = {x.get("angle_signature") for x in existing if x.get("angle_signature")}
-    seen_new = set()
     ranked = []
     for c in clusters:
         if c.get("article_generation_status") == "idea_only" or not _matches_play(c, play):
@@ -74,35 +78,64 @@ def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) ->
         source_lotteries = c.get("lotteries", [])
         if source_lotteries and lottery not in source_lotteries:
             continue
-        angle = f"{provider_id}|{lottery}|{play}|{c.get('family_id')}|{','.join(c.get('positions', []))}"
-        angle_hash = hashlib.sha1(angle.encode("utf-8")).hexdigest()[:20]
-        if angle_hash in used or angle_hash in seen_new:
-            continue
-        seen_new.add(angle_hash)
         support, risk = c.get("source_count", 0), c.get("risk_rate", 0)
-        ranked.append((support * max(0.05, 1 - risk), support, -risk, angle_hash, c))
+        ranked.append((support * max(0.05, 1 - risk), support, -risk, c))
     ranked.sort(reverse=True, key=lambda x: (x[0], x[1], x[2]))
+
     status = _plan_status(cap)
     rule_refs = cap["mechanics_rule_refs"] + cap["economics_rule_refs"]
     plans = []
-    for _, _, _, angle_hash, c in ranked[:count]:
+    seen_new = set()
+    for _, _, _, c in ranked:
         atoms = c.get("technique_atoms", [])
-        case_plan = case_requirements(atoms)
-        plans.append({
-            "angle_signature": angle_hash, "provider_id": provider_id, "lottery": lottery, "play": play,
-            "technique_family": c.get("family_id"), "technique_atoms": atoms,
-            "positions": c.get("positions", []), "source_refs": c.get("example_source_ids", []),
-            "source_support_count": c.get("source_count", 0), "source_risk_rate": c.get("risk_rate", 0),
-            "status": status, "rule_refs": rule_refs,
-            "allowed_case_scope": "economics" if cap["economics_verified"] else ("mechanics_only" if cap["mechanics_verified"] else "idea_only"),
-            "case_plan": case_plan,
-        })
+        positions = c.get("positions", [])
+        variants = selector_variants(play, positions, atoms)
+        if not variants:
+            continue
+        for selector_info in variants:
+            selector = selector_info.get("selector")
+            angle_hash = _angle_hash(
+                provider_id, lottery, play, str(c.get("family_id") or ""), str(selector or "")
+            )
+            if angle_hash in used or angle_hash in seen_new:
+                continue
+            seen_new.add(angle_hash)
+            case_plan = case_requirements(atoms, selector, selector_info.get("basis"))
+            case_plan["source_position_supported"] = bool(selector_info.get("source_position_supported"))
+            plans.append({
+                "angle_signature": angle_hash,
+                "provider_id": provider_id,
+                "lottery": lottery,
+                "play": play,
+                "technique_family": c.get("family_id"),
+                "technique_atoms": atoms,
+                "positions": positions,
+                "resolved_selector": selector,
+                "selector_basis": selector_info.get("basis"),
+                "source_refs": c.get("example_source_ids", []),
+                "source_support_count": c.get("source_count", 0),
+                "source_risk_rate": c.get("risk_rate", 0),
+                "status": status,
+                "rule_refs": rule_refs,
+                "allowed_case_scope": "economics" if cap["economics_verified"] else ("mechanics_only" if cap["mechanics_verified"] else "idea_only"),
+                "case_plan": case_plan,
+            })
+            if len(plans) >= count:
+                break
+        if len(plans) >= count:
+            break
+
     gaps = []
     if not cap["mechanics_verified"]:
         gaps.append({"gap_type": "mechanics", "lottery": lottery, "play": play})
     if provider_id and not cap["economics_verified"]:
         gaps.append({"gap_type": "economics", "provider_id": provider_id, "lottery": lottery, "play": play})
     return {
-        "provider_id": provider_id, "lottery": lottery, "play": play, "status": status,
-        "capability": cap, "plans": plans, "rule_gaps": gaps,
+        "provider_id": provider_id,
+        "lottery": lottery,
+        "play": play,
+        "status": status,
+        "capability": cap,
+        "plans": plans,
+        "rule_gaps": gaps,
     }

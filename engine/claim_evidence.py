@@ -6,11 +6,6 @@ from dataclasses import dataclass, field
 from .text import jaccard
 
 _CN_NUMBER = r"[零〇一二三四五六七八九十百千万两点]+"
-# For Chinese-word bet counts we intentionally start at quantities greater than
-# one. Phrases such as “一注组选” are common rule definitions and are already
-# governed by rule_refs; treating every occurrence as a separate high-risk
-# quantitative claim creates noisy evidence duplication. Arabic numeric counts
-# (including 1注) remain strict, and Chinese quantities such as 三注/十注 are strict.
 _CN_BET_COUNT = r"[二三四五六七八九十百千万两]+"
 HARD_CLAIM_PATTERNS = (
     re.compile(r"\d{1,3}(?:\.\d+)?\s*%"),
@@ -20,8 +15,15 @@ HARD_CLAIM_PATTERNS = (
     re.compile(r"赔率|返点|奖金|返奖|收益率|利润|盈利"),
     re.compile(r"下一期会|下期会|一定会出|肯定会出"),
 )
-QUALIFIERS = ("来源提到", "来源声称", "原文提到", "原文声称", "未验证", "资料中提到", "资料声称")
 _BLOCK_TAG = re.compile(r"</?(?:p|h[1-6]|li|ul|ol|div|section|article|br)\b[^>]*>", re.IGNORECASE)
+_ECONOMICS_DISCLAIMERS = (
+    "不讨论", "不涉及", "不提供", "不说明", "不引用", "不使用",
+    "未核验的", "未经核验的", "没有核验", "尚未核验",
+)
+_SYNTHETIC_NEGATIONS = (
+    "不是真实开奖", "不是真实开奖记录", "并非真实开奖", "非真实开奖",
+    "不是实盘结果", "并非实盘结果", "不是历史开奖", "演示数据",
+)
 
 
 @dataclass
@@ -32,9 +34,6 @@ class ClaimEvidenceReport:
 
 
 def _plain(html: str) -> str:
-    # Preserve sentence boundaries between block-level HTML elements. Without
-    # this, a heading and the following paragraph can become one artificial
-    # hard-claim sentence after tag stripping.
     text = _BLOCK_TAG.sub("。", html or "")
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"。+", "。", text)
@@ -45,35 +44,94 @@ def _sentences(text: str) -> list[str]:
     return [x.strip() for x in re.split(r"[。！？!?]+", text) if x.strip()]
 
 
+def _pure_economics_disclaimer(sentence: str) -> bool:
+    if not any(marker in sentence for marker in _ECONOMICS_DISCLAIMERS):
+        return False
+    return not bool(re.search(r"\d|%|百分之|\b倍\b|元|每注|单注", sentence))
+
+
 def _hard_sentences(content: str) -> list[str]:
     out = []
     for sentence in _sentences(_plain(content)):
-        if any(pattern.search(sentence) for pattern in HARD_CLAIM_PATTERNS):
-            out.append(sentence)
+        if not any(pattern.search(sentence) for pattern in HARD_CLAIM_PATTERNS):
+            continue
+        if _pure_economics_disclaimer(sentence):
+            continue
+        out.append(sentence)
     return out
 
 
+def _compact(value: str) -> str:
+    return re.sub(r"\s+", "", value or "")
+
+
+def _claim_matches(sentence: str, claim: str) -> bool:
+    compact = _compact(sentence)
+    claim_compact = _compact(claim)
+    if not claim_compact:
+        return False
+    if claim_compact in compact or compact in claim_compact:
+        return True
+    if jaccard(claim_compact, compact, n=2) >= 0.48:
+        return True
+    tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", claim_compact))
+    sentence_tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", compact))
+    return bool(tokens) and len(tokens & sentence_tokens) / len(tokens) >= 0.6
+
+
+def _numeric_signature(value: str) -> set[str]:
+    compact = _compact(value)
+    return set(re.findall(r"\d+(?:\.\d+)?%?", compact))
+
+
 def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
-    compact = re.sub(r"\s+", "", sentence)
+    # Normal factual evidence can cover the sentence directly.
     for entry in entries:
-        claim = re.sub(r"\s+", "", str(entry.get("claim_text") or ""))
-        if not claim:
+        if str(entry.get("support_type") or "") == "editorial":
             continue
-        # Exact sentence copies are preferred by the generation prompt. Concise
-        # restatements remain supported for older V2 fixtures.
-        if claim in compact or compact in claim:
+        if _claim_matches(sentence, str(entry.get("claim_text") or "")):
             return True
-        if jaccard(claim, compact, n=2) >= 0.48:
-            return True
-        tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", claim))
-        sentence_tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", compact))
-        if tokens and len(tokens & sentence_tokens) / len(tokens) >= 0.6:
-            return True
-    return False
+
+    # Mixed sentences are common in practical guidance, e.g. “完成3注→6个结果后，
+    # 没有第二条规则就停止”. An editorial entry may explain the stopping policy,
+    # but it may not prove the numeric fact. Allow the sentence only if BOTH are
+    # present: a matching editorial entry plus separate non-editorial evidence
+    # that carries every numeric token in the sentence.
+    sentence_numbers = _numeric_signature(sentence)
+    if not sentence_numbers:
+        return False
+    editorial_match = any(
+        str(entry.get("support_type") or "") == "editorial"
+        and _claim_matches(sentence, str(entry.get("claim_text") or ""))
+        for entry in entries
+    )
+    if not editorial_match:
+        return False
+    factual_numeric_support = any(
+        str(entry.get("support_type") or "") != "editorial"
+        and sentence_numbers.issubset(_numeric_signature(str(entry.get("claim_text") or "")))
+        for entry in entries
+    )
+    return factual_numeric_support
+
+
+def _presents_synthetic_as_real(claim: str) -> bool:
+    if any(marker in claim for marker in _SYNTHETIC_NEGATIONS):
+        return False
+    return any(term in claim for term in ("真实开奖", "实盘结果", "历史开奖证明"))
+
+
+def _has_unverified_qualifier(claim: str) -> bool:
+    compact = re.sub(r"\s+", "", claim)
+    source_attributed = bool(re.search(r"(?:来源(?:文章|资料)?|原文|资料中).{0,8}(?:提到|声称|认为|写到)", compact))
+    uncertainty = any(term in compact for term in (
+        "未验证", "未独立验证", "未经验证", "尚未验证", "尚未核验", "未经核验",
+        "研究假设", "不能升级成事实", "不能视为事实",
+    ))
+    return source_attributed or uncertainty
 
 
 def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
-    # Legacy/manual drafts remain valid under their existing review path. V2 auto-drafts opt into this stricter contract.
     if article.get("generation_contract_version") != "2.0":
         return ClaimEvidenceReport(True, warnings=["legacy article: claim-evidence v2 gate not required"])
 
@@ -86,6 +144,7 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
     facts = packet.get("immutable_facts", {})
     allowed_rules = set(facts.get("rule_refs", []) or [])
     allowed_sources = set(facts.get("source_refs", []) or [])
+    allowed_refs = allowed_rules | allowed_sources | {"case_bundle"}
     economics_allowed = facts.get("case_scope") == "economics"
 
     for index, entry in enumerate(entries):
@@ -112,16 +171,18 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
                 errors.append(f"claim_evidence[{index}] source_unverified requires support_refs")
             if not refs_set.issubset(allowed_sources):
                 errors.append(f"claim_evidence[{index}] references source outside Draft Packet")
-            if claim and not any(q in claim for q in QUALIFIERS):
+            if claim and not _has_unverified_qualifier(claim):
                 errors.append(f"claim_evidence[{index}] unverified source claim must be explicitly qualified")
         elif support_type == "synthetic_case":
             if refs_set != {"case_bundle"}:
                 errors.append(f"claim_evidence[{index}] synthetic_case must reference only case_bundle")
-            if any(term in claim for term in ("真实开奖", "实盘结果", "历史开奖证明")):
+            if _presents_synthetic_as_real(claim):
                 errors.append(f"claim_evidence[{index}] synthetic case cannot be presented as real history")
         elif support_type == "editorial":
-            if refs_set:
-                errors.append(f"claim_evidence[{index}] editorial claim must not carry support_refs")
+            if not refs_set.issubset(allowed_refs):
+                errors.append(f"claim_evidence[{index}] editorial claim references unknown support_ref")
+            elif refs_set:
+                warnings.append(f"claim_evidence[{index}] editorial support_refs are non-evidentiary and should be empty")
         else:
             errors.append(f"claim_evidence[{index}] unknown support_type")
 
@@ -139,4 +200,4 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
 
     if not entries:
         warnings.append("v2 draft contains no explicit claims; verify that article is purely explanatory")
-    return ClaimEvidenceReport(passed=not errors, errors=list(dict.fromkeys(errors)), warnings=warnings)
+    return ClaimEvidenceReport(passed=not errors, errors=list(dict.fromkeys(errors)), warnings=list(dict.fromkeys(warnings)))

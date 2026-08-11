@@ -61,25 +61,58 @@ def _hard_sentences(content: str) -> list[str]:
     return out
 
 
+def _compact(value: str) -> str:
+    return re.sub(r"\s+", "", value or "")
+
+
+def _claim_matches(sentence: str, claim: str) -> bool:
+    compact = _compact(sentence)
+    claim_compact = _compact(claim)
+    if not claim_compact:
+        return False
+    if claim_compact in compact or compact in claim_compact:
+        return True
+    if jaccard(claim_compact, compact, n=2) >= 0.48:
+        return True
+    tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", claim_compact))
+    sentence_tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", compact))
+    return bool(tokens) and len(tokens & sentence_tokens) / len(tokens) >= 0.6
+
+
+def _numeric_signature(value: str) -> set[str]:
+    compact = _compact(value)
+    return set(re.findall(r"\d+(?:\.\d+)?%?", compact))
+
+
 def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
-    compact = re.sub(r"\s+", "", sentence)
+    # Normal factual evidence can cover the sentence directly.
     for entry in entries:
-        # Editorial notes are never evidence for hard factual claims. This keeps
-        # harmless boundary statements separate from quantitative support.
         if str(entry.get("support_type") or "") == "editorial":
             continue
-        claim = re.sub(r"\s+", "", str(entry.get("claim_text") or ""))
-        if not claim:
-            continue
-        if claim in compact or compact in claim:
+        if _claim_matches(sentence, str(entry.get("claim_text") or "")):
             return True
-        if jaccard(claim, compact, n=2) >= 0.48:
-            return True
-        tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", claim))
-        sentence_tokens = set(re.findall(r"[\u4e00-\u9fff]{2,}|\d+(?:\.\d+)?%?", compact))
-        if tokens and len(tokens & sentence_tokens) / len(tokens) >= 0.6:
-            return True
-    return False
+
+    # Mixed sentences are common in practical guidance, e.g. “完成3注→6个结果后，
+    # 没有第二条规则就停止”. An editorial entry may explain the stopping policy,
+    # but it may not prove the numeric fact. Allow the sentence only if BOTH are
+    # present: a matching editorial entry plus separate non-editorial evidence
+    # that carries every numeric token in the sentence.
+    sentence_numbers = _numeric_signature(sentence)
+    if not sentence_numbers:
+        return False
+    editorial_match = any(
+        str(entry.get("support_type") or "") == "editorial"
+        and _claim_matches(sentence, str(entry.get("claim_text") or ""))
+        for entry in entries
+    )
+    if not editorial_match:
+        return False
+    factual_numeric_support = any(
+        str(entry.get("support_type") or "") != "editorial"
+        and sentence_numbers.issubset(_numeric_signature(str(entry.get("claim_text") or "")))
+        for entry in entries
+    )
+    return factual_numeric_support
 
 
 def _presents_synthetic_as_real(claim: str) -> bool:

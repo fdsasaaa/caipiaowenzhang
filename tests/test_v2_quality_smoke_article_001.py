@@ -20,6 +20,9 @@ def test_v2_quality_smoke_article_passes_full_approval_pipeline():
     article = _load("article.json")
     packet = build_draft_packet(blueprint)
 
+    assert packet["editorial_contract_version"] == "1.0"
+    assert packet["practicality"]["must_state_stop_condition"] is True
+
     # Prove the worked example is exactly the deterministic V2 Draft Packet case.
     assert packet["case_bundle"]["draws"][-12:] == [
         "76738", "57809", "70691", "45410", "70624", "28126",
@@ -35,6 +38,7 @@ def test_v2_quality_smoke_article_passes_full_approval_pipeline():
     sum_counts = Counter(a + b + c for a in range(10) for b in range(10) for c in range(10))
     assert [sum_counts[s] for s in range(10, 18)] == [63, 69, 73, 75, 75, 73, 69, 63]
     assert sum(sum_counts[s] for s in range(10, 18)) == 560
+    assert 1000 - 560 == 440
 
     # Same immutable identity contract used after a real Responses API call.
     validate_generated_identity(packet, article)
@@ -46,7 +50,10 @@ def test_v2_quality_smoke_article_passes_full_approval_pipeline():
     assert result.approved, result.errors
     assert result.status == "approved"
     assert result.quality_score == 100
+    assert result.editorial_score == 100
     assert result.errors == []
     assert result.publish_package is not None
     assert result.publish_package["article_id"] == article["article_id"]
     assert result.publish_package["content"] == article["content"]
+    assert result.publish_package["editorial_contract_version"] == "1.0"
+    assert result.publish_package["practical_guidance"]["after_primary_filter_space"].startswith("560")

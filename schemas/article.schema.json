@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArticleRecord",
+  "type": "object",
+  "required": ["article_id", "title", "primary_keyword", "search_intent", "status", "fingerprint"],
+  "properties": {
+    "article_id": {"type": "string"},
+    "title": {"type": "string"},
+    "slug": {"type": "string"},
+    "primary_keyword": {"type": "string"},
+    "secondary_keywords": {"type": "array", "items": {"type": "string"}},
+    "search_intent": {"type": "string"},
+    "lottery": {"type": "string"},
+    "play": {"type": "string"},
+    "technique_atoms": {"type": "array", "items": {"type": "string"}},
+    "case_structure": {"type": "string"},
+    "rule_refs": {"type": "array", "items": {"type": "string"}},
+    "fingerprint": {"type": "string"},
+    "content_hash": {"type": "string"},
+    "status": {"enum": ["idea", "draft", "validated", "approved", "queued", "published", "rejected"]},
+    "published_url": {"type": ["string", "null"]},
+    "published_at": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TechniqueAtom",
+  "type": "object",
+  "required": ["technique_id", "name", "status", "inputs", "logic", "outputs"],
+  "properties": {
+    "technique_id": {"type": "string"},
+    "name": {"type": "string"},
+    "lottery_scope": {"type": "array", "items": {"type": "string"}},
+    "play_scope": {"type": "array", "items": {"type": "string"}},
+    "inputs": {"type": "array", "items": {"type": "string"}},
+    "logic": {"type": "string"},
+    "outputs": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["source_claim", "candidate", "tested", "rejected"]},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "test_refs": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

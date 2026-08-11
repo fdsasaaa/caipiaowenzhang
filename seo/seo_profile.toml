@@ -1,0 +1,36 @@
+site = "https://www.laocaimi.org"
+search_engine = "Google"
+language = "zh-CN"
+content_goal = "以清晰、可复算、规则正确的彩票玩法与技巧内容获得长期自然搜索流量"
+
+[principles]
+people_first = true
+avoid_keyword_stuffing = true
+avoid_scaled_near_duplicate_content = true
+require_unique_information_gain = true
+require_internal_link_plan = true
+require_meta_description = true
+require_search_intent = true
+
+[keywords]
+primary = [
+  "彩票", "分分彩", "时时彩", "哈希分分彩", "奇趣分分彩", "幸运飞艇",
+  "幸运赛车", "极速赛车", "极速飞艇", "信誉平台大全"
+]
+modifiers = ["技术", "技巧", "投注方法", "投注技巧", "玩法", "号码分析", "数据分析"]
+commercial_caution = ["赚钱方法", "盈利方法"]
+
+[style]
+plain_chinese = true
+short_paragraphs = true
+explain_with_examples = true
+avoid_empty_intro = true
+avoid_fake_authority = true
+avoid_guaranteed_outcomes = true
+
+[article]
+required_fields = [
+  "article_id", "title", "slug", "primary_keyword", "search_intent", "lottery",
+  "play", "technique_atoms", "meta_description", "summary", "content",
+  "rule_refs", "fingerprint", "status"
+]

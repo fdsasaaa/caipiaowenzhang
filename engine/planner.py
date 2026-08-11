@@ -38,9 +38,15 @@ PLAY_FORBIDDEN_ATOMS = {
 
 
 def _rows(path: Path):
-    if not path.exists():
-        return []
-    return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x.strip()]
+    paths = []
+    if path.exists():
+        paths.append(path)
+    # Large generated knowledge files may be stored as brbcw.part-001.jsonl, etc.
+    paths.extend(sorted(path.parent.glob(path.stem + ".part-*.jsonl")))
+    rows = []
+    for p in paths:
+        rows.extend(json.loads(x) for x in p.read_text(encoding="utf-8").splitlines() if x.strip())
+    return rows
 
 
 def _matches_play(c: dict, play: str) -> bool:

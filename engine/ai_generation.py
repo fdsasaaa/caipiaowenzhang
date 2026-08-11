@@ -23,8 +23,8 @@ class GenerationResult:
     response_id: str | None = None
 
 
-def article_output_schema() -> dict:
-    claim_schema = {
+def _claim_schema() -> dict:
+    return {
         "type": "object",
         "additionalProperties": False,
         "required": ["claim_text", "claim_type", "support_type", "support_refs", "evidence_note"],
@@ -42,42 +42,80 @@ def article_output_schema() -> dict:
             "evidence_note": {"type": "string"},
         },
     }
+
+
+def _practical_guidance_schema() -> dict:
     return {
         "type": "object",
         "additionalProperties": False,
         "required": [
-            "article_id", "title", "seo_title", "slug", "meta_description", "primary_keyword",
-            "secondary_keywords", "search_intent", "summary", "category", "site_category_key",
-            "content_type", "content_format", "tags", "content", "rule_refs", "source_refs",
-            "case_scope", "status", "generation_contract_version", "claim_evidence",
+            "steps", "starting_space", "after_primary_filter_space",
+            "parameter_freeze_rule", "stop_condition", "next_step_policy",
         ],
         "properties": {
-            "article_id": {"type": "string"},
-            "title": {"type": "string"},
-            "seo_title": {"type": "string"},
-            "slug": {"type": "string"},
-            "meta_description": {"type": "string"},
-            "primary_keyword": {"type": "string"},
-            "secondary_keywords": {"type": "array", "items": {"type": "string"}},
-            "search_intent": {"type": "string"},
-            "summary": {"type": "string"},
-            "category": {"type": "string"},
-            "site_category_key": {"type": "string"},
-            "content_type": {"type": "string"},
-            "content_format": {"type": "string", "enum": ["html"]},
-            "tags": {"type": "array", "items": {"type": "string"}},
-            "content": {"type": "string"},
-            "rule_refs": {"type": "array", "items": {"type": "string"}},
-            "source_refs": {"type": "array", "items": {"type": "string"}},
-            "case_scope": {"type": "string", "enum": ["mechanics_only", "economics"]},
-            "status": {"type": "string", "enum": ["draft"]},
-            "generation_contract_version": {"type": "string", "enum": ["2.0"]},
-            "claim_evidence": {"type": "array", "items": claim_schema},
+            "steps": {"type": "array", "items": {"type": "string"}},
+            "starting_space": {"type": "string"},
+            "after_primary_filter_space": {"type": "string"},
+            "parameter_freeze_rule": {"type": "string"},
+            "stop_condition": {"type": "string"},
+            "next_step_policy": {"type": "string"},
         },
     }
 
 
+def article_output_schema(packet: dict | None = None) -> dict:
+    required = [
+        "article_id", "title", "seo_title", "slug", "meta_description", "primary_keyword",
+        "secondary_keywords", "search_intent", "summary", "category", "site_category_key",
+        "content_type", "content_format", "tags", "content", "rule_refs", "source_refs",
+        "case_scope", "status", "generation_contract_version", "claim_evidence",
+    ]
+    properties = {
+        "article_id": {"type": "string"},
+        "title": {"type": "string"},
+        "seo_title": {"type": "string"},
+        "slug": {"type": "string"},
+        "meta_description": {"type": "string"},
+        "primary_keyword": {"type": "string"},
+        "secondary_keywords": {"type": "array", "items": {"type": "string"}},
+        "search_intent": {"type": "string"},
+        "summary": {"type": "string"},
+        "category": {"type": "string"},
+        "site_category_key": {"type": "string"},
+        "content_type": {"type": "string"},
+        "content_format": {"type": "string", "enum": ["html"]},
+        "tags": {"type": "array", "items": {"type": "string"}},
+        "content": {"type": "string"},
+        "rule_refs": {"type": "array", "items": {"type": "string"}},
+        "source_refs": {"type": "array", "items": {"type": "string"}},
+        "case_scope": {"type": "string", "enum": ["mechanics_only", "economics"]},
+        "status": {"type": "string", "enum": ["draft"]},
+        "generation_contract_version": {"type": "string", "enum": ["2.0"]},
+        "claim_evidence": {"type": "array", "items": _claim_schema()},
+    }
+    if packet and packet.get("editorial_contract_version"):
+        required.extend(["editorial_contract_version", "practical_guidance"])
+        properties["editorial_contract_version"] = {
+            "type": "string", "enum": [str(packet["editorial_contract_version"])]
+        }
+        properties["practical_guidance"] = _practical_guidance_schema()
+    return {
+        "type": "object",
+        "additionalProperties": False,
+        "required": required,
+        "properties": properties,
+    }
+
+
 def build_generation_prompt(packet: dict) -> str:
+    editorial_rules = ""
+    if packet.get("editorial_contract_version"):
+        editorial_rules = (
+            "8. 这是V2.1实操质量合同：必须输出 practical_guidance，并在正文设置清晰的“实际怎么操作/操作步骤”类章节。\n"
+            "9. practical_guidance.steps 至少4步；能计算候选空间时必须写明筛选前和主筛选后的规模，并解释到底筛掉多少。\n"
+            "10. 参数必须先固定再看样本；没有第二条已验证规则或证据时，必须明确写出停止条件，不能为了显得更实用而临时拼第二过滤器。\n"
+            "11. next_step_policy 必须说明：只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。\n"
+        )
     return (
         "你是老财迷内容引擎的受约束正文生成器。只根据下面 Draft Packet 写文章，不使用未提供的外部事实，"
         "不复制来源文章原文，不把来源声称升级为事实。输出必须严格符合给定 JSON Schema。\n\n"
@@ -88,8 +126,9 @@ def build_generation_prompt(packet: dict) -> str:
         "4. 每一个规则/计算/来源声称/表现/经济/预测类硬声明，都要在 claim_evidence 中登记。\n"
         "5. verified_rule 只能引用 Draft Packet rule_refs；source_unverified 只能引用 source_refs，且正文必须明确使用“来源提到/原文声称/未验证”等限定。\n"
         "6. synthetic_case 只引用 case_bundle，不能声称是真实开奖或实盘结果。\n"
-        "7. 文章用简单中文、短段落、HTML正文；禁止<script>/<iframe>/<form>/<object>/<embed>。\n\n"
-        "Draft Packet:\n" + json.dumps(packet, ensure_ascii=False, sort_keys=True)
+        "7. 文章用简单中文、短段落、HTML正文；禁止<script>/<iframe>/<form>/<object>/<embed>。\n"
+        + editorial_rules
+        + "\nDraft Packet:\n" + json.dumps(packet, ensure_ascii=False, sort_keys=True)
     )
 
 
@@ -158,6 +197,8 @@ def validate_generated_identity(packet: dict, article: dict) -> None:
         "status": "draft",
         "generation_contract_version": "2.0",
     }
+    if packet.get("editorial_contract_version"):
+        expected["editorial_contract_version"] = packet.get("editorial_contract_version")
     errors = []
     for field, value in expected.items():
         if article.get(field) != value:
@@ -189,7 +230,7 @@ def generate_article(
                 "type": "json_schema",
                 "name": "laocaimi_article_draft_v2",
                 "strict": True,
-                "schema": article_output_schema(),
+                "schema": article_output_schema(packet),
             }
         },
     }

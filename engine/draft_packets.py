@@ -79,8 +79,15 @@ def build_draft_packet(blueprint: dict) -> dict:
     case_bundle = build_case_bundle(blueprint)
     economics_allowed = blueprint.get("case_scope") == "economics"
     content_format = required_content_format()
+    editorial_contract_version = blueprint.get("editorial_contract_version")
     packet_id = "DP-" + (blueprint.get("fingerprint") or hashlib.sha256(str(blueprint).encode()).hexdigest())[:16]
-    return {
+    required_fields = [
+        "article_id", "title", "slug", "meta_description", "primary_keyword", "search_intent",
+        "summary", "content", "content_format", "site_category_key", "rule_refs", "case_scope", "status"
+    ]
+    if editorial_contract_version:
+        required_fields.extend(["editorial_contract_version", "practical_guidance"])
+    packet = {
         "packet_id": packet_id,
         "article_id": blueprint["article_id"],
         "blueprint_id": blueprint["blueprint_id"],
@@ -147,14 +154,22 @@ def build_draft_packet(blueprint: dict) -> dict:
             "source_claims_must_remain_unverified_unless_rule_refs_support_them": True,
         },
         "output_contract": {
-            "required_fields": [
-                "article_id", "title", "slug", "meta_description", "primary_keyword", "search_intent",
-                "summary", "content", "content_format", "site_category_key", "rule_refs", "case_scope", "status"
-            ],
+            "required_fields": required_fields,
             "status_after_generation": "draft",
             "must_include_case_label": case_bundle["must_label_as"],
         },
     }
+    if editorial_contract_version:
+        packet["editorial_contract_version"] = editorial_contract_version
+        packet["practicality"] = {
+            "minimum_concrete_steps": 4,
+            "show_starting_and_after_filter_space_when_computable": True,
+            "parameter_freeze_before_observation": True,
+            "must_state_stop_condition": True,
+            "must_not_invent_unverified_second_filter": True,
+            "reader_goal": "读者看完后能按固定步骤复算，并知道筛选到哪一步必须停止。",
+        }
+    return packet
 
 
 def generate_draft_packets(provider_id: str, lottery: str, play: str, count: int = 10) -> dict:
@@ -172,13 +187,8 @@ def generate_draft_packets(provider_id: str, lottery: str, play: str, count: int
         if len(packets) >= count:
             break
     return {
-        "provider_id": provider_id,
-        "lottery": lottery,
-        "play": play,
-        "requested": count,
-        "generated": len(packets),
-        "skipped": skipped,
-        "packets": packets,
+        "provider_id": provider_id, "lottery": lottery, "play": play, "requested": count,
+        "generated": len(packets), "skipped": skipped, "packets": packets,
     }
 
 
@@ -215,6 +225,9 @@ def review_draft(packet: dict, article: dict) -> DraftReview:
             errors.append(f"article {field} differs from immutable draft packet")
     if str(article.get("content_format", "")).lower() != str(facts.get("content_format", "")).lower():
         errors.append("article content_format differs from immutable draft packet")
+    editorial_contract_version = packet.get("editorial_contract_version")
+    if editorial_contract_version and article.get("editorial_contract_version") != editorial_contract_version:
+        errors.append("article editorial_contract_version differs from draft packet")
     if str(facts.get("content_format", "")).lower() == "html":
         lowered = content.lower()
         if "<p" not in lowered and "<h2" not in lowered:

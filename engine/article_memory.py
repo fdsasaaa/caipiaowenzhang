@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 
 from .dedup import duplicate_candidates
+from .site_contract import required_content_format
 from .store import append_jsonl, iter_registry
 
 
@@ -33,6 +34,9 @@ def reserve_blueprints(blueprints: list[dict]) -> dict:
         if bp.get("status") != "ready_for_draft":
             skipped.append({"article_id": article_id, "reason": f"not_ready:{bp.get('status')}"})
             continue
+        if not bp.get("site_category_key") or not bp.get("content_type"):
+            skipped.append({"article_id": article_id, "reason": "missing_site_contract"})
+            continue
         hits = duplicate_candidates(bp)
         if hits:
             skipped.append({"article_id": article_id, "reason": "duplicate", "hit": hits[0].article_id})
@@ -49,6 +53,9 @@ def reserve_blueprints(blueprints: list[dict]) -> dict:
             "information_gain_type": bp.get("information_gain_type"),
             "lottery": bp.get("lottery"),
             "play": bp.get("play"),
+            "content_type": bp.get("content_type"),
+            "site_category_key": bp.get("site_category_key"),
+            "content_format": required_content_format(),
             "technique_family": bp.get("technique_family"),
             "technique_atoms": bp.get("technique_atoms", []),
             "angle_signature": bp.get("angle_signature"),

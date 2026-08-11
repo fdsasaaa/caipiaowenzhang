@@ -69,6 +69,7 @@ def test_generation_uses_responses_structured_output_and_validates_identity():
         seen.update(url=url, headers=headers, payload=payload, timeout=timeout)
         return {
             "id": "resp_test",
+            "status": "completed",
             "output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(_article(), ensure_ascii=False)}]}],
         }
     result = generate_article(_packet(), model="gpt-5", api_key="test-key", transport=fake_transport)
@@ -92,6 +93,23 @@ def test_generation_rejects_model_mutation_of_immutable_identity():
     article = _article()
     article["site_category_key"] = "gjfa"
     def fake_transport(url, headers, payload, timeout):
-        return {"output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(article, ensure_ascii=False)}]}]}
+        return {"status": "completed", "output": [{"type": "message", "content": [{"type": "output_text", "text": json.dumps(article, ensure_ascii=False)}]}]}
     with pytest.raises(GenerationError, match="site_category_key"):
+        generate_article(_packet(), api_key="test", transport=fake_transport)
+
+
+def test_generation_rejects_incomplete_response_before_parsing_output():
+    def fake_transport(url, headers, payload, timeout):
+        return {"status": "incomplete", "incomplete_details": {"reason": "max_output_tokens"}, "output": []}
+    with pytest.raises(GenerationError, match="not completed"):
+        generate_article(_packet(), api_key="test", transport=fake_transport)
+
+
+def test_generation_rejects_refusal_content():
+    def fake_transport(url, headers, payload, timeout):
+        return {
+            "status": "completed",
+            "output": [{"type": "message", "content": [{"type": "refusal", "refusal": "cannot comply"}]}],
+        }
+    with pytest.raises(GenerationError, match="refused"):
         generate_article(_packet(), api_key="test", transport=fake_transport)

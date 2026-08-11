@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 
+from .article_memory import get_article_record
 from .dedup import duplicate_candidates
 from .planner import plan_articles
 from .semantic_dedup import structural_duplicate_candidates
@@ -105,6 +106,12 @@ def blueprint_from_plan(plan: dict) -> dict:
         subject_lottery, subject_play,
         plan.get("technique_family", ""), " ".join(sorted(atoms)), case_structure,
     )
+    article_id = "LCM-IDEA-" + fp[:16]
+    existing = get_article_record(article_id) or {}
+    editorial_contract_version = existing.get("editorial_contract_version")
+    if not existing:
+        editorial_contract_version = "1.0"
+
     status = "ready_for_draft"
     blockers: list[str] = []
     if plan.get("status") == "blocked_mechanics_verification":
@@ -115,7 +122,7 @@ def blueprint_from_plan(plan: dict) -> dict:
         status = "blocked"
     blueprint = {
         "blueprint_id": "BP-" + fp[:16],
-        "article_id": "LCM-IDEA-" + fp[:16],
+        "article_id": article_id,
         "provider_id": plan.get("provider_id"),
         "lottery": rule_lottery,
         "play": rule_play,
@@ -148,7 +155,6 @@ def blueprint_from_plan(plan: dict) -> dict:
         "status": status,
         "blockers": blockers,
         "article_status": "idea",
-        "editorial_contract_version": "1.0",
         "seo_requirements": {
             "plain_chinese": True,
             "example_required": True,
@@ -158,6 +164,8 @@ def blueprint_from_plan(plan: dict) -> dict:
             "avoid_guaranteed_outcomes": True,
         },
     }
+    if editorial_contract_version:
+        blueprint["editorial_contract_version"] = editorial_contract_version
 
     keyword_hits = keyword_owners(primary_keyword, exclude_article_id=blueprint["article_id"])
     blueprint["keyword_owner_hits"] = [

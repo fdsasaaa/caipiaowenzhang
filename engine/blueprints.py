@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 import hashlib
-from dataclasses import dataclass
 
 from .dedup import duplicate_candidates
 from .planner import plan_articles
+from .site_contract import default_content_type, site_category_for
 from .text import fingerprint
 
 ATOM_LABELS = {
@@ -99,6 +99,8 @@ def blueprint_from_plan(plan: dict) -> dict:
     title = _title(plan["lottery"], plan["play"], atoms)
     primary_keyword = _primary_keyword(plan["lottery"], plan["play"])
     case_structure = _case_structure(plan)
+    content_type = str(plan.get("content_type") or default_content_type())
+    site_category_key = site_category_for(content_type)
     fp = fingerprint(
         plan.get("provider_id", ""), plan["lottery"], plan["play"],
         plan.get("technique_family", ""), " ".join(sorted(atoms)), case_structure,
@@ -117,6 +119,8 @@ def blueprint_from_plan(plan: dict) -> dict:
         "provider_id": plan.get("provider_id"),
         "lottery": plan["lottery"],
         "play": plan["play"],
+        "content_type": content_type,
+        "site_category_key": site_category_key,
         "technique_family": plan.get("technique_family"),
         "technique_atoms": atoms,
         "angle_signature": plan.get("angle_signature") or _angle_key(plan),

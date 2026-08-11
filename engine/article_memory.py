@@ -53,6 +53,8 @@ def reserve_blueprints(blueprints: list[dict]) -> dict:
             "information_gain_type": bp.get("information_gain_type"),
             "lottery": bp.get("lottery"),
             "play": bp.get("play"),
+            "subject_lottery": bp.get("subject_lottery") or bp.get("lottery"),
+            "subject_play": bp.get("subject_play") or bp.get("play"),
             "content_type": bp.get("content_type"),
             "site_category_key": bp.get("site_category_key"),
             "content_format": required_content_format(),

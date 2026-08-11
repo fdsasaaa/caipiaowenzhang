@@ -1,0 +1,17 @@
+{
+  "rule_id": "EXAMPLE-ONLY",
+  "lottery": "示例彩种",
+  "play": "示例玩法",
+  "positions": [],
+  "number_domain": "待核验",
+  "bet_format": "待核验",
+  "bet_count_formula": "待核验",
+  "win_condition": "待核验",
+  "unit_stake": null,
+  "payout": null,
+  "rebate": null,
+  "status": "unverified",
+  "source": "placeholder",
+  "verified_at": null,
+  "notes": "模板文件，不得用于生成真实投注案例。"
+}

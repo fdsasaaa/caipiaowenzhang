@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+var/
+*.sqlite3
+*.db
+.env
+.env.*
+secrets/
+
+# Raw scraped full text should stay outside Git by default.
+knowledge/source_articles/*
+!knowledge/source_articles/.gitkeep
+
+# Generated local reports
+reports/

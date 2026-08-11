@@ -1,0 +1,9 @@
+[project]
+name = "laocaimi-content-engine"
+version = "0.1.0"
+description = "Rule-aware, deduplicated lottery content knowledge and drafting engine for laocaimi.org"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

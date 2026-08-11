@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LotteryRule",
+  "type": "object",
+  "required": ["rule_id", "lottery", "play", "status", "source", "verified_at"],
+  "properties": {
+    "rule_id": {"type": "string"},
+    "lottery": {"type": "string"},
+    "play": {"type": "string"},
+    "positions": {"type": "array", "items": {"type": "string"}},
+    "number_domain": {"type": "string"},
+    "bet_format": {"type": "string"},
+    "bet_count_formula": {"type": "string"},
+    "win_condition": {"type": "string"},
+    "unit_stake": {"type": ["number", "null"]},
+    "payout": {"type": ["number", "null"]},
+    "rebate": {"type": ["number", "null"]},
+    "status": {"enum": ["unverified", "verified", "deprecated"]},
+    "source": {"type": "string"},
+    "verified_at": {"type": ["string", "null"]},
+    "notes": {"type": "string"}
+  },
+  "additionalProperties": true
+}

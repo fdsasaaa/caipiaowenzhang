@@ -4,11 +4,13 @@
 
 ## 当前版本
 
-**v2.0.0**
+**v2.1.0**
 
 V2 的目标是把“AI辅助写文章”升级成可持续的自动内容生产系统：新来源可以自动知识化并反哺选题，系统先排序候选，再调用受约束模型写正文，最后通过证据、规则、去重、SEO和投注合规门禁才产生 Approved Package。
 
-## V2 主流水线
+V2.1 在此基础上新增**实操/编辑质量门禁**：程序不再把“所有硬规则通过”误当成“文章已经满分”。新文章除了 `quality_score`，还必须独立通过 `editorial_score`，证明读者能看懂实际操作步骤、候选空间如何变化、参数何时冻结，以及没有第二条已验证规则时何时停止继续加条件。
+
+## V2.1 主流水线
 
 ```text
 新采集文章
@@ -23,15 +25,15 @@ Blueprint
   ↓ exact keyword + lexical + structural dedup
 SEO Topic Priority
   ↓
-Draft Packet
+Draft Packet + Editorial Practicality Contract
   ↓ OpenAI Responses strict structured output
-V2 AI Draft + claim_evidence
+V2 AI Draft + claim_evidence + practical_guidance
   ↓
 Draft Review
   ↓
 Claim → Evidence Gate
   ↓
-Quality + Rule + Bet Compliance + Structural Dedup + SEO Ownership
+Hard Quality + Editorial Quality + Rule + Bet Compliance + Structural Dedup + SEO Ownership
   ↓
 Approved Package
   ↓
@@ -80,7 +82,27 @@ fdsasaaa/xyptdq/content/drafts
 - failed/incomplete/cancelled/refusal均fail-closed；
 - CI使用fake transport，不调用真实外部API。
 
-### 5. Claim → Evidence
+### 5. V2.1 Editorial / Practical Quality
+
+新 Blueprint 默认带 `editorial_contract_version=1.0`。已经存在于 Registry 的旧文章继续沿用原生命周期，不会被强制升级。
+
+V2.1 新文章必须输出 `practical_guidance`：
+
+- `steps`：至少4个具体操作步骤；
+- `starting_space`：筛选前候选空间；
+- `after_primary_filter_space`：主筛选后候选空间；
+- `parameter_freeze_rule`：参数必须先固定再看样本；
+- `stop_condition`：没有第二条已验证规则时必须明确停止；
+- `next_step_policy`：只有新增条件有已验证规则/证据并能复算，才允许继续压缩候选。
+
+审批结果现在同时返回：
+
+- `quality_score`：硬质量、规则、重复与合规；
+- `editorial_score`：读者可操作性与实用表达质量。
+
+V2.1 的目标不是鼓励把更多条件拼在一起，而是强制文章说明“当前方法实际筛掉了什么、做到哪一步应该停”。
+
+### 6. Claim → Evidence
 
 V2自动文章必须携带 `claim_evidence`。
 
@@ -90,7 +112,7 @@ V2自动文章必须携带 `claim_evidence`。
 - mechanics-only不能借claim evidence绕过economics门禁；
 - 百分比、注数、命中率、赔率、返点、奖金、盈利、明确未来预测等硬声明没有证据登记就不能批准。
 
-### 6. 双层去重
+### 7. 双层去重
 
 - 旧 lexical/core Jaccard 保留；
 - exact fingerprint保留；
@@ -98,7 +120,7 @@ V2自动文章必须携带 `claim_evidence`。
 - Blueprint阶段先阻断，避免浪费模型调用；
 - Approval再次阻断，防止外部AI或手工绕过。
 
-### 7. SEO Topic Priority
+### 8. SEO Topic Priority
 
 没有真实外部数据时：
 
@@ -114,12 +136,12 @@ V2自动文章必须携带 `claim_evidence`。
 
 `normalize_search_console_csv.py` 支持把常见中英文GSC查询报表CSV转换为标准signals JSONL。
 
-### 8. 永久记忆与网站桥梁
+### 9. 永久记忆与网站桥梁
 
 - Registry append-only + last-write-wins；
 - exact primary keyword唯一owner；
 - Internal Link Planner只规划article_id关系，未发布URL保持null；
--真实Publication Receipt出现后才写published_url；
+- 真实Publication Receipt出现后才写published_url；
 - 内链插入产生新content hash，必须重新Approval。
 
 ## 常用命令
@@ -209,7 +231,9 @@ python scripts/v2_readiness.py \
 
 ## 当前内容状态
 
-现有8篇烟测文章仍保持已批准 + 网站draft-only。V2升级不会自动把它们promote、scheduled或published。
+现有8篇烟测文章仍保持已批准 + 网站draft-only。V2.1升级不会自动把它们promote、scheduled或published。
+
+PR #30 中的 V2.1 质量样本仅用于人工审稿与自动门禁回归；在明确决定前不写 Registry、不送网站 draft、不排期、不发布。
 
 ## 关键文档
 
@@ -218,13 +242,3 @@ python scripts/v2_readiness.py \
 - `docs/SEO_PRIORITY_V2.md`
 - `docs/CONTENT_LIFECYCLE_V1.md`
 - `publishing/XYPTDQ_BRIDGE.md`
-
-## 测试
-
-```bash
-pytest -q
-python -m engine.cli audit
-python scripts/v2_readiness.py
-```
-
-正式变更继续通过独立分支、PR和GitHub Actions后进入`main`。

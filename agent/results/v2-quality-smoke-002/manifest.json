@@ -1,0 +1,21 @@
+{
+  "run_id": "v2-quality-smoke-002",
+  "purpose": "second human-quality review baseline under V2.1 using a rule/combination article rather than a historical-pattern article",
+  "generation_mode": "current_chat_model_using_v2.1_draft_and_editorial_contract",
+  "real_openai_api_called": false,
+  "reason_real_api_not_called": "No OPENAI_API_KEY is available to this session. The article is generated under the same Draft Packet, claim-evidence and editorial-practicality constraints and then validated by the repository's real approval code.",
+  "subject": {
+    "lottery": "分分彩",
+    "play": "后二组选复式",
+    "technique": "compound_selection",
+    "selector": "后二"
+  },
+  "rule_refs": ["SSC-HIST-MECH-2STAR-GROUP-V1"],
+  "source_refs": ["USER-SUPPLIED-DINGMA-RULES-2026-08-11"],
+  "editorial_contract_version": "1.0",
+  "production_effect": "none",
+  "registry_write": false,
+  "website_draft_write": false,
+  "scheduled_write": false,
+  "published": false
+}

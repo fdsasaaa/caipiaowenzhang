@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TechniqueCluster",
+  "type": "object",
+  "required": ["cluster_id", "signature", "source_count", "technique_atoms", "verification_status"],
+  "properties": {
+    "cluster_id": {"type": "string"},
+    "signature": {"type": "string"},
+    "source_count": {"type": "integer", "minimum": 1},
+    "source_classifications": {"type": "array", "items": {"type": "string"}},
+    "lotteries": {"type": "array", "items": {"type": "string"}},
+    "positions": {"type": "array", "items": {"type": "string"}},
+    "technique_atoms": {"type": "array", "items": {"type": "string"}},
+    "example_source_ids": {"type": "array", "items": {"type": "string"}},
+    "risk_rate": {"type": "number"},
+    "verification_status": {"enum": ["unverified_source", "rules_verified", "tested"]},
+    "article_generation_status": {"enum": ["idea_only", "eligible_after_rule_binding", "eligible"]}
+  }
+}

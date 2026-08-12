@@ -41,11 +41,12 @@ def test_missing_semantics_atoms_remain_fail_closed():
         assert automation_class(atom, semantics) == "missing_semantics_or_domain_contract"
 
 
-def test_unlock_estimates_do_not_claim_implementation():
+def test_unlock_estimates_only_credit_families_that_contain_the_atom():
     report = build_atom_gap_report()
     for row in report["ranked_unbound_atoms"]:
         assert row["automation_class"] != "already_executable"
         assert row["blocked_family_count"] >= row["bindable_blocked_family_count"]
+        assert row["bindable_blocked_family_count"] >= row["structural_bindable_unlock_if_only_atom_added"]
         assert row["structural_bindable_unlock_if_only_atom_added"] >= row["structural_strict_multistage_unlock_if_only_atom_added"]
 
 

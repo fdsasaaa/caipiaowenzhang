@@ -46,14 +46,36 @@ def build_multistage_generation_prompt(packet: dict) -> str:
         "4. practical_guidance.starting_space 写整个pipeline起点；after_primary_filter_space 写所有预冻结阶段完成后的最终空间。"
         "stop_condition 要明确：完成最后一层后停止；任何额外新过滤器必须另有已验证规则/证据并在下一次实验前冻结。\n"
         "5. 正文必须有清晰‘实际怎么操作/按步骤’章节，让读者能从起始空间逐层复算到最终候选空间。\n"
-        "6. 候选空间数学事实建议登记为 calculation + verified_rule（引用Draft Packet rule_refs）；"
+        "6. 候选空间数学事实登记为 calculation + verified_rule（引用Draft Packet rule_refs）。"
         "参数选择本身若只是experimental_parameter，不要伪装成verified_rule证明其预测效果。\n"
+        "7. support_type=editorial 是非证据元数据，support_refs 必须是空数组 []。"
+        "不要写 [\"rule_refs\"] 之类占位符；真实规则事实用 verified_rule + 实际 rule_refs。\n"
+        "8. 对含‘注’的候选空间说明，至少为每组不同的数值关系建立一条 calculation evidence。"
+        "同一组数字在正文步骤中重复解释可以复用同一数学证据，但不能完全没有对应 calculation。\n"
         "\n机器已验证的阶段：\n" + "\n".join(stage_lines) +
         f"\n整体：{result.get('starting_space')} -> {result.get('final_space')}，"
         f"总排除 {result.get('total_excluded')}。\n"
         "\n完整filter_pipeline_spec：\n" + json.dumps(spec, ensure_ascii=False, sort_keys=True) +
         "\n完整filter_pipeline_result：\n" + json.dumps(result, ensure_ascii=False, sort_keys=True)
     )
+
+
+def _normalize_multistage_article(article: dict) -> dict:
+    """Remove non-evidentiary ref noise without changing factual claims/content.
+
+    Live V2.2 showed that some providers fill editorial support_refs with a
+    literal placeholder such as ["rule_refs"]. Editorial rows are explicitly
+    forbidden from proving hard claims, so those refs carry no evidence value.
+    Canonicalizing them to [] is lossless and makes the structured contract
+    deterministic without weakening verified_rule/source/synthetic checks.
+    """
+    normalized = deepcopy(article)
+    entries = normalized.get("claim_evidence")
+    if isinstance(entries, list):
+        for entry in entries:
+            if isinstance(entry, dict) and entry.get("support_type") == "editorial":
+                entry["support_refs"] = []
+    return normalized
 
 
 def generate_multistage_article(
@@ -88,6 +110,7 @@ def generate_multistage_article(
         raise GenerationError("structured model output is not valid JSON") from exc
     if not isinstance(article, dict):
         raise GenerationError("structured model output must be an object")
+    article = _normalize_multistage_article(article)
     validate_generated_identity(packet, article)
     return GenerationResult(
         article=article,

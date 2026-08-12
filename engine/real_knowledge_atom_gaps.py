@@ -64,12 +64,15 @@ def automation_class(atom: str, semantics: dict) -> str:
 def _would_be_structurally_executable(family: dict, added_atom: str, *, strict_multi: bool) -> bool:
     """Estimate structural unlock only; never claim the missing operator exists.
 
-    A family counts only when adding exactly one atom would make every family atom
-    either an existing executable atom, context atom, or that one proposed atom.
-    It must also have a bindable 后二/后三 position. This deliberately avoids
-    overstating unlock potential for families that still contain other unknown atoms.
+    A family counts only when it actually contains ``added_atom`` and adding that
+    one atom would make every family atom either an existing executable atom,
+    context atom, or that one proposed atom. It must also have a bindable 后二/后三
+    position. This deliberately avoids crediting an atom for families it does not
+    participate in or for families that still contain other unknown atoms.
     """
     atoms = set(str(atom) for atom in (family.get("a") or []) if str(atom))
+    if added_atom not in atoms:
+        return False
     allowed = set(EXECUTABLE_ATOM_ORDER) | set(CONTEXT_ATOMS) | {added_atom}
     if not atoms.issubset(allowed):
         return False

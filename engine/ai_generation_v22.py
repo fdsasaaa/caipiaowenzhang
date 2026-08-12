@@ -1,13 +1,17 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 from copy import deepcopy
 from typing import Callable
 
 from .ai_generation import (
+    DEFAULT_MODEL,
     GenerationError,
     GenerationResult,
+    RESPONSES_URL,
+    _default_transport,
     _response_output_text,
     article_output_schema,
     build_generation_prompt,
@@ -260,13 +264,17 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
 def generate_multistage_article(
     packet: dict,
     *,
-    model: str,
-    api_key: str,
-    transport: Callable[[str, dict[str, str], dict, int], dict],
+    model: str | None = None,
+    api_key: str | None = None,
+    transport: Callable[[str, dict[str, str], dict, int], dict] | None = None,
     timeout: int = 180,
 ) -> GenerationResult:
     if packet.get("contract_version") != "2.2-multistage":
         raise GenerationError("Draft Packet is not V2.2 multistage")
+    api_key = api_key or os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise GenerationError("OPENAI_API_KEY is required for real model generation")
+    model = model or os.getenv("OPENAI_MODEL") or DEFAULT_MODEL
     payload = {
         "model": model,
         "store": False,
@@ -281,7 +289,7 @@ def generate_multistage_article(
         },
     }
     headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    response = transport("https://api.openai.com/v1/responses", headers, payload, timeout)
+    response = (transport or _default_transport)(RESPONSES_URL, headers, payload, timeout)
     text = _response_output_text(response)
     try:
         article = json.loads(text)

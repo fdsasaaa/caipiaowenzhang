@@ -1,0 +1,9 @@
+target=200
+mode=execute
+model=gpt-5.4-mini
+formal_inventory_target=200
+website_sync=false
+website_draft_write=false
+scheduling=false
+publishing=false
+requested_at=2026-08-13T06:31:00+08:00

@@ -14,6 +14,16 @@ class StructuralDuplicateHit:
     reasons: list[str]
 
 
+STRUCTURAL_DUPLICATE_OWNING_STATUSES = {
+    "idea",
+    "draft",
+    "approved",
+    "queued",
+    "scheduled",
+    "published",
+}
+
+
 def _set(value) -> set[str]:
     if not value:
         return set()
@@ -102,6 +112,10 @@ def structural_duplicate_candidates(candidate: dict, threshold: float = 0.82) ->
     article_id = candidate.get("article_id")
     hits: list[StructuralDuplicateHit] = []
     for old in iter_registry("articles"):
+        # Rejected/revision-only rows are historical attempts, not current
+        # structural owners. Only active editorial/SEO lifecycle states block.
+        if old.get("status") not in STRUCTURAL_DUPLICATE_OWNING_STATUSES:
+            continue
         if article_id and old.get("article_id") == article_id:
             continue
         if candidate.get("fingerprint") and candidate.get("fingerprint") == old.get("fingerprint"):

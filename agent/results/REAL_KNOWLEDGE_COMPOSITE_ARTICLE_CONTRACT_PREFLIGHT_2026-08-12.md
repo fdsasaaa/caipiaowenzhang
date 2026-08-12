@@ -1,13 +1,13 @@
 # Real Knowledge Composite Article Contract — Offline Preflight
 
-**Status:** IMPLEMENTED — ordinary CI pending  
+**Status:** ACCEPTED — reader-facing composite article contract is green with no provider call  
 **Date:** 2026-08-12
 
 ## Purpose
 
 Turn the accepted two-source sum/span composition into a reader-facing V2.2 article contract without making a provider call.
 
-The article contract must preserve a distinction that the underlying archive actually supports:
+The article contract preserves a distinction that the underlying archive actually supports:
 
 - `BRBCW-006020` / `FAM-c7549b61f340ef66` supports the provenance of the `sum_range` atom only;
 - `BRBCW-002590` / `FAM-c93cfcc1527bf6f8` supports the provenance of the `span_range` atom only;
@@ -76,13 +76,31 @@ The prompt and quality gate require:
 
 ## Negative gates
 
-Tests must fail when:
+Tests fail when:
 
 - the article attributes the combination, order, or thresholds to the sources;
 - exact machine path markers are omitted;
 - the reader-facing test formula is absent;
 - the second-stage stop condition is absent;
 - a giant candidate-number dump is used as a substitute for explanation.
+
+## Ordinary CI acceptance
+
+GitHub Actions run:
+
+- workflow: `test`
+- run: `31611034670`
+- tested head: `5feee81d36880d5fb51518a73a24caca16ec1c89`
+- Python 3.10: `success`
+- Python 3.13: `success`
+- repository audit: `pass`
+- registry articles: `8`
+- registry sources: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+- Python 3.10 pytest: `315 passed`
+
+The accepted contract therefore demonstrates that article readability can be improved without weakening machine completeness: the 534-candidate set remains fully locked in code while the content gate insists on explanation, reproducible formulas, provenance, stage arithmetic, deterministic spot checks, and an explicit stop rule.
 
 ## Safety boundaries
 
@@ -92,4 +110,4 @@ Tests must fail when:
 - scheduled: `false`
 - published: `false`
 
-Only ordinary repository CI is justified for this PR. A live model call is a separate later gate, not part of this preflight.
+No live provider workflow was created in this PR. A live model call remains a separate later gate.

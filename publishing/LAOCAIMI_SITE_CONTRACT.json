@@ -15,6 +15,35 @@
     "site_category_key": "tzjq"
   },
   "retired_site_category_keys": ["seo-articles"],
+  "seo_cluster_contract": {
+    "version": 1,
+    "website_registry_path": "content/seo_cluster_registry.json",
+    "website_registry_version": "1.0.0",
+    "article_carrier_category_key": "tzjq",
+    "allowed_cluster_ids": [
+      "ffc_research",
+      "hash_ffc",
+      "qiqu_ffc",
+      "ssc",
+      "racing",
+      "platform_review",
+      "research_lab"
+    ],
+    "package_fields": {
+      "primary": "primary_seo_cluster_id",
+      "secondary": "secondary_seo_cluster_ids"
+    },
+    "policy": {
+      "cluster_metadata_optional_for_legacy_approved_packages": true,
+      "secondary_requires_primary": true,
+      "one_primary_cluster_when_assigned": true,
+      "duplicate_secondary_ids_rejected": true,
+      "primary_must_not_repeat_in_secondary": true,
+      "assignment_must_come_from_immutable_or_editorial_contract": true,
+      "model_or_title_only_assignment_prohibited": true,
+      "cluster_assignment_does_not_authorize_publication": true
+    }
+  },
   "transport_contract": {
     "automatic_cross_repo_transport_enabled": false,
     "source_status_required": "approved",

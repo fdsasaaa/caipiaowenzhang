@@ -1,21 +1,34 @@
 {
-  "version": 1,
+  "version": 2,
   "site": "www.laocaimi.org",
+  "website_repository": "fdsasaaa/xyptdq",
   "required_content_format": "html",
+  "approved_package_root": "articles/approved",
   "content_types": {
     "technique_article": {"site_category_key": "tzjq"},
     "hangup_scheme": {"site_category_key": "gjfa"},
     "resource_article": {"site_category_key": "zyyy"},
-    "seo_topic": {"site_category_key": "seo-articles"}
+    "seo_topic": {"site_category_key": "tzjq", "routing_note": "ordinary SEO articles share the unified tzjq carrier"}
   },
   "current_generator_default": {
     "content_type": "technique_article",
     "site_category_key": "tzjq"
   },
+  "retired_site_category_keys": ["seo-articles"],
+  "transport_contract": {
+    "automatic_cross_repo_transport_enabled": false,
+    "source_status_required": "approved",
+    "website_destination_state": "draft",
+    "transport_must_not_schedule": true,
+    "transport_must_not_publish": true,
+    "future_activation_requires_explicit_website_policy_change": true
+  },
   "policy": {
     "category_must_be_decided_by_content_engine": true,
     "website_must_not_guess_category_from_title": true,
     "unknown_content_type_fails_closed": true,
-    "website_repo_is_source_of_truth_for_numeric_catid": true
+    "website_repo_is_source_of_truth_for_numeric_catid": true,
+    "retired_category_key_must_be_rejected": true,
+    "approved_package_is_not_publication_authorization": true
   }
 }

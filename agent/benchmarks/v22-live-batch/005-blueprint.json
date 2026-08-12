@@ -1,0 +1,84 @@
+{
+  "blueprint_id": "BP-V22-LIVE-005",
+  "article_id": "LCM-SMOKE-V22-005",
+  "provider_id": null,
+  "lottery": "时时彩",
+  "play": "后二组选",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二组选复式",
+  "content_type": "technique_article",
+  "site_category_key": "tzjq",
+  "technique_family": "V22-PAIR-POOL-PARITY-MULTISTAGE",
+  "technique_atoms": ["compound_selection", "odd_even_filter"],
+  "resolved_selector": "后二",
+  "selector_basis": "verified_play",
+  "source_positions": ["十位", "个位"],
+  "angle_signature": "v22-last2-pool-mixedparity",
+  "title": "分分彩后二组选复式奇偶技巧：数字池到奇偶混合的两层筛选",
+  "slug_seed": "ffc-last2-group-pool-parity-v22",
+  "primary_keyword": "分分彩后二组选复式奇偶技巧",
+  "secondary_keywords": ["分分彩后二组选", "后二组选奇偶", "二星组选复式", "分分彩筛选技巧"],
+  "search_intent": "看懂分分彩后二组选复式如何先用数字池再保留一奇一偶对子",
+  "information_gain_type": "prefrozen_multistage_filter_case",
+  "summary_goal": "从45个后二组选对子开始，先固定0/2/5/7/9数字池，再保留一奇一偶对子，展示45→10→6。",
+  "outline": [
+    "后二组选先把无序对子口径说清楚",
+    "第一层：0/2/5/7/9数字池得到10注",
+    "第二层：一奇一偶为什么剩6注",
+    "实际怎么操作：列对子再判断奇偶",
+    "演示样本怎样核对号码结构",
+    "两层完成后的停止规则"
+  ],
+  "case_structure": "selector=后二;metrics=combination_count,parity_pattern;scope=mechanics_only",
+  "case_plan": {
+    "supported": [
+      {"atom": "compound_selection", "metric": "combination_count"},
+      {"atom": "odd_even_filter", "metric": "parity_pattern"}
+    ],
+    "unsupported": [],
+    "case_engine_ready": true,
+    "resolved_selector": "后二",
+    "selector_basis": "verified_play",
+    "source_position_supported": true
+  },
+  "filter_pipeline_spec": {
+    "space_type": "unordered_2digit",
+    "starting_space": 45,
+    "stages": [
+      {
+        "id": "pool_02579",
+        "label": "候选数字池0/2/5/7/9",
+        "atom": "compound_selection",
+        "op": "digit_pool",
+        "params": {"digits": [0, 2, 5, 7, 9]},
+        "basis": "experimental_parameter"
+      },
+      {
+        "id": "mixed_parity",
+        "label": "一奇一偶",
+        "atom": "odd_even_filter",
+        "op": "mixed_parity",
+        "params": {},
+        "basis": "experimental_parameter"
+      }
+    ]
+  },
+  "case_scope": "mechanics_only",
+  "rule_refs": ["SSC-HIST-MECH-2STAR-GROUP-V1"],
+  "source_refs": [],
+  "source_support_count": 0,
+  "source_risk_rate": 0.0,
+  "fingerprint": "190e824012ab80629d52ecd05081758f8f29ad8f06b956ba0d30602a08ec5765",
+  "status": "ready_for_draft",
+  "blockers": [],
+  "article_status": "idea",
+  "editorial_contract_version": "1.1",
+  "seo_requirements": {
+    "plain_chinese": true,
+    "example_required": true,
+    "unique_information_gain_required": true,
+    "unique_exact_primary_keyword_required": true,
+    "avoid_keyword_stuffing": true,
+    "avoid_guaranteed_outcomes": true
+  }
+}

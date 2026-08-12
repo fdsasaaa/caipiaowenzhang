@@ -1,0 +1,84 @@
+{
+  "blueprint_id": "BP-V22-LIVE-003",
+  "article_id": "LCM-SMOKE-V22-003",
+  "provider_id": null,
+  "lottery": "时时彩",
+  "play": "后三直选",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "content_type": "technique_article",
+  "site_category_key": "tzjq",
+  "technique_family": "V22-SUM-DISTINCT-MULTISTAGE",
+  "technique_atoms": ["sum_range", "repeat_number"],
+  "resolved_selector": "后三",
+  "selector_basis": "verified_play",
+  "source_positions": ["后三"],
+  "angle_signature": "v22-last3-sum-distinct",
+  "title": "分分彩后三直选和值重号技巧：先筛和值再排重复号码",
+  "slug_seed": "ffc-last3-sum-distinct-v22",
+  "primary_keyword": "分分彩后三直选和值重号技巧",
+  "secondary_keywords": ["分分彩和值技巧", "后三直选重号", "分分彩号码结构", "后三直选投注技巧"],
+  "search_intent": "看懂分分彩后三直选如何先用和值区间再用三位全异结构做两层筛选",
+  "information_gain_type": "prefrozen_multistage_filter_case",
+  "summary_goal": "先冻结和值8–19，再要求后三三位互不相同，展示1000→760→588。",
+  "outline": [
+    "先把后三直选的有序结果空间算清楚",
+    "第一层：和值8–19筛掉多少",
+    "第二层：三位全异再筛掉多少",
+    "实际怎么操作：先和值后结构",
+    "演示数据怎样检查重复结构",
+    "为什么排重复只是一种研究过滤"
+  ],
+  "case_structure": "selector=后三;metrics=digit_sum,repeat_pattern;scope=mechanics_only",
+  "case_plan": {
+    "supported": [
+      {"atom": "sum_range", "metric": "digit_sum"},
+      {"atom": "repeat_number", "metric": "repeat_pattern"}
+    ],
+    "unsupported": [],
+    "case_engine_ready": true,
+    "resolved_selector": "后三",
+    "selector_basis": "verified_play",
+    "source_position_supported": true
+  },
+  "filter_pipeline_spec": {
+    "space_type": "ordered_3digit",
+    "starting_space": 1000,
+    "stages": [
+      {
+        "id": "sum_8_19",
+        "label": "和值8–19",
+        "atom": "sum_range",
+        "op": "sum_range",
+        "params": {"min": 8, "max": 19},
+        "basis": "experimental_parameter"
+      },
+      {
+        "id": "distinct_3",
+        "label": "三位全异",
+        "atom": "repeat_number",
+        "op": "distinct_count",
+        "params": {"count": 3},
+        "basis": "experimental_parameter"
+      }
+    ]
+  },
+  "case_scope": "mechanics_only",
+  "rule_refs": ["SSC-HIST-MECH-3STAR-LAST-V1"],
+  "source_refs": [],
+  "source_support_count": 0,
+  "source_risk_rate": 0.0,
+  "fingerprint": "f1dac01f4a2f4ef33b28060f0b7ea4c3a1d8c02023d7fc0be86d147ab3e72000",
+  "status": "ready_for_draft",
+  "blockers": [],
+  "article_status": "idea",
+  "editorial_contract_version": "1.1",
+  "seo_requirements": {
+    "plain_chinese": true,
+    "example_required": true,
+    "unique_information_gain_required": true,
+    "unique_exact_primary_keyword_required": true,
+    "avoid_keyword_stuffing": true,
+    "avoid_guaranteed_outcomes": true
+  }
+}

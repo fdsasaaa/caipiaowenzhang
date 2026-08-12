@@ -1,7 +1,7 @@
 # 组三 / 组六 / 胆码 Domain Contract
 
 **Date:** 2026-08-13  
-**Status:** IMPLEMENTED — ordinary CI pending  
+**Status:** ACCEPTED  
 **Mode:** diagnostic only; no new executable atom
 
 ## Why this phase exists
@@ -131,6 +131,22 @@ The public article layer should continue to use `分分彩` wherever practical.
 
 The verified internal mechanics rules retain the historical taxonomy label `时时彩`. This is allowed because it is internal provenance/mechanics metadata and is not rewritten to falsify history.
 
+## CI evidence
+
+Ordinary PR CI:
+
+- run: `31647405934`
+- Python 3.10: SUCCESS
+- Python 3.13: SUCCESS
+- repository audit: PASS
+- pytest: `358 passed`
+- registry articles: `8`
+- source records: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+
+The CI validates the exact `270 / 720 / 10 = 1000` ordered partition, the `90 / 120` unordered bet-unit counts, the verified rule refs, fail-closed group-mode binding, and continued blocking of `dan_candidate`.
+
 ## What this PR does not do
 
 - does not add `group3_group6` to the executable filter whitelist;
@@ -142,9 +158,7 @@ The verified internal mechanics rules retain the historical taxonomy label `时�
 - does not write Registry or website drafts;
 - does not schedule or publish anything.
 
-## Next gate after CI
-
-If ordinary CI passes, the next engineering decision should be:
+## Next gate
 
 1. create a **parameter-binding contract** for `group_mode` that can distinguish `组三` from `组六` without losing source provenance;
 2. only then test one real group family offline;

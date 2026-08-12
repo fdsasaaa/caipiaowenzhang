@@ -69,9 +69,10 @@ def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
 
     Natural model prose may omit the exact stage label or use different quote
     characters. A unique machine-known before/after/excluded triple is enough
-    when the sentence also contains explicit filtering/space language. This
-    keeps normalization fail-closed: arbitrary claims that merely share one or
-    two numbers cannot borrow rule refs.
+    when the sentence also contains explicit filtering/space language. Overall
+    summaries may omit the starting count when they include both final_space and
+    total_excluded with strong overall markers. Arbitrary numeric prose remains
+    fail-closed.
     """
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
     compact = _compact(claim)
@@ -90,22 +91,20 @@ def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
             matched_stages.append(stage)
 
     if len(matched_stages) == 1 and any(marker in compact for marker in calculation_markers):
-        stage = matched_stages[0]
-        label = _compact(stage.get("label"))
-        stage_marker = f"第{stage.get('index')}层"
-        if (label and label in compact) or stage_marker in compact:
-            return True
-        # The exact numeric triple is unique within this packet. Accept natural
-        # calculation prose even when it paraphrases/quotes the stage label.
         return True
 
-    overall = (
-        str(result.get("starting_space")),
-        str(result.get("final_space")),
-        str(result.get("total_excluded")),
-    )
-    if all(value not in {"None", ""} and value in compact for value in overall):
-        if any(marker in compact for marker in ("整体", "总共", "合计", "最终", "两层", "三层")):
+    start = str(result.get("starting_space"))
+    final = str(result.get("final_space"))
+    excluded = str(result.get("total_excluded"))
+    overall_markers = ("整体", "总共", "合计", "最终", "全部完成", "完成后", "两层", "三层", "总排除")
+    has_overall_marker = any(marker in compact for marker in overall_markers)
+
+    if has_overall_marker and all(value not in {"None", ""} and value in compact for value in (start, final, excluded)):
+        return True
+    if has_overall_marker and all(value not in {"None", ""} and value in compact for value in (final, excluded)):
+        # final + total_excluded uniquely determine starting_space; require an
+        # explicit final/overall context so two unrelated numbers cannot match.
+        if any(marker in compact for marker in ("最终", "总排除", "总共排除", "全部完成", "完成后")):
             return True
     return False
 

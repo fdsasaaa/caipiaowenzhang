@@ -1,0 +1,32 @@
+name: real-knowledge-atom-gap-ranking-temp
+
+on:
+  push:
+    branches:
+      - agent/real-knowledge-atom-gap-ranking
+    paths:
+      - '.github/real-knowledge-atom-gap-ranking.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  rank-atom-gaps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Rank full archive atom gaps offline
+        run: |
+          mkdir -p runtime/real-knowledge-atom-gap-ranking
+          python scripts/rank_real_knowledge_atom_gaps.py --output runtime/real-knowledge-atom-gap-ranking/report.json
+      - name: Upload ranking evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-knowledge-atom-gap-ranking
+          path: runtime/real-knowledge-atom-gap-ranking
+          if-no-files-found: error
+          retention-days: 14

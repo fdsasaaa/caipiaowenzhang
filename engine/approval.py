@@ -9,6 +9,7 @@ from .draft_packets import review_draft
 from .editorial_quality import evaluate_editorial
 from .quality import evaluate as evaluate_quality
 from .seo_keywords import keyword_owners
+from .site_contract import normalize_seo_cluster_assignment, seo_cluster_article_category_key
 from .text import sha256_text
 
 
@@ -28,6 +29,13 @@ def _existing_identity(article_id: str | None) -> dict:
     if not article_id:
         return {}
     return get_article_record(article_id) or {}
+
+
+def _cluster_assignment(packet: dict, existing: dict) -> tuple[str | None, list[str]]:
+    facts = packet.get("immutable_facts", {})
+    primary = facts["primary_seo_cluster_id"] if "primary_seo_cluster_id" in facts else existing.get("primary_seo_cluster_id")
+    secondary = facts["secondary_seo_cluster_ids"] if "secondary_seo_cluster_ids" in facts else existing.get("secondary_seo_cluster_ids", [])
+    return normalize_seo_cluster_assignment(primary, secondary)
 
 
 def _enrich_for_quality(packet: dict, article: dict) -> dict:
@@ -50,6 +58,8 @@ def _enrich_for_quality(packet: dict, article: dict) -> dict:
         "fingerprint": facts.get("fingerprint") or existing.get("fingerprint"),
         "case_structure": facts.get("case_structure") or existing.get("case_structure", ""),
         "information_gain_type": facts.get("information_gain_type") or existing.get("information_gain_type", "method_mechanics_and_reproducible_case"),
+        "primary_seo_cluster_id": facts.get("primary_seo_cluster_id") if "primary_seo_cluster_id" in facts else existing.get("primary_seo_cluster_id"),
+        "secondary_seo_cluster_ids": facts.get("secondary_seo_cluster_ids") if "secondary_seo_cluster_ids" in facts else existing.get("secondary_seo_cluster_ids", []),
     }
     for field, value in values.items():
         enriched.setdefault(field, value)
@@ -81,6 +91,17 @@ def _seo_contract(packet: dict, article: dict) -> tuple[list[str], list[str]]:
                 "exact primary_keyword already owned by active article: "
                 + str(owners[0].get("article_id") or "unknown")
             )
+
+    existing = _existing_identity(article.get("article_id") or packet.get("article_id"))
+    try:
+        primary_cluster, _secondary_clusters = _cluster_assignment(packet, existing)
+        if primary_cluster:
+            facts = packet.get("immutable_facts", {})
+            site_category_key = facts.get("site_category_key") or existing.get("site_category_key")
+            if site_category_key != seo_cluster_article_category_key():
+                errors.append("SEO cluster assignment is only valid for the configured ordinary article carrier")
+    except ValueError as exc:
+        errors.append(str(exc))
     return errors, warnings
 
 
@@ -89,7 +110,7 @@ def _semantic_category(content_type: str | None) -> str:
         "technique_article": "投注技巧",
         "hangup_scheme": "挂机方案",
         "resource_article": "资源应用",
-        "seo_topic": "SEO文章",
+        "seo_topic": "投注机巧",
     }.get(content_type or "", content_type or "彩票技巧")
 
 
@@ -103,6 +124,7 @@ def _publish_package(packet: dict, article: dict) -> dict:
     subject_play = facts.get("subject_play") or existing.get("subject_play") or facts.get("play") or existing.get("play")
     tags = article.get("tags") or list(dict.fromkeys([subject_play, *secondary]))
     tags = [x for x in tags if x]
+    primary_cluster, secondary_clusters = _cluster_assignment(packet, existing)
     package = {
         "article_id": article["article_id"],
         "title": article["title"],
@@ -134,6 +156,9 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "approved_at": datetime.now(timezone.utc).isoformat(),
         "status": "approved",
     }
+    if primary_cluster:
+        package["primary_seo_cluster_id"] = primary_cluster
+        package["secondary_seo_cluster_ids"] = secondary_clusters
     if article.get("generation_contract_version"):
         package["generation_contract_version"] = article["generation_contract_version"]
         package["claim_evidence"] = article.get("claim_evidence", [])
@@ -148,6 +173,8 @@ def _publish_package(packet: dict, article: dict) -> dict:
 
 def _registry_changes(packet: dict, article: dict) -> dict:
     facts = packet.get("immutable_facts", {})
+    existing = _existing_identity(article.get("article_id") or packet.get("article_id"))
+    primary_cluster, secondary_clusters = _cluster_assignment(packet, existing)
     changes = {
         "blueprint_id": packet.get("blueprint_id"),
         "provider_id": facts.get("provider_id"),
@@ -172,6 +199,9 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "information_gain_type": facts.get("information_gain_type"),
         "content_hash": sha256_text(article.get("content", "")) if article.get("content") else None,
     }
+    if primary_cluster:
+        changes["primary_seo_cluster_id"] = primary_cluster
+        changes["secondary_seo_cluster_ids"] = secondary_clusters
     if article.get("generation_contract_version"):
         changes["generation_contract_version"] = article.get("generation_contract_version")
         changes["claim_evidence"] = article.get("claim_evidence", [])

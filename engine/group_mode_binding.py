@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from .group_domain_contract import (
@@ -21,6 +22,22 @@ GROUP_ATOM = "group3_group6"
 SOURCE_BINDING = "source_exact_phrase"
 SYSTEM_BINDING = "system_research_prefrozen"
 TARGET_COVERAGE_CEILING = 0.90
+
+_CLAUSE_SPLIT_RE = re.compile(r"[，,；;。！？!?\n]+")
+_NEGATED_MODE_PREFIX_RE = re.compile(
+    r"(?:"
+    r"没有(?:明确)?(?:写|提到|提及|说明|说|选择|指定|推荐|讨论|使用|采用)?|"
+    r"并未(?:明确)?(?:写|提到|提及|说明|说|选择|指定|推荐|讨论|使用|采用)?|"
+    r"未(?:明确)?(?:写|提到|提及|说明|说|选择|指定|推荐|讨论|使用|采用)|"
+    r"不是|并非|"
+    r"不(?:是|属于|采用|使用|讨论|推荐|指定|选择|写|提到|提及|说明)|"
+    r"无(?:明确)?(?:写|提到|提及|说明|选择|指定|推荐|讨论)?"
+    r")"
+    r"[^，,；;。！？!?\n]{0,12}$"
+)
+_NEGATED_MODE_SUFFIX_RE = re.compile(
+    r"^(?:并非|不是|不属于|不采用|不使用|不讨论|未采用|未使用|未讨论)"
+)
 
 
 class GroupModeBindingError(ValueError):
@@ -65,13 +82,49 @@ def _load_exact_source_evidence(source_ref: str) -> dict:
     return record
 
 
-def _source_text(record: dict) -> str:
-    fields = ("title", "content", "text", "body", "excerpt")
+def _source_body_text(record: dict) -> str:
+    """Return only article-body evidence for source-owned mode attribution.
+
+    Titles remain useful for search/indexing, but a title alone is not strong enough
+    to transfer group-mode ownership to the source. The body must contain a positive,
+    non-negated exact mode phrase.
+    """
+    fields = ("content", "text", "body", "excerpt")
     return "\n".join(str(record.get(field) or "") for field in fields)
 
 
 def _exact_term_for_mode(mode: str) -> tuple[str, ...]:
     return ("组三", "组选3", "组选三") if mode == "group3" else ("组六", "组选6", "组选六")
+
+
+def _positive_exact_terms(text: str, mode: str) -> list[str]:
+    """Return exact mode terms used affirmatively in article-body clauses.
+
+    Literal indexing intentionally records every occurrence, including negated ones.
+    Provenance ownership is stricter: phrases such as "没有明确写组三或组六",
+    "不是组六" or "未采用组六" cannot unlock source-owned mode binding.
+    """
+    matched: list[str] = []
+    terms = _exact_term_for_mode(mode)
+    for clause in _CLAUSE_SPLIT_RE.split(text or ""):
+        if not clause:
+            continue
+        for term in terms:
+            start = 0
+            while True:
+                index = clause.find(term, start)
+                if index < 0:
+                    break
+                prefix = clause[:index]
+                suffix = clause[index + len(term):]
+                local_prefix = prefix[-32:]
+                local_suffix = suffix[:16]
+                negated_before = bool(_NEGATED_MODE_PREFIX_RE.search(local_prefix))
+                negated_after = bool(_NEGATED_MODE_SUFFIX_RE.match(local_suffix))
+                if not negated_before and not negated_after and term not in matched:
+                    matched.append(term)
+                start = index + len(term)
+    return matched
 
 
 def bind_group_mode(
@@ -103,17 +156,20 @@ def bind_group_mode(
         record = _load_exact_source_evidence(source_ref)
         if str(record.get("source_id") or record.get("source_ref") or "") not in {"", source_ref}:
             raise GroupModeBindingError("materialized source record id does not match requested source_ref")
-        text = _source_text(record)
-        matched = [term for term in _exact_term_for_mode(mode) if term in text]
+        text = _source_body_text(record)
+        matched = _positive_exact_terms(text, mode)
         if not matched:
             raise GroupModeBindingError(
-                f"materialized source article does not explicitly contain a {mode} term; mode cannot be attributed to source"
+                f"materialized source article body does not explicitly contain a positive {mode} term; mode cannot be attributed to source"
             )
         mode_provenance = {
             "owner": "source",
             "source_ref": source_ref,
             "matched_terms": matched,
-            "claim_boundary": "source explicitly names the group mode; mechanics still come from verified rule refs",
+            "claim_boundary": (
+                "source article body explicitly names the group mode in a positive context; "
+                "mechanics still come from verified rule refs"
+            ),
         }
     elif binding_basis == SYSTEM_BINDING:
         if source_ref is not None and source_ref not in representative_refs:

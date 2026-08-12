@@ -17,6 +17,7 @@ from engine.production_controller import (
     execute_production_plan,
     load_controller_policy,
 )
+from engine.production_evidence import generate_article_for_production
 from engine.provider_transport import make_responses_transport, normalize_base_url
 from engine.seo_priority import read_demand_signals
 
@@ -35,6 +36,7 @@ def _plan_for_disk(plan: dict) -> dict:
             "subject_lottery": row["blueprint"].get("subject_lottery"),
             "subject_play": row["blueprint"].get("subject_play"),
             "technique_atoms": row["blueprint"].get("technique_atoms", []),
+            "primary_filter_spec": row["blueprint"].get("primary_filter_spec"),
             "priority_score": row.get("priority_score"),
             "priority_band": row.get("priority_band"),
         }
@@ -172,7 +174,12 @@ def main() -> int:
     if base_url:
         summary["model_provider_base_url"] = base_url
 
-    result = execute_production_plan(plan, model=args.model, transport=transport)
+    result = execute_production_plan(
+        plan,
+        model=args.model,
+        transport=transport,
+        generate_fn=generate_article_for_production,
+    )
     _write(output_dir / "result.json", result)
     summary.update({
         "status": result["status"],

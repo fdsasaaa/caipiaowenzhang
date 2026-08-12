@@ -65,18 +65,40 @@ def _compact(value: object) -> str:
 
 
 def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
+    """Match only deterministic stage/overall candidate-space calculations.
+
+    Natural model prose may omit the exact stage label or use different quote
+    characters. A unique machine-known before/after/excluded triple is enough
+    when the sentence also contains explicit filtering/space language. This
+    keeps normalization fail-closed: arbitrary claims that merely share one or
+    two numbers cannot borrow rule refs.
+    """
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
     compact = _compact(claim)
-    for stage in result.get("stages", []) or []:
+    stages = result.get("stages", []) or []
+    calculation_markers = (
+        "筛到", "筛选", "继续筛", "排除", "候选", "空间", "缩到", "缩小",
+        "得到", "剩下", "保留", "before", "after", "excluded", "->", "→",
+    )
+
+    matched_stages = []
+    for stage in stages:
         before = str(stage.get("before_space"))
         after = str(stage.get("after_space"))
         excluded = str(stage.get("excluded_space"))
+        if all(value not in {"None", ""} and value in compact for value in (before, after, excluded)):
+            matched_stages.append(stage)
+
+    if len(matched_stages) == 1 and any(marker in compact for marker in calculation_markers):
+        stage = matched_stages[0]
         label = _compact(stage.get("label"))
         stage_marker = f"第{stage.get('index')}层"
-        if all(value in compact for value in (before, after, excluded)) and (
-            (label and label in compact) or stage_marker in compact
-        ):
+        if (label and label in compact) or stage_marker in compact:
             return True
+        # The exact numeric triple is unique within this packet. Accept natural
+        # calculation prose even when it paraphrases/quotes the stage label.
+        return True
+
     overall = (
         str(result.get("starting_space")),
         str(result.get("final_space")),
@@ -186,10 +208,6 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
                 and _claim_matches_pipeline_result(packet, claim_text)
             )
 
-            # The model may correctly identify a machine pipeline calculation
-            # as verified_rule but omit refs entirely. Fill them only when the
-            # claim exactly reproduces a frozen stage/overall relation. Empty
-            # refs on any other verified_rule claim remain invalid.
             if (
                 is_pipeline_calculation
                 and entry.get("support_type") == "verified_rule"

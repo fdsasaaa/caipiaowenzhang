@@ -1,0 +1,105 @@
+name: production-controller-provider-acceptance-v2-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v2
+    paths:
+      - .github/production-controller-provider-acceptance-v2.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  accept-provider:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: https://api.synapai.top/v1
+      OPENAI_MODEL: gpt-5.4-mini
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Verify provider secret exists without printing it
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "MODEL_PROVIDER_API_KEY secret is not configured" >&2
+            exit 2
+          fi
+          echo "Provider secret detected; value will not be printed."
+
+      - name: Preflight audit
+        run: python -m engine.cli audit
+
+      - name: Generate exactly one formal production article
+        run: |
+          set -euo pipefail
+          rm -rf runs/production-provider-acceptance-v2
+          python scripts/produce_articles_total.py 1 \
+            --execute \
+            --model gpt-5.4-mini \
+            --output-dir runs/production-provider-acceptance-v2 \
+            | tee production-provider-acceptance-v2.log
+
+      - name: Validate one formal Approved package
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          python scripts/audit_reader_terminology.py
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          paths=sorted(Path('articles/approved').glob('*.json'))
+          assert len(paths)==1, len(paths)
+          row=json.loads(paths[0].read_text(encoding='utf-8'))
+          assert row['status']=='approved'
+          assert row['site_category_key']=='tzjq'
+          assert row['subject_lottery']=='分分彩'
+          assert row['content_hash']==hashlib.sha256(row['content'].encode('utf-8')).hexdigest()
+          summary=json.loads(Path('runs/production-provider-acceptance-v2/summary.json').read_text(encoding='utf-8'))
+          assert summary['formal_inventory_staged']==1, summary
+          assert summary['generated']>=1
+          assert summary['approved']>=1
+          assert summary['model_provider_transport']=='configured_compatible_endpoint'
+          assert summary['website_sync_allowed'] is False
+          assert summary['scheduling_allowed'] is False
+          assert summary['publishing_allowed'] is False
+          print(json.dumps({
+            'article_id':row['article_id'],
+            'primary_keyword':row['primary_keyword'],
+            'quality_score_average':summary['quality_score_average'],
+            'editorial_score_average':summary['editorial_score_average'],
+            'formal_inventory_staged':summary['formal_inventory_staged'],
+            'website_sync':False,
+            'scheduled':False,
+            'published':False,
+          },ensure_ascii=False,indent=2))
+          PY
+
+      - name: Commit accepted production article
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles/approved registry/articles.jsonl
+          git commit -m "Stage production provider acceptance article (1/200)"
+          git push origin HEAD:production/articles-200-20260813-v2
+
+      - name: Upload provider acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-controller-provider-acceptance-v2
+          path: |
+            runs/production-provider-acceptance-v2/
+            production-provider-acceptance-v2.log
+            articles/approved/*.json
+            registry/articles.jsonl
+          if-no-files-found: warn
+          retention-days: 30

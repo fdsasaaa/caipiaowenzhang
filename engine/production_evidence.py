@@ -34,16 +34,7 @@ def _pure_editorial_disclaimer(row: dict) -> bool:
 
 
 def normalize_production_claim_metadata(packet: dict, article: dict) -> dict:
-    """Repair only a narrow provider metadata mistake; never rewrite article content.
-
-    Some providers occasionally classify a pure editorial scope/disclaimer sentence
-    as source_unverified and attach BRBCW refs. That is not a source claim and then
-    fails the intentionally strict source-qualification gate. This normalizer only
-    converts those unmistakable editorial disclaimers to editorial + empty refs.
-
-    Actual source claims, calculations, performance claims and any row containing
-    source-attribution language remain untouched and must pass the normal gates.
-    """
+    """Repair only a narrow provider metadata mistake; never rewrite article content."""
     normalized = deepcopy(article)
     entries = normalized.get("claim_evidence")
     if not isinstance(entries, list):
@@ -59,13 +50,34 @@ def normalize_production_claim_metadata(packet: dict, article: dict) -> dict:
     return normalized
 
 
-def generate_article_for_production(packet: dict, **kwargs) -> GenerationResult:
-    """Run the standard generator, then normalize only production-safe metadata.
+def _packet_with_production_source_boundaries(packet: dict) -> dict:
+    generation_packet = deepcopy(packet)
+    spec = (generation_packet.get("practicality") or {}).get("primary_filter_spec")
+    if not isinstance(spec, dict) or spec.get("basis") != "system_research_prefrozen":
+        return generation_packet
 
-    This wrapper is intentionally used by the formal-production CLI rather than
-    changing the generic generator used by research/smoke/group6 validation paths.
+    source_use = generation_packet.setdefault("source_use", {})
+    source_use["primary_filter_parameter_owner"] = "system_research"
+    source_use["primary_filter_parameter_source_attribution_allowed"] = False
+    source_use["primary_filter_parameter_instruction"] = (
+        "具体主筛选参数由系统在查看演示样本前预先冻结。BRBCW/source_refs只支持 broad 技巧原子的来源归属；"
+        "不得写成来源推荐、来源指定或原文给出的具体参数。若正文讨论来源，只能明确写成来源提到 broad 方法且尚未独立验证。"
+    )
+    generation_packet.setdefault("claims", {}).setdefault("allowed", []).append(
+        "state the concrete primary-filter parameter as a system-prefrozen research choice, never as a source-selected parameter"
+    )
+    return generation_packet
+
+
+def generate_article_for_production(packet: dict, **kwargs) -> GenerationResult:
+    """Run the standard generator with production-only source boundaries.
+
+    Generic research/smoke/group6 generators are untouched. After generation,
+    only unmistakable pure-editorial disclaimer metadata may be normalized; article
+    content and actual source/performance claims remain unchanged and fail closed.
     """
-    generated = generate_article(packet, **kwargs)
+    generation_packet = _packet_with_production_source_boundaries(packet)
+    generated = generate_article(generation_packet, **kwargs)
     normalized = normalize_production_claim_metadata(packet, generated.article)
     return GenerationResult(
         article=normalized,

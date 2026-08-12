@@ -19,11 +19,11 @@ def _write_jsonl(path: Path, rows: list[dict]) -> None:
     path.write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8")
 
 
-def _source_row(content: str, *, thread_id: int = 4115) -> dict:
+def _source_row(content: str, *, thread_id: int = 4115, title: str = "时时彩平台组六与胆码原文示例") -> dict:
     return {
         "source_name": "BRBCW",
         "thread_id": thread_id,
-        "title": "时时彩平台组六与胆码原文示例",
+        "title": title,
         "url": f"https://example.invalid/thread-{thread_id}",
         "classification": "三星",
         "content": content,
@@ -143,6 +143,46 @@ def test_materialized_source_without_exact_group_phrase_cannot_unlock_source_mod
     output_dir = tmp_path / "knowledge" / "source_articles"
     manifest = tmp_path / "knowledge" / "source_manifests" / "materialized_sources.jsonl"
     _write_jsonl(input_path, [_source_row("这里只说组选方法，没有明确写组三或组六。")])
+    materialize_source_file(input_path, root=tmp_path, output_dir=output_dir, manifest_path=manifest, apply=True)
+
+    monkeypatch.setattr(group_binding, "SOURCE_ARTICLES", output_dir)
+    with pytest.raises(Exception, match="does not explicitly contain"):
+        bind_group_mode(
+            "FAM-f8efc151837be787",
+            group_mode="group6",
+            binding_basis=SOURCE_BINDING,
+            source_ref="BRBCW-004115",
+        )
+
+
+def test_title_only_group_phrase_is_indexable_but_cannot_transfer_source_mode_ownership(tmp_path: Path, monkeypatch):
+    input_path = tmp_path / "sources.jsonl"
+    output_dir = tmp_path / "knowledge" / "source_articles"
+    manifest = tmp_path / "knowledge" / "source_manifests" / "materialized_sources.jsonl"
+    _write_jsonl(input_path, [_source_row("正文只讨论广义组选方法，没有指定具体模式。")])
+    materialize_source_file(input_path, root=tmp_path, output_dir=output_dir, manifest_path=manifest, apply=True)
+
+    record = json.loads((output_dir / "BRBCW-004115.json").read_text(encoding="utf-8"))
+    assert record["exact_term_index"]["group6_terms"]  # title remains searchable/indexable
+
+    monkeypatch.setattr(group_binding, "SOURCE_ARTICLES", output_dir)
+    with pytest.raises(Exception, match="article body does not explicitly contain"):
+        bind_group_mode(
+            "FAM-f8efc151837be787",
+            group_mode="group6",
+            binding_basis=SOURCE_BINDING,
+            source_ref="BRBCW-004115",
+        )
+
+
+def test_negated_group_phrase_in_body_cannot_transfer_source_mode_ownership(tmp_path: Path, monkeypatch):
+    input_path = tmp_path / "sources.jsonl"
+    output_dir = tmp_path / "knowledge" / "source_articles"
+    manifest = tmp_path / "knowledge" / "source_manifests" / "materialized_sources.jsonl"
+    _write_jsonl(
+        input_path,
+        [_source_row("本文不是组六方法，只讨论一般组选结构。", title="组选方法说明")],
+    )
     materialize_source_file(input_path, root=tmp_path, output_dir=output_dir, manifest_path=manifest, apply=True)
 
     monkeypatch.setattr(group_binding, "SOURCE_ARTICLES", output_dir)

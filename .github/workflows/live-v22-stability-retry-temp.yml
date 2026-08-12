@@ -1,0 +1,42 @@
+name: live-v22-stability-retry-temp
+
+on:
+  push:
+    paths:
+      - '.github/live-v22-stability-retry.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  retry-003-004:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: https://api.synapai.top/v1
+      OPENAI_MODEL: gpt-5.4-mini
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify secret exists without printing it
+        shell: bash
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "MODEL_PROVIDER_API_KEY secret is not configured" >&2
+            exit 2
+          fi
+          echo "API key secret detected; value will not be printed."
+      - name: Retry only stability cases 003 and 004
+        shell: bash
+        run: python scripts/live_article_stability_retry_003_004_v22.py
+      - name: Upload targeted retry evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v22-stability-retry-003-004-evidence
+          path: runtime/v22-stability-retry-003-004
+          if-no-files-found: warn
+          retention-days: 14

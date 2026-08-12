@@ -177,14 +177,37 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
             continue
         if entry.get("support_type") == "editorial":
             entry["support_refs"] = []
-        if (
-            isinstance(packet, dict)
-            and entry.get("claim_type") == "calculation"
-            and entry.get("support_type") == "synthetic_case"
-            and _claim_matches_pipeline_result(packet, str(entry.get("claim_text") or ""))
-        ):
+
+        if isinstance(packet, dict):
             rules = list(packet.get("immutable_facts", {}).get("rule_refs") or [])
-            if rules:
+            claim_text = str(entry.get("claim_text") or "")
+            is_pipeline_calculation = (
+                entry.get("claim_type") == "calculation"
+                and _claim_matches_pipeline_result(packet, claim_text)
+            )
+
+            # Some providers occasionally copy the prompt field name literally
+            # and emit support_refs=["rule_refs"] instead of the packet's actual
+            # rule IDs. Repair only machine-known pipeline calculations. A
+            # placeholder on any non-pipeline claim remains invalid and is
+            # rejected by the normal Claim→Evidence gate.
+            if (
+                is_pipeline_calculation
+                and entry.get("support_type") == "verified_rule"
+                and entry.get("support_refs") == ["rule_refs"]
+                and rules
+            ):
+                entry["support_refs"] = rules
+                entry["evidence_note"] = (
+                    str(entry.get("evidence_note") or "")
+                    + " [system-normalized: exact pipeline rule_refs placeholder]"
+                ).strip()
+
+            if (
+                is_pipeline_calculation
+                and entry.get("support_type") == "synthetic_case"
+                and rules
+            ):
                 entry["support_type"] = "verified_rule"
                 entry["support_refs"] = rules
                 entry["evidence_note"] = (

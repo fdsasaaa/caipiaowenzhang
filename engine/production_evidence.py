@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from copy import deepcopy
 
+from .ai_generation import GenerationResult, generate_article
+
 _SOURCE_MARKERS = ("来源", "原文", "资料", "BRBCW-", "source")
 _DISCLAIMER_MARKERS = (
     "不讨论未核验的平台经济参数",
@@ -23,8 +25,6 @@ def _pure_editorial_disclaimer(row: dict) -> bool:
         return False
     if not any(marker in claim for marker in _DISCLAIMER_MARKERS):
         return False
-    # Never normalize a disclaimer row that also tries to state performance,
-    # predictions or concrete platform economics.
     if any(marker in claim for marker in (
         "命中率", "胜率", "成功率", "准确率", "下一期会", "一定会出", "肯定会出",
         "赔率为", "返点为", "奖金为", "收益率", "利润率", "盈利率",
@@ -57,3 +57,19 @@ def normalize_production_claim_metadata(packet: dict, article: dict) -> dict:
         suffix = "system normalized pure editorial disclaimer; no source evidence asserted"
         row["evidence_note"] = f"{note}; {suffix}" if note else suffix
     return normalized
+
+
+def generate_article_for_production(packet: dict, **kwargs) -> GenerationResult:
+    """Run the standard generator, then normalize only production-safe metadata.
+
+    This wrapper is intentionally used by the formal-production CLI rather than
+    changing the generic generator used by research/smoke/group6 validation paths.
+    """
+    generated = generate_article(packet, **kwargs)
+    normalized = normalize_production_claim_metadata(packet, generated.article)
+    return GenerationResult(
+        article=normalized,
+        provider=generated.provider,
+        model=generated.model,
+        response_id=generated.response_id,
+    )

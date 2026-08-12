@@ -20,9 +20,6 @@ def build_multistage_generation_prompt(packet: dict) -> str:
     result = practicality.get("filter_pipeline_result") or {}
     spec = practicality.get("filter_pipeline_spec") or {}
 
-    # Reuse every proven V2.1 instruction, but remove the compatibility-only
-    # overall primary_filter_spec so the base prompt does not describe it as the
-    # article's "only" filter. V2.2 instructions below own the multi-stage flow.
     prompt_packet = deepcopy(packet)
     prompt_packet.get("practicality", {}).pop("primary_filter_spec", None)
     base = build_generation_prompt(prompt_packet)
@@ -47,7 +44,7 @@ def build_multistage_generation_prompt(packet: dict) -> str:
         "4. practical_guidance.starting_space 写整个pipeline起点；after_primary_filter_space 写所有预冻结阶段完成后的最终空间。"
         "stop_condition 要明确：完成最后一层后停止；任何额外新过滤器必须另有已验证规则/证据并在下一次实验前冻结。\n"
         "5. 正文必须有清晰‘实际怎么操作/按步骤’章节，让读者能从起始空间逐层复算到最终候选空间。\n"
-        "6. pipeline before/after/excluded 是系统自有机器计算事实，生成后系统会自动注入其标准 calculation evidence。"
+        "6. pipeline before/after/excluded 与过滤参数基数是系统自有机器事实，生成后系统会自动注入标准 calculation evidence。"
         "模型仍可解释这些数字，但不要把它们伪装成命中率或预测优势。\n"
         "7. support_type=editorial 是非证据元数据，support_refs 必须是空数组 []。"
         "不要写 [\"rule_refs\"] 之类占位符；真实规则事实用 verified_rule + 实际 rule_refs。\n"
@@ -68,7 +65,6 @@ def _compact(value: object) -> str:
 
 
 def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
-    """Return true only for a claim that reproduces one machine-known pipeline relation."""
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
     compact = _compact(claim)
     for stage in result.get("stages", []) or []:
@@ -93,13 +89,30 @@ def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
 
 
 def _pipeline_evidence_rows(packet: dict) -> list[dict]:
-    """Build canonical evidence for machine-enumerated V2.2 candidate spaces."""
+    """Build canonical evidence for machine-enumerated V2.2 candidate spaces and fixed parameter cardinality."""
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
     rules = list(packet.get("immutable_facts", {}).get("rule_refs") or [])
     if not rules:
         return []
     rows: list[dict] = []
     for stage in result.get("stages", []) or []:
+        params = stage.get("params") or {}
+        if stage.get("op") == "digit_pool" and isinstance(params.get("digits"), list):
+            digits = list(params["digits"])
+            rows.append({
+                "claim_text": (
+                    f"第{stage.get('index')}层候选数字池包含{len(digits)}个数字："
+                    + "/".join(str(value) for value in digits)
+                    + "。"
+                ),
+                "claim_type": "calculation",
+                "support_type": "verified_rule",
+                "support_refs": rules,
+                "evidence_note": (
+                    "系统直接读取Draft Packet中实验前已冻结的digit_pool参数并计算其基数；"
+                    "只证明参数内容与数量，不证明预测优势。"
+                ),
+            })
         rows.append({
             "claim_text": (
                 f"第{stage.get('index')}层候选空间从{stage.get('before_space')}个缩到"
@@ -113,8 +126,6 @@ def _pipeline_evidence_rows(packet: dict) -> list[dict]:
                 "通过filter_pipeline逐项枚举得到；此证据只证明候选空间数学，不证明预测优势。"
             ),
         })
-        # Bet-count articles use “注” in prose. Add the same machine fact with
-        # that unit so Claim→Evidence can match without relying on model wording.
         if result.get("space_type") == "unordered_2digit":
             rows.append({
                 "claim_text": (
@@ -166,11 +177,6 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
             continue
         if entry.get("support_type") == "editorial":
             entry["support_refs"] = []
-        # A live provider may mislabel a machine pipeline calculation as a
-        # synthetic sample claim and attach both case_bundle and a rule ref.
-        # Normalize ONLY when the claim exactly reproduces a machine-known
-        # stage/overall relation; unrelated synthetic-case references remain
-        # untouched and will still fail the strict audit.
         if (
             isinstance(packet, dict)
             and entry.get("claim_type") == "calculation"
@@ -202,9 +208,6 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
                 "evidence_note": "系统按Draft Packet确定性补入强制演示数据披露标签；不改变正文事实或计算。",
             })
 
-        # Pipeline math is system-owned evidence. Append canonical rows after
-        # normalizing model metadata so repeated prose is supported by exact,
-        # reproducible facts rather than model-generated evidence bookkeeping.
         existing = {
             (
                 str(entry.get("claim_text") or ""),

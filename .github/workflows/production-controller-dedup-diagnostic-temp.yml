@@ -1,0 +1,77 @@
+name: production-controller-dedup-diagnostic-temp
+
+on:
+  push:
+    branches:
+      - production/controller-200-20260813-v2
+    paths:
+      - .github/production-controller-dedup-diagnostic.trigger
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Explain candidate collapse without provider calls
+        run: |
+          set -euo pipefail
+          python - <<'PY' | tee production-controller-dedup-diagnostic.log
+          import json
+          from collections import Counter, defaultdict
+          from engine.production_controller import load_controller_policy, _verified_mechanics_work_units, _public_subject, _structural_key
+          from engine.planner import plan_articles
+          from engine.blueprints import blueprint_from_plan
+          from engine.seo_keywords import normalize_keyword
+
+          policy = load_controller_policy()
+          rows=[]
+          for unit in _verified_mechanics_work_units():
+              result=plan_articles('', unit['lottery'], unit['play'], 1000)
+              for plan in result.get('plans',[]):
+                  p=dict(plan)
+                  p['subject_lottery']=_public_subject(unit['lottery'], policy)
+                  p['subject_play']=unit['play']
+                  bp=blueprint_from_plan(p)
+                  if bp.get('status')!='ready_for_draft':
+                      continue
+                  atoms=[a for a in bp.get('technique_atoms',[]) if a!='position_filter']
+                  rows.append({
+                      'article_id':bp.get('article_id'),
+                      'play':bp.get('subject_play'),
+                      'keyword':bp.get('primary_keyword'),
+                      'atoms':atoms,
+                      'structure':repr(_structural_key(bp)),
+                  })
+          def uniq(field): return len({r[field] for r in rows if r.get(field)})
+          current_kw=defaultdict(list)
+          for r in rows: current_kw[normalize_keyword(r['keyword'])].append(r)
+          composite=lambda r: f"分分彩{r['play']}{''.join(r['atoms'][:3])}技巧"
+          composite_count=len({normalize_keyword(composite(r)) for r in rows})
+          atom_sig_count=len({(r['play'],tuple(sorted(r['atoms']))) for r in rows})
+          collision_groups=sorted(
+              ({'keyword':g[0]['keyword'],'count':len(g),'atom_signatures':sorted({'+'.join(sorted(x['atoms'])) for x in g})[:20]} for g in current_kw.values() if len(g)>1),
+              key=lambda x:x['count'], reverse=True
+          )
+          print(json.dumps({
+              'ready_rows':len(rows),
+              'unique_article_ids':uniq('article_id'),
+              'unique_structures':uniq('structure'),
+              'unique_current_primary_keywords':len(current_kw),
+              'unique_play_atom_signatures':atom_sig_count,
+              'unique_naive_composite_keywords':composite_count,
+              'largest_current_keyword_collision_groups':collision_groups[:25],
+              'provider_calls':0,
+          },ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-controller-dedup-diagnostic
+          path: production-controller-dedup-diagnostic.log
+          if-no-files-found: error

@@ -13,9 +13,6 @@ DETERMINISTIC_PRIMARY_ATOMS = {
     "odd_even_filter",
     "big_small_filter",
 }
-# These atoms imply filtering/selection in a practical article but are not safe
-# for this single-stage production contract without additional source/sample or
-# multi-stage bindings.
 OTHER_FILTER_ATOMS = {
     "cold_hot_split",
     "frequency_window",
@@ -54,6 +51,12 @@ SPAN_RANGE_BY_WIDTH = {
     3: {"min": 3, "max": 7},
     4: {"min": 3, "max": 8},
     5: {"min": 4, "max": 8},
+}
+METRIC_BY_ATOM = {
+    "sum_range": "digit_sum",
+    "span_range": "span",
+    "odd_even_filter": "parity_pattern",
+    "big_small_filter": "size_pattern",
 }
 
 
@@ -111,11 +114,7 @@ def assess_primary_filter_contract(*, play: str, selector: str | None, atoms: li
     deterministic = sorted(atom_set & DETERMINISTIC_PRIMARY_ATOMS)
 
     if not filter_atoms:
-        return {
-            "status": "not_required",
-            "reason": "no_practical_filter_atom",
-            "spec": None,
-        }
+        return {"status": "not_required", "reason": "no_practical_filter_atom", "spec": None}
     if len(filter_atoms) != 1:
         return {
             "status": "blocked",
@@ -172,6 +171,7 @@ def assess_primary_filter_contract(*, play: str, selector: str | None, atoms: li
         "width": width,
         "space_type": f"ordered_{width}digit_direct",
         "atom": atom,
+        "metric": METRIC_BY_ATOM[atom],
         "op": op,
         "params": dict(params),
         "basis": PARAMETER_BASIS,

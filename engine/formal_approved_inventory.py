@@ -46,17 +46,23 @@ def validate_formal_approved_package(package: dict) -> None:
     content_type = str(package.get("content_type") or "").strip()
     if not content_type:
         raise FormalInventoryError("content_type is required for formal inventory")
-    expected_category = site_category_for(content_type)
+    try:
+        expected_category = site_category_for(content_type)
+    except (LookupError, ValueError) as exc:
+        raise FormalInventoryError(str(exc)) from exc
     actual_category = str(package.get("site_category_key") or "").strip()
     if actual_category != expected_category:
         raise FormalInventoryError(
             f"site_category_key mismatch for content_type {content_type}: expected {expected_category}, got {actual_category or '<empty>'}"
         )
 
-    primary, secondary = normalize_seo_cluster_assignment(
-        package.get("primary_seo_cluster_id"),
-        package.get("secondary_seo_cluster_ids"),
-    )
+    try:
+        primary, secondary = normalize_seo_cluster_assignment(
+            package.get("primary_seo_cluster_id"),
+            package.get("secondary_seo_cluster_ids"),
+        )
+    except ValueError as exc:
+        raise FormalInventoryError(str(exc)) from exc
     if (primary is not None or secondary) and actual_category != "tzjq":
         raise FormalInventoryError("SEO cluster metadata is only allowed for tzjq articles")
 

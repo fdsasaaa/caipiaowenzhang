@@ -7,6 +7,10 @@ class FilterPipelineError(ValueError):
     pass
 
 
+def _ordered_2digit_domain() -> list[tuple[int, int]]:
+    return list(product(range(10), repeat=2))
+
+
 def _ordered_3digit_domain() -> list[tuple[int, int, int]]:
     return list(product(range(10), repeat=3))
 
@@ -16,6 +20,8 @@ def _unordered_2digit_domain() -> list[tuple[int, int]]:
 
 
 def _domain(space_type: str):
+    if space_type == "ordered_2digit":
+        return _ordered_2digit_domain()
     if space_type == "ordered_3digit":
         return _ordered_3digit_domain()
     if space_type == "unordered_2digit":
@@ -64,12 +70,12 @@ def _matches(candidate: tuple[int, ...], op: str, params: dict) -> bool:
         return all(value in digits for value in candidate)
     if op == "pair_sum_range":
         if len(candidate) != 2:
-            raise FilterPipelineError("pair_sum_range requires unordered_2digit space")
+            raise FilterPipelineError("pair_sum_range requires a 2-digit space")
         lo, hi = _int_param(params, "min"), _int_param(params, "max")
         return lo <= sum(candidate) <= hi
     if op == "mixed_parity":
         if len(candidate) != 2:
-            raise FilterPipelineError("mixed_parity requires unordered_2digit space")
+            raise FilterPipelineError("mixed_parity requires a 2-digit space")
         return candidate[0] % 2 != candidate[1] % 2
     raise FilterPipelineError(f"unsupported filter op: {op}")
 

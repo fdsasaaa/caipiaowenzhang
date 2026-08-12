@@ -147,8 +147,10 @@ def test_v22_deterministically_injects_missing_synthetic_disclosure():
     }
     normalized = _normalize_multistage_article(article, packet)
     assert normalized["content"].startswith("<p><strong>演示数据，不是真实开奖记录。</strong></p>")
-    assert normalized["claim_evidence"][-1]["support_type"] == "synthetic_case"
-    assert normalized["claim_evidence"][-1]["support_refs"] == ["case_bundle"]
+    assert any(
+        row.get("support_type") == "synthetic_case" and row.get("support_refs") == ["case_bundle"]
+        for row in normalized["claim_evidence"]
+    )
 
 
 def test_v22_does_not_duplicate_existing_synthetic_disclosure():
@@ -158,4 +160,74 @@ def test_v22_does_not_duplicate_existing_synthetic_disclosure():
     article = {"content": content, "claim_evidence": []}
     normalized = _normalize_multistage_article(article, packet)
     assert normalized["content"] == content
-    assert normalized["claim_evidence"] == []
+    assert any(row.get("claim_type") == "calculation" for row in normalized["claim_evidence"])
+
+
+def test_final_live_004_pipeline_evidence_is_system_normalized_and_auditable():
+    blueprint = json.loads((BENCH / "004-blueprint.json").read_text(encoding="utf-8"))
+    packet = build_multistage_draft_packet(blueprint)
+    article = {
+        "generation_contract_version": "2.0",
+        "content": (
+            "<p>演示数据，不是真实开奖记录。</p>"
+            "<h2>第一层：5个数字池为什么得到10注</h2>"
+            "<p>按机器已验证结果，这一层把45注缩到10注，排除35注。</p>"
+            "<h2>第二层</h2><p>第二层是在第一层的10注里继续筛。</p>"
+            "<p>条件是对子和值8–15，筛完后剩7注，排除3注。</p>"
+            "<p>整条流程从45注缩到7注，总共排除38注。</p>"
+        ),
+        "claim_evidence": [
+            {
+                "claim_text": "第1层 候选数字池0/3/6/8/9: 45 -> 10，排除 35。",
+                "claim_type": "calculation",
+                "support_type": "synthetic_case",
+                "support_refs": ["case_bundle", "SSC-HIST-MECH-2STAR-GROUP-V1"],
+                "evidence_note": "机器已验证的第一层空间收缩。",
+            },
+            {
+                "claim_text": "第2层 对子和值8–15: 10 -> 7，排除 3。",
+                "claim_type": "calculation",
+                "support_type": "synthetic_case",
+                "support_refs": ["case_bundle", "SSC-HIST-MECH-2STAR-GROUP-V1"],
+                "evidence_note": "机器已验证的第二层空间收缩。",
+            },
+            {
+                "claim_text": "整体从45注缩到7注，总共排除38注。",
+                "claim_type": "calculation",
+                "support_type": "synthetic_case",
+                "support_refs": ["case_bundle", "SSC-HIST-MECH-2STAR-GROUP-V1"],
+                "evidence_note": "两层冻结筛选后的总空间变化。",
+            },
+        ],
+    }
+    normalized = _normalize_multistage_article(article, packet)
+    for row in normalized["claim_evidence"][:3]:
+        assert row["support_type"] == "verified_rule"
+        assert row["support_refs"] == ["SSC-HIST-MECH-2STAR-GROUP-V1"]
+    report = audit_claim_evidence(packet, normalized)
+    assert report.passed, report.errors
+
+
+def test_unrelated_mixed_synthetic_refs_are_not_silently_normalized():
+    blueprint = json.loads((BENCH / "004-blueprint.json").read_text(encoding="utf-8"))
+    packet = build_multistage_draft_packet(blueprint)
+    article = {
+        "content": "<p>演示数据，不是真实开奖记录。</p>",
+        "claim_evidence": [
+            {
+                "claim_text": "演示样本最新一条是12345。",
+                "claim_type": "calculation",
+                "support_type": "synthetic_case",
+                "support_refs": ["case_bundle", "SSC-HIST-MECH-2STAR-GROUP-V1"],
+                "evidence_note": "故意错误引用。",
+            }
+        ],
+    }
+    normalized = _normalize_multistage_article(article, packet)
+    bad = normalized["claim_evidence"][0]
+    assert bad["support_type"] == "synthetic_case"
+    assert bad["support_refs"] == ["case_bundle", "SSC-HIST-MECH-2STAR-GROUP-V1"]
+    normalized["generation_contract_version"] = "2.0"
+    report = audit_claim_evidence(packet, normalized)
+    assert not report.passed
+    assert any("synthetic_case must reference only case_bundle" in error for error in report.errors)

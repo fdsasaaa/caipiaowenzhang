@@ -1,6 +1,6 @@
 # Real Knowledge Multistage Preflight
 
-**Status:** IMPLEMENTED — ordinary CI pending  
+**Status:** ACCEPTED — offline real-family multistage preflight is green  
 **Date:** 2026-08-12
 
 ## Purpose
@@ -38,11 +38,11 @@ Sample-dependent atoms such as `cold_hot_split`, `frequency_window`, or `omissio
 For `FAM-32137acbb90340b9` / 后二大小单双:
 
 1. start from ordered two-digit space: `100`
-2. pre-frozen size structure: exactly one big digit and one small digit → expected `50`
-3. pre-frozen parity structure: exactly one odd digit and one even digit → expected `26`
+2. pre-frozen size structure: exactly one big digit and one small digit → `50`
+3. pre-frozen parity structure: exactly one odd digit and one even digit → `26`
 4. stop after the source-backed second stage
 
-Expected contraction: `100 → 50 → 26`.
+Machine contraction: `100 → 50 → 26`.
 
 These stage settings are research-case parameters, not claims that this structure has future predictive advantage.
 
@@ -58,6 +58,32 @@ The branch tests require:
 - a three-stage deterministic research case to contract `1000 → 760 → 534 → 210`;
 - partial conversion of a family with an unbound atom to be rejected.
 
+## CI Evidence
+
+### First ordinary CI
+
+- run: `31605105299`
+- result: `failure`
+- audit: pass
+- pytest: `282 passed, 1 failed`
+- failure: the real cold/hot negative test was rejected by unsupported `定位胆` candidate space before the more actionable unbound-atom gate, so the expected error reason did not match.
+
+No acceptance threshold was weakened. The validation order was corrected so source provenance / atom executability is checked before play candidate-space selection.
+
+### Corrected ordinary CI
+
+- run: `31605292220`
+- head SHA: `16bef8989f665133d04ecfe9f9d2f3b7578de654`
+- Python 3.10 job: success
+- Python 3.13 job: success
+- audit: pass
+- pytest on Python 3.10: `286 passed`
+- paid provider/model workflow: none
+
+This successful run was executed after `main` advanced with PR #42 (`7ff5b09bb25ac477855150526994ee56df7576b4`), so the green result covers the real-knowledge changes together with the contemporaneous main branch rather than only the older PR #40 baseline.
+
 ## Acceptance Gate
 
-Do not perform a paid model call in this PR. Merge only after ordinary repository CI is green. A later real AI article-quality call, if justified, must be a separate explicit acceptance step with the paid path temporary and publishing still frozen.
+The offline preflight is accepted. Do not perform a paid model call as part of this PR. Merge only after the final documentation-only commit receives ordinary green CI.
+
+A later real AI article-quality call, if justified, must be a separate explicit acceptance step with a temporary paid path and publishing still frozen.

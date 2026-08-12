@@ -226,7 +226,9 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
     facts = packet.get("immutable_facts", {})
     allowed_rules = set(facts.get("rule_refs", []) or [])
     allowed_sources = set(facts.get("source_refs", []) or [])
-    allowed_refs = allowed_rules | allowed_sources | {"case_bundle"}
+    policy_ref = str((packet.get("compliance") or {}).get("policy_ref") or "").strip()
+    allowed_policy_refs = {policy_ref} if policy_ref else set()
+    allowed_refs = allowed_rules | allowed_sources | allowed_policy_refs | {"case_bundle"}
     economics_allowed = facts.get("case_scope") == "economics"
 
     for index, entry in enumerate(entries):
@@ -248,6 +250,11 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
                 errors.append(f"claim_evidence[{index}] verified_rule requires support_refs")
             if not refs_set.issubset(allowed_rules):
                 errors.append(f"claim_evidence[{index}] references rule outside Draft Packet")
+        elif support_type == "policy_contract":
+            if not allowed_policy_refs:
+                errors.append(f"claim_evidence[{index}] policy_contract used without Draft Packet compliance policy")
+            elif refs_set != allowed_policy_refs:
+                errors.append(f"claim_evidence[{index}] policy_contract must reference only the Draft Packet compliance policy")
         elif support_type == "source_unverified":
             if not refs_set:
                 errors.append(f"claim_evidence[{index}] source_unverified requires support_refs")
@@ -270,8 +277,8 @@ def audit_claim_evidence(packet: dict, article: dict) -> ClaimEvidenceReport:
 
         if claim_type == "economics" and not economics_allowed:
             errors.append(f"claim_evidence[{index}] economics claim blocked without verified economics")
-        if claim_type in {"performance", "prediction"} and support_type == "verified_rule":
-            errors.append(f"claim_evidence[{index}] gameplay rule cannot prove performance/prediction claim")
+        if claim_type in {"performance", "prediction"} and support_type in {"verified_rule", "policy_contract"}:
+            errors.append(f"claim_evidence[{index}] rule/policy contract cannot prove performance/prediction claim")
         if claim_type == "prediction" and support_type != "source_unverified":
             errors.append(f"claim_evidence[{index}] future prediction is not allowed as a system fact")
 

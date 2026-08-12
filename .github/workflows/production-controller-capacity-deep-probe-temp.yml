@@ -1,0 +1,49 @@
+name: production-controller-capacity-deep-probe-temp
+
+on:
+  push:
+    branches:
+      - production/controller-200-20260813-v2
+    paths:
+      - .github/production-controller-capacity-deep-probe.trigger
+
+permissions:
+  contents: read
+
+jobs:
+  deep-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Probe maximum current executable content space without provider calls
+        run: |
+          set -euo pipefail
+          python - <<'PY' | tee production-controller-capacity-deep-probe.log
+          import json
+          from engine.production_controller import load_controller_policy, discover_candidate_portfolio
+          policy = load_controller_policy()
+          policy = dict(policy)
+          policy['candidate_attempt_multiplier'] = 50
+          policy['capacity_probe_per_work_unit_max'] = 1000
+          portfolio = discover_candidate_portfolio(200, policy=policy)
+          print(json.dumps({
+              'target': 200,
+              'probe_per_work_unit': portfolio['probe_per_work_unit'],
+              'work_unit_count': portfolio['work_unit_count'],
+              'candidate_count': portfolio['candidate_count'],
+              'capacity_exhaustive': portfolio['capacity_exhaustive'],
+              'units': portfolio['work_units'],
+              'provider_calls': 0,
+              'website_sync': False,
+              'publishing': False,
+          }, ensure_ascii=False, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-controller-capacity-deep-probe
+          path: production-controller-capacity-deep-probe.log
+          if-no-files-found: error

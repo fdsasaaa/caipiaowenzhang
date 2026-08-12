@@ -1,13 +1,13 @@
 # Real Knowledge Cross-Family Composition — Sum + Span
 
-**Status:** IMPLEMENTED — ordinary CI pending  
+**Status:** ACCEPTED — offline two-source composition is deterministic and source boundaries remain explicit  
 **Date:** 2026-08-12
 
 ## Why this architecture exists
 
 The complete 759-family feasibility scan proved that the current archive has zero additional families that independently satisfy the strict 2–3 deterministic-atom matrix contract. It did identify two source-backed single-atom families that can both be placed in the same verified 后三 ordered candidate space.
 
-This phase therefore tests the next evidence-backed architecture:
+This phase therefore validates the next evidence-backed architecture:
 
 > independent source family A + independent source family B → explicitly system-authored multistage composition.
 
@@ -61,7 +61,7 @@ The stage order and numeric parameters are system research choices frozen before
 1. `sum_range`, preset `8–19`
 2. `span_range`, preset `3–7`
 
-Expected machine path:
+Exact machine path:
 
 - `1000 → 760` after sum layer; exclude `240`
 - `760 → 534` after span layer; exclude `226`
@@ -87,6 +87,26 @@ The final set contains `534` ordered three-digit candidates. Rather than storing
 
 Tests also preserve first/last candidate previews for human inspection.
 
+## Ordinary CI acceptance
+
+GitHub Actions run:
+
+- workflow: `test`
+- run: `31610203863`
+- branch head at test: `809aec23d5a6d5cefcb2ec6dc0bbe00113d473c4`
+- Python 3.10: `success`
+- Python 3.13: `success`
+- repository audit: `pass`
+- registry articles: `8`
+- registry sources: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+- Python 3.10 pytest: `307 passed`
+
+The regression suite verifies not only the expected path but also the negative cases: changing the pre-frozen sum parameter alters the locked path, and reversing stage order produces `1000 → 690 → 534` rather than the accepted `1000 → 760 → 534`.
+
+No paid provider workflow or API secret is involved in this acceptance.
+
 ## Safety boundaries
 
 - paid model call: `false`
@@ -94,6 +114,6 @@ Tests also preserve first/last candidate previews for human inspection.
 - website draft write: `false`
 - scheduled: `false`
 - published: `false`
-- no article generation in this PR
+- article generation: `false`
 
-The immediate gate is ordinary repository CI. A provider call is not justified until this cross-family composition itself is proven deterministic and fail-closed.
+This PR establishes only the deterministic cross-family composition contract. The next justified step is an offline article-generation contract that teaches the model how to explain the two independent source families without falsely presenting the composition, stage order, or numeric thresholds as source-authored.

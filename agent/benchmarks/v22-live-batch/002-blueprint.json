@@ -1,0 +1,84 @@
+{
+  "blueprint_id": "BP-V22-LIVE-002",
+  "article_id": "LCM-SMOKE-V22-002",
+  "provider_id": null,
+  "lottery": "时时彩",
+  "play": "后三直选",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "content_type": "technique_article",
+  "site_category_key": "tzjq",
+  "technique_family": "V22-ODD-BIG-MULTISTAGE",
+  "technique_atoms": ["odd_even_filter", "big_small_filter"],
+  "resolved_selector": "后三",
+  "selector_basis": "verified_play",
+  "source_positions": ["后三"],
+  "angle_signature": "v22-last3-odd-big",
+  "title": "分分彩后三直选奇偶大小技巧：两层结构筛选从1000到132",
+  "slug_seed": "ffc-last3-odd-big-v22",
+  "primary_keyword": "分分彩后三直选奇偶大小技巧",
+  "secondary_keywords": ["分分彩奇偶技巧", "分分彩大小技巧", "后三直选筛选", "分分彩投注技巧"],
+  "search_intent": "看懂分分彩后三直选如何把奇偶结构与大小结构按顺序复算",
+  "information_gain_type": "prefrozen_multistage_filter_case",
+  "summary_goal": "先固定三位中恰好2个奇数，再固定三位中恰好1个大号，展示1000→375→132。",
+  "outline": [
+    "后三直选的1000个有序结果怎么理解",
+    "第一层：恰好2个奇数保留多少",
+    "第二层：再要求恰好1个大号保留多少",
+    "实际怎么操作：先冻结结构再逐个判断",
+    "演示样本只核对结构计算",
+    "为什么结构筛选不等于预测优势"
+  ],
+  "case_structure": "selector=后三;metrics=parity_pattern,size_pattern;scope=mechanics_only",
+  "case_plan": {
+    "supported": [
+      {"atom": "odd_even_filter", "metric": "parity_pattern"},
+      {"atom": "big_small_filter", "metric": "size_pattern"}
+    ],
+    "unsupported": [],
+    "case_engine_ready": true,
+    "resolved_selector": "后三",
+    "selector_basis": "verified_play",
+    "source_position_supported": true
+  },
+  "filter_pipeline_spec": {
+    "space_type": "ordered_3digit",
+    "starting_space": 1000,
+    "stages": [
+      {
+        "id": "odd_count_2",
+        "label": "恰好2个奇数",
+        "atom": "odd_even_filter",
+        "op": "odd_count",
+        "params": {"count": 2},
+        "basis": "experimental_parameter"
+      },
+      {
+        "id": "big_count_1",
+        "label": "恰好1个大号",
+        "atom": "big_small_filter",
+        "op": "big_count",
+        "params": {"count": 1},
+        "basis": "experimental_parameter"
+      }
+    ]
+  },
+  "case_scope": "mechanics_only",
+  "rule_refs": ["SSC-HIST-MECH-3STAR-LAST-V1"],
+  "source_refs": [],
+  "source_support_count": 0,
+  "source_risk_rate": 0.0,
+  "fingerprint": "38c9cea38cf05bd2897a75c24f326432217b96c88f0cbe722f69ae7832944279",
+  "status": "ready_for_draft",
+  "blockers": [],
+  "article_status": "idea",
+  "editorial_contract_version": "1.1",
+  "seo_requirements": {
+    "plain_chinese": true,
+    "example_required": true,
+    "unique_information_gain_required": true,
+    "unique_exact_primary_keyword_required": true,
+    "avoid_keyword_stuffing": true,
+    "avoid_guaranteed_outcomes": true
+  }
+}

@@ -1,0 +1,99 @@
+# Real Knowledge Cross-Family Composition — Sum + Span
+
+**Status:** IMPLEMENTED — ordinary CI pending  
+**Date:** 2026-08-12
+
+## Why this architecture exists
+
+The complete 759-family feasibility scan proved that the current archive has zero additional families that independently satisfy the strict 2–3 deterministic-atom matrix contract. It did identify two source-backed single-atom families that can both be placed in the same verified 后三 ordered candidate space.
+
+This phase therefore tests the next evidence-backed architecture:
+
+> independent source family A + independent source family B → explicitly system-authored multistage composition.
+
+The composition itself is **not** attributed to either source.
+
+## Source family A — sum
+
+- family: `FAM-c7549b61f340ef66`
+- family atoms: `position_filter + sum_range`
+- executable atom used here: `sum_range`
+- source: `BRBCW-006020`
+- source support: `30`
+- source risk: `0.400`
+- archive position mask includes `后三`
+
+This source family supports only the presence/provenance of the `sum_range` atom in the family archive.
+
+## Source family B — span
+
+- family: `FAM-c93cfcc1527bf6f8`
+- family atoms: `position_filter + span_range`
+- executable atom used here: `span_range`
+- source: `BRBCW-002590`
+- source support: `29`
+- source risk: `0.379`
+- archive position mask includes `后三`
+
+This source family supports only the presence/provenance of the `span_range` atom in the family archive.
+
+## Common experimental candidate space
+
+Both families are experimentally bound to:
+
+- play: `后三直选`
+- verified mechanics: `SSC-HIST-MECH-3STAR-LAST-V1`
+- ordered space: `000–999`
+- starting candidates: `1000`
+
+The play binding remains:
+
+`archive_position_mask_experimental_binding_not_source_play_claim`
+
+The cross-family combination remains:
+
+`system_authored_cross_family_composition_not_source_claim`
+
+## Frozen system research path
+
+The stage order and numeric parameters are system research choices frozen before any example/sample is inspected:
+
+1. `sum_range`, preset `8–19`
+2. `span_range`, preset `3–7`
+
+Expected machine path:
+
+- `1000 → 760` after sum layer; exclude `240`
+- `760 → 534` after span layer; exclude `226`
+- final: `534`
+- total excluded: `466`
+
+This is candidate-space arithmetic only. It is not evidence that the combined method predicts future draws or improves profitability.
+
+## Order is part of the experiment
+
+Reversing the same two predicates can lead to the same final set but a different intermediate path:
+
+- frozen order: `sum → span` = `1000 → 760 → 534`
+- reversed order: `span → sum` = `1000 → 690 → 534`
+
+Therefore stage order is locked as system-owned experimental metadata. A later article must not imply that either archived source prescribed this order.
+
+## Candidate-set integrity
+
+The final set contains `534` ordered three-digit candidates. Rather than storing a large manually copied list as the primary integrity mechanism, the preflight locks both exact count and deterministic SHA256 over newline-delimited candidate strings:
+
+`20e0d1759e51aea0e10d93eb3ccb71af5a2aa5ec659ca72fc8d856cb16a9fa95`
+
+Tests also preserve first/last candidate previews for human inspection.
+
+## Safety boundaries
+
+- paid model call: `false`
+- Registry write: `false`
+- website draft write: `false`
+- scheduled: `false`
+- published: `false`
+- no article generation in this PR
+
+The immediate gate is ordinary repository CI. A provider call is not justified until this cross-family composition itself is proven deterministic and fail-closed.

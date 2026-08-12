@@ -1,0 +1,31 @@
+name: real-knowledge-family-feasibility-temp
+
+on:
+  push:
+    branches:
+      - agent/real-knowledge-family-matrix
+    paths:
+      - '.github/real-knowledge-family-feasibility.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  scan-real-family-archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Scan complete family archive offline
+        shell: bash
+        run: python scripts/select_real_knowledge_family_matrix.py --limit 5 --output runtime/real-knowledge-family-feasibility/report.json
+      - name: Upload feasibility evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-knowledge-family-feasibility
+          path: runtime/real-knowledge-family-feasibility/report.json
+          if-no-files-found: error
+          retention-days: 14

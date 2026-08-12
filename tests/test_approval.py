@@ -20,6 +20,8 @@ def _packet():
             "rule_refs": ["R1"],
             "source_refs": ["S1"],
             "case_scope": "mechanics_only",
+            "primary_seo_cluster_id": "ssc",
+            "secondary_seo_cluster_ids": ["research_lab"],
         },
         "seo": {
             "title": "时时彩后三直选技巧：和值案例",
@@ -51,14 +53,18 @@ def _article():
     }
 
 
+def _pass_quality(monkeypatch):
+    monkeypatch.setattr(approval, "review_draft", lambda packet, article: DraftReview(True, [], []))
+    monkeypatch.setattr(approval, "evaluate_quality", lambda article: SimpleNamespace(passed=True, score=95, errors=[], warnings=[]))
+
+
 def test_approved_package_inherits_reserved_fingerprint_and_site_contract(monkeypatch):
     monkeypatch.setattr(approval, "get_article_record", lambda article_id: {
         "article_id": "A1", "fingerprint": "FP-ORIGINAL", "case_structure": "selector=后三;metrics=sum",
         "information_gain_type": "method_mechanics_and_reproducible_case", "technique_atoms": ["sum_range"],
         "content_type": "technique_article", "site_category_key": "tzjq", "content_format": "html"
     })
-    monkeypatch.setattr(approval, "review_draft", lambda packet, article: DraftReview(True, [], []))
-    monkeypatch.setattr(approval, "evaluate_quality", lambda article: SimpleNamespace(passed=True, score=95, errors=[], warnings=[]))
+    _pass_quality(monkeypatch)
     result = approval.evaluate_for_approval(_packet(), _article())
     assert result.approved is True
     assert result.publish_package["fingerprint"] == "FP-ORIGINAL"
@@ -67,6 +73,21 @@ def test_approved_package_inherits_reserved_fingerprint_and_site_contract(monkey
     assert result.publish_package["content_format"] == "html"
     assert result.publish_package["summary"] == "摘要"
     assert result.publish_package["status"] == "approved"
+    assert result.publish_package["primary_seo_cluster_id"] == "ssc"
+    assert result.publish_package["secondary_seo_cluster_ids"] == ["research_lab"]
+    assert result.registry_record["primary_seo_cluster_id"] == "ssc"
+    assert result.registry_record["secondary_seo_cluster_ids"] == ["research_lab"]
+
+
+def test_invalid_cluster_assignment_rejects_before_package(monkeypatch):
+    packet = _packet()
+    packet["immutable_facts"]["primary_seo_cluster_id"] = "made_up"
+    monkeypatch.setattr(approval, "get_article_record", lambda article_id: {"article_id": "A1", "fingerprint": "FP"})
+    _pass_quality(monkeypatch)
+    result = approval.evaluate_for_approval(packet, _article())
+    assert result.approved is False
+    assert result.publish_package is None
+    assert any("unknown primary SEO cluster id" in error for error in result.errors)
 
 
 def test_failed_draft_never_gets_publish_package(monkeypatch):

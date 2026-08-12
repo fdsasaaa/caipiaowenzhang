@@ -1,21 +1,63 @@
 {
-  "version": 1,
+  "version": 2,
   "site": "www.laocaimi.org",
+  "website_repository": "fdsasaaa/xyptdq",
   "required_content_format": "html",
+  "approved_package_root": "articles/approved",
   "content_types": {
     "technique_article": {"site_category_key": "tzjq"},
     "hangup_scheme": {"site_category_key": "gjfa"},
     "resource_article": {"site_category_key": "zyyy"},
-    "seo_topic": {"site_category_key": "seo-articles"}
+    "seo_topic": {"site_category_key": "tzjq", "routing_note": "ordinary SEO articles share the unified tzjq carrier"}
   },
   "current_generator_default": {
     "content_type": "technique_article",
     "site_category_key": "tzjq"
   },
+  "retired_site_category_keys": ["seo-articles"],
+  "seo_cluster_contract": {
+    "version": 1,
+    "website_registry_path": "content/seo_cluster_registry.json",
+    "website_registry_version": "1.0.0",
+    "article_carrier_category_key": "tzjq",
+    "allowed_cluster_ids": [
+      "ffc_research",
+      "hash_ffc",
+      "qiqu_ffc",
+      "ssc",
+      "racing",
+      "platform_review",
+      "research_lab"
+    ],
+    "package_fields": {
+      "primary": "primary_seo_cluster_id",
+      "secondary": "secondary_seo_cluster_ids"
+    },
+    "policy": {
+      "cluster_metadata_optional_for_legacy_approved_packages": true,
+      "secondary_requires_primary": true,
+      "one_primary_cluster_when_assigned": true,
+      "duplicate_secondary_ids_rejected": true,
+      "primary_must_not_repeat_in_secondary": true,
+      "assignment_must_come_from_immutable_or_editorial_contract": true,
+      "model_or_title_only_assignment_prohibited": true,
+      "cluster_assignment_does_not_authorize_publication": true
+    }
+  },
+  "transport_contract": {
+    "automatic_cross_repo_transport_enabled": false,
+    "source_status_required": "approved",
+    "website_destination_state": "draft",
+    "transport_must_not_schedule": true,
+    "transport_must_not_publish": true,
+    "future_activation_requires_explicit_website_policy_change": true
+  },
   "policy": {
     "category_must_be_decided_by_content_engine": true,
     "website_must_not_guess_category_from_title": true,
     "unknown_content_type_fails_closed": true,
-    "website_repo_is_source_of_truth_for_numeric_catid": true
+    "website_repo_is_source_of_truth_for_numeric_catid": true,
+    "retired_category_key_must_be_rejected": true,
+    "approved_package_is_not_publication_authorization": true
   }
 }

@@ -29,6 +29,12 @@ ATOM_LABELS = {
     "group3_group6": "组三组六结构",
 }
 
+# Context atoms describe where a method applies but do not themselves transform
+# or reduce a candidate set. A formal "technique" article must contain at least
+# one executable/non-context method atom; otherwise the V2.1 editorial contract
+# would necessarily fail its candidate-space reduction requirement.
+CONTEXT_ONLY_ATOMS = {"position_filter"}
+
 
 def atom_label(atom: str) -> str:
     return ATOM_LABELS.get(atom, atom)
@@ -39,10 +45,6 @@ def _method_phrase(atoms: list[str]) -> str:
     if not labels:
         return "基础规则"
     return " + ".join(labels)
-
-
-def _title(lottery: str, play: str, atoms: list[str]) -> str:
-    return f"{lottery}{play}技巧：用{_method_phrase(atoms)}一步步筛选号码"
 
 
 def _secondary_keywords(lottery: str, play: str, atoms: list[str]) -> list[str]:
@@ -118,6 +120,9 @@ def blueprint_from_plan(plan: dict) -> dict:
         blockers.append("mechanics_not_verified")
     if not case_plan.get("case_engine_ready"):
         blockers.append("technique_case_semantics_incomplete")
+    executable_atoms = [str(atom) for atom in atoms if str(atom) and str(atom) not in CONTEXT_ONLY_ATOMS]
+    if not executable_atoms:
+        blockers.append("no_executable_technique_atom")
     if blockers:
         status = "blocked"
     blueprint = {

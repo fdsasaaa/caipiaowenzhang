@@ -1,0 +1,86 @@
+name: recover-approved-article1-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v4
+    paths:
+      - .github/recover-approved-article1.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Append exact accepted lifecycle row idempotently
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path=Path('registry/articles.jsonl')
+          target={"article_id":"LCM-IDEA-40be5a222f5cccf7","blueprint_id":"BP-40be5a222f5cccf7","case_scope":"mechanics_only","case_structure":"selector=五星;metrics=selector,span;scope=mechanics_only","claim_evidence":[{"claim_text":"分分彩五星直选跨度技巧这篇文章只讲玩法机制和可复算演示，不讨论未核验的平台经济参数。","claim_type":"editorial","evidence_note":"编辑范围说明，避免引入未核验经济信息。","support_refs":[],"support_type":"editorial"},{"claim_text":"五星直选的演示筛选从 100000 个有序五位候选开始，先按跨度条件筛掉 56380 个，再保留 43620 个。","claim_type":"calculation","evidence_note":"来自冻结的 primary_filter_spec；用于展示主筛选前后空间变化。","support_refs":["SSC-HIST-MECH-5STAR-DIRECT-V1"],"support_type":"verified_rule"},{"claim_text":"这个跨度条件是“跨度 2 到 6”，也就是只保留跨度落在 2 至 6 之间的五星直选候选。","claim_type":"rule_fact","evidence_note":"来自冻结的 primary_filter_spec 参数。","support_refs":["SSC-HIST-MECH-5STAR-DIRECT-V1"],"support_type":"verified_rule"},{"claim_text":"这里的筛选是先固定参数，再看样本；主筛选只做一次，之后停止，不再临时追加第二个未验证过滤器。","claim_type":"rule_fact","evidence_note":"来自 practical guidance 与 primary_filter_spec 的 stop_after_primary_filter 约束。","support_refs":["SSC-HIST-MECH-5STAR-DIRECT-V1"],"support_type":"verified_rule"},{"claim_text":"演示数据，不是真实开奖记录。","claim_type":"editorial","evidence_note":"案例标签说明，按要求明确标注演示性质。","support_refs":["case_bundle"],"support_type":"synthetic_case"},{"claim_text":"这组演示样本一共 12 条，最新一条是 94281。","claim_type":"calculation","evidence_note":"来自 case_bundle 的 synthetic validation 样本。","support_refs":["case_bundle"],"support_type":"synthetic_case"},{"claim_text":"最新样本 94281 的和值是 24，跨度是 8，重号形态是 1-1-1-1-1，大小形态是 大小小大小，单双形态是 单单双双单。","claim_type":"calculation","evidence_note":"来自 case_bundle 的 latest 描述字段。","support_refs":["case_bundle"],"support_type":"synthetic_case"},{"claim_text":"这组演示样本的跨度序列是 5、2、6、9、8、6、7、8、7、4、4、8。","claim_type":"calculation","evidence_note":"来自 case_bundle 的 span_series。","support_refs":["case_bundle"],"support_type":"synthetic_case"},{"claim_text":"这组演示样本的和值序列是 33、29、25、22、20、17、21、19、31、25、34、24。","claim_type":"calculation","evidence_note":"来自 case_bundle 的 sum_series。","support_refs":["case_bundle"],"support_type":"synthetic_case"},{"claim_text":"演示数据里，数字 5 出现 12 次，数字 7 出现 10 次，数字 1 出现 8 次。","claim_type":"calculation","evidence_note":"来自 case_bundle 的 frequency 分布。","support_refs":["case_bundle"],"support_type":"synthetic_case"}],"content_format":"html","content_hash":"fc4e7b340d1ac92f77e0e3532a5aef9a5368bda58b2b9bd24287249b677cf2bd","content_type":"technique_article","editorial_contract_version":"1.0","generation_contract_version":"2.0","information_gain_type":"method_mechanics_and_reproducible_case","lottery":"时时彩","play":"五星直选","practical_guidance":{"after_primary_filter_space":"主筛选后剩余 43620 个有序五位候选，已从 100000 个起始候选中筛掉 56380 个。","next_step_policy":"只有新增条件本身具有已验证规则或证据，并且能够复算时，才允许继续缩小候选；否则必须停在主筛选结果。","parameter_freeze_rule":"先固定五星直选与跨度 2 到 6，再看样本；禁止先看样本后倒推参数。","starting_space":"起始空间是 100000 个有序五位候选。","steps":["先确认玩法是五星直选，并把跨度参数冻结为 2 到 6。","把 100000 个有序五位候选作为起始空间。","只做一次跨度主筛选，保留跨度落在 2 到 6 之间的号码。","复算结果：筛后剩余 43620 个，说明有 56380 个被排除。","确认这里已经到停止条件，不再追加第二个未验证过滤器。"],"stop_condition":"如果没有新增、可复算、且有已验证规则或证据的条件，就停止在主筛选结果，不继续缩小候选。"},"primary_keyword":"分分彩五星直选跨度技巧","primary_seo_cluster_id":"ffc_research","provider_id":"","rule_refs":["SSC-HIST-MECH-5STAR-DIRECT-V1"],"search_intent":"学习具体投注技巧并看懂可复算案例","secondary_keywords":["分分彩技巧","五星直选技巧","分分彩五星直选投注技巧","分分彩位置筛选","分分彩跨度筛选"],"secondary_seo_cluster_ids":[],"site_category_key":"tzjq","slug":"分分彩-五星直选-position_filter-span_range","source_refs":["BRBCW-002590"],"status":"approved","subject_lottery":"分分彩","subject_play":"五星直选","technique_atoms":["position_filter","span_range"],"technique_family":"FAM-c93cfcc1527bf6f8","title":"分分彩五星直选跨度技巧：用位置筛选 + 跨度筛选一步步筛选号码","updated_at":"2026-08-12T23:33:59.824626+00:00"}
+
+          lines=[line for line in path.read_text(encoding='utf-8').splitlines() if line.strip()]
+          rows=[json.loads(line) for line in lines]
+          exact=[row for row in rows if row.get('article_id')==target['article_id'] and row.get('status')=='approved' and row.get('content_hash')==target['content_hash']]
+          if not exact:
+              with path.open('a',encoding='utf-8') as fh:
+                  fh.write(json.dumps(target,ensure_ascii=False,separators=(',',':'))+'\n')
+          print(json.dumps({'existing_exact_rows':len(exact),'appended':not bool(exact)},ensure_ascii=False))
+          PY
+
+      - name: Verify recovered package and full repository gates
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          python scripts/audit_reader_terminology.py --root .
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('articles/approved/LCM-IDEA-40be5a222f5cccf7.json')
+          row=json.loads(p.read_text(encoding='utf-8'))
+          assert row['status']=='approved'
+          assert row['article_id']=='LCM-IDEA-40be5a222f5cccf7'
+          assert row['subject_lottery']=='分分彩'
+          assert row['site_category_key']=='tzjq'
+          assert row['primary_keyword']=='分分彩五星直选跨度技巧'
+          assert row['content_hash']==hashlib.sha256(row['content'].encode('utf-8')).hexdigest()
+          reg=[json.loads(x) for x in Path('registry/articles.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
+          matches=[r for r in reg if r.get('article_id')==row['article_id'] and r.get('status')=='approved' and r.get('content_hash')==row['content_hash']]
+          assert matches
+          assert len(list(Path('articles/approved').glob('*.json')))==1
+          print(json.dumps({'formal_approved_count':1,'article_id':row['article_id'],'content_hash':row['content_hash'],'website_sync':False,'scheduled':False,'published':False},ensure_ascii=False,indent=2))
+          PY
+
+      - name: Commit recovered lifecycle row
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add registry/articles.jsonl
+          if git diff --cached --quiet; then
+            echo "Registry already contained exact accepted row"
+          else
+            git commit -m "Recover accepted production lifecycle row (1/200)"
+            git push origin HEAD:production/articles-200-20260813-v4
+          fi
+
+      - name: Upload recovery verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recover-approved-article1
+          path: |
+            articles/approved/LCM-IDEA-40be5a222f5cccf7.json
+            registry/articles.jsonl
+          if-no-files-found: error

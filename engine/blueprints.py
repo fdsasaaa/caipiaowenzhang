@@ -47,6 +47,10 @@ def _method_phrase(atoms: list[str]) -> str:
     return " + ".join(labels)
 
 
+def _title(lottery: str, play: str, atoms: list[str]) -> str:
+    return f"{lottery}{play}技巧：用{_method_phrase(atoms)}一步步筛选号码"
+
+
 def _secondary_keywords(lottery: str, play: str, atoms: list[str]) -> list[str]:
     values = [f"{lottery}技巧", f"{play}技巧", f"{lottery}{play}投注技巧"]
     values.extend(f"{lottery}{atom_label(a)}" for a in atoms[:3])

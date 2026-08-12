@@ -1,7 +1,7 @@
 # FFC Reader Terminology Audit
 
 **Date:** 2026-08-13  
-**Status:** IMPLEMENTED — ordinary CI pending
+**Status:** ACCEPTED
 
 ## Purpose
 
@@ -47,6 +47,20 @@ The audit scans committed JSON article artifacts under:
 
 The canonical `articles/*` inventories are currently empty except for `.gitkeep`; current reader-facing samples therefore come from smoke batch 1 and batch 2.
 
+## Accepted current result
+
+Current committed audit population:
+
+- smoke batch 1 article JSON: `3`
+- smoke batch 1 approved JSON: `3`
+- smoke batch 2 article JSON: `5`
+- smoke batch 2 approved JSON: `5`
+- total scanned reader article artifacts: `16`
+- FFC reader article artifacts: `16`
+- reader-facing legacy `时时彩` findings: `0`
+
+No existing committed reader article needs terminology rewriting at this point.
+
 ## Policy
 
 For an FFC reader article:
@@ -57,13 +71,35 @@ For an FFC reader article:
 
 This is not blind text replacement. The audit must never rewrite source archives or internal rule taxonomy.
 
-## CI expectation
+## Inverse gates
 
-Current committed reader-facing article samples are expected to pass with zero findings. Negative tests also prove that:
+Tests prove that:
 
 - internal `lottery=时时彩` does not trigger a reader-facing error;
 - `title=时时彩后三技巧` for an FFC article is rejected;
 - ordinary body copy using `时时彩` without historical/source qualification is rejected;
 - an explicit historical/internal taxonomy explanation may retain the term.
 
-No provider call, Registry write, website write, scheduling or publication is part of this audit.
+## CI evidence
+
+Ordinary PR CI:
+
+- run: `31645834183`
+- Python 3.10: SUCCESS
+- Python 3.13: SUCCESS
+- repository audit: PASS
+- pytest: `341 passed`
+- registry articles: `8`
+- source records: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+
+## Safety boundaries
+
+- provider calls: `0`
+- Registry write: `false`
+- website write: `false`
+- scheduled: `false`
+- published: `false`
+
+The audit now becomes a permanent repository-level regression gate, so future staged/draft/approved FFC article artifacts cannot silently reintroduce obsolete reader-facing `时时彩` terminology.

@@ -16,6 +16,9 @@ from engine.real_group6_article_contract import (
 )
 from scripts.real_group6_live_article import EXPECTED, build_preflight_summary
 
+# Real one-shot acceptance: resp_06759b5457ac444d016a7cf9fbeae48196a703bd16e3bcb033.
+# The fake transport remains the permanent network-free regression path after paid cleanup.
+
 
 def _model_article(packet: dict) -> dict:
     content = (

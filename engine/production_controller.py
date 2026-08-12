@@ -11,6 +11,7 @@ from .approval import evaluate_and_record
 from .blueprints import blueprint_from_plan
 from .draft_packets import build_case_bundle, build_draft_packet
 from .formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
+from .generation_normalization import normalize_generation_metadata
 from .planner import plan_articles
 from .production_filter_contract import ProductionFilterContractError, build_primary_filter_spec
 from .public_terminology import audit_article
@@ -296,6 +297,12 @@ def _packet_with_cluster_metadata(blueprint: dict) -> dict:
     if blueprint.get("primary_seo_cluster_id"):
         facts["primary_seo_cluster_id"] = blueprint["primary_seo_cluster_id"]
         facts["secondary_seo_cluster_ids"] = list(blueprint.get("secondary_seo_cluster_ids", []))
+    claims = packet.setdefault("claims", {})
+    claims["forbidden_literal_terms_even_when_negated"] = list(claims.get("forbidden_terms", []))
+    claims["editorial_scope_claim_evidence_rule"] = (
+        "纯编辑范围/风险说明使用 claim_type=editorial, support_type=editorial, support_refs=[]；"
+        "不要因为 packet 同时有 source_refs 就把这类句子标成 source_unverified。"
+    )
     return packet
 
 
@@ -347,7 +354,7 @@ def execute_production_plan(
                 continue
 
             generated += 1
-            article = generation.article
+            article = normalize_generation_metadata(generation.article)
             approval = approve_fn(packet, article)
             if not approval.approved or not approval.publish_package:
                 approval_failed += 1

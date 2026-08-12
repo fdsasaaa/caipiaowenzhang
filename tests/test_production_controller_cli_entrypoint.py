@@ -21,6 +21,18 @@ def test_production_controller_script_help_runs_from_repo_root():
     assert "Article Production Controller" in result.stdout
 
 
+def test_reader_terminology_audit_script_runs_from_repo_root():
+    result = subprocess.run(
+        [sys.executable, "scripts/audit_reader_terminology.py", "--root", "."],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    assert result.returncode == 0, result.stderr or result.stdout
+    assert '"passed": true' in result.stdout
+
+
 def test_controller_uses_configured_compatible_provider_transport(monkeypatch):
     monkeypatch.setenv("OPENAI_BASE_URL", "https://provider.example/v1/")
     transport, base_url = _provider_transport_from_environment()

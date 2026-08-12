@@ -18,5 +18,6 @@ def test_atom_input_order_does_not_change_exact_primary_owner():
     assert primary_keyword_for("分分彩", "前三直选", a) == primary_keyword_for("分分彩", "前三直选", b)
 
 
-def test_play_embedded_method_label_is_not_repeated():
-    assert primary_keyword_for("分分彩", "后二大小单双", ["big_small_filter", "odd_even_filter"]) == "分分彩后二大小单双奇偶技巧"
+def test_play_embedded_method_semantics_are_not_repeated():
+    assert method_keyword_labels("后二大小单双", ["big_small_filter", "odd_even_filter"]) == []
+    assert primary_keyword_for("分分彩", "后二大小单双", ["big_small_filter", "odd_even_filter"]) == "分分彩后二大小单双技巧"

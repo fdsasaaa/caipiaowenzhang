@@ -1,0 +1,131 @@
+name: production-controller-single-acceptance-v3-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v3
+    paths:
+      - .github/production-controller-single-acceptance-v3.trigger
+
+permissions:
+  contents: write
+
+jobs:
+  single-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: https://api.synapai.top/v1
+      OPENAI_MODEL: gpt-5.4-mini
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Preflight audit and one-candidate selection
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          test -n "$OPENAI_API_KEY"
+          python - <<'PY'
+          import json
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry
+          plan=_build_plan_with_capacity_retry(1, provider_id='', signals=[], batch_size=None, allow_ultra=False)
+          assert plan['candidates']
+          row=plan['candidates'][0]
+          bp=row['blueprint']
+          atoms=set(bp.get('technique_atoms') or [])
+          assert atoms != {'position_filter'}, atoms
+          print(json.dumps({
+              'article_id':bp.get('article_id'),
+              'primary_keyword':bp.get('primary_keyword'),
+              'subject_play':bp.get('subject_play'),
+              'technique_atoms':bp.get('technique_atoms'),
+              'priority_score':row.get('priority_score'),
+              'formal_inventory_before':plan.get('formal_inventory_before'),
+              'provider_calls_planned':1,
+          },ensure_ascii=False,indent=2))
+          PY
+
+      - name: Execute exactly one provider call through total-controller lifecycle
+        run: |
+          set -euo pipefail
+          python - <<'PY' | tee production-controller-single-acceptance-v3.log
+          import json
+          import os
+          from pathlib import Path
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry, _provider_transport_from_environment
+          from engine.production_controller import execute_production_plan
+
+          plan=_build_plan_with_capacity_retry(1, provider_id='', signals=[], batch_size=None, allow_ultra=False)
+          plan=dict(plan)
+          plan['candidates']=plan['candidates'][:1]
+          plan['attempt_budget']=1
+          plan['batch_size']=1
+          transport, base_url=_provider_transport_from_environment()
+          assert transport is not None
+          result=execute_production_plan(plan, model='gpt-5.4-mini', transport=transport)
+          out={
+              'base_url':base_url,
+              'target':1,
+              'attempted':result['attempted'],
+              'generated':result['generated'],
+              'approved':result['approved'],
+              'formal_inventory_staged':result['formal_inventory_staged'],
+              'approval_failed':result['approval_failed'],
+              'generation_failed':result['generation_failed'],
+              'reader_terminology_failed':result['reader_terminology_failed'],
+              'formal_inventory_error_count':result['formal_inventory_error_count'],
+              'quality_score_average':result['quality_score_average'],
+              'editorial_score_average':result['editorial_score_average'],
+              'results':result['results'],
+              'website_sync':False,
+              'scheduled':False,
+              'published':False,
+          }
+          Path('runs/production-controller-single-acceptance-v3').mkdir(parents=True,exist_ok=True)
+          Path('runs/production-controller-single-acceptance-v3/result.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(out,ensure_ascii=False,indent=2))
+          assert result['attempted']==1
+          assert result['generated']==1
+          assert result['approved']==1, result['results']
+          assert result['formal_inventory_staged']==1, result['results']
+          PY
+
+      - name: Validate and commit accepted article
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          python scripts/audit_reader_terminology.py
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          paths=sorted(Path('articles/approved').glob('*.json'))
+          assert len(paths)==1, len(paths)
+          row=json.loads(paths[0].read_text(encoding='utf-8'))
+          assert row['status']=='approved'
+          assert row['site_category_key']=='tzjq'
+          assert row['subject_lottery']=='分分彩'
+          assert row['content_hash']==hashlib.sha256(row['content'].encode('utf-8')).hexdigest()
+          print(json.dumps({'article_id':row['article_id'],'primary_keyword':row['primary_keyword'],'title':row['title']},ensure_ascii=False,indent=2))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles/approved registry/articles.jsonl
+          git commit -m "Stage production controller acceptance article (1/200)"
+          git push origin HEAD:production/articles-200-20260813-v3
+
+      - name: Upload single-call evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-controller-single-acceptance-v3
+          path: |
+            runs/production-controller-single-acceptance-v3/
+            production-controller-single-acceptance-v3.log
+            articles/approved/*.json
+            registry/articles.jsonl
+          if-no-files-found: warn
+          retention-days: 30

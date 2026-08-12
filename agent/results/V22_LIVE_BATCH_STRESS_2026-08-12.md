@@ -2,24 +2,25 @@
 
 ## 结论
 
-本记录保存 `V2.2 multi-stage article pipeline` 对真实 OpenAI-compatible provider 的三轮五篇批次压力测试。
+本记录保存 `V2.2 multi-stage article pipeline` 对真实 OpenAI-compatible provider 的三轮五篇批次压力测试，以及随后针对唯一未通过案例 004 的单篇真实确认。
 
 - Provider: `https://api.synapai.top/v1`
 - Model: `gpt-5.4-mini`
 - Secret: GitHub Actions `MODEL_PROVIDER_API_KEY`
 - 调用方式: `/responses` + strict JSON Schema Structured Outputs
 - 固定 Blueprint 数: 5
-- 每轮均使用同一组 Blueprint、同一模型、同一筛选参数
+- 三轮批次均使用同一组 Blueprint、同一模型、同一筛选参数
+- 最终 targeted confirmation 只调用原始 004 Blueprint，不修改题目或筛选参数
 - Registry write: **false**
 - Website draft write: **false**
 - Scheduled: **false**
 - Published: **false**
 
-最终真实批次达到 **4/5 approved**。第 5 篇的真实失败已定位为 Claim→Evidence 元数据归类问题，并在之后做了确定性离线修复与回归测试；按照成本控制约定，本轮没有进行第四次付费 API 重跑。因此：
+三轮五篇批次的真实通过率从 `0/5 → 2/5 → 4/5`。第三轮唯一失败的 004 已定位为 Claim→Evidence 元数据归类问题；系统随后把 pipeline 数学 evidence 改为机器自有，并完成离线回归。最终又只针对同一 004 执行一次最小真实复验，结果 `generated=1 / approved=1`，三项评分均为 `100`，无 Approval 或 multistage 错误。
 
-> **V2.2 状态：candidate / not yet fully live-accepted.**
+> **V2.2 状态：fully_live_accepted。**
 >
-> V2.1 的单篇真实 100/100 acceptance 仍是当前已正式验证的稳定生产路径。V2.2 下一次只需要针对最终未通过的后二区选复式类案例做最小真实复验，再决定是否晋升为 fully live-accepted。
+> 引擎版本晋升为 **`2.2.0`**。这里的 fully live accepted 只表示本仓库的 V2.2 多层生成、系统数学、Claim→Evidence、编辑质量和 Approval 链路已完成真实模型验证；它不代表任意彩票平台 economics 已核验，也不代表任何筛选方法具有预测优势、命中率优势或盈利能力。
 
 ---
 
@@ -94,7 +95,7 @@ Response IDs:
 
 ---
 
-## Round 3 — 最终付费复测：5/5生成，4/5批准
+## Round 3 — 五篇最终批次：5/5生成，4/5批准
 
 - Workflow run: `31550821889`
 - Artifact ID: `9124243143`
@@ -140,11 +141,10 @@ Response IDs:
 随后离线修正为：
 
 - pipeline `before/after/excluded` evidence 改为**系统自有**，由引擎从机器枚举结果确定性注入；
+- digit pool 的参数基数（例如“5个数字”）也由系统确定性生成 evidence；
 - 只有能精确对应某个机器已知 stage/overall 数学关系的错误模型 evidence 才允许规范化；
 - 与 pipeline 不匹配的 synthetic claim 仍不会被静默改写，继续由严格门禁拒绝；
 - 对无序组选同时注入“个”与“注”口径的标准 evidence，支持正文自然复述。
-
-该修正已加入回归测试，但**没有再进行第四轮付费 API 测试**。
 
 ### 005 — PASS
 
@@ -153,6 +153,48 @@ Response IDs:
 - multistage: `100`
 - errors: `[]`
 - response: `resp_0b0d30ceb2e663db016a7bc0e581508196a81f11aeaeae0675`
+
+---
+
+## Targeted Confirmation — 原始004单篇真实确认：PASS
+
+第三轮后没有再重跑整批5篇，而是按成本控制方案只复验唯一失败案例 004。
+
+- Workflow run: `31586184648`
+- Artifact ID: `9137203635`
+- Artifact SHA256: `1a48a1779bd1147a49b61a8b13dbe2777200ba8c93aea95897b59e5ebf49a8fb`
+- Article ID: `LCM-SMOKE-V22-004`
+- Title: `分分彩后二组选复式和值技巧：候选池两层筛选怎么算`
+- Primary keyword: `分分彩后二组选复式和值技巧`
+- Model: `gpt-5.4-mini`
+- Requested: **1**
+- Generated: **1**
+- Approved: **1**
+- Failed: **0**
+- hard quality: **100**
+- editorial: **100**
+- multistage: **100**
+- Approval errors: `[]`
+- Multistage errors: `[]`
+- Response ID: `resp_09be2b665bd3c5e2016a7c4670f80c81989a26b1e6afd93ece`
+- Pipeline: `45 → 10 → 7`
+- Stage excluded: `35 / 3`
+- Total excluded: `38`
+- Registry write: **false**
+- Website draft write: **false**
+- Scheduled: **false**
+- Published: **false**
+
+付费请求前，targeted runner 还强制检查：
+
+- article_id 必须严格等于 `LCM-SMOKE-V22-004`；
+- starting space 必须是 `45`；
+- 两层 after space 必须是 `[10, 7]`；
+- 两层 excluded 必须是 `[35, 3]`；
+- final space 必须是 `7`；
+- total excluded 必须是 `38`。
+
+任一条件变化都会在 API 调用前 fail-closed，因此这次 PASS 不是通过换题、改筛选参数或缩小审核范围取得的。
 
 ---
 
@@ -167,19 +209,28 @@ Response IDs:
 7. 风险否定句与正向命中率/预测声明分离；
 8. 重复实操解释可复用同一组已验证数量事实；
 9. 演示数据免责声明由系统兜底注入；
-10. pipeline calculation evidence 从模型控制权中移出，改为系统确定性生成。
+10. pipeline calculation evidence 从模型控制权中移出，改为系统确定性生成；
+11. digit pool 等冻结参数本身的基数由系统生成 evidence；
+12. targeted paid smoke 在 API 前锁定 article identity 和完整 pipeline，避免误调用或“改题通过”。
 
 ---
 
 ## 安全与成本收尾
 
-- 本轮共执行三次五篇真实 batch；第三轮后停止继续重跑；
-- 临时 `.github/workflows/live-batch-v22-temp.yml` 已删除；
-- 临时 `.github/live-batch-v22.trigger` 已删除；
-- 不存在该 V2.2 测试留下的自动付费 push trigger；
+- 历史阶段执行三次五篇真实 batch；
+- 最终只新增一次单篇004 targeted confirmation，没有再跑第四个五篇批次；
+- 临时 `.github/workflows/live-batch-v22-temp.yml` 与对应 trigger 已删除；
+- targeted confirmation 的临时 `.github/workflows/live-004-v22-temp.yml` 已删除；
+- targeted confirmation 的临时 `.github/live-004-v22.trigger` 已删除；
+- 当前分支不存在该测试留下的自动付费 push trigger；
 - API key 从未写入仓库或日志；
-- 本轮没有写 Registry、没有写网站 draft、没有 scheduled/published。
+- 全程没有写 Registry、没有写网站 draft、没有 scheduled/published。
 
-## 晋升条件
+## 最终晋升状态
 
-V2.2 不应因为离线修复就宣称已经 5/5 live accepted。建议下一次需要真实生成时，只针对后二区选复式类做一个最小 targeted smoke；若该类通过，再把 V2.2 状态从 `candidate` 晋升为 `fully_live_accepted`。
+原晋升条件“针对后二区选复式类完成最小真实复验且通过”已经满足。
+
+- `V2.2 candidate` → **`V2.2 fully_live_accepted`**
+- `2.2.0rc1` → **`2.2.0`**
+
+下一阶段可以进入更有信息量的 **10–20篇不同技巧组合稳定性批测**，重点观察跨技巧族、跨玩法窗口、不同文章结构下的批量通过率与失败类型；仍不因此自动写 Registry、网站 draft、scheduled 或 published。

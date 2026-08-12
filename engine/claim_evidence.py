@@ -28,16 +28,25 @@ _PERFORMANCE_NEGATIONS = (
     "不能当成未来预测", "不构成未来保证", "不构成未来判断", "不代表未来",
     "不用于证明固定收益", "不用于证明固定胜率", "不用于证明收益", "不用于证明胜率",
 )
-_NEGATED_PERFORMANCE_RE = re.compile(
+_NEGATION_PREFIX = (
     r"(?:不是|不代表|不表示|不在说|不能说明|不能证明|不用于证明|不用于说明|"
     r"不用于推断|不用于保证|不等于|并不意味着|不意味着)"
-    r".{0,18}(?:命中率|准确率|成功率|胜率|固定胜率|收益|收益率|利润|盈利|"
-    r"更容易中奖|预测优势|优势判断|更准)"
+)
+_NEGATED_PERFORMANCE_RE = re.compile(
+    _NEGATION_PREFIX
+    + r".{0,18}(?:命中率|准确率|成功率|胜率|固定胜率|收益|收益率|利润|盈利|"
+    + r"更容易中奖|预测优势|优势判断|更准)"
 )
 _POSITIVE_PERFORMANCE_RE = re.compile(
     r"(?:命中率|准确率|成功率|胜率).{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到)"
     r"|(?:收益率|利润|盈利).{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到|稳定)"
 )
+_NEGATED_POSITIVE_PERFORMANCE_RE = re.compile(
+    _NEGATION_PREFIX
+    + r".{0,18}(?:命中率|准确率|成功率|胜率|收益率|利润|盈利)"
+    + r".{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到|稳定)"
+)
+_POSITIVE_CLAUSE_PIVOTS = ("但是", "但", "不过", "然而", "实际", "事实上", "同时")
 _SYNTHETIC_NEGATIONS = (
     "不是真实开奖", "不是真实开奖记录", "并非真实开奖", "非真实开奖",
     "不是实盘结果", "并非实盘结果", "不是历史开奖", "演示数据",
@@ -69,21 +78,34 @@ def _pure_economics_disclaimer(sentence: str) -> bool:
     return not bool(re.search(r"\d|%|百分之|\b倍\b|元|每注|单注", sentence))
 
 
+def _has_unnegated_positive_performance(sentence: str) -> bool:
+    if not _POSITIVE_PERFORMANCE_RE.search(sentence):
+        return False
+    negated_positive = bool(_NEGATED_POSITIVE_PERFORMANCE_RE.search(sentence))
+    positive_after_pivot = False
+    for pivot in _POSITIVE_CLAUSE_PIVOTS:
+        if pivot not in sentence:
+            continue
+        tail = sentence.split(pivot, 1)[1]
+        if _POSITIVE_PERFORMANCE_RE.search(tail):
+            positive_after_pivot = True
+            break
+    # Plain positive wording is affirmative. A positive-looking phrase fully
+    # inside a negation scope is safe unless a later contrast/actual clause
+    # introduces its own affirmative performance statement.
+    return (not negated_positive) or positive_after_pivot
+
+
 def _pure_performance_or_prediction_disclaimer(sentence: str) -> bool:
     """Recognize negative safety language without hiding actual rate claims."""
     if not any(marker in sentence for marker in _PERFORMANCE_NEGATIONS) and not _NEGATED_PERFORMANCE_RE.search(sentence):
         return False
-    # An actual percentage/rate assignment remains a hard fact even if the
-    # sentence also contains cautious wording.
     if re.search(r"\d+(?:\.\d+)?\s*[%％]|百分之", sentence):
         return False
     if re.search(r"(?:命中率|准确率|成功率|胜率)\s*(?:为|是|达到|约|大约)\s*\d", sentence):
         return False
-    # A sentence that contains a negative clause plus a separate affirmative
-    # performance/economics comparison is mixed, not a pure disclaimer.
-    if _POSITIVE_PERFORMANCE_RE.search(sentence):
+    if _has_unnegated_positive_performance(sentence):
         return False
-    # Explicit positive future claims are never converted into disclaimers.
     if any(marker in sentence for marker in ("下一期会出", "下期会出", "一定会出", "肯定会出")):
         return False
     return True
@@ -150,11 +172,6 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         if _claim_matches(sentence, str(entry.get("claim_text") or "")):
             return True
 
-    # Repeated practical prose may restate one or several already-proven
-    # calculations. Accept it when every unit-bearing quantity fact in the
-    # sentence is covered by the UNION of factual evidence rows. This allows
-    # “45注→10注→7注” to be supported by stage1 plus overall/stage2 calculations,
-    # while an unsupported “8注” still fails.
     sentence_quantities = _quantity_signature(sentence)
     if sentence_quantities:
         supported_quantities: set[tuple[str, str]] = set()
@@ -163,8 +180,6 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         if sentence_quantities.issubset(supported_quantities):
             return True
 
-    # Mixed numeric+editorial sentences may combine a proven quantity with a
-    # stop policy. The editorial entry can explain the policy but not the number.
     sentence_numbers = _numeric_signature(sentence)
     if not sentence_numbers:
         return False

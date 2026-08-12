@@ -143,6 +143,8 @@ Corrected ranking code and regression guard passed ordinary CI:
 
 The earlier pre-fix ordinary CI also passed, but run `31646502012` is the authoritative code-validation run after fixing unlock accounting.
 
+After that validation, `main` advanced through PR #53 (`article-production-controller`) at `d5cb557aa71199fcb95bfa0bdca25cd5a70144f6`. PR #53 changes only production-controller files and does not overlap this ranking implementation. A final PR CI synchronization is required before merge so the combined merge ref is verified against the newer `main`.
+
 ## Boundaries
 
 - paid model call: `false`

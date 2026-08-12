@@ -1,0 +1,158 @@
+{
+  "approved_at": "2026-08-12T23:33:59.823036+00:00",
+  "article_id": "LCM-IDEA-40be5a222f5cccf7",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "分分彩五星直选跨度技巧这篇文章只讲玩法机制和可复算演示，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑范围说明，避免引入未核验经济信息。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选的演示筛选从 100000 个有序五位候选开始，先按跨度条件筛掉 56380 个，再保留 43620 个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自冻结的 primary_filter_spec；用于展示主筛选前后空间变化。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个跨度条件是“跨度 2 到 6”，也就是只保留跨度落在 2 至 6 之间的五星直选候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自冻结的 primary_filter_spec 参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的筛选是先固定参数，再看样本；主筛选只做一次，之后停止，不再临时追加第二个未验证过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自 practical guidance 与 primary_filter_spec 的 stop_after_primary_filter 约束。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "案例标签说明，按要求明确标注演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本一共 12 条，最新一条是 94281。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的 synthetic validation 样本。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新样本 94281 的和值是 24，跨度是 8，重号形态是 1-1-1-1-1，大小形态是 大小小大小，单双形态是 单单双双单。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的 latest 描述字段。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的跨度序列是 5、2、6、9、8、6、7、8、7、4、4、8。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的 span_series。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的和值序列是 33、29、25、22、20、17、21、19、31、25、34、24。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的 sum_series。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里，数字 5 出现 12 次，数字 7 出现 10 次，数字 1 出现 8 次。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的 frequency 分布。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>分分彩五星直选技巧：先把规则说清楚</h2><p>这篇只讲五星直选的机制和一个可复算的演示，不讨论未核验的平台经济参数。读者先记住一件事：正文里的样本是演示数据，不是真实开奖记录。</p><p>五星直选的意思，是按五星这个选号层级来做直选演示。本文唯一主筛选合同是跨度筛选，参数已经冻结为跨度 2 到 6，不能先看样本再倒推参数。</p><h2>方法核心：位置筛选 + 跨度筛选在算什么</h2><p>这次正文只使用一个主筛选：跨度范围。它的输入是有序五位候选，输出是保留跨度落在 2 至 6 之间的号码。</p><p>按冻结参数复算，起始候选空间是 100000 个有序五位候选，主筛选后剩下 43620 个，筛掉 56380 个。这个收缩只说明空间变小了，不代表命中率、收益或未来预测优势。</p><h2>按步骤筛选</h2><ol><li>先固定玩法和参数：五星直选，跨度 2 到 6。</li><li>再确定起始空间：100000 个有序五位候选。</li><li>按跨度规则做一次主筛选，保留 43620 个候选，排除 56380 个候选。</li><li>到这里就停止，不再临时加第二个未验证过滤器。</li></ol><h2>简单案例：用一小段数据复算一次</h2><p>演示数据，不是真实开奖记录。样本共 12 条，分别是 08510、45804、26924、58037、45969、57575、28573、01795、91721、51137、41358、17803、27958、46375、95578、94281。</p><p>最新样本是 94281。它的和值是 24，跨度是 8，重复形态是 1-1-1-1-1，大小形态是 大小小大小，单双形态是 单单双双单。</p><p>这组演示样本的跨度序列是 5、2、6、9、8、6、7、8、7、4、4、8；和值序列是 33、29、25、22、20、17、21、19、31、25、34、24。因为这是演示数据，所以这些数值只用于复算展示，不自动推出任何未来结论。</p><p>频率上，演示数据里数字 5 出现 12 次，数字 7 出现 10 次，数字 1 出现 8 次。这个频率分布同样只是描述，不是独立验证后的优势结论。</p><h2>投注前校验</h2><p>真正动手前，先核对三件事：玩法是不是五星直选，参数是不是已经固定，样本是不是只拿来做演示复算。只要你还没有新的已验证规则，就不要继续缩小候选。</p><p>如果后面想再加条件，只有新增条件本身也有已验证规则或证据、并且能够复算时，才允许继续缩小候选。否则就停在主筛选结果，不把演示当成结论。</p><h2>容易误解的地方</h2><p>跨度筛选只是一个机械过滤，不是预测保证。演示样本里的和值、跨度、频率和形态，都是描述性信息，不能直接当成未来表现。</p><p>本文保留的是可复算步骤，不是收益承诺。看完后能做的事只有一件：按固定参数重算一次，并知道筛选到哪一步必须停止。</p>",
+  "content_format": "html",
+  "content_hash": "fc4e7b340d1ac92f77e0e3532a5aef9a5368bda58b2b9bd24287249b677cf2bd",
+  "content_type": "technique_article",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "40be5a222f5cccf776ee62af932e0824c0d5d386eddb5d8b9bb9b00b0eef4c9e",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选跨度技巧讲解：先说明五星直选规则，再用可复算演示数据展示跨度筛选步骤、注数检查和常见误区，不把演示统计包装成结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后剩余 43620 个有序五位候选，已从 100000 个起始候选中筛掉 56380 个。",
+    "next_step_policy": "只有新增条件本身具有已验证规则或证据，并且能够复算时，才允许继续缩小候选；否则必须停在主筛选结果。",
+    "parameter_freeze_rule": "先固定五星直选与跨度 2 到 6，再看样本；禁止先看样本后倒推参数。",
+    "starting_space": "起始空间是 100000 个有序五位候选。",
+    "steps": [
+      "先确认玩法是五星直选，并把跨度参数冻结为 2 到 6。",
+      "把 100000 个有序五位候选作为起始空间。",
+      "只做一次跨度主筛选，保留跨度落在 2 到 6 之间的号码。",
+      "复算结果：筛后剩余 43620 个，说明有 56380 个被排除。",
+      "确认这里已经到停止条件，不再追加第二个未验证过滤器。"
+    ],
+    "stop_condition": "如果没有新增、可复算、且有已验证规则或证据的条件，就停止在主筛选结果，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选跨度技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "学习具体投注技巧并看懂可复算案例",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选跨度技巧：用位置筛选 + 跨度筛选一步步筛选号码",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-span_range",
+  "source_refs": [
+    "BRBCW-002590"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用分分彩五星直选跨度技巧讲清五星直选的主筛选机制，并用演示数据复算跨度、和值和频率，明确主筛选前后空间变化与停止条件。",
+  "tags": [
+    "分分彩五星直选跨度技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range"
+  ],
+  "title": "分分彩五星直选跨度技巧：用位置筛选 + 跨度筛选一步步筛选号码"
+}

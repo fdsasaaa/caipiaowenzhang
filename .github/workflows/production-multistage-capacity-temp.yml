@@ -1,0 +1,37 @@
+name: production-multistage-capacity-temp
+
+on:
+  push:
+    branches:
+      - fix/production-multistage-contract-v2
+    paths:
+      - '.github/production-multistage-capacity.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Recompute target-200 capacity with strict all-method contracts
+        shell: bash
+        run: |
+          mkdir -p runtime/production-multistage-capacity
+          python scripts/produce_articles_total.py 200 --output-dir runtime/production-multistage-capacity \
+            | tee runtime/production-multistage-capacity/stdout.json
+      - name: Upload capacity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-multistage-capacity
+          path: runtime/production-multistage-capacity
+          if-no-files-found: error
+          retention-days: 14

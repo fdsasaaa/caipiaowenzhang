@@ -16,6 +16,13 @@ def build_multistage_draft_packet(blueprint: dict) -> dict:
     packet["case_bundle"]["filter_pipeline_spec"] = deepcopy(spec)
     packet["case_bundle"]["filter_pipeline_result"] = deepcopy(result)
 
+    # V2.1 used one exact canonical sentence as the required label. Live V2.2
+    # showed that equally clear wording such as “样本只用于演示，不是真实开奖记录”
+    # should not be rejected. Keep the semantic safety requirement while using
+    # the decisive phrase as the machine gate.
+    packet["case_bundle"]["must_label_as"] = "不是真实开奖记录"
+    packet["output_contract"]["must_include_case_label"] = "不是真实开奖记录"
+
     practicality = packet.setdefault("practicality", {})
     practicality["filter_pipeline_spec"] = deepcopy(spec)
     practicality["filter_pipeline_result"] = deepcopy(result)

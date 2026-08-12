@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -16,6 +17,7 @@ from engine.production_controller import (
     execute_production_plan,
     load_controller_policy,
 )
+from engine.provider_transport import make_responses_transport, normalize_base_url
 from engine.seo_priority import read_demand_signals
 
 
@@ -96,6 +98,19 @@ def _build_plan_with_capacity_retry(
     return deep_plan
 
 
+def _provider_transport_from_environment():
+    """Use the repository's configured OpenAI-compatible provider when supplied.
+
+    The API key remains read by the generation layer from OPENAI_API_KEY. This
+    helper only selects the endpoint transport and never logs credentials.
+    """
+    raw_base_url = os.getenv("OPENAI_BASE_URL")
+    if not raw_base_url:
+        return None, None
+    base_url = normalize_base_url(raw_base_url)
+    return make_responses_transport(base_url), base_url
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Article Production Controller: capacity preflight -> batched generation -> Approval -> formal Approved inventory."
@@ -152,7 +167,12 @@ def main() -> int:
         print(json.dumps(summary, ensure_ascii=False, indent=2))
         return 0
 
-    result = execute_production_plan(plan, model=args.model)
+    transport, base_url = _provider_transport_from_environment()
+    summary["model_provider_transport"] = "configured_compatible_endpoint" if transport else "default_openai_endpoint"
+    if base_url:
+        summary["model_provider_base_url"] = base_url
+
+    result = execute_production_plan(plan, model=args.model, transport=transport)
     _write(output_dir / "result.json", result)
     summary.update({
         "status": result["status"],

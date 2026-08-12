@@ -14,6 +14,16 @@ class DuplicateHit:
     reason: str
 
 
+DUPLICATE_OWNING_STATUSES = {
+    "idea",
+    "draft",
+    "approved",
+    "queued",
+    "scheduled",
+    "published",
+}
+
+
 def _text(value) -> str:
     return "" if value is None else str(value)
 
@@ -46,6 +56,11 @@ def duplicate_candidates(candidate: dict, threshold: float = 0.72) -> list[Dupli
     candidate_article_id = candidate.get("article_id")
     candidate_core = _core(candidate)
     for old in iter_registry("articles"):
+        # A rejected lifecycle record is revision history, not a live content owner.
+        # Let the same subject space be retried with a different valid article;
+        # only states that still occupy editorial/SEO inventory participate here.
+        if old.get("status") not in DUPLICATE_OWNING_STATUSES:
+            continue
         old_article_id = old.get("article_id")
         # Lifecycle updates of the same article are not duplicates of themselves.
         if candidate_article_id and old_article_id == candidate_article_id:

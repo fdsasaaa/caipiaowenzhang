@@ -20,6 +20,7 @@ GROUP_ATOM = "group3_group6"
 
 SOURCE_BINDING = "source_exact_phrase"
 SYSTEM_BINDING = "system_research_prefrozen"
+TARGET_COVERAGE_CEILING = 0.90
 
 
 class GroupModeBindingError(ValueError):
@@ -131,10 +132,20 @@ def bind_group_mode(
     units = _canonical_units(mode)
     if mode == "group3":
         rule_ref = GROUP3_RULE_REF
-        ordered_coverage = len(units) * 3
+        ordered_structure_size = len(units) * 3
     else:
         rule_ref = GROUP6_RULE_REF
-        ordered_coverage = len(units) * 6
+        ordered_structure_size = len(units) * 6
+
+    # Important denominator distinction:
+    # - ordered_structure_size / 1000 describes how much of the complete ordered
+    #   three-digit universe has this multiplicity structure;
+    # - the candidate units listed here are the ENTIRE target play domain. If all
+    #   units were actually bet, target-play coverage would be 100%, which violates
+    #   the project's <=90% executable coverage rule. A mode binding is therefore
+    #   descriptive/validation metadata, not an executable portfolio.
+    global_structure_share = ordered_structure_size / 1000.0
+    full_target_domain_coverage = 1.0
 
     return {
         "binding_status": "bound_for_validation",
@@ -148,9 +159,16 @@ def bind_group_mode(
         "candidate_unit_domain": "unordered_group_bet_units",
         "candidate_unit_count": len(units),
         "candidate_units_sha256": _units_sha256(units),
-        "ordered_outcome_coverage": ordered_coverage,
-        "ordered_outcome_space": 1000,
-        "coverage_rate": ordered_coverage / 1000.0,
+        "ordered_structure_size_within_all_three_digit_outcomes": ordered_structure_size,
+        "all_three_digit_ordered_space": 1000,
+        "global_three_digit_structure_share": global_structure_share,
+        "target_play_unit_space": len(units),
+        "target_play_domain_coverage_if_all_units_used": full_target_domain_coverage,
+        "target_coverage_ceiling_for_executable_portfolio": TARGET_COVERAGE_CEILING,
+        "all_domain_units_executable_portfolio_allowed": full_target_domain_coverage <= TARGET_COVERAGE_CEILING,
+        "coverage_denominator_note": (
+            "global_three_digit_structure_share is descriptive only; executable coverage must be measured against the selected play's own target domain"
+        ),
         "frozen_before_observation": True,
         "reader_lottery_label": "分分彩",
         "internal_rule_taxonomy": "时时彩",

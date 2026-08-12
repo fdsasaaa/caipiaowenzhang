@@ -120,12 +120,13 @@ def test_static_and_sample_pipeline_evidence_use_different_support_types():
     assert overall_rows[0]["support_refs"] == ["case_bundle"]
 
 
-def test_multistage_normalizer_moves_sample_stage_claim_to_case_bundle_without_rewriting_content():
+def test_multistage_normalizer_moves_sample_stage_claim_to_case_bundle_and_only_adds_required_disclosure():
     packet = _packet_with_cluster_metadata(_sample_blueprint())
     stage = packet["practicality"]["filter_pipeline_result"]["stages"][1]
     claim = f"第2层候选空间从{stage['before_space']}个缩到{stage['after_space']}个，排除{stage['excluded_space']}个。"
+    original_content = "<p>正文保持不变。</p>"
     article = {
-        "content": "<p>正文保持不变。</p>",
+        "content": original_content,
         "claim_evidence": [{
             "claim_text": claim,
             "claim_type": "calculation",
@@ -135,7 +136,9 @@ def test_multistage_normalizer_moves_sample_stage_claim_to_case_bundle_without_r
         }],
     }
     normalized = _normalize_multistage_article(article, packet)
-    assert normalized["content"] == article["content"]
+    assert article["content"] == original_content
+    assert normalized["content"].endswith(original_content)
+    assert "演示数据，不是真实开奖记录。" in normalized["content"]
     row = next(row for row in normalized["claim_evidence"] if row["claim_text"] == claim)
     assert row["support_type"] == "synthetic_case"
     assert row["support_refs"] == ["case_bundle"]

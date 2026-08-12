@@ -84,8 +84,8 @@ def test_site_category_must_match_content_type(tmp_path):
         stage_formal_approved_package(package, approved_root=tmp_path)
 
 
-def test_unknown_cluster_fails_closed(tmp_path):
+def test_unknown_cluster_fails_closed_with_normalized_error(tmp_path):
     package = _package()
     package["primary_seo_cluster_id"] = "made_up"
-    with pytest.raises(ValueError, match="unknown primary SEO cluster id"):
+    with pytest.raises(FormalInventoryError, match="unknown primary SEO cluster id"):
         stage_formal_approved_package(package, approved_root=tmp_path)

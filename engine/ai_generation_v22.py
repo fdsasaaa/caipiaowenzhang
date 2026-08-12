@@ -83,7 +83,7 @@ def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
         str(result.get("total_excluded")),
     )
     if all(value not in {"None", ""} and value in compact for value in overall):
-        if any(marker in compact for marker in ("整体", "总共", "合计", "最终", "两层")):
+        if any(marker in compact for marker in ("整体", "总共", "合计", "最终", "两层", "三层")):
             return True
     return False
 
@@ -186,11 +186,22 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
                 and _claim_matches_pipeline_result(packet, claim_text)
             )
 
-            # Some providers occasionally copy the prompt field name literally
-            # and emit support_refs=["rule_refs"] instead of the packet's actual
-            # rule IDs. Repair only machine-known pipeline calculations. A
-            # placeholder on any non-pipeline claim remains invalid and is
-            # rejected by the normal Claim→Evidence gate.
+            # The model may correctly identify a machine pipeline calculation
+            # as verified_rule but omit refs entirely. Fill them only when the
+            # claim exactly reproduces a frozen stage/overall relation. Empty
+            # refs on any other verified_rule claim remain invalid.
+            if (
+                is_pipeline_calculation
+                and entry.get("support_type") == "verified_rule"
+                and not (entry.get("support_refs") or [])
+                and rules
+            ):
+                entry["support_refs"] = rules
+                entry["evidence_note"] = (
+                    str(entry.get("evidence_note") or "")
+                    + " [system-normalized: exact pipeline missing rule refs]"
+                ).strip()
+
             if (
                 is_pipeline_calculation
                 and entry.get("support_type") == "verified_rule"

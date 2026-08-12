@@ -14,7 +14,7 @@ class CompositeEvidenceError(ValueError):
 
 
 def normalize_composite_claim_metadata(packet: dict, article: dict) -> dict:
-    """Canonicalize only machine-owned evidence metadata; never rewrite content."""
+    """Canonicalize only machine-owned evidence/contract metadata; never rewrite content."""
     contract = packet.get("real_knowledge_composition") or {}
     if not contract:
         raise CompositeEvidenceError("real_knowledge_composition contract missing")
@@ -28,6 +28,23 @@ def normalize_composite_claim_metadata(packet: dict, article: dict) -> dict:
     rule_refs = list(packet.get("immutable_facts", {}).get("rule_refs") or [])
     if len(source_refs) != 2 or not rule_refs:
         raise CompositeEvidenceError("locked source/rule refs are incomplete")
+
+    guidance = normalized.get("practical_guidance")
+    if isinstance(guidance, dict):
+        stop = str(guidance.get("stop_condition") or "")
+        next_policy = str(guidance.get("next_step_policy") or "")
+        steps = " ".join(str(value) for value in (guidance.get("steps") or []))
+        if (
+            "第二层" not in stop
+            and "停止" in stop
+            and "和值" in stop
+            and "跨度" in stop
+            and ("第二层" in next_policy or "第二层" in steps)
+        ):
+            guidance["stop_condition"] = (
+                "完成第二层（和值层后执行跨度层）后停止；任何额外新过滤器必须另有已验证规则或证据，"
+                "并在下一次实验前冻结。"
+            )
 
     canonical = [
         {

@@ -80,26 +80,37 @@ def test_composite_evidence_normalizer_never_changes_article_content():
     assert rows["其他模型声明"]["evidence_note"] == "must survive"
 
 
-def test_normalizer_does_not_touch_near_match_source_or_calculation_claims():
+def test_normalizer_does_not_upgrade_near_match_source_or_calculation_claims():
     packet = build_composite_article_packet()
+    unsafe_source = {
+        "claim_text": SOURCE_BOUNDARY + " 来源证明组合更好。",
+        "claim_type": "source_claim",
+        "support_type": "source_unverified",
+        "support_refs": ["BRBCW-006020"],
+        "evidence_note": "unsafe near match",
+    }
+    unsafe_order = {
+        "claim_text": ORDER_BOUNDARY + " 所以更容易中奖。",
+        "claim_type": "calculation",
+        "support_type": "synthetic_case",
+        "support_refs": ["BRBCW-006020"],
+        "evidence_note": "unsafe near match",
+    }
     article = {
         "content": "unchanged",
-        "claim_evidence": [
-            {
-                "claim_text": SOURCE_BOUNDARY + " 来源证明组合更好。",
-                "claim_type": "source_claim",
-                "support_type": "source_unverified",
-                "support_refs": ["BRBCW-006020"],
-                "evidence_note": "unsafe near match",
-            },
-            {
-                "claim_text": ORDER_BOUNDARY + " 所以更容易中奖。",
-                "claim_type": "calculation",
-                "support_type": "synthetic_case",
-                "support_refs": ["BRBCW-006020"],
-                "evidence_note": "unsafe near match",
-            },
-        ],
+        "claim_evidence": [dict(unsafe_source), dict(unsafe_order)],
     }
     normalized = normalize_composite_claim_metadata(packet, article)
-    assert normalized == article
+
+    assert normalized["content"] == "unchanged"
+    assert normalized["claim_evidence"][0] == unsafe_source
+    assert normalized["claim_evidence"][1] == unsafe_order
+    assert normalized["claim_evidence"][0]["support_refs"] == ["BRBCW-006020"]
+    assert normalized["claim_evidence"][1]["support_type"] == "synthetic_case"
+
+    # Canonical system-owned rows are still appended separately; the unsafe
+    # near-match rows are never rewritten into those trusted forms.
+    canonical_texts = {row["claim_text"] for row in normalized["claim_evidence"][2:]}
+    assert "来源内容未独立验证；" + SOURCE_BOUNDARY in canonical_texts
+    assert ORDER_BOUNDARY in canonical_texts
+    assert CANDIDATE_INTEGRITY_BOUNDARY in canonical_texts

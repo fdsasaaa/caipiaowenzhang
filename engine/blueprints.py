@@ -5,6 +5,7 @@ import hashlib
 from .article_memory import get_article_record
 from .dedup import duplicate_candidates
 from .planner import plan_articles
+from .production_filter_contract import assess_primary_filter_contract, primary_filter_signature
 from .semantic_dedup import structural_duplicate_candidates
 from .seo_keywords import keyword_owners, primary_keyword_for
 from .site_contract import default_content_type, site_category_for
@@ -75,11 +76,15 @@ def _outline(play: str, atoms: list[str], case_ready: bool) -> list[str]:
     return sections
 
 
-def _case_structure(plan: dict) -> str:
+def _case_structure(plan: dict, primary_filter_spec: dict | None = None) -> str:
     case_plan = plan.get("case_plan", {})
     metrics = [x.get("metric", "") for x in case_plan.get("supported", [])]
     selector = case_plan.get("resolved_selector") or plan.get("resolved_selector") or "unresolved"
-    return f"selector={selector};metrics={','.join(metrics)};scope={plan.get('allowed_case_scope')}"
+    value = f"selector={selector};metrics={','.join(metrics)};scope={plan.get('allowed_case_scope')}"
+    signature = primary_filter_signature(primary_filter_spec)
+    if signature:
+        value += ";primary_filter=" + signature
+    return value
 
 
 def _angle_key(plan: dict) -> str:
@@ -102,9 +107,16 @@ def blueprint_from_plan(plan: dict) -> dict:
     rule_play = plan["play"]
     subject_lottery = str(plan.get("subject_lottery") or rule_lottery)
     subject_play = str(plan.get("subject_play") or rule_play)
+    resolved_selector = case_plan.get("resolved_selector") or plan.get("resolved_selector")
+    filter_contract = assess_primary_filter_contract(
+        play=rule_play,
+        selector=resolved_selector,
+        atoms=atoms,
+    )
+    primary_filter_spec = filter_contract.get("spec") if filter_contract.get("status") == "ready" else None
     title = _title(subject_lottery, subject_play, atoms)
     primary_keyword = primary_keyword_for(subject_lottery, subject_play, atoms)
-    case_structure = _case_structure(plan)
+    case_structure = _case_structure(plan, primary_filter_spec)
     content_type = str(plan.get("content_type") or default_content_type())
     site_category_key = site_category_for(content_type)
     fp = fingerprint(
@@ -127,6 +139,8 @@ def blueprint_from_plan(plan: dict) -> dict:
     executable_atoms = [str(atom) for atom in atoms if str(atom) and str(atom) not in CONTEXT_ONLY_ATOMS]
     if not executable_atoms:
         blockers.append("no_executable_technique_atom")
+    if filter_contract.get("status") == "blocked":
+        blockers.append(str(filter_contract.get("reason") or "primary_filter_contract_blocked"))
     if blockers:
         status = "blocked"
     blueprint = {
@@ -141,7 +155,7 @@ def blueprint_from_plan(plan: dict) -> dict:
         "site_category_key": site_category_key,
         "technique_family": plan.get("technique_family"),
         "technique_atoms": atoms,
-        "resolved_selector": case_plan.get("resolved_selector") or plan.get("resolved_selector"),
+        "resolved_selector": resolved_selector,
         "selector_basis": case_plan.get("selector_basis") or plan.get("selector_basis"),
         "source_positions": plan.get("positions", []),
         "angle_signature": plan.get("angle_signature") or _angle_key(plan),
@@ -155,6 +169,8 @@ def blueprint_from_plan(plan: dict) -> dict:
         "outline": _outline(subject_play, atoms, case_plan.get("case_engine_ready", False)),
         "case_structure": case_structure,
         "case_plan": case_plan,
+        "primary_filter_contract_status": filter_contract.get("status"),
+        "primary_filter_contract_reason": filter_contract.get("reason"),
         "case_scope": plan.get("allowed_case_scope"),
         "rule_refs": plan.get("rule_refs", []),
         "source_refs": plan.get("source_refs", []),
@@ -173,6 +189,8 @@ def blueprint_from_plan(plan: dict) -> dict:
             "avoid_guaranteed_outcomes": True,
         },
     }
+    if primary_filter_spec:
+        blueprint["primary_filter_spec"] = primary_filter_spec
     if editorial_contract_version:
         blueprint["editorial_contract_version"] = editorial_contract_version
 

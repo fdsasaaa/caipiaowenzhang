@@ -52,6 +52,24 @@ def test_incomplete_case_semantics_blocks_drafting(monkeypatch):
     assert "technique_case_semantics_incomplete" in bp["blockers"]
 
 
+def test_position_context_only_blueprint_cannot_become_formal_technique_draft(monkeypatch):
+    monkeypatch.setattr(blueprints, "duplicate_candidates", lambda candidate: [])
+    monkeypatch.setattr(blueprints, "structural_duplicate_candidates", lambda candidate: [])
+    monkeypatch.setattr(blueprints, "keyword_owners", lambda *args, **kwargs: [])
+    monkeypatch.setattr(blueprints, "get_article_record", lambda article_id: None)
+    plan = _plan()
+    plan["technique_family"] = "F-POSITION-ONLY"
+    plan["technique_atoms"] = ["position_filter"]
+    plan["case_plan"] = {
+        "supported": [{"atom": "position_filter", "metric": "position_scope"}],
+        "unsupported": [],
+        "case_engine_ready": True,
+    }
+    bp = blueprints.blueprint_from_plan(plan)
+    assert bp["status"] == "blocked"
+    assert "no_executable_technique_atom" in bp["blockers"]
+
+
 def test_existing_article_overlap_blocks_before_draft(monkeypatch):
     class Hit:
         article_id = "OLD-1"

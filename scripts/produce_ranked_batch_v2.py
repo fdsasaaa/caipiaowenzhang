@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from engine.batch_production_v2 import produce_ranked_batch
+from engine.formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
 from engine.provider_transport import make_responses_transport, normalize_base_url
 from engine.seo_priority import read_demand_signals
 
@@ -31,6 +32,11 @@ def main() -> int:
     parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"), help="OpenAI-compatible base URL ending at /v1")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--record", action="store_true", help="append each review lifecycle result to Registry")
+    parser.add_argument(
+        "--stage-approved",
+        action="store_true",
+        help="stage every successful Approved Package into articles/approved; does not sync, schedule or publish",
+    )
     args = parser.parse_args()
 
     signals = read_demand_signals(args.signals)
@@ -49,6 +55,11 @@ def main() -> int:
     manifest = dict(result)
     manifest["results"] = []
     manifest["model_base_url"] = normalize_base_url(args.base_url) if args.base_url else "https://api.openai.com/v1"
+    manifest["formal_inventory_requested"] = bool(args.stage_approved)
+    manifest["formal_inventory_staged"] = 0
+    manifest["formal_inventory_unchanged"] = 0
+    manifest["formal_inventory_errors"] = []
+
     for item in result["results"]:
         article_id = str(item.get("article_id") or "unknown")
         folder = args.output_dir / article_id
@@ -67,16 +78,32 @@ def main() -> int:
             "error": item.get("error"),
             "approval": item.get("approval"),
         })
+
+        inventory_result = None
         if item.get("approved_package"):
             _write(folder / "approved.json", item["approved_package"])
+            if args.stage_approved:
+                try:
+                    inventory_result = stage_formal_approved_package(item["approved_package"])
+                    if inventory_result["status"] == "staged":
+                        manifest["formal_inventory_staged"] += 1
+                    elif inventory_result["status"] == "unchanged":
+                        manifest["formal_inventory_unchanged"] += 1
+                except FormalInventoryError as exc:
+                    error = {"article_id": article_id, "error": str(exc)}
+                    manifest["formal_inventory_errors"].append(error)
+                    inventory_result = {"status": "rejected", "error": str(exc)}
+
         manifest["results"].append({
             "article_id": article_id,
             "status": item.get("status"),
             "approved": item.get("approved"),
             "folder": str(folder),
+            "formal_inventory": inventory_result,
         })
+
     _write(args.output_dir / "manifest.json", manifest)
-    print(json.dumps({
+    summary = {
         "requested": result["requested"],
         "selected": result["selected"],
         "generated": result["generated"],
@@ -85,7 +112,14 @@ def main() -> int:
         "signal_mode": result["signal_mode"],
         "model_base_url": manifest["model_base_url"],
         "output_dir": str(args.output_dir),
-    }, ensure_ascii=False, indent=2))
+        "formal_inventory_requested": bool(args.stage_approved),
+        "formal_inventory_staged": manifest["formal_inventory_staged"],
+        "formal_inventory_unchanged": manifest["formal_inventory_unchanged"],
+        "formal_inventory_error_count": len(manifest["formal_inventory_errors"]),
+    }
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    if manifest["formal_inventory_errors"]:
+        return 7
     return 0 if result["approved"] > 0 else 6
 
 

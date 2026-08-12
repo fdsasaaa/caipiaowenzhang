@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "default_target": 200,
   "recommended_target_min": 50,
   "recommended_target_max": 300,
@@ -10,6 +10,8 @@
   "internal_batch_max": 30,
   "candidate_attempt_multiplier": 3,
   "capacity_probe_per_work_unit_max": 1000,
+  "capacity_deep_probe_multiplier": 50,
+  "capacity_retry_when_truncated_and_below_target": true,
   "capacity_preflight_required": true,
   "formal_inventory_required": true,
   "registry_record_required": true,

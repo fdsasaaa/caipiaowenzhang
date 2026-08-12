@@ -14,6 +14,7 @@ from engine.production_controller import (
     ProductionControllerError,
     build_production_plan,
     execute_production_plan,
+    load_controller_policy,
 )
 from engine.seo_priority import read_demand_signals
 
@@ -41,6 +42,60 @@ def _plan_for_disk(plan: dict) -> dict:
     return safe
 
 
+def _build_plan_with_capacity_retry(
+    target: int,
+    *,
+    provider_id: str,
+    signals: list[dict],
+    batch_size: int | None,
+    allow_ultra: bool,
+) -> dict:
+    """Build a normal plan, then deepen only when the first probe is truncated and insufficient.
+
+    The first pass stays cheap. A second pass uses the policy's deep-probe
+    multiplier so a low shallow count cannot be mistaken for exhausted content
+    space. No model/provider call happens in either pass.
+    """
+    policy = load_controller_policy()
+    plan = build_production_plan(
+        target,
+        provider_id=provider_id,
+        signals=signals,
+        batch_size=batch_size,
+        allow_ultra=allow_ultra,
+        policy=policy,
+    )
+    should_retry = bool(policy.get("capacity_retry_when_truncated_and_below_target", True)) and (
+        not plan.get("capacity_exhaustive", False)
+        and not plan.get("target_feasible_current_snapshot", False)
+    )
+    if not should_retry:
+        plan["capacity_probe_passes"] = 1
+        return plan
+
+    deep_policy = dict(policy)
+    deep_multiplier = max(
+        int(policy.get("candidate_attempt_multiplier") or 1),
+        int(policy.get("capacity_deep_probe_multiplier") or 50),
+    )
+    deep_policy["candidate_attempt_multiplier"] = deep_multiplier
+    deep_plan = build_production_plan(
+        target,
+        provider_id=provider_id,
+        signals=signals,
+        batch_size=batch_size,
+        allow_ultra=allow_ultra,
+        policy=deep_policy,
+    )
+    deep_plan["capacity_probe_passes"] = 2
+    deep_plan["capacity_initial_snapshot"] = {
+        "candidate_count": plan.get("candidate_capacity_current_snapshot"),
+        "capacity_exhaustive": plan.get("capacity_exhaustive"),
+        "target_feasible": plan.get("target_feasible_current_snapshot"),
+    }
+    return deep_plan
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(
         description="Article Production Controller: capacity preflight -> batched generation -> Approval -> formal Approved inventory."
@@ -57,7 +112,7 @@ def main() -> int:
 
     signals = read_demand_signals(args.signals)
     try:
-        plan = build_production_plan(
+        plan = _build_plan_with_capacity_retry(
             args.target,
             provider_id=args.provider_id,
             signals=signals,
@@ -81,6 +136,7 @@ def main() -> int:
         "candidate_capacity_current_snapshot": plan["candidate_capacity_current_snapshot"],
         "capacity_exhaustive": plan["capacity_exhaustive"],
         "target_feasible_current_snapshot": plan["target_feasible_current_snapshot"],
+        "capacity_probe_passes": plan.get("capacity_probe_passes", 1),
         "attempt_budget": plan["attempt_budget"],
         "formal_inventory_before": plan["formal_inventory_before"],
         "execute_requested": bool(args.execute),
@@ -89,6 +145,8 @@ def main() -> int:
         "publishing_allowed": False,
         "output_dir": str(output_dir),
     }
+    if plan.get("capacity_initial_snapshot"):
+        summary["capacity_initial_snapshot"] = plan["capacity_initial_snapshot"]
 
     if not args.execute:
         print(json.dumps(summary, ensure_ascii=False, indent=2))

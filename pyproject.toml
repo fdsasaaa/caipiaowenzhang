@@ -1,6 +1,6 @@
 [project]
 name = "laocaimi-content-engine"
-version = "2.2.0rc1"
+version = "2.2.0"
 description = "Rule-aware, evidence-gated, deduplicated lottery content knowledge and generation engine for laocaimi.org"
 requires-python = ">=3.10"
 dependencies = []

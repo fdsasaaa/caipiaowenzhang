@@ -80,7 +80,7 @@ def _matches(candidate: tuple[int, ...], op: str, params: dict) -> bool:
     raise FilterPipelineError(f"unsupported filter op: {op}")
 
 
-def evaluate_filter_pipeline(spec: dict) -> dict:
+def _validated_stages(spec: dict) -> tuple[str, list[dict]]:
     if not isinstance(spec, dict) or not spec:
         raise FilterPipelineError("filter pipeline spec must be a non-empty object")
     space_type = str(spec.get("space_type") or "")
@@ -93,6 +93,12 @@ def evaluate_filter_pipeline(spec: dict) -> dict:
     stages = spec.get("stages")
     if not isinstance(stages, list) or len(stages) < 2:
         raise FilterPipelineError("filter pipeline requires at least two stages")
+    return space_type, stages
+
+
+def evaluate_filter_pipeline(spec: dict) -> dict:
+    space_type, stages = _validated_stages(spec)
+    candidates = _domain(space_type)
 
     seen_ids: set[str] = set()
     results: list[dict] = []
@@ -137,3 +143,23 @@ def evaluate_filter_pipeline(spec: dict) -> dict:
         "stage_count": len(results),
         "stages": results,
     }
+
+
+def final_pipeline_candidates(spec: dict) -> list[tuple[int, ...]]:
+    """Return the exact final candidate tuples for an already valid pipeline.
+
+    The evaluator remains the source of truth for validation and shrink checks;
+    this helper then repeats the same deterministic predicates so article-level
+    validation can show readers the concrete candidate values, not only counts.
+    """
+    evaluate_filter_pipeline(spec)
+    space_type, stages = _validated_stages(spec)
+    candidates = _domain(space_type)
+    for stage in stages:
+        params = stage.get("params") or {}
+        candidates = [candidate for candidate in candidates if _matches(candidate, str(stage.get("op") or ""), params)]
+    return candidates
+
+
+def final_pipeline_candidate_strings(spec: dict) -> list[str]:
+    return ["".join(str(value) for value in candidate) for candidate in final_pipeline_candidates(spec)]

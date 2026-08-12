@@ -27,6 +27,10 @@ _PERFORMANCE_NEGATIONS = (
     "不是在证明它更准", "不代表下一期会", "不表示下一期会", "不能直接当成未来预测",
     "不能当成未来预测", "不构成未来保证", "不构成未来判断", "不代表未来",
 )
+_NEGATED_PERFORMANCE_RE = re.compile(
+    r"(?:不是|不代表|不表示|不在说|不能说明|不能证明|不等于|并不意味着|不意味着)"
+    r".{0,14}(?:命中率|准确率|成功率|胜率|更容易中奖|预测优势|优势判断|更准)"
+)
 _SYNTHETIC_NEGATIONS = (
     "不是真实开奖", "不是真实开奖记录", "并非真实开奖", "非真实开奖",
     "不是实盘结果", "并非实盘结果", "不是历史开奖", "演示数据",
@@ -59,19 +63,16 @@ def _pure_economics_disclaimer(sentence: str) -> bool:
 
 
 def _pure_performance_or_prediction_disclaimer(sentence: str) -> bool:
-    """Recognize negative safety language without hiding actual rate claims.
-
-    A sentence such as “这只是空间收缩，不是命中率，也不代表下一期会怎样”
-    is a limitation, not a performance/prediction fact. If a sentence contains an
-    actual percentage or a positive rate assignment (e.g. “命中率为60%”), it is
-    still hard and cannot pass through this exception.
-    """
-    if not any(marker in sentence for marker in _PERFORMANCE_NEGATIONS):
+    """Recognize negative safety language without hiding actual rate claims."""
+    if not any(marker in sentence for marker in _PERFORMANCE_NEGATIONS) and not _NEGATED_PERFORMANCE_RE.search(sentence):
         return False
+    # An actual percentage/rate assignment remains a hard fact even if the
+    # sentence also contains cautious wording.
     if re.search(r"\d+(?:\.\d+)?\s*[%％]|百分之", sentence):
         return False
     if re.search(r"(?:命中率|准确率|成功率|胜率)\s*(?:为|是|达到|约|大约)\s*\d", sentence):
         return False
+    # Explicit positive future claims are never converted into disclaimers.
     if any(marker in sentence for marker in ("下一期会出", "下期会出", "一定会出", "肯定会出")):
         return False
     return True
@@ -85,8 +86,6 @@ def _hard_sentences(content: str) -> list[str]:
         if _pure_economics_disclaimer(sentence):
             continue
         if _pure_performance_or_prediction_disclaimer(sentence):
-            # Negative safety statements do not need evidence proving that a
-            # performance/prediction claim exists; they explicitly deny it.
             continue
         out.append(sentence)
     return out
@@ -116,18 +115,22 @@ def _numeric_signature(value: str) -> set[str]:
 
 
 def _quantity_signature(value: str) -> set[tuple[str, str]]:
-    """Return number+unit facts such as {('45','注'), ('10','注')}.
+    """Return only unit-bearing quantitative facts such as ('45','注').
 
-    This is intentionally stricter than bare numeric overlap. It lets one
-    verified calculation support repeated prose explanations of the same bet
-    counts without allowing an unrelated sentence that merely shares a number.
+    Bare parameter digits (e.g. the 0/2/5/7/9 in a candidate pool) are not a
+    quantitative hard-claim signature. Keeping them out prevents exact filter
+    parameters from poisoning evidence matching for the real hard facts in the
+    same sentence: 10注、35注、6注, etc.
     """
     compact = _compact(value).replace("％", "%")
-    return {(number, unit or "") for number, unit in _QUANTITY_RE.findall(compact)}
+    return {
+        (number, unit)
+        for number, unit in _QUANTITY_RE.findall(compact)
+        if unit
+    }
 
 
 def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
-    # Normal factual evidence can cover the sentence directly.
     factual_entries = [
         entry for entry in entries
         if str(entry.get("support_type") or "") != "editorial"
@@ -136,23 +139,21 @@ def _evidence_covers_sentence(sentence: str, entries: list[dict]) -> bool:
         if _claim_matches(sentence, str(entry.get("claim_text") or "")):
             return True
 
-    # Practical articles naturally restate the same exact calculation in the
-    # explanation and in the step list. If every number+unit fact in the hard
-    # sentence is a subset of one non-editorial evidence claim, the quantitative
-    # portion is already proven. Example: “45注→10注，排除35注” may be restated
-    # several times without manufacturing duplicate evidence rows.
+    # Repeated practical prose may restate one or several already-proven
+    # calculations. Accept it when every unit-bearing quantity fact in the
+    # sentence is covered by the UNION of factual evidence rows. This allows
+    # “45注→10注→7注” to be supported by stage1 plus overall/stage2 calculations,
+    # while an unsupported “8注” still fails.
     sentence_quantities = _quantity_signature(sentence)
     if sentence_quantities:
+        supported_quantities: set[tuple[str, str]] = set()
         for entry in factual_entries:
-            claim_quantities = _quantity_signature(str(entry.get("claim_text") or ""))
-            if sentence_quantities.issubset(claim_quantities):
-                return True
+            supported_quantities.update(_quantity_signature(str(entry.get("claim_text") or "")))
+        if sentence_quantities.issubset(supported_quantities):
+            return True
 
-    # Mixed sentences are common in practical guidance, e.g. “完成3注→6个结果后，
-    # 没有第二条规则就停止”. An editorial entry may explain the stopping policy,
-    # but it may not prove the numeric fact. Allow the sentence only if BOTH are
-    # present: a matching editorial entry plus separate non-editorial evidence
-    # that carries every numeric token in the sentence.
+    # Mixed numeric+editorial sentences may combine a proven quantity with a
+    # stop policy. The editorial entry can explain the policy but not the number.
     sentence_numbers = _numeric_signature(sentence)
     if not sentence_numbers:
         return False

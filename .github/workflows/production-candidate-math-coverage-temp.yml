@@ -1,0 +1,53 @@
+name: production-candidate-math-coverage-temp
+
+on:
+  push:
+    branches:
+      - content/production-primary-filter-contract-v1
+    paths:
+      - .github/production-candidate-math-coverage.trigger
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Enumerate production candidate method coverage without provider calls
+        run: |
+          set -euo pipefail
+          python - <<'PY' | tee production-candidate-math-coverage.json
+          import json
+          from collections import Counter
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry
+
+          plan=_build_plan_with_capacity_retry(200, provider_id='', signals=[], batch_size=None, allow_ultra=False)
+          rows=[x['blueprint'] for x in plan['candidates']]
+          atom_sets=Counter('+'.join(sorted(set(bp.get('technique_atoms') or [])-{'position_filter'})) for bp in rows)
+          plays=Counter(str(bp.get('subject_play') or '') for bp in rows)
+          atom_presence=Counter()
+          for bp in rows:
+              for atom in sorted(set(bp.get('technique_atoms') or [])-{'position_filter'}):
+                  atom_presence[atom]+=1
+          print(json.dumps({
+              'candidate_count':len(rows),
+              'capacity_exhaustive':plan['capacity_exhaustive'],
+              'atom_presence':dict(atom_presence.most_common()),
+              'atom_set_count':len(atom_sets),
+              'atom_sets':dict(atom_sets.most_common()),
+              'play_count':len(plays),
+              'plays':dict(plays.most_common()),
+              'provider_calls':0,
+          },ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-candidate-math-coverage
+          path: production-candidate-math-coverage.json
+          if-no-files-found: error

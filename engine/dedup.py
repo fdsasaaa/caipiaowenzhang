@@ -14,6 +14,13 @@ class DuplicateHit:
     reason: str
 
 
+NON_OWNING_REJECTED_STATUSES = {
+    "rejected",
+    "rejected_for_revision",
+    "approval_failed",
+}
+
+
 def _text(value) -> str:
     return "" if value is None else str(value)
 
@@ -46,6 +53,11 @@ def duplicate_candidates(candidate: dict, threshold: float = 0.72) -> list[Dupli
     candidate_article_id = candidate.get("article_id")
     candidate_core = _core(candidate)
     for old in iter_registry("articles"):
+        # Explicit rejected/revision-only rows are historical attempts, not live
+        # content owners. Statusless legacy rows remain owners for backward
+        # compatibility, as do all non-rejected lifecycle states.
+        if str(old.get("status") or "") in NON_OWNING_REJECTED_STATUSES:
+            continue
         old_article_id = old.get("article_id")
         # Lifecycle updates of the same article are not duplicates of themselves.
         if candidate_article_id and old_article_id == candidate_article_id:

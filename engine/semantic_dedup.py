@@ -14,6 +14,13 @@ class StructuralDuplicateHit:
     reasons: list[str]
 
 
+NON_OWNING_REJECTED_STATUSES = {
+    "rejected",
+    "rejected_for_revision",
+    "approval_failed",
+}
+
+
 def _set(value) -> set[str]:
     if not value:
         return set()
@@ -102,6 +109,11 @@ def structural_duplicate_candidates(candidate: dict, threshold: float = 0.82) ->
     article_id = candidate.get("article_id")
     hits: list[StructuralDuplicateHit] = []
     for old in iter_registry("articles"):
+        # Explicit rejected/revision-only rows are historical attempts, not live
+        # structural owners. Statusless legacy rows remain owners for backward
+        # compatibility, as do all non-rejected lifecycle states.
+        if str(old.get("status") or "") in NON_OWNING_REJECTED_STATUSES:
+            continue
         if article_id and old.get("article_id") == article_id:
             continue
         if candidate.get("fingerprint") and candidate.get("fingerprint") == old.get("fingerprint"):

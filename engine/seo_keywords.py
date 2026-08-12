@@ -40,16 +40,34 @@ ATOM_KEYWORD_MODIFIERS = (
 
 MAX_PRIMARY_KEYWORD_METHOD_LABELS = 3
 
+# Some play names use the market's natural vocabulary instead of the internal
+# atom label. `大小单双` already expresses both big/small and odd/even, so
+# appending `奇偶` would be redundant and would also rewrite accepted historical
+# smoke artifacts for no information gain.
+PLAY_EMBEDDED_METHOD_ATOMS = (
+    ("大小单双", {"big_small_filter", "odd_even_filter"}),
+)
+
 
 def normalize_keyword(value: object) -> str:
     return "".join(str(value or "").split()).casefold()
 
 
+def _play_already_expresses_atom(play: str, atom: str, label: str) -> bool:
+    if label and label in play:
+        return True
+    for marker, atoms in PLAY_EMBEDDED_METHOD_ATOMS:
+        if marker in play and atom in atoms:
+            return True
+    return False
+
+
 def method_keyword_labels(play: str, atoms: list[str] | tuple[str, ...] | None = None) -> list[str]:
     """Return stable, reader-facing SEO labels for the article's real method atoms.
 
-    Labels already explicit in the play name are omitted to avoid awkward
-    repetition. The result is deterministic and independent of source atom order.
+    Labels already explicit or semantically embedded in the play name are omitted
+    to avoid awkward repetition. The result is deterministic and independent of
+    source atom order.
     """
     play = str(play or "").strip()
     atom_set = set(atoms or [])
@@ -57,7 +75,7 @@ def method_keyword_labels(play: str, atoms: list[str] | tuple[str, ...] | None =
     for atom, label in ATOM_KEYWORD_MODIFIERS:
         if atom not in atom_set:
             continue
-        if label and label in play:
+        if _play_already_expresses_atom(play, atom, label):
             continue
         if label not in labels:
             labels.append(label)

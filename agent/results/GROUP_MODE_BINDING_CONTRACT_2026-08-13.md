@@ -1,7 +1,7 @@
 # Group Mode Binding Contract
 
 **Date:** 2026-08-13  
-**Status:** IMPLEMENTED — ordinary CI pending  
+**Status:** ACCEPTED  
 **Production eligibility:** false
 
 ## Purpose
@@ -38,8 +38,6 @@ The system may choose `group3` or `group6` before any evaluation sample is inspe
 - the selected mode is **not** a source recommendation;
 - validation_only = true;
 - production_eligible = false.
-
-This mirrors the existing project principle used in cross-family research: source provenance and system-authored experimental choices must remain separate.
 
 ## First machine-bound validation example
 
@@ -86,6 +84,24 @@ A successful parameter binding is local validation metadata, not permission to e
 
 Public article copy should use `分分彩` where practical. Historical mechanics metadata retains the internal `时时彩` taxonomy label.
 
+## CI evidence
+
+Final pull-request merge-ref CI:
+
+- run: `31647624918`
+- merge ref: `8e2a23bc01eb00d7da626eed6c19b89200b723f3`
+- merge ref combines head `287aaf0a144461130c13e7a3d66b6719ed7ef4e8` with main `3be80aa27d59fd986aef12aff9f33a054873c071`
+- Python 3.10: SUCCESS
+- Python 3.13: SUCCESS
+- repository audit: PASS
+- pytest: `366 passed`
+- registry articles: `8`
+- source records: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+
+The main-side change included by this merge ref is PR #55, which fixes the production-controller CLI module path and does not overlap this group-mode binding implementation.
+
 ## Safety boundaries
 
 - provider calls: `0`
@@ -97,6 +113,4 @@ Public article copy should use `分分彩` where practical. Historical mechanics
 
 ## Next gate
 
-After ordinary CI passes, use the system-research binding to build **one offline article preflight** for `FAM-f8efc151837be787`, preferably group6 because the 120-unit unordered domain is easy to explain and its 720 ordered-outcome coverage remains below the project's 90% coverage ceiling.
-
-The article must state clearly that BRBCW-004115 supports only the broad group-method provenance; `group6` is the system's pre-frozen validation choice, not the source's recommendation.
+Use the accepted system-research binding to build **one offline article preflight** for `FAM-f8efc151837be787`, using group6 as the pre-frozen validation mode. The article contract must state clearly that BRBCW-004115 supports only the broad group-method provenance; `group6` is the system's pre-frozen validation choice, not the source's recommendation.

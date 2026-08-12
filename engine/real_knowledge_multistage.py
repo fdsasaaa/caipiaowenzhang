@@ -101,10 +101,12 @@ def build_real_knowledge_filter_pipeline(record: dict) -> dict:
     if not family:
         raise RealKnowledgePipelineError("real-knowledge pipeline requires technique_family/family_id")
 
-    play = str(record.get("play") or record.get("subject_play") or "")
-    space_type = space_type_for_play(play)
+    # Validate provenance and atom executability before selecting a candidate
+    # space so sample-dependent families fail with the most actionable reason.
     refs = _source_refs(record)
     stage_atoms = _stage_atoms(record)
+    play = str(record.get("play") or record.get("subject_play") or "")
+    space_type = space_type_for_play(play)
     presets = PRESETS[space_type]
 
     stages = []

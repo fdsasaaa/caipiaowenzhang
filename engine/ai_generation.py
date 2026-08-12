@@ -127,6 +127,18 @@ def build_generation_prompt(packet: dict) -> str:
                 "这类来源句的 support_type 必须是 source_unverified，并只引用 primary_filter_spec.support_ref。区间覆盖数量等可从已验证玩法机制复算的数学事实，"
                 "可作为 calculation + verified_rule 登记，但不能把来源经验写成预测优势。\n"
             )
+
+    facts = packet.get("immutable_facts") or {}
+    display_term_rules = ""
+    if str(facts.get("subject_lottery") or "") == "分分彩":
+        display_term_rules = (
+            "17. 本篇面向读者的彩种显示名统一优先使用‘分分彩’。title、seo_title、meta_description、primary_keyword、summary、tags和普通正文不要用‘时时彩’替代‘分分彩’。\n"
+            "18. 如果采集来源原文里出现‘时时彩’，重写成文章时原则上改写为‘分分彩’，不要机械保留旧彩种词；案例文章同样优先使用‘分分彩’。"
+            "只有在明确说明历史规则名、内部规则库分类、归档来源原文术语时，才允许少量保留‘时时彩’。\n"
+            "19. 显示术语改写不得篡改 source_refs/rule_refs、原始来源存档或历史规则事实，也不得反过来声称原文原本使用了‘分分彩’。"
+            "也就是说：读者显示层优先‘分分彩’，内部 mechanics/provenance 层保持真实原始术语。\n"
+        )
+
     return (
         "你是老财迷内容引擎的受约束正文生成器。只根据下面 Draft Packet 写文章，不使用未提供的外部事实，"
         "不复制来源文章原文，不把来源声称升级为事实。输出必须严格符合给定 JSON Schema。\n\n"
@@ -142,6 +154,7 @@ def build_generation_prompt(packet: dict) -> str:
         + "14. 对正文中包含百分比、注数、命中率/准确率/成功率/胜率、赔率/返点/奖金/收益/利润/盈利或明确未来预测的每一个完整句子，claim_evidence.claim_text 必须复制该正文句子的完整文字（去掉HTML标签即可），不要改写成概括句。\n"
         "15. 同一数学事实如果在正文用不同句子重复出现，每个硬声明句都要分别登记；不能假设一条概括证据自动覆盖其他表述。\n"
         "16. 中文数字写法（如“三注”“百分之六”）与阿拉伯数字写法同样属于硬声明，不能通过换写法绕过证据登记。\n"
+        + display_term_rules
         + "\nDraft Packet:\n" + json.dumps(packet, ensure_ascii=False, sort_keys=True)
     )
 

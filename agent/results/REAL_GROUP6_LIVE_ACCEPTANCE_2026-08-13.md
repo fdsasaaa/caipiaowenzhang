@@ -118,7 +118,7 @@ After the successful run, cleanup was performed in the required order:
 1. delete `.github/workflows/real-group6-live-v2-temp.yml`;
 2. delete `.github/real-group6-live-v2.trigger`.
 
-Both paths now return `404 Not Found` on the PR branch.
+Both paths return `404 Not Found` on the PR branch.
 
 Workflow history for id `333147157` contains exactly one run: `31648938535`.
 
@@ -134,6 +134,36 @@ Before the paid request, the exact request/generator/Approval path was tested wi
 
 The fake-transport suite verifies strict structured output, source/rule/policy evidence normalization, unchanged article content, standard Approval, group6 custom quality and fail-closed provider preflight.
 
-## Final merge gate
+## Final merge-ref CI
 
-A fresh ordinary PR merge-ref CI must pass after paid-path cleanup and acceptance evidence recording. No further live provider request is justified for this article.
+After live success, paid-path cleanup and evidence recording, the PR was forced through a fresh ordinary merge-ref CI against the then-current `main`.
+
+- final ordinary CI run: `31649310866`
+- merge ref: `a9ecae1e2509bbb375846719d532d0f92be0793f`
+- merge ref combines PR head `9409965c20e484bed1317d65b454db473c6a1296` with main `a5fa6f87237a85f32812784334d3de5d9065950b`
+- main includes PR #61 provider-transport correction for the production controller
+- Python 3.10: SUCCESS
+- Python 3.13: SUCCESS
+- repository audit: PASS
+- pytest: `389 passed`
+- registry articles: `8`
+- source records: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+
+This is the authoritative merge-readiness evidence. The acceptance-document update after this run changes Markdown only; executable code remains the exact merge-ref-tested state.
+
+## Final conclusion
+
+One real source-family group6 article has now passed end-to-end on the first provider response while preserving:
+
+- real-family provenance;
+- system-owned mode selection;
+- verified group6 mechanics;
+- correct reader-facing `分分彩` terminology;
+- correct 72% vs 100% denominator distinction;
+- the internal 90% executable-coverage ceiling;
+- no normalized betting portfolio;
+- no Registry/site/publication writes.
+
+No further live provider request is justified for this article.

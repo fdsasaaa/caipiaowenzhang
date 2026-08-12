@@ -3,6 +3,9 @@ from __future__ import annotations
 from engine.real_knowledge_atom_gaps import automation_class, build_atom_gap_report
 from engine.technique_semantics import load_semantics
 
+# This suite is intentionally kept on the PR branch after main advances so the
+# pull-request merge ref is revalidated against concurrent production-controller changes.
+
 
 def test_gap_report_preserves_known_full_archive_funnel():
     report = build_atom_gap_report()

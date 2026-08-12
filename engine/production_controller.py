@@ -9,9 +9,10 @@ from typing import Callable
 from .ai_generation import GenerationError, generate_article
 from .approval import evaluate_and_record
 from .blueprints import blueprint_from_plan
-from .draft_packets import build_draft_packet
+from .draft_packets import build_case_bundle, build_draft_packet
 from .formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
 from .planner import plan_articles
+from .production_filter_contract import ProductionFilterContractError, build_primary_filter_spec
 from .public_terminology import audit_article
 from .rules import load_rules
 from .seo_keywords import normalize_keyword
@@ -128,6 +129,12 @@ def _assign_cluster_metadata(blueprint: dict, policy: dict) -> None:
         blueprint["secondary_seo_cluster_ids"] = []
 
 
+def _bind_primary_filter_contract(blueprint: dict) -> None:
+    case_bundle = build_case_bundle(blueprint)
+    spec = build_primary_filter_spec(blueprint, case_bundle)
+    blueprint["primary_filter_spec"] = spec
+
+
 def discover_candidate_portfolio(
     target: int,
     *,
@@ -161,6 +168,7 @@ def discover_candidate_portfolio(
         if len(plans) >= probe:
             truncated = True
         ready_here = 0
+        contract_blocked_here = 0
         for plan in plans:
             enriched_plan = dict(plan)
             enriched_plan["subject_lottery"] = _public_subject(unit["lottery"], policy)
@@ -176,6 +184,11 @@ def discover_candidate_portfolio(
                 continue
             if _structural_key(blueprint) in existing_structures:
                 continue
+            try:
+                _bind_primary_filter_contract(blueprint)
+            except ProductionFilterContractError:
+                contract_blocked_here += 1
+                continue
             score_row = rank_blueprints([blueprint], signals)[0]
             if not score_row.get("eligible"):
                 continue
@@ -190,6 +203,7 @@ def discover_candidate_portfolio(
             "planner_status": result.get("status"),
             "plans_seen": len(plans),
             "ready_candidates_before_global_dedup": ready_here,
+            "primary_filter_contract_blocked": contract_blocked_here,
         })
 
     raw_candidates.sort(key=lambda row: row["priority_score"], reverse=True)

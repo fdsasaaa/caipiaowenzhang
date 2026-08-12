@@ -1,0 +1,56 @@
+name: composite-keyword-capacity-design-temp
+
+on:
+  push:
+    branches:
+      - production/controller-200-20260813-v2
+    paths:
+      - .github/composite-keyword-capacity-design.trigger
+
+permissions:
+  contents: read
+
+jobs:
+  design:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Compare natural composite SEO keyword rules
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from engine.production_controller import load_controller_policy, _verified_mechanics_work_units, _public_subject
+          from engine.planner import plan_articles
+          from engine.blueprints import blueprint_from_plan
+          from engine.seo_keywords import normalize_keyword
+
+          labels={
+            'cold_hot_split':'冷热','omission_threshold':'遗漏','sum_range':'和值','span_range':'跨度',
+            'frequency_window':'频率','repeat_number':'重号','neighbor_number':'邻号','consecutive_number':'连号',
+            'dan_candidate':'胆码','kill_candidate':'杀号','compound_selection':'复式',
+            'big_small_filter':'大小','odd_even_filter':'奇偶','group3_group6':'组三组六'
+          }
+          priority=list(labels)
+          policy=load_controller_policy(); rows=[]
+          for unit in _verified_mechanics_work_units():
+            for plan in plan_articles('',unit['lottery'],unit['play'],1000).get('plans',[]):
+              p=dict(plan); p['subject_lottery']=_public_subject(unit['lottery'],policy); p['subject_play']=unit['play']
+              bp=blueprint_from_plan(p)
+              if bp.get('status')=='ready_for_draft': rows.append(bp)
+          def kw(bp,n=None,all_mods=False):
+            atoms=set(bp.get('technique_atoms',[])); mods=[labels[a] for a in priority if a in atoms and labels[a] not in str(bp.get('subject_play') or '')]
+            if not mods: return f"分分彩{bp['subject_play']}技巧"
+            if not all_mods: mods=mods[:n]
+            return f"分分彩{bp['subject_play']}{''.join(mods)}技巧"
+          result={'ready_rows':len(rows)}
+          for n in (2,3,4,5): result[f'unique_first_{n}_labels']=len({normalize_keyword(kw(x,n)) for x in rows})
+          result['unique_all_labels']=len({normalize_keyword(kw(x,all_mods=True)) for x in rows})
+          result['max_keyword_length_all']=max(len(kw(x,all_mods=True)) for x in rows)
+          result['max_keyword_length_first4']=max(len(kw(x,4)) for x in rows)
+          print(json.dumps(result,ensure_ascii=False,indent=2))
+          PY

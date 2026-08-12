@@ -13,7 +13,7 @@ permissions:
 jobs:
   capacity:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     env:
       PYTHONPATH: .
     steps:
@@ -27,6 +27,12 @@ jobs:
           mkdir -p runtime/production-multistage-capacity
           python scripts/produce_articles_total.py 200 --output-dir runtime/production-multistage-capacity \
             | tee runtime/production-multistage-capacity/stdout.json
+      - name: Diagnose blocked contracts without provider calls
+        shell: bash
+        run: |
+          python scripts/diagnose_production_contract_blocks.py \
+            --output runtime/production-multistage-capacity/block-diagnostics.json \
+            > runtime/production-multistage-capacity/block-diagnostics.stdout.json
       - name: Upload capacity evidence
         if: always()
         uses: actions/upload-artifact@v4

@@ -37,9 +37,22 @@ def default_content_type() -> str:
     return value
 
 
-def allowed_seo_cluster_ids() -> tuple[str, ...]:
+def _seo_cluster_contract() -> dict:
     row = load_site_contract().get("seo_cluster_contract", {})
-    values = row.get("allowed_cluster_ids", []) if isinstance(row, dict) else []
+    if not isinstance(row, dict):
+        raise ValueError("invalid seo cluster contract")
+    return row
+
+
+def seo_cluster_article_category_key() -> str:
+    value = str(_seo_cluster_contract().get("article_carrier_category_key", "")).strip()
+    if not value:
+        raise ValueError("SEO cluster article carrier category missing")
+    return value
+
+
+def allowed_seo_cluster_ids() -> tuple[str, ...]:
+    values = _seo_cluster_contract().get("allowed_cluster_ids", [])
     if not isinstance(values, list) or not values:
         raise ValueError("seo cluster allowed ids missing from site contract")
     normalized = tuple(str(value).strip() for value in values if str(value).strip())

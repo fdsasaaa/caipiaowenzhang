@@ -22,8 +22,12 @@ def test_system_research_can_bind_group6_without_attributing_mode_to_source():
     )
     assert binding["group_mode"] == "group6"
     assert binding["candidate_unit_count"] == 120
-    assert binding["ordered_outcome_coverage"] == 720
-    assert binding["coverage_rate"] == 0.72
+    assert binding["ordered_structure_size_within_all_three_digit_outcomes"] == 720
+    assert binding["global_three_digit_structure_share"] == 0.72
+    assert binding["target_play_unit_space"] == 120
+    assert binding["target_play_domain_coverage_if_all_units_used"] == 1.0
+    assert binding["target_coverage_ceiling_for_executable_portfolio"] == 0.90
+    assert binding["all_domain_units_executable_portfolio_allowed"] is False
     assert binding["family_source_refs"] == ["BRBCW-004115"]
     assert binding["source_did_not_choose_mode"] is True
     assert binding["mode_provenance"]["owner"] == "system_research"
@@ -32,16 +36,30 @@ def test_system_research_can_bind_group6_without_attributing_mode_to_source():
     assert binding["production_eligible"] is False
 
 
-def test_system_research_group3_has_correct_unit_and_coverage_domain():
+def test_system_research_group3_separates_global_share_from_target_coverage():
     binding = bind_group_mode(
         GROUP_ONLY_FAMILY,
         group_mode="group3",
         binding_basis=SYSTEM_BINDING,
     )
     assert binding["candidate_unit_count"] == 90
-    assert binding["ordered_outcome_coverage"] == 270
-    assert binding["coverage_rate"] == 0.27
+    assert binding["ordered_structure_size_within_all_three_digit_outcomes"] == 270
+    assert binding["global_three_digit_structure_share"] == 0.27
+    assert binding["target_play_domain_coverage_if_all_units_used"] == 1.0
+    assert binding["all_domain_units_executable_portfolio_allowed"] is False
     assert binding["candidate_unit_domain"] == "unordered_group_bet_units"
+
+
+def test_global_structure_share_cannot_be_used_as_executable_coverage_denominator():
+    binding = bind_group_mode(
+        GROUP_ONLY_FAMILY,
+        group_mode="组六",
+        binding_basis=SYSTEM_BINDING,
+    )
+    assert "coverage_rate" not in binding
+    assert "global_three_digit_structure_share is descriptive only" in binding["coverage_denominator_note"]
+    assert binding["global_three_digit_structure_share"] < 0.90
+    assert binding["target_play_domain_coverage_if_all_units_used"] > 0.90
 
 
 def test_source_binding_fails_until_exact_source_article_is_materialized():

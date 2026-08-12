@@ -1,7 +1,7 @@
 # Group Mode Binding Contract
 
 **Date:** 2026-08-13  
-**Status:** ACCEPTED  
+**Status:** ACCEPTED — coverage denominator corrected  
 **Production eligibility:** false
 
 ## Purpose
@@ -47,24 +47,48 @@ Family:
 - representative source: `BRBCW-004115`
 - archive atoms: `group3_group6 + position_filter`
 
-System-research group6 binding produces:
+System-research group6 binding describes the full group6 **domain**:
 
 - group mode: `group6`;
 - candidate unit domain: unordered group bet units;
-- candidate unit count: `120`;
-- ordered outcome coverage: `720 / 1000`;
-- coverage rate: `72%`;
+- domain unit count: `120`;
+- ordered group6 structure size inside the complete `000–999` universe: `720`;
+- global three-digit structure share: `720 / 1000 = 72%`;
 - mechanics rule: `SSC-HIST-MECH-3STAR-GROUP6-V1`;
 - source_did_not_choose_mode: true.
 
-System-research group3 binding produces:
+System-research group3 binding describes the full group3 domain:
 
-- candidate unit count: `90`;
-- ordered outcome coverage: `270 / 1000`;
-- coverage rate: `27%`;
+- domain unit count: `90`;
+- ordered group3 structure size inside `000–999`: `270`;
+- global three-digit structure share: `270 / 1000 = 27%`;
 - mechanics rule: `SSC-HIST-MECH-3STAR-GROUP3-V1`.
 
-These are deterministic mechanics calculations, not performance claims.
+These are deterministic mechanics/domain calculations, not performance claims.
+
+## Important coverage-denominator correction
+
+`72%` and `27%` above are **not executable betting coverage rates**. They only describe how much of the complete ordered three-digit universe has the corresponding multiplicity structure.
+
+The project's executable coverage ceiling must use the **selected play's own target domain** as denominator.
+
+Therefore:
+
+- using all `120` group6 units would cover `100%` of the group6 target play domain;
+- using all `90` group3 units would cover `100%` of the group3 target play domain;
+- the project ceiling is `<= 90%`;
+- therefore an all-domain group3/group6 portfolio is **not allowed as an executable betting example**.
+
+The binding contract now exposes separate fields:
+
+- `global_three_digit_structure_share` — descriptive only;
+- `target_play_domain_coverage_if_all_units_used` — `1.0` for the full domain;
+- `target_coverage_ceiling_for_executable_portfolio` — `0.90`;
+- `all_domain_units_executable_portfolio_allowed` — `false`.
+
+The ambiguous old field `coverage_rate` is removed so it cannot be reused with the wrong denominator.
+
+This correction does not invalidate the mechanics or source-provenance binding. It tightens the execution/compliance interpretation before any article or portfolio is generated.
 
 ## Freeze rule
 
@@ -76,7 +100,7 @@ The generic archive label `group3_group6` is not accepted as a mode and cannot s
 
 ## Global execution state remains unchanged
 
-This PR does **not** add `group3_group6` to `EXECUTABLE_ATOM_ORDER`.
+This contract does **not** add `group3_group6` to `EXECUTABLE_ATOM_ORDER`.
 
 A successful parameter binding is local validation metadata, not permission to execute arbitrary group families globally.
 
@@ -84,23 +108,17 @@ A successful parameter binding is local validation metadata, not permission to e
 
 Public article copy should use `分分彩` where practical. Historical mechanics metadata retains the internal `时时彩` taxonomy label.
 
-## CI evidence
+## Original binding CI evidence
 
-Final pull-request merge-ref CI:
+The provenance-safe binding first passed:
 
 - run: `31647624918`
-- merge ref: `8e2a23bc01eb00d7da626eed6c19b89200b723f3`
-- merge ref combines head `287aaf0a144461130c13e7a3d66b6719ed7ef4e8` with main `3be80aa27d59fd986aef12aff9f33a054873c071`
 - Python 3.10: SUCCESS
 - Python 3.13: SUCCESS
 - repository audit: PASS
 - pytest: `366 passed`
-- registry articles: `8`
-- source records: `2406`
-- rule gaps: `0`
-- keyword conflicts: `0`
 
-The main-side change included by this merge ref is PR #55, which fixes the production-controller CLI module path and does not overlap this group-mode binding implementation.
+A separate correction PR adds explicit denominator regression tests before the next group6 article preflight.
 
 ## Safety boundaries
 
@@ -110,7 +128,8 @@ The main-side change included by this merge ref is PR #55, which fixes the produ
 - scheduled: `false`
 - published: `false`
 - production eligible: `false`
+- all-domain executable group portfolio: `false`
 
 ## Next gate
 
-Use the accepted system-research binding to build **one offline article preflight** for `FAM-f8efc151837be787`, using group6 as the pre-frozen validation mode. The article contract must state clearly that BRBCW-004115 supports only the broad group-method provenance; `group6` is the system's pre-frozen validation choice, not the source's recommendation.
+After the denominator-correction CI is green, build one offline group6 article preflight for `FAM-f8efc151837be787`. The article may explain the full 120-unit group6 **domain**, but it must not present “all 120 units” as a compliant executable betting portfolio. Any later executable example must select `<=90%` of the target group6 domain and independently pass the amount/economics gate.

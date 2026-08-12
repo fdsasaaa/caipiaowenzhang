@@ -134,16 +134,29 @@ No atom becomes executable merely because it is ranked.
 
 ## CI evidence
 
-Corrected ranking code and regression guard passed ordinary CI:
+Corrected ranking code and regression guard first passed ordinary CI at run `31646502012` on Python 3.10 and 3.13.
 
-- run: `31646502012`
+While this PR was open, `main` advanced through PR #53 (`article-production-controller`) to `d5cb557aa71199fcb95bfa0bdca25cd5a70144f6`. PR #53 changed only production-controller files and did not overlap the ranking implementation.
+
+A final synchronization commit forced the pull-request merge ref to be retested against that newer `main`:
+
+- final integration CI run: `31646855596`
+- merge-ref commit: `e2ec2d783f644e58c4161e7f36363e9c883e6849`
+- merge-ref message: `Merge dd0e12f8579c757298fc3d8c5824dc026ddfc66d into d5cb557aa71199fcb95bfa0bdca25cd5a70144f6`
 - Python 3.10: SUCCESS
 - Python 3.13: SUCCESS
 - repository audit: PASS
+- pytest: `352 passed`
+- registry articles: `8`
+- source records: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
 
-The earlier pre-fix ordinary CI also passed, but run `31646502012` is the authoritative code-validation run after fixing unlock accounting.
+This final run is the authoritative merge-readiness evidence.
 
-After that validation, `main` advanced through PR #53 (`article-production-controller`) at `d5cb557aa71199fcb95bfa0bdca25cd5a70144f6`. PR #53 changes only production-controller files and does not overlap this ranking implementation. A final PR CI synchronization is required before merge so the combined merge ref is verified against the newer `main`.
+## Temporary workflow cleanup
+
+The one-shot offline ranking workflow and trigger were removed after evidence capture. They never referenced a provider secret.
 
 ## Boundaries
 

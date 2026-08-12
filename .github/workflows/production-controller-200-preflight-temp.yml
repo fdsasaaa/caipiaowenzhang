@@ -1,0 +1,32 @@
+name: production-controller-200-preflight-temp
+
+on:
+  push:
+    branches:
+      - production/controller-200-20260813
+    paths:
+      - .github/production-controller-200-preflight.trigger
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Run zero-provider production capacity preflight
+        run: |
+          set -euo pipefail
+          python scripts/produce_articles_total.py 200 --output-dir runs/production-controller-200-preflight | tee production-controller-200-preflight.log
+      - uses: actions/upload-artifact@v4
+        with:
+          name: production-controller-200-preflight
+          path: |
+            runs/production-controller-200-preflight/
+            production-controller-200-preflight.log
+          if-no-files-found: error

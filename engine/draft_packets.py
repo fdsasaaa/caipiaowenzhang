@@ -17,6 +17,21 @@ _ECONOMICS_DISCLAIMERS = (
     "不讨论", "不涉及", "不提供", "不说明", "不引用", "不使用",
     "未核验的", "未经核验的", "没有核验", "尚未核验",
 )
+_ECONOMICS_NEGATION_PREFIX = (
+    r"(?:不是|不代表|不表示|不能说明|不能证明|不用于证明|不等于|"
+    r"不要把|别把|不能把|不应把|不该把|不要将|不能将|不应将|"
+    r"不能被|不应被|不要被)"
+)
+_ECONOMICS_TERMS = r"(?:赔率|返点|奖金|返奖|收益|收益率|利润|盈利|胜率|命中率)"
+_NEGATED_ECONOMICS_RE = re.compile(_ECONOMICS_NEGATION_PREFIX + r".{0,24}" + _ECONOMICS_TERMS)
+_POSITIVE_ECONOMICS_RE = re.compile(
+    _ECONOMICS_TERMS + r".{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到|稳定|固定)"
+)
+_NEGATED_POSITIVE_ECONOMICS_RE = re.compile(
+    _ECONOMICS_NEGATION_PREFIX + r".{0,24}" + _ECONOMICS_TERMS
+    + r".{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到|稳定|固定)"
+)
+_POSITIVE_CLAUSE_PIVOTS = ("但是", "但", "不过", "然而", "实际", "事实上", "同时")
 
 
 @dataclass
@@ -85,14 +100,34 @@ def _plain_sentences(html: str) -> list[str]:
     return [x.strip() for x in re.split(r"[。！？!?]+", text) if x.strip()]
 
 
+def _has_unnegated_positive_economics(sentence: str) -> bool:
+    if not _POSITIVE_ECONOMICS_RE.search(sentence):
+        return False
+    negated_positive = bool(_NEGATED_POSITIVE_ECONOMICS_RE.search(sentence))
+    positive_after_pivot = False
+    for pivot in _POSITIVE_CLAUSE_PIVOTS:
+        if pivot not in sentence:
+            continue
+        tail = sentence.split(pivot, 1)[1]
+        if _POSITIVE_ECONOMICS_RE.search(tail):
+            positive_after_pivot = True
+            break
+    return (not negated_positive) or positive_after_pivot
+
+
 def _contains_factual_economics_statement(content: str, term: str) -> bool:
-    """Ignore pure disclaimers while still blocking factual economics claims."""
+    """Ignore pure negative disclaimers while still blocking factual economics claims."""
     for sentence in _plain_sentences(content):
         if term not in sentence:
             continue
-        is_disclaimer = any(marker in sentence for marker in _ECONOMICS_DISCLAIMERS)
         has_numeric_fact = bool(re.search(r"\d|%|百分之|\b倍\b|元|每注|单注", sentence))
-        if is_disclaimer and not has_numeric_fact:
+        standard_disclaimer = any(marker in sentence for marker in _ECONOMICS_DISCLAIMERS)
+        negative_outcome_disclaimer = bool(_NEGATED_ECONOMICS_RE.search(sentence))
+        if (
+            (standard_disclaimer or negative_outcome_disclaimer)
+            and not has_numeric_fact
+            and not _has_unnegated_positive_economics(sentence)
+        ):
             continue
         return True
     return False

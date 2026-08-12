@@ -65,25 +65,46 @@ def _compact(value: object) -> str:
 
 
 def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
+    """Match only deterministic stage/overall candidate-space calculations.
+
+    Natural model prose may omit the exact stage label or use different quote
+    characters. A unique machine-known before/after/excluded triple is enough
+    when the sentence also contains explicit filtering/space language. Overall
+    summaries may omit the starting count when they include both final_space and
+    total_excluded with strong overall markers. Arbitrary numeric prose remains
+    fail-closed.
+    """
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
     compact = _compact(claim)
-    for stage in result.get("stages", []) or []:
+    stages = result.get("stages", []) or []
+    calculation_markers = (
+        "筛到", "筛选", "继续筛", "排除", "候选", "空间", "缩到", "缩小",
+        "得到", "剩下", "保留", "before", "after", "excluded", "->", "→",
+    )
+
+    matched_stages = []
+    for stage in stages:
         before = str(stage.get("before_space"))
         after = str(stage.get("after_space"))
         excluded = str(stage.get("excluded_space"))
-        label = _compact(stage.get("label"))
-        stage_marker = f"第{stage.get('index')}层"
-        if all(value in compact for value in (before, after, excluded)) and (
-            (label and label in compact) or stage_marker in compact
-        ):
-            return True
-    overall = (
-        str(result.get("starting_space")),
-        str(result.get("final_space")),
-        str(result.get("total_excluded")),
-    )
-    if all(value not in {"None", ""} and value in compact for value in overall):
-        if any(marker in compact for marker in ("整体", "总共", "合计", "最终", "两层")):
+        if all(value not in {"None", ""} and value in compact for value in (before, after, excluded)):
+            matched_stages.append(stage)
+
+    if len(matched_stages) == 1 and any(marker in compact for marker in calculation_markers):
+        return True
+
+    start = str(result.get("starting_space"))
+    final = str(result.get("final_space"))
+    excluded = str(result.get("total_excluded"))
+    overall_markers = ("整体", "总共", "合计", "最终", "全部完成", "完成后", "两层", "三层", "总排除")
+    has_overall_marker = any(marker in compact for marker in overall_markers)
+
+    if has_overall_marker and all(value not in {"None", ""} and value in compact for value in (start, final, excluded)):
+        return True
+    if has_overall_marker and all(value not in {"None", ""} and value in compact for value in (final, excluded)):
+        # final + total_excluded uniquely determine starting_space; require an
+        # explicit final/overall context so two unrelated numbers cannot match.
+        if any(marker in compact for marker in ("最终", "总排除", "总共排除", "全部完成", "完成后")):
             return True
     return False
 
@@ -186,11 +207,18 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
                 and _claim_matches_pipeline_result(packet, claim_text)
             )
 
-            # Some providers occasionally copy the prompt field name literally
-            # and emit support_refs=["rule_refs"] instead of the packet's actual
-            # rule IDs. Repair only machine-known pipeline calculations. A
-            # placeholder on any non-pipeline claim remains invalid and is
-            # rejected by the normal Claim→Evidence gate.
+            if (
+                is_pipeline_calculation
+                and entry.get("support_type") == "verified_rule"
+                and not (entry.get("support_refs") or [])
+                and rules
+            ):
+                entry["support_refs"] = rules
+                entry["evidence_note"] = (
+                    str(entry.get("evidence_note") or "")
+                    + " [system-normalized: exact pipeline missing rule refs]"
+                ).strip()
+
             if (
                 is_pipeline_calculation
                 and entry.get("support_type") == "verified_rule"

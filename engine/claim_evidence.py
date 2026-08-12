@@ -26,10 +26,17 @@ _PERFORMANCE_NEGATIONS = (
     "不表示更容易中奖", "不代表更容易中奖", "不是优势判断", "不代表预测优势", "不表示预测优势",
     "不是在证明它更准", "不代表下一期会", "不表示下一期会", "不能直接当成未来预测",
     "不能当成未来预测", "不构成未来保证", "不构成未来判断", "不代表未来",
+    "不用于证明固定收益", "不用于证明固定胜率", "不用于证明收益", "不用于证明胜率",
 )
 _NEGATED_PERFORMANCE_RE = re.compile(
-    r"(?:不是|不代表|不表示|不在说|不能说明|不能证明|不等于|并不意味着|不意味着)"
-    r".{0,14}(?:命中率|准确率|成功率|胜率|更容易中奖|预测优势|优势判断|更准)"
+    r"(?:不是|不代表|不表示|不在说|不能说明|不能证明|不用于证明|不用于说明|"
+    r"不用于推断|不用于保证|不等于|并不意味着|不意味着)"
+    r".{0,18}(?:命中率|准确率|成功率|胜率|固定胜率|收益|收益率|利润|盈利|"
+    r"更容易中奖|预测优势|优势判断|更准)"
+)
+_POSITIVE_PERFORMANCE_RE = re.compile(
+    r"(?:命中率|准确率|成功率|胜率).{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到)"
+    r"|(?:收益率|利润|盈利).{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到|稳定)"
 )
 _SYNTHETIC_NEGATIONS = (
     "不是真实开奖", "不是真实开奖记录", "并非真实开奖", "非真实开奖",
@@ -71,6 +78,10 @@ def _pure_performance_or_prediction_disclaimer(sentence: str) -> bool:
     if re.search(r"\d+(?:\.\d+)?\s*[%％]|百分之", sentence):
         return False
     if re.search(r"(?:命中率|准确率|成功率|胜率)\s*(?:为|是|达到|约|大约)\s*\d", sentence):
+        return False
+    # A sentence that contains a negative clause plus a separate affirmative
+    # performance/economics comparison is mixed, not a pure disclaimer.
+    if _POSITIVE_PERFORMANCE_RE.search(sentence):
         return False
     # Explicit positive future claims are never converted into disclaimers.
     if any(marker in sentence for marker in ("下一期会出", "下期会出", "一定会出", "肯定会出")):

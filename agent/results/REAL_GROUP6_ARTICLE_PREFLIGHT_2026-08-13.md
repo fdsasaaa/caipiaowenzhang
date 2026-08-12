@@ -1,7 +1,7 @@
 # Real-Family Group6 Article Offline Preflight
 
 **Date:** 2026-08-13  
-**Status:** IMPLEMENTED — ordinary CI pending  
+**Status:** ACCEPTED  
 **Provider calls:** 0
 
 ## Purpose
@@ -65,8 +65,6 @@ This distinction is mandatory:
 - project executable coverage ceiling → `<= 90%` of the selected play's target domain;
 - therefore full-domain group6 execution → blocked.
 
-The earlier ambiguous `coverage_rate` field has already been removed from the group-mode binding contract.
-
 ## Article quality strategy
 
 The article may explain the full 120-unit group6 **domain**, but must not dump all 120 units as a betting list.
@@ -104,6 +102,24 @@ After explaining the group6 domain and deterministic examples, the article must 
 - separately passes the amount/prize/economics gate;
 - does not inherit permission merely from this domain article.
 
+## CI evidence
+
+Ordinary PR CI:
+
+- run: `31648242644`
+- merge-ref commit: `963b7478386f62a54db91628b2b8059cef21a2b6`
+- merge-ref combines preflight head `a2a4381169f506264636ce8d96d2e5a35f335572` with main `78b28bf51d3f404da1b1f7ef806eff2ac1485bde`
+- Python 3.10: SUCCESS
+- Python 3.13: SUCCESS
+- repository audit: PASS
+- pytest: `375 passed`
+- registry articles: `8`
+- source records: `2406`
+- rule gaps: `0`
+- keyword conflicts: `0`
+
+The test suite includes positive article-contract acceptance and inverse gates for source misattribution, wrong 72% executable inference, normalized_bets, large unit dumps, and legacy reader-facing `时时彩` terminology.
+
 ## Global execution state
 
 `group3_group6` remains absent from the global executable atom whitelist.
@@ -120,6 +136,6 @@ A successful article preflight does not make arbitrary group families executable
 - normalized bets: `false`
 - full-domain group6 portfolio: `blocked`
 
-## CI gate
+## Next gate
 
-Ordinary repository CI must pass before any live provider validation is considered. If CI passes, the next decision is whether a **single** validation-only model call is justified for this article contract. No paid workflow is part of this preflight PR.
+The offline contract is now strong enough to justify at most one validation-only live model call. Any such run must remain one-shot, non-publishing, and must pass both the standard Approval stack and this custom group6 article gate. No live workflow is part of this preflight PR.

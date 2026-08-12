@@ -30,11 +30,13 @@ _PERFORMANCE_NEGATIONS = (
 )
 _NEGATION_PREFIX = (
     r"(?:不是|不代表|不表示|不在说|不能说明|不能证明|不用于证明|不用于说明|"
-    r"不用于推断|不用于保证|不等于|并不意味着|不意味着)"
+    r"不用于推断|不用于保证|不等于|并不意味着|不意味着|"
+    r"不要把|别把|不能把|不应把|不该把|不要将|不能将|不应将|"
+    r"不能被|不应被|不要被)"
 )
 _NEGATED_PERFORMANCE_RE = re.compile(
     _NEGATION_PREFIX
-    + r".{0,18}(?:命中率|准确率|成功率|胜率|固定胜率|收益|收益率|利润|盈利|"
+    + r".{0,24}(?:命中率|准确率|成功率|胜率|固定胜率|收益|收益率|利润|盈利|"
     + r"更容易中奖|预测优势|优势判断|更准)"
 )
 _POSITIVE_PERFORMANCE_RE = re.compile(
@@ -43,7 +45,7 @@ _POSITIVE_PERFORMANCE_RE = re.compile(
 )
 _NEGATED_POSITIVE_PERFORMANCE_RE = re.compile(
     _NEGATION_PREFIX
-    + r".{0,18}(?:命中率|准确率|成功率|胜率|收益率|利润|盈利)"
+    + r".{0,24}(?:命中率|准确率|成功率|胜率|收益率|利润|盈利)"
     + r".{0,8}(?:更高|较高|提高|提升|增加|上升|高于|优于|达到|稳定)"
 )
 _POSITIVE_CLAUSE_PIVOTS = ("但是", "但", "不过", "然而", "实际", "事实上", "同时")
@@ -90,9 +92,6 @@ def _has_unnegated_positive_performance(sentence: str) -> bool:
         if _POSITIVE_PERFORMANCE_RE.search(tail):
             positive_after_pivot = True
             break
-    # Plain positive wording is affirmative. A positive-looking phrase fully
-    # inside a negation scope is safe unless a later contrast/actual clause
-    # introduces its own affirmative performance statement.
     return (not negated_positive) or positive_after_pivot
 
 

@@ -1,0 +1,211 @@
+name: production-articles-200-v1-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v1
+    paths:
+      - .github/production-articles-200-v1.trigger
+
+permissions:
+  contents: write
+
+env:
+  OPENAI_MODEL: gpt-5.4-mini
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Preflight repository audit
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit | tee production-articles-200-pre-audit.json
+
+      - name: Preflight target-200 capacity
+        run: |
+          set -euo pipefail
+          rm -rf runs/production-articles-200-preflight
+          python scripts/produce_articles_total.py 200 \
+            --output-dir runs/production-articles-200-preflight \
+            | tee production-articles-200-preflight.log
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          plan = json.loads(Path('runs/production-articles-200-preflight/plan.json').read_text(encoding='utf-8'))
+          assert plan['target_new_formal_articles'] == 200
+          assert plan['candidate_capacity_current_snapshot'] >= 200, plan['candidate_capacity_current_snapshot']
+          assert plan['target_feasible_current_snapshot'] is True
+          assert plan['capacity_exhaustive'] is True
+          assert plan['formal_inventory_before'] == 0, plan['formal_inventory_before']
+          assert plan['website_sync_allowed'] is False
+          assert plan['scheduling_allowed'] is False
+          assert plan['publishing_allowed'] is False
+          print(json.dumps({
+              'target': 200,
+              'candidate_capacity': plan['candidate_capacity_current_snapshot'],
+              'attempt_budget': plan['attempt_budget'],
+              'capacity_exhaustive': plan['capacity_exhaustive'],
+              'capacity_probe_passes': plan.get('capacity_probe_passes'),
+              'formal_inventory_before': plan['formal_inventory_before'],
+          }, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Generate, approve and stage formal articles
+        id: execute
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          set +e
+          rm -rf runs/production-articles-200-v1
+          python scripts/produce_articles_total.py 200 \
+            --execute \
+            --model gpt-5.4-mini \
+            --output-dir runs/production-articles-200-v1 \
+            2>&1 | tee production-articles-200-v1.log
+          rc=${PIPESTATUS[0]}
+          echo "$rc" > production-articles-200-v1-exit-code.txt
+          echo "controller_exit_code=$rc" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Validate generated repository state
+        id: validate
+        if: always()
+        run: |
+          set +e
+          python -m engine.cli audit > production-articles-200-post-audit.json 2>&1
+          audit_rc=$?
+          python scripts/audit_reader_terminology.py > production-articles-200-terminology-audit.json 2>&1
+          term_rc=$?
+          python - <<'PY' > production-articles-200-inventory-validation.json 2>&1
+          import hashlib
+          import json
+          from pathlib import Path
+
+          root = Path('articles/approved')
+          paths = sorted(root.glob('*.json'))
+          errors = []
+          ids = set()
+          keywords = set()
+          for path in paths:
+              try:
+                  row = json.loads(path.read_text(encoding='utf-8'))
+              except Exception as exc:
+                  errors.append(f'{path}: invalid json: {exc}')
+                  continue
+              aid = str(row.get('article_id') or '').strip()
+              kw = ''.join(str(row.get('primary_keyword') or '').split()).casefold()
+              content = str(row.get('content') or '')
+              if row.get('status') != 'approved': errors.append(f'{path}: status != approved')
+              if not aid: errors.append(f'{path}: missing article_id')
+              elif aid in ids: errors.append(f'{path}: duplicate article_id {aid}')
+              else: ids.add(aid)
+              if not kw: errors.append(f'{path}: missing primary_keyword')
+              elif kw in keywords: errors.append(f'{path}: duplicate primary_keyword {kw}')
+              else: keywords.add(kw)
+              expected = hashlib.sha256(content.encode('utf-8')).hexdigest()
+              if row.get('content_hash') != expected: errors.append(f'{path}: content_hash mismatch')
+              if row.get('site_category_key') != 'tzjq': errors.append(f'{path}: site_category_key != tzjq')
+              if row.get('subject_lottery') != '分分彩': errors.append(f'{path}: subject_lottery != 分分时时彩')
+          payload = {
+              'formal_approved_count': len(paths),
+              'unique_article_ids': len(ids),
+              'unique_primary_keywords': len(keywords),
+              'errors': errors,
+              'website_sync_attempted': False,
+              'scheduled': False,
+              'published': False,
+          }
+          print(json.dumps(payload, ensure_ascii=False, indent=2))
+          raise SystemExit(0 if not errors else 3)
+          PY
+          inv_rc=$?
+          if [ "$audit_rc" -eq 0 ] && [ "$term_rc" -eq 0 ] && [ "$inv_rc" -eq 0 ]; then
+            echo "valid=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "valid=false" >> "$GITHUB_OUTPUT"
+          fi
+          echo "audit_rc=$audit_rc" >> "$GITHUB_OUTPUT"
+          echo "term_rc=$term_rc" >> "$GITHUB_OUTPUT"
+          echo "inventory_rc=$inv_rc" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit valid Approved inventory and lifecycle records
+        if: always() && steps.validate.outputs.valid == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles/approved registry/articles.jsonl
+          if git diff --cached --quiet; then
+            echo "No production article changes to commit"
+          else
+            count=$(find articles/approved -maxdepth 1 -type f -name '*.json' | wc -l | tr -d ' ')
+            git commit -m "Stage production controller Approved articles (${count}/200)"
+            git push origin HEAD:production/articles-200-20260813-v1
+          fi
+
+      - name: Upload production evidence and recovery artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-articles-200-v1
+          path: |
+            runs/production-articles-200-preflight/
+            runs/production-articles-200-v1/
+            production-articles-200-pre-audit.json
+            production-articles-200-preflight.log
+            production-articles-200-v1.log
+            production-articles-200-v1-exit-code.txt
+            production-articles-200-post-audit.json
+            production-articles-200-terminology-audit.json
+            production-articles-200-inventory-validation.json
+            articles/approved/*.json
+            registry/articles.jsonl
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Enforce target completion
+        if: always()
+        run: |
+          set -euo pipefail
+          test "${{ steps.validate.outputs.valid }}" = "true"
+          test -f runs/production-articles-200-v1/summary.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          summary = json.loads(Path('runs/production-articles-200-v1/summary.json').read_text(encoding='utf-8'))
+          inventory = json.loads(Path('production-articles-200-inventory-validation.json').read_text(encoding='utf-8'))
+          assert summary['website_sync_allowed'] is False
+          assert summary['scheduling_allowed'] is False
+          assert summary['publishing_allowed'] is False
+          assert summary['formal_inventory_staged'] == 200, summary
+          assert inventory['formal_approved_count'] == 200, inventory
+          assert inventory['unique_article_ids'] == 200
+          assert inventory['unique_primary_keywords'] == 200
+          print(json.dumps({
+              'status': summary['status'],
+              'target': summary['target'],
+              'attempted': summary['attempted'],
+              'generated': summary['generated'],
+              'approved': summary['approved'],
+              'formal_inventory_staged': summary['formal_inventory_staged'],
+              'approval_failed': summary['approval_failed'],
+              'generation_failed': summary['generation_failed'],
+              'reader_terminology_failed': summary['reader_terminology_failed'],
+              'quality_score_average': summary['quality_score_average'],
+              'editorial_score_average': summary['editorial_score_average'],
+              'website_sync': False,
+              'scheduled': False,
+              'published': False,
+          }, ensure_ascii=False, indent=2))
+          PY

@@ -30,27 +30,31 @@ def build_multistage_generation_prompt(packet: dict) -> str:
         stage_lines.append(
             f"- 第{stage.get('index')}层 {stage.get('label')}: "
             f"{stage.get('before_space')} -> {stage.get('after_space')}，"
-            f"排除 {stage.get('excluded_space')}；basis={stage.get('basis')}"
+            f"排除 {stage.get('excluded_space')}；basis={stage.get('basis')}；"
+            f"support_mode={stage.get('support_mode', 'verified_rule_calculation')}"
         )
 
     return base + (
         "\n\nV2.2 多层筛选合同（优先于V2.1关于‘没有第二过滤器就停止’的默认规则）：\n"
-        "1. filter_pipeline_spec/filter_pipeline_result 是系统在看到演示样本之前已经冻结并由机器枚举验证的合同，"
-        "不是让模型临时发明过滤器。必须按给定顺序使用全部阶段，不得遗漏、换序或新增第三/第四层。\n"
-        "2. 每一层正文都必须明确写出 before_space、after_space、excluded_space，并解释这一层具体怎么算。"
+        "1. filter_pipeline_spec/filter_pipeline_result 是系统机器合同。阶段顺序、静态参数，以及样本型阶段的选择规则"
+        "都在生成文章前固定；必须按给定顺序使用全部合同阶段，不得遗漏、换序或新增合同外阶段。\n"
+        "2. 对 support_mode=verified_rule_calculation 的静态阶段，具体参数已由系统预冻结；"
+        "对 support_mode=synthetic_case_calculation 的频率/冷热/遗漏阶段，只是 lookback/top_n/threshold 等选择规则预先冻结，"
+        "具体数字池是系统从 Draft Packet 的演示数据确定性计算出来的，不得写成实验前已经知道，更不得写成来源推荐。\n"
+        "3. 每一层正文都必须明确写出 before_space、after_space、excluded_space，并解释这一层具体怎么算。"
         "这些数字是候选空间的确定性计算，不是命中率或预测优势。\n"
-        "3. basis=experimental_parameter 表示预先固定的研究/演示参数：可以用于确定性筛选，但不得说它更容易中奖、"
-        "更准、有效率更高，也不得伪造来源。basis=source_unverified_hypothesis 才允许按source_ref转述来源，并必须明确未独立验证。\n"
-        "4. practical_guidance.starting_space 写整个pipeline起点；after_primary_filter_space 写所有预冻结阶段完成后的最终空间。"
+        "4. basis=experimental_parameter 表示系统预先固定的研究参数；basis=synthetic_case_fixed_rule 表示规则预先固定、"
+        "具体结果由演示样本计算。无论哪一种，都不得说它更容易中奖、更准、有效率更高，也不得伪造来源。\n"
+        "5. practical_guidance.starting_space 写整个pipeline起点；after_primary_filter_space 写全部合同阶段完成后的最终空间。"
         "stop_condition 要明确：完成最后一层后停止；任何额外新过滤器必须另有已验证规则/证据并在下一次实验前冻结。\n"
-        "5. 正文必须有清晰‘实际怎么操作/按步骤’章节，让读者能从起始空间逐层复算到最终候选空间。\n"
-        "6. pipeline before/after/excluded 与过滤参数基数是系统自有机器事实，生成后系统会自动注入标准 calculation evidence。"
-        "模型仍可解释这些数字，但不要把它们伪装成命中率或预测优势。\n"
+        "6. 正文必须有清晰‘实际怎么操作/按步骤’章节，让读者能从起始空间逐层复算到最终候选空间。\n"
         "7. support_type=editorial 是非证据元数据，support_refs 必须是空数组 []。"
-        "不要写 [\"rule_refs\"] 之类占位符；真实规则事实用 verified_rule + 实际 rule_refs。\n"
-        "8. 对来自演示开奖号、样本条数、样本和值/跨度/遗漏/频率的事实，仍必须使用 synthetic_case 且 support_refs 严格为 [\"case_bundle\"]。"
-        "不要把机器pipeline空间计算和演示开奖样本计算混成同一种证据。\n"
-        "9. 正文必须明确出现标准句‘演示数据，不是真实开奖记录。’。系统也会在模型漏写时确定性补入这句安全标签；"
+        "不要写 [\"rule_refs\"] 之类占位符；静态玩法/空间计算使用 verified_rule + 实际 rule_refs。\n"
+        "8. support_mode=synthetic_case_calculation 的数字池、阶段空间和包含这些阶段的整体最终空间，"
+        "必须使用 synthetic_case 且 support_refs 严格为 [\"case_bundle\"]。"
+        "不要把演示样本计算升级成 verified_rule。\n"
+        "9. 对来自演示开奖号、样本条数、样本和值/跨度/遗漏/频率的其他事实，同样必须使用 synthetic_case + [\"case_bundle\"]。\n"
+        "10. 正文必须明确出现标准句‘演示数据，不是真实开奖记录。’。系统也会在模型漏写时确定性补入这句安全标签；"
         "该补入只改变披露标签，不改变任何玩法、参数、计算或结论。\n"
         "\n机器已验证的阶段：\n" + "\n".join(stage_lines) +
         f"\n整体：{result.get('starting_space')} -> {result.get('final_space')}，"
@@ -64,17 +68,23 @@ def _compact(value: object) -> str:
     return re.sub(r"\s+", "", str(value or ""))
 
 
-def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
-    """Match only deterministic stage/overall candidate-space calculations.
+def _stage_support(stage: dict, rules: list[str]) -> tuple[str, list[str]]:
+    if stage.get("support_mode") == "synthetic_case_calculation":
+        return "synthetic_case", ["case_bundle"]
+    return "verified_rule", list(rules)
 
-    Natural model prose may omit the exact stage label or use different quote
-    characters. A unique machine-known before/after/excluded triple is enough
-    when the sentence also contains explicit filtering/space language. Overall
-    summaries may omit the starting count when they include both final_space and
-    total_excluded with strong overall markers. Arbitrary numeric prose remains
-    fail-closed.
-    """
+
+def _overall_support(result: dict, rules: list[str]) -> tuple[str, list[str]]:
+    stages = result.get("stages") or []
+    if any(stage.get("support_mode") == "synthetic_case_calculation" for stage in stages):
+        return "synthetic_case", ["case_bundle"]
+    return "verified_rule", list(rules)
+
+
+def _matched_pipeline_support(packet: dict, claim: str) -> tuple[str, list[str]] | None:
+    """Return the required evidence provenance for one pipeline calculation claim."""
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
+    rules = list(packet.get("immutable_facts", {}).get("rule_refs") or [])
     compact = _compact(claim)
     stages = result.get("stages", []) or []
     calculation_markers = (
@@ -91,32 +101,36 @@ def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
             matched_stages.append(stage)
 
     if len(matched_stages) == 1 and any(marker in compact for marker in calculation_markers):
-        return True
+        return _stage_support(matched_stages[0], rules)
 
     start = str(result.get("starting_space"))
     final = str(result.get("final_space"))
     excluded = str(result.get("total_excluded"))
-    overall_markers = ("整体", "总共", "合计", "最终", "全部完成", "完成后", "两层", "三层", "总排除")
+    overall_markers = ("整体", "总共", "合计", "最终", "全部完成", "完成后", "两层", "三层", "多层", "总排除")
     has_overall_marker = any(marker in compact for marker in overall_markers)
 
     if has_overall_marker and all(value not in {"None", ""} and value in compact for value in (start, final, excluded)):
-        return True
+        return _overall_support(result, rules)
     if has_overall_marker and all(value not in {"None", ""} and value in compact for value in (final, excluded)):
-        # final + total_excluded uniquely determine starting_space; require an
-        # explicit final/overall context so two unrelated numbers cannot match.
         if any(marker in compact for marker in ("最终", "总排除", "总共排除", "全部完成", "完成后")):
-            return True
-    return False
+            return _overall_support(result, rules)
+    return None
+
+
+def _claim_matches_pipeline_result(packet: dict, claim: str) -> bool:
+    """Backward-compatible predicate used by existing hardening tests."""
+    return _matched_pipeline_support(packet, claim) is not None
 
 
 def _pipeline_evidence_rows(packet: dict) -> list[dict]:
-    """Build canonical evidence for machine-enumerated V2.2 candidate spaces and fixed parameter cardinality."""
+    """Build canonical evidence with provenance matching each pipeline stage."""
     result = packet.get("practicality", {}).get("filter_pipeline_result") or {}
     rules = list(packet.get("immutable_facts", {}).get("rule_refs") or [])
-    if not rules:
-        return []
     rows: list[dict] = []
     for stage in result.get("stages", []) or []:
+        support_type, support_refs = _stage_support(stage, rules)
+        if support_type == "verified_rule" and not support_refs:
+            continue
         params = stage.get("params") or {}
         if stage.get("op") == "digit_pool" and isinstance(params.get("digits"), list):
             digits = list(params["digits"])
@@ -127,11 +141,11 @@ def _pipeline_evidence_rows(packet: dict) -> list[dict]:
                     + "。"
                 ),
                 "claim_type": "calculation",
-                "support_type": "verified_rule",
-                "support_refs": rules,
+                "support_type": support_type,
+                "support_refs": support_refs,
                 "evidence_note": (
-                    "系统直接读取Draft Packet中实验前已冻结的digit_pool参数并计算其基数；"
-                    "只证明参数内容与数量，不证明预测优势。"
+                    "系统按Draft Packet中已冻结的选择规则计算该层数字池；"
+                    + ("具体数字来自演示数据，只证明确定性样本计算，不证明预测优势。" if support_type == "synthetic_case" else "只证明参数内容与数量，不证明预测优势。")
                 ),
             })
         rows.append({
@@ -140,11 +154,11 @@ def _pipeline_evidence_rows(packet: dict) -> list[dict]:
                 f"{stage.get('after_space')}个，排除{stage.get('excluded_space')}个。"
             ),
             "claim_type": "calculation",
-            "support_type": "verified_rule",
-            "support_refs": rules,
+            "support_type": support_type,
+            "support_refs": support_refs,
             "evidence_note": (
-                "系统依据Draft Packet中已冻结的过滤参数与已验证玩法结果空间，"
-                "通过filter_pipeline逐项枚举得到；此证据只证明候选空间数学，不证明预测优势。"
+                "系统依据Draft Packet中的合同阶段逐项枚举得到；"
+                + ("该阶段包含演示样本衍生参数，因此证据归case_bundle；不证明预测优势。" if support_type == "synthetic_case" else "该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。")
             ),
         })
         if result.get("space_type") == "unordered_2digit":
@@ -154,39 +168,39 @@ def _pipeline_evidence_rows(packet: dict) -> list[dict]:
                     f"{stage.get('after_space')}注，排除{stage.get('excluded_space')}注。"
                 ),
                 "claim_type": "calculation",
-                "support_type": "verified_rule",
-                "support_refs": rules,
-                "evidence_note": (
-                    "系统对无序组选注数空间逐项枚举；只证明固定过滤条件下的注数变化。"
-                ),
+                "support_type": support_type,
+                "support_refs": support_refs,
+                "evidence_note": "系统对无序组选注数空间逐项枚举；证据类型跟随该阶段参数来源。",
             })
     if result:
-        rows.append({
-            "claim_text": (
-                f"完整多层筛选从{result.get('starting_space')}个缩到{result.get('final_space')}个，"
-                f"总排除{result.get('total_excluded')}个。"
-            ),
-            "claim_type": "calculation",
-            "support_type": "verified_rule",
-            "support_refs": rules,
-            "evidence_note": "由系统汇总全部已冻结过滤阶段的确定性候选空间结果。",
-        })
-        if result.get("space_type") == "unordered_2digit":
+        support_type, support_refs = _overall_support(result, rules)
+        if support_type == "synthetic_case" or support_refs:
             rows.append({
                 "claim_text": (
-                    f"完整多层筛选从{result.get('starting_space')}注缩到{result.get('final_space')}注，"
-                    f"总排除{result.get('total_excluded')}注。"
+                    f"完整多层筛选从{result.get('starting_space')}个缩到{result.get('final_space')}个，"
+                    f"总排除{result.get('total_excluded')}个。"
                 ),
                 "claim_type": "calculation",
-                "support_type": "verified_rule",
-                "support_refs": rules,
-                "evidence_note": "由系统汇总无序组选全部已冻结过滤阶段的确定性注数结果。",
+                "support_type": support_type,
+                "support_refs": support_refs,
+                "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
             })
+            if result.get("space_type") == "unordered_2digit":
+                rows.append({
+                    "claim_text": (
+                        f"完整多层筛选从{result.get('starting_space')}注缩到{result.get('final_space')}注，"
+                        f"总排除{result.get('total_excluded')}注。"
+                    ),
+                    "claim_type": "calculation",
+                    "support_type": support_type,
+                    "support_refs": support_refs,
+                    "evidence_note": "由系统汇总无序组选全部合同阶段结果；证据类型跟随pipeline最强依赖来源。",
+                })
     return rows
 
 
 def _normalize_multistage_article(article: dict, packet: dict | None = None) -> dict:
-    """Canonicalize non-evidentiary metadata and system-owned V2.2 evidence."""
+    """Canonicalize non-evidentiary metadata and exact pipeline evidence provenance."""
     normalized = deepcopy(article)
     entries = normalized.get("claim_evidence")
     if not isinstance(entries, list):
@@ -199,54 +213,22 @@ def _normalize_multistage_article(article: dict, packet: dict | None = None) -> 
         if entry.get("support_type") == "editorial":
             entry["support_refs"] = []
 
-        if isinstance(packet, dict):
-            rules = list(packet.get("immutable_facts", {}).get("rule_refs") or [])
-            claim_text = str(entry.get("claim_text") or "")
-            is_pipeline_calculation = (
-                entry.get("claim_type") == "calculation"
-                and _claim_matches_pipeline_result(packet, claim_text)
-            )
-
-            if (
-                is_pipeline_calculation
-                and entry.get("support_type") == "verified_rule"
-                and not (entry.get("support_refs") or [])
-                and rules
-            ):
-                entry["support_refs"] = rules
-                entry["evidence_note"] = (
-                    str(entry.get("evidence_note") or "")
-                    + " [system-normalized: exact pipeline missing rule refs]"
-                ).strip()
-
-            if (
-                is_pipeline_calculation
-                and entry.get("support_type") == "verified_rule"
-                and entry.get("support_refs") == ["rule_refs"]
-                and rules
-            ):
-                entry["support_refs"] = rules
-                entry["evidence_note"] = (
-                    str(entry.get("evidence_note") or "")
-                    + " [system-normalized: exact pipeline rule_refs placeholder]"
-                ).strip()
-
-            if (
-                is_pipeline_calculation
-                and entry.get("support_type") == "synthetic_case"
-                and rules
-            ):
-                entry["support_type"] = "verified_rule"
-                entry["support_refs"] = rules
-                entry["evidence_note"] = (
-                    str(entry.get("evidence_note") or "")
-                    + " [system-normalized: machine filter_pipeline calculation]"
-                ).strip()
+        if isinstance(packet, dict) and entry.get("claim_type") == "calculation":
+            required = _matched_pipeline_support(packet, str(entry.get("claim_text") or ""))
+            if required is not None:
+                required_type, required_refs = required
+                if required_type == "verified_rule" and not required_refs:
+                    continue
+                if entry.get("support_type") != required_type or list(entry.get("support_refs") or []) != required_refs:
+                    entry["support_type"] = required_type
+                    entry["support_refs"] = required_refs
+                    entry["evidence_note"] = (
+                        str(entry.get("evidence_note") or "")
+                        + f" [system-normalized: exact pipeline provenance -> {required_type}]"
+                    ).strip()
 
     if isinstance(packet, dict):
-        required_label = str(
-            packet.get("output_contract", {}).get("must_include_case_label") or ""
-        ).strip()
+        required_label = str(packet.get("output_contract", {}).get("must_include_case_label") or "").strip()
         content = str(normalized.get("content") or "")
         if required_label and required_label not in content:
             canonical = "演示数据，不是真实开奖记录。"

@@ -174,7 +174,13 @@ def _publish_package(packet: dict, article: dict) -> dict:
 def _registry_changes(packet: dict, article: dict) -> dict:
     facts = packet.get("immutable_facts", {})
     existing = _existing_identity(article.get("article_id") or packet.get("article_id"))
-    primary_cluster, secondary_clusters = _cluster_assignment(packet, existing)
+    try:
+        primary_cluster, secondary_clusters = _cluster_assignment(packet, existing)
+    except ValueError:
+        # Cluster validity is enforced by _seo_contract. Rejected content must still
+        # be recordable without persisting the invalid assignment or crashing the
+        # rejection lifecycle.
+        primary_cluster, secondary_clusters = None, []
     changes = {
         "blueprint_id": packet.get("blueprint_id"),
         "provider_id": facts.get("provider_id"),

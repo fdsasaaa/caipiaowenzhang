@@ -11,6 +11,7 @@ from .ai_generation import (
     validate_generated_identity,
 )
 from .ai_generation_v22 import _normalize_multistage_article, build_multistage_generation_prompt
+from .real_knowledge_evidence_normalization import normalize_real_knowledge_claim_metadata
 from .real_knowledge_live_validation import normalize_real_knowledge_article
 
 
@@ -87,6 +88,7 @@ def generate_real_knowledge_article(
 
     article = _normalize_multistage_article(article, packet)
     article = normalize_real_knowledge_article(packet, article)
+    article = normalize_real_knowledge_claim_metadata(packet, article)
     validate_generated_identity(packet, article)
     return GenerationResult(
         article=article,

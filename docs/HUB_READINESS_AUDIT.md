@@ -11,6 +11,8 @@ The article Registry and `articles/approved/` represent different things:
 
 An article with Registry status `approved` is not automatically a transportable Approved Package file. Hub planning must not confuse those two states.
 
+Formal packages enter that inventory only through the explicit staging contract documented in `docs/FORMAL_APPROVED_INVENTORY.md` (or equivalent validated staging code). Approval alone does not silently copy a package there.
+
 ## Run
 
 ```bash
@@ -43,6 +45,8 @@ The audit intentionally never returns automatic Hub readiness. A real Hub still 
 
 ## Current checkpoint
 
-At the time this audit was introduced, `articles/approved/` contains only `.gitkeep`, so the formal transport inventory is **0 packages**. The Registry still contains historical/smoke articles whose effective lifecycle state is `approved`; those records must not be counted as formal cross-repository inventory.
+At the time this audit was introduced, `articles/approved/` contained only `.gitkeep`, so the formal transport inventory was **0 packages**. The Registry still contained historical/smoke articles whose effective lifecycle state was `approved`; those records were intentionally not counted as formal cross-repository inventory.
 
-This distinction is deliberate and prevents smoke-test state from being mistaken for publication-ready corpus size.
+The formal Approved Package staging feature was added afterward so future real production batches can explicitly populate `articles/approved/` with `--stage-approved` while website sync and publication remain separately disabled.
+
+This distinction prevents smoke-test state from being mistaken for publication-ready corpus size.

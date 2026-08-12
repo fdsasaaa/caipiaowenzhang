@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
 
 from engine.ai_generation import GenerationError, generate_article
 from engine.approval import evaluate_and_record, evaluate_for_approval
+from engine.formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
 
 
 def _write(path: Path, value: dict) -> None:
@@ -26,6 +27,11 @@ def main() -> int:
     parser.add_argument("--approved-output", type=Path)
     parser.add_argument("--model")
     parser.add_argument("--record", action="store_true", help="append lifecycle state to Registry after review")
+    parser.add_argument(
+        "--stage-approved",
+        action="store_true",
+        help="after Approval succeeds, atomically stage the Approved Package into articles/approved; does not sync or publish",
+    )
     args = parser.parse_args()
 
     packet = json.loads(args.packet.read_text(encoding="utf-8"))
@@ -52,10 +58,21 @@ def main() -> int:
         "warnings": approval.warnings,
         "draft_output": str(args.draft_output),
         "registry_record": approval.registry_record,
+        "formal_inventory_requested": bool(args.stage_approved),
     }
     if approval.approved and approval.publish_package and args.approved_output:
         _write(args.approved_output, approval.publish_package)
         report["approved_output"] = str(args.approved_output)
+
+    if approval.approved and approval.publish_package and args.stage_approved:
+        try:
+            report["formal_inventory"] = stage_formal_approved_package(approval.publish_package)
+        except FormalInventoryError as exc:
+            report["formal_inventory_error"] = str(exc)
+            _write(args.report_output, report)
+            print(json.dumps(report, ensure_ascii=False, indent=2))
+            return 7
+
     _write(args.report_output, report)
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0 if approval.approved else 6

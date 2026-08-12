@@ -1,0 +1,42 @@
+name: live-v22-stability-10-temp
+
+on:
+  push:
+    paths:
+      - '.github/live-v22-stability-10.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  stability-batch-10:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: https://api.synapai.top/v1
+      OPENAI_MODEL: gpt-5.4-mini
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify secret exists without printing it
+        shell: bash
+        run: |
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "MODEL_PROVIDER_API_KEY secret is not configured" >&2
+            exit 2
+          fi
+          echo "API key secret detected; value will not be printed."
+      - name: Generate and review exactly ten V2.2 stability articles
+        shell: bash
+        run: python scripts/live_article_stability_10_v22.py
+      - name: Upload stability evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: v22-stability-10-evidence
+          path: runtime/v22-stability-10
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,54 @@
+name: controller-200-capacity-v14-temp
+
+on:
+  push:
+    branches:
+      - seo/composite-technique-keyword-ownership-v14
+    paths:
+      - .github/controller-200-capacity-v14.trigger
+
+permissions:
+  contents: read
+
+jobs:
+  capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Repository audit
+        run: python -m engine.cli audit
+      - name: Controller target-200 plan acceptance
+        run: |
+          set -euo pipefail
+          rm -rf runs/controller-200-capacity-v14
+          python scripts/produce_articles_total.py 200 --output-dir runs/controller-200-capacity-v14 | tee controller-200-capacity-v14.log
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('runs/controller-200-capacity-v14/plan.json').read_text(encoding='utf-8'))
+          assert p['candidate_capacity_current_snapshot'] >= 200, p['candidate_capacity_current_snapshot']
+          assert p['target_feasible_current_snapshot'] is True
+          assert p.get('capacity_probe_passes') in (1,2)
+          assert p['formal_inventory_before'] == 0
+          assert p['website_sync_allowed'] is False
+          assert p['scheduling_allowed'] is False
+          assert p['publishing_allowed'] is False
+          print(json.dumps({
+            'candidate_capacity':p['candidate_capacity_current_snapshot'],
+            'capacity_exhaustive':p['capacity_exhaustive'],
+            'capacity_probe_passes':p.get('capacity_probe_passes'),
+            'attempt_budget':p['attempt_budget'],
+            'formal_inventory_before':p['formal_inventory_before'],
+          },ensure_ascii=False,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: controller-200-capacity-v14
+          path: |
+            runs/controller-200-capacity-v14/
+            controller-200-capacity-v14.log
+          if-no-files-found: error

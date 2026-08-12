@@ -52,6 +52,8 @@ def build_multistage_generation_prompt(packet: dict) -> str:
         "不要写 [\"rule_refs\"] 之类占位符；真实规则事实用 verified_rule + 实际 rule_refs。\n"
         "8. 对含‘注’的候选空间说明，至少为每组不同的数值关系建立一条 calculation evidence。"
         "同一组数字在正文步骤中重复解释可以复用同一数学证据，但不能完全没有对应 calculation。\n"
+        "9. 正文必须明确出现标准句‘演示数据，不是真实开奖记录。’。系统也会在模型漏写时确定性补入这句安全标签；"
+        "该补入只改变披露标签，不改变任何玩法、参数、计算或结论。\n"
         "\n机器已验证的阶段：\n" + "\n".join(stage_lines) +
         f"\n整体：{result.get('starting_space')} -> {result.get('final_space')}，"
         f"总排除 {result.get('total_excluded')}。\n"
@@ -60,14 +62,16 @@ def build_multistage_generation_prompt(packet: dict) -> str:
     )
 
 
-def _normalize_multistage_article(article: dict) -> dict:
-    """Remove non-evidentiary ref noise without changing factual claims/content.
+def _normalize_multistage_article(article: dict, packet: dict | None = None) -> dict:
+    """Canonicalize non-evidentiary metadata and mandatory synthetic disclosure.
 
-    Live V2.2 showed that some providers fill editorial support_refs with a
-    literal placeholder such as ["rule_refs"]. Editorial rows are explicitly
-    forbidden from proving hard claims, so those refs carry no evidence value.
-    Canonicalizing them to [] is lossless and makes the structured contract
-    deterministic without weakening verified_rule/source/synthetic checks.
+    Two transformations are deliberately lossless with respect to factual
+    content:
+    1. editorial support_refs are removed because editorial rows are forbidden
+       from proving hard claims;
+    2. when a packet requires a synthetic-case disclosure and the model omits
+       the decisive phrase, prepend the canonical disclosure sentence. This is
+       a deterministic safety label derived from the packet, not model content.
     """
     normalized = deepcopy(article)
     entries = normalized.get("claim_evidence")
@@ -75,6 +79,23 @@ def _normalize_multistage_article(article: dict) -> dict:
         for entry in entries:
             if isinstance(entry, dict) and entry.get("support_type") == "editorial":
                 entry["support_refs"] = []
+
+    if isinstance(packet, dict):
+        required_label = str(
+            packet.get("output_contract", {}).get("must_include_case_label") or ""
+        ).strip()
+        content = str(normalized.get("content") or "")
+        if required_label and required_label not in content:
+            canonical = "演示数据，不是真实开奖记录。"
+            normalized["content"] = f"<p><strong>{canonical}</strong></p>" + content
+            if isinstance(entries, list):
+                entries.append({
+                    "claim_text": canonical,
+                    "claim_type": "editorial",
+                    "support_type": "synthetic_case",
+                    "support_refs": ["case_bundle"],
+                    "evidence_note": "系统按Draft Packet确定性补入强制演示数据披露标签；不改变正文事实或计算。",
+                })
     return normalized
 
 
@@ -110,7 +131,7 @@ def generate_multistage_article(
         raise GenerationError("structured model output is not valid JSON") from exc
     if not isinstance(article, dict):
         raise GenerationError("structured model output must be an object")
-    article = _normalize_multistage_article(article)
+    article = _normalize_multistage_article(article, packet)
     validate_generated_identity(packet, article)
     return GenerationResult(
         article=article,

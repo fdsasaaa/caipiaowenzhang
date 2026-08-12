@@ -1,3 +1,4 @@
 target=200
 provider_calls=0
-purpose=math-contract-coverage
+purpose=deterministic-primary-filter-coverage
+retry=2

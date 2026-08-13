@@ -1,4 +1,0 @@
-provider_calls=0
-lexical_threshold=0.72
-structural_threshold=0.82
-research_v3_artifact_sha256=0fdecfe3e8cc6c0cd397c3aea677c48a8877f270caf2de985a26ca917852368a

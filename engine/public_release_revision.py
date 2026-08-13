@@ -21,6 +21,13 @@ def _canonical_json(payload: dict) -> str:
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
+def _portable_path(path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(ROOT.resolve())).replace("\\", "/")
+    except ValueError:
+        return str(path)
+
+
 def expected_public_release_fingerprint(package: dict) -> str:
     identity = {
         "article_id": str(package.get("article_id") or ""),
@@ -138,7 +145,7 @@ def stage_public_release_revision(
         except (OSError, json.JSONDecodeError) as exc:
             raise PublicReleaseRevisionError(f"existing public-release revision is invalid: {target.name}") from exc
         if isinstance(existing, dict) and _canonical_json(existing) == canonical:
-            return {"status": "unchanged", "path": str(target), **validated}
+            return {"status": "unchanged", "path": _portable_path(target), **validated}
         raise PublicReleaseRevisionError("public-release revision path already exists with different content")
 
     encoded = json.dumps(package, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
@@ -149,7 +156,7 @@ def stage_public_release_revision(
     finally:
         if tmp.exists():
             tmp.unlink(missing_ok=True)
-    return {"status": "staged", "path": str(target), **validated}
+    return {"status": "staged", "path": _portable_path(target), **validated}
 
 
 def build_public_release_manifest(
@@ -193,7 +200,7 @@ def build_public_release_manifest(
                 "primary_keyword": package["primary_keyword"],
                 "content_hash": package["content_hash"],
                 "fingerprint": package["fingerprint"],
-                "path": str(path),
+                "path": _portable_path(path),
             }
         )
 
@@ -236,4 +243,4 @@ def write_public_release_manifest(
     finally:
         if tmp.exists():
             tmp.unlink(missing_ok=True)
-    return {"status": "manifest_written", "path": str(target), **manifest}
+    return {"status": "manifest_written", "path": _portable_path(target), **manifest}

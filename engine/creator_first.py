@@ -216,8 +216,12 @@ def build_creator_packet(request: dict, manifest: dict, article: dict) -> dict:
         raise CreatorFirstError("article_id changed from creator request")
     if article.get("rule_refs") != [mechanic["rule_ref"]]:
         raise CreatorFirstError("article rule_refs must contain only selected_rule_ref")
-    if article.get("source_refs") not in ([], None):
+    if not isinstance(article.get("source_refs"), list):
+        raise CreatorFirstError("creator-first article must explicitly provide source_refs as a list")
+    if article.get("source_refs") != []:
         raise CreatorFirstError("creator-first original article must not invent source_refs")
+    if not isinstance(article.get("claim_evidence"), list):
+        raise CreatorFirstError("creator-first article must explicitly provide claim_evidence as a list")
     if article.get("case_scope") != "mechanics_only":
         raise CreatorFirstError("creator-first V1 defaults to mechanics_only")
     if manifest.get("uses_draw_data") is True and not request.get("draw_data_available"):
@@ -248,8 +252,8 @@ def build_creator_packet(request: dict, manifest: dict, article: dict) -> dict:
     required_fields = [
         "article_id", "title", "seo_title", "slug", "meta_description", "primary_keyword",
         "secondary_keywords", "search_intent", "summary", "category", "site_category_key",
-        "content_type", "content_format", "tags", "content", "rule_refs", "source_refs",
-        "case_scope", "status", "generation_contract_version", "claim_evidence",
+        "content_type", "content_format", "tags", "content", "rule_refs",
+        "case_scope", "status", "generation_contract_version",
     ]
     return {
         "packet_id": "CFDP-" + fingerprint[:16],

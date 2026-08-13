@@ -1,0 +1,50 @@
+name: Fix Creator Batch Hashes
+
+on:
+  push:
+    branches:
+      - production/creator-first-50-20260813
+    paths:
+      - .github/workflows/fix-creator-batch-hashes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: production/creator-first-50-20260813
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Normalize formal content hashes
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          files = sorted(Path('articles/approved').glob('LCM-CREATOR-cf50-20260813-*.json'))
+          assert len(files) == 50, len(files)
+          for path in files:
+              package = json.loads(path.read_text(encoding='utf-8'))
+              content = package.get('content')
+              assert isinstance(content, str) and content.strip(), path
+              package['content_hash'] = hashlib.sha256(content.encode('utf-8')).hexdigest()
+              path.write_text(json.dumps(package, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+      - name: Commit normalized hashes
+        run: |
+          if git diff --quiet -- articles/approved; then
+            echo 'No hash changes needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add articles/approved/LCM-CREATOR-cf50-20260813-*.json
+          git commit -m 'Normalize Creator-first batch content hashes'
+          git push origin HEAD:production/creator-first-50-20260813

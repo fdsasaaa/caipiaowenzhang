@@ -58,12 +58,15 @@ def _creator_payload(package: dict) -> tuple[dict, dict]:
 def test_creator_first_batch_50_all_pass_existing_approval_and_formal_inventory():
     packages = _packages()
     assert len(packages) == 50
+    failures = []
 
     for package in packages:
         validate_formal_approved_package(package)
         request, payload = _creator_payload(package)
         result = validate_creator_output(request, payload)
-        assert result.approved, f"{package['article_id']}: {result.errors}"
+        if not result.approved:
+            failures.append({"article_id": package["article_id"], "errors": result.errors})
+            continue
 
         generated = result.approval.publish_package
         assert generated is not None
@@ -78,6 +81,8 @@ def test_creator_first_batch_50_all_pass_existing_approval_and_formal_inventory(
             assert package.get(field) == generated.get(field), (
                 package["article_id"], field, package.get(field), generated.get(field)
             )
+
+    assert not failures, failures
 
 
 def test_creator_first_batch_50_has_unique_seo_identity_and_no_intra_batch_duplicates():

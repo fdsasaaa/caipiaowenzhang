@@ -1,0 +1,232 @@
+name: production-v5-canary-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v5
+    paths:
+      - '.github/production-v5-canary.trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: https://api.synapai.top/v1
+      OPENAI_MODEL: gpt-5.4-mini
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Preflight strict campaign capacity and one-candidate lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$OPENAI_API_KEY"
+          python -m engine.cli audit
+          python scripts/audit_reader_terminology.py --root .
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry
+
+          formal_before=len(list(Path('articles/approved').glob('*.json')))
+          assert formal_before == 0, formal_before
+
+          campaign=_build_plan_with_capacity_retry(
+              200, provider_id='', signals=[], batch_size=25, allow_ultra=False
+          )
+          assert campaign['capacity_exhaustive'] is True, campaign
+          assert campaign['candidate_capacity_current_snapshot'] >= 200, campaign
+          assert campaign['target_feasible_current_snapshot'] is True, campaign
+
+          canary=_build_plan_with_capacity_retry(
+              1, provider_id='', signals=[], batch_size=1, allow_ultra=False
+          )
+          assert canary['formal_inventory_before'] == 0, canary
+          assert canary['candidates'], canary
+          canary['candidates']=canary['candidates'][:1]
+          canary['attempt_budget']=1
+          bp=canary['candidates'][0]['blueprint']
+          contract=bp.get('production_filter_contract') or {}
+          payload={
+              'formal_before': formal_before,
+              'campaign_capacity': campaign['candidate_capacity_current_snapshot'],
+              'campaign_contract_modes': campaign.get('contract_mode_distribution',{}),
+              'canary_candidate_count': len(canary['candidates']),
+              'canary_article_id': bp.get('article_id'),
+              'canary_primary_keyword': bp.get('primary_keyword'),
+              'canary_subject_lottery': bp.get('subject_lottery'),
+              'canary_subject_play': bp.get('subject_play'),
+              'canary_atoms': bp.get('technique_atoms',[]),
+              'canary_contract_mode': contract.get('mode'),
+              'canary_filter_result': contract.get('filter_pipeline_result'),
+              'provider_request_cap': 1,
+              'website_sync': False,
+              'scheduled': False,
+              'published': False,
+          }
+          Path('production-v5-canary-plan.json').write_text(
+              json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          Path('production-v5-canary-execution-plan.json').write_text(
+              json.dumps(canary,ensure_ascii=False,indent=2,default=str)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(payload,ensure_ascii=False,indent=2))
+          PY
+
+      - name: Execute exactly one production candidate
+        id: execute
+        shell: bash
+        run: |
+          set +e
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from engine.production_controller import execute_production_plan
+          from engine.provider_transport import make_responses_transport, normalize_base_url
+
+          plan=json.loads(Path('production-v5-canary-execution-plan.json').read_text(encoding='utf-8'))
+          assert len(plan['candidates']) == 1, len(plan['candidates'])
+          assert plan['attempt_budget'] == 1, plan['attempt_budget']
+          transport=make_responses_transport(normalize_base_url(os.environ['OPENAI_BASE_URL']))
+          result=execute_production_plan(
+              plan,
+              model=os.environ['OPENAI_MODEL'],
+              transport=transport,
+          )
+          Path('production-v5-canary-result.json').write_text(
+              json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          summary={
+              'status': result['status'],
+              'stop_reason': result['stop_reason'],
+              'attempted': result['attempted'],
+              'generated': result['generated'],
+              'approved': result['approved'],
+              'staged': result['formal_inventory_staged'],
+              'generation_failed': result['generation_failed'],
+              'approval_failed': result['approval_failed'],
+              'multistage_failed': result.get('multistage_failed',0),
+              'terminology_failed': result['reader_terminology_failed'],
+              'formal_inventory_errors': result['formal_inventory_error_count'],
+              'quality_average': result['quality_score_average'],
+              'editorial_average': result['editorial_score_average'],
+              'multistage_average': result.get('multistage_score_average'),
+              'provider_request_cap': 1,
+              'website_sync': False,
+              'scheduled': False,
+              'published': False,
+          }
+          Path('production-v5-canary-summary.json').write_text(
+              json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(summary,ensure_ascii=False,indent=2))
+          assert result['attempted'] <= 1, result
+          assert result['generated'] <= 1, result
+          PY
+          rc=$?
+          echo "$rc" > production-v5-canary-execute-rc.txt
+          exit 0
+
+      - name: Validate and persist only a fully passing canary
+        id: persist
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          python -m engine.cli audit > production-v5-canary-post-audit.json 2>&1
+          audit_rc=$?
+          python scripts/audit_reader_terminology.py --root . > production-v5-canary-terminology.json 2>&1
+          term_rc=$?
+          python - <<'PY' > production-v5-canary-inventory.json 2>&1
+          import hashlib,json
+          from pathlib import Path
+          result_path=Path('production-v5-canary-result.json')
+          if not result_path.exists():
+              raise SystemExit(8)
+          result=json.loads(result_path.read_text(encoding='utf-8'))
+          paths=sorted(Path('articles/approved').glob('*.json'))
+          errors=[]
+          if result.get('attempted') != 1: errors.append('attempted_not_one')
+          if result.get('generated') != 1: errors.append('generated_not_one')
+          if result.get('formal_inventory_staged') != 1: errors.append('staged_not_one')
+          if len(paths) != 1: errors.append(f'formal_count={len(paths)}')
+          for p in paths:
+              row=json.loads(p.read_text(encoding='utf-8'))
+              if row.get('status')!='approved': errors.append('status')
+              if row.get('subject_lottery')!='分分彩': errors.append('subject_lottery')
+              if row.get('site_category_key')!='tzjq': errors.append('site_category_key')
+              content=str(row.get('content') or '')
+              expected=hashlib.sha256(content.encode()).hexdigest()
+              if row.get('content_hash')!=expected: errors.append('content_hash')
+              for field in ('title','seo_title','meta_description','primary_keyword'):
+                  if '时时彩' in str(row.get(field) or ''): errors.append('legacy_term:'+field)
+          payload={
+              'formal_count':len(paths),
+              'errors':errors,
+              'website_sync':False,
+              'scheduled':False,
+              'published':False,
+          }
+          print(json.dumps(payload,ensure_ascii=False,indent=2))
+          raise SystemExit(0 if not errors else 9)
+          PY
+          inv_rc=$?
+          if [ "$audit_rc" -eq 0 ] && [ "$term_rc" -eq 0 ] && [ "$inv_rc" -eq 0 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add articles/approved registry/articles.jsonl
+            if git diff --cached --quiet; then
+              echo "Expected one staged formal article but git diff is empty" >&2
+              echo "persisted=false" >> "$GITHUB_OUTPUT"
+            else
+              git commit -m "Stage strict V5 production canary (1/200)"
+              git push origin HEAD:production/articles-200-20260813-v5
+              echo "persisted=true" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "persisted=false" >> "$GITHUB_OUTPUT"
+          fi
+          exit 0
+
+      - name: Upload complete canary evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-v5-canary
+          path: |
+            production-v5-canary*.json
+            production-v5-canary-execute-rc.txt
+            articles/approved/*.json
+            registry/articles.jsonl
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Enforce canary acceptance after evidence preservation
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${{ steps.persist.outputs.persisted }}" = "true"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s=json.loads(Path('production-v5-canary-summary.json').read_text(encoding='utf-8'))
+          assert s['attempted']==1, s
+          assert s['generated']==1, s
+          assert s['approved']==1, s
+          assert s['staged']==1, s
+          assert s['formal_inventory_errors']==0, s
+          assert s['terminology_failed']==0, s
+          print(json.dumps(s,ensure_ascii=False,indent=2))
+          PY

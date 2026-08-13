@@ -3,7 +3,10 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
+from .article_angles import AUDITED_ANGLE_STRUCTURAL_WEIGHT, same_audited_angle
 from .store import iter_registry
+
+STRUCTURAL_DUPLICATE_THRESHOLD = 0.82
 
 
 @dataclass
@@ -102,10 +105,21 @@ def structural_similarity(candidate: dict, old: dict) -> tuple[float, list[str]]
     if cand_type and cand_type == old_type:
         score += 0.05; reasons.append("same_content_type")
 
-    return min(1.0, score), reasons
+    base_score = min(1.0, score)
+    same_angle = same_audited_angle(candidate, old)
+    if same_angle is None:
+        return base_score, reasons
+    weight = AUDITED_ANGLE_STRUCTURAL_WEIGHT
+    if same_angle:
+        reasons.append("same_audited_information_gain")
+        return min(1.0, (1.0 - weight) * base_score + weight), reasons
+    reasons.append("different_audited_information_gain")
+    return min(1.0, (1.0 - weight) * base_score), reasons
 
 
-def structural_duplicate_candidates(candidate: dict, threshold: float = 0.82) -> list[StructuralDuplicateHit]:
+def structural_duplicate_candidates(
+    candidate: dict, threshold: float = STRUCTURAL_DUPLICATE_THRESHOLD
+) -> list[StructuralDuplicateHit]:
     article_id = candidate.get("article_id")
     hits: list[StructuralDuplicateHit] = []
     for old in iter_registry("articles"):

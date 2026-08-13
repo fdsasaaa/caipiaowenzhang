@@ -1,4 +1,0 @@
-production_v5_preflight=true
-provider=false
-campaign_target=200
-canary_target=1

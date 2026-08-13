@@ -1,0 +1,13 @@
+campaign_target=200
+canary_target=1
+provider_request_cap=1
+article_id=LCM-IDEA-40be5a222f5cccf7
+primary_keyword=分分彩五星直选跨度技巧
+family=FAM-c93cfcc1527bf6f8
+starting_space=100000
+final_space=43620
+excluded_space=56380
+automatic_retry=false
+website_sync=false
+scheduling=false
+publishing=false

@@ -1,9 +1,13 @@
 from engine import internal_links
 
 
-def test_current_eight_articles_plan_without_fake_urls():
+def test_current_linkable_articles_plan_without_fake_urls():
     result = internal_links.plan_all_internal_links(limit=3)
-    assert result["article_count"] == 8
+    expected_ids = {str(row["article_id"]) for row in internal_links._linkable_records()}
+    actual_ids = {str(plan["article_id"]) for plan in result["plans"]}
+    assert result["article_count"] == len(expected_ids)
+    assert len(result["plans"]) == len(expected_ids)
+    assert actual_ids == expected_ids
     assert result["resolved_targets"] == 0
     assert result["pending_targets"] > 0
     for plan in result["plans"]:

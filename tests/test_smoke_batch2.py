@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 
+from engine import approval, blueprints, quality
 from engine.approval import evaluate_for_approval
 from engine.blueprints import blueprint_from_plan
 from engine.draft_packets import build_draft_packet
@@ -34,7 +35,17 @@ def _matching_plan(spec: dict) -> dict:
     return plan
 
 
-def test_batch2_uses_real_source_families_and_passes_full_approval():
+def test_batch2_uses_real_source_families_and_passes_full_approval(monkeypatch):
+    # This is a frozen historical package regression, not a live production
+    # availability test. New formal articles must not retroactively invalidate
+    # the 2026-08-11 fixture. Live dedup itself is tested separately.
+    monkeypatch.setattr(blueprints, "keyword_owners", lambda *args, **kwargs: [])
+    monkeypatch.setattr(blueprints, "duplicate_candidates", lambda *args, **kwargs: [])
+    monkeypatch.setattr(blueprints, "structural_duplicate_candidates", lambda *args, **kwargs: [])
+    monkeypatch.setattr(approval, "keyword_owners", lambda *args, **kwargs: [])
+    monkeypatch.setattr(quality, "duplicate_candidates", lambda *args, **kwargs: [])
+    monkeypatch.setattr(quality, "structural_duplicate_candidates", lambda *args, **kwargs: [])
+
     manifest = _load(BATCH / "manifest.json")
     assert manifest["publication_policy"] == "draft_only_no_schedule_no_publish"
     assert len(manifest["articles"]) == 5

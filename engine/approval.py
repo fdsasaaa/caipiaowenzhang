@@ -157,6 +157,9 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "approved_at": datetime.now(timezone.utc).isoformat(),
         "status": "approved",
     }
+    provider_response_id = article.get("provider_response_id") or existing.get("provider_response_id")
+    if provider_response_id:
+        package["provider_response_id"] = provider_response_id
     if primary_cluster:
         package["primary_seo_cluster_id"] = primary_cluster
         package["secondary_seo_cluster_ids"] = secondary_clusters

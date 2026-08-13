@@ -98,3 +98,41 @@ def test_failed_draft_never_gets_publish_package(monkeypatch):
     assert result.approved is False
     assert result.status == "rejected_for_revision"
     assert result.publish_package is None
+
+
+def test_provider_response_id_reaches_real_approved_package_and_registry(monkeypatch):
+    monkeypatch.setattr(approval, "get_article_record", lambda article_id: {
+        "article_id": "A1",
+        "fingerprint": "FP-ORIGINAL",
+        "case_structure": "selector=后三;metrics=sum",
+        "information_gain_type": "method_mechanics_and_reproducible_case",
+        "technique_atoms": ["sum_range"],
+        "content_type": "technique_article",
+        "site_category_key": "tzjq",
+        "content_format": "html",
+    })
+    monkeypatch.setattr(approval, "keyword_owners", lambda *args, **kwargs: [])
+    _pass_quality(monkeypatch)
+    article = _article()
+    article["provider_response_id"] = "resp-real-approval-001"
+    result = approval.evaluate_for_approval(_packet(), article)
+    assert result.approved is True
+    assert result.publish_package is not None
+    assert result.publish_package["provider_response_id"] == "resp-real-approval-001"
+    assert result.registry_record["provider_response_id"] == "resp-real-approval-001"
+
+
+def test_approved_package_omits_empty_provider_response_id_for_frozen_compatibility(monkeypatch):
+    monkeypatch.setattr(approval, "get_article_record", lambda article_id: {
+        "article_id": "A1",
+        "fingerprint": "FP-ORIGINAL",
+        "content_type": "technique_article",
+        "site_category_key": "tzjq",
+        "content_format": "html",
+    })
+    monkeypatch.setattr(approval, "keyword_owners", lambda *args, **kwargs: [])
+    _pass_quality(monkeypatch)
+    result = approval.evaluate_for_approval(_packet(), _article())
+    assert result.approved is True
+    assert result.publish_package is not None
+    assert "provider_response_id" not in result.publish_package

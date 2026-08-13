@@ -1,0 +1,186 @@
+name: v6-capacity-live-dedup-scan-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v6
+    paths:
+      - '.github/v6-capacity-live-dedup-scan.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Audit V6 before capacity scan
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          python scripts/audit_reader_terminology.py --root .
+
+      - name: Compute raw, current-live and sustainable conflict-free capacity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+
+          from engine.dedup import _core
+          from engine.production_controller import _pre_generation_duplicate_block
+          from engine.semantic_dedup import structural_similarity
+          from engine.text import jaccard
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry
+
+          REMAINING_TARGET = 199
+          LEXICAL_THRESHOLD = 0.72
+          STRUCTURAL_THRESHOLD = 0.82
+
+          approved = sorted(Path('articles/approved').glob('*.json'))
+          assert len(approved) == 1, [str(p) for p in approved]
+          canary = json.loads(approved[0].read_text(encoding='utf-8'))
+          assert canary['article_id'] == 'LCM-IDEA-40be5a222f5cccf7', canary['article_id']
+          assert canary['content_hash'] == '6a13387d95446d290b2cb604e72494be739910b7ccf0d3a17ff07e40879bf301', canary['content_hash']
+
+          plan = _build_plan_with_capacity_retry(
+              REMAINING_TARGET,
+              provider_id='',
+              signals=[],
+              batch_size=25,
+              allow_ultra=False,
+          )
+          candidates = list(plan['candidates'])
+          assert len(candidates) == plan['attempt_budget'], (len(candidates), plan['attempt_budget'])
+
+          current_live_blocked = []
+          current_live_eligible = []
+          for row in candidates:
+              bp = row['blueprint']
+              block = _pre_generation_duplicate_block(bp)
+              if block:
+                  current_live_blocked.append({
+                      'article_id': bp.get('article_id'),
+                      'primary_keyword': bp.get('primary_keyword'),
+                      'priority_score': row.get('priority_score'),
+                      **block,
+                  })
+              else:
+                  current_live_eligible.append(row)
+
+          selected = []
+          pool_conflicts = []
+          for row in current_live_eligible:
+              bp = row['blueprint']
+              conflict = None
+              for chosen in selected:
+                  old = chosen['blueprint']
+                  if bp.get('fingerprint') and bp.get('fingerprint') == old.get('fingerprint'):
+                      conflict = {
+                          'gate': 'same_fingerprint',
+                          'owner_article_id': old.get('article_id'),
+                          'score': 1.0,
+                      }
+                      break
+                  lexical = jaccard(_core(bp), _core(old))
+                  if lexical >= LEXICAL_THRESHOLD:
+                      conflict = {
+                          'gate': 'lexical',
+                          'owner_article_id': old.get('article_id'),
+                          'score': round(float(lexical), 4),
+                      }
+                      break
+                  structural, reasons = structural_similarity(bp, old)
+                  if structural >= STRUCTURAL_THRESHOLD:
+                      conflict = {
+                          'gate': 'structural',
+                          'owner_article_id': old.get('article_id'),
+                          'score': round(float(structural), 4),
+                          'reasons': reasons,
+                      }
+                      break
+              if conflict:
+                  pool_conflicts.append({
+                      'article_id': bp.get('article_id'),
+                      'primary_keyword': bp.get('primary_keyword'),
+                      'subject_play': bp.get('subject_play'),
+                      'technique_atoms': bp.get('technique_atoms', []),
+                      'priority_score': row.get('priority_score'),
+                      **conflict,
+                  })
+              else:
+                  selected.append(row)
+
+          mode_dist = Counter(
+              str((row['blueprint'].get('production_filter_contract') or {}).get('mode') or 'unknown')
+              for row in selected
+          )
+          play_dist = Counter(str(row['blueprint'].get('subject_play') or '') for row in selected)
+          conflict_gates = Counter(str(row.get('gate') or '') for row in pool_conflicts)
+          current_gates = Counter(str(row.get('duplicate_gate') or '') for row in current_live_blocked)
+
+          payload = {
+              'production_branch': 'production/articles-200-20260813-v6',
+              'formal_inventory_before': plan['formal_inventory_before'],
+              'accepted_canary_count': 1,
+              'remaining_target': REMAINING_TARGET,
+              'raw_candidate_capacity_current_snapshot': plan['candidate_capacity_current_snapshot'],
+              'capacity_exhaustive': plan['capacity_exhaustive'],
+              'capacity_probe_passes': plan.get('capacity_probe_passes', 1),
+              'raw_contract_mode_distribution': plan.get('contract_mode_distribution', {}),
+              'attempt_budget': plan['attempt_budget'],
+              'current_live_duplicate_blocked': len(current_live_blocked),
+              'current_live_duplicate_gate_distribution': dict(current_gates),
+              'current_live_provider_eligible': len(current_live_eligible),
+              'sustainable_conflict_free_capacity_greedy': len(selected),
+              'sustainable_target_feasible': len(selected) >= REMAINING_TARGET,
+              'sustainable_contract_mode_distribution': dict(mode_dist),
+              'sustainable_play_distribution': dict(play_dist),
+              'intra_pool_conflict_count': len(pool_conflicts),
+              'intra_pool_conflict_gate_distribution': dict(conflict_gates),
+              'lexical_threshold': LEXICAL_THRESHOLD,
+              'structural_threshold': STRUCTURAL_THRESHOLD,
+              'provider_calls': 0,
+              'website_sync': False,
+              'scheduled': False,
+              'published': False,
+              'selected_preview': [
+                  {
+                      'article_id': r['blueprint'].get('article_id'),
+                      'primary_keyword': r['blueprint'].get('primary_keyword'),
+                      'subject_play': r['blueprint'].get('subject_play'),
+                      'technique_atoms': r['blueprint'].get('technique_atoms', []),
+                      'contract_mode': (r['blueprint'].get('production_filter_contract') or {}).get('mode'),
+                      'priority_score': r.get('priority_score'),
+                  }
+                  for r in selected[:25]
+              ],
+              'current_live_blocked_rows': current_live_blocked,
+              'intra_pool_conflicts': pool_conflicts,
+          }
+          Path('v6-capacity-live-dedup-scan.json').write_text(
+              json.dumps(payload, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8',
+          )
+          print(json.dumps({k:v for k,v in payload.items() if k not in {'current_live_blocked_rows','intra_pool_conflicts','selected_preview'}}, ensure_ascii=False, indent=2))
+          PY
+
+      - name: Upload zero-provider capacity evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: v6-capacity-live-dedup-scan
+          path: v6-capacity-live-dedup-scan.json
+          retention-days: 30

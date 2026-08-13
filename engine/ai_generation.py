@@ -63,6 +63,39 @@ def _practical_guidance_schema() -> dict:
     }
 
 
+def _angle_delivery_schema(packet: dict) -> dict:
+    contract = packet.get("article_angle_contract") or {}
+    facts = contract.get("required_machine_facts") or {}
+    return {
+        "type": "object",
+        "additionalProperties": False,
+        "required": [
+            "angle_type", "reader_question", "deliverable_summary",
+            "starting_space", "final_space", "excluded_space", "stage_count",
+            "stage_labels", "sample_stage_labels", "static_stage_labels", "evidence_mode",
+            "parameter_owner", "source_parameter_attribution_allowed",
+            "predictive_advantage_claimed", "stop_after_final_stage",
+        ],
+        "properties": {
+            "angle_type": {"type": "string", "enum": [str(contract.get("angle_type") or "")]},
+            "reader_question": {"type": "string", "enum": [str(contract.get("reader_question") or "")]},
+            "deliverable_summary": {"type": "string"},
+            "starting_space": {"type": "integer"},
+            "final_space": {"type": "integer"},
+            "excluded_space": {"type": "integer"},
+            "stage_count": {"type": "integer"},
+            "stage_labels": {"type": "array", "items": {"type": "string"}},
+            "sample_stage_labels": {"type": "array", "items": {"type": "string"}},
+            "static_stage_labels": {"type": "array", "items": {"type": "string"}},
+            "evidence_mode": {"type": "string", "enum": [str(facts.get("evidence_mode") or "")]},
+            "parameter_owner": {"type": "string", "enum": ["system_research"]},
+            "source_parameter_attribution_allowed": {"type": "boolean", "enum": [False]},
+            "predictive_advantage_claimed": {"type": "boolean", "enum": [False]},
+            "stop_after_final_stage": {"type": "boolean", "enum": [True]},
+        },
+    }
+
+
 def article_output_schema(packet: dict | None = None) -> dict:
     required = [
         "article_id", "title", "seo_title", "slug", "meta_description", "primary_keyword",
@@ -99,6 +132,16 @@ def article_output_schema(packet: dict | None = None) -> dict:
             "type": "string", "enum": [str(packet["editorial_contract_version"])]
         }
         properties["practical_guidance"] = _practical_guidance_schema()
+    if packet and packet.get("article_angle_contract_version"):
+        contract = packet.get("article_angle_contract") or {}
+        required.extend(["article_angle_contract_version", "information_gain_type", "angle_delivery"])
+        properties["article_angle_contract_version"] = {
+            "type": "string", "enum": [str(packet["article_angle_contract_version"])]
+        }
+        properties["information_gain_type"] = {
+            "type": "string", "enum": [str(contract.get("angle_type") or "")]
+        }
+        properties["angle_delivery"] = _angle_delivery_schema(packet)
     return {
         "type": "object",
         "additionalProperties": False,
@@ -129,6 +172,15 @@ def build_generation_prompt(packet: dict) -> str:
             )
 
     facts = packet.get("immutable_facts") or {}
+    angle_rules = ""
+    angle_contract = packet.get("article_angle_contract") or {}
+    if packet.get("article_angle_contract_version") and angle_contract:
+        angle_rules = (
+            "20. article_angle_contract 是本篇独立信息增益合同，不是SEO装饰。正文必须围绕 reader_question 和 required_deliverable 展开，不能退回成通用技巧介绍。\n"
+            "21. 必须输出 angle_delivery，并逐字复制 angle_type/reader_question；starting_space/final_space/excluded_space/stage_count、stage_labels、sample/static stage labels 和 evidence_mode 必须与合同机器事实完全一致。\n"
+            "22. parameter_owner 必须是 system_research；source_parameter_attribution_allowed=false；predictive_advantage_claimed=false；stop_after_final_stage=true。\n"
+            "23. 不同 angle 有不同交付：space_math 必须把候选空间数学算清；execution_checklist 必须形成可执行步骤清单；parameter_boundary 必须明确系统参数与来源/样本边界；multistage_order 必须按合同顺序逐层解释；sample_provenance 必须明确演示样本不构成预测；mechanics_case 必须完成可复算案例。\n"
+        )
     display_term_rules = ""
     if str(facts.get("subject_lottery") or "") == "分分彩":
         display_term_rules = (
@@ -155,6 +207,7 @@ def build_generation_prompt(packet: dict) -> str:
         "15. 同一数学事实如果在正文用不同句子重复出现，每个硬声明句都要分别登记；不能假设一条概括证据自动覆盖其他表述。\n"
         "16. 中文数字写法（如“三注”“百分之六”）与阿拉伯数字写法同样属于硬声明，不能通过换写法绕过证据登记。\n"
         + display_term_rules
+        + angle_rules
         + "\nDraft Packet:\n" + json.dumps(packet, ensure_ascii=False, sort_keys=True)
     )
 
@@ -226,10 +279,21 @@ def validate_generated_identity(packet: dict, article: dict) -> None:
     }
     if packet.get("editorial_contract_version"):
         expected["editorial_contract_version"] = packet.get("editorial_contract_version")
+    if packet.get("article_angle_contract_version"):
+        contract = packet.get("article_angle_contract") or {}
+        expected["article_angle_contract_version"] = packet.get("article_angle_contract_version")
+        expected["information_gain_type"] = contract.get("angle_type")
     errors = []
     for field, value in expected.items():
         if article.get(field) != value:
             errors.append(f"{field} differs from Draft Packet")
+    if packet.get("article_angle_contract_version"):
+        contract = packet.get("article_angle_contract") or {}
+        delivery = article.get("angle_delivery") or {}
+        if delivery.get("angle_type") != contract.get("angle_type"):
+            errors.append("angle_delivery.angle_type differs from Draft Packet")
+        if delivery.get("reader_question") != contract.get("reader_question"):
+            errors.append("angle_delivery.reader_question differs from Draft Packet")
     if errors:
         raise GenerationError("generated article violated immutable contract: " + "; ".join(errors))
 

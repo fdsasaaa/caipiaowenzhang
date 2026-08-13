@@ -8,11 +8,12 @@ from typing import Callable
 
 from .ai_generation import GenerationError, generate_article
 from .ai_generation_v22 import generate_multistage_article
+from .article_angles import audited_angle_type, expand_article_angle_variants
 from .approval import evaluate_and_record
 from .article_memory import append_article_state
 from .batch_quality_v22 import evaluate_multistage
 from .blueprints import blueprint_from_plan
-from .dedup import duplicate_candidates
+from .dedup import LEXICAL_DUPLICATE_THRESHOLD, duplicate_candidates, lexical_similarity
 from .draft_packets import build_case_bundle, build_draft_packet
 from .formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
 from .generation_normalization import normalize_generation_metadata
@@ -20,8 +21,10 @@ from .planner import plan_articles
 from .production_filter_contract import ProductionFilterContractError, build_production_filter_contract
 from .public_terminology import audit_article
 from .rules import load_rules
-from .semantic_dedup import structural_duplicate_candidates
-from .seo_keywords import normalize_keyword
+from .semantic_dedup import (
+    STRUCTURAL_DUPLICATE_THRESHOLD, structural_duplicate_candidates, structural_similarity,
+)
+from .seo_keywords import keyword_owners, normalize_keyword
 from .seo_priority import rank_blueprints
 from .store import ROOT
 
@@ -119,6 +122,7 @@ def _structural_key(record: dict) -> tuple:
         tuple(sorted(str(x) for x in record.get("technique_atoms", []) if str(x))),
         str(record.get("resolved_selector") or ""),
         str(record.get("case_structure") or ""),
+        audited_angle_type(record) or "",
     )
 
 
@@ -176,7 +180,9 @@ def discover_candidate_portfolio(
     truncated = False
     contract_modes = Counter()
     for unit in units:
-        result = plan_articles(provider_id, unit["lottery"], unit["play"], probe)
+        result = plan_articles(
+            provider_id, unit["lottery"], unit["play"], probe, include_used_angles=True
+        )
         plans = result.get("plans", [])
         if len(plans) >= probe:
             truncated = True
@@ -187,34 +193,40 @@ def discover_candidate_portfolio(
             enriched_plan = dict(plan)
             enriched_plan["subject_lottery"] = _public_subject(unit["lottery"], policy)
             enriched_plan["subject_play"] = unit["play"]
-            blueprint = blueprint_from_plan(enriched_plan)
+            blueprint = blueprint_from_plan(enriched_plan, apply_registry_gates=False)
             _assign_cluster_metadata(blueprint, policy)
             if blueprint.get("status") != "ready_for_draft":
-                continue
-            if blueprint.get("article_id") in existing_ids:
-                continue
-            keyword = normalize_keyword(blueprint.get("primary_keyword"))
-            if keyword and keyword in existing_keywords:
-                continue
-            if _structural_key(blueprint) in existing_structures:
                 continue
             try:
                 contract = _bind_primary_filter_contract(blueprint)
             except ProductionFilterContractError:
                 contract_blocked_here += 1
                 continue
-            mode = str(contract.get("mode") or "unknown")
-            contract_modes[mode] += 1
-            mode_here[mode] += 1
-            score_row = rank_blueprints([blueprint], signals)[0]
-            if not score_row.get("eligible"):
-                continue
-            raw_candidates.append({
-                "priority_score": float(score_row.get("priority_score") or 0),
-                "priority_band": score_row.get("priority_band"),
-                "blueprint": blueprint,
-            })
-            ready_here += 1
+            for variant in expand_article_angle_variants(blueprint):
+                article_id = str(variant.get("article_id") or "")
+                if not article_id or article_id in existing_ids:
+                    continue
+                keyword = normalize_keyword(variant.get("primary_keyword"))
+                if keyword and keyword in existing_keywords:
+                    continue
+                if keyword_owners(variant.get("primary_keyword"), exclude_article_id=article_id):
+                    continue
+                if _structural_key(variant) in existing_structures:
+                    continue
+                if duplicate_candidates(variant) or structural_duplicate_candidates(variant):
+                    continue
+                mode = str(contract.get("mode") or "unknown")
+                contract_modes[mode] += 1
+                mode_here[mode] += 1
+                score_row = rank_blueprints([variant], signals)[0]
+                if not score_row.get("eligible"):
+                    continue
+                raw_candidates.append({
+                    "priority_score": float(score_row.get("priority_score") or 0),
+                    "priority_band": score_row.get("priority_band"),
+                    "blueprint": variant,
+                })
+                ready_here += 1
         unit_reports.append({
             **unit,
             "planner_status": result.get("status"),
@@ -230,6 +242,7 @@ def discover_candidate_portfolio(
     seen_keywords: set[str] = set()
     seen_structures: set[tuple] = set()
     final_modes = Counter()
+    pool_duplicate_blocked = Counter()
     for row in raw_candidates:
         blueprint = row["blueprint"]
         article_id = str(blueprint.get("article_id") or "")
@@ -240,6 +253,20 @@ def discover_candidate_portfolio(
         if keyword and keyword in seen_keywords:
             continue
         if structure in seen_structures:
+            continue
+        pool_conflict = None
+        for chosen in candidates:
+            old = chosen["blueprint"]
+            lexical_score = lexical_similarity(blueprint, old)
+            if lexical_score >= LEXICAL_DUPLICATE_THRESHOLD:
+                pool_conflict = "lexical"
+                break
+            structural_score, _ = structural_similarity(blueprint, old)
+            if structural_score >= STRUCTURAL_DUPLICATE_THRESHOLD:
+                pool_conflict = "structural"
+                break
+        if pool_conflict:
+            pool_duplicate_blocked[pool_conflict] += 1
             continue
         seen_ids.add(article_id)
         if keyword:
@@ -255,6 +282,8 @@ def discover_candidate_portfolio(
         "capacity_exhaustive": not truncated,
         "candidate_count": len(candidates),
         "contract_mode_distribution": dict(final_modes),
+        "pool_duplicate_blocked": sum(pool_duplicate_blocked.values()),
+        "pool_duplicate_gate_distribution": dict(pool_duplicate_blocked),
         "candidates": candidates,
     }
 
@@ -302,6 +331,8 @@ def build_production_plan(
         "attempt_budget": attempt_budget,
         "attempt_batches": partition_batches(attempt_budget, resolved_batch),
         "contract_mode_distribution": dict(portfolio.get("contract_mode_distribution") or {}),
+        "pool_duplicate_blocked": int(portfolio.get("pool_duplicate_blocked") or 0),
+        "pool_duplicate_gate_distribution": dict(portfolio.get("pool_duplicate_gate_distribution") or {}),
         "work_units": portfolio["work_units"],
         "candidates": portfolio["candidates"][:attempt_budget],
         "stop_if_capacity_exhausted": True,
@@ -490,6 +521,7 @@ def execute_production_plan(
                     "quality_score": approval.quality_score,
                     "editorial_score": approval.editorial_score,
                     "multistage_score": multistage_score,
+                    "angle_score": getattr(approval, "angle_score", None),
                     "provider_response_id": response_id or None,
                     "errors": approval.errors,
                 })
@@ -508,6 +540,7 @@ def execute_production_plan(
                     "quality_score": approval.quality_score,
                     "editorial_score": approval.editorial_score,
                     "multistage_score": multistage_score,
+                    "angle_score": getattr(approval, "angle_score", None),
                     "provider_response_id": response_id or None,
                     "errors": terminology_errors,
                 })
@@ -533,11 +566,13 @@ def execute_production_plan(
                 "quality_score": approval.quality_score,
                 "editorial_score": approval.editorial_score,
                 "multistage_score": multistage_score,
+                "angle_score": getattr(approval, "angle_score", None),
                 "provider_response_id": response_id or None,
                 "primary_keyword": package.get("primary_keyword"),
                 "subject_lottery": package.get("subject_lottery") or blueprint.get("subject_lottery"),
                 "subject_play": package.get("subject_play") or blueprint.get("subject_play"),
                 "primary_seo_cluster_id": package.get("primary_seo_cluster_id"),
+                "information_gain_type": package.get("information_gain_type"),
             })
 
         if inventory_errors:
@@ -559,6 +594,8 @@ def execute_production_plan(
     quality_scores = [int(row["quality_score"]) for row in successful_rows if row.get("quality_score") is not None]
     editorial_scores = [int(row["editorial_score"]) for row in successful_rows if row.get("editorial_score") is not None]
     multistage_scores = [int(row["multistage_score"]) for row in successful_rows if row.get("multistage_score") is not None]
+    angle_scores = [int(row["angle_score"]) for row in successful_rows if row.get("angle_score") is not None]
+    angle_distribution = Counter(str(row.get("information_gain_type") or "legacy") for row in successful_rows)
 
     return {
         "status": "PASS_TARGET_REACHED" if staged >= target else "PARTIAL_STOPPED",
@@ -580,6 +617,8 @@ def execute_production_plan(
         "quality_score_average": round(sum(quality_scores) / len(quality_scores), 2) if quality_scores else None,
         "editorial_score_average": round(sum(editorial_scores) / len(editorial_scores), 2) if editorial_scores else None,
         "multistage_score_average": round(sum(multistage_scores) / len(multistage_scores), 2) if multistage_scores else None,
+        "angle_score_average": round(sum(angle_scores) / len(angle_scores), 2) if angle_scores else None,
+        "article_angle_distribution": dict(angle_distribution),
         "play_distribution": dict(play_distribution),
         "primary_cluster_distribution": dict(cluster_distribution),
         "website_sync_attempted": False,

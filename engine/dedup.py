@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from .store import iter_registry
 from .text import jaccard
 
+LEXICAL_DUPLICATE_THRESHOLD = 0.72
+
 
 @dataclass
 class DuplicateHit:
@@ -48,7 +50,13 @@ def _core(record: dict) -> str:
     ])
 
 
-def duplicate_candidates(candidate: dict, threshold: float = 0.72) -> list[DuplicateHit]:
+def lexical_similarity(candidate: dict, old: dict) -> float:
+    if candidate.get("fingerprint") and candidate.get("fingerprint") == old.get("fingerprint"):
+        return 1.0
+    return jaccard(_core(candidate), _core(old))
+
+
+def duplicate_candidates(candidate: dict, threshold: float = LEXICAL_DUPLICATE_THRESHOLD) -> list[DuplicateHit]:
     hits: list[DuplicateHit] = []
     candidate_article_id = candidate.get("article_id")
     candidate_core = _core(candidate)
@@ -65,8 +73,7 @@ def duplicate_candidates(candidate: dict, threshold: float = 0.72) -> list[Dupli
         if candidate.get("fingerprint") and candidate.get("fingerprint") == old.get("fingerprint"):
             hits.append(DuplicateHit(_text(old_article_id), _text(old.get("title")), 1.0, "same fingerprint"))
             continue
-        old_core = _core(old)
-        score = jaccard(candidate_core, old_core)
+        score = lexical_similarity(candidate, old)
         if score >= threshold:
             hits.append(DuplicateHit(_text(old_article_id), _text(old.get("title")), score, "lexical/core overlap"))
     return sorted(hits, key=lambda x: x.score, reverse=True)

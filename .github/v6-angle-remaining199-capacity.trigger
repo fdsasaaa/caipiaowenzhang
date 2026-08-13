@@ -1,0 +1,9 @@
+provider_calls=0
+accepted_canary=1
+remaining_target=199
+lexical_threshold=0.72
+structural_threshold=0.82
+angle_contract_version=1.0
+website_sync=false
+scheduling=false
+publishing=false

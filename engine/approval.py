@@ -44,6 +44,7 @@ def _enrich_for_quality(packet: dict, article: dict) -> dict:
     enriched = dict(article)
     values = {
         "provider_id": facts.get("provider_id") or existing.get("provider_id"),
+        "provider_response_id": article.get("provider_response_id") or existing.get("provider_response_id"),
         "lottery": facts.get("lottery") or existing.get("lottery"),
         "play": facts.get("play") or existing.get("play"),
         "subject_lottery": facts.get("subject_lottery") or existing.get("subject_lottery") or facts.get("lottery") or existing.get("lottery"),
@@ -156,6 +157,9 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "approved_at": datetime.now(timezone.utc).isoformat(),
         "status": "approved",
     }
+    provider_response_id = article.get("provider_response_id") or existing.get("provider_response_id")
+    if provider_response_id:
+        package["provider_response_id"] = provider_response_id
     if primary_cluster:
         package["primary_seo_cluster_id"] = primary_cluster
         package["secondary_seo_cluster_ids"] = secondary_clusters
@@ -204,6 +208,7 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "case_structure": facts.get("case_structure"),
         "information_gain_type": facts.get("information_gain_type"),
         "content_hash": sha256_text(article.get("content", "")) if article.get("content") else None,
+        "provider_response_id": article.get("provider_response_id") or existing.get("provider_response_id"),
     }
     if primary_cluster:
         changes["primary_seo_cluster_id"] = primary_cluster

@@ -60,7 +60,7 @@ jobs:
           assert '分分彩' in prompt
           assert 'BRBCW-002590' in prompt
           assert 'system_research' in prompt
-          assert 'source_parameter_attribution_allowed' in prompt
+          assert 'production_parameter_source_attribution_allowed' in prompt
           assert '43620' in prompt and '56380' in prompt and '100000' in prompt
 
           result={

@@ -1,0 +1,78 @@
+name: production-v5-preflight-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v5
+    paths:
+      - '.github/production-v5-preflight.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify strict 200 capacity and lock first canary candidate
+        shell: bash
+        run: |
+          mkdir -p runtime/production-v5-preflight
+          python -m engine.cli audit > runtime/production-v5-preflight/audit.json
+          python scripts/audit_reader_terminology.py --root . > runtime/production-v5-preflight/terminology.json
+          python - <<'PY' | tee runtime/production-v5-preflight/preflight.json
+          import json
+          from pathlib import Path
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry
+
+          before=len(list(Path('articles/approved').glob('*.json')))
+          campaign=_build_plan_with_capacity_retry(200,provider_id='',signals=[],batch_size=25,allow_ultra=False)
+          canary=_build_plan_with_capacity_retry(1,provider_id='',signals=[],batch_size=1,allow_ultra=False)
+          assert before == 0, before
+          assert campaign['formal_inventory_before'] == 0
+          assert campaign['capacity_exhaustive'] is True
+          assert campaign['candidate_capacity_current_snapshot'] >= 200
+          assert campaign['target_feasible_current_snapshot'] is True
+          assert canary['candidates']
+          row=canary['candidates'][0]
+          bp=row['blueprint']
+          contract=bp.get('production_filter_contract') or {}
+          result={
+              'formal_before':before,
+              'campaign_capacity':campaign['candidate_capacity_current_snapshot'],
+              'campaign_contract_modes':campaign.get('contract_mode_distribution',{}),
+              'campaign_attempt_budget':campaign['attempt_budget'],
+              'canary_article_id':bp.get('article_id'),
+              'canary_keyword':bp.get('primary_keyword'),
+              'canary_subject_lottery':bp.get('subject_lottery'),
+              'canary_subject_play':bp.get('subject_play'),
+              'canary_family':bp.get('technique_family'),
+              'canary_atoms':bp.get('technique_atoms',[]),
+              'canary_source_refs':bp.get('source_refs',[]),
+              'canary_rule_refs':bp.get('rule_refs',[]),
+              'canary_contract_mode':contract.get('mode'),
+              'canary_method_atoms':contract.get('method_atoms'),
+              'canary_method_atoms_covered':contract.get('method_atoms_covered'),
+              'canary_filter_pipeline_result':contract.get('filter_pipeline_result'),
+              'provider_calls':0,
+              'website_sync':False,
+              'scheduled':False,
+              'published':False,
+          }
+          assert set(result['canary_method_atoms'] or []) == set(result['canary_method_atoms_covered'] or [])
+          print(json.dumps(result,ensure_ascii=False,indent=2))
+          PY
+      - name: Upload V5 preflight evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-v5-preflight
+          path: runtime/production-v5-preflight
+          if-no-files-found: error
+          retention-days: 14

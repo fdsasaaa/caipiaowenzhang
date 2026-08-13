@@ -9,6 +9,21 @@ FILTER_ATOMS = {
     "recent_digit_exclusion", "position_filter",
 }
 
+# Narrow explicit-stop vocabulary. These all tell the reader to terminate or not
+# continue filtering. Do not broaden this to a bare "停" or generic "条件" match.
+EXPLICIT_STOP_MARKERS = (
+    "停止",
+    "停下",
+    "停在",
+    "不再",
+    "不继续",
+    "不得继续",
+    "不要继续",
+    "无需继续",
+    "无需再",
+    "到此为止",
+)
+
 
 @dataclass
 class EditorialQualityReport:
@@ -35,6 +50,13 @@ def _structured_filter_counts(packet: dict) -> tuple[int | None, int | None, int
         value = spec.get(key)
         values.append(value if isinstance(value, int) and value >= 0 else None)
     return values[0], values[1], values[2]
+
+
+def _explicit_stop_condition(value: object) -> bool:
+    text = str(value or "").strip()
+    if not text:
+        return False
+    return any(marker in text for marker in EXPLICIT_STOP_MARKERS)
 
 
 def evaluate_editorial(packet: dict, article: dict) -> EditorialQualityReport:
@@ -80,7 +102,7 @@ def evaluate_editorial(packet: dict, article: dict) -> EditorialQualityReport:
         score -= 10
 
     stop_condition = str(guidance.get("stop_condition") or "")
-    if not any(term in stop_condition for term in ("停止", "停下", "不再", "不得继续", "不要继续")):
+    if not _explicit_stop_condition(stop_condition):
         errors.append("stop_condition must explicitly tell the reader when to stop adding filters")
         score -= 10
 

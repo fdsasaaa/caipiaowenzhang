@@ -1,0 +1,167 @@
+name: production-v6-artifact-recovery-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v6
+    paths:
+      - '.github/production-v6-artifact-recovery.trigger'
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: .
+      GITHUB_TOKEN: ${{ github.token }}
+      EXPECTED_ARTIFACT_SHA256: e4c8a3cebffbac41e4a3a521eab5977b34b98d15e502ef541d9031d27a9b7aae
+      EXPECTED_ARTIFACT_ID: '9163936032'
+      EXPECTED_RUN_ID: '31654741820'
+      EXPECTED_ARTICLE_ID: LCM-IDEA-40be5a222f5cccf7
+      EXPECTED_RESPONSE_ID: resp_02bd8eb762446877016a7d10a8b818819bb019a7bb044864fd
+      EXPECTED_CONTENT_HASH: 6a13387d95446d290b2cb604e72494be739910b7ccf0d3a17ff07e40879bf301
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Download the exact accepted V6 artifact and verify its hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/v6-recovery
+          curl -fsSL \
+            -H "Authorization: Bearer $GITHUB_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts/${EXPECTED_ARTIFACT_ID}/zip" \
+            -o /tmp/v6-recovery/artifact.zip
+          echo "${EXPECTED_ARTIFACT_SHA256}  /tmp/v6-recovery/artifact.zip" | sha256sum -c -
+          unzip -q /tmp/v6-recovery/artifact.zip -d /tmp/v6-recovery/artifact
+          test -f "/tmp/v6-recovery/artifact/articles/approved/${EXPECTED_ARTICLE_ID}.json"
+          test -f /tmp/v6-recovery/artifact/registry/articles.jsonl
+          test -f /tmp/v6-recovery/artifact/production-v6-canary-summary.json
+          test -f /tmp/v6-recovery/artifact/production-v6-canary-provider.json
+
+      - name: Prove the artifact is exactly one accepted lifecycle extension of current V6
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os
+          from pathlib import Path
+
+          root=Path('/tmp/v6-recovery/artifact')
+          article_id=os.environ['EXPECTED_ARTICLE_ID']
+          response_id=os.environ['EXPECTED_RESPONSE_ID']
+          expected_hash=os.environ['EXPECTED_CONTENT_HASH']
+
+          summary=json.loads((root/'production-v6-canary-summary.json').read_text(encoding='utf-8'))
+          provider=json.loads((root/'production-v6-canary-provider.json').read_text(encoding='utf-8'))
+          inventory=json.loads((root/'production-v6-canary-inventory.json').read_text(encoding='utf-8'))
+
+          assert summary['attempted']==1, summary
+          assert summary['generated']==1, summary
+          assert summary['approved']==1, summary
+          assert summary['staged']==1, summary
+          assert summary['quality_average']==100, summary
+          assert summary['editorial_average']==100, summary
+          assert summary['provider_requests_captured']==1, summary
+          assert summary['response_ids']==[response_id], summary
+          assert inventory['formal_count']==1 and inventory['errors']==[], inventory
+          assert len(provider)==1 and provider[0]['response_id']==response_id, provider
+          assert provider[0]['article_id']==article_id, provider
+
+          approved_path=root/'articles'/'approved'/f'{article_id}.json'
+          approved=json.loads(approved_path.read_text(encoding='utf-8'))
+          content=str(approved.get('content') or '')
+          actual_hash=hashlib.sha256(content.encode('utf-8')).hexdigest()
+          assert actual_hash==expected_hash, (actual_hash, expected_hash)
+          assert approved.get('content_hash')==expected_hash, approved.get('content_hash')
+          assert approved.get('status')=='approved', approved.get('status')
+          assert approved.get('subject_lottery')=='分分彩', approved.get('subject_lottery')
+          assert approved.get('primary_keyword')=='分分彩五星直选跨度技巧', approved.get('primary_keyword')
+
+          current_registry=Path('registry/articles.jsonl').read_text(encoding='utf-8').splitlines()
+          artifact_registry=(root/'registry'/'articles.jsonl').read_text(encoding='utf-8').splitlines()
+          assert len(artifact_registry)==len(current_registry)+1, (len(current_registry),len(artifact_registry))
+          assert artifact_registry[:len(current_registry)]==current_registry, 'artifact registry is not current registry + one exact row'
+          added=json.loads(artifact_registry[-1])
+          assert added.get('article_id')==article_id, added
+          assert added.get('status')=='approved', added
+          assert added.get('content_hash')==expected_hash, added
+          assert added.get('subject_lottery')=='分分彩', added
+          assert added.get('primary_keyword')=='分分彩五星直选跨度技巧', added
+
+          evidence={
+              'run_id':os.environ['EXPECTED_RUN_ID'],
+              'artifact_id':os.environ['EXPECTED_ARTIFACT_ID'],
+              'artifact_sha256':os.environ['EXPECTED_ARTIFACT_SHA256'],
+              'response_id':response_id,
+              'article_id':article_id,
+              'content_hash':expected_hash,
+              'current_registry_lines':len(current_registry),
+              'artifact_registry_lines':len(artifact_registry),
+              'registry_extension_rows':1,
+              'provider_calls_recovery':0,
+              'website_sync':False,
+              'scheduled':False,
+              'published':False,
+          }
+          Path('production-v6-artifact-recovery-evidence.json').write_text(
+              json.dumps(evidence,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(evidence,ensure_ascii=False,indent=2))
+          PY
+
+      - name: Restore exact Approved artifact and Registry lifecycle without regeneration
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp "/tmp/v6-recovery/artifact/articles/approved/${EXPECTED_ARTICLE_ID}.json" \
+             "articles/approved/${EXPECTED_ARTICLE_ID}.json"
+          cp /tmp/v6-recovery/artifact/registry/articles.jsonl registry/articles.jsonl
+          python -m engine.cli audit | tee production-v6-artifact-recovery-audit.json
+          python scripts/audit_reader_terminology.py --root . | tee production-v6-artifact-recovery-terminology.json
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          article_id=os.environ['EXPECTED_ARTICLE_ID']
+          expected_hash=os.environ['EXPECTED_CONTENT_HASH']
+          row=json.loads(Path(f'articles/approved/{article_id}.json').read_text(encoding='utf-8'))
+          assert row['article_id']==article_id
+          assert row['status']=='approved'
+          assert row['primary_keyword']=='分分彩五星直选跨度技巧'
+          assert row['subject_lottery']=='分分彩'
+          assert hashlib.sha256(str(row['content']).encode('utf-8')).hexdigest()==expected_hash
+          assert row['content_hash']==expected_hash
+          PY
+
+      - name: Commit the recovered accepted canary as article 1 of 200
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "articles/approved/${EXPECTED_ARTICLE_ID}.json" registry/articles.jsonl
+          git diff --cached --exit-code && { echo "Expected recovered files are not staged" >&2; exit 9; } || true
+          git commit -m "Recover accepted V6 production canary from verified artifact (1/200)"
+          git push origin HEAD:production/articles-200-20260813-v6
+
+      - name: Upload recovery evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-v6-artifact-recovery
+          path: |
+            production-v6-artifact-recovery-*.json
+          if-no-files-found: warn
+          retention-days: 30

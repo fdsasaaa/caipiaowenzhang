@@ -35,6 +35,9 @@ def _plan_for_disk(plan: dict) -> dict:
             "subject_lottery": row["blueprint"].get("subject_lottery"),
             "subject_play": row["blueprint"].get("subject_play"),
             "technique_atoms": row["blueprint"].get("technique_atoms", []),
+            "production_contract_mode": (row["blueprint"].get("production_filter_contract") or {}).get("mode"),
+            "primary_filter_spec": row["blueprint"].get("primary_filter_spec"),
+            "filter_pipeline_result": row["blueprint"].get("filter_pipeline_result"),
             "priority_score": row.get("priority_score"),
             "priority_band": row.get("priority_band"),
         }
@@ -149,6 +152,7 @@ def main() -> int:
         "target_band": plan["target_band"],
         "batch_size": plan["batch_size"],
         "candidate_capacity_current_snapshot": plan["candidate_capacity_current_snapshot"],
+        "contract_mode_distribution": plan.get("contract_mode_distribution", {}),
         "capacity_exhaustive": plan["capacity_exhaustive"],
         "target_feasible_current_snapshot": plan["target_feasible_current_snapshot"],
         "capacity_probe_passes": plan.get("capacity_probe_passes", 1),
@@ -182,11 +186,13 @@ def main() -> int:
         "approved": result["approved"],
         "formal_inventory_staged": result["formal_inventory_staged"],
         "approval_failed": result["approval_failed"],
+        "multistage_failed": result.get("multistage_failed", 0),
         "generation_failed": result["generation_failed"],
         "reader_terminology_failed": result["reader_terminology_failed"],
         "formal_inventory_error_count": result["formal_inventory_error_count"],
         "quality_score_average": result["quality_score_average"],
         "editorial_score_average": result["editorial_score_average"],
+        "multistage_score_average": result.get("multistage_score_average"),
     })
     _write(output_dir / "summary.json", summary)
     print(json.dumps(summary, ensure_ascii=False, indent=2))

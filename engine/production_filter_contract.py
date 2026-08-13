@@ -19,7 +19,21 @@ STATIC_ATOMS = {
     "neighbor_number",
 }
 SAMPLE_ATOMS = {"cold_hot_split", "frequency_window", "omission_threshold"}
-SUPPORTED_PRIMARY_ATOMS = STATIC_ATOMS | SAMPLE_ATOMS
+SUPPORTED_METHOD_ATOMS = STATIC_ATOMS | SAMPLE_ATOMS
+CONTEXT_ATOMS = {"position_filter"}
+PRODUCTION_FREQUENCY_TOP_N = 5
+
+# System-authored order. It is deterministic and independent of the synthetic
+# draw sample. Source families support which atoms belong to the article; they
+# do not claim this stage order or the numeric presets below.
+STATIC_STAGE_ORDER = (
+    "sum_range",
+    "span_range",
+    "big_small_filter",
+    "odd_even_filter",
+    "repeat_number",
+    "neighbor_number",
+)
 
 
 def _play_width(play: str) -> int | None:
@@ -40,7 +54,9 @@ def _domain_key(play: str) -> str:
     value = str(play or "")
     width = _play_width(value)
     if "大小单双" in value:
-        raise ProductionFilterContractError("大小单双 play uses categorical betting semantics; numeric primary-filter contract not enabled")
+        raise ProductionFilterContractError(
+            "大小单双 play uses categorical betting semantics; numeric production filter contract not enabled"
+        )
     if "组选3" in value:
         return "group3_3digit"
     if "组选6" in value:
@@ -79,42 +95,97 @@ def _has_neighbor(candidate: tuple[int, ...]) -> bool:
     return any(b - a == 1 for index, a in enumerate(values) for b in values[index + 1 :])
 
 
-def _static_filter(atom: str, candidate: tuple[int, ...], width: int) -> tuple[bool, dict, str]:
+def _static_filter(atom: str, candidate: tuple[int, ...], width: int) -> tuple[bool, dict, str, str]:
     if atom == "sum_range":
         lo, hi = 3 * width, 6 * width
-        return lo <= sum(candidate) <= hi, {"min": lo, "max": hi}, "digit_sum"
+        return lo <= sum(candidate) <= hi, {"min": lo, "max": hi}, "digit_sum", f"和值{lo}–{hi}"
     if atom == "span_range":
         if width < 2:
-            return False, {"min": 2, "max": 6}, "span"
+            return False, {"min": 2, "max": 6}, "span", "跨度2–6"
         span = max(candidate) - min(candidate)
-        return 2 <= span <= 6, {"min": 2, "max": 6}, "span"
+        return 2 <= span <= 6, {"min": 2, "max": 6}, "span", "跨度2–6"
     if atom == "odd_even_filter":
         odd_count = 1 if width <= 3 else 2
-        return sum(value % 2 for value in candidate) == odd_count, {"odd_count": odd_count}, "odd_count"
+        return (
+            sum(value % 2 for value in candidate) == odd_count,
+            {"odd_count": odd_count},
+            "odd_count",
+            f"恰好{odd_count}个单号",
+        )
     if atom == "big_small_filter":
         big_count = 1 if width <= 3 else 2
-        return sum(value >= 5 for value in candidate) == big_count, {"big_count": big_count}, "big_count"
+        return (
+            sum(value >= 5 for value in candidate) == big_count,
+            {"big_count": big_count},
+            "big_count",
+            f"恰好{big_count}个大号",
+        )
     if atom == "repeat_number":
-        return len(set(candidate)) < len(candidate), {"has_repeat": True}, "repeat_structure"
+        return (
+            len(set(candidate)) < len(candidate),
+            {"has_repeat": True},
+            "repeat_structure",
+            "至少存在一个重号",
+        )
     if atom == "neighbor_number":
-        return _has_neighbor(candidate), {"pair_difference": 1, "circular_0_9": False}, "neighbor_pair"
-    raise ProductionFilterContractError(f"unsupported static primary atom: {atom}")
+        return (
+            _has_neighbor(candidate),
+            {"pair_difference": 1, "circular_0_9": False},
+            "neighbor_pair",
+            "至少存在一对差1邻号",
+        )
+    raise ProductionFilterContractError(f"unsupported static production atom: {atom}")
 
 
 def _frequency_pool(case_bundle: dict) -> tuple[list[int], dict]:
     freq = case_bundle.get("frequency")
     if not isinstance(freq, dict):
         raise ProductionFilterContractError("frequency case bundle missing")
-    digits = freq.get("top_frequency_digits")
-    if not isinstance(digits, list) or not digits:
-        raise ProductionFilterContractError("top_frequency_digits missing from frequency case")
-    clean = sorted({int(value) for value in digits})
-    if not clean or any(value < 0 or value > 9 for value in clean):
-        raise ProductionFilterContractError("invalid top_frequency_digits")
+
+    # Formal production uses one fixed, system-owned selection rule whenever the
+    # complete 0-9 sample frequency table is available: rank by descending sample
+    # frequency, break ties by ascending digit, then keep Top-5. The *rule* is
+    # fixed before article generation; the exact five digits are calculated from
+    # the deterministic synthetic case and are not source-selected or pre-known.
+    full_frequency = freq.get("frequency")
+    clean: list[int]
+    ranking_source: str
+    if isinstance(full_frequency, dict) and full_frequency:
+        parsed: list[tuple[int, int]] = []
+        for raw_digit, raw_count in full_frequency.items():
+            try:
+                digit = int(raw_digit)
+                count = int(raw_count)
+            except (TypeError, ValueError) as exc:
+                raise ProductionFilterContractError("invalid full frequency table") from exc
+            if digit < 0 or digit > 9 or count < 0:
+                raise ProductionFilterContractError("invalid full frequency table")
+            parsed.append((digit, count))
+        if len({digit for digit, _ in parsed}) < PRODUCTION_FREQUENCY_TOP_N:
+            raise ProductionFilterContractError("full frequency table has fewer than five digits")
+        ordered = sorted(parsed, key=lambda item: (-item[1], item[0]))
+        ranked = [digit for digit, _ in ordered[:PRODUCTION_FREQUENCY_TOP_N]]
+        clean = sorted(ranked)
+        ranking_source = "full_frequency_table_top5"
+    else:
+        # Backward-compatible fallback for isolated historical/unit-test case
+        # bundles that only carry an already-resolved digit list. Production case
+        # bundles contain the full table and therefore take the Top-5 path above.
+        digits = freq.get("top_frequency_digits")
+        if not isinstance(digits, list) or not digits:
+            raise ProductionFilterContractError("frequency table/top_frequency_digits missing from frequency case")
+        clean = sorted({int(value) for value in digits})
+        if not clean or any(value < 0 or value > 9 for value in clean):
+            raise ProductionFilterContractError("invalid top_frequency_digits")
+        ranking_source = "pre_resolved_compatibility_fallback"
+
     return clean, {
         "lookback": int(freq.get("sample_size") or 12),
         "top_n": len(clean),
         "digits": clean,
+        "ranking": "frequency_desc_then_digit_asc",
+        "ranking_source": ranking_source,
+        "production_top_n_policy": PRODUCTION_FREQUENCY_TOP_N,
     }
 
 
@@ -126,6 +197,8 @@ def _omission_pool(case_bundle: dict) -> tuple[list[int], dict]:
     if not isinstance(digits, list) or not digits:
         raise ProductionFilterContractError("omission threshold produced no candidate digits")
     clean = sorted({int(value) for value in digits})
+    if any(value < 0 or value > 9 for value in clean):
+        raise ProductionFilterContractError("invalid omission candidate digits")
     return clean, {
         "lookback": int(omission.get("sample_size") or 12),
         "threshold": int(omission.get("threshold") or 0),
@@ -138,102 +211,307 @@ def _candidate_pool_filter(candidate: tuple[int, ...], digits: list[int]) -> boo
     return all(value in allowed for value in candidate)
 
 
-def _build_for_atom(blueprint: dict, case_bundle: dict, atom: str) -> dict:
-    play = str(blueprint.get("subject_play") or blueprint.get("play") or "")
-    selector = str(blueprint.get("resolved_selector") or case_bundle.get("selector") or "")
-    domain_key = _domain_key(play)
-    candidates = _domain(domain_key)
-    if not candidates:
-        raise ProductionFilterContractError("empty starting candidate domain")
-    width = len(candidates[0])
-
-    params: dict
-    metric: str
-    basis: str
-    support_mode: str
-    if atom in STATIC_ATOMS:
-        filtered = []
-        params = {}
-        metric = ""
-        for candidate in candidates:
-            matched, candidate_params, candidate_metric = _static_filter(atom, candidate, width)
-            params = candidate_params
-            metric = candidate_metric
-            if matched:
-                filtered.append(candidate)
-        basis = "system_research_preset_not_source_claim"
-        support_mode = "verified_rule_calculation"
-    elif atom in {"cold_hot_split", "frequency_window"}:
-        digits, params = _frequency_pool(case_bundle)
-        filtered = [candidate for candidate in candidates if _candidate_pool_filter(candidate, digits)]
-        metric = "top_frequency_digit_pool"
-        basis = "synthetic_case_fixed_window_research_preset"
-        support_mode = "synthetic_case_calculation"
-    elif atom == "omission_threshold":
-        if selector not in POSITION_INDEX or width != 1:
-            raise ProductionFilterContractError("omission primary filter requires one fixed position")
-        digits, params = _omission_pool(case_bundle)
-        filtered = [candidate for candidate in candidates if _candidate_pool_filter(candidate, digits)]
-        metric = "current_omission_threshold_digit_pool"
-        basis = "synthetic_case_fixed_threshold_research_preset"
-        support_mode = "synthetic_case_calculation"
-    else:
-        raise ProductionFilterContractError(f"unsupported primary filter atom: {atom}")
-
-    starting = len(candidates)
-    after = len(filtered)
-    if after <= 0 or after >= starting:
+def _method_atoms(blueprint: dict) -> list[str]:
+    atoms = [
+        str(atom) for atom in (blueprint.get("technique_atoms") or [])
+        if str(atom) and str(atom) not in CONTEXT_ATOMS
+    ]
+    if not atoms:
+        raise ProductionFilterContractError("production article has no method atom after context removal")
+    unsupported = sorted({atom for atom in atoms if atom not in SUPPORTED_METHOD_ATOMS})
+    if unsupported:
         raise ProductionFilterContractError(
-            f"primary filter must strictly reduce a non-empty candidate space: {atom} {starting}->{after}"
+            "production article contains unsupported method atoms: " + ", ".join(unsupported)
         )
+    return list(dict.fromkeys(atoms))
 
-    return {
-        "contract_version": "1.0",
+
+def _stage_groups(atoms: list[str]) -> list[tuple[str, ...]]:
+    atom_set = set(atoms)
+    groups: list[tuple[str, ...]] = []
+    for atom in STATIC_STAGE_ORDER:
+        if atom in atom_set:
+            groups.append((atom,))
+
+    # frequency_window is a required window definition, not a second independent
+    # filter when the same family also says cold_hot_split. Represent the pair as
+    # one compound, auditable frequency-pool stage instead of a duplicate no-op.
+    frequency_atoms = tuple(
+        atom for atom in ("cold_hot_split", "frequency_window") if atom in atom_set
+    )
+    if frequency_atoms:
+        groups.append(frequency_atoms)
+    if "omission_threshold" in atom_set:
+        groups.append(("omission_threshold",))
+    return groups
+
+
+def _static_stage(
+    atom: str,
+    candidates: list[tuple[int, ...]],
+    width: int,
+) -> tuple[list[tuple[int, ...]], dict]:
+    filtered: list[tuple[int, ...]] = []
+    params: dict = {}
+    metric = ""
+    label = atom
+    for candidate in candidates:
+        matched, candidate_params, candidate_metric, candidate_label = _static_filter(atom, candidate, width)
+        params = candidate_params
+        metric = candidate_metric
+        label = candidate_label
+        if matched:
+            filtered.append(candidate)
+    return filtered, {
         "atom": atom,
-        "selector": selector,
-        "subject_play": play,
-        "candidate_space_type": domain_key,
-        "candidate_width": width,
+        "covered_atoms": [atom],
+        "op": atom,
         "metric": metric,
         "params": params,
-        "basis": basis,
-        "support_mode": support_mode,
-        "support_refs": list(blueprint.get("rule_refs") or []),
-        "starting_space": starting,
-        "after_filter_space": after,
-        "excluded_space": starting - after,
-        "stop_after_primary_filter": True,
+        "label": label,
+        "basis": "experimental_parameter",
+        "support_mode": "verified_rule_calculation",
+        "selection_rule_freeze_before_observation": True,
+        "resolved_parameters_derived_from_synthetic_case": False,
         "parameter_freeze_before_observation": True,
-        "predictive_advantage_claimed": False,
-        "source_recommendation_claimed": False,
-        "method_note": (
-            "该参数由系统在正文生成前冻结，只用于演示可复算筛选机制；"
-            "候选空间收缩不代表命中率、收益或未来预测优势。"
+        "parameter_provenance": "system_research_preset_not_source_claim",
+    }
+
+
+def _frequency_stage(
+    covered_atoms: tuple[str, ...],
+    candidates: list[tuple[int, ...]],
+    case_bundle: dict,
+) -> tuple[list[tuple[int, ...]], dict]:
+    digits, params = _frequency_pool(case_bundle)
+    filtered = [candidate for candidate in candidates if _candidate_pool_filter(candidate, digits)]
+    if len(covered_atoms) == 2:
+        label = f"近{params['lookback']}期冷热/频率前{params['top_n']}数字池"
+        atom = "cold_hot_frequency_window"
+    elif covered_atoms[0] == "cold_hot_split":
+        label = f"近{params['lookback']}期热号前{params['top_n']}数字池"
+        atom = "cold_hot_split"
+    else:
+        label = f"近{params['lookback']}期频率前{params['top_n']}数字池"
+        atom = "frequency_window"
+    return filtered, {
+        "atom": atom,
+        "covered_atoms": list(covered_atoms),
+        "op": "digit_pool",
+        "metric": "top_frequency_digit_pool",
+        "params": params,
+        "label": label,
+        "basis": "synthetic_case_fixed_rule",
+        "support_mode": "synthetic_case_calculation",
+        "selection_rule": {
+            "lookback": params["lookback"],
+            "ranking": "frequency_desc_then_digit_asc",
+            "top_n": params["top_n"],
+        },
+        "selection_rule_freeze_before_observation": True,
+        "resolved_parameters_derived_from_synthetic_case": True,
+        "parameter_freeze_before_observation": False,
+        "parameter_provenance": (
+            "selection rule is system-prefrozen; resolved digit pool is calculated from deterministic synthetic case data"
         ),
     }
 
 
-def build_primary_filter_spec(blueprint: dict, case_bundle: dict) -> dict:
-    """Build the first valid machine-verifiable primary filter for a production article.
+def _omission_stage(
+    candidates: list[tuple[int, ...]],
+    case_bundle: dict,
+    selector: str,
+    width: int,
+) -> tuple[list[tuple[int, ...]], dict]:
+    if selector not in POSITION_INDEX or width != 1:
+        raise ProductionFilterContractError("omission filter requires one fixed position")
+    digits, params = _omission_pool(case_bundle)
+    filtered = [candidate for candidate in candidates if _candidate_pool_filter(candidate, digits)]
+    return filtered, {
+        "atom": "omission_threshold",
+        "covered_atoms": ["omission_threshold"],
+        "op": "digit_pool",
+        "metric": "current_omission_threshold_digit_pool",
+        "params": params,
+        "label": f"近{params['lookback']}期当前遗漏≥{params['threshold']}数字池",
+        "basis": "synthetic_case_fixed_rule",
+        "support_mode": "synthetic_case_calculation",
+        "selection_rule": {
+            "lookback": params["lookback"],
+            "threshold": params["threshold"],
+            "comparison": ">=",
+        },
+        "selection_rule_freeze_before_observation": True,
+        "resolved_parameters_derived_from_synthetic_case": True,
+        "parameter_freeze_before_observation": False,
+        "parameter_provenance": (
+            "lookback/threshold rule is system-prefrozen; resolved digit pool is calculated from deterministic synthetic case data"
+        ),
+    }
 
-    The source family may contain several technique atoms. We preserve its order,
-    skip position context, and choose the first supported atom whose frozen
-    contract produces a strict non-empty reduction. This is a system-authored
-    research preset, never a claim that the source recommended the parameter.
+
+def build_production_filter_contract(blueprint: dict, case_bundle: dict) -> dict:
+    """Bind every reader-facing method atom to an auditable production stage.
+
+    The source family supports broad method provenance only. Stage order, static
+    presets and sample-selection rules are system research choices fixed before
+    article prose generation. Exact sample-derived digit pools are *calculated*
+    from deterministic synthetic case data and are never described as pre-known.
+
+    Every stage must make a strict non-empty reduction. A method that would be a
+    no-op under the frozen contract blocks the candidate instead of remaining in
+    SEO/title while being silently ignored.
     """
-    atoms = [
-        str(atom) for atom in (blueprint.get("technique_atoms") or [])
-        if str(atom) and str(atom) != "position_filter"
-    ]
-    errors: list[str] = []
-    for atom in atoms:
-        if atom not in SUPPORTED_PRIMARY_ATOMS:
-            continue
-        try:
-            return _build_for_atom(blueprint, case_bundle, atom)
-        except ProductionFilterContractError as exc:
-            errors.append(f"{atom}: {exc}")
-    detail = "; ".join(errors[:5]) if errors else "no supported executable atom"
-    raise ProductionFilterContractError(
-        f"no valid production primary-filter contract for {blueprint.get('article_id')}: {detail}"
-    )
+    play = str(blueprint.get("subject_play") or blueprint.get("play") or "")
+    selector = str(blueprint.get("resolved_selector") or case_bundle.get("selector") or "")
+    domain_key = _domain_key(play)
+    original = list(_domain(domain_key))
+    if not original:
+        raise ProductionFilterContractError("empty starting candidate domain")
+    width = len(original[0])
+    method_atoms = _method_atoms(blueprint)
+    groups = _stage_groups(method_atoms)
+    if not groups:
+        raise ProductionFilterContractError("no executable production stage groups")
+
+    current = original
+    stages: list[dict] = []
+    covered: list[str] = []
+    for index, group in enumerate(groups, start=1):
+        before = len(current)
+        if len(group) == 1 and group[0] in STATIC_ATOMS:
+            filtered, metadata = _static_stage(group[0], current, width)
+        elif set(group).issubset({"cold_hot_split", "frequency_window"}):
+            filtered, metadata = _frequency_stage(group, current, case_bundle)
+        elif group == ("omission_threshold",):
+            filtered, metadata = _omission_stage(current, case_bundle, selector, width)
+        else:
+            raise ProductionFilterContractError("unsupported production stage group: " + ",".join(group))
+
+        after = len(filtered)
+        if after <= 0:
+            raise ProductionFilterContractError(
+                f"stage {index} ({'+'.join(group)}) empties candidate space: {before}->0"
+            )
+        if after >= before:
+            raise ProductionFilterContractError(
+                f"stage {index} ({'+'.join(group)}) does not make a strict reduction: {before}->{after}"
+            )
+
+        stage = {
+            "id": f"production-stage-{index}",
+            "index": index,
+            **metadata,
+            "before_space": before,
+            "after_space": after,
+            "excluded_space": before - after,
+            "support_refs": (
+                ["case_bundle"]
+                if metadata["support_mode"] == "synthetic_case_calculation"
+                else list(blueprint.get("rule_refs") or [])
+            ),
+            "predictive_advantage_claimed": False,
+            "source_recommendation_claimed": False,
+        }
+        stages.append(stage)
+        covered.extend(stage["covered_atoms"])
+        current = filtered
+
+    if set(covered) != set(method_atoms):
+        missing = sorted(set(method_atoms) - set(covered))
+        raise ProductionFilterContractError(
+            "reader-facing method atoms were not bound to executable/context stages: " + ", ".join(missing)
+        )
+
+    starting = len(original)
+    final = len(current)
+    result = {
+        "candidate_space_type": domain_key,
+        "space_type": domain_key,
+        "starting_space": starting,
+        "final_space": final,
+        "total_excluded": starting - final,
+        "stage_count": len(stages),
+        "stages": stages,
+    }
+    spec = {
+        "contract_version": "2.0",
+        "space_type": domain_key,
+        "starting_space": starting,
+        "stages": [
+            {
+                key: stage[key]
+                for key in (
+                    "id", "index", "label", "atom", "covered_atoms", "op", "metric", "params",
+                    "basis", "support_mode", "support_refs", "selection_rule_freeze_before_observation",
+                    "resolved_parameters_derived_from_synthetic_case", "parameter_freeze_before_observation",
+                    "parameter_provenance",
+                )
+                if key in stage
+            }
+            for stage in stages
+        ],
+        "method_atoms": method_atoms,
+        "stage_order_owner": "system_research",
+        "source_parameter_attribution": False,
+        "source_parameter_boundary": (
+            "source_refs support broad technique-family atoms only; stage order, static presets and sample-selection rules are system research choices"
+        ),
+    }
+
+    first = stages[0]
+    primary = {
+        "contract_version": "2.0",
+        "atom": first["atom"],
+        "covered_atoms": first["covered_atoms"],
+        "selector": selector,
+        "subject_play": play,
+        "candidate_space_type": domain_key,
+        "candidate_width": width,
+        "metric": first["metric"],
+        "params": first["params"],
+        "basis": first["basis"],
+        "support_mode": first["support_mode"],
+        "support_refs": first["support_refs"],
+        "starting_space": starting,
+        "after_filter_space": final if len(stages) > 1 else first["after_space"],
+        "excluded_space": (starting - final) if len(stages) > 1 else first["excluded_space"],
+        "stop_after_primary_filter": len(stages) == 1,
+        "selection_rule_freeze_before_observation": first["selection_rule_freeze_before_observation"],
+        "resolved_parameters_derived_from_synthetic_case": first["resolved_parameters_derived_from_synthetic_case"],
+        "parameter_freeze_before_observation": first["parameter_freeze_before_observation"],
+        "predictive_advantage_claimed": False,
+        "source_recommendation_claimed": False,
+        "method_note": (
+            "production filter parameters are system-owned research choices; machine candidate-space reduction does not imply predictive advantage"
+        ),
+    }
+
+    return {
+        "contract_version": "2.0",
+        "mode": "single_stage" if len(stages) == 1 else "multistage",
+        "method_atoms": method_atoms,
+        "method_atoms_covered": list(dict.fromkeys(covered)),
+        "context_atoms": [
+            str(atom) for atom in (blueprint.get("technique_atoms") or []) if str(atom) in CONTEXT_ATOMS
+        ],
+        "primary_filter_spec": primary,
+        "filter_pipeline_spec": spec,
+        "filter_pipeline_result": result,
+        "source_parameter_attribution": False,
+        "predictive_advantage_claimed": False,
+    }
+
+
+def build_primary_filter_spec(blueprint: dict, case_bundle: dict) -> dict:
+    """Backward-compatible single-stage API.
+
+    Multi-method articles must use build_production_filter_contract so no method
+    label can be silently ignored.
+    """
+    contract = build_production_filter_contract(blueprint, case_bundle)
+    if contract["mode"] != "single_stage":
+        raise ProductionFilterContractError(
+            "multiple reader-facing method atoms require the production multistage contract"
+        )
+    return contract["primary_filter_spec"]

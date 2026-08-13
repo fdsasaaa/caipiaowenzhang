@@ -5,6 +5,7 @@ import pytest
 from engine.production_filter_contract import (
     ProductionFilterContractError,
     build_primary_filter_spec,
+    build_production_filter_contract,
 )
 
 
@@ -21,6 +22,7 @@ def _bp(play: str, atoms: list[str], selector: str | None = None) -> dict:
         ),
         "technique_atoms": atoms,
         "rule_refs": ["RULE-1"],
+        "source_refs": ["SOURCE-1"],
     }
 
 
@@ -31,7 +33,10 @@ def test_five_digit_span_contract_is_exact_and_reducing():
     assert spec["starting_space"] == 100000
     assert spec["after_filter_space"] == 43620
     assert spec["excluded_space"] == 56380
-    assert spec["basis"] == "system_research_preset_not_source_claim"
+    assert spec["basis"] == "experimental_parameter"
+    assert spec["selection_rule_freeze_before_observation"] is True
+    assert spec["resolved_parameters_derived_from_synthetic_case"] is False
+    assert spec["parameter_freeze_before_observation"] is True
     assert spec["predictive_advantage_claimed"] is False
 
 
@@ -51,15 +56,42 @@ def test_two_digit_group_neighbor_contract_uses_45_group_space():
     assert spec["params"]["circular_0_9"] is False
 
 
-def test_invalid_repeat_primary_falls_through_to_next_atom():
-    # Group3 is already all repeated; repeat_number alone cannot reduce it.
-    spec = build_primary_filter_spec(_bp("后三组选3", ["repeat_number", "sum_range"], "后三"), {})
-    assert spec["atom"] == "sum_range"
-    assert spec["starting_space"] == 90
-    assert 0 < spec["after_filter_space"] < 90
+def test_multi_method_article_must_execute_all_methods_in_order():
+    contract = build_production_filter_contract(
+        _bp("后三直选", ["position_filter", "sum_range", "span_range"], "后三"),
+        {},
+    )
+    assert contract["mode"] == "multistage"
+    assert contract["method_atoms"] == ["sum_range", "span_range"]
+    assert set(contract["method_atoms_covered"]) == {"sum_range", "span_range"}
+    result = contract["filter_pipeline_result"]
+    assert result["starting_space"] == 1000
+    assert result["stage_count"] == 2
+    assert [(row["before_space"], row["after_space"], row["excluded_space"]) for row in result["stages"]] == [
+        (1000, 670, 330),
+        (670, 396, 274),
+    ]
+    assert result["final_space"] == 396
+    assert result["total_excluded"] == 604
+
+    with pytest.raises(ProductionFilterContractError, match="multistage"):
+        build_primary_filter_spec(
+            _bp("后三直选", ["position_filter", "sum_range", "span_range"], "后三"),
+            {},
+        )
 
 
-def test_frequency_contract_uses_precomputed_fixed_top3_pool():
+def test_noop_later_method_blocks_instead_of_silently_ignoring_it():
+    # Every group3 unit already has a repeated digit. After the sum stage,
+    # repeat_number is still a no-op and therefore the A+B article must block.
+    with pytest.raises(ProductionFilterContractError, match="does not make a strict reduction"):
+        build_production_filter_contract(
+            _bp("后三组选3", ["repeat_number", "sum_range"], "后三"),
+            {},
+        )
+
+
+def test_frequency_contract_distinguishes_frozen_rule_from_sample_derived_digits():
     case_bundle = {
         "selector": "后三",
         "frequency": {
@@ -69,10 +101,63 @@ def test_frequency_contract_uses_precomputed_fixed_top3_pool():
     }
     spec = build_primary_filter_spec(_bp("后三直选", ["frequency_window"], "后三"), case_bundle)
     assert spec["atom"] == "frequency_window"
-    assert spec["params"] == {"lookback": 12, "top_n": 3, "digits": [2, 5, 7]}
+    assert spec["params"]["lookback"] == 12
+    assert spec["params"]["top_n"] == 3
+    assert spec["params"]["digits"] == [2, 5, 7]
+    assert spec["params"]["ranking"] == "frequency_desc_then_digit_asc"
+    assert spec["params"]["ranking_source"] == "pre_resolved_compatibility_fallback"
+    assert spec["params"]["production_top_n_policy"] == 5
     assert spec["starting_space"] == 1000
     assert spec["after_filter_space"] == 27
     assert spec["support_mode"] == "synthetic_case_calculation"
+    assert spec["selection_rule_freeze_before_observation"] is True
+    assert spec["resolved_parameters_derived_from_synthetic_case"] is True
+    assert spec["parameter_freeze_before_observation"] is False
+
+
+def test_cold_hot_and_frequency_window_are_one_compound_stage_not_duplicate_noop_filters():
+    case_bundle = {
+        "selector": "后三",
+        "frequency": {
+            "sample_size": 12,
+            "top_frequency_digits": [7, 2, 5],
+        },
+    }
+    contract = build_production_filter_contract(
+        _bp("后三直选", ["cold_hot_split", "frequency_window"], "后三"),
+        case_bundle,
+    )
+    assert contract["mode"] == "single_stage"
+    stage = contract["filter_pipeline_result"]["stages"][0]
+    assert stage["atom"] == "cold_hot_frequency_window"
+    assert stage["covered_atoms"] == ["cold_hot_split", "frequency_window"]
+    assert stage["before_space"] == 1000
+    assert stage["after_space"] == 27
+    assert stage["support_mode"] == "synthetic_case_calculation"
+    assert stage["selection_rule_freeze_before_observation"] is True
+    assert stage["resolved_parameters_derived_from_synthetic_case"] is True
+    assert stage["parameter_freeze_before_observation"] is False
+    assert set(contract["method_atoms_covered"]) == {"cold_hot_split", "frequency_window"}
+
+
+def test_static_plus_sample_stage_preserves_each_stage_provenance():
+    case_bundle = {
+        "selector": "后三",
+        "frequency": {
+            "sample_size": 12,
+            "top_frequency_digits": [7, 2, 5],
+        },
+    }
+    contract = build_production_filter_contract(
+        _bp("后三直选", ["sum_range", "frequency_window"], "后三"),
+        case_bundle,
+    )
+    result = contract["filter_pipeline_result"]
+    assert result["stage_count"] == 2
+    assert result["stages"][0]["support_mode"] == "verified_rule_calculation"
+    assert result["stages"][1]["support_mode"] == "synthetic_case_calculation"
+    assert (result["stages"][0]["before_space"], result["stages"][0]["after_space"]) == (1000, 670)
+    assert (result["stages"][1]["before_space"], result["stages"][1]["after_space"]) == (670, 22)
 
 
 def test_omission_contract_requires_fixed_position_and_reduces_ten_digits():
@@ -89,6 +174,14 @@ def test_omission_contract_requires_fixed_position_and_reduces_ten_digits():
     assert spec["after_filter_space"] == 8
     assert spec["excluded_space"] == 2
     assert spec["params"]["threshold"] == 2
+    assert spec["selection_rule_freeze_before_observation"] is True
+    assert spec["resolved_parameters_derived_from_synthetic_case"] is True
+    assert spec["parameter_freeze_before_observation"] is False
+
+
+def test_unsupported_reader_method_atom_blocks_whole_article():
+    with pytest.raises(ProductionFilterContractError, match="unsupported method atoms"):
+        build_production_filter_contract(_bp("后三直选", ["sum_range", "dan_candidate"], "后三"), {})
 
 
 def test_daxiaodanshuang_numeric_contract_fails_closed():

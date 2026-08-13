@@ -7,13 +7,16 @@ from pathlib import Path
 from typing import Callable
 
 from .ai_generation import GenerationError, generate_article
+from .ai_generation_v22 import generate_multistage_article
 from .approval import evaluate_and_record
+from .article_memory import append_article_state
+from .batch_quality_v22 import evaluate_multistage
 from .blueprints import blueprint_from_plan
 from .draft_packets import build_case_bundle, build_draft_packet
 from .formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
 from .generation_normalization import normalize_generation_metadata
 from .planner import plan_articles
-from .production_filter_contract import ProductionFilterContractError, build_primary_filter_spec
+from .production_filter_contract import ProductionFilterContractError, build_production_filter_contract
 from .public_terminology import audit_article
 from .rules import load_rules
 from .seo_keywords import normalize_keyword
@@ -130,10 +133,15 @@ def _assign_cluster_metadata(blueprint: dict, policy: dict) -> None:
         blueprint["secondary_seo_cluster_ids"] = []
 
 
-def _bind_primary_filter_contract(blueprint: dict) -> None:
+def _bind_primary_filter_contract(blueprint: dict) -> dict:
     case_bundle = build_case_bundle(blueprint)
-    spec = build_primary_filter_spec(blueprint, case_bundle)
-    blueprint["primary_filter_spec"] = spec
+    contract = build_production_filter_contract(blueprint, case_bundle)
+    blueprint["production_filter_contract"] = contract
+    blueprint["primary_filter_spec"] = contract["primary_filter_spec"]
+    if contract["mode"] == "multistage":
+        blueprint["filter_pipeline_spec"] = contract["filter_pipeline_spec"]
+        blueprint["filter_pipeline_result"] = contract["filter_pipeline_result"]
+    return contract
 
 
 def discover_candidate_portfolio(
@@ -153,6 +161,7 @@ def discover_candidate_portfolio(
         return {
             "work_units": [], "candidate_count": 0, "candidates": [],
             "capacity_exhaustive": True, "probe_per_work_unit": 0,
+            "contract_mode_distribution": {},
         }
 
     multiplier = max(1, int(policy.get("candidate_attempt_multiplier") or 3))
@@ -163,6 +172,7 @@ def discover_candidate_portfolio(
     raw_candidates: list[dict] = []
     unit_reports: list[dict] = []
     truncated = False
+    contract_modes = Counter()
     for unit in units:
         result = plan_articles(provider_id, unit["lottery"], unit["play"], probe)
         plans = result.get("plans", [])
@@ -170,6 +180,7 @@ def discover_candidate_portfolio(
             truncated = True
         ready_here = 0
         contract_blocked_here = 0
+        mode_here = Counter()
         for plan in plans:
             enriched_plan = dict(plan)
             enriched_plan["subject_lottery"] = _public_subject(unit["lottery"], policy)
@@ -186,10 +197,13 @@ def discover_candidate_portfolio(
             if _structural_key(blueprint) in existing_structures:
                 continue
             try:
-                _bind_primary_filter_contract(blueprint)
+                contract = _bind_primary_filter_contract(blueprint)
             except ProductionFilterContractError:
                 contract_blocked_here += 1
                 continue
+            mode = str(contract.get("mode") or "unknown")
+            contract_modes[mode] += 1
+            mode_here[mode] += 1
             score_row = rank_blueprints([blueprint], signals)[0]
             if not score_row.get("eligible"):
                 continue
@@ -205,6 +219,7 @@ def discover_candidate_portfolio(
             "plans_seen": len(plans),
             "ready_candidates_before_global_dedup": ready_here,
             "primary_filter_contract_blocked": contract_blocked_here,
+            "contract_mode_distribution": dict(mode_here),
         })
 
     raw_candidates.sort(key=lambda row: row["priority_score"], reverse=True)
@@ -212,6 +227,7 @@ def discover_candidate_portfolio(
     seen_ids: set[str] = set()
     seen_keywords: set[str] = set()
     seen_structures: set[tuple] = set()
+    final_modes = Counter()
     for row in raw_candidates:
         blueprint = row["blueprint"]
         article_id = str(blueprint.get("article_id") or "")
@@ -228,6 +244,7 @@ def discover_candidate_portfolio(
             seen_keywords.add(keyword)
         seen_structures.add(structure)
         candidates.append(row)
+        final_modes[str((blueprint.get("production_filter_contract") or {}).get("mode") or "unknown")] += 1
 
     return {
         "work_units": unit_reports,
@@ -235,6 +252,7 @@ def discover_candidate_portfolio(
         "probe_per_work_unit": probe,
         "capacity_exhaustive": not truncated,
         "candidate_count": len(candidates),
+        "contract_mode_distribution": dict(final_modes),
         "candidates": candidates,
     }
 
@@ -281,6 +299,7 @@ def build_production_plan(
         "target_feasible_current_snapshot": feasible,
         "attempt_budget": attempt_budget,
         "attempt_batches": partition_batches(attempt_budget, resolved_batch),
+        "contract_mode_distribution": dict(portfolio.get("contract_mode_distribution") or {}),
         "work_units": portfolio["work_units"],
         "candidates": portfolio["candidates"][:attempt_budget],
         "stop_if_capacity_exhausted": True,
@@ -297,13 +316,49 @@ def _packet_with_cluster_metadata(blueprint: dict) -> dict:
     if blueprint.get("primary_seo_cluster_id"):
         facts["primary_seo_cluster_id"] = blueprint["primary_seo_cluster_id"]
         facts["secondary_seo_cluster_ids"] = list(blueprint.get("secondary_seo_cluster_ids", []))
+
     claims = packet.setdefault("claims", {})
     claims["forbidden_literal_terms_even_when_negated"] = list(claims.get("forbidden_terms", []))
     claims["editorial_scope_claim_evidence_rule"] = (
         "纯编辑范围/风险说明使用 claim_type=editorial, support_type=editorial, support_refs=[]；"
         "不要因为 packet 同时有 source_refs 就把这类句子标成 source_unverified。"
     )
+
+    contract = blueprint.get("production_filter_contract") or {}
+    if contract:
+        packet["production_filter_contract"] = contract
+        practicality = packet.setdefault("practicality", {})
+        practicality["primary_filter_spec"] = contract["primary_filter_spec"]
+        source_use = packet.setdefault("source_use", {})
+        source_use["production_parameter_owner"] = "system_research"
+        source_use["production_parameter_source_attribution_allowed"] = False
+        source_use["production_parameter_instruction"] = (
+            "source_refs只支持 broad 技巧家族/原子来源归属。生产pipeline的阶段顺序、静态参数和样本型选择规则由系统研究合同定义；"
+            "样本型阶段的具体数字池由演示数据确定性计算。不得把任何这些具体参数写成来源推荐、来源指定或原文参数。"
+        )
+        claims.setdefault("allowed", []).append(
+            "state production pipeline parameters as system-owned research choices and sample-derived pools as synthetic-case calculations, never as source-selected parameters"
+        )
+
+        if contract.get("mode") == "multistage":
+            packet["contract_version"] = "2.2-multistage"
+            practicality["filter_pipeline_spec"] = contract["filter_pipeline_spec"]
+            practicality["filter_pipeline_result"] = contract["filter_pipeline_result"]
+            stage_count = int(contract["filter_pipeline_result"].get("stage_count") or 0)
+            practicality["minimum_concrete_steps"] = max(
+                int(practicality.get("minimum_concrete_steps") or 4),
+                stage_count + 3,
+            )
+            packet.setdefault("case_bundle", {})["filter_pipeline_spec"] = contract["filter_pipeline_spec"]
+            packet.setdefault("case_bundle", {})["filter_pipeline_result"] = contract["filter_pipeline_result"]
+            packet.setdefault("output_contract", {})["require_multistage_pipeline"] = True
     return packet
+
+
+def _default_generator_for_packet(packet: dict) -> Callable:
+    if packet.get("contract_version") == "2.2-multistage":
+        return generate_multistage_article
+    return generate_article
 
 
 def execute_production_plan(
@@ -312,7 +367,7 @@ def execute_production_plan(
     model: str | None = None,
     api_key: str | None = None,
     transport=None,
-    generate_fn: Callable = generate_article,
+    generate_fn: Callable | None = None,
     approve_fn: Callable = evaluate_and_record,
     stage_fn: Callable = stage_formal_approved_package,
 ) -> dict:
@@ -326,6 +381,7 @@ def execute_production_plan(
     approved = 0
     approval_failed = 0
     generation_failed = 0
+    multistage_failed = 0
     terminology_failed = 0
     inventory_errors: list[dict] = []
     rows: list[dict] = []
@@ -346,8 +402,9 @@ def execute_production_plan(
             article_id = str(blueprint.get("article_id") or "")
             attempted += 1
             packet = _packet_with_cluster_metadata(blueprint)
+            active_generate_fn = generate_fn or _default_generator_for_packet(packet)
             try:
-                generation = generate_fn(packet, model=model, api_key=api_key, transport=transport)
+                generation = active_generate_fn(packet, model=model, api_key=api_key, transport=transport)
             except GenerationError as exc:
                 generation_failed += 1
                 rows.append({"article_id": article_id, "status": "generation_failed", "error": str(exc)})
@@ -355,6 +412,28 @@ def execute_production_plan(
 
             generated += 1
             article = normalize_generation_metadata(generation.article)
+            multistage_score = None
+            if packet.get("contract_version") == "2.2-multistage":
+                multistage = evaluate_multistage(packet, article)
+                multistage_score = multistage.score
+                if not multistage.passed:
+                    multistage_failed += 1
+                    approval_failed += 1
+                    errors = [f"[V2.2] {error}" for error in multistage.errors]
+                    if approve_fn is evaluate_and_record:
+                        append_article_state(article_id, "rejected", {
+                            "approval_errors": errors,
+                            "v22_multistage_score": multistage.score,
+                        })
+                    rows.append({
+                        "article_id": article_id,
+                        "status": "rejected_multistage",
+                        "approved": False,
+                        "multistage_score": multistage.score,
+                        "errors": errors,
+                    })
+                    continue
+
             approval = approve_fn(packet, article)
             if not approval.approved or not approval.publish_package:
                 approval_failed += 1
@@ -364,6 +443,7 @@ def execute_production_plan(
                     "approved": False,
                     "quality_score": approval.quality_score,
                     "editorial_score": approval.editorial_score,
+                    "multistage_score": multistage_score,
                     "errors": approval.errors,
                 })
                 continue
@@ -380,6 +460,7 @@ def execute_production_plan(
                     "approved": True,
                     "quality_score": approval.quality_score,
                     "editorial_score": approval.editorial_score,
+                    "multistage_score": multistage_score,
                     "errors": terminology_errors,
                 })
                 continue
@@ -403,6 +484,7 @@ def execute_production_plan(
                 "approved": True,
                 "quality_score": approval.quality_score,
                 "editorial_score": approval.editorial_score,
+                "multistage_score": multistage_score,
                 "primary_keyword": package.get("primary_keyword"),
                 "subject_lottery": package.get("subject_lottery") or blueprint.get("subject_lottery"),
                 "subject_play": package.get("subject_play") or blueprint.get("subject_play"),
@@ -427,6 +509,7 @@ def execute_production_plan(
     cluster_distribution = Counter(str(row.get("primary_seo_cluster_id") or "unassigned") for row in successful_rows)
     quality_scores = [int(row["quality_score"]) for row in successful_rows if row.get("quality_score") is not None]
     editorial_scores = [int(row["editorial_score"]) for row in successful_rows if row.get("editorial_score") is not None]
+    multistage_scores = [int(row["multistage_score"]) for row in successful_rows if row.get("multistage_score") is not None]
 
     return {
         "status": "PASS_TARGET_REACHED" if staged >= target else "PARTIAL_STOPPED",
@@ -439,12 +522,14 @@ def execute_production_plan(
         "formal_inventory_unchanged": unchanged,
         "generation_failed": generation_failed,
         "approval_failed": approval_failed,
+        "multistage_failed": multistage_failed,
         "reader_terminology_failed": terminology_failed,
         "formal_inventory_error_count": len(inventory_errors),
         "formal_inventory_errors": inventory_errors,
         "formal_inventory_after": formal_inventory_count(),
         "quality_score_average": round(sum(quality_scores) / len(quality_scores), 2) if quality_scores else None,
         "editorial_score_average": round(sum(editorial_scores) / len(editorial_scores), 2) if editorial_scores else None,
+        "multistage_score_average": round(sum(multistage_scores) / len(multistage_scores), 2) if multistage_scores else None,
         "play_distribution": dict(play_distribution),
         "primary_cluster_distribution": dict(cluster_distribution),
         "website_sync_attempted": False,

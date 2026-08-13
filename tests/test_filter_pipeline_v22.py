@@ -57,5 +57,5 @@ def test_v22_prompt_requires_all_stages_and_forbids_model_invented_extra_filter(
     assert "45 -> 10" in prompt
     assert "对子和值8–15" in prompt
     assert "10 -> 7" in prompt
-    assert "不得遗漏、换序或新增第三/第四层" in prompt
+    assert "不得遗漏、换序或新增合同外阶段" in prompt
     assert "experimental_parameter" in prompt

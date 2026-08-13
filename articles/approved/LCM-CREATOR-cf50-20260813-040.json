@@ -8,33 +8,27 @@
       "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
       "claim_type": "rule_fact",
       "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
-      "support_refs": [
-        "SSC-MECH-LOCATED-1D-V1"
-      ],
+      "support_refs": ["SSC-MECH-LOCATED-1D-V1"],
       "support_type": "verified_rule"
     },
     {
       "claim_text": "示例资金节奏：1、1.2、1、0.8、1、0.8。它不是追损，而是让每轮单位在窄区间内上下变化。",
       "claim_type": "calculation",
       "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
-      "support_refs": [
-        "case_bundle"
-      ],
+      "support_refs": ["case_bundle"],
       "support_type": "synthetic_case"
     },
     {
       "claim_text": "如果第2步没达到目标，第3步主动回到1，而不是继续升到1.5或2。整个周期结束后重新从1开始。",
       "claim_type": "calculation",
       "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
-      "support_refs": [
-        "case_bundle"
-      ],
+      "support_refs": ["case_bundle"],
       "support_type": "synthetic_case"
     }
   ],
-  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>示例资金节奏：1、1.2、1、0.8、1、0.8。它不是追损，而是让每轮单位在窄区间内上下变化。</p><h2>现场复算</h2><p>如果第2步没达到目标，第3步主动回到1，而不是继续升到1.5或2。整个周期结束后重新从1开始。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>波浪路径只是本金暴露控制工具，不能从路径形状推出任何盈利优势。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>示例资金节奏：1、1.2、1、0.8、1、0.8。它不是追损，而是让每轮单位在窄区间内上下变化。</p><h2>现场复算</h2><p>如果第2步没达到目标，第3步主动回到1，而不是继续升到1.5或2。整个周期结束后重新从1开始。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>波浪路径只是控制每轮投入幅度的一种方式，不改变前面固定的选号规则。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
   "content_format": "html",
-  "content_hash": "359b2ecba484537f3a7ef5048647de54cf90f3fcc135a28287ae5ba1f2682c0b",
+  "content_hash": "2369e0ff7983c467e4efb8aca69988a4cb5e7240f4785e105d53fc8b8ff78729",
   "content_type": "technique_article",
   "creator_batch_id": "CF50-20260813",
   "creator_first_contract_version": "1.0",
@@ -46,15 +40,9 @@
   "play": "定位胆",
   "primary_keyword": "分分彩定位胆波浪倍投技巧",
   "provider_id": null,
-  "rule_refs": [
-    "SSC-MECH-LOCATED-1D-V1"
-  ],
+  "rule_refs": ["SSC-MECH-LOCATED-1D-V1"],
   "search_intent": "了解定位胆的波浪单位研究方法，并看懂可复算示例和资金控制",
-  "secondary_keywords": [
-    "分分彩定位胆技巧",
-    "波浪单位",
-    "分分彩投注技巧"
-  ],
+  "secondary_keywords": ["分分彩定位胆技巧", "波浪单位", "分分彩投注技巧"],
   "seo_title": "分分彩定位胆波浪倍投技巧：小幅涨跌，不让倍数一路爬坡",
   "site_category_key": "tzjq",
   "slug": "ffc-located-wave-staking",
@@ -63,15 +51,7 @@
   "subject_lottery": "分分彩",
   "subject_play": "定位胆",
   "summary": "用波浪单位重新拆解定位胆，把选号逻辑、可复算例子和资金停止条件讲清楚。",
-  "tags": [
-    "分分彩",
-    "定位胆",
-    "波浪单位",
-    "投注技巧"
-  ],
-  "technique_atoms": [
-    "staking_wave",
-    "bounded_progression"
-  ],
+  "tags": ["分分彩", "定位胆", "波浪单位", "投注技巧"],
+  "technique_atoms": ["staking_wave", "bounded_progression"],
   "title": "分分彩定位胆波浪倍投技巧：小幅涨跌，不让倍数一路爬坡"
 }

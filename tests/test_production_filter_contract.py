@@ -101,7 +101,12 @@ def test_frequency_contract_distinguishes_frozen_rule_from_sample_derived_digits
     }
     spec = build_primary_filter_spec(_bp("后三直选", ["frequency_window"], "后三"), case_bundle)
     assert spec["atom"] == "frequency_window"
-    assert spec["params"] == {"lookback": 12, "top_n": 3, "digits": [2, 5, 7]}
+    assert spec["params"]["lookback"] == 12
+    assert spec["params"]["top_n"] == 3
+    assert spec["params"]["digits"] == [2, 5, 7]
+    assert spec["params"]["ranking"] == "frequency_desc_then_digit_asc"
+    assert spec["params"]["ranking_source"] == "pre_resolved_compatibility_fallback"
+    assert spec["params"]["production_top_n_policy"] == 5
     assert spec["starting_space"] == 1000
     assert spec["after_filter_space"] == 27
     assert spec["support_mode"] == "synthetic_case_calculation"

@@ -47,8 +47,6 @@ def _creator_payload(package: dict) -> tuple[dict, dict]:
     }
     article = dict(package)
     article["status"] = "draft"
-    # These are formal-inventory metadata, not model-output fields. Approval ignores
-    # unknown extras, but removing them keeps this fixture semantically minimal.
     for field in (
         "approved_at", "content_hash", "fingerprint", "creator_batch_id",
         "creator_first_contract_version", "published_url", "published_at",
@@ -94,13 +92,14 @@ def test_creator_first_batch_50_has_unique_seo_identity_and_no_intra_batch_dupli
     for i, left in enumerate(packages):
         for right in packages[i + 1:]:
             lexical = lexical_similarity(left, right)
-            structural = structural_similarity(left, right)
+            structural, reasons = structural_similarity(left, right)
             if lexical >= LEXICAL_DUPLICATE_THRESHOLD or structural >= STRUCTURAL_DUPLICATE_THRESHOLD:
                 conflicts.append({
                     "left": left["article_id"],
                     "right": right["article_id"],
                     "lexical": lexical,
                     "structural": structural,
+                    "reasons": reasons,
                 })
     assert not conflicts, conflicts[:10]
 

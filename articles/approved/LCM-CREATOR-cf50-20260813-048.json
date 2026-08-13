@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-048",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "三个不同数字中必须同时包含0到4和5到9。本例共有100个无序三数组。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "015包含小号0、1和大号5，保留；012全小排除；678全大排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果一个技巧需要解释十分钟才能知道怎么选，通常已经太复杂了。这次把规则压到一句话。</p><p>后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>核心思路</h2><p>三个不同数字中必须同时包含0到4和5到9。本例共有100个无序三数组。</p><h2>看一个例子就明白</h2><p>015包含小号0、1和大号5，保留；012全小排除；678全大排除。</p><p>参数可以换，但要在下一轮开始前换；不能先看结果，再把规则改成刚好解释结果的样子。</p><h2>如果连续做实验</h2><p>这和奇偶混合是两个独立维度，不建议在同一篇里继续交叉压缩到很小。</p><h2>为什么值得记录</h2><p>这篇只解决“怎么分类、怎么执行、怎么限制暴露”三个问题，不给出收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "3565fdd03bfa6e9544c101489c824d1b5740ba8dba3b8ca92792bf2d7f6b7794",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "06e122d13654a3cd008fa4025d254dc080054017b94be77e00dd17e740c5dd1d",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组六大小混合技巧：用组六大小混合做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三组选6",
+  "primary_keyword": "分分彩后三组六大小混合技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP6-V1"
+  ],
+  "search_intent": "了解后三组选6的组六大小混合研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三组选6技巧",
+    "组六大小混合",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group6-zone-mix",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选6",
+  "summary": "用组六大小混合重新拆解后三组选6，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三组选6",
+    "组六大小混合",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "group6_size",
+    "unordered_triple"
+  ],
+  "title": "分分彩后三组六大小混合技巧：三数组不要全大也不要全小"
+}

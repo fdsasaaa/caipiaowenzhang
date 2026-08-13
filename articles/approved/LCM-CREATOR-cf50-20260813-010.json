@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-010",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示时固定十位池{1,4,7}，个位池{0,2,5,8}。后二直选按位置展开，所以候选就是3×4=12组：10、12、15、18、40、42、45、48、70、72、75、78。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "位置池的重点不是这7个数字本身，而是先确定每个位置各选什么，再直接做笛卡尔组合。以后换池也必须在看结果前完成。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>演示时固定十位池{1,4,7}，个位池{0,2,5,8}。后二直选按位置展开，所以候选就是3×4=12组：10、12、15、18、40、42、45、48、70、72、75、78。</p><h2>现场复算</h2><p>位置池的重点不是这7个数字本身，而是先确定每个位置各选什么，再直接做笛卡尔组合。以后换池也必须在看结果前完成。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>12组属于比较窄的演示集合，我会使用固定小单位并设置明确结束轮次，不用翻倍追。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "0d22ff73a18eed90a4667c5dc5f383ab83c85602755478c41ef8fd26ec1069c4",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "2c8a43d01ff69fb28b482605b72ae300f29b7dfa8edcdf7146d6d37ad6c1326d",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选位置池技巧：用小位置池网格做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选位置池技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的小位置池网格研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "小位置池网格",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-grid-pools",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用小位置池网格重新拆解后二直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "小位置池网格",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "position_pool",
+    "grid_count"
+  ],
+  "title": "分分彩后二直选位置池技巧：十位3码、个位4码，先把12组写明白"
+}

@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-037",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "一星直选只看个位；选择几个不同数字，就展开为几注，中奖判定只看个位是否与所选数字相同。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "一星只看个位。本例先固定{1,4,7}三个数字，连续5轮都不改，重点记录执行是否稳定。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果第2轮开出4，只说明这一轮个位属于候选；如果开出8，则不属于。五轮结束前不调整3码。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先把复杂的预测说法放一边，只做一个能手算、能复盘的小实验。</p><p>一星直选只看个位；选择几个不同数字，就展开为几注，中奖判定只看个位是否与所选数字相同。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先说规则</h2><p>一星只看个位。本例先固定{1,4,7}三个数字，连续5轮都不改，重点记录执行是否稳定。</p><h2>实际怎么判断</h2><p>如果第2轮开出4，只说明这一轮个位属于候选；如果开出8，则不属于。五轮结束前不调整3码。</p><p>真正有用的地方不是这组参数本身，而是你能清楚知道每一个号码为什么留下、为什么排除。</p><h2>别把资金越做越重</h2><p>资金用1、1、1、1、1，结束后重新评估。这里不设计任何“中一次就升级”的动作。</p><h2>这个技巧的边界</h2><p>短期出现多少次都不能反过来证明这条结构有稳定优势。先把规则固定、记录完整，再谈是否值得继续研究。</p>",
+  "content_format": "html",
+  "content_hash": "d11f58146b12223bd22a8c92d9d67b7d5ead069543068b4da1ed1fa020b6d070",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "d63a2df893b4b19a9f82594b27ba08d362fe80aa99eab4b8fb15b3a18c2ae82e",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选三码技巧：用三码固定短轮做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选三码技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "了解一星直选的三码固定短轮研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩一星直选技巧",
+    "三码固定短轮",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-one-star-three-pool",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "用三码固定短轮重新拆解一星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "三码固定短轮",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "three_digit_pool",
+    "short_cycle"
+  ],
+  "title": "分分彩一星直选三码技巧：固定3码做短轮次，比追热号更容易复盘"
+}

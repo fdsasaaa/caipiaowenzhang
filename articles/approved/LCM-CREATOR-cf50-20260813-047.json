@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-047",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "三个数字互不相同，同时要求既有奇数也有偶数。本例共有100个无序三数组。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "012里0、2为偶，1为奇，保留；135三个都是奇数，排除；246三个都是偶数，也排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先把复杂的预测说法放一边，只做一个能手算、能复盘的小实验。</p><p>后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先说规则</h2><p>三个数字互不相同，同时要求既有奇数也有偶数。本例共有100个无序三数组。</p><h2>实际怎么判断</h2><p>012里0、2为偶，1为奇，保留；135三个都是奇数，排除；246三个都是偶数，也排除。</p><p>真正有用的地方不是这组参数本身，而是你能清楚知道每一个号码为什么留下、为什么排除。</p><h2>别把资金越做越重</h2><p>这是宽过滤，适合做分类知识，不应该配激进资金路径。</p><h2>这个技巧的边界</h2><p>短期出现多少次都不能反过来证明这条结构有稳定优势。先把规则固定、记录完整，再谈是否值得继续研究。</p>",
+  "content_format": "html",
+  "content_hash": "4b18c6cf193b58135f5b046ef90252d0413172146b27210b881d8641cd9b79e9",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "4d62be072717029ea8c3283bfa156a4593a43e90c74614e07c46868941f8b314",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组六奇偶混合技巧：用组六奇偶混合做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三组选6",
+  "primary_keyword": "分分彩后三组六奇偶混合技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP6-V1"
+  ],
+  "search_intent": "了解后三组选6的组六奇偶混合研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三组选6技巧",
+    "组六奇偶混合",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group6-parity-mix",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选6",
+  "summary": "用组六奇偶混合重新拆解后三组选6，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三组选6",
+    "组六奇偶混合",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "group6_parity",
+    "unordered_triple"
+  ],
+  "title": "分分彩后三组六奇偶混合技巧：排除三个全单或三个全双"
+}

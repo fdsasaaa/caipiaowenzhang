@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-031",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把数字按和为9分成五对：0/9、1/8、2/7、3/6、4/5。每次在一个固定位置只选择其中一对进行研究。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果本轮研究个位的2/7，那么只记录个位是否落在2或7。下一轮换不换镜像对，要在轮次开始前决定。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这篇不从“哪个号码热”开始，而是换一个更容易复算的角度。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>方法很简单</h2><p>把数字按和为9分成五对：0/9、1/8、2/7、3/6、4/5。每次在一个固定位置只选择其中一对进行研究。</p><h2>拿几个号码试一下</h2><p>如果本轮研究个位的2/7，那么只记录个位是否落在2或7。下一轮换不换镜像对，要在轮次开始前决定。</p><p>我会把这条条件写在纸上，开奖以后只做“符合/不符合”两个记录，不临时补第二个条件。</p><h2>资金怎么配</h2><p>每对只有2个数字，最容易犯的错就是连续没出现后加倍。这里反而推荐固定单位、固定轮数。</p><h2>最后提醒</h2><p>这里没有使用真实平台奖金、返点或赔率，也没有把这套筛选说成未来更容易命中。它只是一个研究型投注技巧。</p>",
+  "content_format": "html",
+  "content_hash": "89f5ffea76e975a3baa0890646038c0db7b17ca2e0b8422891cd0adfe84a6c13",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "a80780b4f15dd1f45a70f6bb5c2182752eecf430a583d4165258317043759247",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆镜像数字技巧：用镜像配对做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆镜像数字技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的镜像配对研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "镜像配对",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-mirror-pairs",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "用镜像配对重新拆解定位胆，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "镜像配对",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "mirror_pair",
+    "single_position_pool"
+  ],
+  "title": "分分彩定位胆镜像数字技巧：0和9、1和8成对看"
+}

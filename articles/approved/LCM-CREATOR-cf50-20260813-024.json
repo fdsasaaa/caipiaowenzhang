@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-024",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把五位数字相加后除以5。本例只研究余2的一组，十万种有序结果中正好有20000个。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "12346的和值16，除以5余1，不在本组；12347和值17，余2，属于本组。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这次不堆很多条件，只固定一个结构，然后把它算清楚。</p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>怎么选</h2><p>把五位数字相加后除以5。本例只研究余2的一组，十万种有序结果中正好有20000个。</p><h2>怎么算</h2><p>12346的和值16，除以5余1，不在本组；12347和值17，余2，属于本组。</p><p>如果你自己重新算一遍能得到同样的集合，这个技巧才算讲清楚。</p><h2>本金先设上限</h2><p>余0到余4本质是平行分类。挑一组做研究可以，但不能因为最近哪组多就临时换组。</p><h2>别把研究写成预测</h2><p>号码结构和资金路径是两件事：前者决定你研究什么，后者只决定你最多承担多少暴露。</p>",
+  "content_format": "html",
+  "content_hash": "5153477136834ebf2b8e40eb07ad9af25612eb330a868a6503128265d379ab51",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0f198344887c6d43336e78e3f3a96174583828e206db562f5b59682ff2da8fa5",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选和值余数技巧：用五位和模5做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选和值余数技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的五位和模5研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "五位和模5",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-sum-mod5",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "用五位和模5重新拆解五星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "五位和模5",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "sum_modulo",
+    "five_digit_partition"
+  ],
+  "title": "分分彩五星直选和值余数技巧：五位和除以5，先分成五组"
+}

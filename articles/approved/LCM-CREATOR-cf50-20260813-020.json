@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-020",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先选一个在开号前已经固定的后三结构，例如“首尾差2或5”。资金只用相对单位：1、1、0.8、0.8、0.6、0.6。每一步都沿用同一选号规则，不因上一轮结果改参数。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "六步全部走完仍没有达到你的实验目标，就停止这一轮并记录结果。下一轮重新开始，而不是第7步突然翻成2倍或4倍。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>先选一个在开号前已经固定的后三结构，例如“首尾差2或5”。资金只用相对单位：1、1、0.8、0.8、0.6、0.6。每一步都沿用同一选号规则，不因上一轮结果改参数。</p><h2>现场复算</h2><p>六步全部走完仍没有达到你的实验目标，就停止这一轮并记录结果。下一轮重新开始，而不是第7步突然翻成2倍或4倍。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>这条路径的目的只有一个：给连续实验设置明确的最大暴露。它不能改变号码出现概率，也不承担追回亏损的承诺。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "9e1f32762f52730379af9c9e3c01dc276e2a7f76d9ec6b3370e3e53518c20c14",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "c90d8656730db1fd78c02f4cb77973173917f344073e05bf50abfd8f90bc3637",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选资金降压技巧：用六步降压做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选资金降压技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的六步降压研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "六步降压",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-six-step-depressure",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "用六步降压重新拆解后三直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "六步降压",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "bankroll_depressure",
+    "fixed_stop"
+  ],
+  "title": "分分彩后三直选资金降压技巧：连续实验别用越输越大的路"
+}

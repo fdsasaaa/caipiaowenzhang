@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-006",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在00到99的二维表里，把十位+个位=9和=10看成两条对角线。本例一共19个有序组合：09、18、19、27、28、36、37、45、46、54、55、63、64、72、73、81、82、90、91。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "09、18、27一路到90属于和值9；19、28、37一路到91属于和值10。55虽然和值10也在集合里，因为后二直选允许两位相同。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这篇不从“哪个号码热”开始，而是换一个更容易复算的角度。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>方法很简单</h2><p>在00到99的二维表里，把十位+个位=9和=10看成两条对角线。本例一共19个有序组合：09、18、19、27、28、36、37、45、46、54、55、63、64、72、73、81、82、90、91。</p><h2>拿几个号码试一下</h2><p>09、18、27一路到90属于和值9；19、28、37一路到91属于和值10。55虽然和值10也在集合里，因为后二直选允许两位相同。</p><p>我会把这条条件写在纸上，开奖以后只做“符合/不符合”两个记录，不临时补第二个条件。</p><h2>资金怎么配</h2><p>这种小集合更适合用固定单位或者很浅的1、1、1.2三档测试，不适合无限追损。</p><h2>最后提醒</h2><p>这里没有使用真实平台奖金、返点或赔率，也没有把这套筛选说成未来更容易命中。它只是一个研究型投注技巧。</p>",
+  "content_format": "html",
+  "content_hash": "d8a99f35709352311d28744c1d34fff2d4c4dca4fe75e4cc0a28be64449b9ef5",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "030f824662eb971031237644368097515470ea8600d57811e8670af77fdc37b9",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值9和10技巧：用和值双对角做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选和值9和10技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的和值双对角研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "和值双对角",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-sum910",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用和值双对角重新拆解后二直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值双对角",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "sum_lines",
+    "ordered_pairs"
+  ],
+  "title": "分分彩后二直选和值9和10技巧：用两条对角线看号码"
+}

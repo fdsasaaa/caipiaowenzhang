@@ -1,0 +1,76 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-019",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "计算百位和个位的平均位置，要求十位与这个平均位置非常接近；用整数写法就是|2×十位-(百位+个位)|≤1。本例共有100个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如246中间4正好是2和6的平均数；257中间5距离两端平均4.5只有0.5，也算接近。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这次不堆很多条件，只固定一个结构，然后把它算清楚。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>怎么选</h2><p>计算百位和个位的平均位置，要求十位与这个平均位置非常接近；用整数写法就是|2×十位-(百位+个位)|≤1。本例共有100个组合。</p><h2>怎么算</h2><p>例如246中间4正好是2和6的平均数；257中间5距离两端平均4.5只有0.5，也算接近。</p><p>如果你自己重新算一遍能得到同样的集合，这个技巧才算讲清楚。</p><h2>本金先设上限</h2><p>这是纯数学关系，不代表开奖偏爱“平滑号码”。文章的价值在于给读者一个可复算的新观察维度。</p><h2>别把研究写成预测</h2><p>号码结构和资金路径是两件事：前者决定你研究什么，后者只决定你最多承担多少暴露。</p>",
+  "content_format": "html",
+  "content_hash": "4fa19eb50cc665c80beb23c55cdfdffbdc7c00882de4c85e67d24a256434a408",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "dfe248e574f7fc0b99c686fb3923b0b84e0fa8f8bd1b15f6d0399204883217ea",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选中位关系技巧：用中位近均值做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选中位关系技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的中位近均值研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "中位近均值",
+    "分分彩投注技巧"
+  ],
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-center-average",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "用中位近均值重新拆解后三直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "中位近均值",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "center_average",
+    "positional_relation"
+  ],
+  "title": "分分彩后三直选中位关系技巧：十位靠近两端平均值"
+}

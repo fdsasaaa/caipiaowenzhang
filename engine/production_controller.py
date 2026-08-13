@@ -12,6 +12,7 @@ from .approval import evaluate_and_record
 from .article_memory import append_article_state
 from .batch_quality_v22 import evaluate_multistage
 from .blueprints import blueprint_from_plan
+from .dedup import duplicate_candidates
 from .draft_packets import build_case_bundle, build_draft_packet
 from .formal_approved_inventory import FormalInventoryError, stage_formal_approved_package
 from .generation_normalization import normalize_generation_metadata
@@ -19,6 +20,7 @@ from .planner import plan_articles
 from .production_filter_contract import ProductionFilterContractError, build_production_filter_contract
 from .public_terminology import audit_article
 from .rules import load_rules
+from .semantic_dedup import structural_duplicate_candidates
 from .seo_keywords import normalize_keyword
 from .seo_priority import rank_blueprints
 from .store import ROOT
@@ -361,6 +363,35 @@ def _default_generator_for_packet(packet: dict) -> Callable:
     return generate_article
 
 
+def _pre_generation_duplicate_block(blueprint: dict) -> dict | None:
+    """Use the same live Registry duplicate gates before any provider request.
+
+    The Registry is re-read for every candidate, so a newly approved/staged article
+    immediately becomes a dedup owner for the next candidate in the same run.
+    Rejected/revision-only lifecycle rows remain non-owning through the underlying
+    duplicate helpers.
+    """
+    lexical = duplicate_candidates(blueprint)
+    if lexical:
+        hit = lexical[0]
+        return {
+            "duplicate_gate": "lexical",
+            "duplicate_article_id": hit.article_id,
+            "duplicate_score": round(float(hit.score), 4),
+            "duplicate_reason": hit.reason,
+        }
+    structural = structural_duplicate_candidates(blueprint)
+    if structural:
+        hit = structural[0]
+        return {
+            "duplicate_gate": "structural",
+            "duplicate_article_id": hit.article_id,
+            "duplicate_score": round(float(hit.score), 4),
+            "duplicate_reason": ",".join(hit.reasons),
+        }
+    return None
+
+
 def execute_production_plan(
     plan: dict,
     *,
@@ -383,6 +414,7 @@ def execute_production_plan(
     generation_failed = 0
     multistage_failed = 0
     terminology_failed = 0
+    pre_generation_duplicate_blocked = 0
     inventory_errors: list[dict] = []
     rows: list[dict] = []
     zero_progress_batches = 0
@@ -400,6 +432,16 @@ def execute_production_plan(
                 break
             blueprint = candidate["blueprint"]
             article_id = str(blueprint.get("article_id") or "")
+            duplicate_block = _pre_generation_duplicate_block(blueprint)
+            if duplicate_block:
+                pre_generation_duplicate_blocked += 1
+                rows.append({
+                    "article_id": article_id,
+                    "status": "pre_generation_duplicate_blocked",
+                    "approved": False,
+                    **duplicate_block,
+                })
+                continue
             attempted += 1
             packet = _packet_with_cluster_metadata(blueprint)
             active_generate_fn = generate_fn or _default_generator_for_packet(packet)
@@ -411,7 +453,10 @@ def execute_production_plan(
                 continue
 
             generated += 1
+            response_id = str(getattr(generation, "response_id", "") or "")
             article = normalize_generation_metadata(generation.article)
+            if response_id:
+                article["provider_response_id"] = response_id
             multistage_score = None
             if packet.get("contract_version") == "2.2-multistage":
                 multistage = evaluate_multistage(packet, article)
@@ -430,6 +475,7 @@ def execute_production_plan(
                         "status": "rejected_multistage",
                         "approved": False,
                         "multistage_score": multistage.score,
+                        "provider_response_id": response_id or None,
                         "errors": errors,
                     })
                     continue
@@ -444,6 +490,7 @@ def execute_production_plan(
                     "quality_score": approval.quality_score,
                     "editorial_score": approval.editorial_score,
                     "multistage_score": multistage_score,
+                    "provider_response_id": response_id or None,
                     "errors": approval.errors,
                 })
                 continue
@@ -461,6 +508,7 @@ def execute_production_plan(
                     "quality_score": approval.quality_score,
                     "editorial_score": approval.editorial_score,
                     "multistage_score": multistage_score,
+                    "provider_response_id": response_id or None,
                     "errors": terminology_errors,
                 })
                 continue
@@ -485,6 +533,7 @@ def execute_production_plan(
                 "quality_score": approval.quality_score,
                 "editorial_score": approval.editorial_score,
                 "multistage_score": multistage_score,
+                "provider_response_id": response_id or None,
                 "primary_keyword": package.get("primary_keyword"),
                 "subject_lottery": package.get("subject_lottery") or blueprint.get("subject_lottery"),
                 "subject_play": package.get("subject_play") or blueprint.get("subject_play"),
@@ -522,6 +571,7 @@ def execute_production_plan(
         "formal_inventory_unchanged": unchanged,
         "generation_failed": generation_failed,
         "approval_failed": approval_failed,
+        "pre_generation_duplicate_blocked": pre_generation_duplicate_blocked,
         "multistage_failed": multistage_failed,
         "reader_terminology_failed": terminology_failed,
         "formal_inventory_error_count": len(inventory_errors),
@@ -535,5 +585,6 @@ def execute_production_plan(
         "website_sync_attempted": False,
         "scheduled": False,
         "published": False,
+        "provider_response_ids": [row["provider_response_id"] for row in rows if row.get("provider_response_id")],
         "results": rows,
     }

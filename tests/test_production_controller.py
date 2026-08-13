@@ -156,3 +156,100 @@ def test_controller_does_not_count_failed_approval_toward_target():
     assert result["formal_inventory_staged"] == 0
     assert result["approval_failed"] == 1
     assert result["status"] == "PARTIAL_STOPPED"
+
+
+
+def test_controller_blocks_live_duplicate_before_provider(monkeypatch):
+    calls = {"generate": 0}
+
+    def fake_generate(packet, **kwargs):
+        calls["generate"] += 1
+        return SimpleNamespace(article={"article_id": packet["article_id"]}, response_id="resp-never")
+
+    monkeypatch.setattr(
+        "engine.production_controller.duplicate_candidates",
+        lambda blueprint: [SimpleNamespace(article_id="LIVE-001", score=0.84, reason="lexical/core overlap")],
+    )
+    monkeypatch.setattr("engine.production_controller.structural_duplicate_candidates", lambda blueprint: [])
+    plan = {
+        "target_new_formal_articles": 1,
+        "batch_size": 1,
+        "candidates": [{"priority_score": 90, "blueprint": _blueprint("CTRL-DUP-001")}],
+    }
+    result = execute_production_plan(plan, generate_fn=fake_generate)
+    assert calls["generate"] == 0
+    assert result["attempted"] == 0
+    assert result["generated"] == 0
+    assert result["pre_generation_duplicate_blocked"] == 1
+    assert result["results"][0]["status"] == "pre_generation_duplicate_blocked"
+    assert result["results"][0]["duplicate_article_id"] == "LIVE-001"
+
+
+def test_controller_rechecks_registry_before_each_candidate(monkeypatch):
+    duplicate_checks = {"count": 0}
+    generation_calls = {"count": 0}
+
+    def fake_duplicate(blueprint):
+        duplicate_checks["count"] += 1
+        if duplicate_checks["count"] == 1:
+            return []
+        return [SimpleNamespace(article_id="CTRL-FIRST", score=0.81, reason="lexical/core overlap")]
+
+    def fake_generate(packet, **kwargs):
+        generation_calls["count"] += 1
+        return SimpleNamespace(article={"article_id": packet["article_id"]}, response_id=f"resp-{generation_calls['count']}")
+
+    def fake_approve(packet, article):
+        package = _package(article["article_id"])
+        package["provider_response_id"] = article.get("provider_response_id")
+        return SimpleNamespace(approved=True, publish_package=package, status="approved", quality_score=100, editorial_score=100, errors=[])
+
+    def fake_stage(package):
+        return {"status": "staged", "article_id": package["article_id"]}
+
+    monkeypatch.setattr("engine.production_controller.duplicate_candidates", fake_duplicate)
+    monkeypatch.setattr("engine.production_controller.structural_duplicate_candidates", lambda blueprint: [])
+    plan = {
+        "target_new_formal_articles": 2,
+        "batch_size": 2,
+        "candidates": [
+            {"priority_score": 100, "blueprint": _blueprint("CTRL-FIRST")},
+            {"priority_score": 90, "blueprint": _blueprint("CTRL-SECOND")},
+        ],
+    }
+    result = execute_production_plan(plan, generate_fn=fake_generate, approve_fn=fake_approve, stage_fn=fake_stage)
+    assert duplicate_checks["count"] == 2
+    assert generation_calls["count"] == 1
+    assert result["attempted"] == 1
+    assert result["formal_inventory_staged"] == 1
+    assert result["pre_generation_duplicate_blocked"] == 1
+
+
+def test_controller_records_provider_response_id(monkeypatch):
+    monkeypatch.setattr("engine.production_controller.duplicate_candidates", lambda blueprint: [])
+    monkeypatch.setattr("engine.production_controller.structural_duplicate_candidates", lambda blueprint: [])
+    seen = {}
+
+    def fake_generate(packet, **kwargs):
+        return SimpleNamespace(article={"article_id": packet["article_id"]}, response_id="resp-controller-audit-001")
+
+    def fake_approve(packet, article):
+        seen["article_response_id"] = article.get("provider_response_id")
+        package = _package(article["article_id"])
+        package["provider_response_id"] = article.get("provider_response_id")
+        return SimpleNamespace(approved=True, publish_package=package, status="approved", quality_score=100, editorial_score=100, errors=[])
+
+    def fake_stage(package):
+        seen["package_response_id"] = package.get("provider_response_id")
+        return {"status": "staged", "article_id": package["article_id"]}
+
+    plan = {
+        "target_new_formal_articles": 1,
+        "batch_size": 1,
+        "candidates": [{"priority_score": 100, "blueprint": _blueprint("CTRL-AUDIT-001")}],
+    }
+    result = execute_production_plan(plan, generate_fn=fake_generate, approve_fn=fake_approve, stage_fn=fake_stage)
+    assert seen["article_response_id"] == "resp-controller-audit-001"
+    assert seen["package_response_id"] == "resp-controller-audit-001"
+    assert result["provider_response_ids"] == ["resp-controller-audit-001"]
+    assert result["results"][0]["provider_response_id"] == "resp-controller-audit-001"

@@ -1,0 +1,5 @@
+provider_calls=0
+known_patch_breakpoint=approval_failed_provider_response_id
+lexical_threshold=0.72
+structural_threshold=0.82
+targeted_generation_test=test_ai_generation_v2.py

@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "mode": "creator_first",
+  "recommended_default": true,
+  "max_memory_articles": 80,
+  "automatic_retry": false,
+  "public_subject_aliases": {
+    "时时彩": "分分彩"
+  },
+  "creative_mandate": [
+    "自由选择已验证玩法中的创作方向，不由候选池预先决定文章主题",
+    "允许创造新的技巧思路、组合方法、数据研究角度、资金管理和倍投研究设计",
+    "已有来源与历史文章只作为知识和记忆，不作为必须套用的模板",
+    "文章必须简约、明了、人性化，拒绝工程报告和批量模板口吻"
+  ],
+  "hard_gates": [
+    "verified_gameplay_mechanics",
+    "claim_evidence",
+    "bet_compliance",
+    "lexical_and_structural_dedup",
+    "seo_keyword_ownership",
+    "reader_terminology",
+    "human_style",
+    "formal_inventory_integrity"
+  ],
+  "economics_policy": {
+    "default_case_scope": "mechanics_only",
+    "unverified_odds_prize_rebate_as_fact": false,
+    "bankroll_and_staking_design_allowed_as_research": true,
+    "profit_guarantee_allowed": false,
+    "prefer_relative_units_when_provider_economics_are_unverified": true
+  },
+  "legacy_components": {
+    "planner": "advisory_or_legacy_batch_only",
+    "article_angle_contract": "advisory_or_legacy_batch_only",
+    "candidate_capacity_preplanning": "not_required_for_creator_first",
+    "multistage_contract": "optional_validator_when_creator_uses_supported_machine_pipeline"
+  },
+  "forbidden_side_effects": [
+    "website_sync",
+    "website_draft_write",
+    "schedule_creation",
+    "publisher_invocation",
+    "publisher_cron_change",
+    "publication"
+  ]
+}

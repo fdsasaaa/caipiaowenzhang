@@ -91,7 +91,9 @@ def _angle_hash(provider_id: str, lottery: str, play: str, family: str, selector
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
 
 
-def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) -> dict:
+def plan_articles(
+    provider_id: str, lottery: str, play: str, count: int = 10, *, include_used_angles: bool = False
+) -> dict:
     cap = rule_capability(provider_id, lottery, play)
     clusters = _all_clusters()
     existing = _rows(ARTICLES)
@@ -122,7 +124,7 @@ def plan_articles(provider_id: str, lottery: str, play: str, count: int = 10) ->
             angle_hash = _angle_hash(
                 provider_id, lottery, play, str(c.get("family_id") or ""), str(selector or "")
             )
-            if angle_hash in used or angle_hash in seen_new:
+            if ((not include_used_angles and angle_hash in used) or angle_hash in seen_new):
                 continue
             seen_new.add(angle_hash)
             case_plan = case_requirements(atoms, selector, selector_info.get("basis"))

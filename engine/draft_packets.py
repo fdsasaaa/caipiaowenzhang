@@ -144,6 +144,8 @@ def build_draft_packet(blueprint: dict) -> dict:
     economics_allowed = blueprint.get("case_scope") == "economics"
     content_format = required_content_format()
     editorial_contract_version = blueprint.get("editorial_contract_version")
+    article_angle_contract_version = blueprint.get("article_angle_contract_version")
+    article_angle_contract = blueprint.get("article_angle_contract")
     packet_id = "DP-" + (blueprint.get("fingerprint") or hashlib.sha256(str(blueprint).encode()).hexdigest())[:16]
     required_fields = [
         "article_id", "title", "slug", "meta_description", "primary_keyword", "search_intent",
@@ -151,6 +153,8 @@ def build_draft_packet(blueprint: dict) -> dict:
     ]
     if editorial_contract_version:
         required_fields.extend(["editorial_contract_version", "practical_guidance"])
+    if article_angle_contract_version:
+        required_fields.extend(["article_angle_contract_version", "information_gain_type", "angle_delivery"])
     packet = {
         "packet_id": packet_id,
         "article_id": blueprint["article_id"],
@@ -173,6 +177,9 @@ def build_draft_packet(blueprint: dict) -> dict:
             "fingerprint": blueprint.get("fingerprint"),
             "case_structure": blueprint.get("case_structure"),
             "information_gain_type": blueprint.get("information_gain_type"),
+            "angle_signature": blueprint.get("angle_signature"),
+            "article_angle_contract_version": article_angle_contract_version,
+            "angle_contract_verified": bool(blueprint.get("angle_contract_verified")),
         },
         "seo": {
             "title": blueprint.get("title"),
@@ -223,6 +230,11 @@ def build_draft_packet(blueprint: dict) -> dict:
             "must_include_case_label": case_bundle["must_label_as"],
         },
     }
+    if article_angle_contract_version:
+        if not isinstance(article_angle_contract, dict) or not article_angle_contract:
+            raise ValueError("contracted blueprint requires article_angle_contract")
+        packet["article_angle_contract_version"] = article_angle_contract_version
+        packet["article_angle_contract"] = dict(article_angle_contract)
     if editorial_contract_version:
         packet["editorial_contract_version"] = editorial_contract_version
         packet["practicality"] = {

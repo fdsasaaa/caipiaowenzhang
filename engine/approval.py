@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
+from .article_angle_quality import evaluate_article_angle
 from .article_memory import append_article_state, get_article_record
 from .claim_evidence import audit_claim_evidence
 from .draft_packets import review_draft
@@ -21,6 +22,7 @@ class ApprovalResult:
     warnings: list[str] = field(default_factory=list)
     quality_score: int = 0
     editorial_score: int = 100
+    angle_score: int | None = None
     publish_package: dict | None = None
     registry_record: dict | None = None
 
@@ -59,6 +61,9 @@ def _enrich_for_quality(packet: dict, article: dict) -> dict:
         "fingerprint": facts.get("fingerprint") or existing.get("fingerprint"),
         "case_structure": facts.get("case_structure") or existing.get("case_structure", ""),
         "information_gain_type": facts.get("information_gain_type") or existing.get("information_gain_type", "method_mechanics_and_reproducible_case"),
+        "angle_signature": facts.get("angle_signature") or existing.get("angle_signature"),
+        "article_angle_contract_version": facts.get("article_angle_contract_version") or existing.get("article_angle_contract_version"),
+        "angle_contract_verified": bool(facts.get("angle_contract_verified") or existing.get("angle_contract_verified")),
         "primary_seo_cluster_id": facts.get("primary_seo_cluster_id") if "primary_seo_cluster_id" in facts else existing.get("primary_seo_cluster_id"),
         "secondary_seo_cluster_ids": facts.get("secondary_seo_cluster_ids") if "secondary_seo_cluster_ids" in facts else existing.get("secondary_seo_cluster_ids", []),
     }
@@ -160,6 +165,15 @@ def _publish_package(packet: dict, article: dict) -> dict:
     provider_response_id = article.get("provider_response_id") or existing.get("provider_response_id")
     if provider_response_id:
         package["provider_response_id"] = provider_response_id
+    angle_contract = packet.get("article_angle_contract") or {}
+    if packet.get("article_angle_contract_version") and article.get("angle_approval_passed") is True:
+        package["article_angle_contract_version"] = packet["article_angle_contract_version"]
+        package["information_gain_type"] = angle_contract.get("angle_type")
+        package["angle_signature"] = facts.get("angle_signature") or existing.get("angle_signature")
+        package["angle_contract_verified"] = True
+        package["angle_approval_passed"] = True
+        package["article_angle_contract"] = angle_contract
+        package["angle_delivery"] = article.get("angle_delivery") or {}
     if primary_cluster:
         package["primary_seo_cluster_id"] = primary_cluster
         package["secondary_seo_cluster_ids"] = secondary_clusters
@@ -207,9 +221,17 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "source_refs": facts.get("source_refs", []),
         "case_structure": facts.get("case_structure"),
         "information_gain_type": facts.get("information_gain_type"),
+        "angle_signature": facts.get("angle_signature") or existing.get("angle_signature"),
         "content_hash": sha256_text(article.get("content", "")) if article.get("content") else None,
         "provider_response_id": article.get("provider_response_id") or existing.get("provider_response_id"),
     }
+    angle_contract = packet.get("article_angle_contract") or {}
+    if packet.get("article_angle_contract_version"):
+        changes["article_angle_contract_version"] = packet["article_angle_contract_version"]
+        changes["information_gain_type"] = angle_contract.get("angle_type")
+        changes["angle_contract_verified"] = True
+        changes["angle_approval_passed"] = bool(article.get("angle_approval_passed"))
+        changes["angle_delivery"] = article.get("angle_delivery") or {}
     if primary_cluster:
         changes["primary_seo_cluster_id"] = primary_cluster
         changes["secondary_seo_cluster_ids"] = secondary_clusters
@@ -231,15 +253,22 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
     enriched = _enrich_for_quality(packet, article)
     quality_report = evaluate_quality(enriched)
     editorial_report = evaluate_editorial(packet, article)
+    angle_report = evaluate_article_angle(packet, article)
+    if angle_report.contracted:
+        enriched["article_angle_contract_version"] = packet.get("article_angle_contract_version")
+        enriched["information_gain_type"] = (packet.get("article_angle_contract") or {}).get("angle_type")
+        enriched["angle_contract_verified"] = True
+        enriched["angle_approval_passed"] = angle_report.passed
+        enriched["angle_delivery"] = article.get("angle_delivery") or {}
     seo_errors, seo_warnings = _seo_contract(packet, article)
 
     errors = list(dict.fromkeys([
         *draft_review.errors, *evidence_report.errors, *quality_report.errors,
-        *editorial_report.errors, *seo_errors,
+        *editorial_report.errors, *angle_report.errors, *seo_errors,
     ]))
     warnings = list(dict.fromkeys([
         *draft_review.warnings, *evidence_report.warnings, *quality_report.warnings,
-        *editorial_report.warnings, *seo_warnings,
+        *editorial_report.warnings, *angle_report.warnings, *seo_warnings,
     ]))
     approved = (
         not errors
@@ -247,6 +276,7 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
         and evidence_report.passed
         and quality_report.passed
         and editorial_report.passed
+        and angle_report.passed
     )
     status = "approved" if approved else "rejected_for_revision"
     package = _publish_package(packet, enriched) if approved else None
@@ -262,6 +292,7 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
         warnings=warnings,
         quality_score=quality_report.score,
         editorial_score=editorial_report.score,
+        angle_score=angle_report.score if angle_report.contracted else None,
         publish_package=package,
         registry_record=preview_registry,
     )
@@ -271,5 +302,13 @@ def evaluate_and_record(packet: dict, article: dict) -> ApprovalResult:
     result = evaluate_for_approval(packet, article)
     article_id = article.get("article_id") or packet.get("article_id")
     if article_id:
-        result.registry_record = append_article_state(article_id, result.status, _registry_changes(packet, article))
+        record_article = _enrich_for_quality(packet, article)
+        if result.registry_record:
+            for field in (
+                "article_angle_contract_version", "information_gain_type", "angle_signature",
+                "angle_contract_verified", "angle_approval_passed", "angle_delivery",
+            ):
+                if field in result.registry_record:
+                    record_article[field] = result.registry_record[field]
+        result.registry_record = append_article_state(article_id, result.status, _registry_changes(packet, record_article))
     return result

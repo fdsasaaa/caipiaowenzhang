@@ -95,7 +95,7 @@ def _angle_key(plan: dict) -> str:
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:20]
 
 
-def blueprint_from_plan(plan: dict) -> dict:
+def blueprint_from_plan(plan: dict, *, apply_registry_gates: bool = True) -> dict:
     atoms = plan.get("technique_atoms", [])
     case_plan = plan.get("case_plan", {})
     rule_lottery = plan["lottery"]
@@ -175,6 +175,9 @@ def blueprint_from_plan(plan: dict) -> dict:
     }
     if editorial_contract_version:
         blueprint["editorial_contract_version"] = editorial_contract_version
+
+    if not apply_registry_gates:
+        return blueprint
 
     keyword_hits = keyword_owners(primary_keyword, exclude_article_id=blueprint["article_id"])
     blueprint["keyword_owner_hits"] = [

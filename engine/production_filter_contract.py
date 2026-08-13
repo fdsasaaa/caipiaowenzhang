@@ -21,6 +21,7 @@ STATIC_ATOMS = {
 SAMPLE_ATOMS = {"cold_hot_split", "frequency_window", "omission_threshold"}
 SUPPORTED_METHOD_ATOMS = STATIC_ATOMS | SAMPLE_ATOMS
 CONTEXT_ATOMS = {"position_filter"}
+PRODUCTION_FREQUENCY_TOP_N = 5
 
 # System-authored order. It is deterministic and independent of the synthetic
 # draw sample. Source families support which atoms belong to the article; they
@@ -140,16 +141,51 @@ def _frequency_pool(case_bundle: dict) -> tuple[list[int], dict]:
     freq = case_bundle.get("frequency")
     if not isinstance(freq, dict):
         raise ProductionFilterContractError("frequency case bundle missing")
-    digits = freq.get("top_frequency_digits")
-    if not isinstance(digits, list) or not digits:
-        raise ProductionFilterContractError("top_frequency_digits missing from frequency case")
-    clean = sorted({int(value) for value in digits})
-    if not clean or any(value < 0 or value > 9 for value in clean):
-        raise ProductionFilterContractError("invalid top_frequency_digits")
+
+    # Formal production uses one fixed, system-owned selection rule whenever the
+    # complete 0-9 sample frequency table is available: rank by descending sample
+    # frequency, break ties by ascending digit, then keep Top-5. The *rule* is
+    # fixed before article generation; the exact five digits are calculated from
+    # the deterministic synthetic case and are not source-selected or pre-known.
+    full_frequency = freq.get("frequency")
+    clean: list[int]
+    ranking_source: str
+    if isinstance(full_frequency, dict) and full_frequency:
+        parsed: list[tuple[int, int]] = []
+        for raw_digit, raw_count in full_frequency.items():
+            try:
+                digit = int(raw_digit)
+                count = int(raw_count)
+            except (TypeError, ValueError) as exc:
+                raise ProductionFilterContractError("invalid full frequency table") from exc
+            if digit < 0 or digit > 9 or count < 0:
+                raise ProductionFilterContractError("invalid full frequency table")
+            parsed.append((digit, count))
+        if len({digit for digit, _ in parsed}) < PRODUCTION_FREQUENCY_TOP_N:
+            raise ProductionFilterContractError("full frequency table has fewer than five digits")
+        ordered = sorted(parsed, key=lambda item: (-item[1], item[0]))
+        ranked = [digit for digit, _ in ordered[:PRODUCTION_FREQUENCY_TOP_N]]
+        clean = sorted(ranked)
+        ranking_source = "full_frequency_table_top5"
+    else:
+        # Backward-compatible fallback for isolated historical/unit-test case
+        # bundles that only carry an already-resolved digit list. Production case
+        # bundles contain the full table and therefore take the Top-5 path above.
+        digits = freq.get("top_frequency_digits")
+        if not isinstance(digits, list) or not digits:
+            raise ProductionFilterContractError("frequency table/top_frequency_digits missing from frequency case")
+        clean = sorted({int(value) for value in digits})
+        if not clean or any(value < 0 or value > 9 for value in clean):
+            raise ProductionFilterContractError("invalid top_frequency_digits")
+        ranking_source = "pre_resolved_compatibility_fallback"
+
     return clean, {
         "lookback": int(freq.get("sample_size") or 12),
         "top_n": len(clean),
         "digits": clean,
+        "ranking": "frequency_desc_then_digit_asc",
+        "ranking_source": ranking_source,
+        "production_top_n_policy": PRODUCTION_FREQUENCY_TOP_N,
     }
 
 

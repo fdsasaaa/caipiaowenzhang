@@ -9,32 +9,63 @@ from engine.formal_approved_inventory import validate_formal_approved_package
 from engine.semantic_dedup import STRUCTURAL_DUPLICATE_THRESHOLD, structural_similarity
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "agent" / "results" / "CREATOR_FIRST_BATCH_50_PAYLOADS_2026-08-13.jsonl"
 APPROVED = ROOT / "articles" / "approved"
+PATTERN = "LCM-CREATOR-cf50-20260813-*.json"
+CASE_LABEL = "演示参数，不是真实开奖记录"
 
 
-def _rows():
-    return [json.loads(line) for line in SOURCE.read_text(encoding="utf-8").splitlines() if line.strip()]
+def _packages() -> list[dict]:
+    return [
+        json.loads(path.read_text(encoding="utf-8"))
+        for path in sorted(APPROVED.glob(PATTERN))
+    ]
 
 
-def _package(article_id: str):
-    return json.loads((APPROVED / f"{article_id}.json").read_text(encoding="utf-8"))
+def _creator_payload(package: dict) -> tuple[dict, dict]:
+    article_id = str(package["article_id"])
+    request_id = article_id.removeprefix("LCM-CREATOR-")
+    request = build_creator_request(request_id=request_id)
+    rule_refs = list(package.get("rule_refs") or [])
+    assert len(rule_refs) == 1
+    tags = list(package.get("technique_atoms") or ["creator_original"])
+    manifest = {
+        "selected_rule_ref": rule_refs[0],
+        "subject_lottery": package["subject_lottery"],
+        "subject_play": package["subject_play"],
+        "creation_mode": "hybrid",
+        "technique_name": package["primary_keyword"],
+        "technique_tags": tags,
+        "originality_note": "Creator-first original batch article; existing inventory is memory, not template.",
+        "reader_value": "Explain one reproducible technique clearly, including boundaries and stopping discipline.",
+        "uses_draw_data": False,
+        "uses_bankroll_design": True,
+        "uses_staking_design": any("staking" in x or "bankroll" in x for x in tags),
+        "bankroll_design_summary": "Uses relative units only; no unverified provider economics.",
+        "staking_design_summary": "Research-only bounded staking when present; no profit guarantee.",
+        "case_label": CASE_LABEL,
+        "case_notes": [],
+    }
+    article = dict(package)
+    article["status"] = "draft"
+    # These are formal-inventory metadata, not model-output fields. Approval ignores
+    # unknown extras, but removing them keeps this fixture semantically minimal.
+    for field in (
+        "approved_at", "content_hash", "fingerprint", "creator_batch_id",
+        "creator_first_contract_version", "published_url", "published_at",
+    ):
+        article.pop(field, None)
+    return request, {"manifest": manifest, "article": article}
 
 
 def test_creator_first_batch_50_all_pass_existing_approval_and_formal_inventory():
-    rows = _rows()
-    assert len(rows) == 50
+    packages = _packages()
+    assert len(packages) == 50
 
-    for row in rows:
-        request = build_creator_request(request_id=row["request_id"])
-        result = validate_creator_output(
-            request,
-            {"manifest": row["manifest"], "article": row["article"]},
-        )
-        assert result.approved, f"{row['request_id']}: {result.errors}"
-
-        package = _package(result.article["article_id"])
+    for package in packages:
         validate_formal_approved_package(package)
+        request, payload = _creator_payload(package)
+        result = validate_creator_output(request, payload)
+        assert result.approved, f"{package['article_id']}: {result.errors}"
 
         generated = result.approval.publish_package
         assert generated is not None
@@ -43,18 +74,17 @@ def test_creator_first_batch_50_all_pass_existing_approval_and_formal_inventory(
             "primary_keyword", "search_intent", "summary", "category",
             "site_category_key", "content_type", "content_format", "content",
             "rule_refs", "source_refs", "case_scope", "lottery", "play",
-            "subject_lottery", "subject_play", "technique_atoms", "fingerprint",
+            "subject_lottery", "subject_play", "technique_atoms",
             "content_hash", "status", "generation_contract_version", "claim_evidence",
         ):
             assert package.get(field) == generated.get(field), (
-                row["request_id"], field, package.get(field), generated.get(field)
+                package["article_id"], field, package.get(field), generated.get(field)
             )
 
 
 def test_creator_first_batch_50_has_unique_seo_identity_and_no_intra_batch_duplicates():
-    rows = _rows()
-    packages = [_package(row["article"]["article_id"]) for row in rows]
-
+    packages = _packages()
+    assert len(packages) == 50
     assert len({row["article_id"] for row in packages}) == 50
     assert len({row["slug"] for row in packages}) == 50
     assert len({row["primary_keyword"] for row in packages}) == 50
@@ -76,8 +106,7 @@ def test_creator_first_batch_50_has_unique_seo_identity_and_no_intra_batch_dupli
 
 
 def test_creator_first_batch_50_remains_inventory_only():
-    for row in _rows():
-        package = _package(row["article"]["article_id"])
+    for package in _packages():
         assert package.get("status") == "approved"
         assert package.get("published_url") in (None, "")
         assert package.get("published_at") in (None, "")

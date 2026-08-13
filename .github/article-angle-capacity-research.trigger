@@ -1,0 +1,5 @@
+provider_calls=0
+remaining_target=199
+lexical_threshold=0.72
+structural_threshold=0.82
+strategies=baseline,machine_title_intent,machine_pipeline_identity,reader_task_contract

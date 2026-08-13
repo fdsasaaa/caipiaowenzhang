@@ -1,9 +1,0 @@
-campaign_target=200
-formal_before=1
-target_new=25
-batch=01
-model=gpt-5.4-mini
-machine_primary_filter_required=true
-website_sync=false
-scheduling=false
-publishing=false

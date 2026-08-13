@@ -1,0 +1,8 @@
+recovery=true
+provider_calls=0
+source_run=31654741820
+artifact_id=9163936032
+artifact_sha256=e4c8a3cebffbac41e4a3a521eab5977b34b98d15e502ef541d9031d27a9b7aae
+response_id=resp_02bd8eb762446877016a7d10a8b818819bb019a7bb044864fd
+article_id=LCM-IDEA-40be5a222f5cccf7
+content_hash=6a13387d95446d290b2cb604e72494be739910b7ccf0d3a17ff07e40879bf301

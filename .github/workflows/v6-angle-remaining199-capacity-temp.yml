@@ -1,0 +1,151 @@
+name: v6-angle-remaining199-capacity-temp
+
+on:
+  push:
+    branches:
+      - production/articles-200-20260813-v6
+    paths:
+      - '.github/v6-angle-remaining199-capacity.trigger'
+
+permissions:
+  contents: read
+
+jobs:
+  capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Audit production branch and accepted canary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          python scripts/audit_reader_terminology.py --root .
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          paths=sorted(Path('articles/approved').glob('*.json'))
+          assert len(paths)==1, [str(p) for p in paths]
+          row=json.loads(paths[0].read_text(encoding='utf-8'))
+          assert row['article_id']=='LCM-IDEA-40be5a222f5cccf7', row['article_id']
+          assert row['primary_keyword']=='分分彩五星直选跨度技巧', row['primary_keyword']
+          assert row['status']=='approved', row['status']
+          assert row['content_hash']=='6a13387d95446d290b2cb604e72494be739910b7ccf0d3a17ff07e40879bf301', row['content_hash']
+          assert hashlib.sha256(str(row['content']).encode('utf-8')).hexdigest()==row['content_hash']
+          PY
+
+      - name: Compute formal remaining-target capacity
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          from engine.article_angles import ANGLE_CONTRACT_VERSION
+          from engine.dedup import LEXICAL_DUPLICATE_THRESHOLD, lexical_similarity
+          from engine.semantic_dedup import STRUCTURAL_DUPLICATE_THRESHOLD, structural_similarity
+          from scripts.produce_articles_total import _build_plan_with_capacity_retry
+
+          REMAINING=199
+          plan=_build_plan_with_capacity_retry(
+              REMAINING,
+              provider_id='',
+              signals=[],
+              batch_size=25,
+              allow_ultra=False,
+          )
+          candidates=list(plan['candidates'])
+          assert plan['formal_inventory_before']==1, plan
+          assert plan['capacity_exhaustive'] is True, plan
+          assert plan['candidate_capacity_current_snapshot'] >= REMAINING, plan
+          assert plan['target_feasible_current_snapshot'] is True, plan
+          assert len(candidates)==plan['attempt_budget'], (len(candidates),plan['attempt_budget'])
+          assert len(candidates)>=REMAINING, len(candidates)
+          assert LEXICAL_DUPLICATE_THRESHOLD==0.72
+          assert STRUCTURAL_DUPLICATE_THRESHOLD==0.82
+
+          conflicts=[]
+          angle_dist=Counter()
+          mode_dist=Counter()
+          for i,row in enumerate(candidates):
+              bp=row['blueprint']
+              assert bp.get('article_angle_contract_version')==ANGLE_CONTRACT_VERSION, bp.get('article_id')
+              assert bp.get('angle_contract_verified') is True, bp.get('article_id')
+              assert bp.get('article_angle_contract'), bp.get('article_id')
+              angle_dist[str(bp.get('information_gain_type') or '')]+=1
+              mode_dist[str((bp.get('production_filter_contract') or {}).get('mode') or '')]+=1
+              for oldrow in candidates[:i]:
+                  old=oldrow['blueprint']
+                  lex=lexical_similarity(bp,old)
+                  if lex>=LEXICAL_DUPLICATE_THRESHOLD:
+                      conflicts.append({
+                          'article_id':bp['article_id'],'owner':old['article_id'],
+                          'gate':'lexical','score':round(float(lex),4),
+                      })
+                      break
+                  structural,_=structural_similarity(bp,old)
+                  if structural>=STRUCTURAL_DUPLICATE_THRESHOLD:
+                      conflicts.append({
+                          'article_id':bp['article_id'],'owner':old['article_id'],
+                          'gate':'structural','score':round(float(structural),4),
+                      })
+                      break
+          assert not conflicts, conflicts[:10]
+
+          payload={
+              'production_branch':'production/articles-200-20260813-v6',
+              'production_head':'2e9317de05ac8e5a5850c944f6a26beee391715b',
+              'formal_inventory_before':plan['formal_inventory_before'],
+              'accepted_canary_count':1,
+              'remaining_target':REMAINING,
+              'candidate_capacity_current_snapshot':plan['candidate_capacity_current_snapshot'],
+              'capacity_exhaustive':plan['capacity_exhaustive'],
+              'target_feasible_current_snapshot':plan['target_feasible_current_snapshot'],
+              'attempt_budget':plan['attempt_budget'],
+              'pool_duplicate_blocked':plan.get('pool_duplicate_blocked'),
+              'pool_duplicate_gate_distribution':plan.get('pool_duplicate_gate_distribution'),
+              'contract_mode_distribution':dict(mode_dist),
+              'angle_distribution':dict(angle_dist),
+              'post_plan_pairwise_conflicts':conflicts,
+              'lexical_threshold':LEXICAL_DUPLICATE_THRESHOLD,
+              'structural_threshold':STRUCTURAL_DUPLICATE_THRESHOLD,
+              'angle_contract_version':ANGLE_CONTRACT_VERSION,
+              'canary_article_id':'LCM-IDEA-40be5a222f5cccf7',
+              'canary_content_hash':'6a13387d95446d290b2cb604e72494be739910b7ccf0d3a17ff07e40879bf301',
+              'provider_calls':0,
+              'website_sync':False,
+              'scheduled':False,
+              'published':False,
+              'candidate_preview':[
+                  {
+                      'article_id':r['blueprint'].get('article_id'),
+                      'primary_keyword':r['blueprint'].get('primary_keyword'),
+                      'information_gain_type':r['blueprint'].get('information_gain_type'),
+                      'subject_play':r['blueprint'].get('subject_play'),
+                      'contract_mode':(r['blueprint'].get('production_filter_contract') or {}).get('mode'),
+                  }
+                  for r in candidates[:20]
+              ],
+          }
+          Path('v6-angle-remaining199-capacity.json').write_text(
+              json.dumps(payload,ensure_ascii=False,indent=2)+'\n',encoding='utf-8'
+          )
+          print(json.dumps({k:v for k,v in payload.items() if k not in {'candidate_preview','post_plan_pairwise_conflicts'}},ensure_ascii=False,indent=2))
+          PY
+
+      - name: Upload zero-provider production readiness evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: v6-angle-remaining199-capacity
+          path: v6-angle-remaining199-capacity.json
+          retention-days: 30

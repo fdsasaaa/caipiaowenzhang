@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-015",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把0到4视为小、5到9视为大，只保留1大2小或2大1小。本例同样留下750个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "279是2大1小，保留；012全小，排除；678全大，也排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>把0到4视为小、5到9视为大，只保留1大2小或2大1小。本例同样留下750个有序组合。</p><h2>现场复算</h2><p>279是2大1小，保留；012全小，排除；678全大，也排除。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>它和奇偶2比1可以作为两篇独立实验，但不要在同一篇里事后把两者强行相交。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "8932522ca0b27ae8bab487f928fc0bb0122d31f516328d1c2ff397a0fe2d7661",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "57df602dd1c44ddf2416f9f87288665a11f085deed37a756b9a2c5b690e465c8",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选大小2比1技巧：用大小2比1做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选大小2比1技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的大小2比1研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "大小2比1",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选大小2比1技巧：三位不要全挤在同一区",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-size-21",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "用大小2比1重新拆解后三直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "大小2比1",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "size_balance",
+    "three_position_pattern"
+  ],
+  "title": "分分彩后三直选大小2比1技巧：三位不要全挤在同一区"
+}

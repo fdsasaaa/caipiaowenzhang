@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-005",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一步要求一边0到4、一边5到9；第二步要求两位一单一双。两层同时满足时，本例剩26组：05、07、09、16、18、25、27、29、36、38、45、47、49、50、52、54、61、63、70、72、74、81、83、90、92、94。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如27满足低+高，同时2是双、7是单，所以保留；28虽然跨区，但2和8都是双，所以排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>第一步要求一边0到4、一边5到9；第二步要求两位一单一双。两层同时满足时，本例剩26组：05、07、09、16、18、25、27、29、36、38、45、47、49、50、52、54、61、63、70、72、74、81、83、90、92、94。</p><h2>现场复算</h2><p>例如27满足低+高，同时2是双、7是单，所以保留；28虽然跨区，但2和8都是双，所以排除。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>这里已经是两层筛选，不再继续加和值、遗漏或冷热。参数先固定，避免看完结果再补条件。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "60bbc3d3eac8260b6c2e1a1d8b0a1269ed64a52b8d89afd9f85715b56f481e58",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "9e2d52ca27a7e837fb1c9bf1bc319cfe8336f2b959be940c28126bb8c857369c",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选大小单双组合技巧：用跨区+单双错位做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选大小单双组合技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的跨区+单双错位研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "跨区+单双错位",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选组合技巧：跨大小区以后，再做一次单双错位",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-cross-parity",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用跨区+单双错位重新拆解后二直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "跨区+单双错位",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "low_high_cross",
+    "parity_mismatch"
+  ],
+  "title": "分分彩后二直选组合技巧：跨大小区以后，再做一次单双错位"
+}

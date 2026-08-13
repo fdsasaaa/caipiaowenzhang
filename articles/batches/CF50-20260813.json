@@ -1,0 +1,364 @@
+{
+  "batch_id": "CF50-20260813",
+  "count": 50,
+  "storage_path": "articles/approved/",
+  "file_prefix": "LCM-CREATOR-cf50-20260813-",
+  "website_ingestion_glob": "articles/approved/LCM-CREATOR-cf50-20260813-*.json",
+  "creator_first_contract_version": "1.0",
+  "subject_lottery": "分分彩",
+  "verified_rule_family": "时时彩 mechanics",
+  "cross_lottery_note": "当前正式 mechanics 仅覆盖时时彩体系；未伪造其它彩种规则。",
+  "publication_status": "inventory_only; website publication remains external/frozen until website system imports",
+  "articles": [
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-001",
+      "title": "分分彩后二直选差值技巧：把100组号码拆成两条距离轨道",
+      "slug": "ffc-last2-direct-diff-double-track",
+      "primary_keyword": "分分彩后二直选差值技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-002",
+      "title": "分分彩后二直选余数筛选技巧：不用追号码，改看两位数和的余数",
+      "slug": "ffc-last2-direct-sum-mod5",
+      "primary_keyword": "分分彩后二直选余数筛选技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-003",
+      "title": "分分彩后二直选环形距离技巧：把0和9也当成邻居来看",
+      "slug": "ffc-last2-direct-ring-distance",
+      "primary_keyword": "分分彩后二直选环形距离技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-004",
+      "title": "分分彩后二直选跨区技巧：一边小号一边大号，先把结构讲简单",
+      "slug": "ffc-last2-direct-cross-zone",
+      "primary_keyword": "分分彩后二直选跨区技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-005",
+      "title": "分分彩后二直选组合技巧：跨大小区以后，再做一次单双错位",
+      "slug": "ffc-last2-direct-cross-parity",
+      "primary_keyword": "分分彩后二直选大小单双组合技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-006",
+      "title": "分分彩后二直选和值9和10技巧：用两条对角线看号码",
+      "slug": "ffc-last2-direct-sum910",
+      "primary_keyword": "分分彩后二直选和值9和10技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-007",
+      "title": "分分彩后二直选差值轮换技巧：1、4、7三条轨道不要一起压",
+      "slug": "ffc-last2-direct-gap147-rotation",
+      "primary_keyword": "分分彩后二直选差值轮换技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-008",
+      "title": "分分彩后二直选同余技巧：把十位和个位按3组重新分类",
+      "slug": "ffc-last2-direct-mod3-pair",
+      "primary_keyword": "分分彩后二直选同余技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-009",
+      "title": "分分彩后二直选奇偶关系技巧：不猜单双，改看两位相加后的奇偶",
+      "slug": "ffc-last2-direct-even-sum",
+      "primary_keyword": "分分彩后二直选奇偶关系技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-010",
+      "title": "分分彩后二直选位置池技巧：十位3码、个位4码，先把12组写明白",
+      "slug": "ffc-last2-direct-grid-pools",
+      "primary_keyword": "分分彩后二直选位置池技巧",
+      "subject_play": "后二直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-011",
+      "title": "分分彩后三直选跨度区间技巧：只看最大数减最小数",
+      "slug": "ffc-last3-direct-span35",
+      "primary_keyword": "分分彩后三直选跨度区间技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-012",
+      "title": "分分彩后三直选夹心技巧：让十位落在百位和个位之间",
+      "slug": "ffc-last3-direct-middle-sandwich",
+      "primary_keyword": "分分彩后三直选夹心技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-013",
+      "title": "分分彩后三直选首尾差值技巧：只管百位和个位，中间位先放开",
+      "slug": "ffc-last3-direct-outer-gap",
+      "primary_keyword": "分分彩后三直选首尾差值技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-014",
+      "title": "分分彩后三直选奇偶2比1技巧：只排除全单和全双",
+      "slug": "ffc-last3-direct-parity-21",
+      "primary_keyword": "分分彩后三直选奇偶2比1技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-015",
+      "title": "分分彩后三直选大小2比1技巧：三位不要全挤在同一区",
+      "slug": "ffc-last3-direct-size-21",
+      "primary_keyword": "分分彩后三直选大小2比1技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-016",
+      "title": "分分彩后三直选折返技巧：找“中间高点”或“中间低点”",
+      "slug": "ffc-last3-direct-turning",
+      "primary_keyword": "分分彩后三直选折返技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-017",
+      "title": "分分彩后三直选环形邻接技巧：三位号码做成一条短链",
+      "slug": "ffc-last3-direct-ring-chain",
+      "primary_keyword": "分分彩后三直选环形邻接技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-018",
+      "title": "分分彩后三直选和值余数技巧：三位和除以3，只研究其中一组",
+      "slug": "ffc-last3-direct-sum-mod3",
+      "primary_keyword": "分分彩后三直选和值余数技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-019",
+      "title": "分分彩后三直选中位关系技巧：十位靠近两端平均值",
+      "slug": "ffc-last3-direct-center-average",
+      "primary_keyword": "分分彩后三直选中位关系技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-020",
+      "title": "分分彩后三直选资金降压技巧：连续实验别用越输越大的路",
+      "slug": "ffc-last3-direct-six-step-depressure",
+      "primary_keyword": "分分彩后三直选资金降压技巧",
+      "subject_play": "后三直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-021",
+      "title": "分分彩五星直选多样性技巧：五位里至少出现4个不同数字",
+      "slug": "ffc-five-direct-distinct4",
+      "primary_keyword": "分分彩五星直选多样性技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-022",
+      "title": "分分彩五星直选奇偶平衡技巧：只留2比3或3比2",
+      "slug": "ffc-five-direct-odd-balance",
+      "primary_keyword": "分分彩五星直选奇偶平衡技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-023",
+      "title": "分分彩五星直选大小平衡技巧：大号小号保持2比3",
+      "slug": "ffc-five-direct-size-balance",
+      "primary_keyword": "分分彩五星直选大小平衡技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-024",
+      "title": "分分彩五星直选和值余数技巧：五位和除以5，先分成五组",
+      "slug": "ffc-five-direct-sum-mod5",
+      "primary_keyword": "分分彩五星直选和值余数技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-025",
+      "title": "分分彩五星直选首尾差值技巧：只约束万位和个位",
+      "slug": "ffc-five-direct-outer-gap",
+      "primary_keyword": "分分彩五星直选首尾差值技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-026",
+      "title": "分分彩五星直选对称位技巧：一组靠近，一组拉开",
+      "slug": "ffc-five-direct-symmetric-mix",
+      "primary_keyword": "分分彩五星直选对称位技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-027",
+      "title": "分分彩五星直选位置池技巧：2×2×3×2×2先算清是多少组",
+      "slug": "ffc-five-direct-position-pools",
+      "primary_keyword": "分分彩五星直选位置池技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-028",
+      "title": "分分彩五星直选双网格轮换技巧：两套位置池分开跑，不要揉成一套",
+      "slug": "ffc-five-direct-two-grid-rotation",
+      "primary_keyword": "分分彩五星直选双网格轮换技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-029",
+      "title": "分分彩五星直选分段资金技巧：前四轮不加码，第五轮也别救火",
+      "slug": "ffc-five-direct-staged-bankroll",
+      "primary_keyword": "分分彩五星直选分段资金技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-030",
+      "title": "分分彩五星直选先模拟后实测技巧：新方法先纸上跑3轮",
+      "slug": "ffc-five-direct-paper-first",
+      "primary_keyword": "分分彩五星直选先模拟后实测技巧",
+      "subject_play": "五星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-031",
+      "title": "分分彩定位胆镜像数字技巧：0和9、1和8成对看",
+      "slug": "ffc-located-mirror-pairs",
+      "primary_keyword": "分分彩定位胆镜像数字技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-032",
+      "title": "分分彩定位胆余数组轮换技巧：10个数字拆成3组循环",
+      "slug": "ffc-located-mod3-rotation",
+      "primary_keyword": "分分彩定位胆余数组轮换技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-033",
+      "title": "分分彩定位胆双码固定技巧：只用两个数字，重点看纪律而不是选号玄学",
+      "slug": "ffc-located-two-number-fixed",
+      "primary_keyword": "分分彩定位胆双码固定技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-034",
+      "title": "分分彩定位胆位置轮换技巧：同一组数字在五个位置依次走",
+      "slug": "ffc-located-five-position-rotation",
+      "primary_keyword": "分分彩定位胆位置轮换技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-035",
+      "title": "分分彩定位胆边缘数字技巧：把0、1、8、9单独当一组",
+      "slug": "ffc-located-edge-middle",
+      "primary_keyword": "分分彩定位胆边缘数字技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-036",
+      "title": "分分彩定位胆双码轮换技巧：五组镜像对一轮走完",
+      "slug": "ffc-located-pair-rotation",
+      "primary_keyword": "分分彩定位胆双码轮换技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-037",
+      "title": "分分彩一星直选三码技巧：固定3码做短轮次，比追热号更容易复盘",
+      "slug": "ffc-one-star-three-pool",
+      "primary_keyword": "分分彩一星直选三码技巧",
+      "subject_play": "一星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-038",
+      "title": "分分彩一星直选降压倍投技巧：倍投也可以越走越小",
+      "slug": "ffc-one-star-stepdown",
+      "primary_keyword": "分分彩一星直选降压倍投技巧",
+      "subject_play": "一星直选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-039",
+      "title": "分分彩定位胆平台式倍投技巧：1、1、1.2、1.2、1比直线翻倍温和",
+      "slug": "ffc-located-plateau-staking",
+      "primary_keyword": "分分彩定位胆平台式倍投技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-040",
+      "title": "分分彩定位胆波浪倍投技巧：小幅涨跌，不让倍数一路爬坡",
+      "slug": "ffc-located-wave-staking",
+      "primary_keyword": "分分彩定位胆波浪倍投技巧",
+      "subject_play": "定位胆"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-041",
+      "title": "分分彩后二组选差值技巧：顺序不重要以后，26组能缩成13对",
+      "slug": "ffc-last2-group-gap25",
+      "primary_keyword": "分分彩后二组选差值技巧",
+      "subject_play": "后二组选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-042",
+      "title": "分分彩后二组选和值技巧：和值9和10只剩9个不同数字对",
+      "slug": "ffc-last2-group-sum910",
+      "primary_keyword": "分分彩后二组选和值技巧",
+      "subject_play": "后二组选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-043",
+      "title": "分分彩后二组选大小跨区技巧：一个0到4，一个5到9",
+      "slug": "ffc-last2-group-cross-zone",
+      "primary_keyword": "分分彩后二组选大小跨区技巧",
+      "subject_play": "后二组选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-044",
+      "title": "分分彩后二组选单双配对技巧：一个单数配一个双数",
+      "slug": "ffc-last2-group-odd-even",
+      "primary_keyword": "分分彩后二组选单双配对技巧",
+      "subject_play": "后二组选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-045",
+      "title": "分分彩后二组选边缘配中间技巧：0、1、8、9只配2到7",
+      "slug": "ffc-last2-group-edge-mid",
+      "primary_keyword": "分分彩后二组选边缘配中间技巧",
+      "subject_play": "后二组选"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-046",
+      "title": "分分彩后三组六跨度技巧：三个不同数字，跨度只留4到6",
+      "slug": "ffc-last3-group6-span46",
+      "primary_keyword": "分分彩后三组六跨度技巧",
+      "subject_play": "后三组选6"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-047",
+      "title": "分分彩后三组六奇偶混合技巧：排除三个全单或三个全双",
+      "slug": "ffc-last3-group6-parity-mix",
+      "primary_keyword": "分分彩后三组六奇偶混合技巧",
+      "subject_play": "后三组选6"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-048",
+      "title": "分分彩后三组六大小混合技巧：三数组不要全大也不要全小",
+      "slug": "ffc-last3-group6-zone-mix",
+      "primary_keyword": "分分彩后三组六大小混合技巧",
+      "subject_play": "后三组选6"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-049",
+      "title": "分分彩后三组三重号池技巧：先固定谁重复，再让单号自由",
+      "slug": "ffc-last3-group3-repeat147",
+      "primary_keyword": "分分彩后三组三重号池技巧",
+      "subject_play": "后三组选3"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-050",
+      "title": "分分彩后三组三重号差值技巧：重号和单号只差2或5",
+      "slug": "ffc-last3-group3-role-gap",
+      "primary_keyword": "分分彩后三组三重号差值技巧",
+      "subject_play": "后三组选3"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-009",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": ["SSC-HIST-MECH-2STAR-LAST-V1"],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两位和为偶数，等价于两位同奇或同偶。本例100组中有50组符合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": ["case_bundle"],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "24是双+双，和为6；37是单+单，和为10，都保留。27是一双一单，和为9，则不在这一组。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": ["case_bundle"],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这次不堆很多条件，只固定一个结构，然后把它算清楚。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>怎么选</h2><p>两位和为偶数，等价于两位同奇或同偶。本例100组中有50组符合。</p><h2>怎么算</h2><p>24是双+双，和为6；37是单+单，和为10，都保留。27是一双一单，和为9，则不在这一组。</p><p>如果你自己重新算一遍能得到同样的集合，这个技巧才算讲清楚。</p><h2>本金先设上限</h2><p>这类覆盖较宽的结构没有必要再用倍投放大风险。更适合拿来做结构对照文章：偶和组与奇和组分别记录即可。</p><h2>别把研究写成预测</h2><p>号码结构和资金路径是两件事：前者决定你研究什么，后者只决定你最多承担多少暴露。</p>",
+  "content_format": "html",
+  "content_hash": "320054a5ac3be23a8e9adba412a3da95d254d99f032ea98b423fe33769a89437",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "00a69f88d3c2c988b17bdd09bbd3cfc5801479e0525e69afbc89b0f5279b9d48",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选奇偶关系技巧：用和值奇偶做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选奇偶关系技巧",
+  "provider_id": null,
+  "rule_refs": ["SSC-HIST-MECH-2STAR-LAST-V1"],
+  "search_intent": "了解后二直选的和值奇偶研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": ["分分彩后二直选技巧", "和值奇偶", "分分彩投注技巧"],
+  "seo_title": "分分彩后二直选奇偶关系技巧：不猜单双，改看两位相加后的奇偶",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-even-sum",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用和值奇偶重新拆解后二直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": ["分分彩", "后二直选", "和值奇偶", "投注技巧"],
+  "technique_atoms": ["sum_parity", "relation_filter"],
+  "title": "分分彩后二直选奇偶关系技巧：不猜单双，改看两位相加后的奇偶"
+}

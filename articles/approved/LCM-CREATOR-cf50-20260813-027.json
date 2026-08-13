@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-027",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示池固定为万{1,6}、千{2,7}、百{0,4,8}、十{3,9}、个{5,8}。五星直选按位置展开，所以一共2×2×3×2×2=48组。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如12035、12038、12095都属于这个网格。关键是五个位置的池在开始前固定，不看结果后换数字。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先把复杂的预测说法放一边，只做一个能手算、能复盘的小实验。</p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先说规则</h2><p>演示池固定为万{1,6}、千{2,7}、百{0,4,8}、十{3,9}、个{5,8}。五星直选按位置展开，所以一共2×2×3×2×2=48组。</p><h2>实际怎么判断</h2><p>例如12035、12038、12095都属于这个网格。关键是五个位置的池在开始前固定，不看结果后换数字。</p><p>真正有用的地方不是这组参数本身，而是你能清楚知道每一个号码为什么留下、为什么排除。</p><h2>别把资金越做越重</h2><p>48组只是演示规模。本篇只讨论组合结构，不讨论平台经济参数。</p><h2>这个技巧的边界</h2><p>短期出现多少次都不能反过来证明这条结构有稳定优势。先把规则固定、记录完整，再谈是否值得继续研究。</p>",
+  "content_format": "html",
+  "content_hash": "d82d2d35c2c09cff3b4d592b4d9bc15fe8a207b23575cb129b80fc1dddf7059a",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "42a577142e188119491a1acd65d4f49b44b9ed860fdd132e331b920e8d871c7c",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选位置池技巧：用五位置小网格做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选位置池技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的五位置小网格研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "五位置小网格",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选位置池技巧：2×2×3×2×2先算清是多少组",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-position-pools",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "用五位置小网格重新拆解五星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "五位置小网格",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "position_pool",
+    "cartesian_product"
+  ],
+  "title": "分分彩五星直选位置池技巧：2×2×3×2×2先算清是多少组"
+}

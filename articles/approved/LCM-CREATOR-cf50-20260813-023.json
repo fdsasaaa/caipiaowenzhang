@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-023",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按0到4为小、5到9为大，保留2大3小或3大2小。本例共有62500个五位有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "12789是3大2小，保留；01234全小，排除；56789全大，也排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果一个技巧需要解释十分钟才能知道怎么选，通常已经太复杂了。这次把规则压到一句话。</p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>核心思路</h2><p>按0到4为小、5到9为大，保留2大3小或3大2小。本例共有62500个五位有序组合。</p><h2>看一个例子就明白</h2><p>12789是3大2小，保留；01234全小，排除；56789全大，也排除。</p><p>参数可以换，但要在下一轮开始前换；不能先看结果，再把规则改成刚好解释结果的样子。</p><h2>如果连续做实验</h2><p>这个方法和奇偶平衡看起来相似，但观察的是完全不同的属性。两者应独立记录，避免叠得过窄。</p><h2>为什么值得记录</h2><p>这篇只解决“怎么分类、怎么执行、怎么限制暴露”三个问题，不给出收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "f67af0033419702046b1a291d13bfe829279ba6208a54f8378e01e819ebf9b6d",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "fd2c62f1dc2306b93131e4341b4616de99a0587d838dd972d47fa6da7cff666f",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选大小平衡技巧：用大小2/3平衡做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选大小平衡技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的大小2/3平衡研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "大小2/3平衡",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选大小平衡技巧：大号小号保持2比3",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-size-balance",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "用大小2/3平衡重新拆解五星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "大小2/3平衡",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "size_balance",
+    "five_position_pattern"
+  ],
+  "title": "分分彩五星直选大小平衡技巧：大号小号保持2比3"
+}

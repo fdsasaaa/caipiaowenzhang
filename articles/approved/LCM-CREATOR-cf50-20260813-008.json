@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-008",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把数字按除以3的余数分组，只保留十位和个位属于同一余数组。本例得到34组。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "0、3、6、9是一组，1、4、7是一组，2、5、8是一组。比如36和74保留，38不保留。这个分类和冷热无关。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果一个技巧需要解释十分钟才能知道怎么选，通常已经太复杂了。这次把规则压到一句话。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>核心思路</h2><p>把数字按除以3的余数分组，只保留十位和个位属于同一余数组。本例得到34组。</p><h2>看一个例子就明白</h2><p>0、3、6、9是一组，1、4、7是一组，2、5、8是一组。比如36和74保留，38不保留。这个分类和冷热无关。</p><p>参数可以换，但要在下一轮开始前换；不能先看结果，再把规则改成刚好解释结果的样子。</p><h2>如果连续做实验</h2><p>如果用于实际观察，先固定三组定义，至少完成一个完整记录周期再评价，不临时换分组。</p><h2>为什么值得记录</h2><p>这篇只解决“怎么分类、怎么执行、怎么限制暴露”三个问题，不给出收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "5de5176cb386563e5daaa0de3c823e53fc13ef71205b7485f0a38c6514e9cd9c",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "42afc61b1f6aedcbb1ba4de22bb82e0c8e960ee7c3af07603260991ebf9266d0",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选同余技巧：用模3同组做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选同余技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的模3同组研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "模3同组",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选同余技巧：把十位和个位按3组重新分类",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-mod3-pair",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用模3同组重新拆解后二直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "模3同组",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "mod3_classes",
+    "position_relation"
+  ],
+  "title": "分分彩后二直选同余技巧：把十位和个位按3组重新分类"
+}

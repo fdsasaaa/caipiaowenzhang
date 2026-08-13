@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-050",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把重复的数字记为a，单独的数字记为b，只保留|a-b|=2或5。本例共有26种角色组合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "002代表0重复、2为单号，符合差2；220代表2重复、0为单号，也符合，但它与002是不同的组选3多重集合。角色不能混。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>把重复的数字记为a，单独的数字记为b，只保留|a-b|=2或5。本例共有26种角色组合。</p><h2>现场复算</h2><p>002代表0重复、2为单号，符合差2；220代表2重复、0为单号，也符合，但它与002是不同的组选3多重集合。角色不能混。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>这个技巧最重要的是分清“谁重复”。资金上按固定单位记录角色组合，别把组三当成无角色的普通三数组。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "4290220715dd19ed17da0091955f8ac4030e493cb6ae6d5b1c43bc1f786bc447",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "52bba41c9ea910953f0ca89bd56a719dd8543ff1dc1cf65683da5fe0be0d9b70",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组三重号差值技巧：用重号-单号差2/5做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三组选3",
+  "primary_keyword": "分分彩后三组三重号差值技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP3-V1"
+  ],
+  "search_intent": "了解后三组选3的重号-单号差2/5研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三组选3技巧",
+    "重号-单号差2/5",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组三重号差值技巧：重号和单号只差2或5",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group3-role-gap",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选3",
+  "summary": "用重号-单号差2/5重新拆解后三组选3，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三组选3",
+    "重号-单号差2/5",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "group3_role_difference",
+    "role_design"
+  ],
+  "title": "分分彩后三组三重号差值技巧：重号和单号只差2或5"
+}

@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-035",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把0、1、8、9称为边缘组，其余2到7称为中间组。文章只研究一个固定位置的边缘组，不叠加冷热。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如个位开9算落入边缘组，开6则不算。这个名称只是为了方便分类，不代表边缘数字更特殊。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我更喜欢能在纸上两三步算完的方法。下面这个思路就是按这个标准设计的。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先固定条件</h2><p>把0、1、8、9称为边缘组，其余2到7称为中间组。文章只研究一个固定位置的边缘组，不叠加冷热。</p><h2>现场复算</h2><p>例如个位开9算落入边缘组，开6则不算。这个名称只是为了方便分类，不代表边缘数字更特殊。</p><p>这类文章的目标不是制造神秘感，而是把一个可验证的选号结构交代明白。</p><h2>投入节奏</h2><p>因为边缘组有4个数字，若做预算比较，要和其他4码组比较，而不是和2码组选在一起混算。</p><h2>到哪里就停</h2><p>做到文中这一步就停。没有新的已验证依据时，不继续叠加更多过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "50830e2748a6237fe7b7275529666a3f346140714414b78259aad9c22444fb31",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8933b4112444401df836026b3d4b5a2ee43cc78930cfa0a77ef684c1ce1e564d",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆边缘数字技巧：用边缘数字组做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆边缘数字技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的边缘数字组研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "边缘数字组",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩定位胆边缘数字技巧：把0、1、8、9单独当一组",
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-edge-middle",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "用边缘数字组重新拆解定位胆，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "边缘数字组",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "edge_digits",
+    "single_position_pool"
+  ],
+  "title": "分分彩定位胆边缘数字技巧：把0、1、8、9单独当一组"
+}

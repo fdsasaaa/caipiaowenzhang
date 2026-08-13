@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-026",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "比较万位-个位与千位-十位两组对称位置。本例要求其中一组距离≤2、另一组距离>2，得到49280个五位组合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如1 2 5 8 2：万和个差1，千和十差6，属于“一近一远”；如果两组都近或都远则排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这篇不从“哪个号码热”开始，而是换一个更容易复算的角度。</p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>方法很简单</h2><p>比较万位-个位与千位-十位两组对称位置。本例要求其中一组距离≤2、另一组距离>2，得到49280个五位组合。</p><h2>拿几个号码试一下</h2><p>例如1 2 5 8 2：万和个差1，千和十差6，属于“一近一远”；如果两组都近或都远则排除。</p><p>我会把这条条件写在纸上，开奖以后只做“符合/不符合”两个记录，不临时补第二个条件。</p><h2>资金怎么配</h2><p>这篇研究的是位置之间的对比，不是某个固定数字。资金上以固定小单位观察即可。</p><h2>最后提醒</h2><p>这只是一个研究型投注技巧，用来说明选号结构和执行纪律，不用于证明未来预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "5315e7bbc711ebefcd77dddea4b70293e11a09acf67213e60d8eb50aee02bce4",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "68658881d347146727684d797fbc4245c83fe10e8a3784f2c4f5aa7e318345f3",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选对称位技巧：用双对称位混合做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选对称位技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的双对称位混合研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "双对称位混合",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选对称位技巧：一组靠近，一组拉开",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-symmetric-mix",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "用双对称位混合重新拆解五星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "双对称位混合",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "symmetric_positions",
+    "distance_contrast"
+  ],
+  "title": "分分彩五星直选对称位技巧：一组靠近，一组拉开"
+}

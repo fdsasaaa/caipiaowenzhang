@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-012",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "要求十位数字严格位于百位与个位之间。比如1-4-8或8-4-1都可以。本例共240个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "148保留，因为4在1和8之间；184不保留，因为8没有夹在1和4之间。相同数字也不会满足严格夹心。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先把复杂的预测说法放一边，只做一个能手算、能复盘的小实验。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先说规则</h2><p>要求十位数字严格位于百位与个位之间。比如1-4-8或8-4-1都可以。本例共240个有序组合。</p><h2>实际怎么判断</h2><p>148保留，因为4在1和8之间；184不保留，因为8没有夹在1和4之间。相同数字也不会满足严格夹心。</p><p>真正有用的地方不是这组参数本身，而是你能清楚知道每一个号码为什么留下、为什么排除。</p><h2>别把资金越做越重</h2><p>这个方法已经把结构说得很清楚，不再叠加冷热或遗漏。记录时只统计是否属于夹心结构。</p><h2>这个技巧的边界</h2><p>短期出现多少次都不能反过来证明这条结构有稳定优势。先把规则固定、记录完整，再谈是否值得继续研究。</p>",
+  "content_format": "html",
+  "content_hash": "4f6e60123d3e1938d1be1908bf67506dc11ec5e53eb8671ae51137e38941d011",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "49b7921561b62661623577350a8136184a822b9af3251087dc79dd0787fd5d59",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选夹心技巧：用中位夹心做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选夹心技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的中位夹心研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "中位夹心",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选夹心技巧：让十位落在百位和个位之间",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-middle-sandwich",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "用中位夹心重新拆解后三直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "中位夹心",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "middle_between",
+    "positional_order"
+  ],
+  "title": "分分彩后三直选夹心技巧：让十位落在百位和个位之间"
+}

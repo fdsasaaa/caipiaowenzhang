@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-038",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "一星直选只看个位；选择几个不同数字，就展开为几注，中奖判定只看个位是否与所选数字相同。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先固定一个一星数字池。所谓“倍投”不一定只能1、2、4向上，本例反过来用1、1、0.8、0.6、0.5，五步后停止。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果前两步没有达到目标，第3步不是加到2，而是降到0.8。它承认当前思路可能错，所以越往后越少暴露。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果一个技巧需要解释十分钟才能知道怎么选，通常已经太复杂了。这次把规则压到一句话。</p><p>一星直选只看个位；选择几个不同数字，就展开为几注，中奖判定只看个位是否与所选数字相同。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>核心思路</h2><p>先固定一个一星数字池。所谓“倍投”不一定只能1、2、4向上，本例反过来用1、1、0.8、0.6、0.5，五步后停止。</p><h2>看一个例子就明白</h2><p>如果前两步没有达到目标，第3步不是加到2，而是降到0.8。它承认当前思路可能错，所以越往后越少暴露。</p><p>参数可以换，但要在下一轮开始前换；不能先看结果，再把规则改成刚好解释结果的样子。</p><h2>如果连续做实验</h2><p>这条路径不会追回前面的损失，也不应包装成回利公式；它只是风险控制设计。</p><h2>为什么值得记录</h2><p>这篇只解决“怎么分类、怎么执行、怎么限制暴露”三个问题，不给出收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "142920673846316d2f5967470a7d80fef7e14dbff66db248c0f65af9538abdb9",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "b61b9d15bf9b6ba7b30317c9937ed256042edc2d581f55eb90b4b7ffbe7d5af5",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选降压倍投技巧：用反向降压做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选降压倍投技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "了解一星直选的反向降压研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩一星直选技巧",
+    "反向降压",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩一星直选降压倍投技巧：倍投也可以越走越小",
+  "site_category_key": "tzjq",
+  "slug": "ffc-one-star-stepdown",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "用反向降压重新拆解一星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "反向降压",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "staking_stepdown",
+    "loss_control"
+  ],
+  "title": "分分彩一星直选降压倍投技巧：倍投也可以越走越小"
+}

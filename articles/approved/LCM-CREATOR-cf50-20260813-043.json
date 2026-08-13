@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-043",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二组选从0到9里选两个不同数字，顺序不作为不同注；同一个数字对只算一次。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两个不同数字里必须一个来自0到4，一个来自5到9。因为组选不计顺序，所以共有25个数字对。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "27和72是同一对27；23两数都在低区，78两数都在高区，都不属于跨区。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果一个技巧需要解释十分钟才能知道怎么选，通常已经太复杂了。这次把规则压到一句话。</p><p>后二组选从0到9里选两个不同数字，顺序不作为不同注；同一个数字对只算一次。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>核心思路</h2><p>两个不同数字里必须一个来自0到4，一个来自5到9。因为组选不计顺序，所以共有25个数字对。</p><h2>看一个例子就明白</h2><p>27和72是同一对27；23两数都在低区，78两数都在高区，都不属于跨区。</p><p>参数可以换，但要在下一轮开始前换；不能先看结果，再把规则改成刚好解释结果的样子。</p><h2>如果连续做实验</h2><p>25对属于较宽结构，适合用来做基础分类，不需要再靠大倍投制造“回利感”。</p><h2>为什么值得记录</h2><p>这篇只解决“怎么分类、怎么执行、怎么限制暴露”三个问题，不给出收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "04cd034894bcd6808f0405bbe6f3dd3386462ce6d4bf50ba772a5e05ec0fc6b4",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "5a8465299b0cd7b18bdf3a113ccdfb8ee8d0ea3844e407347c0b02ff7d575060",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二组选大小跨区技巧：用组选跨区做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二组选",
+  "primary_keyword": "分分彩后二组选大小跨区技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-GROUP-V1"
+  ],
+  "search_intent": "了解后二组选的组选跨区研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后二组选技巧",
+    "组选跨区",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二组选大小跨区技巧：一个0到4，一个5到9",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-group-cross-zone",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二组选",
+  "summary": "用组选跨区重新拆解后二组选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后二组选",
+    "组选跨区",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "unordered_cross_zone",
+    "group_pair"
+  ],
+  "title": "分分彩后二组选大小跨区技巧：一个0到4，一个5到9"
+}

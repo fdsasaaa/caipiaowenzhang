@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-007",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把绝对差1、4、7分成三条轨道。本例三轨合计42组，但实际执行时不是一次全用，而是每轮只记录其中一轨。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第一轮看差1，第二轮看差4，第三轮看差7，然后重新开始。轮换的意义是控制每轮暴露，不是声称轮到哪一轨就更容易出。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先把复杂的预测说法放一边，只做一个能手算、能复盘的小实验。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>先说规则</h2><p>把绝对差1、4、7分成三条轨道。本例三轨合计42组，但实际执行时不是一次全用，而是每轮只记录其中一轨。</p><h2>实际怎么判断</h2><p>第一轮看差1，第二轮看差4，第三轮看差7，然后重新开始。轮换的意义是控制每轮暴露，不是声称轮到哪一轨就更容易出。</p><p>真正有用的地方不是这组参数本身，而是你能清楚知道每一个号码为什么留下、为什么排除。</p><h2>别把资金越做越重</h2><p>资金单位可以保持1、1、1三轮平行，三轨走完后统一复盘，不把某一轨的连续空缺变成加倍理由。</p><h2>这个技巧的边界</h2><p>短期出现多少次都不能反过来证明这条结构有稳定优势。先把规则固定、记录完整，再谈是否值得继续研究。</p>",
+  "content_format": "html",
+  "content_hash": "0f06aea7c770e3b739956c9dcb4c661e1afc8a11027a0418035024f4c92ae27b",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "a87313d48a323be98f558ce4732483567748579381402331082190a508b17ec1",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选差值轮换技巧：用差值轮换做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选差值轮换技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的差值轮换研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "差值轮换",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选差值轮换技巧：1、4、7三条轨道不要一起压",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-gap147-rotation",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用差值轮换重新拆解后二直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "差值轮换",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "difference_rotation",
+    "cycle_design"
+  ],
+  "title": "分分彩后二直选差值轮换技巧：1、4、7三条轨道不要一起压"
+}

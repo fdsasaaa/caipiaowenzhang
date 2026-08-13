@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-013",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "只限制百位和个位绝对差为2或5，十位暂时不加条件。本例从1000个有序结果中留下260个。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如257里2和7差5，所以十位5无论是什么都不影响这一层；239里2和9差7，所以排除。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果一个技巧需要解释十分钟才能知道怎么选，通常已经太复杂了。这次把规则压到一句话。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>核心思路</h2><p>只限制百位和个位绝对差为2或5，十位暂时不加条件。本例从1000个有序结果中留下260个。</p><h2>看一个例子就明白</h2><p>例如257里2和7差5，所以十位5无论是什么都不影响这一层；239里2和9差7，所以排除。</p><p>参数可以换，但要在下一轮开始前换；不能先看结果，再把规则改成刚好解释结果的样子。</p><h2>如果连续做实验</h2><p>好处是规则简单。后续如果真要加第二层，必须提前写明理由和参数，不能看完开奖号再补一个条件。</p><h2>为什么值得记录</h2><p>这篇只解决“怎么分类、怎么执行、怎么限制暴露”三个问题，不给出收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "6a10122d5c6a75af024ed4fc1a5a9021a0199ec458238aceb53c26a631077206",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "034add642e2c818981893e4e511d1f8c2024d41df85371383127659fe43f5359",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选首尾差值技巧：用首尾差2或5做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选首尾差值技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的首尾差2或5研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "首尾差2或5",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选首尾差值技巧：只管百位和个位，中间位先放开",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-outer-gap",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "用首尾差2或5重新拆解后三直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "首尾差2或5",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "outer_difference",
+    "free_middle"
+  ],
+  "title": "分分彩后三直选首尾差值技巧：只管百位和个位，中间位先放开"
+}

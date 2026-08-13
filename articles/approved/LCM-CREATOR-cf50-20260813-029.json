@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-029",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先固定一套五星选号结构，资金只用相对单位。示例路径为1、1、1、0.8、0.8，然后停止。前面没有所谓“铺垫”，最后一轮也没有所谓“救火倍数”。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果前3轮都没有命中研究目标，第4轮仍按0.8，不因为已经投入过3次就觉得“必须追回来”。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这次不堆很多条件，只固定一个结构，然后把它算清楚。</p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>怎么选</h2><p>先固定一套五星选号结构，资金只用相对单位。示例路径为1、1、1、0.8、0.8，然后停止。前面没有所谓“铺垫”，最后一轮也没有所谓“救火倍数”。</p><h2>怎么算</h2><p>如果前3轮都没有命中研究目标，第4轮仍按0.8，不因为已经投入过3次就觉得“必须追回来”。</p><p>如果你自己重新算一遍能得到同样的集合，这个技巧才算讲清楚。</p><h2>本金先设上限</h2><p>这是一篇资金纪律文章：本金设计的第一任务是限制错误思路造成的暴露，而不是保证回本。</p><h2>别把研究写成预测</h2><p>号码结构和资金路径是两件事：前者决定你研究什么，后者只决定你最多承担多少暴露。</p>",
+  "content_format": "html",
+  "content_hash": "85f5f25c26d5e159663338a36a268d8d25de8730a2d766f55386502be75c7c0f",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "03be9089010c6cf0b69d21b246cf1d9d93f0d16b4ef5885928c7be0baab10319",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选分段资金技巧：用分段平投入做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选分段资金技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的分段平投入研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "分段平投入",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选分段资金技巧：前四轮不加码，第五轮也别救火",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-staged-bankroll",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "用分段平投入重新拆解五星直选，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "分段平投入",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "bankroll_staging",
+    "no_rescue"
+  ],
+  "title": "分分彩五星直选分段资金技巧：前四轮不加码，第五轮也别救火"
+}

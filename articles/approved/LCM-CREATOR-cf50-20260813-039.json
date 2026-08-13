@@ -1,0 +1,77 @@
+{
+  "approved_at": "2026-08-13T03:08:00+00:00",
+  "article_id": "LCM-CREATOR-cf50-20260813-039",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；不继承平台奖金、返点、单注金额或限额。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定一个位置和一个号码池，资金按1、1、1.2、1.2、1五步运行。中间只做一次轻微抬高，最后回到1。",
+      "claim_type": "calculation",
+      "evidence_note": "文中固定研究参数和候选集合的演示计算；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "路径设计的重点是最大单位只有1.2，不出现2、4、8这种尾部爆炸。五步完成后归零重开。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟演示号码用于解释计算方法；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这次不堆很多条件，只固定一个结构，然后把它算清楚。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录。</strong></p><h2>怎么选</h2><p>固定一个位置和一个号码池，资金按1、1、1.2、1.2、1五步运行。中间只做一次轻微抬高，最后回到1。</p><h2>怎么算</h2><p>路径设计的重点是最大单位只有1.2，不出现2、4、8这种尾部爆炸。五步完成后归零重开。</p><p>如果你自己重新算一遍能得到同样的集合，这个技巧才算讲清楚。</p><h2>本金先设上限</h2><p>这条路径只用于限制最大暴露，不用于证明能够回本。</p><h2>别把研究写成预测</h2><p>号码结构和资金路径是两件事：前者决定你研究什么，后者只决定你最多承担多少暴露。</p>",
+  "content_format": "html",
+  "content_hash": "f54167f2f767497ca44f905332c73bae837ee70276c03664073139a5bfcb6525",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF50-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "7d450624397381bef8570fe41fe5c08e8de4cf7abe2c7c3c5896445593e04b77",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆平台式倍投技巧：用平台式资金路径做一个可复算的研究示例，讲清选号逻辑、计算方法和资金停止条件，不把结构筛选包装成预测优势。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆平台式倍投技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的平台式资金路径研究方法，并看懂可复算示例和资金控制",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "平台式资金路径",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩定位胆平台式倍投技巧：1、1、1.2、1.2、1比直线翻倍温和",
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-plateau-staking",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "用平台式资金路径重新拆解定位胆，把选号逻辑、可复算例子和资金停止条件讲清楚。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "平台式资金路径",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "staking_plateau",
+    "bounded_progression"
+  ],
+  "title": "分分彩定位胆平台式倍投技巧：1、1、1.2、1.2、1比直线翻倍温和"
+}

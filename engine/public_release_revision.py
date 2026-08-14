@@ -101,8 +101,11 @@ def validate_public_release_revision(
 
     source_batch_id = str(package.get("source_batch_id") or "").strip()
     parent_batch_id = str(parent.get("creator_batch_id") or "").strip()
+    creator_batch_id = str(package.get("creator_batch_id") or "").strip()
     if not source_batch_id or source_batch_id != parent_batch_id:
         raise PublicReleaseRevisionError("source_batch_id must match parent creator_batch_id")
+    if not creator_batch_id or creator_batch_id != parent_batch_id:
+        raise PublicReleaseRevisionError("creator_batch_id must be preserved from immutable Approved parent")
 
     review = package.get("public_release_review")
     if not isinstance(review, dict) or review.get("status") != "approved":

@@ -141,6 +141,11 @@ def _relationship_summary(records: list[dict]) -> dict:
 
 
 def build_draw_research_context(dataset: dict, *, recent_limit: int = 80, sample_limit: int = 80) -> dict:
+    if isinstance(recent_limit, bool) or not isinstance(recent_limit, int) or recent_limit < 1:
+        raise DrawResearchError("recent_limit must be an integer >= 1")
+    if isinstance(sample_limit, bool) or not isinstance(sample_limit, int) or sample_limit < 2:
+        raise DrawResearchError("sample_limit must be an integer >= 2")
+
     report = validate_draw_dataset(dataset)
     if not report.passed:
         raise DrawResearchError("; ".join(report.errors))

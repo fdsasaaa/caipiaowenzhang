@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-152",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "计算1×万+2×千+3×百+4×十+5×个，再按13取余，只保留余数0、5、8。在十万个有序五位结果里，共有23079个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如00000、00001都会留下，00002会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为0.6、0.6、0.8、0.8、1、1个单位，后段不再向上扩档。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先把公式拆开看，你会发现它其实只是很简单的数字关系。</p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>公式</h2><p>计算1×万+2×千+3×百+4×十+5×个，再按13取余，只保留余数0、5、8。在十万个有序五位结果里，共有23079个符合这条演示条件。</p><h2>代入</h2><p>例如00000、00001都会留下，00002会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>停止条件</h2><p>示例资金节奏为0.6、0.6、0.8、0.8、1、1个单位，后段不再向上扩档。</p><p>这不是答案模板，而是一种可以重复检查的思考方法。</p>",
+  "content_format": "html",
+  "content_hash": "831254d09ee76fe56780d3eddc92944008d2295a32cfe1ad3137f935e486f821",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "c530029b1e9aab568f30978b7453ec37d00fe40da5ef9dcef67e48d088df2afa",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选位置编码余数7研究技巧：用位置编码余数7做一个可复算的分分彩五星直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选位置编码余数7研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的位置编码余数7思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "位置编码余数7",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选位置编码余数7研究技巧：用一张纸就能复盘",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-w6-152",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "从位置编码余数7出发，把五星直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "位置编码余数7",
+    "拆公式型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "five_weight_13_6",
+    "style_17",
+    "play_five"
+  ],
+  "title": "分分彩五星直选位置编码余数7研究技巧：用一张纸就能复盘"
+}

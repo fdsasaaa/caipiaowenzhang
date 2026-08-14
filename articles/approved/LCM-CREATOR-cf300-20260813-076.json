@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-076",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按位置关系筛选，只保留十位折返结构。在1000个有序结果里，共有570个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如010、020都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1、0.8、1、0.8、1、0.8个单位，只在两个档位交替。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先看例子，再回头看公式，通常比先讲一堆概念更容易懂。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>先看号码</h2><p>例如010、020都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>再看原因</h2><p>按位置关系筛选，只保留十位折返结构。在1000个有序结果里，共有570个符合这条演示条件。</p><h2>执行时</h2><p>示例资金节奏为1、0.8、1、0.8、1、0.8个单位，只在两个档位交替。</p><p>如果中途不停改条件，最后看到的只会是后验解释，不是可复盘的方法。</p>",
+  "content_format": "html",
+  "content_hash": "0fde3b80de909f06abe7e8310e824b1bdacae58c16c6d91ed9a3a52503caef5e",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "ad27b2f0f8619a73d1e578e98dcfbeafe64e824fde960e64ecafec0f56fa78ed",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选十位折返研究技巧：用十位折返做一个可复算的分分彩后三直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选十位折返研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的十位折返思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "十位折返",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选十位折返研究技巧：适合做独立观察卡",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-rel1-076",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "从十位折返出发，把后三直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "十位折返",
+    "例子先行型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "middle_outside",
+    "style_5",
+    "play_last3"
+  ],
+  "title": "分分彩后三直选十位折返研究技巧：适合做独立观察卡"
+}

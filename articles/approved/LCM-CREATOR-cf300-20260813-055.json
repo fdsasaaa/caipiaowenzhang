@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-055",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "三位最大数减最小数，只保留跨度5到7。在1000个有序结果里，共有420个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如005、006都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>执行时只做几步：读号码、代入条件、记录结果，到点停止。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><ol><li>三位最大数减最小数，只保留跨度5到7。在1000个有序结果里，共有420个符合这条演示条件。</li><li>例如005、006都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。</li><li>资金路径只保留正常档位，走到终点就停止，不临时增加翻倍档。</li></ol><p>规则固定以后再记录，才知道自己研究的到底是不是同一件事。</p>",
+  "content_format": "html",
+  "content_hash": "45eb94dc71ee9f6a084462b98367610dc722b2c47a8e26a121bba447dc670a98",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8ac6fdcfe4188c4b68374de24191318dc907187d57ac8b9f897d09f52bb8f228",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选跨度5到7研究技巧：用跨度5到7做一个可复算的分分彩后三直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选跨度5到7研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的跨度5到7思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "跨度5到7",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选跨度5到7研究技巧：把复杂选号拆成一个关系",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-span4-055",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "从跨度5到7出发，把后三直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "跨度5到7",
+    "执行清单型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "span_5_7",
+    "style_18",
+    "play_last3"
+  ],
+  "title": "分分彩后三直选跨度5到7研究技巧：把复杂选号拆成一个关系"
+}

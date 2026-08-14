@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-216",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二组选从0到9里选两个不同数字，顺序不作为不同注；同一个数字对只算一次。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两个数字里只保留恰一个平方数码。在45个无序两数组合里，共有24个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如02、03都会留下，01会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先看例子，再回头看公式，通常比先讲一堆概念更容易懂。</p><p>后二组选从0到9里选两个不同数字，顺序不作为不同注；同一个数字对只算一次。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>先看号码</h2><p>例如02、03都会留下，01会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>再看原因</h2><p>两个数字里只保留恰一个平方数码。在45个无序两数组合里，共有24个符合这条演示条件。</p><h2>执行时</h2><p>新方法先纸面记录，能保持规则不变再进入真实执行；想改条件就重新开一轮。</p><p>如果中途不停改条件，最后看到的只会是后验解释，不是可复盘的方法。</p>",
+  "content_format": "html",
+  "content_hash": "95ccd033c187c768626099d889cdedaac1c12490f5e57f6e985521282a989487",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "f195e164b444641cf7fb95be7f0b0a98e12d9a10bfc1f24c789c2f4bc1bace22",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二组选恰一个平方数码研究技巧：用恰一个平方数码做一个可复算的分分彩后二组选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后二组选",
+  "primary_keyword": "分分彩后二组选恰一个平方数码研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-GROUP-V1"
+  ],
+  "search_intent": "了解后二组选的恰一个平方数码思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后二组选技巧",
+    "恰一个平方数码",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二组选恰一个平方数码研究技巧：适合做独立观察卡",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-group-set1-216",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二组选",
+  "summary": "从恰一个平方数码出发，把后二组选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后二组选",
+    "恰一个平方数码",
+    "例子先行型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g2_onesquare",
+    "style_5",
+    "play_g2"
+  ],
+  "title": "分分彩后二组选恰一个平方数码研究技巧：适合做独立观察卡"
+}

@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-164",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定一个位置，只研究5、6、7、8、9这组数字。在0到9这10个单码里，共有5个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如5、6都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先问一个实际问题：如果每个号码为什么留下都说不清，这个技巧还有必要继续吗？</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>怎么做</h2><p>固定一个位置，只研究5、6、7、8、9这组数字。在0到9这10个单码里，共有5个符合这条演示条件。</p><h2>怎么判断</h2><p>例如5、6都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>连续观察怎么办</h2><p>连续观察时始终使用固定单位，到预设终点就结束，不根据上一轮临时放大投入。</p><p>这种方法真正有价值的地方，是你可以自己复算，而不是相信一句“这个技巧很准”。</p>",
+  "content_format": "html",
+  "content_hash": "8ab5a806072e53815f16f71f915ad1abf6b2c874300074ab171b2f3833aea999",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0bc2f4d2743e65cd654938fbdf60b20b728b614860dba2197353df4fb5373316",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆大号五码研究技巧：用大号五码做一个可复算的分分彩定位胆研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆大号五码研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的大号五码思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "大号五码",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩定位胆大号五码研究技巧：先固定规则，再谈资金",
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-s3-164",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "从大号五码出发，把定位胆拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "大号五码",
+    "问题型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "loc_high",
+    "style_1",
+    "play_loc"
+  ],
+  "title": "分分彩定位胆大号五码研究技巧：先固定规则，再谈资金"
+}

@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-004",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "只看两位绝对差，保留差值为2、6的组合。在100个有序结果里，共有24个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如02、06都会留下，00会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1.2、1、0.8、0.8、0.6个单位，后段逐步减轻。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先问一个实际问题：如果每个号码为什么留下都说不清，这个技巧还有必要继续吗？</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>怎么做</h2><p>只看两位绝对差，保留差值为2、6的组合。在100个有序结果里，共有24个符合这条演示条件。</p><h2>怎么判断</h2><p>例如02、06都会留下，00会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>连续观察怎么办</h2><p>示例资金节奏为1.2、1、0.8、0.8、0.6个单位，后段逐步减轻。</p><p>这种方法真正有价值的地方，是你可以自己复算，而不是相信一句“这个技巧很准”。</p>",
+  "content_format": "html",
+  "content_hash": "f8cc7a553cb6ab7997c93e073638be9e7dc99fbd03c2d90620f7ea9805f82e35",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "2c994cc1a2a26c65b455ee243cc51e800159ac4ebe7d652fd8c50cb093267cd4",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选差值2/6研究技巧：用差值2/6做一个可复算的分分彩后二直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选差值2/6研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的差值2/6思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "差值2/6",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选差值2/6研究技巧：先固定规则，再谈资金",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-gap3-004",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "从差值2/6出发，把后二直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "差值2/6",
+    "问题型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "gap_set_3",
+    "style_1",
+    "play_last2"
+  ],
+  "title": "分分彩后二直选差值2/6研究技巧：先固定规则，再谈资金"
+}

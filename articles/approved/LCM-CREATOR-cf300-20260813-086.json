@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-086",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "计算3×百位+2×十位+1×个位，再按9取余，只保留余数1、5、8。在1000个有序结果里，共有330个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如001、005都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我先把资金纪律放前面：方法可以试，投入不能随着情绪长大。</p><p>新方法先纸面记录，能保持规则不变再进入真实执行；想改条件就重新开一轮。</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>再看选号条件</h2><p>计算3×百位+2×十位+1×个位，再按9取余，只保留余数1、5、8。在1000个有序结果里，共有330个符合这条演示条件。</p><p>例如001、005都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。</p><p>如果中途不停改条件，最后看到的只会是后验解释，不是可复盘的方法。</p>",
+  "content_format": "html",
+  "content_hash": "2936ede324806f0bb0aa68063f4e75c4081a5ed0a406193e1eeee178046e7531",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0c4b1363de039417622b4228e07b03b165afac587f258f99f5f3dd12f8887b07",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选3:2:1加权余数研究技巧：用3:2:1加权余数做一个可复算的分分彩后三直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选3:2:1加权余数研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的3:2:1加权余数思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "3:2:1加权余数",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选3:2:1加权余数研究技巧：适合做独立观察卡",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-w3-086",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "从3:2:1加权余数出发，把后三直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "3:2:1加权余数",
+    "资金先行型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "w3_3_2_1_9",
+    "style_15",
+    "play_last3"
+  ],
+  "title": "分分彩后三直选3:2:1加权余数研究技巧：适合做独立观察卡"
+}

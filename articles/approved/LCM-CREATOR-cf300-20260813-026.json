@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-026",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "只保留两位同单或同双。在100个有序结果里，共有50个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如00、02都会留下，01会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>我先把资金纪律放前面：方法可以试，投入不能随着情绪长大。</p><p>新方法先纸面记录，能保持规则不变再进入真实执行；想改条件就重新开一轮。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>再看选号条件</h2><p>只保留两位同单或同双。在100个有序结果里，共有50个符合这条演示条件。</p><p>例如00、02都会留下，01会被排除；把号码代入同一条条件，就能得到相同判断。</p><p>如果中途不停改条件，最后看到的只会是后验解释，不是可复盘的方法。</p>",
+  "content_format": "html",
+  "content_hash": "71cd36e1ea752e536d782695a9edf205fe5aac7b74e893aa88d34c169c3b10cc",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0792f9f345c1d5cd195dbb32c403379391c9a3921ae75d59711aa42f12103ba0",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选单双同类研究技巧：用单双同类做一个可复算的分分彩后二直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选单双同类研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的单双同类思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "单双同类",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选单双同类研究技巧：适合做独立观察卡",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-rel1-026",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "从单双同类出发，把后二直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "单双同类",
+    "资金先行型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "parity_same",
+    "style_15",
+    "play_last2"
+  ],
+  "title": "分分彩后二直选单双同类研究技巧：适合做独立观察卡"
+}

@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-088",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "计算2×百位+5×十位+1×个位，再按11取余，只保留余数1、4、9。在1000个有序结果里，共有273个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如001、004都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1、1、1、1.2、1.2、0.8个单位，只在预设节点换档。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果你平时会记号码，可以把这条方法当成记录本里的一张独立卡片。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><h2>记录卡：条件</h2><p>计算2×百位+5×十位+1×个位，再按11取余，只保留余数1、4、9。在1000个有序结果里，共有273个符合这条演示条件。</p><h2>记录卡：例子</h2><p>例如001、004都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>记录卡：投入</h2><p>示例资金节奏为1、1、1、1.2、1.2、0.8个单位，只在预设节点换档。</p><p>能讲清为什么留下，也能讲清为什么排除，这个技巧就完成了最重要的工作。</p>",
+  "content_format": "html",
+  "content_hash": "e8a27cfc9067c45ddc125c204d1e3c3b2466853518d01099fd033cb8a9181688",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "2c605042da21b66611c4a63ecb5322b9bcf3369ba72a9a1deedce9561a1d9ec5",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选2:5:1加权余数研究技巧：用2:5:1加权余数做一个可复算的分分彩后三直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选2:5:1加权余数研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的2:5:1加权余数思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "2:5:1加权余数",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选2:5:1加权余数研究技巧：从一个简单公式开始",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-w5-088",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "从2:5:1加权余数出发，把后三直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "2:5:1加权余数",
+    "记录本型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "w3_2_5_1_11",
+    "style_9",
+    "play_last3"
+  ],
+  "title": "分分彩后三直选2:5:1加权余数研究技巧：从一个简单公式开始"
+}

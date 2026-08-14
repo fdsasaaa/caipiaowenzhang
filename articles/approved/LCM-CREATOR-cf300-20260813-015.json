@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-015",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两位相加，只保留和值10到15。在100个有序结果里，共有39个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如19、28都会留下，00会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为0.8、0.8、1、1、1.2、1.2个单位，每个档位连续两步。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>执行时只做几步：读号码、代入条件、记录结果，到点停止。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><ol><li>两位相加，只保留和值10到15。在100个有序结果里，共有39个符合这条演示条件。</li><li>例如19、28都会留下，00会被排除；把号码代入同一条条件，就能得到相同判断。</li><li>示例资金节奏为0.8、0.8、1、1、1.2、1.2个单位，每个档位连续两步。</li></ol><p>规则固定以后再记录，才知道自己研究的到底是不是同一件事。</p>",
+  "content_format": "html",
+  "content_hash": "392d3243662ed8a8125109218c4ceee3bb740b4e316a45bb1fec6663e9539362",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "b14eca75e335d588653ddacc8ab710682122d0dce9bdc00c001b7e84d8bb5888",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值10到15研究技巧：用和值10到15做一个可复算的分分彩后二直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选和值10到15研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的和值10到15思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "和值10到15",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选和值10到15研究技巧：把复杂选号拆成一个关系",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-sum6-015",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "从和值10到15出发，把后二直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值10到15",
+    "执行清单型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "sum_band_10_15",
+    "style_18",
+    "play_last2"
+  ],
+  "title": "分分彩后二直选和值10到15研究技巧：把复杂选号拆成一个关系"
+}

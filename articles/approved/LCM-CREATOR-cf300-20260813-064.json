@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-064",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "三位相加，只保留和值16到22。在1000个有序结果里，共有317个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如079、088都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1.2、1、0.8、0.8、0.6个单位，后段逐步减轻。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先问一个实际问题：如果每个号码为什么留下都说不清，这个技巧还有必要继续吗？</p><p>后三直选看百位、十位、个位三个位置，三个位置都按位对应；理论候选空间可以看成000到999共1000个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>怎么做</h2><p>三位相加，只保留和值16到22。在1000个有序结果里，共有317个符合这条演示条件。</p><h2>怎么判断</h2><p>例如079、088都会留下，000会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>连续观察怎么办</h2><p>示例资金节奏为1.2、1、0.8、0.8、0.6个单位，后段逐步减轻。</p><p>这种方法真正有价值的地方，是你可以自己复算，而不是相信一句“这个技巧很准”。</p>",
+  "content_format": "html",
+  "content_hash": "2b4704200114ad7180d0009f4365947ec0b1e0d0e3859d149aaf3f068fcf761f",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "9870b93bc2f2d65b165de4f177515aa02bbc924b41a71d7e939ec9d9b096be2c",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选和值16到22研究技巧：用和值16到22做一个可复算的分分彩后三直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选和值16到22研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "了解后三直选的和值16到22思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三直选技巧",
+    "和值16到22",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三直选和值16到22研究技巧：先固定规则，再谈资金",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-direct-sum5-064",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "从和值16到22出发，把后三直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "和值16到22",
+    "问题型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "sum3_16_22",
+    "style_1",
+    "play_last3"
+  ],
+  "title": "分分彩后三直选和值16到22研究技巧：先固定规则，再谈资金"
+}

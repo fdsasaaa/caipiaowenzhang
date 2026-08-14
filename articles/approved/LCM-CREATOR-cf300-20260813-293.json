@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-293",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按角色关系计算一四角色编码。在90种“重复号a+单号b”的角色组合里，共有38个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如a=0、b=3、a=0、b=4都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>拿张纸就能做。先把规则写在上面，再把符合和不符合分成两栏。</p><p>后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>纸上第一行</h2><p>按角色关系计算一四角色编码。在90种“重复号a+单号b”的角色组合里，共有38个符合这条演示条件。</p><h2>纸上第二行</h2><p>例如a=0、b=3、a=0、b=4都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>最后写资金上限</h2><p>一个周期结束后先空一轮再重新开始，让资金决策与上一轮结果脱钩。</p><p>以后要扩展，也建议一次只加一个新条件，否则很快又会回到复杂堆叠。</p>",
+  "content_format": "html",
+  "content_hash": "21a83592eaed46d43889ed4a7692b64c9cd7c32a4203fcadc64d26f082619681",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "42f5acf7d16dc435a8fe43d587d17c5b65ce9a8df0129db1be14686c9a6a7a5f",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选3一四角色编码研究技巧：用一四角色编码做一个可复算的分分彩后三组选3研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选3",
+  "primary_keyword": "分分彩后三组选3一四角色编码研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP3-V1"
+  ],
+  "search_intent": "了解后三组选3的一四角色编码思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选3技巧",
+    "一四角色编码",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选3一四角色编码研究技巧：留下与排除都要有理由",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group3-f4-293",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选3",
+  "summary": "从一四角色编码出发，把后三组选3拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选3",
+    "一四角色编码",
+    "纸笔型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g3_w14",
+    "style_4",
+    "play_g3"
+  ],
+  "title": "分分彩后三组选3一四角色编码研究技巧：留下与排除都要有理由"
+}

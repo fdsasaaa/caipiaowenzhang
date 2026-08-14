@@ -1,0 +1,89 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-049",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "选号只保留绝对差为1或5的组合，重点研究周期归零的执行方式。在100个有序结果里，共有28个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如01、05都会留下，00会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1.2、1、0.8、0.8、0.6个单位，后段逐步减轻。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>可以把它做成一张观察卡，每期只勾“符合”或“不符合”。</p><p>后二直选看十位和个位，位置和顺序都要对应；00到99可以看成100个有序结果。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>观察卡上的公式</h2><p>选号只保留绝对差为1或5的组合，重点研究周期归零的执行方式。在100个有序结果里，共有28个符合这条演示条件。</p><h2>观察卡上的例子</h2><p>例如01、05都会留下，00会被排除；把号码代入同一条条件，就能得到相同判断。</p><p>示例资金节奏为1.2、1、0.8、0.8、0.6个单位，后段逐步减轻。</p><p>先保持简单。一个条件能说清，就不要为了显得高级再硬塞三层。</p>",
+  "content_format": "html",
+  "content_hash": "862e821e77a6a80005a2c16f1ef153b4c44b5630821acc9ef53b29935d0762ff",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "678a05517fbb1f001346d5680a57ef8f621d38e1dc309152f7a1b163da19d2d1",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选周期归零研究技巧：用周期归零做一个可复算的分分彩后二直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选周期归零研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "了解后二直选的周期归零思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后二直选技巧",
+    "周期归零",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二直选周期归零研究技巧：先算结构，再控制投入",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-direct-m8-049",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "从周期归零出发，把后二直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "周期归零",
+    "观察卡型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "bankroll_reset",
+    "style_16",
+    "play_last2",
+    "bankroll_or_staking_design"
+  ],
+  "title": "分分彩后二直选周期归零研究技巧：先算结构，再控制投入"
+}

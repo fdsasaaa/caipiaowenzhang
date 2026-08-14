@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 180
     env:
       OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
-      OPENAI_BASE_URL: ${{ vars.MODEL_PROVIDER_BASE_URL }}
+      OPENAI_BASE_URL: ${{ vars.MODEL_PROVIDER_BASE_URL || 'https://api.synapai.top/v1' }}
       OPENAI_MODEL: ${{ vars.MODEL_PROVIDER_MODEL }}
       GH_TOKEN: ${{ github.token }}
     steps:

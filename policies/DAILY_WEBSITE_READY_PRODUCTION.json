@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "timezone": "Asia/Singapore",
+  "target": 20,
+  "minimum": 10,
+  "maximum": 25,
+  "candidate_pool": 40,
+  "internal_batch_size": 20,
+  "quality_first": true,
+  "quality_floor_may_be_lowered": false,
+  "public_release_required_to_count": true,
+  "public_release_generation_attempts": 2,
+  "public_release_timeout_seconds": 180,
+  "public_release_min_plain_chars": 500,
+  "public_release_min_h2": 3,
+  "model_preference_hints": ["mini", "flash", "small", "lite"],
+  "blocked_exact_primary_keywords": [
+    "分分彩",
+    "分分彩技巧",
+    "分分彩技术",
+    "分分彩倍投",
+    "分分彩高级倍投",
+    "分分彩资金管理"
+  ],
+  "blocked_primary_keyword_fragments": [
+    "倍投",
+    "盈利",
+    "赚钱",
+    "资金管理"
+  ],
+  "frozen_article_ids": [
+    "LCM-CREATOR-cf50-20260813-020",
+    "LCM-CREATOR-cf50-20260813-029",
+    "LCM-CREATOR-cf50-20260813-038",
+    "LCM-CREATOR-cf50-20260813-039",
+    "LCM-CREATOR-cf50-20260813-040"
+  ],
+  "forbidden_public_content_patterns": [
+    "(翻倍|加倍|追号|追投|回本|止损|资金递进|资金路径)",
+    "(下一期|下期).{0,12}(选|买|投|跟|追)",
+    "[0-9]+(?:\\.[0-9]+)?\\s*(元|倍)",
+    "(?:[0-9][、,，]\\s*){2,}[0-9]",
+    "第\\s*[0-9一二三四五六七八九十]+\\s*(期|轮).{0,20}(投|买|加|倍)"
+  ],
+  "required_uncertainty_terms_any": [
+    "不能单独证明",
+    "不等于预测",
+    "随机波动",
+    "不能证明未来",
+    "不保证"
+  ],
+  "forbidden_side_effects": [
+    "website_sync",
+    "website_cms_write",
+    "website_schedule_creation",
+    "publisher_invocation",
+    "publisher_cron_change",
+    "publication"
+  ]
+}

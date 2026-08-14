@@ -1,5 +1,5 @@
 {
-  "approved_public_release_count": 1,
+  "approved_public_release_count": 2,
   "articles": [
     {
       "article_id": "LCM-CREATOR-cf50-20260813-001",
@@ -10,6 +10,16 @@
       "release_revision": 1,
       "revision_id": "LCM-CREATOR-cf50-20260813-001:public-r1",
       "slug": "ffc-last2-direct-diff-double-track"
+    },
+    {
+      "article_id": "LCM-CREATOR-cf50-20260813-011",
+      "content_hash": "4b79ee9adc9db898a98becf6533f8ed115a68ec7d5bbd9f19fe7cb631b8dcdc2",
+      "fingerprint": "1e4b24c0bce5df3de155410373ee02a19ad5d2bb0567f5ad8c44a524a7d08f32",
+      "path": "articles/public_release/CF50-20260813/LCM-CREATOR-cf50-20260813-011.public-r1.json",
+      "primary_keyword": "分分彩后三直选跨度区间技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-CREATOR-cf50-20260813-011:public-r1",
+      "slug": "ffc-last3-direct-span35"
     }
   ],
   "canary_ingestion_allowed": true,

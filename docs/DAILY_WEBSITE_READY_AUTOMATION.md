@@ -24,9 +24,11 @@ Required repository Actions secret:
 
 - `MODEL_PROVIDER_API_KEY`
 
+The daily workflow defaults to the already verified OpenAI-compatible endpoint `https://api.synapai.top/v1`. The provider preflight passed Structured Outputs there with the existing secret and selected `gpt-5.4-mini` automatically.
+
 Optional repository Actions variables:
 
-- `MODEL_PROVIDER_BASE_URL` — OpenAI-compatible `/v1` base URL. Empty means the engine default `https://api.openai.com/v1`.
+- `MODEL_PROVIDER_BASE_URL` — overrides the verified default endpoint when intentionally changing provider.
 - `MODEL_PROVIDER_MODEL` — explicit model ID. Empty means the runner asks `/models` and prefers model IDs containing `mini`, `flash`, `small`, then `lite` before falling back to the first returned model.
 
 Do not store API keys in tracked files, issues, PR bodies, logs, or workflow inputs.

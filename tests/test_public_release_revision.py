@@ -120,3 +120,15 @@ def test_revision_rejects_unapproved_public_review(tmp_path: Path) -> None:
 
     with pytest.raises(PublicReleaseRevisionError, match="public_release_review.status"):
         stage_public_release_revision(revision, approved_root=approved_root, release_root=tmp_path / "release")
+
+
+def test_revision_requires_creator_batch_id_from_parent(tmp_path: Path) -> None:
+    approved_root = tmp_path / "approved"
+    parent = _parent()
+    _write_parent(approved_root, parent)
+    revision = _revision(parent)
+    revision.pop("creator_batch_id")
+    revision["fingerprint"] = expected_public_release_fingerprint(revision)
+
+    with pytest.raises(PublicReleaseRevisionError, match="creator_batch_id"):
+        stage_public_release_revision(revision, approved_root=approved_root, release_root=tmp_path / "release")

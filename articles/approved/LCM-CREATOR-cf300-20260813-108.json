@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-108",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "五位只保留“两个单数”这一种结构。在十万个有序五位结果里，共有31250个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如00011、00013都会留下，00000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>如果你平时会记号码，可以把这条方法当成记录本里的一张独立卡片。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><h2>记录卡：条件</h2><p>五位只保留“两个单数”这一种结构。在十万个有序五位结果里，共有31250个符合这条演示条件。</p><h2>记录卡：例子</h2><p>例如00011、00013都会留下，00000会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>记录卡：投入</h2><p>一个周期结束后先空一轮再重新开始，让资金决策与上一轮结果脱钩。</p><p>能讲清为什么留下，也能讲清为什么排除，这个技巧就完成了最重要的工作。</p>",
+  "content_format": "html",
+  "content_hash": "0bd67fb2abd878547ed265ebdcda3fa25337a9926fe889bab2870babc3b4d08e",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "2af66e0d6452fc2f692e2a6850ed2a914d7ea9d666ad276ef819d6f861012a11",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选两个单数研究技巧：用两个单数做一个可复算的分分彩五星直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选两个单数研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的两个单数思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "两个单数",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选两个单数研究技巧：从一个简单公式开始",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-base2-108",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "从两个单数出发，把五星直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "两个单数",
+    "记录本型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "o2",
+    "style_9",
+    "play_five"
+  ],
+  "title": "分分彩五星直选两个单数研究技巧：从一个简单公式开始"
+}

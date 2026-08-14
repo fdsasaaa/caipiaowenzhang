@@ -106,7 +106,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add articles/approved articles/public_release artifacts/daily_website_ready registry 2>/dev/null || true
           git add -A
           git commit -m "Content: daily website-ready inventory ${DAY}"
           git push --set-upstream origin "$BRANCH"
@@ -158,7 +157,7 @@ jobs:
           gh workflow run test.yml --ref "$BRANCH"
           RUN_ID=""
           for _ in $(seq 1 30); do
-            ROW="$(gh run list --workflow test.yml --branch "$BRANCH" --event workflow_dispatch --limit 5 --json databaseId,headSha,status,conclusion --jq --arg sha "$HEAD_SHA" '[.[] | select(.headSha == $sha)][0] // empty')"
+            ROW="$(gh run list --workflow test.yml --branch "$BRANCH" --event workflow_dispatch --limit 5 --json databaseId,headSha,status,conclusion | jq -c --arg sha "$HEAD_SHA" '[.[] | select(.headSha == $sha)][0] // empty')"
             if [ -n "$ROW" ]; then
               RUN_ID="$(printf '%s' "$ROW" | jq -r '.databaseId')"
               break

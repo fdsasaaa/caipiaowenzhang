@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-287",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把重复号和单号分开看，只保留角色镜像和9。在90种“重复号a+单号b”的角色组合里，共有10个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如a=0、b=9、a=1、b=8都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为0.6、0.6、0.8、0.8、1、1个单位，后段不再向上扩档。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>很多方法不是条件太少，而是条件叠得太多。这里反过来，只留一条。</p><p>后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>只改一个习惯</h2><p>把重复号和单号分开看，只保留角色镜像和9。在90种“重复号a+单号b”的角色组合里，共有10个符合这条演示条件。</p><p>例如a=0、b=9、a=1、b=8都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>最容易犯的错</h2><p>条件没出现不等于条件应该变。示例资金节奏为0.6、0.6、0.8、0.8、1、1个单位，后段不再向上扩档。</p><p>把技巧当成分类工具，把资金当成风险工具，两件事分开就清楚了。</p>",
+  "content_format": "html",
+  "content_hash": "9fa26f4c4095ffa1a682abd535ec28040afa24524a7ab032677b31fabbb745ed",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "22c3152f9b16c3f71e1f25e7afa76ce90428281383233f20b6728669b8e46b97",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选3角色镜像和9研究技巧：用角色镜像和9做一个可复算的分分彩后三组选3研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选3",
+  "primary_keyword": "分分彩后三组选3角色镜像和9研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP3-V1"
+  ],
+  "search_intent": "了解后三组选3的角色镜像和9思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选3技巧",
+    "角色镜像和9",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选3角色镜像和9研究技巧：别让临场感觉改掉规则",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group3-set4-287",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选3",
+  "summary": "从角色镜像和9出发，把后三组选3拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选3",
+    "角色镜像和9",
+    "纠错型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g3_sum9",
+    "style_2",
+    "play_g3"
+  ],
+  "title": "分分彩后三组选3角色镜像和9研究技巧：别让临场感觉改掉规则"
+}

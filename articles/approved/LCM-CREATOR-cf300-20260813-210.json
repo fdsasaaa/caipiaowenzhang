@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-210",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二组选从0到9里选两个不同数字，顺序不作为不同注；同一个数字对只算一次。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按无序两数组合，只保留同大小区结构。在45个无序两数组合里，共有20个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如01、02都会留下，05会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为0.8、0.8、1、1、1.2、1.2个单位，每个档位连续两步。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>把这篇当成一个小实验就行：条件先写死，结果出来以后只做记录。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>后二组选从0到9里选两个不同数字，顺序不作为不同注；同一个数字对只算一次。</p><h2>实验条件</h2><p>按无序两数组合，只保留同大小区结构。在45个无序两数组合里，共有20个符合这条演示条件。</p><h2>验算样例</h2><p>例如01、02都会留下，05会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>实验边界</h2><p>示例资金节奏为0.8、0.8、1、1、1.2、1.2个单位，每个档位连续两步。</p><p>研究可以继续，参数可以以后换，但同一轮里别边走边改。</p>",
+  "content_format": "html",
+  "content_hash": "1f943d77753552b4c3bb630b1f53008880c583e63de77473f92b61434068d367",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "ed48583bd90053953c37d8d5f66ca4a1878e6c34949adc45d294f423bfe35fab",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二组选同大小区研究技巧：用同大小区做一个可复算的分分彩后二组选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后二组选",
+  "primary_keyword": "分分彩后二组选同大小区研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-GROUP-V1"
+  ],
+  "search_intent": "了解后二组选的同大小区思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后二组选技巧",
+    "同大小区",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后二组选同大小区研究技巧：把条件压成一步计算",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last2-group-rel2-210",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二组选",
+  "summary": "从同大小区出发，把后二组选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后二组选",
+    "同大小区",
+    "小实验型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g2_size_same",
+    "style_3",
+    "play_g2"
+  ],
+  "title": "分分彩后二组选同大小区研究技巧：把条件压成一步计算"
+}

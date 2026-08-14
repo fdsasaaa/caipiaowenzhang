@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-279",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "区分重复号和单号角色，只保留单号为双。在90种“重复号a+单号b”的角色组合里，共有45个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如a=0、b=2、a=0、b=4都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先说不做什么：不因为连续几次没出现，就临时加第二个筛选条件。</p><p>后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>不做临场判断</h2><p>区分重复号和单号角色，只保留单号为双。在90种“重复号a+单号b”的角色组合里，共有45个符合这条演示条件。</p><p>例如a=0、b=2、a=0、b=4都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>也不做临场加码</h2><p>连续观察时始终使用固定单位，到预设终点就结束，不根据上一轮临时放大投入。</p><p>先保持简单。一个条件能说清，就不要为了显得高级再硬塞三层。</p>",
+  "content_format": "html",
+  "content_hash": "0e96fc0f5bffffe97bd21707a32c539c5af4c3850d52e7d2b8f6c796461dd271",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "997672da7f5f4203672c57d61333236be02a7a45b2d7a04c71a76f3aac08ea3f",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选3单号为双研究技巧：用单号为双做一个可复算的分分彩后三组选3研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选3",
+  "primary_keyword": "分分彩后三组选3单号为双研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP3-V1"
+  ],
+  "search_intent": "了解后三组选3的单号为双思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选3技巧",
+    "单号为双",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选3单号为双研究技巧：先算结构，再控制投入",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group3-rel2-279",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选3",
+  "summary": "从单号为双出发，把后三组选3拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选3",
+    "单号为双",
+    "反向提醒型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g3_single_even",
+    "style_6",
+    "play_g3"
+  ],
+  "title": "分分彩后三组选3单号为双研究技巧：先算结构，再控制投入"
+}

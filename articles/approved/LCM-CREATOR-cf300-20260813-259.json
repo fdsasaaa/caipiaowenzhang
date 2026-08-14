@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-259",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按和值整除3这条无序三数组关系做筛选。在120个无序三数组合里，共有42个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如012、015都会留下，013会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>先说不做什么：不因为连续几次没出现，就临时加第二个筛选条件。</p><p>后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>不做临场判断</h2><p>按和值整除3这条无序三数组关系做筛选。在120个无序三数组合里，共有42个符合这条演示条件。</p><p>例如012、015都会留下，013会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>也不做临场加码</h2><p>总预算里留一块不参与本轮实验，本轮只使用预先划出的部分。</p><p>先保持简单。一个条件能说清，就不要为了显得高级再硬塞三层。</p>",
+  "content_format": "html",
+  "content_hash": "c0be40d32691c34b95bd83674e1e3fb3ecde28551b712c1fcc7b36a9034dbf1a",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "714fe565713c8441aca51af21db77f5602bd99d50ff43cc6b9b295442a036cc5",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选6和值整除3研究技巧：用和值整除3做一个可复算的分分彩后三组选6研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选6",
+  "primary_keyword": "分分彩后三组选6和值整除3研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP6-V1"
+  ],
+  "search_intent": "了解后三组选6的和值整除3思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选6技巧",
+    "和值整除3",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选6和值整除3研究技巧：先算结构，再控制投入",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group6-misc2-259",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选6",
+  "summary": "从和值整除3出发，把后三组选6拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选6",
+    "和值整除3",
+    "反向提醒型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g6_summod3",
+    "style_6",
+    "play_g6"
+  ],
+  "title": "分分彩后三组选6和值整除3研究技巧：先算结构，再控制投入"
+}

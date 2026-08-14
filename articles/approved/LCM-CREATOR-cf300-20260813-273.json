@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-273",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "重复号记为a、单号记为b，只保留|a-b|为2、5。在90种“重复号a+单号b”的角色组合里，共有26个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如a=0、b=2、a=0、b=5都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1、1、1、1.2、1.2、0.8个单位，只在预设节点换档。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>拿张纸就能做。先把规则写在上面，再把符合和不符合分成两栏。</p><p>后三组选3要求后三位恰有两个数字相同、另一个数字不同；同一多重集合的不同排列不重复计注。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>纸上第一行</h2><p>重复号记为a、单号记为b，只保留|a-b|为2、5。在90种“重复号a+单号b”的角色组合里，共有26个符合这条演示条件。</p><h2>纸上第二行</h2><p>例如a=0、b=2、a=0、b=5都会留下，a=0、b=1会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>最后写资金上限</h2><p>示例资金节奏为1、1、1、1.2、1.2、0.8个单位，只在预设节点换档。</p><p>以后要扩展，也建议一次只加一个新条件，否则很快又会回到复杂堆叠。</p>",
+  "content_format": "html",
+  "content_hash": "8c5ee580f36b6cca0e7dfbba389468c321f5c4e2e4053c014d1ae435c820991c",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8d0d9a9c99f7669705749fa589fdb1172fc45eb0fa7466c7648674a28382588d",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选3角色差值2/5研究技巧：用角色差值2/5做一个可复算的分分彩后三组选3研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选3",
+  "primary_keyword": "分分彩后三组选3角色差值2/5研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP3-V1"
+  ],
+  "search_intent": "了解后三组选3的角色差值2/5思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选3技巧",
+    "角色差值2/5",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选3角色差值2/5研究技巧：留下与排除都要有理由",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group3-gap2-273",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选3",
+  "summary": "从角色差值2/5出发，把后三组选3拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选3",
+    "角色差值2/5",
+    "纸笔型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g3_gap_2",
+    "style_4",
+    "play_g3"
+  ],
+  "title": "分分彩后三组选3角色差值2/5研究技巧：留下与排除都要有理由"
+}

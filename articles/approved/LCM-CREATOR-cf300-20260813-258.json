@@ -1,0 +1,88 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-258",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按和值17到22这条无序三数组关系做筛选。在120个无序三数组合里，共有29个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如089、179都会留下，012会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1、1、1、1.2、1.2、0.8个单位，只在预设节点换档。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>这一篇像一页笔记，不追求复杂，只把一个思路写完整。</p><p>后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>一页笔记</h2><p>按和值17到22这条无序三数组关系做筛选。在120个无序三数组合里，共有29个符合这条演示条件。</p><p>例如089、179都会留下，012会被排除；把号码代入同一条条件，就能得到相同判断。</p><p>示例资金节奏为1、1、1、1.2、1.2、0.8个单位，只在预设节点换档。</p><p>能讲清为什么留下，也能讲清为什么排除，这个技巧就完成了最重要的工作。</p>",
+  "content_format": "html",
+  "content_hash": "3839c61485c3ad6b5ade2a45e49749f1d5716e94d2e7ecb7a09793a962b44f6f",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8bbf1f62aeea56f264a690ac87899c4a3420fb64935dec85cb1a6076ce738937",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选6和值17到22研究技巧：用和值17到22做一个可复算的分分彩后三组选6研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选6",
+  "primary_keyword": "分分彩后三组选6和值17到22研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP6-V1"
+  ],
+  "search_intent": "了解后三组选6的和值17到22思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选6技巧",
+    "和值17到22",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选6和值17到22研究技巧：从一个简单公式开始",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group6-misc1-258",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选6",
+  "summary": "从和值17到22出发，把后三组选6拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选6",
+    "和值17到22",
+    "一页笔记型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g6_sum1722",
+    "style_19",
+    "play_g6"
+  ],
+  "title": "分分彩后三组选6和值17到22研究技巧：从一个简单公式开始"
+}

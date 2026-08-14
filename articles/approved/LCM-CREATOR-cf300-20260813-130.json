@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-130",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "从左到右观察相邻位置，只保留单双交替。在十万个有序五位结果里，共有6250个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如01010、01012都会留下，00000会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>把这篇当成一个小实验就行：条件先写死，结果出来以后只做记录。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>五星直选按万、千、百、十、个五个位置逐位对应；五位有序号码从00000到99999共十万种。</p><h2>实验条件</h2><p>从左到右观察相邻位置，只保留单双交替。在十万个有序五位结果里，共有6250个符合这条演示条件。</p><h2>验算样例</h2><p>例如01010、01012都会留下，00000会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>实验边界</h2><p>资金路径只保留正常档位，走到终点就停止，不临时增加翻倍档。</p><p>研究可以继续，参数可以以后换，但同一轮里别边走边改。</p>",
+  "content_format": "html",
+  "content_hash": "378e3bacfbd0497a06497932096ce43f47903dbd3fda9171e3b23d0b33cf88dc",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "76e2325efaeb04cf81f2b13aef7c75ce6b17e5120468a8d06dca84b7ff79e173",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选单双交替研究技巧：用单双交替做一个可复算的分分彩五星直选研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选单双交替研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "了解五星直选的单双交替思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩五星直选技巧",
+    "单双交替",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩五星直选单双交替研究技巧：把条件压成一步计算",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-seq0-130",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "从单双交替出发，把五星直选拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "单双交替",
+    "小实验型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "parity_alt",
+    "style_3",
+    "play_five"
+  ],
+  "title": "分分彩五星直选单双交替研究技巧：把条件压成一步计算"
+}

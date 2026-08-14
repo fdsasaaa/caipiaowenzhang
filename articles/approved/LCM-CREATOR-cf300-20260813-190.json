@@ -1,0 +1,80 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-190",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定一个位置和数字池1、4、8，重点研究先纸面后实测的执行纪律。在0到9这10个单码里，共有3个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如1、4都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>把这篇当成一个小实验就行：条件先写死，结果出来以后只做记录。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><h2>实验条件</h2><p>固定一个位置和数字池1、4、8，重点研究先纸面后实测的执行纪律。在0到9这10个单码里，共有3个符合这条演示条件。</p><h2>验算样例</h2><p>例如1、4都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>实验边界</h2><p>资金路径只保留正常档位，走到终点就停止，不临时增加翻倍档。</p><p>研究可以继续，参数可以以后换，但同一轮里别边走边改。</p>",
+  "content_format": "html",
+  "content_hash": "b174f501006b221aa62790080659f0ecd9006919311666e1cae579b04a0ac144",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "3d46d7996df842baee1e1f10ed04a5b44dc011c902739fb7031ffa533c3e1870",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆先纸面后实测研究技巧：用先纸面后实测做一个可复算的分分彩定位胆研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆先纸面后实测研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的先纸面后实测思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "先纸面后实测",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩定位胆先纸面后实测研究技巧：把条件压成一步计算",
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-m9-190",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "从先纸面后实测出发，把定位胆拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "先纸面后实测",
+    "小实验型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "loc_bankroll_paper",
+    "style_3",
+    "play_loc",
+    "bankroll_or_staking_design"
+  ],
+  "title": "分分彩定位胆先纸面后实测研究技巧：把条件压成一步计算"
+}

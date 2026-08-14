@@ -1,0 +1,89 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-193",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定一个位置和数字池2、7，重点研究节点重置的执行纪律。在0到9这10个单码里，共有2个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如2、7都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为1、1.2、1、0.8、1、0.8个单位，只允许窄幅变化。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>拿张纸就能做。先把规则写在上面，再把符合和不符合分成两栏。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录</strong></p><h2>纸上第一行</h2><p>固定一个位置和数字池2、7，重点研究节点重置的执行纪律。在0到9这10个单码里，共有2个符合这条演示条件。</p><h2>纸上第二行</h2><p>例如2、7都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>最后写资金上限</h2><p>示例资金节奏为1、1.2、1、0.8、1、0.8个单位，只允许窄幅变化。</p><p>以后要扩展，也建议一次只加一个新条件，否则很快又会回到复杂堆叠。</p>",
+  "content_format": "html",
+  "content_hash": "a86a5bf6592a8c5433a10a3e8969460d9be4197e6279ef188202493bc27f391e",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "258ef618fdbafb7b5078d66a35897fc5d4e9123675321dcec1d578ce5203a598",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆节点重置研究技巧：用节点重置做一个可复算的分分彩定位胆研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆节点重置研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的节点重置思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "节点重置",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩定位胆节点重置研究技巧：留下与排除都要有理由",
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-m12-193",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "从节点重置出发，把定位胆拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "节点重置",
+    "纸笔型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "loc_bankroll_resetnode",
+    "style_4",
+    "play_loc",
+    "bankroll_or_staking_design"
+  ],
+  "title": "分分彩定位胆节点重置研究技巧：留下与排除都要有理由"
+}

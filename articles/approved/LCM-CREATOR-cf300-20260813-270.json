@@ -1,0 +1,89 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-270",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "选号固定为跨度3到5，重点研究周期归零。在120个无序三数组合里，共有52个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如013、014都会留下，012会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例资金节奏为0.8、0.8、1、1、1.2、1.2个单位，每个档位连续两步。",
+      "claim_type": "calculation",
+      "evidence_note": "相对单位路径仅用于说明执行纪律，不引用平台经济结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>把这篇当成一个小实验就行：条件先写死，结果出来以后只做记录。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>后三组选6要求三个数字互不相同，顺序不作为不同注；一个三数字无序集合构成一注。</p><h2>实验条件</h2><p>选号固定为跨度3到5，重点研究周期归零。在120个无序三数组合里，共有52个符合这条演示条件。</p><h2>验算样例</h2><p>例如013、014都会留下，012会被排除；把号码代入同一条条件，就能得到相同判断。</p><h2>实验边界</h2><p>示例资金节奏为0.8、0.8、1、1、1.2、1.2个单位，每个档位连续两步。</p><p>研究可以继续，参数可以以后换，但同一轮里别边走边改。</p>",
+  "content_format": "html",
+  "content_hash": "46d7b90ba4b67ebbb971ca7e75c8096fde201349a87cd1d667764e5d6f72bc67",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "07a96cf8d6cbff76b9c1cf08d6ae48da01b708323a7711f5c5878b0a033e7320",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三组选6周期归零研究技巧：用周期归零做一个可复算的分分彩后三组选6研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "后三组选6",
+  "primary_keyword": "分分彩后三组选6周期归零研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-GROUP6-V1"
+  ],
+  "search_intent": "了解后三组选6的周期归零思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩后三组选6技巧",
+    "周期归零",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩后三组选6周期归零研究技巧：把条件压成一步计算",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last3-group6-m6-270",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三组选6",
+  "summary": "从周期归零出发，把后三组选6拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "后三组选6",
+    "周期归零",
+    "小实验型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "g6_bankroll_6",
+    "style_3",
+    "play_g6",
+    "bankroll_or_staking_design"
+  ],
+  "title": "分分彩后三组选6周期归零研究技巧：把条件压成一步计算"
+}

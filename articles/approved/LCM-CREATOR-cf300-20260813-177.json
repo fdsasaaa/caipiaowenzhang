@@ -1,0 +1,79 @@
+{
+  "approved_at": "2026-08-13T13:56:00+00:00",
+  "article_id": "LCM-CREATOR-cf300-20260813-177",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "已验证玩法机制；只支持玩法结构，不外推其它平台经济参数。",
+      "support_refs": [
+        "SSC-MECH-LOCATED-1D-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定一个位置，只研究3、4、5这组数字。在0到9这10个单码里，共有3个符合这条演示条件。",
+      "claim_type": "calculation",
+      "evidence_note": "按文中固定演示条件对完整玩法空间枚举得到；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如3、4都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。",
+      "claim_type": "calculation",
+      "evidence_note": "自拟号码只用于说明如何代入条件；不是历史开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>方法很短：定一条关系，算一遍，符合就留，不符合就放。</p><p>定位胆先固定一个位置，再选这个位置上的数字；同一位置选择n个不同数字时按n注展开。</p><p><strong>演示参数，不是真实开奖记录</strong></p><p>固定一个位置，只研究3、4、5这组数字。在0到9这10个单码里，共有3个符合这条演示条件。</p><p>例如3、4都会留下，0会被排除；把号码代入同一条条件，就能得到相同判断。</p><p>如果同时研究两套条件，就分别记账；一条轨道的结果不能推动另一条加码。</p><p>把技巧当成分类工具，把资金当成风险工具，两件事分开就清楚了。</p>",
+  "content_format": "html",
+  "content_hash": "e6b68eb20a51e0db91d6bae1ec23ed2390c3ddf738a8169e6a033629539fa073",
+  "content_type": "technique_article",
+  "creator_batch_id": "CF300-20260813",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "64b6369afa841cad79c445bf7a68562b237356a2c27af58eabaf02bfba82975d",
+  "generation_contract_version": "2.0",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩定位胆连续3/4/5研究技巧：用连续3/4/5做一个可复算的分分彩定位胆研究示例，说明选号逻辑、案例和资金停止纪律。",
+  "play": "定位胆",
+  "primary_keyword": "分分彩定位胆连续3/4/5研究技巧",
+  "provider_id": null,
+  "rule_refs": [
+    "SSC-MECH-LOCATED-1D-V1"
+  ],
+  "search_intent": "了解定位胆的连续3/4/5思路，学会自己复算条件并控制连续实验投入",
+  "secondary_keywords": [
+    "分分彩定位胆技巧",
+    "连续3/4/5",
+    "分分彩投注技巧"
+  ],
+  "seo_title": "分分彩定位胆连续3/4/5研究技巧：别让临场感觉改掉规则",
+  "site_category_key": "tzjq",
+  "slug": "ffc-located-s16-177",
+  "source_refs": [],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "定位胆",
+  "summary": "从连续3/4/5出发，把定位胆拆成一个能手工复算的条件，并配上明确的停止纪律。",
+  "tags": [
+    "分分彩",
+    "定位胆",
+    "连续3/4/5",
+    "极简型",
+    "投注技巧"
+  ],
+  "technique_atoms": [
+    "loc_con345",
+    "style_12",
+    "play_loc"
+  ],
+  "title": "分分彩定位胆连续3/4/5研究技巧：别让临场感觉改掉规则"
+}

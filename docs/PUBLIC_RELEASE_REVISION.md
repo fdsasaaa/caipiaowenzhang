@@ -12,7 +12,8 @@ The public-release layer stores a separately approved derivative under `articles
 - `parent_content_hash` and `parent_fingerprint` must exactly match the immutable Formal Approved parent.
 - Revised content must produce a different `content_hash`.
 - `slug`, `primary_keyword`, `site_category_key`, and `content_type` are preserved by default.
-- `source_batch_id` must match the parent's `creator_batch_id`.
+- `creator_batch_id` must be preserved from the immutable Formal Approved parent.
+- `source_batch_id` must match that same parent `creator_batch_id`; both fields therefore identify the same original production batch while keeping revision-layer provenance explicit.
 - `public_release_review.status` must be `approved` and must identify its review contract and review time.
 - The revision fingerprint is deterministic over source identity, revision identity, parent identity, content hash, slug, and Primary Keyword.
 

@@ -1,0 +1,180 @@
+name: daily-website-ready-production
+
+on:
+  schedule:
+    - cron: '20 1 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+concurrency:
+  group: daily-website-ready-production
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    env:
+      OPENAI_API_KEY: ${{ secrets.MODEL_PROVIDER_API_KEY }}
+      OPENAI_BASE_URL: ${{ vars.MODEL_PROVIDER_BASE_URL }}
+      OPENAI_MODEL: ${{ vars.MODEL_PROVIDER_MODEL }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install validation dependencies
+        run: python -m pip install --upgrade pip pytest
+
+      - name: Resolve production identity and guard unfinished prior run
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          DAY="$(TZ=Asia/Singapore date +%F)"
+          BRANCH="automation/daily-website-ready-${DAY}"
+          echo "day=$DAY" >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+          OPEN_DAILY="$(gh pr list --state open --limit 100 --json headRefName,url --jq '[.[] | select(.headRefName | startswith("automation/daily-website-ready-"))]')"
+          OTHER_OPEN="$(printf '%s' "$OPEN_DAILY" | jq --arg b "$BRANCH" '[.[] | select(.headRefName != $b)] | length')"
+          if [ "$OTHER_OPEN" -gt 0 ]; then
+            printf '%s\n' "$OPEN_DAILY" >&2
+            echo "A previous daily production PR is still open; stop rather than generate overlapping inventory." >&2
+            exit 11
+          fi
+
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            echo "existing=true" >> "$GITHUB_OUTPUT"
+            git fetch origin "$BRANCH:$BRANCH"
+            git checkout "$BRANCH"
+            PR_URL="$(gh pr list --head "$BRANCH" --state open --limit 1 --json url --jq '.[0].url // empty')"
+            if [ -z "$PR_URL" ]; then
+              echo "Daily branch exists without an open PR; fail closed to avoid duplicate generation." >&2
+              exit 12
+            fi
+            echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+          else
+            echo "existing=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify model credential exists
+        if: steps.meta.outputs.existing != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "$OPENAI_API_KEY" ]; then
+            echo "MODEL_PROVIDER_API_KEY secret is not configured." >&2
+            exit 2
+          fi
+
+      - name: Produce quality-first website-ready inventory
+        if: steps.meta.outputs.existing != 'true'
+        run: python -m engine.daily_website_ready
+
+      - name: Run local full repository gates
+        if: steps.meta.outputs.existing != 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m engine.cli audit
+          pytest -q
+
+      - name: Commit generated inventory to dated branch
+        if: steps.meta.outputs.existing != 'true'
+        id: commit
+        shell: bash
+        env:
+          BRANCH: ${{ steps.meta.outputs.branch }}
+          DAY: ${{ steps.meta.outputs.day }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "No new accepted inventory was produced." >&2
+            exit 13
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "Content: daily website-ready inventory ${DAY}"
+          git push --set-upstream origin "$BRANCH"
+          echo "head_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Open daily production PR
+        if: steps.meta.outputs.existing != 'true'
+        id: pr
+        shell: bash
+        env:
+          BRANCH: ${{ steps.meta.outputs.branch }}
+          DAY: ${{ steps.meta.outputs.day }}
+        run: |
+          set -euo pipefail
+          PR_URL="$(gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Content: daily website-ready inventory ${DAY}" \
+            --body "Automated quality-first daily content production. Target: 20 website-ready public-r1 articles; accepted band: 10-25 without lowering quality. Approved parents remain immutable after staging. Broad/funding-overlap terms and the frozen CF50 020/029/038/039/040 gate items are excluded. This PR performs no website CMS sync, scheduling, Publisher, cron or publication action.")"
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+
+      - name: Resolve PR and head SHA
+        id: current
+        shell: bash
+        env:
+          EXISTING: ${{ steps.meta.outputs.existing }}
+          EXISTING_PR: ${{ steps.meta.outputs.pr_url }}
+          NEW_PR: ${{ steps.pr.outputs.pr_url }}
+        run: |
+          set -euo pipefail
+          if [ "$EXISTING" = "true" ]; then
+            PR_URL="$EXISTING_PR"
+          else
+            PR_URL="$NEW_PR"
+          fi
+          [ -n "$PR_URL" ] || { echo "No open production PR resolved." >&2; exit 14; }
+          HEAD_SHA="$(git rev-parse HEAD)"
+          echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$HEAD_SHA" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch independent dual-version CI
+        id: ci
+        shell: bash
+        env:
+          BRANCH: ${{ steps.meta.outputs.branch }}
+          HEAD_SHA: ${{ steps.current.outputs.head_sha }}
+        run: |
+          set -euo pipefail
+          gh workflow run test.yml --ref "$BRANCH"
+          RUN_ID=""
+          for _ in $(seq 1 30); do
+            ROW="$(gh run list --workflow test.yml --branch "$BRANCH" --event workflow_dispatch --limit 5 --json databaseId,headSha,status,conclusion | jq -c --arg sha "$HEAD_SHA" '[.[] | select(.headSha == $sha)][0] // empty')"
+            if [ -n "$ROW" ]; then
+              RUN_ID="$(printf '%s' "$ROW" | jq -r '.databaseId')"
+              break
+            fi
+            sleep 4
+          done
+          if [ -z "$RUN_ID" ]; then
+            echo "Could not resolve dispatched test.yml run for $HEAD_SHA." >&2
+            exit 15
+          fi
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+          gh run watch "$RUN_ID" --exit-status
+
+      - name: Squash merge only after CI passes
+        shell: bash
+        env:
+          PR_URL: ${{ steps.current.outputs.pr_url }}
+        run: |
+          set -euo pipefail
+          gh pr merge "$PR_URL" --squash --delete-branch

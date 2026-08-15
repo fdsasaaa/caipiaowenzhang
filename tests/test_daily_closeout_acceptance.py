@@ -1,5 +1,5 @@
 from engine.daily_website_ready import load_daily_policy
-from engine.daily_website_ready_refill import final_status
+from engine.daily_website_ready_refill import _status_for_ready
 from engine.store import ROOT
 
 
@@ -26,10 +26,10 @@ def test_closeout_refill_and_cost_caps_are_bounded():
 
 
 def test_closeout_final_public_r1_count_drives_status():
-    assert final_status(4, minimum=10, target=20) == "BLOCKED_BELOW_MINIMUM"
-    assert final_status(10, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert final_status(19, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert final_status(20, minimum=10, target=20) == "PASS_TARGET"
+    assert _status_for_ready(4, minimum=10, target=20) == "BLOCKED_BELOW_MINIMUM"
+    assert _status_for_ready(10, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(19, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(20, minimum=10, target=20) == "PASS_TARGET"
 
 
 def test_closeout_frozen_tail_and_broad_funding_terms_remain_blocked():

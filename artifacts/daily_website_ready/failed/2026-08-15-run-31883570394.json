@@ -1,0 +1,222 @@
+{
+  "approval_failed": 32,
+  "approved": 16,
+  "approved_staged": 16,
+  "article_angle_distribution": {
+    "execution_checklist": 2,
+    "multistage_order": 3,
+    "parameter_boundary": 1,
+    "space_math": 10
+  },
+  "attempted": 74,
+  "base_url": "https://api.synapai.top/v1",
+  "batch_id": "DAILY-20260815",
+  "candidate_pool_per_round": 40,
+  "date": "2026-08-15",
+  "editorial_score_average": 100.0,
+  "generated": 48,
+  "generation_failed": 26,
+  "manifest": null,
+  "max_approved_parents_per_day": 80,
+  "max_model_generation_attempts_per_day": 120,
+  "max_refill_rounds": 4,
+  "maximum": 25,
+  "minimum": 10,
+  "model": "gpt-5.4-mini",
+  "play_distribution": {
+    "一星直选": 6,
+    "中三直选": 1,
+    "五星直选": 1,
+    "前三直选": 2,
+    "前三组选6": 1,
+    "前二直选": 2,
+    "前二组选": 1,
+    "前四直选": 1,
+    "后三直选": 1
+  },
+  "pre_generation_duplicate_blocked": 0,
+  "public_ready": [
+    {
+      "article_id": "LCM-ANGLE-46a8549683f208da",
+      "path": "articles/public_release/DAILY-20260815/LCM-ANGLE-46a8549683f208da.public-r1.json",
+      "primary_keyword": "分分彩前三直选和值跨度筛选顺序",
+      "revision_id": "LCM-ANGLE-46a8549683f208da:public-r1",
+      "round": 2
+    },
+    {
+      "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+      "path": "articles/public_release/DAILY-20260815/LCM-ANGLE-8817b4ea17874fe8.public-r1.json",
+      "primary_keyword": "分分彩前二组选和值注数计算",
+      "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+      "round": 2
+    },
+    {
+      "article_id": "LCM-ANGLE-029845ec9b75eeae",
+      "path": "articles/public_release/DAILY-20260815/LCM-ANGLE-029845ec9b75eeae.public-r1.json",
+      "primary_keyword": "分分彩前四直选和值注数计算",
+      "revision_id": "LCM-ANGLE-029845ec9b75eeae:public-r1",
+      "round": 2
+    },
+    {
+      "article_id": "LCM-ANGLE-484880f18c83f34d",
+      "path": "articles/public_release/DAILY-20260815/LCM-ANGLE-484880f18c83f34d.public-r1.json",
+      "primary_keyword": "分分彩一星直选遗漏注数计算",
+      "revision_id": "LCM-ANGLE-484880f18c83f34d:public-r1",
+      "round": 3
+    },
+    {
+      "article_id": "LCM-ANGLE-10c546772624fa95",
+      "path": "articles/public_release/DAILY-20260815/LCM-ANGLE-10c546772624fa95.public-r1.json",
+      "primary_keyword": "分分彩一星直选遗漏参数设置",
+      "revision_id": "LCM-ANGLE-10c546772624fa95:public-r1",
+      "round": 3
+    },
+    {
+      "article_id": "LCM-ANGLE-d13d0b0cbc9bef95",
+      "path": "articles/public_release/DAILY-20260815/LCM-ANGLE-d13d0b0cbc9bef95.public-r1.json",
+      "primary_keyword": "分分彩一星直选遗漏奇偶筛选顺序",
+      "revision_id": "LCM-ANGLE-d13d0b0cbc9bef95:public-r1",
+      "round": 4
+    }
+  ],
+  "public_release_failed": [
+    {
+      "article_id": "LCM-ANGLE-e7b5e90b14b7f266",
+      "error": "public release safety gate failed: operational_pattern:(下一期|下期).{0,12}(选|买|投|跟|追)",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+      "error": "model provider returned non-JSON response at https://api.synapai.top/v1/responses",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-8bb328486dd299cc",
+      "error": "model provider returned non-JSON response at https://api.synapai.top/v1/responses",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-59f2ed2b9478f5e2",
+      "error": "model provider returned non-JSON response at https://api.synapai.top/v1/responses",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-d90e589e19c803e9",
+      "error": "model provider returned non-JSON response at https://api.synapai.top/v1/responses",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-4729e84811681325",
+      "error": "model provider returned non-JSON response at https://api.synapai.top/v1/responses",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+      "error": "model provider returned non-JSON response at https://api.synapai.top/v1/responses",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-37f1b93dff8593e4",
+      "error": "public release safety gate failed: operational_pattern:(翻倍|加倍|追号|追投|回本|止损|资金递进|资金路径), seo_title_missing_primary_keyword",
+      "round": 2
+    },
+    {
+      "article_id": "LCM-ANGLE-68ce325edd5f6fc5",
+      "error": "public release safety gate failed: operational_pattern:(翻倍|加倍|追号|追投|回本|止损|资金递进|资金路径), operational_pattern:(下一期|下期).{0,12}(选|买|投|跟|追)",
+      "round": 2
+    },
+    {
+      "article_id": "LCM-ANGLE-a542ffff4d4f2faa",
+      "error": "public release safety gate failed: operational_pattern:(翻倍|加倍|追号|追投|回本|止损|资金递进|资金路径)",
+      "round": 4
+    }
+  ],
+  "public_release_failed_count": 10,
+  "published": false,
+  "quality_floor_lowered": false,
+  "quality_score_average": 100.0,
+  "recorded_at": "2026-08-15T13:03:31.850402+00:00",
+  "refill_rounds_completed": 4,
+  "rounds": [
+    {
+      "approval_failed": 15,
+      "approved": 7,
+      "approved_staged": 7,
+      "attempted": 40,
+      "candidate_count_offered": 40,
+      "editorial_score_average": 100.0,
+      "generated": 22,
+      "generation_failed": 18,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 7,
+      "quality_score_average": 100.0,
+      "round": 1,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 0,
+      "website_ready_after": 0,
+      "website_ready_before": 0
+    },
+    {
+      "approval_failed": 14,
+      "approved": 5,
+      "approved_staged": 5,
+      "attempted": 27,
+      "candidate_count_offered": 27,
+      "editorial_score_average": 100.0,
+      "generated": 19,
+      "generation_failed": 8,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 2,
+      "quality_score_average": 100.0,
+      "round": 2,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 3,
+      "website_ready_after": 3,
+      "website_ready_before": 0
+    },
+    {
+      "approval_failed": 3,
+      "approved": 2,
+      "approved_staged": 2,
+      "attempted": 5,
+      "candidate_count_offered": 5,
+      "editorial_score_average": 100.0,
+      "generated": 5,
+      "generation_failed": 0,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 0,
+      "quality_score_average": 100.0,
+      "round": 3,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 2,
+      "website_ready_after": 5,
+      "website_ready_before": 3
+    },
+    {
+      "approval_failed": 0,
+      "approved": 2,
+      "approved_staged": 2,
+      "attempted": 2,
+      "candidate_count_offered": 2,
+      "editorial_score_average": 100.0,
+      "generated": 2,
+      "generation_failed": 0,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 1,
+      "quality_score_average": 100.0,
+      "round": 4,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 1,
+      "website_ready_after": 6,
+      "website_ready_before": 5
+    }
+  ],
+  "scheduled": false,
+  "schema_version": 2,
+  "status": "BLOCKED_BELOW_MINIMUM",
+  "stop_reason": "below_minimum_after_hard_cap",
+  "target": 20,
+  "timezone": "Asia/Singapore",
+  "website_ready_public_r1": 6,
+  "website_sync_attempted": false
+}

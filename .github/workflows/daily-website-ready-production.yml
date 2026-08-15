@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '20 1 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/daily-website-ready-production.yml'
 
 permissions:
   contents: write
@@ -78,9 +82,55 @@ jobs:
             exit 2
           fi
 
-      - name: Produce quality-first website-ready inventory
+      - name: Produce and refill quality-first website-ready inventory
+        id: production
         if: steps.meta.outputs.existing != 'true'
-        run: python -m engine.daily_website_ready
+        continue-on-error: true
+        run: python -m engine.daily_website_ready_refill
+
+      - name: Upload daily diagnostic artifact
+        if: always() && steps.meta.outputs.existing != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-website-ready-diagnostic-${{ steps.meta.outputs.day }}-run-${{ github.run_id }}
+          path: artifacts/daily_website_ready/${{ steps.meta.outputs.day }}.json
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Persist failed diagnostic on permanent branch
+        if: steps.meta.outputs.existing != 'true' && steps.production.outcome == 'failure'
+        shell: bash
+        env:
+          DAY: ${{ steps.meta.outputs.day }}
+        run: |
+          set -euo pipefail
+          REPORT="artifacts/daily_website_ready/${DAY}.json"
+          TMP="$(mktemp)"
+          if [ -f "$REPORT" ]; then
+            cp "$REPORT" "$TMP"
+          else
+            printf '{"schema_version":2,"date":"%s","status":"WORKFLOW_FAILURE_WITHOUT_REPORT","github_run_id":"%s"}\n' "$DAY" "$GITHUB_RUN_ID" > "$TMP"
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git reset --hard HEAD
+          git clean -fd
+
+          DIAG_BRANCH="diagnostics/daily-website-ready-${DAY}-run-${GITHUB_RUN_ID}"
+          git checkout -b "$DIAG_BRANCH"
+          DEST="artifacts/daily_website_ready/failed/${DAY}-run-${GITHUB_RUN_ID}.json"
+          mkdir -p "$(dirname "$DEST")"
+          cp "$TMP" "$DEST"
+          git add "$DEST"
+          git commit -m "Diagnostics: failed daily website-ready run ${DAY}"
+          git push --set-upstream origin "$DIAG_BRANCH"
+
+      - name: Stop after failed quality-first production
+        if: steps.meta.outputs.existing != 'true' && steps.production.outcome == 'failure'
+        run: |
+          echo "Daily production failed its quality/cap gates; diagnostic evidence was persisted." >&2
+          exit 7
 
       - name: Run local full repository gates
         if: steps.meta.outputs.existing != 'true'
@@ -124,7 +174,7 @@ jobs:
             --base main \
             --head "$BRANCH" \
             --title "Content: daily website-ready inventory ${DAY}" \
-            --body "Automated quality-first daily content production. Target: 20 website-ready public-r1 articles; accepted band: 10-25 without lowering quality. Approved parents remain immutable after staging. Broad/funding-overlap terms and the frozen CF50 020/029/038/039/040 gate items are excluded. This PR performs no website CMS sync, scheduling, Publisher, cron or publication action.")"
+            --body "Automated quality-first daily content production. Target: 20 website-ready public-r1 articles; accepted band: 10-25 without lowering quality. The runner refills with new candidates after public-r1 rejection until target, candidate/cost capacity, or hard refill caps are reached. Approved parents remain immutable after staging. Broad/funding-overlap terms and the frozen CF50 020/029/038/039/040 gate items are excluded. This PR performs no website CMS sync, scheduling, Publisher, cron or publication action.")"
           echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
 
       - name: Resolve PR and head SHA

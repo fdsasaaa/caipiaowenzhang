@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "timezone": "Asia/Singapore",
   "target": 20,
   "minimum": 10,
@@ -9,10 +9,14 @@
   "quality_first": true,
   "quality_floor_may_be_lowered": false,
   "public_release_required_to_count": true,
-  "public_release_generation_attempts": 2,
+  "public_release_generation_attempts": 3,
   "public_release_timeout_seconds": 180,
   "public_release_min_plain_chars": 500,
   "public_release_min_h2": 3,
+  "max_refill_rounds": 4,
+  "refill_approved_batch_size": 20,
+  "max_approved_parents_per_day": 80,
+  "max_model_generation_attempts_per_day": 120,
   "model_preference_hints": ["mini", "flash", "small", "lite"],
   "blocked_exact_primary_keywords": [
     "分分彩",

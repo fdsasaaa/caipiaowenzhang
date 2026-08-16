@@ -50,6 +50,15 @@ jobs:
           echo "day=$DAY" >> "$GITHUB_OUTPUT"
           echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
 
+          REPORT="artifacts/daily_website_ready/${DAY}.json"
+          if [ -f "$REPORT" ] && jq -e '(.status == "PASS_TARGET") or (.status == "PASS_PARTIAL_QUALITY_FIRST")' "$REPORT" >/dev/null; then
+            echo "existing=true" >> "$GITHUB_OUTPUT"
+            echo "completed=true" >> "$GITHUB_OUTPUT"
+            echo "Daily website-ready inventory for ${DAY} is already complete on main; exit idempotently."
+            exit 0
+          fi
+          echo "completed=false" >> "$GITHUB_OUTPUT"
+
           OPEN_DAILY="$(gh pr list --state open --limit 100 --json headRefName,url --jq '[.[] | select(.headRefName | startswith("automation/daily-website-ready-"))]')"
           OTHER_OPEN="$(printf '%s' "$OPEN_DAILY" | jq --arg b "$BRANCH" '[.[] | select(.headRefName != $b)] | length')"
           if [ "$OTHER_OPEN" -gt 0 ]; then
@@ -178,6 +187,7 @@ jobs:
           echo "pr_url=$PR_URL" >> "$GITHUB_OUTPUT"
 
       - name: Resolve PR and head SHA
+        if: steps.meta.outputs.completed != 'true'
         id: current
         shell: bash
         env:
@@ -197,6 +207,7 @@ jobs:
           echo "head_sha=$HEAD_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Dispatch independent dual-version CI
+        if: steps.meta.outputs.completed != 'true'
         id: ci
         shell: bash
         env:
@@ -222,6 +233,7 @@ jobs:
           gh run watch "$RUN_ID" --exit-status
 
       - name: Squash merge only after CI passes
+        if: steps.meta.outputs.completed != 'true'
         shell: bash
         env:
           PR_URL: ${{ steps.current.outputs.pr_url }}

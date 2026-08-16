@@ -84,7 +84,11 @@ def test_generation_uses_responses_structured_output_and_validates_identity():
     assert "claim_evidence" in fmt["schema"]["required"]
 
 
-def test_generation_requires_api_key():
+def test_generation_requires_api_key(monkeypatch):
+    # The production contract intentionally falls back to OPENAI_API_KEY when
+    # api_key is empty.  Isolate this negative-path test from GitHub Actions,
+    # where a real provider credential is present for the daily production job.
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     with pytest.raises(GenerationError, match="OPENAI_API_KEY"):
         generate_article(_packet(), api_key="", transport=lambda *args: {})
 

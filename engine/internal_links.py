@@ -6,6 +6,14 @@ from .store import iter_registry
 LINKABLE_STATUSES = {"approved", "queued", "scheduled", "published"}
 DEFAULT_MIN_SCORE = 45
 
+# Internal Link Planner v1 distinguishes a concrete position from broader play
+# families.  This matters as the inventory grows: a same-position article should
+# not be displaced by a cross-position article merely because the latter shares
+# a generic play mode or one technique atom.
+POSITION_GROUPS = {"定位胆", "前二", "后二", "前三", "中三", "后三"}
+MODE_GROUPS = {"组选", "直选", "包胆", "大小单双"}
+BROAD_GROUPS = {"二星", "三星"}
+
 
 def _subject_lottery(record: dict) -> str:
     return str(record.get("subject_lottery") or record.get("lottery") or "").strip()
@@ -27,6 +35,16 @@ def _play_groups(play: str) -> set[str]:
     if any(token in play for token in ("前二", "后二")):
         groups.add("二星")
     return groups
+
+
+def _shared_group_score(shared_groups: list[str]) -> int:
+    score = 0
+    for group in shared_groups:
+        if group in POSITION_GROUPS:
+            score += 25
+        elif group in MODE_GROUPS or group in BROAD_GROUPS:
+            score += 10
+    return score
 
 
 def _linkable_records() -> list[dict]:
@@ -57,8 +75,7 @@ def _score(source: dict, target: dict) -> tuple[int, list[str]]:
 
     shared_groups = sorted(_play_groups(source_play) & _play_groups(target_play))
     if shared_groups and source_play != target_play:
-        group_score = min(30, 15 * len(shared_groups))
-        score += group_score
+        score += _shared_group_score(shared_groups)
         reasons.append("shared_play_group:" + ",".join(shared_groups))
 
     shared_atoms = sorted(set(source.get("technique_atoms") or []) & set(target.get("technique_atoms") or []))

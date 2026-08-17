@@ -1,0 +1,112 @@
+{
+  "angle_signature": "e6a718594bb100445cb2",
+  "approved_at": "2026-08-17T00:28:16.388295+00:00",
+  "article_id": "LCM-ANGLE-721e2f1a85dfb3f1",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选对应五位有序数字序列，基础候选空间为100000种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "正文用于说明组合空间与玩法对象，未延伸为预测结论。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "当筛选条件定义为至少存在一对差1邻号，且pair_difference=1、circular_0_9=false时，理论筛选结果为81390种，排除18610种。",
+      "claim_type": "calculation",
+      "evidence_note": "正文保留经批准材料中的可复算空间结果，并将其限定为规则参数下的组合数学结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成预注册的主筛选条件后，应先核对参数和计算结果，不应临时追加未经验证的新条件。",
+      "claim_type": "methodology",
+      "evidence_note": "这是对参数预注册、可复算性和研究边界的公开方法说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版的风险边界说明，不依赖具体样本或外部规则引用。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "随机结果中的短期波动不能被单一邻号结构解释，也不能据此承诺收益、胜率或稳定表现。",
+      "claim_type": "editorial",
+      "evidence_note": "这是对随机性和过度解读风险的范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先明确研究对象与规则</h2><p>本文围绕<strong>分分彩五星直选邻号筛选步骤</strong>展开，重点是理解五星直选中的组合空间、邻号条件和可复算的参数记录。内容用于教育与研究，不构成对未来结果的判断。</p><p>五星直选研究对象是五位有序数字序列。按照基础规则，理论空间为100000种。这里的“空间”表示所有可能序列的集合，不表示任何结果更容易出现。</p><p>邻号条件可以形式化为：至少存在一对相邻位置上的数字差为1。研究时应预先记录<code>pair_difference=1</code>与<code>circular_0_9=false</code>，以避免复盘过程中改变定义。</p><h2>如何理解筛选结果</h2><p>在上述参数下，组合计算得到81390种符合条件的序列，另有18610种不符合条件。这个结果描述的是规则集合的大小，不能被理解为某些具体序列具有更高的未来机会。</p><p>核对时应区分三件事：原始理论空间、条件筛选后的空间，以及用于演示或复盘的历史样本。样本条数不等于理论空间，历史出现次数也不等于未来概率。</p><p>若复算结果不同，优先检查是否误用了环形邻接、是否把“相邻位置”改成了“任意位置”，以及是否把差值条件写成了其他条件。参数一旦变化，得到的就不是同一个研究对象。</p><h2>建立可复核的研究记录</h2><ol><li>记录玩法边界：只研究五星直选的五位有序序列。</li><li>记录邻号定义：明确差值、位置关系和是否采用环形规则。</li><li>记录理论空间与筛选后空间，并保留计算过程。</li><li>将历史数据作为样本复盘材料，与组合空间分开保存。</li><li>完成预注册条件的核对后，停止追加未经验证的分类标准。</li></ol><p>这种记录方式的价值在于让他人能够重复计算、检查参数并识别定义变化，而不是把筛选结果包装成预测工具。</p><h2>历史复盘与样本外验证</h2><p>如果开展研究，可以把数据划分为建模阶段和样本外检验阶段，并在查看结果前固定评价指标。这样做有助于识别条件是否只适用于既有样本，不能把样本外表现直接解释为未来优势。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。即使某种邻号结构在一段记录中出现频率较高，也可能只是随机波动、样本量有限或分类方式造成的视觉偏差。</p><p>演示性数字、历史频次和组合数量都应保留其原本含义。它们可以帮助理解规则、空间和误区，但不能替代真实规则核验，也不能承诺收益、胜率或稳定表现。</p><h2>停止条件与公开边界</h2><p>当主筛选条件、参数和理论结果都已完成核对时，研究记录即可结束。继续增加条件前，必须说明新增条件的定义、证据来源、预注册时间和复算方法。</p><p>如果新增条件没有独立证据，或者只是在看到历史结果后临时形成，就应将其标记为探索性观察，而不是已验证结论。保持这一边界，有助于减少过拟合和事后解释。</p>",
+  "content_format": "html",
+  "content_hash": "dabb0b40a55fbb30443f2ce3fdb45569d1ece1dae9684107dae87750aaa100a6",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "5bf197edd294e83203c7df2df4ec9bb87089130756e1188a06afcd6d0e5b4e27",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "了解分分彩五星直选邻号筛选步骤的规则定义、组合空间、参数预注册与历史复盘边界，区分可复算的结构分类和不可证明的未来优势。",
+  "parent_content_hash": "a883adccb1ca87680348d79a37e87979481a13f1e8c467e559e8f557b04b325a",
+  "parent_fingerprint": "721e2f1a85dfb3f16983798ef1e5d42309c32e18ce8533f02aef53684794eb18",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选邻号筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0888ba24a433a546016a82502de75887d29fff8d781f3846c6",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:28:16.388311+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-721e2f1a85dfb3f1:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "按固定顺序理解五星直选邻号条件的定义、组合空间、参数核对和停止条件，形成可复核的教育研究清单，不将结构筛选用于未来结果承诺。",
+  "secondary_keywords": [
+    "分分彩五星直选邻号筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选邻号筛选步骤：规则定义、组合空间与历史复盘",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-neighbor_number-position_filter-execution_checklist",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文以教育和研究为导向，说明分分彩五星直选邻号筛选步骤中的规则边界、组合数学、参数预注册、复算方法与样本外验证，并强调结构分类或历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩五星直选邻号筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "分分彩五星直选邻号筛选步骤：规则定义、组合空间与历史复盘"
+}

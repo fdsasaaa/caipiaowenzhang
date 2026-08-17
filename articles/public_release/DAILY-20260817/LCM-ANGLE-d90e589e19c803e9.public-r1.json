@@ -1,0 +1,103 @@
+{
+  "angle_signature": "4247044c51047193fa1d",
+  "approved_at": "2026-08-17T00:31:48.923028+00:00",
+  "article_id": "LCM-ANGLE-d90e589e19c803e9",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论分分彩一星直选大小奇偶筛选步骤，并以固定参数、候选空间收缩和停止条件作为主要说明对象。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确限定了主题和讲解范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "两层筛选演示中，候选空间从10缩到3，合计排除7。",
+      "claim_type": "calculation",
+      "evidence_note": "正文保留了演示性空间变化，用于说明复算过程。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成预先设定的筛选层数后应停止，不应临时追加未验证的新条件。",
+      "claim_type": "rule_fact",
+      "evidence_note": "正文明确给出停止原则：只执行已固定的步骤，不临时加层。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类、历史样本表现或演示复算结果，不能单独证明未来存在预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版必须明确的风险与边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>主题说明</h2><p>这篇文章保留的是分分彩一星直选大小奇偶筛选步骤这个主题，但只做公开版的教育性说明，不提供具体选号建议，也不把任何筛选结果包装成未来优势。</p><p>你可以把它理解为一份关于规则、参数和复算方法的说明。重点不在“怎么押”，而在“怎么把筛选逻辑说清楚、算明白、核对一致”。</p><h2>筛选机制</h2><p>在这类玩法里，大小、奇偶这类条件本质上是分类规则，用来把候选集合按预先设定的标准缩小。它们描述的是过滤过程，不天然等于更高命中率。</p><p>公开版只保留机制层面的讲解：先固定参数，再按既定顺序检查候选空间如何变化。这样做的价值在于可复算、可核对、可复盘，而不是承诺结果。</p><p>如果参数没有先固定，后面的计算就没有统一标准。同一套样本在不同参数下会得到不同空间变化，讨论也就失去可比性。</p><h2>样本复算</h2><p>演示中，候选空间从10缩到3，说明两层条件会持续压缩候选范围。这个变化只表示空间收缩，不表示对未来走势有额外判断力。</p><p>复算时只需要检查前一层剩余多少、下一层又排掉多少。它的作用是帮助读者理解筛选流程是否一致，而不是把历史结构直接当成未来预测依据。</p><p>这里也要明确一点，结构分类或历史样本表现不能单独证明未来预测优势。若没有样本外验证、稳定参数和一致的检验标准，任何“看起来更集中”的结果都只能算描述，不算证明。</p><h2>停止原则</h2><p>当预先设定的筛选层数完成后，就应该停止。已经完成的规则只用于当前复算，不应临时追加新的过滤条件，更不应把临时想法当成既定方法。</p><p>如果后续要继续研究，应先把新增条件写成新的、可检验的规则，再单独做参数冻结和样本验证。不同阶段的规则要分开，不要混在同一次说明里。</p><p>研究这类题目，真正有价值的是参数预注册、历史复盘、样本外验证和对随机波动的理解。它们能帮助判断方法是否稳定，但仍然不能替代严格验证。</p>",
+  "content_format": "html",
+  "content_hash": "a54ce217c1c94506c5a9ce3aef2e15a8efffa412234d9cabb1245e95e9fb40aa",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "7c1ac430196039bca37cc220396e217e38045cb545e3bc17a91cfcbcf26e61e8",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选大小奇偶筛选步骤的公开版说明：保留机制、参数冻结、样本复算和停止原则，强调历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "8c3fd4f8edc8ab1515cbedb93a28a3c48a84b5817eec0267916b1480077aa7d4",
+  "parent_fingerprint": "d90e589e19c803e91c79b819f47b5a129ddb806ec8f4fbe0ec4ea3f00bfb5ccb",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选大小奇偶筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_08135f1fd7301cf6016a825211c94c81909bf3c42756dea406",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:31:48.923045+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-d90e589e19c803e9:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "理解分分彩一星直选大小奇偶筛选步骤的规则机制、参数冻结、样本复算与停止原则，不寻找具体选号建议",
+  "secondary_keywords": [
+    "分分彩一星直选大小奇偶筛选步骤",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选大小奇偶筛选步骤：机制、复算与停止原则",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选大小奇偶筛选步骤-实际操作按哪几步做-筛到3个后什么时候必须停止",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "这是一篇分分彩一星直选大小奇偶筛选步骤的公开版教育说明。文章保留玩法机制、参数冻结、候选空间变化、样本复算和停止原则，但不提供具体候选号码、操作方案或收益承诺，并明确指出历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "大小筛选",
+    "奇偶筛选",
+    "执行清单",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "分分彩一星直选大小奇偶筛选步骤：机制、复算与停止原则"
+}

@@ -1,0 +1,121 @@
+{
+  "angle_signature": "7cc31d8c01924d10b62c",
+  "approved_at": "2026-08-17T00:19:04.662206+00:00",
+  "article_id": "LCM-ANGLE-54adaa47ae82759d",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文围绕“分分彩五星直选和值筛选步骤”展开，主题是玩法机制下的和值筛选与复算方法。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版正文首段明确主题与文章范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文仅讨论五星直选的和值筛选，不讨论其他玩法或未核验的平台参数。",
+      "claim_type": "editorial",
+      "evidence_note": "正文说明只做机械筛选，范围限定在五星直选和值筛选。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "和值筛选的示例参数固定为 15 到 30。",
+      "claim_type": "rule_fact",
+      "evidence_note": "正文在参数说明中固定了和值区间。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在该固定参数下，候选空间从 100000 个五位有序候选缩小到 78004 个，剔除 21996 个。",
+      "claim_type": "calculation",
+      "evidence_note": "正文给出了筛前、筛后与剔除数量，并要求核对三者一致。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成这一层和值筛选后应停止，不应临时追加未经验证的第二过滤条件。",
+      "claim_type": "rule_fact",
+      "evidence_note": "正文明确写出停止条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类、历史样本表现、和值、跨度、频率和重复形态都不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "正文明确说明这些统计描述不能直接升级为未来结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>主题与范围</h2><p>这篇文章围绕 <strong>分分彩五星直选和值筛选步骤</strong> 展开，重点放在玩法机制里的和值筛选、参数固定和结果复算。</p><p>这里讨论的是规则理解和样本复盘，不是实际下注方案，也不是下一期的操作建议。公开版只保留可解释、可复算的部分。</p><h2>先固定参数</h2><p>做任何筛选之前，先把玩法对象说清楚：这里是五星直选，不是其他星位，也不是其他类型的直选。</p><p>再把筛选参数预先固定。本页示例采用的和值区间是 <strong>15 到 30</strong>。参数先定，再看样本，这是避免事后调整口径的基本前提。</p><p>如果参数没有先固定，后面的复算就失去意义。规则一变，结果就不再可比。</p><h2>如何理解筛选过程</h2><p>筛选本质上是把一个更大的候选空间，按既定条件缩小到一个更容易检查的范围。</p><p>在这个示例里，起始空间是 <strong>100000</strong> 个五位有序候选。按和值 15 到 30 这个条件筛完后，剩下 <strong>78004</strong> 个，剔除 <strong>21996</strong> 个。</p><p>这些数字只说明筛选前后空间发生了什么变化，不说明未来结果会朝哪个方向走。</p><h2>复算与核对</h2><p>如果你要复算，重点不是“选什么”，而是“有没有按同一条规则做完”。先核对玩法名，再核对参数范围，最后核对筛前、筛后和剔除数量是否互相一致。</p><p>只要这三个数对不上，就说明复算过程里至少有一步出了问题。这个检查方式适合用来做历史样本复盘，也适合检查你对规则的理解是否一致。</p><p>样本里的和值、跨度、频率和重复形态都可以记录，但它们仍然只是描述信息，不能自动变成预测优势。</p><h2>边界与误区</h2><p>结构分类本身不能证明未来预测优势，历史样本表现也不能单独证明未来预测优势。</p><p>同样，和值区间筛选的作用只是缩小候选空间，方便观察和复算，不是承诺更高命中率，更不是稳定盈利的方法。</p><p>如果后续要继续加条件，前提也只能是有新的已验证规则，并且该规则可以被独立复算。没有这个前提，就应该停在已经确认的一层。</p><h2>何时停止</h2><p>在这份示例里，和值 15 到 30 就是唯一的主筛选条件。完成这一层之后，就应当停止，不要临时追加新的过滤器。</p><p>公开版的价值在于把规则、参数和复算关系讲清楚，而不是把样本包装成未来预测工具。</p>",
+  "content_format": "html",
+  "content_hash": "31f1dd86758d854d6e3c5d96c52b4a609a93585994886a78a4df4e27527c2576",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "23a161a4cf348b36b3785c85bd0f6ed724dfc4a4df595328a192c888310df104",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "围绕分分彩五星直选和值筛选步骤，讲清规则机制、参数固定、历史复盘与复算核对；不含下注建议，不承诺收益。",
+  "parent_content_hash": "20dbc7977b106ed3c99f6bf30c3fa088fcbb149efb0da17e0a0daa8df4003ce2",
+  "parent_fingerprint": "54adaa47ae82759d1f5f8b33b2d52bf8be089bb8b9b800e34f8d2e2b6192bcd6",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选和值筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0d96ff43ea8be552016a824d02820c87d295bcc115ab9c03ba",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:19:04.662229+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-54adaa47ae82759d:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩五星直选和值筛选步骤的规则机制、参数固定与历史复盘方法，掌握如何复算和核对候选空间变化",
+  "secondary_keywords": [
+    "分分彩五星直选和值筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选和值筛选步骤：规则机制、参数固定与历史复盘",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选和值筛选步骤-实际操作按哪几步做-筛到78004个后什么时候必须停止",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文将“分分彩五星直选和值筛选步骤”改写为公开可读的教育/研究导向说明，保留玩法机制与主题，讲清和值筛选、候选空间变化、复算核对和停止条件，同时明确历史样本与结构分类不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "和值筛选",
+    "操作步骤",
+    "候选空间",
+    "停止条件"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "分分彩五星直选和值筛选步骤：规则机制、参数固定与历史复盘"
+}

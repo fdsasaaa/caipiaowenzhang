@@ -1,0 +1,186 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 875,
+    "final_space": 125,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行近12期频率前5数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "038d5a74818d0ad5067a",
+  "approved_at": "2026-08-17T00:09:20.509336+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-37a847b55c734beb",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:1000->125",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选频率筛选步骤",
+    "reader_question": "按固定顺序执行近12期频率前5数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 875,
+      "final_space": 125,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行近12期频率前5数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩中三直选频率筛选步骤：实际操作按哪几步做，筛到125个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-8d1ba8c1dd5df19d",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "与mechanics_only边界一致。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇使用的示范标签是“演示数据，不是真实开奖记录”。",
+      "claim_type": "editorial",
+      "evidence_note": "来自case_bundle的必标注信息。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "近12期频率前5数字池这一步的候选空间从1000个缩到125个，筛掉875个。",
+      "claim_type": "calculation",
+      "evidence_note": "1000-125=875，来源于primary_filter_spec的机器合同。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "该步骤只保留数字池 {0, 1, 6, 7, 9}，按“频率降序、数字升序”排序。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数来自primary_filter_spec，作为样本型演示计算使用。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这一步只是在演示数据上做候选空间压缩，不代表未来命中率提高。",
+      "claim_type": "editorial",
+      "evidence_note": "符合packet中的限制，不把统计筛选包装成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果只完成这一条主筛选，就必须停止，不再临时加第二个过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "stop_after_final_stage=true，且不允许临时拼第二过滤器。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>先确认本文只做一条主筛选：<strong>近12期频率前5数字池</strong>。这是系统研究固定的主筛选合同，不是来源推荐，也不是读者现场再选出来的参数。</p><p>本篇面向读者的显示名称统一用<strong>分分彩</strong>。示范材料标注为<strong>演示数据，不是真实开奖记录</strong>，只用于复算步骤，不构成真实开奖记录说明。</p><p>先记住三个机器事实：起始候选空间是<strong>1000</strong>，主筛选后剩下<strong>125</strong>，被排除的是<strong>875</strong>。这三项必须先固定，再看样本。</p><h2>实际操作步骤清单</h2><ol><li>确认对象是<strong>分分彩中三直选</strong>，只处理这一条主筛选。</li><li>把回看窗口固定为<strong>近12期</strong>，不要临时改成别的期数。</li><li>按样本中的频率表做排序，规则是<strong>频率降序、数字升序</strong>。</li><li>取前5个数字，得到数字池<strong>0、1、6、7、9</strong>。</li><li>用这个数字池去做中三直选的候选压缩，结果空间从<strong>1000</strong>缩到<strong>125</strong>。</li><li>核对排除数量，确认已经筛掉<strong>875</strong>个。</li></ol><h2>每一步如何核对结果</h2><p>第一步核对对象：是不是只做<strong>中三直选</strong>，不是其他玩法。</p><p>第二步核对窗口：是不是严格使用<strong>12期</strong>，没有多看或少看。</p><p>第三步核对排序：是不是先看频率，再用数字升序打破并列。</p><p>第四步核对结果：前5数字是否就是<strong>0、1、6、7、9</strong>，不是别的集合。</p><p>第五步核对空间：主筛选前是否为<strong>1000</strong>，主筛选后是否为<strong>125</strong>，差值是否为<strong>875</strong>。</p><h2>何时必须停止</h2><p>当你已经完成这一步主筛选，就必须停止。合同里只有这一条已验证的主筛选，不能为了继续缩小范围临时再加新过滤器。</p><p>只有新增条件也有已验证规则、并且能够复算时，才允许继续缩小候选。否则就停在<strong>125</strong>这个结果上。</p><h2>边界与误区</h2><p>这类频率筛选只是在样本上做候选压缩，不是预测优势证明。本文只说明怎样复算，不把统计结果包装成未来结论。</p><p>示范样本里的频率、遗漏、和值、跨度，都只能按演示数据理解，不能直接当成真实开奖记录的外推依据。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>如果你已经按顺序做完“近12期频率前5数字池”，就不要再临时加第二个过滤器。合同到这里结束，后续条件只有在有新的已验证规则时才可以再谈。</p>",
+  "content_format": "html",
+  "content_hash": "ab4e563e734bf732538f0d6751219def0e0a494058e928c4b7d97144f121c4a7",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "8d1ba8c1dd5df19de206759a6bae3ac569b6de3f479b77ed3a06ddaf1d550b89",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选频率筛选步骤案例讲解：先说明中三直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "125",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定近12期、频率降序且数字升序、前5数字池这组主筛选参数，再看样本结果；样本只用于复算，不用于反向改参。",
+    "starting_space": "1000",
+    "steps": [
+      "确认只执行一条主筛选：近12期频率前5数字池，且对象是分分彩中三直选。",
+      "固定回看窗口为12期，按频率降序、数字升序排序。",
+      "取前5个数字，得到数字池0、1、6、7、9。",
+      "把数字池应用到中三直选候选空间，核对从1000缩到125。",
+      "核对被排除的空间是否为875，并在这里停止，不再临时追加第二过滤器。"
+    ],
+    "stop_condition": "完成这一条主筛选后就停止；只有新增条件具备已验证规则/证据且可复算时，才允许继续缩小候选。"
+  },
+  "primary_keyword": "分分彩中三直选频率筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_014eae5937337fc3016a8251120de48196993823e552b5cf75",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "按固定顺序执行近12期频率前5数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩中三直选频率筛选步骤",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三直选频率筛选步骤：实际操作按哪几步做，筛到125个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选频率筛选步骤-实际操作按哪几步做-筛到125个后什么时候必须停止",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "这是一篇按机器合同写成的分分彩中三直选频率筛选步骤清单。内容只保留一条主筛选：近12期频率前5数字池，起始空间1000，主筛选后125，筛掉875，并明确什么时候必须停止，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩中三直选频率筛选步骤",
+    "分分彩",
+    "中三直选",
+    "频率窗口",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "分分彩中三直选频率筛选步骤：实际操作按哪几步做，筛到125个后什么时候必须停止"
+}

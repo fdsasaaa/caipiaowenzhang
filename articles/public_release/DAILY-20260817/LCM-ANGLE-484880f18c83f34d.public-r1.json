@@ -1,0 +1,95 @@
+{
+  "angle_signature": "4a40c8498bf53cf59c9b",
+  "approved_at": "2026-08-17T01:08:46.228893+00:00",
+  "article_id": "LCM-ANGLE-484880f18c83f34d",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "一星直选的单位置原始候选空间按十个数字状态计算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文仅说明单位置候选空间的计数方式，未提供具体候选号码或投注方案。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在抽象演示中，候选空间由10个收缩为8个，因此排除数量为2个。",
+      "claim_type": "calculation",
+      "evidence_note": "这是对题设空间变化的算术复核，不代表真实开奖记录表现，也不构成未来结果判断。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "风险与方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先区分规则与研究问题</h2><p>本文围绕“分分彩一星直选遗漏注数计算”展开，只讨论单个位置的候选空间如何计数，以及筛选后空间如何变化。</p><p>一星直选可以先从单个位置的完整数字状态开始核对。单位置的原始候选空间为10个状态。这里讨论的是组合空间，不是命中率、收益率或结果承诺。</p><p>示例中的参数仅用于研究方法说明：观察一个预先规定的历史窗口，并记录当前遗漏达到预设阈值的状态数量。参数应在查看样本前登记，避免根据结果临时修改标准。</p><h2>如何复核10到8再到排除2</h2><p>把完整单位置空间记为起点10，把满足预注册筛选条件的状态数量记为保留空间8。</p><p>排除数量可以直接由差值计算：<strong>10 - 8 = 2</strong>。这个结果只表示候选空间的数量变化，不表示被排除状态一定不会出现，也不表示保留状态具有更高的未来概率。</p><p>为了保持复算一致，应分别记录观察窗口、遗漏阈值、统计时点、原始空间数量、保留数量和差值。若这些字段发生变化，前后结果就不应直接比较。</p><h2>遗漏统计能说明什么</h2><p>遗漏是历史序列中的间隔描述，用于表示某个状态在指定观察范围内的出现间隔或未出现长度。它可以帮助研究者复核分类过程，但不能单独提供结果预测能力。</p><p>频率、和值、跨度和遗漏等指标属于不同的描述维度。把多个指标叠加，可能进一步缩小空间，却不会自动产生经过验证的优势。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。任何关于概率差异的结论，都需要明确样本、比较基准、样本外数据和统计方法。</p><h2>研究中的验证边界</h2><p>较稳妥的复盘方式，是先固定规则，再使用未参与规则设计的数据进行样本外检验，同时报告样本量、缺失记录、筛选次数和失败案例。</p><p>还应区分“空间变小”和“预测效果改善”这两个问题。前者可以通过计数复算，后者必须依赖独立数据和可重复的统计检验，不能从候选数量差值直接推导。</p><p>如果样本较短、规则反复调整，或者只展示有利结果，结论容易受到随机波动和选择偏差影响。</p><h2>常见误区</h2><p>第一，把保留数量当成概率。候选池从10个变为8个，只说明分类范围发生变化。</p><p>第二，把历史遗漏当成必然补偿。过去的间隔模式不能保证后续出现，也不能据此承诺稳定结果。</p><p>第三，把更多过滤条件等同于更高质量。每增加一条条件，都应说明其理论依据、预注册状态和样本外表现。</p><p>本文在完成空间计数和方法边界说明后停止，不延伸到具体号码、结果判断或资金安排。</p>",
+  "content_format": "html",
+  "content_hash": "9bdae18c304f9124854f813997975dbf5ae560c053792e5e98e35df1971e6607",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "ec656c41e8c603ead8904f0cdc8f8e1b8f2d1089dca809ce55b0d96a6554e4c0",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "围绕“分分彩一星直选遗漏注数计算”说明单位置候选空间如何从10个抽象计数到8个，并解释排除2个的算术关系、参数预注册、样本外验证与常见误区。",
+  "parent_content_hash": "6648f11e901769c40c66a38e088147a519a6b7c66c175f7c8b405049eae5099c",
+  "parent_fingerprint": "484880f18c83f34dac988264ce25a7d8a681d133ab22bbe4a346e492d92b31f3",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选遗漏注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_053e29d2e0a3822e016a825bc73a5c8195a0829e79bab41d07",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T01:08:46.228910+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-484880f18c83f34d:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "核对一星直选单位置候选空间的计数关系，理解10到8及排除2的确定性算术结果，并区分空间分类与预测结论。",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选遗漏注数计算：10到8与排除2的研究方法",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-omission_threshold-position_filter-space_math",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文以教育和研究为导向，说明一星直选单位置候选空间的计数方式，复核10到8及排除2的算术关系，并强调遗漏分类、历史样本和未来预测之间的边界。",
+  "tags": [
+    "分分彩一星直选遗漏注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "分分彩一星直选遗漏注数计算：10到8与排除2的研究方法"
+}

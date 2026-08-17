@@ -1,0 +1,216 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释和值9–18的机制，并完成从90到46的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 44,
+    "final_space": 46,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解中三组选3里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 90,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "e8f97f203227e16ab8c7",
+  "approved_at": "2026-08-17T00:44:51.540253+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-cb07115fe3df6ce1",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:90->46",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三组选3和值技巧",
+    "reader_question": "理解中三组选3里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值9–18的机制，并完成从90到46的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 44,
+      "final_space": 46,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 90,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值9–18",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解中三组选3里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值9–18的机制，并完成从90到46的可复算案例。",
+    "title": "分分彩中三组选3和值技巧：和值9–18具体怎么算，用完整案例从90复算到46",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-1e826e7b4cc6c0a4",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机制范围声明，不涉及赔率、返点、奖金、收益。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "中三组选3先看三个位置的数字，再按这三个数字的和值是否落在9到18之间来筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法与筛选口径来自已验证规则合同。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的“和值”就是这3个位置上的数字相加。",
+      "claim_type": "rule_fact",
+      "evidence_note": "和值定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇使用的主筛选只做一件事：把和值限制在9到18。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选合同。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按这个主筛选，候选空间从90变成46，合计筛掉44个。",
+      "claim_type": "calculation",
+      "evidence_note": "起始空间、结果空间和排除量来自合同机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录：41001。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签和样本串。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个演示样本的最新一条是41001，三个位置的值是1、0、0，和值是1，跨度是1，形态标签为组三。",
+      "claim_type": "calculation",
+      "evidence_note": "样本字段的复算展示。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本只用于说明怎么算，不构成对下一步结果的保证。",
+      "claim_type": "editorial",
+      "evidence_note": "样本边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>先把范围固定住：这里讲的是<strong>分分彩中三组选3和值技巧</strong>里的一个主筛选，合同只允许看“和值9–18”。</p><p>“中三组选3”里，和值不是看一个数，而是看中三这3个位置上的数字相加。只要这3个数字的总和落在9到18之间，就算通过这一层筛选。</p><p>本文不讨论未核验的平台经济参数。这里只讲机制、复算和边界。</p><h2>方法机制：和值9–18</h2><p>这一层只有一个动作：先算和值，再看它是否在9到18之间。</p><p>比如，三个位置分别是1、0、0，和值就是1，不在9到18之间，所以不通过这一层。</p><p>这类筛选只是在缩小候选，不是把结果变成确定答案。<strong>它不等于预测优势</strong>。</p><h2>完整可复算案例</h2><p>下面用固定演示数据复算一次。注意：这是<strong>演示数据，不是真实开奖记录</strong>。</p><p>演示数据中的最新一条是<strong>41001</strong>。按展示口径取三个位置的值为1、0、0，先算和值：1+0+0=1。</p><p>再看规则：和值9–18才通过。1明显不在这个区间，所以这条样本在这一层被排除。</p><p>如果只看这一个演示样本，它说明的是“怎么计算”，不是“怎么保证”。</p><h2>逐步核对候选空间</h2><p>第一步，先固定主筛选参数：和值下限9，上限18。</p><p>第二步，从理论候选空间90开始检验。</p><p>第三步，执行唯一主筛选“和值9–18”，结果保留46个。</p><p>第四步，算出被筛掉的数量：90减46，等于44。</p><p>所以，这一层的空间变化是<strong>90到46</strong>，排除掉<strong>44</strong>个候选。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>和值9–18只是一个固定筛选条件，作用是把候选范围收窄。</p><p>它不能被写成真实的命中保证，也不能被包装成必然更准的结论。</p><p>来源和样本在这里也要分开：规则负责说明怎么算，演示数据只负责展示怎么算。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇文章已经完成合同要求的唯一主筛选：和值9–18。</p><p>如果后面要继续缩小候选，只能等到有新的、已经验证过的规则或证据，而且还能复算时再继续。</p><p>在没有第二条已验证规则之前，应该停在这里，不临时再加过滤器。</p><h2>实际怎么操作</h2><p>1. 先固定玩法范围，只看中三组选3。</p><p>2. 再固定唯一主筛选参数，只用和值9–18。</p><p>3. 对每个候选，先取中三三个位置的数字，再把这3个数相加，得到和值。</p><p>4. 把和值和区间9到18对比，落在区间内就保留，不在区间内就排除。</p><p>5. 最后核对空间变化：先看90，再看46，确认一共筛掉44个。</p><p>6. 到这里就停止；只有新增条件同时具备已验证规则和可复算证据时，才允许继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "eea66407c61eba4fccc1ab8b9a7d0e3bb645e19516db41118817ddd002936a88",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "1e826e7b4cc6c0a46d10fdeb282129cf605e11efb5adf5b16e0a7461af9ff9a0",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三组选3和值技巧案例讲解：先说明中三组选3规则，再用可复算演示数据展示筛选步骤、空间变化和常见误区，不把统计筛选包装成预测优势。",
+  "play": "中三组选3",
+  "practical_guidance": {
+    "after_primary_filter_space": "46",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定和值9到18这个主筛选，再看样本；没有第二条已验证规则或证据时，不再临时加过滤器。",
+    "starting_space": "90",
+    "steps": [
+      "先固定玩法范围，只看中三组选3。",
+      "再固定唯一主筛选参数，只用和值9–18。",
+      "对每个候选，先取中三三个位置的数字，再把这3个数相加，得到和值。",
+      "把和值和区间9到18对比，落在区间内就保留，不在区间内就排除。",
+      "最后核对空间变化：先看90，再看46，确认一共筛掉44个。",
+      "到这里就停止；只有新增条件同时具备已验证规则和可复算证据时，才允许继续缩小候选。"
+    ],
+    "stop_condition": "完成和值9–18这一层的固定筛选、空间核对和演示复算后停止，不临时追加第二过滤器。"
+  },
+  "primary_keyword": "分分彩中三组选3和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0afc019b592e9e52016a82595a61ec819a9587ef0beb0a6e17",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+  ],
+  "search_intent": "理解中三组选3里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩中三组选3和值技巧",
+    "分分彩技巧",
+    "中三组选3技巧",
+    "分分彩中三组选3投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三组选3和值技巧：和值9–18具体怎么算，用完整案例从90复算到46",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三组选3和值技巧-和值9-18具体怎么算-用完整案例从90复算到46",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三组选3",
+  "summary": "这篇文章只讲分分彩中三组选3的和值9–18怎么计算，并用固定演示数据复算一次从90到46的筛选过程。正文明确区分规则、演示样本和停止边界，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩中三组选3和值技巧",
+    "分分彩技巧",
+    "中三组选3技巧",
+    "分分彩中三组选3投注技巧",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "分分彩中三组选3和值技巧：和值9–18具体怎么算，用完整案例从90复算到46"
+}

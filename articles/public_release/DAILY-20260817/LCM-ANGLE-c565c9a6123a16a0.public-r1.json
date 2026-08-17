@@ -1,0 +1,116 @@
+{
+  "angle_signature": "b2caff660b9f30794f02",
+  "approved_at": "2026-08-17T01:02:08.829970+00:00",
+  "article_id": "LCM-ANGLE-c565c9a6123a16a0",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选的基础候选空间由两个有位置顺序的数字构成，每个位置有10种可能，因此基础空间为100个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文中的玩法机制说明，引用已验证的后二直选规则。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在案例设定的和值6–12条件下，候选空间由100个缩减为58个，减少42个。",
+      "claim_type": "calculation",
+      "evidence_note": "沿用Approved parent中已验证的静态空间计算结果；这里仅用于复算方法，不代表预测效果。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在前一层保留空间上继续使用跨度2–6条件后，候选空间由58个缩减为36个，减少22个。",
+      "claim_type": "calculation",
+      "evidence_note": "沿用Approved parent中已验证的静态空间计算结果；第二层的输入是第一层保留空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "从100个基础候选到36个保留候选，累计减少64个，且42加22等于64。",
+      "claim_type": "calculation",
+      "evidence_note": "由公开正文列出的分层数量进行算术复核。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "风险与研究边界说明，不依赖外部规则或案例证据。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先理解后二直选的候选空间</h2><p>本文围绕分分彩后二直选和值跨度注数计算，说明有序两位结果如何形成基础候选空间，以及和值和跨度条件如何改变空间规模。</p><p>后二直选保留两个位置的顺序。每个位置都可以取0到9，因此基础空间是100个有序结果。这个数量描述的是组合范围，不是命中率，也不是对未来结果的判断。</p><h2>用两个条件复算空间变化</h2><p>为了便于研究，可以预先登记两个条件：和值区间为6–12，跨度区间为2–6。预先固定参数有助于避免先看样本、再临时调整标准。</p><p>第一层按照和值区间整理候选空间。100个基础候选中有58个符合该条件，因此这一层减少42个。计算关系为100减58等于42。</p><p>第二层只在第一层留下的空间中整理跨度条件。58个候选中有36个符合跨度区间，因此这一层再减少22个。计算关系为58减36等于22。</p><p>两层完成后，保留空间为36个，累计减少64个。也可以通过100减36等于64，或42加22等于64进行交叉核对。</p><h2>如何把计算做成可复核记录</h2><p>研究记录应明确基础空间、每层条件、进入该层的数量、离开该层的数量和本层变化量。这样可以避免把第二层错误地重新应用到最初的100个候选上。</p><p>可使用表格或程序逐项检查，但公开讨论应聚焦于集合数量和计算逻辑，不展示具体候选号码，也不转化为逐期选择方案。</p><p>参数应在观察样本前固定，并保留版本、计算口径和复核结果。若新增条件，应单独记录其规则依据，并在新的样本观察前完成预注册。</p><h2>数量缩减不等于预测优势</h2><p>36个只是经过两个条件处理后剩余的空间大小。候选数量变少，不代表某些结果更可能出现，也不代表准确率、收益或稳定表现得到提升。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。历史频率、遗漏、和值分布和跨度分布都可能受到随机波动影响，不能替代样本外验证。</p><p>如果进行研究，应区分用于设定参数的样本和用于检验的样本，并提前确定评价指标、观察窗口和停止规则。单次演示或样本内结果不足以支持推广结论。</p><h2>常见误区与研究边界</h2><p>第一，不能把“筛掉的数量”写成“筛掉的风险”或“提高的胜率”。它只表示集合经过条件分类后的规模变化。</p><p>第二，不能因为某段历史样本呈现特定结构，就把该结构当作未来预测依据。历史描述和未来推断属于不同问题。</p><p>第三，不能在看到结果后反复修改和值、跨度或其他参数，再把修改后的结果当成事先验证。研究结论应保留完整的参数版本和复核路径。</p><p>本文只讨论组合数学、规则机制和研究方法，不提供具体候选号码、逐期建议、投注金额或资金安排。</p>",
+  "content_format": "html",
+  "content_hash": "2fbba35bef7141c425bdb9d0fd3ea8896818a54b86ad5371b3486e84b9a61583",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "c76872e02f97601a71bbf2b6cbe5a9fbeea7bba6d43eb671b50a3e2cf95e2460",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "了解分分彩后二直选和值跨度注数计算，复核100个有序候选经和值与跨度分类后保留36个、累计减少64个的数学过程，并区分空间缩减与预测优势。",
+  "parent_content_hash": "893d5eb44fb36467f7d0798f300fa8dc4ab07407d52ff29e0867efbf8bb00fb7",
+  "parent_fingerprint": "c565c9a6123a16a0baab1cd1cc6b05d07d281627d88c334d621359be41e1df52",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选和值跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_094e0aff282e9a5a016a82588c7e4487d0831c18387a52972b",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T01:02:08.829986+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-c565c9a6123a16a0:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "核对后二直选候选空间的组合数学计算，复核100个基础候选经过和值和跨度条件后变为36个、累计减少64个的确定性结果。",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩后二直选和值跨度注数计算：从100个到36个如何复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-后二直选-position_filter-span_range-space_math",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "本文以教育和研究为导向，解释后二直选的有序候选空间、和值与跨度的分层计算，并复核100、58、36及累计减少64个之间的数量关系。同时说明预注册、样本外验证、随机波动和常见误区，明确空间缩减不等于未来预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值筛选",
+    "跨度筛选",
+    "候选空间计算"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "分分彩后二直选和值跨度注数计算：从100个到36个如何复核"
+}

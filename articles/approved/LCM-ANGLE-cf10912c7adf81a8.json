@@ -1,0 +1,258 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 4420,
+    "final_space": 5580,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "de8d4632429929c8dc39",
+  "approved_at": "2026-08-16T23:59:10.841837+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-9eba7178d82397d3",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:10000->5580",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选跨度参数设置",
+    "reader_question": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 4420,
+      "final_space": 5580,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前四直选跨度参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-cf10912c7adf81a8",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "明确样本性质，避免把案例写成真实开奖记录。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前四直选的这组主筛选参数由系统研究预设，不能写成来源推荐。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数归属边界来自合同机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇只使用一个主筛选：跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选合同只允许这一层。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛选前候选空间是10000。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的 starting_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按跨度2–6筛完后，候选空间变成5580。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的 after_filter_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一层一共筛掉4420。",
+      "claim_type": "calculation",
+      "evidence_note": "10000-5580=4420。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度2–6只是系统研究预设参数，不等于原文推荐，也不证明预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不把静态参数写成来源结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源提到的只是一类技术经验，不能替系统研究预设参数作证。",
+      "claim_type": "source_claim",
+      "evidence_note": "只允许把来源当作经验出处，不把来源经验升级成参数归属。",
+      "support_refs": [
+        "BRBCW-001451"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "来源提到的内容只能说明经验从哪里来，不能证明这里的具体参数是来源推荐。",
+      "claim_type": "source_claim",
+      "evidence_note": "限定来源作用范围。",
+      "support_refs": [
+        "BRBCW-001451"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "演示数据里的最新一组是97135。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据的样本量是12。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，最新一组的跨度是8，和值是20。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据是单单单单。",
+      "claim_type": "editorial",
+      "evidence_note": "来自 case_bundle 的样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据的样本标签是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须显式标注演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>本文只讲一个主筛选：<strong>跨度2–6</strong>。它属于系统研究预设，不是来源推荐，也不是把来源经验直接搬成结论。</p><p>这里先把边界说清楚：本篇面向读者显示用的是<strong>分分彩</strong>，但具体参数归属仍然按系统研究合同处理。也就是说，参数是谁定的、筛到哪一步停、怎么复算，归合同；来源只负责给出技术经验背景，不能替这组具体参数背书。</p><h2>哪些结果由演示样本计算</h2><p>这组样本明确标注为<strong>演示数据，不是真实开奖记录</strong>。样本量是12，最新一组是97135。</p><p>按样本描述，最新一组的跨度是8，和值是20，形态是单单单单。这个结果只说明演示样本长什么样，不说明真实开奖会跟着变。</p><h2>实际怎么操作</h2><p>第一步，先固定参数。这里固定的是跨度2–6，不能先看样本再回头改参数。</p><p>第二步，按合同的主筛选去复算。前四直选的起始候选空间是10000。</p><p>第三步，只做这一层筛选。跨度2–6筛完后，候选空间变成5580，等于一共筛掉4420。</p><p>第四步，检查你是在做参数边界说明，还是在试图把统计筛选写成预测优势。前者可以复算，后者本篇不成立。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到的是技术经验背景，但本篇不把它写成具体参数推荐。它能支持“这里确实有一类相关经验”，不能支持“这组参数就是来源原文指定”。</p><p>同样，来源也不能证明跨度2–6有预测优势。<strong>候选空间从10000变成5580</strong>，只是机器筛选结果，不是胜率证明。</p><h2>为什么不能事后改参数</h2><p>因为参数冻结必须在观察样本之前完成。先看结果再改跨度范围，复算链条就断了，边界也会被改写成事后调参。</p><p>这类做法看起来更灵活，实际上会把系统研究预设和样本结论混在一起。混在一起之后，就很难分清到底是参数边界，还是样本驱动。</p><h2>边界与误区</h2><p>不要把“筛掉4420”理解成“更准了”。它只表示候选空间缩小了，不表示命中率、准确率、胜率或者未来结果被证明提高。</p><p>也不要把演示样本里的频率、和值、跨度，当成真实预测结论。它们是描述，不是承诺。</p><h2>停止条件</h2><p>本篇已经完成合同要求的唯一主筛选解释，所以这里就停止。没有新增且已验证、可复算的条件之前，不再临时加第二个过滤器。</p><p>如果后面要继续缩小候选，只能在新增条件也有已验证规则或证据、并且能复算的前提下进行。</p>",
+  "content_format": "html",
+  "content_hash": "df2aabdfd8b62b88b6cd90b44353bb81e29f9d0701efe42ac45f047b37210c61",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "cf10912c7adf81a8acbf1a070a64924165782ff8ff7dd87c3d4b1b153e7b85c2",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选跨度参数设置案例讲解：先说明前四直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "5580",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定跨度2–6，再看样本；不得根据样本回改参数。",
+    "starting_space": "10000",
+    "steps": [
+      "先确认主筛选只用跨度2–6，不引入第二个未验证过滤器。",
+      "从10000的前四直选候选空间出发，按同一参数口径复算。",
+      "得到5580后，记录筛掉4420，说明这是空间变化，不是预测优势。",
+      "核对案例数据只作为演示，不把样本频率、和值或跨度写成真实结论。",
+      "到这里停止；如果没有新增且可复算的已验证条件，不继续缩小候选。"
+    ],
+    "stop_condition": "完成合同规定的唯一主筛选解释后停止；没有新增已验证条件时，不临时加新过滤器。"
+  },
+  "primary_keyword": "分分彩前四直选跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0952780f5afee8f8016a824eab8c9881949229c3548a2ba8d7",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前四直选跨度参数设置",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前四直选跨度参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前四直选-span_range-parameter_boundary",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "本文只说明一个主筛选参数：跨度2–6，属于系统研究预设，不是来源推荐，也不证明预测优势。文中用演示数据展示前四直选的复算方式，明确筛选前后空间变化、来源能说什么和不能说什么，并给出停止条件，避免把统计筛选包装成预测结论。",
+  "tags": [
+    "分分彩前四直选跨度参数设置",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩前四直选跨度参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐"
+}

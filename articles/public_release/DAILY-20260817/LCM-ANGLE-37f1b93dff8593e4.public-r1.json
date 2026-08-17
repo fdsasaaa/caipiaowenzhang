@@ -1,0 +1,102 @@
+{
+  "angle_signature": "511d4ce9e597441dd804",
+  "approved_at": "2026-08-17T01:07:41.810113+00:00",
+  "article_id": "LCM-ANGLE-37f1b93dff8593e4",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "在固定的和值9–18筛选条件下，前三组选6的起点候选空间为120个，筛选后保留88个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "正文将这组数量作为已验证规则下的空间计算结果，不延伸为预测结论。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "排除数量可由120减去88得到32，且120、88、32三项构成闭合关系。",
+      "claim_type": "calculation",
+      "evidence_note": "这是对正文所述起点空间、保留空间和排除空间的确定性复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "候选空间数量的减少不等于命中率、胜率或未来结果优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版的风险边界说明，不主张任何收益或预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是对样本外验证和随机波动边界的明确说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>问题范围与规则参数</h2><p>“分分彩前三组选6和值注数计算”关注的是候选空间的组合数学，而不是结果预测。</p><p>本文只研究一个固定参数：和值9–18。该参数先被预注册，再用于核对候选空间，避免根据演示样本临时改变条件。</p><p>按已验证的机制规则，筛选前的空间为120个，应用和值9–18后保留88个。</p><h2>120、88与32的关系</h2><p>这组结果可以用集合差集表示：起点空间包含120个元素，满足和值9–18条件的部分包含88个元素，其余部分就是被该条件排除的空间。</p><p>排除数量的计算为：120 - 88 = 32。</p><p>因此，起点数量、保留数量和排除数量之间满足120 = 88 + 32。这个等式是空间核对，不是概率承诺。</p><h2>空间压缩不等于预测能力</h2><p>88表示规则筛选后的组合数量，32表示未进入该筛选集合的数量。它们都不是命中率、胜率或收益率。</p><p>减少候选数量只说明研究对象变小了，并没有自动证明剩余结构更容易出现。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。随机波动可能让某些区间在有限样本中显得突出，但这种现象需要独立样本和重复检验才能评估。</p><h2>如何进行可复核的研究</h2><p>研究时应先记录候选空间定义、和值范围、计数方式和停止条件，再进行计算。参数一旦预注册，就不应因为样本结果不理想而事后调整。</p><p>复核可以分为两个层次：第一层检查120、88、32之间的算术闭合；第二层检查组合定义、和值计算和去重方式是否与规则一致。</p><p>如果要研究历史数据，应把用于设定参数的数据与用于检验的数据分开，并保留样本外验证。样本外结果仍然只能用于描述统计表现，不能转化为确定性结论。</p><h2>常见误区与公开边界</h2><p>把“排除32个”理解成“剩余部分更有把握”，属于从空间计算跳到预测结论的错误推断。</p><p>把历史频次、和值区间或结构标签直接当作未来结果依据，也没有满足独立验证要求。</p><p>本文仅解释候选空间、组合计数、参数预注册和验证边界，不提供具体候选号码、逐期方案、投注金额、倍数或资金安排。</p>",
+  "content_format": "html",
+  "content_hash": "4392f5c6652a033ff11c52aaec678c4543e9477fd80e7482b3b9e7e3f8b6fc94",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "208484dbb153819a8bd816afefb56cc787bde78e30af50cf1a3f01542f9cc6ab",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "解释分分彩前三组选6和值注数计算中的120、88与32如何闭合复算，并说明空间压缩、参数预注册和样本外验证不等于未来预测优势。",
+  "parent_content_hash": "ea0d5f176080ed7b27988a2ad53708c724d87052041505515dd739cd25c857e6",
+  "parent_fingerprint": "37f1b93dff8593e426ce9f6dcda4244383b0540f510ba2e31203311d01caa559",
+  "play": "前三组选6",
+  "primary_keyword": "分分彩前三组选6和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_01756f8b83c1b763016a825a87656487d0ab2e8a5352c36543",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T01:07:41.810129+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-37f1b93dff8593e4:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+  ],
+  "search_intent": "核对前三组选6的候选空间计算，逐项确认120到88以及排除32个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前三组选6和值注数计算",
+    "分分彩技巧",
+    "前三组选6技巧",
+    "分分彩前三组选6投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前三组选6和值注数计算：120到88与排除32的组合数学解释",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三组选6-sum_range-space_math",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三组选6",
+  "summary": "本文以固定和值9–18为例，复核前三组选6候选空间从120个到88个、排除32个的确定性关系，并区分组合数量、历史样本与未来预测之间的边界。",
+  "tags": [
+    "分分彩",
+    "前三组选6",
+    "和值计算",
+    "候选空间",
+    "space_math"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "分分彩前三组选6和值注数计算：120到88与排除32的组合数学解释"
+}

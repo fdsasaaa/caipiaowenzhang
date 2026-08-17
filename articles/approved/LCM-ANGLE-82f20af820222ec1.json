@@ -1,0 +1,228 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 7,
+    "final_space": 3,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分一星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "708edb08010a757223f9",
+  "approved_at": "2026-08-17T00:14:13.606413+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-4558750dac1c46bc",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=1/static]:10->5>odd_even_filter[odd_count=1/static]:5->3",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选大小奇偶参数设置",
+    "reader_question": "区分一星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 7,
+      "final_space": 3,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分一星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩一星直选大小奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-82f20af820222ec1",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "系统研究预设的第一层是“恰好1个大号”，它从 10 个个位候选里筛到 5 个，排除 5 个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应第一层静态参数与候选空间变化。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "系统研究预设的第二层是“恰好1个单号”，它从 5 个候选里筛到 3 个，排除 2 个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应第二层静态参数与候选空间变化。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合起来后，候选空间从 10 个收缩到 3 个，总共排除 7 个。",
+      "claim_type": "calculation",
+      "evidence_note": "由两层合同结果直接相加得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同要求标注样本性质。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这组演示样本一共 12 条，最新一条是 12037。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅作演示样本说明，不作真实开奖陈述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一位的描述是：个位为 7，大小为大，奇偶为单，和值为 7，跨度为 0。",
+      "claim_type": "source_claim",
+      "evidence_note": "来自演示样本的末位描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，个位当前遗漏和频率只是描述性结果，不能直接当成预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "说明样本统计的边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从10个缩到5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从5个缩到3个，排除2个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从10个缩到3个，总排除7个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>这篇只讲边界，不讲扩展技巧。这里的两个静态参数，都是系统研究预设，不是来源推荐，也不是从样本里临时倒推出的。</p><p>第一层是“恰好1个大号”，第二层是“恰好1个单号”。它们在合同里已经先固定，顺序也先固定：先做大号筛选，再做奇偶筛选。</p><p>演示数据，不是真实开奖记录。</p><h2>哪些结果由演示样本计算</h2><p>演示样本里一共 12 条，最新一条是 12037。作为说明，最新一位是 7，大小为大，奇偶为单，和值为 7，跨度为 0。</p><p>这些样本数字只负责说明“样本里看到了什么”，不负责替合同参数背书。频率、遗漏、和值、跨度都属于描述性结果，不能自动升级成预测优势。</p><h2>来源能支持什么、不能支持什么</h2><p>来源只支持这个技巧家族里可验证的玩法机制，不支持把具体参数写成来源指定。换句话说，来源可以说明这类筛选方法从哪里来，但不能替“恰好1个大号”或“恰好1个单号”背书为原文推荐。</p><p>同样，来源也不能证明这些参数更准、更容易中奖，或者比别的参数更有优势。本文只讨论已固定的机制边界，不讨论未核验的平台经济参数。</p><h2>为什么不能事后改参数</h2><p>参数一旦在观察前冻结，就不能因为样本结果看起来顺眼而回头改。先固定参数，再看样本，是为了把“规则怎么写”与“样本怎么看”分开。</p><p>如果看到结果不理想，再临时加一层新过滤器，就已经不是同一套合同了。那样得到的只是另一组新参数，不是原来的复算结果。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这组管线最后从 10 个个位候选收缩到 3 个，总共排除 7 个。这个数字说明的是筛选后的空间变小了，不说明命中率更高，也不说明未来表现更好。</p><p>所以，不能把“筛掉了多少”直接包装成“更准了多少”。统计筛选只是在做空间收缩，结论应停在可复算的范围内。</p><h2>实际怎么操作</h2><ol><li>先确认起点空间是 10 个个位候选，不要先看样本再定参数。</li><li>按第一层执行“恰好1个大号”，把 10 个候选收缩到 5 个，排除 5 个。</li><li>再按第二层执行“恰好1个单号”，把 5 个候选继续收缩到 3 个，排除 2 个。</li><li>把两层结果合并复算一次，确认总起点 10、终点 3、总排除 7，数字对得上。</li><li>只记录这套合同已经给出的结论，不临时补第三层过滤器。</li></ol><h2>停止条件</h2><p>到最后一层结束就停止。只有当新增条件本身也有已验证规则或证据，并且能在下一次实验前冻结，才允许继续缩小候选。</p><p>在当前合同里，正文到这里就够了。再往下加内容，就已经超出这次的参数边界。</p>",
+  "content_format": "html",
+  "content_hash": "f715d2d3aa48af15b56f7b31a789dc00f021881b324f94ef816aa05ecae97264",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "82f20af820222ec1585682c81c101be1dc4b7ad75b91584b6d423e3ca38d5260",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选大小奇偶参数设置：说明系统研究预设参数与来源经验的边界，用可复算演示数据展示两层筛选如何从 10 个候选收缩到 3 个，不把统计结果写成预测优势。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成两层固定筛选后，候选空间从 10 个收缩到 3 个，总共排除 7 个。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；第一层“恰好1个大号”和第二层“恰好1个单号”都在观察前冻结，不能事后改。",
+    "starting_space": "10",
+    "steps": [
+      "确认起始候选空间为 10 个个位候选，并先冻结两层参数。",
+      "执行第 1 层“恰好1个大号”，复算 10 -> 5，排除 5 个。",
+      "执行第 2 层“恰好1个单号”，复算 5 -> 3，排除 2 个。",
+      "核对总结果 10 -> 3、总排除 7，确认与合同一致。",
+      "到最后一层后停止，不再临时增加新过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则/证据并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩一星直选大小奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_02b7ac908818e102016a825234f1f0819b83bb615435536b38",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "区分一星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩一星直选大小奇偶参数设置",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选大小奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选大小奇偶参数设置-哪些参数是系统研究预设为什么不能写成来源推荐",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文只处理分分彩一星直选大小奇偶参数设置的边界问题：两层静态参数由系统研究预设，演示数据只负责复算空间收缩，不把来源经验写成参数推荐，也不把筛选结果包装成预测优势。",
+  "tags": [
+    "分分彩一星直选大小奇偶参数设置",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "分分彩一星直选大小奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐"
+}

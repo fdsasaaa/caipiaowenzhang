@@ -1,0 +1,172 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100000、终点43620、排除56380。",
+    "evidence_mode": "static_only",
+    "excluded_space": 56380,
+    "final_space": 43620,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到43620以及排除56380个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "732f2dec389f168d6144",
+  "approved_at": "2026-08-16T23:49:04.515089+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-2294853e6ce2256e",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:100000->43620",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选跨度注数计算",
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到43620以及排除56380个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100000、终点43620、排除56380。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 56380,
+      "final_space": 43620,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对五星直选的候选空间计算，逐项确认100000到43620以及排除56380个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100000、终点43620、排除56380。",
+    "title": "分分彩五星直选跨度注数计算：100000个候选为什么变成43620个，排除56380个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-19932b4674f8c0b5",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文先把五星直选的候选空间固定为100000个，再按跨度2–6这一条主筛选算出剩余43620个。",
+      "claim_type": "calculation",
+      "evidence_note": "对应合同中的起点、单阶段主筛选与终点；不引入第二过滤器。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步一共排除了56380个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由100000减去43620得到排除量。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这不是命中率，也不是胜率，只是一次固定参数下的候选空间缩减。",
+      "claim_type": "editorial",
+      "evidence_note": "纯边界说明，不陈述外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同对样本性质做明确标注。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只做一件事：把分分彩五星直选的候选空间算清楚。按合同，起点是100000个有序五位候选，主筛选只有一条，标签是“跨度2–6”。</p><p>这里先把参数固定，再看结果。参数由系统研究合同给定，不从样本里临时挑。</p><h2>逐层计算保留与排除数量</h2><p>第一步，候选空间从100000开始。</p><p>第二步，只应用“跨度2–6”这一条主筛选，得到43620个保留候选。</p><p>第三步，排除量就是100000减去43620，等于56380个。</p><p>所以，这组确定性结果可以直接核对为：100000个候选，保留43620个，排除56380个。</p><h2>核对起点、终点和总排除</h2><p>起点是100000，终点是43620，二者差值就是56380。这个差值没有别的解释，就是主筛选之后被移出的候选数。</p><p>本篇只到这一层，不再加第二条未验证过滤器。</p><h2>为什么这些数字不是命中率</h2><p>43620不是命中率，56380也不是胜率。它们只是一次固定规则下的空间计数。</p><p>换句话说，这里算的是“剩多少”和“去掉多少”，不是“能中多少”。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>演示数据，不是真实开奖记录。它只用来说明怎么复算空间，不承担真实预测含义。</p><p>来源只支持这条五星直选的机制背景，不能把这组空间缩减说成来源推荐的预测优势。</p><p>本文也不讨论未核验的平台经济参数。</p><h2>实际怎么操作</h2><ol><li>先把起点固定为100000，不要先看样本。</li><li>再按系统研究合同里的主筛选“跨度2–6”去算保留量。</li><li>核对保留结果是否为43620，同时把排除量写成56380。</li><li>确认这一步之后就停止，不临时再加第二个过滤器。</li></ol><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇的停止条件很明确：只完成这一条主筛选的空间计算。只有当新增条件也有已验证规则或可复算证据时，才允许继续缩小候选；否则就停在43620这个结果上。</p>",
+  "content_format": "html",
+  "content_hash": "7e8b0adc1d79510e2a61ac84bf152a976cc9837c016a1fcd4dd2537cce3785df",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "19932b4674f8c0b5bcd00c6a442473904fae09de4829f50db5f7c05ab07fdd45",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选跨度注数计算，按固定主筛选复算100000个候选如何变成43620个，并核对排除56380个的确定性结果。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "43620个候选，较起点100000个减少56380个。",
+    "next_step_policy": "只有新增条件具有已验证规则或可复算证据时，才允许继续缩小候选；否则停止在当前主筛选结果，不再追加第二过滤器。",
+    "parameter_freeze_rule": "先固定系统研究合同给定的参数，再看样本；参数不得从演示数据倒推。",
+    "starting_space": "100000个候选。",
+    "steps": [
+      "先确认候选空间起点是100000。",
+      "只套用系统研究合同指定的主筛选“跨度2–6”。",
+      "复算保留量为43620，并同步得到排除量56380。",
+      "核对三项数字是否闭合：100000 = 43620 + 56380。",
+      "确认只完成这一层后停止，不临时加新过滤器。"
+    ],
+    "stop_condition": "当主筛选后的43620个候选已经复算完成，就停止；如果没有新增已验证规则，就不再继续缩小。"
+  },
+  "primary_keyword": "分分彩五星直选跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0fe3a8fe43ebab83016a824c56f48487d2b268f8c6c77b9618",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算，逐项确认100000到43620以及排除56380个的确定性结果",
+  "secondary_keywords": [
+    "分分彩五星直选跨度注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选跨度注数计算：100000个候选为什么变成43620个，排除56380个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选跨度注数计算-100000个候选为什么变成43620个-排除56380个怎么算",
+  "source_refs": [
+    "BRBCW-002590"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这篇只做腾讯分分彩五星直选跨度注数计算的确定性复算：从100000个候选出发，按单一主筛选“跨度2–6”保留43620个，排除56380个，并明确停止在这一层，不把空间缩减包装成预测优势。",
+  "tags": [
+    "分分彩五星直选跨度注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range"
+  ],
+  "title": "分分彩五星直选跨度注数计算：100000个候选为什么变成43620个，排除56380个怎么算"
+}

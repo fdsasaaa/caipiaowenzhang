@@ -1,0 +1,222 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "multistage_order",
+    "deliverable_summary": "逐层解释恰好2个大号→恰好2个单号的固定顺序和空间变化，完成最后一层后明确停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 89650,
+    "final_space": 10350,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好2个大号",
+      "恰好2个单号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "恰好2个大号",
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "5e18599e90539efc426c",
+  "approved_at": "2026-08-17T00:58:12.028402+00:00",
+  "article_angle_contract": {
+    "angle_type": "multistage_order",
+    "contract_id": "AAC-20f6082dfcf753ae",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=2/static]:100000->31250>odd_even_filter[odd_count=2/static]:31250->10350",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选大小奇偶筛选顺序",
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "required_deliverable": "逐层解释恰好2个大号→恰好2个单号的固定顺序和空间变化，完成最后一层后明确停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 89650,
+      "final_space": 10350,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好2个大号",
+        "恰好2个单号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "恰好2个大号",
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "先列出全部合同阶段",
+      "按固定顺序逐层复算",
+      "逐层核对before/after/excluded",
+      "完成最后一层后停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "逐层解释恰好2个大号→恰好2个单号的固定顺序和空间变化，完成最后一层后明确停止。",
+    "title": "分分彩五星直选大小奇偶筛选顺序：2层为什么按恰好2个大号→恰好2个单号这个顺序，逐层各排除多少",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-13ab485fa52e5bea",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲五星直选大小奇偶筛选顺序的复算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围说明，不涉及未核验经济事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "案例披露标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第1层是恰好2个大号，候选空间从100000变成31250，排除68750。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同机器结果的静态层级复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层是恰好2个单号，候选空间从31250变成10350，排除20900。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同机器结果的静态层级复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层都完成后，最终候选空间是10350，总共排除89650。",
+      "claim_type": "calculation",
+      "evidence_note": "最终空间与总排除的合同结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这组筛选只是把空间缩小，不表示更容易中奖。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明，不构成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从100000个缩到31250个，排除68750个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从31250个缩到10350个，排除20900个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100000个缩到10350个，总排除89650个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>合同阶段</h2><p>这篇按固定顺序只复算2层：先是<strong>恰好2个大号</strong>，再是<strong>恰好2个单号</strong>。参数先固定，再看空间变化。演示数据，不是真实开奖记录。</p><h2>按顺序复算</h2><p>第1层从<strong>100000</strong>开始，执行“恰好2个大号”，结果剩下<strong>31250</strong>，本层排除<strong>68750</strong>。这里的意思很直接：先把起始空间按这一条固定规则过滤一遍，得到第一层后的候选集合。</p><p>第2层接着以上一层的<strong>31250</strong>为起点，执行“恰好2个单号”，结果变成<strong>10350</strong>，本层再排除<strong>20900</strong>。这一步不是重新回到起点重算，而是在第1层结果上继续收缩。</p><h2>操作步骤</h2><ol><li>先确认起始空间是<strong>100000</strong>，不要先加别的条件。</li><li>固定第1层参数“恰好2个大号”，复算后记下<strong>before=100000</strong>、<strong>after=31250</strong>、<strong>excluded=68750</strong>。</li><li>把第1层的<strong>31250</strong>作为第2层的输入，再固定“恰好2个单号”。</li><li>复算第2层后记下<strong>before=31250</strong>、<strong>after=10350</strong>、<strong>excluded=20900</strong>。</li><li>最后核对整条流水：<strong>100000 - 68750 - 20900 = 10350</strong>，总排除<strong>89650</strong>。</li></ol><h2>为什么到这里停止</h2><p>因为这份合同只给了2层，而且参数已经在生成前固定。完成最后一层后就停止，不临时加新过滤器；只有新增条件也有已验证规则或证据、并且能在下一次实验前先冻结，才允许继续缩小候选。</p><h2>边界与误区</h2><p>这类筛选讲的是候选空间怎么变，不是命中率、准确率或收益。把“空间变小”直接说成“更准”是不成立的。</p><p>如果只想复算，就盯住这3个数：<strong>100000</strong>、<strong>31250</strong>、<strong>10350</strong>。顺序不能换，层数不能加，最后一层做完就停。</p>",
+  "content_format": "html",
+  "content_hash": "53891c73ff745263b31c9ba90e927092abb315ea58d46f02c6b3976f8a3a75c6",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "13ab485fa52e5bea0626f3da1a4c49666f99bab9ab0f5a77ff1c45ff156994f7",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "multistage_order",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选大小奇偶筛选顺序案例讲解：按固定顺序复算两层筛选，逐层说明before、after和排除空间，并明确完成最后一层后停止。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "100000 -> 31250 -> 10350，最终候选空间10350，合计排除89650。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且能在下一次实验前先冻结，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定系统研究参数，再看每层复算结果；不要根据中间结果临时改参数。",
+    "starting_space": "100000",
+    "steps": [
+      "确认起始空间是100000，先不要加任何额外条件。",
+      "先固定第1层“恰好2个大号”，复算并记录before=100000、after=31250、excluded=68750。",
+      "把第1层的31250作为第2层输入，固定“恰好2个单号”。",
+      "复算第2层并记录before=31250、after=10350、excluded=20900。",
+      "核对整条链路并在最后一层后停止，不再临时加过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何新增过滤器都必须另有已验证规则或证据，且要在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩五星直选大小奇偶筛选顺序",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_051fbe83789c3071016a825c6b3614819191de2740c611ec00",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+  "secondary_keywords": [
+    "分分彩五星直选大小奇偶筛选顺序",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选大小奇偶筛选顺序：2层为什么按恰好2个大号→恰好2个单号这个顺序，逐层各排除多少",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选大小奇偶筛选顺序-2层为什么按恰好2个大号-恰好2个单号这个顺序-逐层各排除多少",
+  "source_refs": [
+    "BRBCW-005641"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这是一篇按合同顺序复算的分分彩五星直选大小奇偶筛选顺序说明，逐层写清100000到31250再到10350的变化，并明确完成最后一层后停止，不把空间缩小包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "大小奇偶筛选顺序",
+    "大小筛选",
+    "奇偶筛选",
+    "技巧"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "分分彩五星直选大小奇偶筛选顺序：2层为什么按恰好2个大号→恰好2个单号这个顺序，逐层各排除多少"
+}

@@ -1,0 +1,295 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 64,
+    "final_space": 36,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行和值6–12→跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "1b48100d55baf2a9a631",
+  "approved_at": "2026-08-17T00:42:35.853697+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-c8728b06af0ec020",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58>span_range[min=2,max=6/static]:58->36",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选和值跨度筛选步骤",
+    "reader_question": "按固定顺序执行和值6–12→跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 64,
+      "final_space": 36,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行和值6–12→跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩后二直选和值跨度筛选步骤：实际操作按哪几步做，筛到36个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-d084fc762d65a3cd",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论机械筛选流程，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围声明，避免扩展到未提供的经济信息。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "对文中样本的强制披露标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组流程以分分彩后二直选为对象，先固定和值6–12，再固定跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同给定的阶段顺序与玩法对象。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层和值6–12：100 -> 58，排除 42。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的第一层空间变化。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层跨度2–6：58 -> 36，排除 22。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的第二层空间变化。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合计：100 -> 36，总共排除 64。",
+      "claim_type": "calculation",
+      "evidence_note": "由两层已验证空间变化直接相加得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一层先把候选空间从 100 缩到 58，等于先排除 42 个。",
+      "claim_type": "calculation",
+      "evidence_note": "把第一层结果改写成操作口径。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层再把 58 个候选缩到 36 个，等于再排除 22 个。",
+      "claim_type": "calculation",
+      "evidence_note": "把第二层结果改写成操作口径。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这两个数字只是候选空间变化，不是命中率、准确率或收益承诺。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不引入预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "案例里的最新一条是 60884，后二取值为 8 和 4，和值 12，跨度 4，双双，两不同。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的最新样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本一共有 12 条。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本条数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的和值序列是 13、12、7、15、0、12、16、7、8、3、12、12。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的和值序列。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的跨度序列是 3、6、5、1、0、4、2、3、8、1、4、4。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的跨度序列。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本中，数字 8 出现 6 次。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的频次统计。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第1层候选空间从100个缩到58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从58个缩到36个，排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100个缩到36个，总排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>先把参数固定，再开始看样本。这里的固定顺序只有两步：先做和值6–12，再做跨度2–6。顺序不能换，不能临时插入别的过滤器，也不能把结果倒着解释。</p><p>本文只讨论机械筛选流程，不讨论未核验的平台经济参数。演示数据，不是真实开奖记录。</p><h2>实际怎么操作</h2><p>第1步，先准备 100 个起始候选。合同里的起点是 100，不是样本里看出来的，也不是来源文章替你挑出来的。</p><p>第2步，按和值6–12筛第一层。做法很直接：把所有候选逐个过一遍，只保留和值落在 6 到 12 之间的项。合同给出的结果是 100 -> 58，说明这一层排除了 42 个候选。</p><p>第3步，再在这 58 个候选上做跨度2–6。仍然只按合同参数复算，不加别的条件。合同给出的结果是 58 -> 36，说明这一层再排除了 22 个候选。</p><p>第4步，把两层结果合并检查。最终候选空间是 36 个，总排除 64 个。这里的 64 只是 42 和 22 的合计，不代表任何命中优势。</p><p>第5步，检查自己有没有偷偷加条件。如果你发现自己开始想加“最近频率”“遗漏”“冷热”这类新过滤器，先停下来，因为这份合同没有给第二套已验证规则。</p><h2>每一步如何核对结果</h2><p>核对第一层时，只看两个数：前一层是 100，过完和值6–12后是 58。只要不是这个结果，就说明你的复算口径有问题。</p><p>核对第二层时，只看前一层 58，再过跨度2–6后是否得到 36。这里的 36 是终点，不是中途提示。</p><p>如果你的候选数不是 100 -> 58 -> 36 这条链，就不要继续往下算，先回头查参数有没有写错、顺序有没有颠倒、是否把别的规则混进来了。</p><h2>何时必须停止</h2><p>完成最后一层后就停止。合同已经明确给出最终空间 36，后面不再追加新过滤器。</p><p>只有当新增条件本身也有已验证规则或证据，并且能在下一次实验前先冻结参数时，才允许重新开一轮缩小候选。没有这个前提，就不要继续加层。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这套流程的作用，只是把候选空间从 100 收到 36。它说明的是筛选结果，不说明更容易中奖，也不说明更准确。</p><p>案例里的最新一条是 60884，后二取值为 8 和 4，和值 12，跨度 4，双双，两不同。这只是演示数据里的一个样本，不是对下一期的说明。</p><p>这组演示样本一共有 12 条。演示样本的和值序列是 13、12、7、15、0、12、16、7、8、3、12、12。演示样本的跨度序列是 3、6、5、1、0、4、2、3、8、1、4、4。演示样本中，数字 8 出现 6 次。</p><p>这些样本数字只用于说明演示计算怎么读，不构成预测依据。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇的停止条件很简单：按 100 -> 58 -> 36 走完就收工。不要为了看起来更实用，临时再加一层没有验证过的规则。</p><p>如果后续要继续缩小候选，先把新条件单独拿出来验证，再在下一次实验前冻结参数。没有新增的已验证规则，就保持在 36 个候选这个终点。</p>",
+  "content_format": "html",
+  "content_hash": "0873639cfe130b83f8863d36ee839906b850bbd9d53d99298394fb3ee4825c91",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "d084fc762d65a3cd715c550d8ff9d50179225715974a1a271a2cf556f169c221",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值跨度筛选步骤：按固定顺序做和值6–12，再做跨度2–6，复算从100缩到36的候选空间，并明确何时必须停止。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "合同两层都完成后的最终候选空间是 36，起始空间 100，总共排除 64。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据，并且能在下一次实验前先冻结参数时，才允许继续缩小候选；否则停止在已完成的最后一层。",
+    "parameter_freeze_rule": "先固定顺序和参数，再看样本；本合同只允许和值6–12、跨度2–6两层，不能临时加新过滤器。",
+    "starting_space": "100",
+    "steps": [
+      "先确认对象是分分彩后二直选，起点空间按合同固定为 100。",
+      "第一层只做和值6–12，复算后保留 58 个，排除 42 个。",
+      "第二层只做跨度2–6，在 58 个基础上复算到 36 个，再排除 22 个。",
+      "核对总结果是否满足 100 -> 58 -> 36，若不一致先检查顺序和参数。",
+      "确认没有额外条件后停止，不再临时添加新过滤器。"
+    ],
+    "stop_condition": "完成最后一层后立即停止；任何额外新过滤器都必须另有已验证规则/证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩后二直选和值跨度筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0688a261052c2646016a8258d3acd081969c127042749aa337",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "按固定顺序执行和值6–12→跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩后二直选和值跨度筛选步骤",
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩后二直选和值跨度筛选步骤：实际操作按哪几步做，筛到36个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩后二直选和值跨度筛选步骤-实际操作按哪几步做-筛到36个后什么时候必须停止",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "这篇把分分彩后二直选和值跨度筛选步骤拆成可复算的操作清单：先固定和值6–12，再做跨度2–6，按 100 -> 58 -> 36 逐层核对，并明确完成最后一层后必须停止，不把候选空间收缩包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值筛选",
+    "跨度筛选",
+    "位置筛选",
+    "执行清单",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "分分彩后二直选和值跨度筛选步骤：实际操作按哪几步做，筛到36个后什么时候必须停止"
+}

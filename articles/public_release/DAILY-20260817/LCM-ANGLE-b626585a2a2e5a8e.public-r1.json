@@ -1,0 +1,129 @@
+{
+  "angle_signature": "be49f3e10f9bd01666f0",
+  "approved_at": "2026-08-17T00:23:00.628684+00:00",
+  "article_id": "LCM-ANGLE-b626585a2a2e5a8e",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只核对分分彩前四直选跨度2–6这一条主筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文明确限定了主题范围。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按该规则，前四直选的候选空间起点是10000。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了候选空间起点的机制性表述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛选后候选空间剩下5580。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了筛后空间的确定性结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "被排除的数量是4420。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文给出了起点、终点和差值关系。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "10000减去5580等于4420。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文中存在明确算式。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "缩小候选空间不等于命中率、准确率或胜率。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确区分了筛选力度与结果表现。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确加入了风险边界与误区提醒。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>主题范围</h2><p>本文只核对分分彩前四直选跨度2–6这一条主筛选。重点是把候选空间的起点、终点和排除量算清楚，不把统计筛选写成预测承诺。</p><p>这里讨论的是组合数量如何变化，不涉及具体候选号码，也不提供任何下一步执行建议。</p><h2>候选空间怎么算</h2><p>按这条规则，前四直选的候选空间起点是10000。这个数字表示总候选规模，不是样本条数，也不是收益口径。</p><p>筛选之后，候选空间剩下5580。对应的排除数量就是4420，因为两者可以直接相减得到：<code>10000 - 5580 = 4420</code>。</p><p>如果把这组数连起来看，就是从10000缩到5580，中间少掉4420。它们是同一条计算链上的三个位置，不是三组彼此独立的结论。</p><h2>这类结果能说明什么</h2><p>这类结果只能说明候选空间被缩小了多少，不能自动推出命中率更高，也不能推出未来更稳定。</p><p>同样地，历史样本里的结构分布，只能说明过去样本长什么样，不能单独证明未来会更有预测优势。把筛选力度当成预测优势，是常见误区。</p><h2>复核思路</h2><p>复核时只看三件事：起点是不是10000，筛后是不是5580，差值是不是4420。只要这三项一致，说明这条主筛选的算术关系是闭合的。</p><p>如果要继续讨论别的条件，前提是新增条件本身也有已验证规则，或者能在公开材料里复算。没有这一步，就不应把后续结果包装成更强的结论。</p><h2>常见误区</h2><p>很多人会把“候选变少”误读成“更容易中”。这两件事不是一回事。前者只是空间收缩，后者需要独立证据支持。</p><p>还有一种误读，是把某个固定结构的历史表现直接拿来推未来。这个做法站不住，因为结构分类或历史样本表现不能单独证明未来预测优势。</p><p>所以，本文只保留一条可复核事实：10000个候选经过跨度2–6后变成5580个，排除了4420个。除此之外，不延伸到执行层面，也不把它写成收益判断。</p>",
+  "content_format": "html",
+  "content_hash": "5c206d4aec3d9cfb940041171259a4f0843ead95bb5cd5e426ad070e987d3dad",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "a6c91329f15f99dcf1827f425d2969e48569aa4807ddd5e7a9fd8102fefec6b0",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "核对分分彩前四直选跨度2–6的候选空间计算，说明10000变成5580、排除4420的确定性关系，并解释为什么这不等于预测优势。",
+  "parent_content_hash": "c6a49acb03e1f6af38af7ab350dbb89575a70d13e2a8184b102147d2dc56fdc4",
+  "parent_fingerprint": "b626585a2a2e5a8ed433522c188bdef4774f8291b22f4a60fb866ea417fdcd3a",
+  "play": "前四直选",
+  "primary_keyword": "分分彩前四直选跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_04c7c0062e734a2b016a824e68229481978e766ab35cc1cb43",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:23:00.628701+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-b626585a2a2e5a8e:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "核对分分彩前四直选跨度2–6的候选空间计算，确认10000到5580以及排除4420的确定性结果",
+  "secondary_keywords": [
+    "分分彩前四直选跨度注数计算",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前四直选跨度注数计算：10000变5580与排除4420的公开核对",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前四直选跨度注数计算-10000个候选为什么变成5580个-排除4420个怎么算",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "本文以教育/研究口径核对分分彩前四直选跨度2–6的候选空间计算：起点10000，筛后5580，排除4420。正文强调这只是空间缩小，不是命中率、胜率或未来预测优势，并明确指出结构分类或历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前四直选",
+    "跨度注数计算",
+    "候选空间",
+    "筛选核对"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩前四直选跨度注数计算：10000变5580与排除4420的公开核对"
+}

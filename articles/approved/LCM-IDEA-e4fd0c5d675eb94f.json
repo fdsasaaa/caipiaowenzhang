@@ -1,0 +1,229 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释恰好1个大号→恰好1个单号的机制，并完成从10到3的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 7,
+    "final_space": 3,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解一星直选里恰好1个大号→恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "8be1bc7ba16d6f7a22f9",
+  "approved_at": "2026-08-17T00:12:32.292587+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-35e97d27e369b829",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=1/static]:10->5>odd_even_filter[odd_count=1/static]:5->3",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选大小奇偶技巧",
+    "reader_question": "理解一星直选里恰好1个大号→恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释恰好1个大号→恰好1个单号的机制，并完成从10到3的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 7,
+      "final_space": 3,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：恰好1个大号→恰好1个单号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解一星直选里恰好1个大号→恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释恰好1个大号→恰好1个单号的机制，并完成从10到3的可复算案例。",
+    "title": "分分彩一星直选大小奇偶技巧：恰好1个大号→恰好1个单号具体怎么算，用完整案例从10复算到3",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-e4fd0c5d675eb94f",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "这是一篇分分彩一星直选大小奇偶技巧的机制说明文。",
+      "claim_type": "editorial",
+      "evidence_note": "文章定位说明，不涉及外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只讲一星直选里“恰好1个大号→恰好1个单号”怎么复算，不把统计筛选说成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "范围声明与风险边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须显式标注的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "个位这组一共先看10个数字，再按两个固定步骤筛到3个。",
+      "claim_type": "calculation",
+      "evidence_note": "起始空间与最终空间来自合同机器事实。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一步“恰好1个大号”把10缩到5，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "第1层候选空间计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二步“恰好1个单号”把5缩到3，排除2个。",
+      "claim_type": "calculation",
+      "evidence_note": "第2层候选空间计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两步合起来，候选空间从10变成3，总共排除7个。",
+      "claim_type": "calculation",
+      "evidence_note": "整体空间收缩结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层候选空间从10个缩到5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从5个缩到3个，排除2个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从10个缩到3个，总排除7个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>这篇只讲分分彩一星直选的一个固定演示：先看“恰好1个大号”，再看“恰好1个单号”。</p><p>演示数据，不是真实开奖记录。</p><p>这里的重点不是讨论中奖与否，而是把候选空间怎么一步一步缩小讲清楚。</p><p>本文不讨论未核验的平台经济参数。</p><h2>方法机制：恰好1个大号→恰好1个单号</h2><p>第一层是“恰好1个大号”。按合同，这一层先从10个数字里筛，筛完剩5个，排除5个。</p><p>这里的“10→5”只是候选空间计算，不是命中率，也不是预测优势。</p><p>第二层是“恰好1个单号”。它接在第一层后面继续筛，从5个里再留下3个，排除2个。</p><p>所以这两个步骤不是并排看，而是前一步的结果继续给后一步用。</p><h2>完整可复算案例</h2><p>演示样本的最新一条是10744，个位是4，演示里记为小、双、和值4、跨度0、重复1、独立1。</p><p>这组样本里，个位当前遗漏和频次也都给了出来，但它们都只是演示数据的描述，不是自动成立的预测结论。</p><p>你复算时只需要按固定顺序做两件事：先看大号个数，再看单号个数。</p><h2>逐步核对候选空间</h2><p>第1步，先固定参数：只做“恰好1个大号”，不临时加别的条件。</p><p>第2步，核对第一层结果：10个候选里留下5个，排除5个，空间从10到5。</p><p>第3步，再固定第二层参数：在第一层结果上继续做“恰好1个单号”。</p><p>第4步，核对第二层结果：5个候选里留下3个，排除2个，空间从5到3。</p><p>第5步，把两层结果合起来看：总起点10，最终3，总排除7。到这里就结束，不再额外加新过滤器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这套写法只是在讲固定筛选顺序和空间变化。</p><p>它不说明更容易中奖，也不说明历史样本会自动变成未来结论。</p><p>如果后面想继续缩小候选，必须先有新的已验证规则或证据，而且要能重新复算。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经按合同完成两层：先“恰好1个大号”，再“恰好1个单号”。</p><p>到最终3个候选就停止，不再把样本里的遗漏、频次、和值、跨度临时拿来当第二套过滤器。</p><p>这就是这篇的实际操作边界：先固定参数，再按步骤复算，最后停在合同要求的终点。</p>",
+  "content_format": "html",
+  "content_hash": "af47d9c84b4adb7510a5be9a9b2c8cfc8193545ea07aa51f231b892fb5feafdc",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "e4fd0c5d675eb94fde622e7aefa0e0af738741ffc259ae5b331b874789f377a3",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选大小奇偶技巧案例讲解：先说明一星直选规则，再用可复算演示数据展示筛选步骤、空间变化和常见误区，不把历史统计包装成必中结论。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "两层合同都完成后，候选空间从10缩到3，总共排除7个。",
+    "next_step_policy": "只有新增条件具有已验证规则、并且能在下一次实验前先冻结参数时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数，再看样本；本篇只按合同内两层执行，不临时拼第三层。",
+    "starting_space": "10",
+    "steps": [
+      "先确认起点是10个候选，范围只限一星直选的个位。",
+      "先做第一层“恰好1个大号”，把10算到5，明确排除5个。",
+      "再做第二层“恰好1个单号”，把5算到3，明确排除2个。",
+      "把两层合并核对，总起点10、最终3、总排除7。",
+      "检查是否还有额外条件；如果没有已验证规则和可复算证据，就在3个候选处停止。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩一星直选大小奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_095720a012181322016a8251d0ddcc81978b72f8c95608bf59",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "理解一星直选里恰好1个大号→恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩一星直选大小奇偶技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选大小奇偶技巧：恰好1个大号→恰好1个单号具体怎么算，用完整案例从10复算到3",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选大小奇偶技巧-恰好1个大号-恰好1个单号-完整案例",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "用固定演示数据说明分分彩一星直选里“恰好1个大号→恰好1个单号”怎么复算：先从10个候选缩到5个，再缩到3个，总共排除7个，并明确这只是空间计算，不是预测优势。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "大小筛选",
+    "奇偶筛选",
+    "机制说明",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "分分彩一星直选大小奇偶技巧：恰好1个大号→恰好1个单号具体怎么算，用完整案例从10复算到3"
+}

@@ -1,0 +1,116 @@
+{
+  "angle_signature": "3feb3c611b0654c51e6e",
+  "approved_at": "2026-08-17T01:04:32.094862+00:00",
+  "article_id": "LCM-IDEA-9cd11948fa3ed789",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "中三直选关注三位有序结果，位置顺序属于结果定义的一部分。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文仅说明玩法的结构机制，没有提供候选号码或执行建议。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "“恰好1个单号”表示三个位次中只有一个位置属于单数类别，另外两个位置属于双数类别。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是文章解释的核心分类条件。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在类别数量固定且各位置独立计数的前提下，可用位置选择数乘以各类别可选数量来表达组合规模。",
+      "claim_type": "calculation",
+      "evidence_note": "正文给出符号化计算方法，不列出具体候选号码。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版中的风险与研究边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数预注册、样本内与样本外区分，以及重复复核，有助于减少事后挑选规则造成的误判。",
+      "claim_type": "methodology",
+      "evidence_note": "正文将这些内容作为研究方法建议，不承诺任何结果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "随机波动可能使短期样本偏离长期理论比例，单次或少量观察不能代表稳定规律。",
+      "claim_type": "editorial",
+      "evidence_note": "正文中的一般统计风险说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法结构与研究范围</h2><p>本文围绕分分彩中三直选奇偶技巧，解释“恰好1个单号”这一分类条件如何进行组合计数。这里的重点是理解规则、建立可复核的计算框架，以及识别统计推断的边界。</p><p>中三直选关注三位有序结果。所谓有序，是指每个位次都保留自身位置，位置交换后通常会形成不同的结果类别。本文不列出具体候选号码，也不提供面向未来结果的选择方案。</p><p>以下内容属于教育和研究说明。分类筛选可以描述一个结果空间，但不能把描述性结构解释为收益、胜率或未来结果的保证。</p><h2>“恰好1个单号”如何理解</h2><p>把每个位次按照单数和双数进行标记。恰好1个单号，意味着三个位次中只有一个位置被标记为单数，另外两个位置被标记为双数。</p><p>这个条件包含两层信息：第一层是单数出现的数量；第二层是单数所在的位置。由于中三直选保留位置顺序，同样数量的单数出现在不同位置时，分类计数需要分别处理。</p><p>从组合数学角度看，可以先计算“哪个位置承担单数条件”，再计算该位置和其余位置各自的类别选择数，最后将这些数量相乘。用符号表示，可写成：<code>位置安排数 × 单数类别选择数 × 双数类别选择数 × 双数类别选择数</code>。</p><h2>可复核的抽象演示</h2><p>设三个位次分别记为甲、乙、丙。先固定“只有一个位置为单数”，则单数位置可能落在甲、乙或丙中的任意一个位置。每确定一种位置安排，再按照预先定义的单数类别和双数类别进行计数。</p><p>如果两类的可选数量相同，记为 <code>k</code>，那么每一种位置安排对应的组合量可以写成 <code>k × k × k</code>；三种位置安排合并后，整体规模写成 <code>3 × k³</code>。这个表达式展示的是计算方法，不是候选号码列表。</p><p>研究记录中应把类别定义、位置是否有序、计数口径和去重方式提前写明。这样，其他人可以按照同一组参数复核结果，也能发现是否存在重复计数或遗漏。</p><h2>如何做历史复盘</h2><p>历史资料可以用于检查分类条件在既有样本中的出现情况，但复盘时应先登记参数，再读取样本。不能先观察结果，再挑选看起来更符合的条件。</p><p>建议分别记录理论组合规模、实际样本计数、观察窗口、样本量和复核方式。样本内结果只能说明该条件在这段资料中的表现；样本外验证则需要使用事先未参与规则设定的数据。</p><p>还要注意随机波动。短期样本可能出现偏离理论比例的情况，这种偏离本身不等于存在可持续的预测优势。结构分类或历史样本表现不能单独证明未来预测优势。</p><h2>常见误区与停止边界</h2><p>第一个误区是把“筛掉一部分结构”理解成“剩余结构更可能出现”。筛选改变的是描述范围，不会自动改变随机机制。</p><p>第二个误区是把和值、跨度、大小或形态等描述指标混同为预测信号。它们可以作为研究变量，但必须在规则设定、数据划分和统计检验中接受同样的约束。</p><p>第三个误区是不断增加条件，直到历史样本看起来足够理想。条件越多，越容易出现过拟合，因此应设置预先定义的停止条件，并保留未参与调参的检验样本。</p><h2>研究记录模板</h2><p>一份清晰的研究记录至少应包含：玩法范围、位次定义、单数和双数的分类规则、组合计数公式、样本来源、观察窗口、样本内与样本外划分，以及复核日期。</p><p>如果新增筛选条件，应说明新增条件的理论依据、是否在参数登记前确定、会产生哪些多重比较风险，以及结果能否由第三方独立复算。</p><p>最终结论应保持在证据能够支持的范围内：可以说明某种分类如何计算、某段历史资料呈现什么现象，也可以说明结果存在随机误差；不应把这些内容延伸为对未来结果的确定性判断。</p>",
+  "content_format": "html",
+  "content_hash": "669de753557e1cc43a28347051831612b2271028258f657f17f92935d3a2365d",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "b99f397cf7044b255efbcc627c405e330267a42aa4b0f23c98b0a96ab87b6c88",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "了解分分彩中三直选奇偶技巧中“恰好1个单号”的组合数学含义、位置计数方法、历史复盘与样本外验证边界，避免把分类结构误认为预测优势。",
+  "parent_content_hash": "def888955bcea390b0ca68dae4db3eebe4e0baeb3f817de409f72a0d58cbfcb2",
+  "parent_fingerprint": "9cd11948fa3ed78915d72eba776b79c6946678565989a777f2b743fba3a22001",
+  "play": "中三直选",
+  "primary_keyword": "分分彩中三直选奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_01259306f39355e9016a8259195d6c8199ae2fbede20e2a013",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T01:04:32.094878+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-9cd11948fa3ed789:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "理解中三直选里恰好1个单号分别计算什么，并通过抽象演示掌握可复核的组合计数方法",
+  "secondary_keywords": [
+    "分分彩中三直选奇偶技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三直选奇偶技巧：恰好1个单号的组合计算与研究边界",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选奇偶技巧-恰好1个单号具体怎么算-用完整案例从1000复算到375",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文以教育和研究为导向，说明中三直选中“恰好1个单号”的位置分类与组合计数方法，并讨论参数预注册、历史复盘、样本外验证、随机波动和常见误区。内容不提供具体候选号码或未来选择建议。",
+  "tags": [
+    "分分彩中三直选奇偶技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩奇偶筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "分分彩中三直选奇偶技巧：恰好1个单号的组合计算与研究边界"
+}

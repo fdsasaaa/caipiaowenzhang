@@ -1,0 +1,254 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点10、终点3、排除7。",
+    "evidence_mode": "static_only",
+    "excluded_space": 7,
+    "final_space": 3,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到3以及排除7个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "f95880db90a2e6a589bb",
+  "approved_at": "2026-08-17T00:13:05.272078+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-c6e9e95996551f6a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=1/static]:10->5>odd_even_filter[odd_count=1/static]:5->3",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选大小奇偶注数计算",
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到3以及排除7个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点10、终点3、排除7。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 7,
+      "final_space": 3,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对一星直选的候选空间计算，逐项确认10到3以及排除7个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点10、终点3、排除7。",
+    "title": "分分彩一星直选大小奇偶注数计算：10个候选为什么变成3个，排除7个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-59f2ed2b9478f5e2",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只做一星直选候选空间的确定性计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑范围说明，符合 mechanics_only 约束。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "先固定这组系统研究参数：一星直选、个位、起点10个候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "起点与参数归属来自合同机器事实。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层恰好1个大号：10 -> 5，排除 5。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层的候选空间缩减计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层恰好1个单号：5 -> 3，排除 2。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层的候选空间缩减计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合起来，候选空间从10个变成3个，总共排除7个。",
+      "claim_type": "calculation",
+      "evidence_note": "整体结果核对。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的10到3是候选数变化，不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "范围解释，不引入未核验表现结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这组结果只说明筛选后剩下多少候选，不说明更容易中奖。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不把筛选包装成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示样本里共有12条记录。",
+      "claim_type": "calculation",
+      "evidence_note": "样本条数来自演示数据。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的个位最新值是0，大小为小，单双为双。",
+      "claim_type": "calculation",
+      "evidence_note": "样本描述来自演示数据。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第1层候选空间从10个缩到5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从5个缩到3个，排除2个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从10个缩到3个，总排除7个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只看一星直选的候选空间怎么算，不讨论未核验的平台经济参数。</p><p>这篇文章里的示例明确标注为<em>演示数据，不是真实开奖记录。</em>它只用来说明怎么算，不拿来当预测结论。</p><p>这组系统研究参数固定为：一星直选、个位、起点10个候选。</p><h2>逐层计算保留与排除数量</h2><p>第1层是“恰好1个大号”。按合同给定的静态参数，候选空间从10个变成5个，排除5个。</p><p>第2层是“恰好1个单号”。在前一层剩下的5个里，再缩到3个，排除2个。</p><p>两层合起来，候选空间从10个变成3个，总共排除7个。</p><h2>核对起点、终点和总排除</h2><p>这三个数要一起看：起点10，终点3，排除7。它们是确定性的空间变化，不是概率，也不是命中率。</p><p>换句话说，10减去7等于3，和前两层的逐步结果一致。</p><h2>实际怎么操作</h2><ol><li>先把起点固定为10个候选，不要先看样本再改参数。</li><li>第一步只做“恰好1个大号”这一层，记录10 -> 5，排除5。</li><li>第二步只做“恰好1个单号”这一层，记录5 -> 3，排除2。</li><li>把两层结果相加核对，得到总排除7个。</li><li>完成这两层后停止，不临时加新过滤器。</li></ol><h2>为什么这些数字不是命中率</h2><p>10、5、3、7描述的是候选空间怎么被筛掉，不是在说历史命中率、准确率、胜率或者未来预测。</p><p>所以，看到“从10到3”，只能理解成空间缩小了，不要把它写成更准、更容易中的结论。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选的作用，是让候选集合更小，方便复算；它本身不自动产生预测优势。</p><p>如果后面还想继续缩小候选，只能等新增条件本身也有已验证规则或证据，而且能在下一次实验前先固定参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经按合同完成两层：先是“恰好1个大号”，再是“恰好1个单号”。到这里就停止。</p><p>后续如果要再加条件，必须先有新的已验证规则，再重新冻结参数，再重新复算。</p><h2>演示样本说明</h2><p>演示样本共12条，最新一期的个位值是0，显示为小、双。这里只是样本描述，不构成真实开奖记录结论。</p>",
+  "content_format": "html",
+  "content_hash": "c6389bda530444c88d7442d9207490e9955a285acf6cfde263b585e49243c68f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "59f2ed2b9478f5e2a18bb166780d7758c293199d1f31f514f312a04960fa429f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选大小奇偶注数计算：用两层固定过滤器把候选空间从10算到3，明确排除7个，并说明这不是命中率或预测优势。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成全部合同阶段后，候选空间从10个缩小到3个，总排除7个。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据，并且能在下一次实验前先固定参数时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定系统研究参数，再看样本或结果；没有先冻结的新增条件，不进入本轮计算。",
+    "starting_space": "10",
+    "steps": [
+      "固定起点为10个候选。",
+      "先执行第1层“恰好1个大号”，得到10 -> 5，排除5。",
+      "再执行第2层“恰好1个单号”，得到5 -> 3，排除2。",
+      "把两层排除数相加，核对总排除7个。",
+      "完成第2层后停止，不临时追加新的过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器都必须另有已验证规则/证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩一星直选大小奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0638bca098acd53d016a8251f0df2c87d1a74a8ba5b649defa",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "核对一星直选的候选空间计算，逐项确认10到3以及排除7个的确定性结果",
+  "secondary_keywords": [
+    "分分彩一星直选大小奇偶注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选大小奇偶注数计算：10个候选为什么变成3个，排除7个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选大小奇偶注数计算-10个候选为什么变成3个-排除7个怎么算",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文按固定合同核对分分彩一星直选大小奇偶注数计算：起点10个候选，先过“恰好1个大号”到5个，再过“恰好1个单号”到3个，总共排除7个。文章同时标明演示数据，不是真实开奖记录，并说明这不是命中率或预测优势。",
+  "tags": [
+    "分分彩一星直选大小奇偶注数计算",
+    "分分彩",
+    "一星直选",
+    "大小筛选",
+    "奇偶筛选",
+    "注数计算"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "分分彩一星直选大小奇偶注数计算：10个候选为什么变成3个，排除7个怎么算"
+}

@@ -1,0 +1,289 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释分分彩中三直选中跨度2–6的计算机制，并使用固定演示数据完成从1000个有序三位候选到660个候选的完整复算。",
+    "evidence_mode": "static_only",
+    "excluded_space": 340,
+    "final_space": 660,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解中三直选里跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "196325ede899cfeb9805",
+  "approved_at": "2026-08-16T23:56:56.793246+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-5c1a269c7a13ce49",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:1000->660",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选跨度技巧",
+    "reader_question": "理解中三直选里跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释跨度2–6的机制，并完成从1000到660的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 340,
+      "final_space": 660,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：跨度2–6",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解中三直选里跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释跨度2–6的机制，并完成从1000到660的可复算案例。",
+    "title": "分分彩中三直选跨度技巧：跨度2–6具体怎么算，用完整案例从1000复算到660",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-bac802ff43475fd9",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "中三直选的候选对象，是三个位置各取一个数字后形成的有序三位组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "说明中三直选的有序三位候选空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "三个位置分别有0到9这10种数字选择，所以未做跨度筛选前共有10×10×10=1000个有序三位候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由三个位置和每个位置10种数字选择复算候选空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度的计算方式是三个数字中的最大值减去最小值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "说明跨度指标的定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇固定使用跨度最小值2、最大值6，保留跨度为2、3、4、5或6的候选。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选参数来自系统研究合同，并可按跨度定义复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度为d时，固定最小数字a后，三个有序位置必须同时出现a和a+d，符合条件的排列数量为6d。",
+      "claim_type": "calculation",
+      "evidence_note": "按有序三位组合的端点出现条件推导。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "当跨度为d时，最小数字a可以从0取到9-d，因此该跨度的候选数为6d(10-d)。",
+      "claim_type": "calculation",
+      "evidence_note": "结合数字边界和上一句排列数量推导。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度2、3、4、5、6对应的候选数分别是96、126、144、150、144。",
+      "claim_type": "calculation",
+      "evidence_note": "分别代入6d(10-d)计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度2–6合计保留96+126+144+150+144=660个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "对五个跨度区间逐项求和。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，本次主筛选从1000个候选减少到660个候选，共排除340个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "1000-660=340。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "下面的固定案例必须标注为“演示数据，不是真实开奖记录”。",
+      "claim_type": "editorial",
+      "evidence_note": "按 Draft Packet 的案例标注要求。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "在演示数据中，提供的最新示例号码是38096，中三示例值为8、0、9，示例跨度为9，示例和值为17。",
+      "claim_type": "calculation",
+      "evidence_note": "严格使用 case_bundle.descriptive.latest 和 latest_draw 中提供的演示字段。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "因为演示示例的跨度9不在固定的2–6区间内，所以它会被本次主筛选排除。",
+      "claim_type": "calculation",
+      "evidence_note": "对 case_bundle 示例值按跨度定义计算并应用主筛选区间。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "候选空间从1000到660的变化，只说明这条规则在组合空间中的筛选数量，不说明未来结果会因此改变。",
+      "claim_type": "performance",
+      "evidence_note": "明确区分机械筛选与预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据中的频率、遗漏、和值和跨度记录，只能作为本案例的描述，不能单独推出未来结果。",
+      "claim_type": "editorial",
+      "evidence_note": "案例范围限定为描述性演示。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "参数必须先固定，再查看或整理样本；本篇的跨度2–6由系统研究合同固定，不由演示样本反推。",
+      "claim_type": "editorial",
+      "evidence_note": "说明参数冻结和参数归属。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成跨度2–6这一条主筛选后，本文停止继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "符合单阶段合同和停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件同时具备已验证规则或证据，并且能够被独立复算时，才允许继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "说明后续筛选政策。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文讨论的是<strong>分分彩中三直选跨度技巧</strong>里的一个固定机械筛选：对中三直选候选计算跨度，并保留跨度2–6的组合。</p><p>中三直选的候选对象，是三个位置各取一个数字后形成的有序三位组合。</p><p>三个位置分别有0到9这10种数字选择，所以未做跨度筛选前共有10×10×10=1000个有序三位候选。</p><p>这里的“有序”很重要。例如三个数字相同位置不同，或三个数字顺序不同，都按不同的三位候选处理。</p><p>本文只讲组合空间和复算过程，不讨论未核验的平台经济参数。</p><h2>方法机制：跨度2–6</h2><h3>跨度到底怎么算</h3><p>跨度的计算方式是三个数字中的最大值减去最小值。</p><p>例如，一组三位数字的最小值是0，最大值是4，那么跨度就是4。中间位置的数字不改变跨度的定义，但它必须仍然落在这组三位数字的取值范围内。</p><p>本篇固定使用跨度最小值2、最大值6，保留跨度为2、3、4、5或6的候选。</p><p>这个参数属于系统研究合同中的静态设置，不是从下面的演示样本反推出来的。</p><h3>逐个跨度计算</h3><p>跨度为d时，固定最小数字a后，三个有序位置必须同时出现a和a+d，符合条件的排列数量为6d。</p><p>当跨度为d时，最小数字a可以从0取到9-d，因此该跨度的候选数为6d(10-d)。</p><ul><li>跨度2：6×2×(10-2)=96。</li><li>跨度3：6×3×(10-3)=126。</li><li>跨度4：6×4×(10-4)=144。</li><li>跨度5：6×5×(10-5)=150。</li><li>跨度6：6×6×(10-6)=144。</li></ul><p>跨度2、3、4、5、6对应的候选数分别是96、126、144、150、144。</p><p>跨度2–6合计保留96+126+144+150+144=660个候选。</p><p>因此，本次主筛选从1000个候选减少到660个候选，共排除340个候选。</p><h2>完整可复算案例</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>下面只使用 Draft Packet 提供的固定演示字段，不把它写成真实开奖记录。</p><p>在演示数据中，提供的最新示例号码是38096，中三示例值为8、0、9，示例跨度为9，示例和值为17。</p><ol><li>先取演示字段中的三个值：8、0、9。</li><li>找出最大值9和最小值0。</li><li>按“最大值减最小值”计算：9-0=9。</li><li>把计算结果9与固定区间2–6比较。</li><li>因为演示示例的跨度9不在固定的2–6区间内，所以它会被本次主筛选排除。</li></ol><p>这个例子只用来检查“取值、求最大最小值、相减、对照区间”四个动作是否连贯。它不能把一个演示样本变成未来结果判断。</p><h2>实际怎么操作</h2><ol><li><strong>固定对象：</strong>先确认处理对象是中三直选的有序三位候选，筛选前空间记为1000。</li><li><strong>冻结参数：</strong>在查看样本前固定跨度下限2和上限6，不根据样本临时改区间。</li><li><strong>计算跨度：</strong>对每个候选找出最大值和最小值，用最大值减最小值。</li><li><strong>执行主筛选：</strong>只保留跨度2、3、4、5、6的候选。</li><li><strong>核对规模：</strong>按五个跨度分别计算96、126、144、150、144，合计得到660。</li><li><strong>记录排除量：</strong>用1000减660，确认本阶段排除340个候选。</li><li><strong>停止：</strong>完成这一条跨度筛选后，不再临时加入和值、频率、遗漏或其他条件。</li></ol><h2>逐步核对候选空间</h2><p>核对可以分成两层。</p><p>第一层是总空间：三个位置各有10种数字选择，所以得到1000个有序三位候选。</p><p>第二层是跨度分组：把跨度分别为2、3、4、5、6的候选数相加，得到660个候选。</p><p>1000-660=340，因此被这条主筛选排除的候选数量是340。</p><p>这是一条单阶段流程，唯一的阶段标签是“跨度2–6”。不存在第二条已验证过滤器，也不把演示样本条数当作理论候选空间。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>候选空间从1000到660的变化，只说明这条规则在组合空间中的筛选数量，不说明未来结果会因此改变。</p><p>演示数据中的频率、遗漏、和值和跨度记录，只能作为本案例的描述，不能单独推出未来结果。</p><p>参数必须先固定，再查看或整理样本；本篇的跨度2–6由系统研究合同固定，不由演示样本反推。</p><p>因此，“筛掉一部分候选”与“获得预测优势”是两件不同的事。本文只交付可复算的机械过程。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成跨度2–6这一条主筛选后，本文停止继续缩小候选空间。</p><p>只有新增条件同时具备已验证规则或证据，并且能够被独立复算时，才允许继续缩小候选空间。</p><p>在没有第二条已验证规则或证据的情况下，不因为看到演示样本就追加和值、频率、遗漏或其他筛选器。</p>",
+  "content_format": "html",
+  "content_hash": "d0598ba36b8339cca616078dda3544f0ff5e8dd71937d32449ff5aff2f80b0ea",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "bac802ff43475fd93bc36b16f1432b22d87398c6ef85a8bd911c17043e87bb22",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选跨度技巧案例讲解：说明中三直选规则，用可复算演示数据展示跨度筛选、候选空间核对和常见边界。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "660个有序三位候选；由跨度2、3、4、5、6分别得到96、126、144、150、144后相加复算。",
+    "next_step_policy": "只有新增条件同时具备已验证规则或证据，并且能够被独立复算时，才允许继续缩小候选空间；本篇完成跨度2–6后停止。",
+    "parameter_freeze_rule": "参数必须先固定再查看样本；跨度下限为2、上限为6，参数归属为system_research，不由演示样本反推。",
+    "starting_space": "1000个有序三位候选，来自三个位置各有10种数字选择。",
+    "steps": [
+      "确认处理对象为中三直选有序三位候选，记录起始空间1000。",
+      "在查看样本前固定跨度区间为2–6。",
+      "对每个候选计算最大值减最小值。",
+      "保留跨度2、3、4、5、6的候选。",
+      "分别核对五个跨度的数量96、126、144、150、144，并相加得到660。",
+      "用1000减660，核对本阶段排除340个候选。",
+      "完成跨度2–6后停止，不临时增加第二过滤器。"
+    ],
+    "stop_condition": "完成唯一主阶段“跨度2–6”后停止；没有新增且已验证、可复算的条件时，不继续缩小候选空间。"
+  },
+  "primary_keyword": "分分彩中三直选跨度技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0219f763700e794d016a824df5aa988199a9df808ff1742aca",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "理解中三直选里跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三直选跨度技巧：跨度2–6具体怎么算，用完整案例从1000复算到660",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三直选-span_range",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "用简单中文解释分分彩中三直选的跨度定义，按固定跨度2–6逐项计算候选数量，并用标注为演示数据、不是真实开奖记录的案例完成从1000到660的复算。",
+  "tags": [
+    "分分彩中三直选跨度技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "跨度筛选",
+    "组合空间"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩中三直选跨度技巧：跨度2–6具体怎么算，用完整案例从1000复算到660"
+}

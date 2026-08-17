@@ -1,0 +1,100 @@
+{
+  "angle_signature": "9b56ba9704693d0dc9ba",
+  "approved_at": "2026-08-17T00:20:55.580817+00:00",
+  "article_id": "LCM-ANGLE-e7b5e90b14b7f266",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论前三直选和值9–18这一类固定筛选，不提供具体选号、追号、倍投或资金递进指令。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版边界声明，明确不输出执行性投注方案。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "组合空间会因为预设筛选而收缩，但收缩后的数字只表示保留与排除的计数，不等于命中率或收益率。",
+      "claim_type": "editorial",
+      "evidence_note": "对筛选计数的解释，避免把结构变化写成结果优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确的风险提示，防止把复盘误读为预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "在研究写法里，先固定参数再复算结果，比临时加条件更便于核对。",
+      "claim_type": "editorial",
+      "evidence_note": "方法论说明，强调预注册和复算的研究写法。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看研究对象</h2><p>本文只讨论分分彩前三直选里的和值筛选，重点是把候选空间怎么收缩说清楚。它的作用是做规则核对和样本复算，不是给出下一期建议。</p><p>在这类研究里，先固定参数，再看结果，是最容易复核的写法。这样可以把“规则是什么”和“算出来是多少”分开，避免把中间步骤写成结论优势。</p><h2>什么叫候选空间收缩</h2><p>前三直选本质上是在一组预设候选里做筛选。只要筛选条件改变，留下来的数量就会变化，但这变化首先是结构变化，不是预测能力本身。</p><p>因此，看到某个和值区间后剩下多少个候选，应该先理解为“保留数”和“排除数”的计算结果，而不是命中率、胜率，或者可以外推到未来的优势。</p><h2>为什么要先定参数</h2><p>研究文章里，参数先定再复算，才能避免事后拼接。这样做的好处是，任何人都可以用同一套条件重新检查结果是否一致。</p><p>比如，围绕和值区间做筛选时，关键不是把结果包装成更强的判断，而是确认这个筛选规则本身能否稳定复算，且每一步都能对上。</p><p>这类写法适合教育和研究，也适合做内部校验，但它不自动带来未来预测优势。</p><h2>怎么看历史样本</h2><p>历史样本可以用来复盘规则表现，查看筛选后候选数如何变化，或者某类结构在样本里呈现出什么分布。</p><p>不过，样本里的结构分类只能说明过去发生过什么，不能单独证明未来会更准。若没有样本外验证、没有独立复核，历史表现本身不足以下结论。</p><p>所以，公开版更适合写成“如何核对规则”和“如何读懂样本”，而不是“如何据此下注”。</p><h2>常见误区</h2><p>一个常见误区，是把筛选后数量变少理解成更容易命中。实际上，数量变少只说明候选被压缩了，并不说明结果更接近真实开奖号。</p><p>另一个误区，是把历史复盘里看起来整齐的结构，直接当成未来可复制的优势。这个推断缺少独立验证时，结论是不成立的。</p><p>还有一个误区，是把研究参数和执行方案混在一起。前者属于复算条件，后者属于实际操作，两者不能互相替代。</p><h2>小结</h2><p>分分彩前三直选和值注数计算，重点是理解筛选规则如何改变候选空间，以及为什么保留数和排除数只代表结构变化。</p><p>公开讨论可以讲组合数学、规则机制、样本复盘和样本外验证，但不能把这些内容直接写成未来预测优势。结构分类或历史样本表现也不能单独证明未来预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "f2828536ade5d382ccbb41c3c7937ae42a398881f3fba15a7216eac127cf6bc2",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "a69ee031de297d61031088ef2a0e84ae02fd3ed39b1adb23fa0c3351273b4108",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "围绕分分彩前三直选和值注数计算，解释候选空间收缩、参数预注册、历史复盘与样本外验证的研究写法，不提供下注指令。",
+  "parent_content_hash": "cfbcdf73e9cbb22e7da4f7df5f594c0aeae4215113b677d85569d6ab18c0ca9c",
+  "parent_fingerprint": "e7b5e90b14b7f266e0ed87c59a9f2d2dae67011e487eb98977fbf07e05be3be6",
+  "play": "前三直选",
+  "primary_keyword": "分分彩前三直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0b2303c2c738c62d016a824d7ab28887d1b801ee85ac61b460",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:20:55.580834+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-e7b5e90b14b7f266:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "核对分分彩前三直选和值注数计算的规则机制、候选空间收缩与样本复盘方法",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前三直选和值注数计算：规则机制、候选空间与复盘方法",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三直选-position_filter-sum_range-space_math",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "公开版改写为教育/研究导向，保留分分彩前三直选和值注数计算这一主题，解释和值筛选如何影响候选空间，并强调历史样本和结构分类不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值注数计算",
+    "位置筛选",
+    "空间计算",
+    "空间数学"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "分分彩前三直选和值注数计算：规则机制、候选空间与复盘方法"
+}

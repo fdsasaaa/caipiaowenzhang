@@ -1,0 +1,226 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 4420,
+    "final_space": 5580,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "05740ba565644a9ae19a",
+  "approved_at": "2026-08-16T23:58:34.727773+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-d00208171474ff04",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:10000->5580",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选跨度筛选步骤",
+    "reader_question": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 4420,
+      "final_space": 5580,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩前四直选跨度筛选步骤：实际操作按哪几步做，筛到5580个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-1de8c37d462d60c5",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "明确样本性质，避免把演示案例写成真实开奖记录。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机械玩法文章的边界说明，不涉及未核验经济数值。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按系统研究合同，主筛选只执行一条：前四直选的跨度范围筛选，参数是跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选参数来自给定合同，且参数由系统研究固定。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛选前候选空间是10000个，主筛选后剩5580个，实际排除了4420个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自给定的静态机器事实，需在正文中明确展示前后规模与排除量。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步只是在固定参数下缩小候选空间，不代表预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "与合同中的方法说明一致，禁止把筛选结果写成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数必须先固定，再看样本。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同要求的执行顺序，先定参数再观察样本。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果没有第二条已验证规则或证据，就在这里停止，不要临时再加新的过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "合同要求的停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据中，最近一期的样本标签为“latest”，其描述是：distinct=4，has_neighbor=true，parity=双双单单，repeat=1-1-1-1，size=大小小大，span=5，sum=18，values=[6,2,3,7]。",
+      "claim_type": "editorial",
+      "evidence_note": "把样本标签明确标出来，只作为演示数据说明，不作真实开奖记录陈述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据的样本条数是12。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的 synthetic_case 描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据中的跨度序列是[6,6,6,5,9,8,4,7,6,2,7,5]。",
+      "claim_type": "editorial",
+      "evidence_note": "直接引用演示数据序列，属于 synthetic_case。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据中的和值序列是[25,28,19,15,18,21,11,13,11,18,19,18]。",
+      "claim_type": "editorial",
+      "evidence_note": "直接引用演示数据序列，属于 synthetic_case。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>先把参数固定，再开始看样本。这里的主筛选只有一条：前四直选，跨度范围是2–6。这个参数是系统研究合同里的固定设置，不是来源推荐，也不是样本反推出来的结论。</p><p>这篇只讨论机械筛选，不讨论未核验的平台经济参数。</p><h2>实际操作步骤清单</h2><ol><li>确认对象是前四直选，不要把别的玩法混进来。</li><li>确认主筛选只有跨度2–6这一条，先记住起始候选空间是10000个。</li><li>按同一口径执行跨度筛选，保留跨度落在2到6之间的候选。</li><li>复算结果：筛选后剩5580个，说明一共排除了4420个。</li><li>把这一步当作终点，不要因为已经得到5580个，就临时再加第二条没有验证过的过滤条件。</li></ol><h2>每一步如何核对结果</h2><p>核对时只看三件事：参数有没有先固定，筛选前后空间有没有写清，排除量是不是能直接算出来。这里的算式很简单：10000减去5580，等于4420。</p><p>如果你的记录里没有这三个数，就说明步骤还没有闭合，不能算完成。</p><h2>何时必须停止</h2><p>只要主筛选已经按跨度2–6执行完，就应该停止。合同已经明确了 stop_after_final_stage，意思就是不再追加别的过滤器，也不把样本里的频率、和值、跨度变化当成下一轮筛选依据。</p><p>如果你手上后来又冒出一个新条件，先问它有没有已验证规则或证据，可不可以复算。没有的话，就不要继续缩小候选。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>演示数据只是用来说明怎么复算，不是真实开奖记录。比如这组演示数据的最新样本标签是 latest，描述里写了 distinct=4、span=5、sum=18，这些都只是样本说明，不是未来结果承诺。</p><p>跨度筛选能做的是缩小候选空间，不是给出胜负判断。把它写成预测优势，已经超出这份合同允许的范围。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这份操作清单到这里就结束。你已经有了固定参数、起始空间、筛后空间和排除量，也知道了停止点。</p><p>只有当新增条件本身有已验证规则或证据，并且能复算时，才允许继续缩小候选；否则就保持在这一步停止。</p><h2>演示数据说明</h2><p>本段只用于演示，不是真实开奖记录。演示样本共12条，跨度序列为6、6、6、5、9、8、4、7、6、2、7、5，和值序列为25、28、19、15、18、21、11、13、11、18、19、18。</p><p>最近一期演示标签为 latest，样本内容写明 distinct=4，has_neighbor=true，parity=双双单单，repeat=1-1-1-1，size=大小小大，span=5，sum=18，values=[6,2,3,7]。这些都只是演示数据，不是真实开奖记录。</p>",
+  "content_format": "html",
+  "content_hash": "8564518945e1cf4e705307711c10f77d494b0f4931d34daad8081e729215780e",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "1de8c37d462d60c54ea4b55e05a4af4812b5b89a2230812c8f737760d7d4a071",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选跨度筛选步骤：按固定顺序执行跨度2–6，先看参数、候选空间和停止条件，再用演示数据复算，不把统计筛选包装成预测优势。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "5580",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；否则保持停止，不再追加过滤器。",
+    "parameter_freeze_rule": "先固定前四直选的跨度2–6参数，再观察样本和演示数据；参数不得由样本反推。",
+    "starting_space": "10000",
+    "steps": [
+      "确认主筛选对象是前四直选，且只使用跨度2–6这一条参数。",
+      "在观察样本之前先冻结参数，记录起始候选空间10000个。",
+      "执行跨度筛选并复算结果，得到筛后空间5580个。",
+      "核对排除量：10000减去5580，等于4420个。",
+      "检查是否存在第二条已验证规则或证据；没有就停止，不再新增过滤器。"
+    ],
+    "stop_condition": "完成跨度2–6这一条主筛选后立即停止；如果没有新的已验证规则或可复算证据，就不能继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前四直选跨度筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0584a14f8b26fa8e016a824e8793c08190a234d32d9efb06f8",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩前四直选跨度筛选步骤",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前四直选跨度筛选步骤：实际操作按哪几步做，筛到5580个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前四直选-span_range-execution_checklist",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "这篇把分分彩前四直选跨度筛选步骤改写成可执行清单：先固定跨度2–6，再复算10000到5580的候选空间变化，最后明确何时必须停止，不把统计筛选写成预测优势。",
+  "tags": [
+    "分分彩前四直选跨度筛选步骤",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩前四直选跨度筛选步骤：实际操作按哪几步做，筛到5580个后什么时候必须停止"
+}

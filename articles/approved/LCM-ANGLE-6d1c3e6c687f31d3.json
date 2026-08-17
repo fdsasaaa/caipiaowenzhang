@@ -1,0 +1,245 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 56380,
+    "final_space": 43620,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "81d2bf9001ebf0d05b00",
+  "approved_at": "2026-08-16T23:49:41.421431+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-ca1990e8271945bd",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:100000->43620",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选跨度筛选步骤",
+    "reader_question": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 56380,
+      "final_space": 43620,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩五星直选跨度筛选步骤：实际操作按哪几步做，筛到43620个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-6d1c3e6c687f31d3",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文面向分分彩五星直选跨度筛选步骤的实际操作清单，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围说明，纯编辑判断。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选的主筛选是跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已给定合同的主筛选参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "参数先固定，再看样本。",
+      "claim_type": "editorial",
+      "evidence_note": "执行顺序要求，来自合同约束。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单。",
+      "claim_type": "editorial",
+      "evidence_note": "与角度合同一致的交付目标。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "起始候选空间是100000个，主筛选后剩43620个，排除了56380个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的静态空间结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步不会把统计筛选包装成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "合同明确要求不声明预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签要求。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本共16条。",
+      "claim_type": "calculation",
+      "evidence_note": "case_bundle中的样本条数说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的最新一条是11182。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅作演示样本展示，不作真实开奖记录陈述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的最新一条跨度是7，和值是13。",
+      "claim_type": "calculation",
+      "evidence_note": "对case_bundle给定样本的复算结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的跨度序列为8、3、8、9、3、4、8、9、8、8、6、7。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅复述给定演示序列。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的和值序列为19、39、19、33、22、20、13、22、20、18、22、13。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅复述给定演示序列。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>先确认本文只做一个主筛选：<strong>分分彩五星直选跨度筛选步骤</strong>里的跨度2–6。参数由系统研究合同固定，读者不要先看样本再改参数。</p><p>这条合同的起始候选空间是100000个，主筛选后是43620个，说明这一轮筛掉了56380个。这里说的是空间变化，不是收益判断，也不是命中承诺。</p><p>本文不讨论未核验的平台经济参数。读者只需要记住：先定参数，再做筛选，再检查是否已经完成合同。</p><h2>实际操作步骤清单</h2><ol><li>打开五星直选的候选池，把当前待筛选对象视为100000个起点。</li><li>只应用一个主条件：跨度2–6。</li><li>筛完后核对结果是否落在43620个。</li><li>把被排除的56380个单独记下来，作为这一步的退出量。</li><li>确认没有第二条已验证规则时，直接停止，不再临时加新过滤器。</li></ol><h2>每一步如何核对结果</h2><p>第一步核对起点是否是100000个。这个数字是合同中的固定起点，不是演示样本条数。</p><p>第二步核对你用的就是跨度2–6，没有改成别的范围，也没有偷偷叠加位置外的条件。</p><p>第三步核对主筛选后的结果是否是43620个。若不是这个数，说明操作顺序、参数，或者候选池口径有一项不对。</p><p>第四步核对排除量是否是56380个。这个数应当和100000减去43620完全一致。</p><p>第五步核对是否已经完成本合同。若已经完成，就停止；若还想继续缩小，只能等新增条件具有已验证规则或证据并可复算后再做。</p><h2>何时必须停止</h2><p>当你已经完成跨度2–6这一层，而且结果已经落到43620个，就必须停止。不要把这一步继续包装成更强的筛法，也不要把它说成对未来结果的保证。</p><p>如果你手里没有第二条已验证规则，就不要临时拼第二过滤器。停止条件很简单：合同做完就停，新条件没有验证就不加。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>本文里的跨度2–6只是一个固定的主筛选合同。它能改变候选空间，但这不等于产生预测优势。</p><p>演示数据，不是真实开奖记录。它的作用是让你复算步骤，不是让你拿它去替代真实核验。</p><p>演示样本共16条，最新一条是11182，最新一条跨度是7，和值是13。你可以拿这些演示数据做复算检查，但不要把它们当成真实开奖结论。</p><p>演示样本的跨度序列为8、3、8、9、3、4、8、9、8、8、6、7，和值序列为19、39、19、33、22、20、13、22、20、18、22、13。它们只说明样本长什么样，不说明未来会怎样。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇的唯一主筛选就是跨度2–6。完成后就收工，不再追加未验证条件。</p><p>只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选。否则，继续加筛只是人为扩张复杂度，不能提升这篇合同的完成度。</p>",
+  "content_format": "html",
+  "content_hash": "c448b7e7638d35c03cfe6e98be52d9be97125c28a494e7e9af90b930b2d66a34",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "6d1c3e6c687f31d3040175320b6dc741f00d625ea625675f483808d9ff6bc641",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选跨度筛选步骤案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "43620",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选；否则在完成跨度2–6后立即停止。",
+    "parameter_freeze_rule": "先固定跨度2–6，再看样本；不能因为样本表现去倒推参数。",
+    "starting_space": "100000",
+    "steps": [
+      "确认主筛选合同只包含跨度2–6，且参数由系统研究固定。",
+      "以100000个候选为起点，不把演示样本条数当成理论候选空间。",
+      "只执行跨度2–6这一条主筛选，完成后核对结果是否为43620个。",
+      "计算并记录被排除的56380个，确认排除量与起点减去结果一致。",
+      "若没有新增且可复算的已验证规则，立即停止，不再追加第二过滤器。"
+    ],
+    "stop_condition": "主筛选完成且结果核对为43620个后停止；没有新增已验证规则时，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选跨度筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0769d9387facc06a016a824c71a4888199ab697fc6796f2710",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "按固定顺序执行跨度2–6，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩五星直选跨度筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选跨度筛选步骤：实际操作按哪几步做，筛到43620个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-span_range-execution_checklist",
+  "source_refs": [
+    "BRBCW-002590"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文把分分彩五星直选跨度筛选步骤拆成可复算的操作清单：先固定跨度2–6这一条主筛选，再核对100000个起点、43620个结果和56380个排除量，最后在没有新增已验证规则时停止。正文同时给出一段演示数据说明，明确标注为演示数据，不是真实开奖记录。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "跨度筛选",
+    "操作步骤",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range"
+  ],
+  "title": "分分彩五星直选跨度筛选步骤：实际操作按哪几步做，筛到43620个后什么时候必须停止"
+}

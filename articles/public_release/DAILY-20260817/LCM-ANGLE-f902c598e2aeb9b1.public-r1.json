@@ -1,0 +1,118 @@
+{
+  "angle_signature": "2ec482ff7d6d9e54ae5a",
+  "approved_at": "2026-08-17T00:20:24.585334+00:00",
+  "article_id": "LCM-ANGLE-f902c598e2aeb9b1",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "分分彩五星直选和值参数设置里的和值15–30属于系统研究预设，不是来源推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版正文明确区分了研究预设与来源推荐。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选的候选空间可按5位有序号码理解，起始空间为100000。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是对玩法结构的机制性表述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在主筛选只保留和值15到30时，候选空间从100000变为78004，合计筛掉21996个。",
+      "claim_type": "calculation",
+      "evidence_note": "这是基于固定筛选条件的复算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示样本只用于复算展示，不是真实开奖记录，也不构成预测证明。",
+      "claim_type": "editorial",
+      "evidence_note": "正文明确限定样本用途，并强调其不作为预测依据。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是正文必须明确的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源只支持机制与规则层面的复算，不支持把和值区间写成原文推荐或预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "正文明确了来源能支持与不能支持的范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>研究预设</h2><p>这篇只讨论一个边界清楚的主题：<strong>分分彩五星直选和值参数设置</strong>。这里的和值15–30，只能被写成系统研究预设，不能写成来源推荐，也不能写成自动成立的判断结论。</p><p>写公开版时，最重要的不是把话说得更像“技巧”，而是把参数、规则、样本和结论分开。参数是参数，机制是机制，样本是样本，四者不能混写。</p><p>同一个和值区间，在研究语境里可以是固定条件，在公开表达里却不能被包装成对未来结果的承诺。这个边界必须先说清楚，再谈后面的复算。</p><h2>机制复算</h2><p>按五星直选的结构，候选空间可先按5位有序号码理解，起始空间是100000。这个起点只是机制背景，不代表任何筛选优势，也不代表任何偏向。</p><p>如果只做一个主筛选，把和值限制在15到30之间，就可以把空间变化写成复算结果：保留78004个，筛掉21996个。这里的意义是说明筛选动作发生了，不是说明筛选后就更容易得到什么。</p><p>这种写法适合教育和研究场景，因为它让读者看到的是规则怎样改变样本空间，而不是把规则直接写成推荐话术。</p><h2>样本边界</h2><p>公开版可以提演示样本，但必须清楚标注它只是演示数据，不是真实开奖记录。样本能帮助读者理解怎么算、怎么核对、怎么复算，但不能被拿来替代机制证明。</p><p>例如，样本里出现某个和值、跨度或大小形态，只说明这条数据长什么样，不说明这种结构会在未来继续占优。结构分类或历史样本表现不能单独证明未来预测优势，这一点需要明确写出来。</p><p>因此，公开版最稳妥的表述方式，是把样本当作说明材料，而不是把样本当作结果背书。只要这个边界不动，文章就仍然属于教育和研究导向。</p><h2>常见误区</h2><p>一个常见误区，是把“先固定参数再看样本”写成“参数本身已经证明有效”。这两件事不是一回事。前者只是研究流程，后者才是结论主张。</p><p>另一个误区，是把历史结构改写成未来判断。历史可以复盘，空间可以复算，统计可以描述，但这些都不能自动推出未来会怎样。</p><p>还有一个误区，是在没有新增证据的情况下继续加过滤条件。公开版可以讲清楚主筛选，但不能把后续层层叠加写成默认可行的执行路径。</p><h2>公开写法</h2><p>如果要把 <strong>分分彩五星直选和值参数设置</strong> 写得适合公开发布，最稳妥的方式就是三步：先说明这是研究预设，再复算空间变化，最后声明样本只能做展示。</p><p>这样写的好处是，读者能看懂机制，编辑也能看清边界。它保留了玩法主题，也保留了参数讨论的核心，但没有把具体执行方案、未来预测或收益承诺混进去。</p><p>所以，这篇文章真正想表达的，不是如何追求某种结果，而是如何正确理解一个固定参数在规则体系中的位置，以及它为什么不能被过度解释。</p>",
+  "content_format": "html",
+  "content_hash": "79c230d7b794c0786713d4cb20a2f209fe632235d9f2b2d25fa1df3f155ae3dd",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "04a395b947b89b8414e2b263e8c6866f820000f60c67db485ffec40cc60ba6c1",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版围绕分分彩五星直选和值参数设置，说明和值区间如何作为系统研究预设、如何复算候选空间，并明确历史样本不能证明未来预测优势。",
+  "parent_content_hash": "02980f3255fe9ce34d85045c3aae217035587c0aad996f16a2618bf3b8e31f81",
+  "parent_fingerprint": "f902c598e2aeb9b17699e6047998a8421aff7ca51ee8d00c44a694b5b108f186",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_06037c91bed05fc5016a824d23aa7087d2b2518aa7364ba238",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:20:24.585352+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-f902c598e2aeb9b1:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "区分分分彩五星直选和值参数设置中的系统研究预设与来源经验，理解规则机制、样本复算和公开写作边界，不把历史结构写成未来预测优势。",
+  "secondary_keywords": [
+    "分分彩五星直选和值参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选和值参数设置：研究预设、机制复算与公开写作边界",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-sum_range-parameter_boundary",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这是一篇面向教育/研究的公开版，围绕分分彩五星直选和值参数设置说明和值15–30如何作为系统研究预设参与复算，候选空间如何变化，以及为什么历史样本和结构分类都不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩五星直选和值参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "分分彩五星直选和值参数设置：研究预设、机制复算与公开写作边界"
+}

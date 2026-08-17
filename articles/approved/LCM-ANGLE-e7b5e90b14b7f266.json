@@ -1,0 +1,206 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点1000、终点670、排除330。",
+    "evidence_mode": "static_only",
+    "excluded_space": 330,
+    "final_space": 670,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前三直选的候选空间计算，逐项确认1000到670以及排除330个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "9b56ba9704693d0dc9ba",
+  "approved_at": "2026-08-16T23:53:58.022127+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-4642b6ab9e9d822f",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:1000->670",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选和值注数计算",
+    "reader_question": "核对前三直选的候选空间计算，逐项确认1000到670以及排除330个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点1000、终点670、排除330。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 330,
+      "final_space": 670,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前三直选的候选空间计算，逐项确认1000到670以及排除330个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点1000、终点670、排除330。",
+    "title": "分分彩前三直选和值注数计算：1000个候选为什么变成670个，排除330个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-e7b5e90b14b7f266",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只做前三直选的空间计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机制范围说明，避免扩展到未核验经济参数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前三直选的起点候选空间是1000个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的静态起点空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇只执行和值9–18这一道主筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同给定的唯一主筛选阶段。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值9–18这一步之后，候选空间变成670个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的静态筛后空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一层一共排除330个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由1000减去670得到的确定性结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的670个不是命中率，只是筛完后还留下的候选数量。",
+      "claim_type": "editorial",
+      "evidence_note": "说明候选空间与命中率不是同一概念。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 明确标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个演示样本只用于说明写法，不构成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "演示数据用途限定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只核对一个主筛选：前三直选里的和值9–18。起点候选空间是1000个，筛选后留下670个，所以总共排除330个。</p><p>这里先把合同固定住：参数先定，再看样本。也就是说，本篇只做这一层计算，不临时加第二个过滤器。</p><h2>逐层计算保留与排除数量</h2><p>第一步，确认起点是1000个候选。</p><p>第二步，套用和值9–18这个主筛选，保留670个。</p><p>第三步，用1000减去670，得到排除330个。</p><p>这三步合起来，就是完整的确定性结果：1000到670，少了330。</p><h2>核对起点、终点和总排除</h2><p>起点：1000。</p><p>终点：670。</p><p>总排除：330。</p><p>这三个数彼此能直接对上，不需要再引入别的条件。</p><h2>为什么这些数字不是命中率</h2><p>670表示保留下来的候选数，不表示命中率。</p><p>330表示被排除的候选数，也不表示成功率。</p><p>所以，这里讨论的是空间收缩，不是结果好坏。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>本篇的主筛选是系统研究合同里的固定参数，不能写成来源推荐，更不能写成未来更准的证明。</p><p>演示数据，不是真实开奖记录。这个样本只用于说明复算方式，不构成预测优势。</p><h2>实际怎么操作</h2><p>第一步，先记住起点空间是1000个，不要拿演示样本条数替代这个数。</p><p>第二步，只看和值9–18这一道主筛选，保留670个。</p><p>第三步，做减法：1000减670，得到330个被排除项。</p><p>第四步，停在这里，不再加第二道未验证筛选。</p><p>第五步，如果以后要继续缩小候选，只能等新增条件本身也有已验证规则并且能复算。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经完成唯一主筛选的空间核对：1000、670、330都已算清。</p><p>到这里就停止，不再追加新的过滤器。</p><p>只有新增条件具有已验证规则和可复算结果时，才允许继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "cfbcdf73e9cbb22e7da4f7df5f594c0aeae4215113b677d85569d6ab18c0ca9c",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "e7b5e90b14b7f266e0ed87c59a9f2d2dae67011e487eb98977fbf07e05be3be6",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三直选和值注数计算：核对1000个候选如何在和值9–18这一道主筛选后变成670个，并明确排除330个，全文只做确定性空间复算，不把统计筛选包装成预测优势。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "670",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定和值9–18这个主筛选参数，再看样本；不在本篇临时增加第二过滤器。",
+    "starting_space": "1000",
+    "steps": [
+      "先确认前三直选的起点候选空间是1000个。",
+      "固定唯一主筛选为和值9–18，不增加第二道过滤。",
+      "按合同复算，主筛选后保留670个候选。",
+      "用1000减670，得到排除330个。",
+      "核对结果后停止，只有新增条件可复算时才继续缩小候选。"
+    ],
+    "stop_condition": "完成1000、670、330的确定性核对后立即停止，不临时加新过滤器。"
+  },
+  "primary_keyword": "分分彩前三直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0b2303c2c738c62d016a824d7ab28887d1b801ee85ac61b460",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "核对前三直选的候选空间计算，逐项确认1000到670以及排除330个的确定性结果",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前三直选和值注数计算：1000个候选为什么变成670个，排除330个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三直选-position_filter-sum_range-space_math",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本文只核对前三直选的主筛选空间：起点1000个，和值9–18后剩670个，确定性排除330个。内容不讨论未核验的平台经济参数，也不把统计筛选写成预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值注数计算",
+    "位置筛选",
+    "空间计算",
+    "空间数学"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "分分彩前三直选和值注数计算：1000个候选为什么变成670个，排除330个怎么算"
+}

@@ -1,0 +1,261 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18610,
+    "final_space": 81390,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行至少存在一对差1邻号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "e6a718594bb100445cb2",
+  "approved_at": "2026-08-17T00:05:40.291384+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-eec239747054724a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "neighbor_number[pair_difference=1/static]:100000->81390",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选邻号筛选步骤",
+    "reader_question": "按固定顺序执行至少存在一对差1邻号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18610,
+      "final_space": 81390,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "至少存在一对差1邻号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "至少存在一对差1邻号"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行至少存在一对差1邻号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩五星直选邻号筛选步骤：实际操作按哪几步做，筛到81390个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-721e2f1a85dfb3f1",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论五星直选的邻号筛选步骤，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围限定，避免把机制文章写成经济参数文章。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第一步先固定参数：五星直选，筛选原子是至少存在一对差1邻号，参数为 pair_difference=1，circular_0_9=false。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自系统研究合同的主筛选参数，先定参数再看样本。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一步先固定参数：五星直选，筛选原子是至少存在一对差1邻号，参数为 pair_difference=1，circular_0_9=false。",
+      "claim_type": "calculation",
+      "evidence_note": "同一句中的参数是固定的机器合同参数，不从样本反推。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起始空间是100000个五位有序号码。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同的 starting_space。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后剩81390个，排除18610个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同的 after_filter_space 与 excluded_space。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后剩81390个，排除18610个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自合同的候选空间变化结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选只做这一层，完成后必须停止，不临时加新过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同要求 stop_after_final_stage=true。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选只做这一层，完成后必须停止，不临时加新过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "操作边界说明，提醒读者不要私自追加第二条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 的强制标签，必须明确标注。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "同一标签在正文中再次强调。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，最新一组是34641。",
+      "claim_type": "calculation",
+      "evidence_note": "case_bundle 的 synthetic_case 示例，不用于预测。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，最新一组是34641。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本展示，不构成真实开奖说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，最新一组和值是18，跨度是5，且存在至少一对邻号。",
+      "claim_type": "calculation",
+      "evidence_note": "case_bundle 的 synthetic_case 示例计算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，最新一组和值是18，跨度是5，且存在至少一对邻号。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本的描述性指标，不是预测结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>本文只讨论五星直选的邻号筛选步骤，不讨论未核验的平台经济参数。</p><p>先把合同参数固定住：五星直选，筛选原子是至少存在一对差1邻号，参数为 <code>pair_difference=1</code>，<code>circular_0_9=false</code>。这一步的顺序不能倒过来，必须先定规则，再看样本。</p><p>理论起始空间是 <strong>100000</strong> 个五位有序号码。主筛选后剩 <strong>81390</strong> 个，排除 <strong>18610</strong> 个。</p><h2>实际操作步骤清单</h2><ol><li>把对象限定为五星直选的五位有序号码，不混入别的玩法。</li><li>按合同只检查“至少存在一对差1邻号”这一条，参数固定为 <code>pair_difference=1</code> 和 <code>circular_0_9=false</code>。</li><li>逐个号码查看相邻位置，凡是出现一对差1的相邻数字，就保留；没有这一特征，就剔除。</li><li>对照合同的空间结果复算：从 <strong>100000</strong> 个里筛到 <strong>81390</strong> 个，说明有 <strong>18610</strong> 个被排除。</li><li>做到这里就停止，不再临时加第二条过滤器。</li></ol><h2>每一步如何核对结果</h2><p>核对时只看两件事：参数有没有被改，空间有没有和合同一致。参数一旦变了，这次复算就不是同一个合同。</p><p>核对空间时，记住比较对象是理论候选空间，不是演示样本条数。演示样本只负责说明写法，不负责替代候选空间。</p><p>如果你复算得到的剩余空间不是 <strong>81390</strong>，先检查是不是把 <code>circular_0_9</code> 误当成开启了，或者把“相邻差1”写成了别的条件。</p><h2>何时必须停止</h2><p>一旦完成这一级主筛选，就必须停止。合同里只有这一层，不能为了显得更细，再临时加新过滤器。</p><p>只有新增条件也有已验证规则或证据，而且能够复算，才允许继续缩小候选。没有这类证据，就到此为止。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选只是在合同范围内缩小候选空间，不自动等于更容易中奖，也不构成未来结果保证。</p><p>演示数据，不是真实开奖记录。</p><p>这组演示数据里，最新一组是 <strong>34641</strong>。</p><p>这组演示数据里，最新一组和值是 <strong>18</strong>，跨度是 <strong>5</strong>，且存在至少一对邻号。</p><p>这些数值只是演示样本的描述信息，不能写成真实开奖记录的结论，更不能拿来当预测依据。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇的停止条件很简单：完成“至少存在一对差1邻号”这一层后立即停，不扩展，不追加，不把样本里的描述项改造成第二筛选条件。</p><p>如果后面还想继续缩小候选，只能等新的条件也满足同样的门槛：有已验证规则、参数先固定、结果可复算。</p>",
+  "content_format": "html",
+  "content_hash": "a883adccb1ca87680348d79a37e87979481a13f1e8c467e559e8f557b04b325a",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "721e2f1a85dfb3f16983798ef1e5d42309c32e18ce8533f02aef53684794eb18",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选邻号筛选步骤：先固定五星直选与差1邻号参数，再按可复算步骤筛到81390个，并明确何时必须停止，不把统计筛选包装成预测优势。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "81390个五位有序号码，较起始100000个排除18610个。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并且可以复算时，才允许继续缩小候选；否则在完成主筛选后停止。",
+    "parameter_freeze_rule": "先固定五星直选、pair_difference=1、circular_0_9=false，再做任何样本检查。",
+    "starting_space": "100000个五位有序号码。",
+    "steps": [
+      "先确认玩法是五星直选，并把筛选原子固定为至少存在一对差1邻号。",
+      "把参数固定为 pair_difference=1、circular_0_9=false，不从样本里反推参数。",
+      "按号码逐个检查相邻位置，只要出现一对差1邻号就保留，否则剔除。",
+      "复算空间结果，核对是否从100000个筛到81390个，确认排除了18610个。",
+      "完成这一层后立即停止，不再临时加第二筛选器。"
+    ],
+    "stop_condition": "完成“至少存在一对差1邻号”这一层主筛选后停止；除非新增条件也有已验证规则或证据并可复算，否则不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选邻号筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0888ba24a433a546016a82502de75887d29fff8d781f3846c6",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "按固定顺序执行至少存在一对差1邻号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩五星直选邻号筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选邻号筛选步骤：实际操作按哪几步做，筛到81390个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-neighbor_number-position_filter-execution_checklist",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这篇把分分彩五星直选邻号筛选步骤改写成可复算的人工清单：先固定 pair_difference=1 和 circular_0_9=false，再核对从100000个五位有序号码筛到81390个，最后明确完成主筛选后必须停止，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩五星直选邻号筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "分分彩五星直选邻号筛选步骤：实际操作按哪几步做，筛到81390个后什么时候必须停止"
+}

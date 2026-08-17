@@ -1,0 +1,235 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释五星直选中“至少存在一对差1邻号”的判定方式，并用固定演示数据完成一次从100000到81390的候选空间复算。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18610,
+    "final_space": 81390,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解五星直选里至少存在一对差1邻号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "5eeb708b03ab22f843e0",
+  "approved_at": "2026-08-17T00:04:28.739284+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-389c38f43412ff40",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "neighbor_number[pair_difference=1/static]:100000->81390",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选邻号技巧",
+    "reader_question": "理解五星直选里至少存在一对差1邻号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释至少存在一对差1邻号的机制，并完成从100000到81390的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18610,
+      "final_space": 81390,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "至少存在一对差1邻号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "至少存在一对差1邻号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：至少存在一对差1邻号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解五星直选里至少存在一对差1邻号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释至少存在一对差1邻号的机制，并完成从100000到81390的可复算案例。",
+    "title": "分分彩五星直选邻号技巧：至少存在一对差1邻号具体怎么算，用完整案例从100000复算到81390",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-f23efe6fe645a4bc",
+  "case_scope": "mechanics_only",
+  "category": "分分彩技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选的候选对象可以表示为5位有序数字串，每一位取0至9，因此筛选前共有100000个候选串。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按 Draft Packet 提供的五星直选、有序5位候选空间计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文唯一的主筛选是：5个位置中至少存在一对数字差值等于1，且0与9不作首尾循环邻号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应 primary_filter_spec 的 selector、metric 与参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按这个条件逐一检查100000个有序5位候选串，保留81390个，排除18610个。",
+      "claim_type": "calculation",
+      "evidence_note": "对应固定生产筛选合同的空间计算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按 case_bundle 要求标注演示数据性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示案例中的给定号码是88083。",
+      "claim_type": "calculation",
+      "evidence_note": "取自 case_bundle.latest_draw。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "88083的5位数字为8、8、0、8、3，和值为27，跨度为8，重复结构为3-1-1，且不存在差1邻号对。",
+      "claim_type": "calculation",
+      "evidence_note": "由 case_bundle.latest 的 values、sum、span、repeat、has_neighbor 直接复核。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "把100000个候选串逐个执行同一判定后，结果是81390个通过，18610个不通过。",
+      "claim_type": "calculation",
+      "evidence_note": "同一主筛选结果的复算表达。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本例只展示候选空间如何按固定条件缩小，不构成对未来结果的预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "对应 predictive_advantage_claimed=false 及 mechanics_only 范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "频率、遗漏、和值和跨度在这里都只是描述性指标，不能自动变成预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "案例边界说明；未将描述性样本升级为预测事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围免责声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数必须在查看演示数据前固定：差值参数为1，不采用0与9的循环连接，判定对象为五星直选的5个位置。",
+      "claim_type": "editorial",
+      "evidence_note": "对应参数冻结合同及 system_research 参数归属。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成“至少存在一对差1邻号”这一阶段后，按本合同停止，不再临时增加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "对应 stop_after_primary_filter=true 与 stop_after_final_stage=true。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文讨论的是<strong>分分彩五星直选邻号技巧</strong>中的一个固定结构：5个位置组成一个有序的5位数字串。五星直选的候选对象可以表示为5位有序数字串，每一位取0至9，因此筛选前共有100000个候选串。</p><p>这里的“邻号”不是指位置相邻，而是指数字值相差1。例如0和1、4和5、8和9都算差1邻号。本文唯一的主筛选是：5个位置中至少存在一对数字差值等于1，且0与9不作首尾循环邻号。</p><p>“至少存在一对”表示只要5个数字中有任意两位满足条件，就保留这个候选串。两位可以相同位置不同的数字值；相同数字不算差1。这个判断只负责筛选结构，不负责说明某个号码未来一定出现。</p><h2>方法机制：至少存在一对差1邻号</h2><p>把候选串写成<code>d1 d2 d3 d4 d5</code>。先比较每一对位置的数字值，检查是否有<code>|di-dj|=1</code>。如果找到一对，就标记为通过；如果所有位置组合都没有差1关系，就标记为不通过。</p><p>按这个条件逐一检查100000个有序5位候选串，保留81390个，排除18610个。这个数字是候选空间的数学筛选结果，不是样本命中率，也不是未来结果的保证。</p><h2>完整可复算案例</h2><p><strong>演示数据，不是真实开奖记录。</strong>本案例使用 Draft Packet 提供的固定演示字段，只用来检查计算过程。演示案例中的给定号码是88083。</p><p>先拆位：88083对应5个数字8、8、0、8、3。再做两两差值检查：8与8的差是0，8与0的差是8，8与3的差是5，0与3的差是3。重复出现的8仍然不会产生差1关系。</p><p>88083的5位数字为8、8、0、8、3，和值为27，跨度为8，重复结构为3-1-1，且不存在差1邻号对。</p><p>因此，88083在本主筛选中应标记为“不通过”。注意，这个单号码检查和100000个候选串的空间统计是两件事：前者是判定示例，后者是全空间计数。</p><h2>逐步核对候选空间</h2><ol><li>建立空间：列出全部5位有序数字串，每一位允许0至9，得到100000个候选。</li><li>冻结参数：把差值固定为1，关闭0与9的循环连接，并固定筛选对象为五星直选。</li><li>逐串判定：对每个候选串比较任意两位的数字值，只要有一对差值为1，就保留。</li><li>汇总结果：通过数为81390个，未通过数为18610个；也就是从100000个候选中排除了18610个。</li><li>复核单例：用88083重复两两比较，确认它没有差1邻号对，因此落在排除部分。</li><li>停止处理：完成这一阶段后保留81390个结果，不再把频率、遗漏、和值或跨度临时拼成第二个过滤器。</li></ol><p>逐步核对的重点是“至少一对”，而不是要求每一位都和另一位相邻。比如一个候选只要存在一组差1数字，就已经满足本阶段；它是否还有重复、特定和值或特定跨度，不改变这一阶段的定义。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>演示数据里的频率、遗漏、和值和跨度只能描述给定记录或样本的外观。频率、遗漏、和值和跨度在这里都只是描述性指标，不能自动变成预测结论。</p><p>本例只展示候选空间如何按固定条件缩小，不构成对未来结果的预测优势。不要把“保留了81390个”理解成命中率，也不要把未通过本阶段理解成某个结果必然不会出现。</p><p>本文不讨论未核验的平台经济参数。</p><h2>实际怎么操作</h2><p>实际操作时，先把任务限定为一个可复算的机械检查。参数必须在查看演示数据前固定：差值参数为1，不采用0与9的循环连接，判定对象为五星直选的5个位置。</p><p>然后按“列空间、冻结参数、逐串检查、汇总复核”的顺序执行。演示数据只能用于展示检查方式，不能反过来决定差值或循环规则。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇只有一个阶段，阶段名称是“至少存在一对差1邻号”。完成这一阶段后，按本合同停止，不再临时增加第二个过滤器。</p><p>只有当新增条件同时具备已验证的规则或证据，并且能够按同样方式复算时，才允许继续缩小候选空间。仅凭这组演示数据看到的频率、遗漏、和值或跨度，不满足继续加筛选器的条件。</p>",
+  "content_format": "html",
+  "content_hash": "be8628add1921866716109ea7349bcf72be9aa24a7de26951cf95f3852c8f4a3",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "f23efe6fe645a4bccf33f3ce8ca07109ea55934e4e922a12b43aaaa4ffbf68e5",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选邻号技巧案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "81390个有序5位候选串",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选；本合同完成主筛选后停止。",
+    "parameter_freeze_rule": "查看演示数据前固定selector=五星、metric=neighbor_pair、pair_difference=1、circular_0_9=false；参数归属system_research，不由样本或来源指定。",
+    "starting_space": "100000个有序5位候选串",
+    "steps": [
+      "建立100000个有序5位候选串的起始空间。",
+      "在查看演示数据前固定差值为1、关闭0与9循环连接，并固定对象为五星直选。",
+      "逐一检查每个候选串是否存在至少一对差1邻号。",
+      "保留81390个通过候选，并核对排除18610个。",
+      "用演示号码88083复核单例判定；完成本阶段后停止，不添加第二过滤器。"
+    ],
+    "stop_condition": "完成“至少存在一对差1邻号”这一唯一主筛选后停止；没有新增已验证规则或证据且可复算的条件，不得继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选邻号技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0e651f655a30df7d016a824f96caf0819ba757998fd97d4ea9",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里至少存在一对差1邻号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选邻号技巧：至少存在一对差1邻号具体怎么算，用完整案例从100000复算到81390",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选邻号技巧",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "用简单中文解释分分彩五星直选中“至少存在一对差1邻号”的判定方式，并用固定演示数据完成从100000到81390的可复算筛选案例。",
+  "tags": [
+    "分分彩五星直选邻号技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "邻号结构",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "分分彩五星直选邻号技巧：至少存在一对差1邻号具体怎么算，用完整案例从100000复算到81390"
+}

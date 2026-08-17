@@ -1,0 +1,194 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点10、终点5、排除5。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 5,
+    "final_space": 5,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+    "sample_stage_labels": [
+      "近12期热号前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期热号前5数字池"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "fe223f8410c5491247a2",
+  "approved_at": "2026-08-17T00:00:14.223609+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-f28109a8219cd6c9",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "cold_hot_split[lookback=12,top_n=5/sample]:10->5",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选冷热注数计算",
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点10、终点5、排除5。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 5,
+      "final_space": 5,
+      "sample_stage_labels": [
+        "近12期热号前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期热号前5数字池"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点10、终点5、排除5。",
+    "title": "分分彩一星直选冷热注数计算：10个候选为什么变成5个，排除5个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-d41004e4fbf12f77",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "对 case_bundle 的性质做明确标注。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "一星直选按个位做候选空间核对时，起点是10个数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应已给定的玩法机械设定与候选空间定义。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "近12期热号前5数字池这一步把10个候选数字收缩到5个。",
+      "claim_type": "calculation",
+      "evidence_note": "这是演示数据下的确定性空间收缩。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "近12期热号前5数字池这一步排除了5个数字。",
+      "claim_type": "calculation",
+      "evidence_note": "10减5得到排除数量5。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这次核对的最终候选空间是5个。",
+      "claim_type": "calculation",
+      "evidence_note": "对应 after_filter_space=5。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组数字只说明候选池缩小了，不等于命中率提高。",
+      "claim_type": "editorial",
+      "evidence_note": "限制性说明，避免把筛选结果写成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "按 mechanics_only 范围限制，回避未核验的赔率、返点、奖金等内容。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只核对一星直选的候选空间怎么从10个数字缩到5个。这里的起点是0到9，共10个候选。</p><p>为了满足本篇的演示要求，文中用的是<b>演示数据，不是真实开奖记录</b>。本文不讨论未核验的平台经济参数。</p><h2>逐层计算保留与排除数量</h2><p>唯一主筛选是“近12期热号前5数字池”。按这一步，候选池从10个数字收缩到5个数字。</p><p>所以，保留数量是5个，排除数量也是5个。计算很直接：10 - 5 = 5。</p><p>这一步的标签只负责说明筛选层级，不负责提供未来预测优势。</p><h2>核对起点、终点和总排除</h2><p>起点是10个，终点是5个，总排除是5个。三项要同时成立，才算把这条合同核对完。</p><p>这里的“5”是候选空间数量，不是命中次数，也不是中奖率。</p><h2>为什么这些数字不是命中率</h2><p>热号前5只是把样本里的数字池排出一个顺序，再截取前5个。它描述的是筛选结果，不是未来表现。</p><p>所以，不能把“10变5”理解成命中率上升，也不能把它包装成确定收益。</p><h2>边界与误区</h2><p>这类统计筛选只是在机械上缩小候选范围。它说明的是“留下哪些数字”，不是“下一期一定开什么”。</p><p>本篇的边界很清楚：只做候选空间计算，不额外加第二个未验证过滤器。</p><h2>实际怎么操作</h2><ol><li>先固定一星直选的候选空间，按个位0到9记为10个。</li><li>再按合同指定的唯一主筛选“近12期热号前5数字池”处理，保留5个数字。</li><li>复算排除数量：10减5，得到排除5个。</li><li>核对结论：起点10、终点5、排除5，三项一致就停止。</li><li>如果没有新增且已验证的规则或证据，不再继续缩小候选。</li></ol><h2>停止条件</h2><p>本篇到这里就停止。只有新增条件具有已验证规则或证据，并且可以复算时，才允许继续缩小候选。</p><p>这也是本篇唯一允许的后续方向：先验证，再计算，不先上结论。</p>",
+  "content_format": "html",
+  "content_hash": "b021e91a6bbe88a1e44b4e2e9750014b90453046d0c17569105be58c07d0ec92",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "d41004e4fbf12f77fc9c94206658a2980c57d7d4727f3fa1ef02f098843abb72",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选冷热注数计算：用演示数据核对候选空间从10到5的确定性结果，明确排除5个，不把筛选当成命中率或收益结论。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "5个候选数字",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且可以复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定一星直选的候选空间和唯一主筛选，再看演示样本；不临时加第二过滤器。",
+    "starting_space": "10个候选数字",
+    "steps": [
+      "先把一星直选的候选空间定义为个位0到9，共10个。",
+      "按合同唯一主筛选“近12期热号前5数字池”执行一次收缩。",
+      "复算保留数量为5个，排除数量为5个。",
+      "核对起点10、终点5、排除5三项是否一致。",
+      "确认这里只做机械空间计算，不把它写成命中率、收益或预测优势。"
+    ],
+    "stop_condition": "完成起点10、终点5、排除5的核对后立即停止；没有新增已验证规则时，不再继续加筛选层。"
+  },
+  "primary_keyword": "分分彩一星直选冷热注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_06b2eb176fc5c954016a824ef2be40819597a39064c9de8015",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+  "secondary_keywords": [
+    "分分彩一星直选冷热注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩冷热频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选冷热注数计算：10个候选为什么变成5个，排除5个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-cold_hot_split-space_math",
+  "source_refs": [
+    "BRBCW-008754"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文用演示数据核对分分彩一星直选的候选空间：起点10个数字，经过唯一主筛选后保留5个，排除5个，并明确这只是空间收缩，不是命中率或收益结论。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "冷热注数计算",
+    "候选空间",
+    "演示数据",
+    "机械筛选"
+  ],
+  "technique_atoms": [
+    "cold_hot_split"
+  ],
+  "title": "分分彩一星直选冷热注数计算：10个候选为什么变成5个，排除5个怎么算"
+}

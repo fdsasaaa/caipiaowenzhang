@@ -1,0 +1,189 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100000、终点3125、排除96875。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 96875,
+    "final_space": 3125,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到3125以及排除96875个的确定性结果",
+    "sample_stage_labels": [
+      "近12期热号前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期热号前5数字池"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "c022f675000128cd8e01",
+  "approved_at": "2026-08-17T01:00:24.545671+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-dc3391d8d383c124",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "cold_hot_split[lookback=12,top_n=5/sample]:100000->3125",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选冷热注数计算",
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到3125以及排除96875个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100000、终点3125、排除96875。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 96875,
+      "final_space": 3125,
+      "sample_stage_labels": [
+        "近12期热号前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期热号前5数字池"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对五星直选的候选空间计算，逐项确认100000到3125以及排除96875个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100000、终点3125、排除96875。",
+    "title": "分分彩五星直选冷热注数计算：100000个候选为什么变成3125个，排除96875个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-50446ac5b84570de",
+  "case_scope": "mechanics_only",
+  "category": "技巧文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只做五星直选候选空间的确定性计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑边界说明，符合 mechanics_only 限制。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选的起点候选空间是100000。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实，起点空间。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按近12期热号前5数字池筛选后，候选空间变成3125。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实，主筛选后空间。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "因此一共排除96875个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "100000减去3125得到96875。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同必须明确标注演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "近12期热号前5数字池只是本篇唯一主筛选合同，不再继续叠加第二过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只核对五星直选的候选空间怎么算，不讨论未核验的平台经济参数。这里的起点是100000，表示五星直选在这个合同里先按完整候选空间来算。</p><p>下面这组<strong>演示数据，不是真实开奖记录</strong>，只用于说明“先固定参数，再做主筛选”的计算过程。</p><h2>逐层计算保留与排除数量</h2><p>本篇唯一主筛选合同是<strong>近12期热号前5数字池</strong>。它使用的参数已经固定：lookback=12，top_n=5，ranking=frequency_desc_then_digit_asc，筛选对象是五星直选。</p><p>固定这组参数后，主筛选后的候选空间是3125。也就是说，从100000个候选里，保留下来的不是全部，而是按这组固定规则收缩到3125个。</p><p>排除数量的算法很直接：100000减去3125，得到96875。这个数字就是本次主筛选剔掉的候选数。</p><h2>核对起点、终点和总排除</h2><p>起点是100000，终点是3125，排除的是96875。三者加减关系要一致，才能说明这是一个确定性的空间收缩结果，而不是口径混乱的描述。</p><p>如果把这三个数放在一起看，结论只有一个：这次筛选把五星直选的候选空间从100000压缩到了3125，缩掉了96875个。</p><h2>为什么这些数字不是命中率</h2><p>3125不是命中率，96875也不是命中率。它们只是候选空间的保留数和排除数，说明的是集合大小变化，不是未来能中多少、也不是历史命中有多高。</p><p>本篇用到的“近12期热号前5数字池”是演示型筛选结果，只说明样本内如何算池子，不自动推出未来优势。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>样本里的频次、和值、跨度、重复形态，都只是演示数据的描述项，不等于预测结论。即使某些数字在样本里更靠前，也只能说明它们在这组演示数据里出现得更集中，不能直接说成更容易命中。</p><p>这里的主筛选是系统研究合同定义的参数化计算，不是来源推荐，也不是外部经验结论。读者要看的，是“空间怎么收缩”，不是“会不会因此更准”。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>做到3125和96875这一步就停止。因为本篇只有这一条已验证的主筛选合同，没有第二条同样可复算的规则，就不要临时再加新过滤器去继续缩小候选。</p><p>只有当新增条件也有已验证规则、并且能独立复算时，才可以继续缩小候选；否则就停在本次合同的结果上。</p><h2>实际怎么操作</h2><ol><li>先固定五星直选的起点空间为100000，不要先看样本再改口径。</li><li>再固定主筛选参数：近12期热号前5数字池，参数只按合同里的 lookback=12、top_n=5、ranking=frequency_desc_then_digit_asc 执行。</li><li>按这组固定参数计算主筛选后的空间，得到3125。</li><li>用100000减去3125，复算出排除数96875，确认三者一致。</li><li>到这一步就停止，不要因为样本里还有别的描述项就额外加第二过滤器。</li></ol>",
+  "content_format": "html",
+  "content_hash": "4c1f47cd1c63f2fa0b15dff17117ed4fcfda3bf4e94bccb4af7a5719754c6f2d",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "50446ac5b84570de6873eaa40053a189ccf11e4c9b76f047603f1f236510072b",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选冷热注数计算讲解：按近12期热号前5数字池核对100000到3125的候选空间收缩，并复算排除96875个的确定性结果。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "3125",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数再看样本；本篇主筛选只使用近12期热号前5数字池，lookback=12、top_n=5、ranking=frequency_desc_then_digit_asc，不临时追加第二过滤器。",
+    "starting_space": "100000",
+    "steps": [
+      "固定五星直选的起点候选空间为100000。",
+      "按合同锁定唯一主筛选：近12期热号前5数字池。",
+      "用lookback=12、top_n=5、ranking=frequency_desc_then_digit_asc复算主筛选后的空间。",
+      "确认主筛选后空间为3125，并用100000减去3125复算排除数96875。",
+      "核对三者关系后停止，不再新增未验证过滤器。"
+    ],
+    "stop_condition": "完成100000、3125、96875的复算后立即停止；没有新增已验证规则时，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选冷热注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0531388693f298df016a825d0a092487d2a08e061b43395ec2",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算，逐项确认100000到3125以及排除96875个的确定性结果",
+  "secondary_keywords": [
+    "分分彩五星直选冷热注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩冷热频率",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选冷热注数计算：100000个候选为什么变成3125个，排除96875个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选冷热注数计算-100000个候选为什么变成3125个-排除96875个怎么算",
+  "source_refs": [
+    "BRBCW-000201"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这篇文章只做五星直选候选空间的确定性核对：从100000个候选按近12期热号前5数字池收缩到3125个，并复算排除96875个。正文明确标注为演示数据，不是真实开奖记录，同时说明这只是空间数学，不是命中率或预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "冷热注数计算",
+    "候选空间",
+    "空间数学",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "cold_hot_split",
+    "position_filter"
+  ],
+  "title": "分分彩五星直选冷热注数计算：100000个候选为什么变成3125个，排除96875个怎么算"
+}

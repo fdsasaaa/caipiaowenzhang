@@ -1,0 +1,212 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点120、终点88、排除32。",
+    "evidence_mode": "static_only",
+    "excluded_space": 32,
+    "final_space": 88,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前三组选6的候选空间计算，逐项确认120到88以及排除32个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 120,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "511d4ce9e597441dd804",
+  "approved_at": "2026-08-17T00:49:40.612367+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-9f1bfdf0437fd15c",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:120->88",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三组选6和值注数计算",
+    "reader_question": "核对前三组选6的候选空间计算，逐项确认120到88以及排除32个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点120、终点88、排除32。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 32,
+      "final_space": 88,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 120,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前三组选6的候选空间计算，逐项确认120到88以及排除32个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点120、终点88、排除32。",
+    "title": "分分彩前三组选6和值注数计算：120个候选为什么变成88个，排除32个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-37f1b93dff8593e4",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "明确标注样本性质，避免把演示数据写成真实开奖。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前三组选6先看和值区间“9–18”这一层。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应固定主筛选阶段名称。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起点是120个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定 starting_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按和值9–18筛选后，剩下88个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定 after_filter_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个筛选一共排除了32个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "120减88得到32。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "120减去32，等于88。",
+      "claim_type": "calculation",
+      "evidence_note": "同一数学关系的直接复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步只是候选空间缩小，不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "说明数学筛选与结果命中的区别。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "按 mechanics_only 范围收束，不展开赔率、返点、奖金等。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "对 case_bundle 的强制标签进行显式标注。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只做一件事：把前三组选6在和值9–18这一层的候选空间算清楚。</p><p>先固定参数，再看样本。这里的主筛选合同是和值9–18，参数由系统研究合同先定，不从演示样本里倒推。</p><p>按合同，起点候选空间是120个，主筛选后剩88个，合计排除32个。</p><h2>逐层计算保留与排除数量</h2><p>第一步，确认筛选前的总量是120个。</p><p>第二步，应用和值9–18这一条固定筛选，保留88个。</p><p>第三步，计算排除量：120 - 88 = 32。</p><p>第四步，核对结果是否闭合：起点120，终点88，排除32，三项互相一致。</p><h2>核对起点、终点和总排除</h2><p>这组数字的关系很简单：120个候选，经过和值9–18这一层后，留下88个，剔除32个。</p><p>如果只看演示数据，也能看到“演示数据，不是真实开奖记录”这一点，但它只用于说明写法，不用于替代合同里的候选空间计算。</p><h2>为什么这些数字不是命中率</h2><p>88不是命中率，32也不是胜率。</p><p>它们只是在固定规则下，候选空间被压缩后的数量结果。</p><p>所以这一步不能被包装成预测优势，也不能直接推成未来表现。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>和值9–18是本篇唯一主筛选合同，没有第二条已验证规则时，不应临时再加一层过滤。</p><p>来源材料只负责说明这类方法归属什么原子规则，不负责替这组静态参数背书，更不负责替演示样本作预测。</p><p>本文不讨论未核验的平台经济参数。</p><h2>实际怎么操作</h2><p>1. 先把筛选前空间定为120个，不要先看样本再改参数。</p><p>2. 再固定主筛选条件为和值9–18，只按这一条去算。</p><p>3. 计算保留量，得到88个。</p><p>4. 再算排除量，得到32个，并核对120 - 88 = 32。</p><p>5. 完成这一层后停止，不新增第二个过滤器，除非下一条条件也有已验证规则并且能复算。</p><h2>停止条件</h2><p>到这里就该停。合同要求只做这一层空间数学，不继续往下拼未验证条件。</p><p>只有新增条件具有已验证规则或证据，并且能独立复算时，才允许继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "ea0d5f176080ed7b27988a2ad53708c724d87052041505515dd739cd25c857e6",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "37f1b93dff8593e426ce9f6dcda4244383b0540f510ba2e31203311d01caa559",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三组选6和值注数计算：先按和值9–18这一层把候选空间从120个核到88个，明确排除32个，只做确定性数学复算，不把统计筛选包装成预测优势。",
+  "play": "前三组选6",
+  "practical_guidance": {
+    "after_primary_filter_space": "88个候选",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选；否则停止在第一层主筛选结果。",
+    "parameter_freeze_rule": "先固定主筛选参数和值9–18，再看样本；不得根据演示数据回改参数。",
+    "starting_space": "120个候选",
+    "steps": [
+      "先确认筛选前空间是120个。",
+      "固定主筛选条件和值9–18，不添加第二过滤器。",
+      "按固定条件复算保留量，得到88个。",
+      "用120减88核对排除量，得到32个。",
+      "检查三项是否闭合：120、88、32互相一致。",
+      "核对后停止，不把这一步解释成命中率或预测优势。"
+    ],
+    "stop_condition": "完成和值9–18这一层的复算后立即停止；没有新增已验证规则前，不再继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前三组选6和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_01756f8b83c1b763016a825a87656487d0ab2e8a5352c36543",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+  ],
+  "search_intent": "核对前三组选6的候选空间计算，逐项确认120到88以及排除32个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前三组选6和值注数计算",
+    "分分彩技巧",
+    "前三组选6技巧",
+    "分分彩前三组选6投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前三组选6和值注数计算：120个候选为什么变成88个，排除32个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三组选6-sum_range-space_math",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三组选6",
+  "summary": "本文按固定主筛选和值9–18，把分分彩前三组选6的候选空间从120个复算到88个，明确排除32个，并说明这只是空间压缩，不是命中率或预测优势。",
+  "tags": [
+    "分分彩",
+    "前三组选6",
+    "和值计算",
+    "候选空间",
+    "space_math"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "分分彩前三组选6和值注数计算：120个候选为什么变成88个，排除32个怎么算"
+}

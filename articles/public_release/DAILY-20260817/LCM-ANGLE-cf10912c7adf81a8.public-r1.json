@@ -1,0 +1,129 @@
+{
+  "angle_signature": "de8d4632429929c8dc39",
+  "approved_at": "2026-08-17T00:25:15.057238+00:00",
+  "article_id": "LCM-ANGLE-cf10912c7adf81a8",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲一个主筛选：跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文明确写出主筛选参数范围。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里固定的是跨度2–6，不能先看样本再回头改参数。",
+      "claim_type": "methodology",
+      "evidence_note": "公开正文明确要求参数冻结后再复算，避免事后调参。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "前四直选的起始候选空间是10000。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文给出了候选空间的起始值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度2–6筛完后，候选空间变成5580，一共筛掉4420。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文给出了筛选后的空间变化与差值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据不是真实开奖记录，样本量是12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文明确将样本标注为演示数据，并给出样本量。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文不把来源写成具体参数推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确区分技术经验背景与具体参数推荐。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确给出不应把筛选结果或样本表现理解为命中率、准确率、胜率或未来结果的证明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>参数边界</h2><p>本文只讲一个主筛选：<strong>跨度2–6</strong>。它属于系统研究预设，不是来源推荐，也不是把来源经验直接搬成结论。</p><p>这里先把边界说清楚：文中面向读者展示的是<strong>分分彩</strong>语境，但具体参数归属仍然按系统研究合同处理。也就是说，参数是谁定的、筛到哪一步停、怎么复算，归合同；来源只负责给出技术经验背景，不能替这组具体参数背书。</p><p>这类写法的重点不是“找一个更强的选号办法”，而是先把研究边界固定住，再讨论筛选链条是否能被复算。没有边界，后面的统计结果也就没有可比较性。</p><h2>样本说明</h2><p>这组样本明确标注为<strong>演示数据，不是真实开奖记录</strong>。样本量是12，最新一组是97135。</p><p>按样本描述，最新一组的跨度是8，和值是20，形态是单单单单。这个结果只说明演示样本长什么样，不说明真实开奖会跟着变。</p><p>把演示样本拿来做说明，目的是展示怎么算、怎么算完之后边界在哪里，而不是把样本写成未来结论。样本能帮助读者理解规则，但样本本身不是保证。</p><h2>复算方式</h2><p>第一步，先固定参数。这里固定的是跨度2–6，不能先看样本再回头改参数。</p><p>第二步，按合同的主筛选去复算。前四直选的起始候选空间是10000。</p><p>第三步，只做这一层筛选。跨度2–6筛完后，候选空间变成5580，等于一共筛掉4420。</p><p>第四步，检查你是在做参数边界说明，还是在试图把统计筛选写成预测优势。前者可以复算，后者本篇不成立。</p><p>这个顺序很重要，因为它决定了你看到的是预注册参数的结果，还是事后调参的结果。两者外表可能接近，研究含义完全不同。</p><h2>能说明什么</h2><p>来源提到的是技术经验背景，但本篇不把它写成具体参数推荐。它能支持“这里确实有一类相关经验”，不能支持“这组参数就是来源原文指定”。</p><p>同样，来源也不能证明跨度2–6有预测优势。<strong>候选空间从10000变成5580</strong>，只是机器筛选结果，不是胜率证明。</p><p>这也是为什么公开版必须把“规则存在”与“规则有效”分开写。前者可以描述，后者需要更严格的样本外验证，而且仍然不能自动推出稳定获胜。</p><h2>常见误区</h2><p>不要把“筛掉4420”理解成“更准了”。它只表示候选空间缩小了，不表示命中率、准确率、胜率或者未来结果被证明提高。</p><p>也不要把演示样本里的频率、和值、跨度，当成真实预测结论。它们是描述，不是承诺。</p><p>更不能把结构分类或历史样本表现，直接当成未来预测优势。历史里看起来更集中的形态，只说明曾经出现过，并不自动代表下一次仍会占优。</p><p>如果要继续研究，合适的方向是样本外复盘、参数预注册和随机波动说明，而不是把一次筛选包装成结论。</p><h2>停止条件</h2><p>本篇已经完成合同要求的唯一主筛选解释，所以这里就停止。没有新增且已验证、可复算的条件之前，不再临时加第二个过滤器。</p><p>如果后面要继续缩小候选，只能在新增条件也有已验证规则或证据、并且能复算的前提下进行。</p><p>这也是公开讨论里必须保留的不确定性边界：可以讲机制、讲复算、讲误区，但不能把结构筛选写成未来优势的证明。</p>",
+  "content_format": "html",
+  "content_hash": "6068f65cc570c5ad57645a10182d0d40326d5427d84dba7cc6c63e922624414d",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "449b9fd2dadc5fa0f90d33c11ce5b709963d2d98a3bb523cef76b12bb5d06b2f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "围绕分分彩前四直选跨度参数设置，说明系统研究预设、复算方式、样本边界与常见误区，强调历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "df2aabdfd8b62b88b6cd90b44353bb81e29f9d0701efe42ac45f047b37210c61",
+  "parent_fingerprint": "cf10912c7adf81a8acbf1a070a64924165782ff8ff7dd87c3d4b1b153e7b85c2",
+  "play": "前四直选",
+  "primary_keyword": "分分彩前四直选跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0952780f5afee8f8016a824eab8c9881949229c3548a2ba8d7",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:25:15.057254+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-cf10912c7adf81a8:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前四直选跨度参数设置",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前四直选跨度参数设置：系统研究预设、复算边界与样本说明",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前四直选-span_range-parameter_boundary",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "本文以分分彩前四直选跨度参数设置为主题，只讨论系统研究预设、复算方式、样本边界和常见误区。正文保留了跨度2–6、候选空间10000变5580、演示样本量12等硬信息，但明确它们只是复算与说明，不构成未来预测优势，也不提供任何选号、跟投或资金路径。",
+  "tags": [
+    "分分彩前四直选跨度参数设置",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩前四直选跨度参数设置：系统研究预设、复算边界与样本说明"
+}

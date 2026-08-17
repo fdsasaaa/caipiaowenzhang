@@ -1,0 +1,204 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 44,
+    "final_space": 46,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 90,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "554e93f645343189e20e",
+  "approved_at": "2026-08-17T00:46:40.800224+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-570ad8fcf2cf1e9d",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:90->46",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三组选3和值筛选步骤",
+    "reader_question": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 44,
+      "final_space": 46,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 90,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩中三组选3和值筛选步骤：实际操作按哪几步做，筛到46个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-31ca644ac4c469b0",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只做机制与操作清单，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑边界说明",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "执行前先固定参数：本篇只用“中三”和“和值9–18”这一条主筛选，不再临时加第二个过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选合同与参数固定要求",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的筛选前候选空间是90个，主筛选后保留46个，排除44个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的空间数值",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个结果只说明候选被缩小了，不代表有任何预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "合同明确不宣称预测优势",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "下面的演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签说明",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例中最近一期显示为“83709”，这只是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本标注",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例里最近一期的和值是10，跨度是7，形态信息显示为“单单双”。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本的描述性统计",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这条合同做完后就停止，不再临时补加遗漏、频率、冷热或命中率过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止条件与禁止追加新过滤器",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>先把参数固定住：本篇只做“分分彩中三组选3和值筛选步骤”这一条主筛选，使用和值9–18。不要先看样本再改参数，也不要先加别的条件。</p><p>这条合同的筛选前候选空间是90个，筛选后保留46个，排除44个。你在纸上先记下这三个数，再开始操作。</p><p>本文只做机制与操作清单，不讨论未核验的平台经济参数。</p><h2>实际操作步骤清单</h2><ol><li>确认对象是中三组选3，先按合同锁定主筛选：和值9–18。</li><li>准备一份候选表，起始规模按90个计算，不要把演示样本12条当成理论空间。</li><li>逐个候选检查数字和是否落在9到18之间，符合就保留，不符合就剔除。</li><li>统计保留数，核对是否等于46个；同时核对排除数是否等于44个。</li><li>确认这一轮只做完一个主筛选后就停，不再追加第二过滤器。</li></ol><h2>每一步如何核对结果</h2><p>核对时只看两个结果：是否在9–18区间内，以及最终保留数是否为46个。只要这两个结果对上，说明你按合同把这一步做完了。</p><p>如果你用演示数据核对，可以先看最近一期“83709”。这只是演示数据，不是真实开奖记录。示例里最近一期的和值是10，跨度是7，形态信息显示为“单单双”。这些信息只用于说明如何读样本，不代表可预测下一期。</p><h2>何时必须停止</h2><p>当你完成和值9–18这一步，并且核对出46个候选后，就必须停止。</p><p>如果你还想继续缩小范围，只有在新增条件本身也有已验证规则或可复算证据时，才允许继续。没有第二条已验证规则，就不要临时加第二个过滤器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选的作用是把候选范围缩小，不是把结果变成确定答案。合同里已经明确，机器候选空间减少不等于预测优势。</p><p>演示样本里的频率、跨度、和值，都是描述性信息。它们可以帮助你理解样本长什么样，但不能单独当成未来结论。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>按这份清单做完后，本文就到此停止。不要因为已经得到46个候选，就再临时补遗漏、频率、冷热或命中率筛选。</p><p>如果后续要继续缩小候选，先拿出新的已验证规则，再重新做可复算说明；没有这一步，就不要继续往下压缩。</p>",
+  "content_format": "html",
+  "content_hash": "0e668271864fda37c7720caf8fc298b4db4f739a1dd356116066fc6342a2bc64",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "31ca644ac4c469b0448e1cf013239e1b9ae24756c3feeeda4ae2f4d6dff1d07c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三组选3和值筛选步骤：按固定顺序执行和值9–18，先核对90个候选再收缩到46个，并明确何时停止，不把统计筛选包装成预测优势。",
+  "play": "中三组选3",
+  "practical_guidance": {
+    "after_primary_filter_space": "46个候选，较筛选前90个减少44个",
+    "next_step_policy": "只有新增条件具有已验证规则并且能复算时，才允许继续缩小候选；否则在本篇合同完成后停止。",
+    "parameter_freeze_rule": "先固定“中三”和“和值9–18”，再看样本；不许根据样本临时改参数，也不许先加第二过滤器。",
+    "starting_space": "90个候选",
+    "steps": [
+      "先确认对象是中三组选3，并把主筛选参数锁定为和值9–18。",
+      "按合同记下筛选前候选空间是90个，不要把演示样本数量当成理论空间。",
+      "逐个候选计算和值，凡是落在9到18之间的保留，不在区间内的剔除。",
+      "复算保留数是否为46个，并核对排除数是否为44个。",
+      "一旦完成这一条主筛选，就停止，不再临时追加遗漏、频率、冷热或命中率条件。"
+    ],
+    "stop_condition": "当主筛选完成且保留数核对为46个时停止；除非新增条件有已验证规则并可复算，否则不得继续缩小候选。"
+  },
+  "primary_keyword": "分分彩中三组选3和值筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_014f6fa18b659299016a8259d15db48191b5155806b17bb535",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+  ],
+  "search_intent": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩中三组选3和值筛选步骤",
+    "分分彩技巧",
+    "中三组选3技巧",
+    "分分彩中三组选3投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三组选3和值筛选步骤：实际操作按哪几步做，筛到46个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三组选3-sum_range-execution_checklist",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三组选3",
+  "summary": "这是一份按合同执行的分分彩中三组选3和值筛选步骤清单：先固定和值9–18，再把候选从90个复算到46个，最后明确停止条件，避免把统计筛选误写成预测优势。",
+  "tags": [
+    "分分彩",
+    "中三组选3",
+    "和值筛选",
+    "步骤清单",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "分分彩中三组选3和值筛选步骤：实际操作按哪几步做，筛到46个后什么时候必须停止"
+}

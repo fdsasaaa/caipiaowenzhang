@@ -1,0 +1,218 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释恰好1个单号的机制，并完成从1000到375的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 625,
+    "final_space": 375,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解中三直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好1个单号"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "3feb3c611b0654c51e6e",
+  "approved_at": "2026-08-17T00:43:37.858335+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-1b2f2240cb85f802",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:1000->375",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选奇偶技巧",
+    "reader_question": "理解中三直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释恰好1个单号的机制，并完成从1000到375的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 625,
+      "final_space": 375,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好1个单号"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：恰好1个单号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解中三直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释恰好1个单号的机制，并完成从1000到375的可复算案例。",
+    "title": "分分彩中三直选奇偶技巧：恰好1个单号具体怎么算，用完整案例从1000复算到375",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-9cd11948fa3ed789",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "明确标注案例性质，避免把演示样本写成真实开奖记录。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "中三直选这里按三位有序号码来算，基础候选空间是1000个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已验证玩法机制与合同给定的候选空间设定。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把条件固定成“恰好1个单号”后，候选空间从1000个缩到375个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的主筛选结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步一共排除了625个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "1000减375得到的排除数量。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的“恰好1个单号”只是在三位里统计单数位的个数，不是在说走势更好。",
+      "claim_type": "editorial",
+      "evidence_note": "解释机制边界，不把筛选结果包装成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机械范围内的经济参数不展开。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "案例里的“演示数据，不是真实开奖记录”是固定标签，不是预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "强调样本属性与预测无关。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据里最后一组是10011。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅作为演示样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里最后一组的中三值是001。",
+      "claim_type": "calculation",
+      "evidence_note": "由演示样本直接截取中三得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里最后一组中三的和值是1，跨度是1，大小是小小小，形态是组三。",
+      "claim_type": "calculation",
+      "evidence_note": "由演示样本直接复算得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲中三直选里的一个固定筛选：恰好1个单号。这里说的是三位有序号码，先按这个范围把基础候选定成1000个，再看这个单一条件怎么把空间收缩。</p><p>本文使用的是演示数据，不是真实开奖记录。演示只用来复算步骤，不用来证明任何预测优势。</p><h2>方法机制：恰好1个单号</h2><p>“恰好1个单号”只看三位里单数位出现几个。三位中如果只有1位是单数，其余2位是双数，就保留；如果单数位不是1个，就排除。</p><p>这个条件是系统研究里先固定好的主筛选参数，不是来源替你选出来的，也不是先看样本再倒推出的。</p><h2>完整可复算案例</h2><p>这组固定演示样本的最后一组是10011。按中三取中间三位，得到001。</p><p>001里，1是单号，0和0是双号，所以单号个数正好是1个。按本篇唯一主筛选条件，这一组留下。</p><p>同一组里，001的和值是1，跨度是1，大小是小小小，形态是组三。这里这些数值都只是演示数据的复算结果，不是对下一组的判断。</p><h2>逐步核对候选空间</h2><p>第一步，先固定范围：中三直选，基础候选空间是1000个。</p><p>第二步，只用一个主筛选条件：恰好1个单号。</p><p>第三步，按合同给定的可复算结果，筛完后剩375个。</p><p>第四步，1000减375，排除了625个。这个排除数就是这一步的收缩量。</p><p>到这里就完成了本篇规定的唯一主筛选，不再继续叠第二个条件。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>恰好1个单号只是一个机械筛选，不等于更容易中奖，也不等于未来会更好。</p><p>案例里的频率、和值、跨度、大小、形态，都只是演示样本的描述项，不能单独当成下一步的事实依据。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇只做这一层主筛选。没有第二条已经验证、而且还能复算的规则时，就应该停在375这个结果，不临时再加新过滤器。</p><p>只有新增条件本身也有已验证规则或可复算证据，才允许继续缩小候选；否则就保持停止。</p><h2>实际怎么操作</h2><ol><li>先把范围固定为中三直选，按1000个基础候选理解。</li><li>只看一个条件：三位里单号个数是否正好为1。</li><li>按这个条件过滤后，保留375个，排除625个。</li><li>遇到演示样本时，只做复算，不把样本当成真实开奖记录或预测依据。</li><li>如果没有新的已验证规则可复算，就停在这一步，不继续加筛选器。</li></ol>",
+  "content_format": "html",
+  "content_hash": "def888955bcea390b0ca68dae4db3eebe4e0baeb3f817de409f72a0d58cbfcb2",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "9cd11948fa3ed78915d72eba776b79c6946678565989a777f2b743fba3a22001",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选奇偶技巧案例讲解：先说明中三直选规则，再用可复算演示数据展示恰好1个单号的筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "375",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；否则停止在本篇唯一主筛选结果。",
+    "parameter_freeze_rule": "先固定中三直选与“恰好1个单号”参数，再看样本；不先看结果再倒推参数。",
+    "starting_space": "1000",
+    "steps": [
+      "先把候选范围固定为中三直选的1000个基础候选。",
+      "只应用唯一主筛选条件：恰好1个单号。",
+      "按合同给定结果复算，筛后剩375个。",
+      "核对排除量：1000减375，排除625个。",
+      "确认没有第二条已验证规则后，停止继续缩小候选。"
+    ],
+    "stop_condition": "完成本篇唯一主筛选并得到375个候选后停止；没有新的已验证规则或可复算证据时，不再加过滤器。"
+  },
+  "primary_keyword": "分分彩中三直选奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_01259306f39355e9016a8259195d6c8199ae2fbede20e2a013",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "理解中三直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩中三直选奇偶技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三直选奇偶技巧：恰好1个单号具体怎么算，用完整案例从1000复算到375",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选奇偶技巧-恰好1个单号具体怎么算-用完整案例从1000复算到375",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文用简单中文说明分分彩中三直选里“恰好1个单号”怎么计算，并按固定演示案例复算从1000到375的主筛选过程，同时标出排除量625和停止条件。",
+  "tags": [
+    "分分彩中三直选奇偶技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩奇偶筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "分分彩中三直选奇偶技巧：恰好1个单号具体怎么算，用完整案例从1000复算到375"
+}

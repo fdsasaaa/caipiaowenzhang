@@ -1,0 +1,250 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "multistage_order",
+    "deliverable_summary": "逐层解释恰好1个单号→近12期当前遗漏≥2数字池的固定顺序、每层before/after/excluded和为什么完成最后一层后停止。",
+    "evidence_mode": "mixed",
+    "excluded_space": 6,
+    "final_space": 4,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "sample_stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好1个单号",
+      "近12期当前遗漏≥2数字池"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "be31332d0bfb29508595",
+  "approved_at": "2026-08-17T00:59:16.010948+00:00",
+  "article_angle_contract": {
+    "angle_type": "multistage_order",
+    "contract_id": "AAC-df2beab5d742ca6e",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:10->5>omission_threshold[lookback=12,threshold=2/sample]:5->4",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选遗漏奇偶筛选顺序",
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "required_deliverable": "逐层解释恰好1个单号→近12期当前遗漏≥2数字池的固定顺序和空间变化，完成最后一层后明确停止。",
+    "required_machine_facts": {
+      "evidence_mode": "mixed",
+      "excluded_space": 6,
+      "final_space": 4,
+      "sample_stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好1个单号",
+        "近12期当前遗漏≥2数字池"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "先列出全部合同阶段",
+      "按固定顺序逐层复算",
+      "逐层核对before/after/excluded",
+      "完成最后一层后停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "逐层解释恰好1个单号→近12期当前遗漏≥2数字池的固定顺序和空间变化，完成最后一层后明确停止。",
+    "title": "分分彩一星直选遗漏奇偶筛选顺序：2层为什么按恰好1个单号→近12期当前遗漏≥2数字池这个顺序，逐层各排除多少",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-d13d0b0cbc9bef95",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲分分彩一星直选遗漏奇偶筛选顺序的复算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围声明，避免扩展到经济参数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "案例披露标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "先看第1层，恰好1个单号：10个候选里保留5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "第1层空间复算，before=10, after=5, excluded=5。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一层的结果是从10缩到5，减少了5个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "第1层缩减量。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再看第2层，近12期当前遗漏≥2数字池：在5个候选里保留4个，排除1个。",
+      "claim_type": "calculation",
+      "evidence_note": "第2层空间复算，before=5, after=4, excluded=1。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这一层把候选从5缩到4，说明本层只删掉1个。",
+      "claim_type": "calculation",
+      "evidence_note": "第2层缩减量。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "两层按固定顺序跑完后，总空间从10变成4，总共排除6个。",
+      "claim_type": "calculation",
+      "evidence_note": "整体 pipeline 结果复算。 [system-normalized: exact pipeline provenance -> synthetic_case]",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这只是候选空间收缩，不代表下一期更容易中。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从10个缩到5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选数字池包含8个数字：0/1/2/3/5/6/7/8。",
+      "claim_type": "calculation",
+      "evidence_note": "系统按Draft Packet中已冻结的选择规则计算该层数字池；具体数字来自演示数据，只证明确定性样本计算，不证明预测优势。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第2层候选空间从5个缩到4个，排除1个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段包含演示样本衍生参数，因此证据归case_bundle；不证明预测优势。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "完整多层筛选从10个缩到4个，总排除6个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>合同阶段</h2><p>本篇只按合同里的两层顺序复算：第1层是“恰好1个单号”，第2层是“近12期当前遗漏≥2数字池”。</p><p>演示数据，不是真实开奖记录。</p><h2>按顺序复算</h2><h3>第1层：恰好1个单号</h3><p>先固定参数，再看样本。这个阶段的起点空间是10，按合同先做第1层后，空间变成5，排除5个。</p><p>这里的意思很直接：只保留满足“恰好1个单号”的那一半候选，其余5个先去掉。第1层只负责把10缩到5，不做第二层的遗漏判断。</p><h3>第2层：近12期当前遗漏≥2数字池</h3><p>接着在第1层留下的5个候选上，继续用近12期当前遗漏≥2这个固定规则筛。跑完后，空间从5变成4，排除1个。</p><p>这个阶段只是在已经收缩过的候选里，再按样本计算出数字池并做一次确定性筛选，不额外引入新参数。</p><h2>实际怎么操作</h2><ol><li>先把起始空间定成10个一星直选候选，不要先看样本结果。</li><li>先执行第1层“恰好1个单号”，记录 before=10、after=5、excluded=5。</li><li>再执行第2层“近12期当前遗漏≥2数字池”，记录 before=5、after=4、excluded=1。</li><li>把两层结果合并检查，最终空间就是4，总排除6。</li><li>只做完这两层就停止，不临时加第三层过滤器。</li></ol><h2>边界与误区</h2><p>这类筛选只说明候选怎么被缩小，不是预测优势，也不是命中率承诺。第2层里的遗漏数字池来自演示数据计算，作用是复算空间，不是证明“高遗漏一定更快出”。</p><h2>停止条件</h2><p>合同已经只给了2层，且最后一层完成后空间已经得到4个候选，所以这里必须停止。只有当新增条件也有已验证规则或可复算证据，并且在下一次实验前先冻结参数，才允许继续往下缩小。</p>",
+  "content_format": "html",
+  "content_hash": "7e4a2064125edd8d11374e78efa85486004d25c6199d96e9bed8b8549e2a330d",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "d13d0b0cbc9bef954922b3e975b24dc02f357843ec8e996b0505341fef337b67",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "multistage_order",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选遗漏奇偶筛选顺序案例讲解：先按合同复算两层筛选，再展示每层before、after、排除数量和停止条件，不把统计筛选包装成预测优势。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成两层合同筛选后，候选空间从10个收缩到4个，合计排除6个。",
+    "next_step_policy": "只有新增条件具有已验证规则或可复算证据，并且参数在下一次实验前先冻结，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数，再看样本；第1层参数是系统研究预设，第2层的lookback、threshold先固定，具体数字池按演示数据确定性计算。",
+    "starting_space": "10",
+    "steps": [
+      "先确认起始空间是10个一星直选候选。",
+      "先做第1层“恰好1个单号”，复算 before=10、after=5、excluded=5。",
+      "再做第2层“近12期当前遗漏≥2数字池”，复算 before=5、after=4、excluded=1。",
+      "把两层结果合并，得到最终空间4个，总排除6个。",
+      "完成最后一层后停止，不临时新增过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则或证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩一星直选遗漏奇偶筛选顺序",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0fd84abc41d8fcd9016a825cc519248196ac14914028cdcfdf",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏奇偶筛选顺序",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选遗漏奇偶筛选顺序：2层为什么按恰好1个单号→近12期当前遗漏≥2数字池这个顺序，逐层各排除多少",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选遗漏奇偶筛选顺序-恰好1个单号-近12期当前遗漏2数字池",
+  "source_refs": [
+    "BRBCW-006580"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "按合同固定顺序复算分分彩一星直选遗漏奇偶筛选顺序：先做“恰好1个单号”，再做“近12期当前遗漏≥2数字池”，逐层写清 before、after、excluded，并在最后一层后停止，不把空间收缩包装成预测优势。",
+  "tags": [
+    "分分彩一星直选遗漏奇偶筛选顺序",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩奇偶筛选",
+    "分分彩遗漏阈值"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "分分彩一星直选遗漏奇偶筛选顺序：2层为什么按恰好1个单号→近12期当前遗漏≥2数字池这个顺序，逐层各排除多少"
+}

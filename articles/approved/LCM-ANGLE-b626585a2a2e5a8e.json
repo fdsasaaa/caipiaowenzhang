@@ -1,0 +1,217 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点10000、终点5580、排除4420。",
+    "evidence_mode": "static_only",
+    "excluded_space": 4420,
+    "final_space": 5580,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前四直选的候选空间计算，逐项确认10000到5580以及排除4420个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "be49f3e10f9bd01666f0",
+  "approved_at": "2026-08-16T23:57:58.600492+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-625ee887a882b929",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:10000->5580",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选跨度注数计算",
+    "reader_question": "核对前四直选的候选空间计算，逐项确认10000到5580以及排除4420个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点10000、终点5580、排除4420。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 4420,
+      "final_space": 5580,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前四直选的候选空间计算，逐项确认10000到5580以及排除4420个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点10000、终点5580、排除4420。",
+    "title": "分分彩前四直选跨度注数计算：10000个候选为什么变成5580个，排除4420个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-b626585a2a2e5a8e",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的主筛选是“跨度2–6”，它是系统研究给定的固定参数，不是来源推荐。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应系统参数边界说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "前四直选的候选空间起点是10000。",
+      "claim_type": "calculation",
+      "evidence_note": "来自主筛选合同的固定起点。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按“跨度2–6”这一步筛完后，候选空间变成5580。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选后的空间规模。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步一共排除了4420个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "排除量等于起点减终点。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "10000减去5580，结果就是4420。",
+      "claim_type": "calculation",
+      "evidence_note": "起点、终点与排除量的等式核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示属性。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里，最新一组的四位值是9、8、9、3。",
+      "claim_type": "editorial",
+      "evidence_note": "示例只用于说明写法，不构成真实开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里，这组的跨度是6，和值是29。",
+      "claim_type": "calculation",
+      "evidence_note": "样本描述性计算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里的样本规模是12。",
+      "claim_type": "editorial",
+      "evidence_note": "仅为示例规模说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只核对一个主筛选：<strong>跨度2–6</strong>。按合同，前四直选的候选空间起点是<strong>10000</strong>，这是固定起点，不是样本条数。</p><p>这里先把边界说清楚：本文只做候选空间的确定性计算，不讨论未核验的平台经济参数。</p><h2>逐层计算保留与排除数量</h2><p>主筛选只做一层，参数固定为跨度2到6。筛完后，候选空间剩下<strong>5580</strong>。</p><p>因此，被排除的数量是<strong>4420</strong>。这个数就是用起点10000减去终点5580得到的：<code>10000 - 5580 = 4420</code>。</p><h2>核对起点、终点和总排除</h2><p>三项结果要一起看：起点10000，终点5580，排除4420。它们是同一条计算链上的三个位置，不是三组独立结论。</p><p>如果你只记一个式子，就记这个：<code>10000 → 5580</code>，中间少掉的那部分就是4420。</p><h2>为什么这些数字不是命中率</h2><p>10000、5580、4420说的是候选空间怎么缩小，不是在说命中率、准确率，也不是在说胜率。</p><p>“缩小了多少候选”只表示筛选力度，不等于结果会更准，更不等于未来一定怎样。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这个主筛选参数由系统研究固定，参数冻结在观察之前完成。来源只负责说明这类方法来自哪一类机制，不负责把这个参数变成预测优势。</p><p>所以，本文只承认一个事实：<strong>10000个候选经过跨度2–6后变成5580个，排除了4420个</strong>。除此之外，不再临时加第二个过滤器。</p><h2>实际怎么操作</h2><p>第一步，先把起点记成10000，别把演示样本条数当成候选空间。</p><p>第二步，只应用这一条主筛选：跨度2–6。</p><p>第三步，复算筛后空间是不是5580。</p><p>第四步，用10000减5580，核对排除量是不是4420。</p><p>第五步，到这里就停止；如果后面还要继续缩小候选，必须有新增条件，并且这个新增条件也要有已验证规则或可复算证据。</p><h2>停止条件</h2><p>本篇已经完成合同要求的唯一主筛选，后续不临时追加新的筛选器。只有新增条件具有已验证规则或证据，并且可以复算时，才允许继续缩小候选。</p><p>演示数据，不是真实开奖记录。它只用来说明怎么读样本，不用来替代主筛选合同。</p>",
+  "content_format": "html",
+  "content_hash": "c6a49acb03e1f6af38af7ab350dbb89575a70d13e2a8184b102147d2dc56fdc4",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "b626585a2a2e5a8ed433522c188bdef4774f8291b22f4a60fb866ea417fdcd3a",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选跨度注数计算：核对10000个候选如何按跨度2–6缩到5580个，并确认排除4420个的确定性结果。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "5580",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定主筛选参数，再观察样本；本文只允许使用跨度2–6这一条已固定参数。",
+    "starting_space": "10000",
+    "steps": [
+      "先把前四直选的候选空间起点固定为10000，不把样本条数当起点。",
+      "只应用主筛选合同中的跨度2–6，不额外加第二条过滤器。",
+      "复算筛后候选空间是否为5580。",
+      "用10000减5580，核对排除量是否为4420。",
+      "核对完就停止，不把统计筛选包装成预测优势。"
+    ],
+    "stop_condition": "完成起点、终点和排除量的三项核对后停止；没有新增已验证条件时，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前四直选跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_04c7c0062e734a2b016a824e68229481978e766ab35cc1cb43",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "核对前四直选的候选空间计算，逐项确认10000到5580以及排除4420个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前四直选跨度注数计算",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩前四直选跨度注数计算：10000个候选为什么变成5580个，排除4420个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前四直选跨度注数计算-10000个候选为什么变成5580个-排除4420个怎么算",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "本文只核对前四直选跨度2–6这一条主筛选：候选空间从10000变成5580，排除4420。文章把起点、终点和排除量逐项算清，并明确停止在这一层，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "前四直选",
+    "跨度注数计算",
+    "候选空间",
+    "筛选核对"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩前四直选跨度注数计算：10000个候选为什么变成5580个，排除4420个怎么算"
+}

@@ -1,0 +1,113 @@
+{
+  "angle_signature": "82b2fb9779fc439500dc",
+  "approved_at": "2026-08-17T01:01:35.035783+00:00",
+  "article_id": "LCM-ANGLE-6fc1ff9b6c5b9e40",
+  "case_scope": "mechanics_only",
+  "category": "腾讯分分彩技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "分分彩五星直选的候选空间是有序五位数字，每位从0到9取值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文明确说明五星直选的空间类型。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文把奇偶筛选的固定条件写为五位中恰好有2个奇数。",
+      "claim_type": "methodology",
+      "evidence_note": "公开正文明确给出筛选参数odd_count=2。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "五位中恰好2个奇数时，保留空间为31250个，起始空间为100000个。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文给出组合计数：从5个位置选2个奇数位，并结合每位5种奇偶取值得到31250。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛选完成后，本阶段应停止，不应临时追加位置、和值、跨度、频率或遗漏条件。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文强调单阶段合同与停止边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确给出风险边界与误区说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看范围</h2><p>本文只讨论“分分彩五星直选奇偶筛选步骤”的研究版写法。主题保留在五星直选与奇偶筛选，不提供任何具体选号建议。</p><p>这里的核心是机制理解：五星直选按五个位置组成有序组合，奇偶筛选只是对组合结构做统计分类，不是对未来结果作承诺。</p><h2>筛选机制</h2><p>五星直选可以看作五个位置依次取值，每位都来自0到9。这样得到的是有序五位组合，位置不能互换，重复数字也不会因为重复而被删除。</p><p>奇偶筛选关注的是五个位置里奇数出现了多少次。本文固定讨论“恰好2个奇数”这一类，用它来说明参数预注册和复算方法。</p><p>这类分类只能说明样本如何落入不同结构区间，不能单独证明未来预测优势。</p><h2>怎么复算</h2><p>复算时，先把五个位置逐位标记为奇或偶，再统计奇数个数是否等于2。符合条件的组合保留，不符合的组合排除。</p><p>从组合数学看，恰好2个奇数的位置有若干种安排，每个奇数位有5种取法，其余位置也各有对应取法，所以可以得到一个固定的理论规模。这个规模适合用来核对计算过程，不适合被写成收益判断。</p><p>如果要做历史复盘，也只能检查记录格式、参数是否一致、样本是否可复算，不能把历史频率直接当成未来结论。</p><h2>常见误区</h2><p>第一个误区，是把结构分类理解成预测信号。结构分类只是描述组合形态，不能证明后续一定更优。</p><p>第二个误区，是在看过样本后再改参数。研究版写法要求参数先固定，再回头检查样本，这样才有基本的可复算性。</p><p>第三个误区，是把历史样本中的波动当成稳定规律。随机波动本来就会让短期样本看起来“有形状”，但这不等于规律可迁移。</p><h2>研究边界</h2><p>公开版只保留教育和研究用途：说明概念、说明计算、说明复盘方式。凡是涉及具体候选号码、下一步操作、投注路径或资金安排的内容，都不放进正文。</p><p>因此，本文的停止点也很明确。只要完成结构理解、参数固定和样本复算，就已经完成这一主题的公开说明，不再继续扩展为执行清单。</p>",
+  "content_format": "html",
+  "content_hash": "cf6f07a217608393f3ceaf3bf1c69c4fea282f33f2a270071780a5987c821a9f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "894cf6a91547a258e67343be9246a3afeddabeb7db2c9d8fd2425f75e22ed136",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "面向研究与教育的分分彩五星直选奇偶筛选步骤说明，保留有序五位组合、参数预注册、组合计数与历史复盘方法，强调结构分类不能单独证明未来预测优势。",
+  "parent_content_hash": "f0714e4f62af1e39618af74c090405e6029e07618f48f56a8f443994b0a2884e",
+  "parent_fingerprint": "6fc1ff9b6c5b9e40c1bf6be6352dfbfce4e5647b25e782a57c5a34fbb70553f6",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选奇偶筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0d2b9d9ba91d37ed016a825797d1e0819ab4ba0ba23bc35458",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T01:01:35.035800+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-6fc1ff9b6c5b9e40:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩五星直选奇偶筛选步骤的机制、参数固定、组合计数与复盘边界",
+  "secondary_keywords": [
+    "分分彩五星直选奇偶筛选步骤",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选奇偶筛选步骤：机制、计数与复盘边界",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-odd_even_filter-position_filter-execution_checklist",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "公开版保留分分彩五星直选奇偶筛选步骤的机制解释、参数预注册、组合计数和复盘边界，删除了任何具体选号、下注和执行建议。",
+  "tags": [
+    "分分彩五星直选筛选",
+    "分分彩奇偶筛选",
+    "五星直选技巧",
+    "候选空间复算",
+    "执行清单"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "分分彩五星直选奇偶筛选步骤：机制、计数与复盘边界"
+}

@@ -1,0 +1,279 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "按固定的两层筛选顺序，核对后二直选候选空间如何从100个减少到36个，并明确总排除64个。",
+    "evidence_mode": "static_only",
+    "excluded_space": 64,
+    "final_space": 36,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对后二直选的候选空间计算，逐项确认100到36以及排除64个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "b2caff660b9f30794f02",
+  "approved_at": "2026-08-17T00:41:53.998936+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-d961205292116933",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58>span_range[min=2,max=6/static]:58->36",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选和值跨度注数计算",
+    "reader_question": "核对后二直选的候选空间计算，逐项确认100到36以及排除64个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100、终点36、排除64。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 64,
+      "final_space": 36,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对后二直选的候选空间计算，逐项确认100到36以及排除64个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100、终点36、排除64。",
+    "title": "分分彩后二直选和值跨度注数计算：100个候选为什么变成36个，排除64个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-c565c9a6123a16a0",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选的候选对象是两个有位置顺序的数字，第一位和第二位分别取0到9，因此起点候选空间是100个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按有序两位候选空间计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文固定使用两层顺序：先筛和值6–12，再筛跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "阶段顺序和静态参数由系统研究合同预先固定，不归因于来源。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一层是和值6–12：before_space为100，after_space为58，本层排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的静态阶段计算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本层的数量关系是100−58=42。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层候选空间的确定性减法。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层是在剩余空间上筛跨度2–6：before_space为58，after_space为36，本层再排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的静态阶段计算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本层的数量关系是58−36=22。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层候选空间的确定性减法。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层完成后，最终候选空间是36个。",
+      "claim_type": "calculation",
+      "evidence_note": "多层合同的最终空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "从起点到终点一共排除64个，计算为100−36=64。",
+      "claim_type": "calculation",
+      "evidence_note": "整体候选空间的确定性计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "36个表示筛选后仍保留的候选空间大小，不表示命中率、准确率或未来结果。",
+      "claim_type": "editorial",
+      "evidence_note": "空间计算与结果预测是不同概念。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这些参数由系统研究预先固定，不能写成来源推荐，也不能因为演示样本出现某个和值或跨度就临时修改。",
+      "claim_type": "editorial",
+      "evidence_note": "参数归属和先冻结后观察的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "案例披露标签，来自case_bundle的演示范围。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only范围限制。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成第二层后应停止；只有新增条件同时具备已验证规则或证据、能够复算，并在下一次观察前预先冻结，才允许继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件和后续实验边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从100个缩到58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从58个缩到36个，排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100个缩到36个，总排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这里讨论的是分分彩后二直选和值跨度注数计算。后二直选的候选对象是两个有位置顺序的数字，第一位和第二位分别取0到9，因此起点候选空间是100个。</p><p>“有位置顺序”意味着两个位置要分别保留。本文只核对候选空间的数学变化，不把空间缩小解释成结果优势。</p><h2>逐层计算保留与排除</h2><p>本文固定使用两层顺序：先筛和值6–12，再筛跨度2–6。两个参数都在查看演示内容前固定，属于系统研究参数，不是来源推荐。</p><h3>第一层：和值6–12</h3><p>第一层是和值6–12：before_space为100，after_space为58，本层排除42个。</p><p>本层的数量关系是100−58=42。这里的42只是没有通过和值区间的候选数量。</p><h3>第二层：跨度2–6</h3><p>第二层是在剩余空间上筛跨度2–6：before_space为58，after_space为36，本层再排除22个。</p><p>本层的数量关系是58−36=22。第二层的输入必须是第一层保留的58个，而不是重新回到100个计算。</p><h2>核对100、36和64</h2><p>两层完成后，最终候选空间是36个。</p><p>从起点到终点一共排除64个，计算为100−36=64。分层核对时，也可以把两层排除数相加：42+22=64。</p><p>因此，本合同的完整链路是：100个起始候选，经过和值6–12后剩58个，再经过跨度2–6后剩36个，累计排除64个。</p><h2>实际怎么操作</h2><ol><li>先建立后二直选的有序两位空间，记录起点为100个候选。</li><li>在观察任何样本前，先固定和值区间为6–12。</li><li>逐项复算第一层，确认100个变为58个，并记录排除42个。</li><li>只对第一层留下的58个候选计算跨度，固定跨度区间为2–6。</li><li>逐项复算第二层，确认58个变为36个，并记录本层排除22个。</li><li>最后核对100−36=64，完成合同规定的两层计算后停止。</li></ol><p>实际操作时，筛选前规模是100个，完成全部合同阶段后的主筛选规模是36个，合计筛掉64个。</p><h2>为什么这些数字不是命中率</h2><p>36个表示筛选后仍保留的候选空间大小，不表示命中率、准确率或未来结果。候选数量的减少只说明集合经过了两个条件处理，不能单独推出未来表现。</p><p>演示数据，不是真实开奖记录。</p><p>演示标签只说明案例用途。来自演示数据的样本条数、开奖号、和值、跨度、频率或遗漏，不能替代本篇的静态空间计算。</p><h2>边界与误区</h2><p>这些参数由系统研究预先固定，不能写成来源推荐，也不能因为演示样本出现某个和值或跨度就临时修改。</p><p>本文不讨论未核验的平台经济参数。</p><p>也不要把统计描述包装成预测优势。即使某个样本呈现出特定和值、跨度或频率，它仍然只是演示范围内的描述，不能改变100、58、36和64的计算口径。</p><h2>停止条件</h2><p>完成第二层后应停止；只有新增条件同时具备已验证规则或证据、能够复算，并在下一次观察前预先冻结，才允许继续缩小候选空间。</p><p>在当前合同下，不临时加入第三层过滤器。这样才能保留清楚的复算路径：100→58→36，排除42+22=64。</p>",
+  "content_format": "html",
+  "content_hash": "893d5eb44fb36467f7d0798f300fa8dc4ab07407d52ff29e0867efbf8bb00fb7",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "c565c9a6123a16a0baab1cd1cc6b05d07d281627d88c334d621359be41e1df52",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值跨度注数计算案例讲解：按固定顺序核对候选空间从100个到36个，并说明排除64个的计算过程与停止条件。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成和值6–12和跨度2–6两层后，候选空间为36个。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据、可以独立复算，并且在下一次观察前完成参数冻结时，才允许继续缩小候选空间。",
+    "parameter_freeze_rule": "先固定和值6–12、跨度2–6及阶段顺序，再查看样本；不得根据演示样本临时调整参数。",
+    "starting_space": "后二直选的有序两位候选空间为100个。",
+    "steps": [
+      "建立有序两位候选空间，确认起点为100个。",
+      "预先固定第一层和值区间为6–12，并从100个复算到58个，排除42个。",
+      "在58个保留候选上固定第二层跨度区间为2–6，复算到36个，再排除22个。",
+      "核对整体结果：100−36=64，或42+22=64。",
+      "完成第二层后停止，不加入合同外过滤器。"
+    ],
+    "stop_condition": "完成最后一层跨度2–6后停止；任何额外过滤器都必须另有已验证规则或证据、可复算，并在下一次观察前冻结。"
+  },
+  "primary_keyword": "分分彩后二直选和值跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_094e0aff282e9a5a016a82588c7e4487d0831c18387a52972b",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "核对后二直选的候选空间计算，逐项确认100到36以及排除64个的确定性结果",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩后二直选和值跨度注数计算：100个候选为什么变成36个，排除64个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-后二直选-position_filter-span_range-space_math",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "围绕分分彩后二直选和值跨度注数计算，按固定的和值6–12、跨度2–6两层顺序，复算候选空间从100个到36个，并核对总排除64个。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值筛选",
+    "跨度筛选",
+    "候选空间计算"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "分分彩后二直选和值跨度注数计算：100个候选为什么变成36个，排除64个怎么算"
+}

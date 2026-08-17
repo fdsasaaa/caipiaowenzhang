@@ -1,0 +1,170 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点10、终点8、排除2。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 2,
+    "final_space": 8,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到8以及排除2个的确定性结果",
+    "sample_stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "4a40c8498bf53cf59c9b",
+  "approved_at": "2026-08-17T00:54:59.056105+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-eaefc3488fde0b01",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "omission_threshold[lookback=12,threshold=2/sample]:10->8",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选遗漏注数计算",
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到8以及排除2个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点10、终点8、排除2。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 2,
+      "final_space": 8,
+      "sample_stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对一星直选的候选空间计算，逐项确认10到8以及排除2个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点10、终点8、排除2。",
+    "title": "分分彩一星直选遗漏注数计算：10个候选为什么变成8个，排除2个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-484880f18c83f34d",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "一星直选的候选空间先按10个数字看，再经过近12期当前遗漏≥2数字池筛选后变成8个，确定性排除了2个。",
+      "claim_type": "calculation",
+      "evidence_note": "对应主筛选合同的起点、终点和排除数；按演示数据复算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里的10到8不是命中率变化，而是候选数字池从10个收缩到8个。",
+      "claim_type": "editorial",
+      "evidence_note": "解释数字含义，避免把空间收缩写成命中率。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "按 mechanics_only 约束给出边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注为演示数据，不能写成真实开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只看一星直选的候选空间，不把它写成真实开奖记录结论。这里用的是演示数据，不是真实开奖记录。</p><p>主筛选合同固定为：<strong>个位</strong>、<strong>近12期当前遗漏≥2数字池</strong>。按这个合同，起点是10个候选，终点是8个候选，排除2个。</p><h2>逐层计算保留与排除数量</h2><p>第一步先固定参数，再看样本。合同里给出的参数是看近12期，阈值是遗漏≥2。这个筛选只做空间收缩，不额外引入第二条未验证规则。</p><p>按演示数据复算后，满足条件的数字池是8个：0、1、2、3、4、6、7、9。对应被排除的是2个：5、8。</p><p>所以，<strong>10 - 8 = 2</strong>。这2个是被主筛选排除的候选，不是输赢结果，也不是下一期会不会出的判断。</p><h2>核对起点、终点和总排除</h2><p>起点空间是10，表示个位上原始候选按0到9共10个数字计算。</p><p>主筛选后的空间是8，表示通过“近12期当前遗漏≥2数字池”后保留下来的数字池规模。</p><p>总排除是2，表示从10个候选中剔除了2个，剩下8个。</p><h2>为什么这些数字不是命中率</h2><p>这里的8和2只是在描述候选池大小，不是命中率、准确率、胜率，也不是收益率。</p><p>演示数据里列出的遗漏、频率、和值、跨度，都只是样本状态描述；它们能用于复算筛选结果，但不能单独变成未来优势承诺。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这套主筛选只说明“哪些数字留在池里，哪些数字被排除”。它不说明被保留下来的数字下一期更可能出现。</p><p>另外，本文不讨论未核验的平台经济参数，也不把来源提到的经验写成可验证的预测优势。</p><h2>实际怎么操作</h2><p>1. 先固定筛选对象：只看个位的一星直选候选空间，起点按10个数字计算。</p><p>2. 再固定主筛选参数：使用“近12期当前遗漏≥2数字池”，不要临时加第二个过滤器。</p><p>3. 按固定参数复算：把满足条件的数字记为保留池，本例保留8个，排除2个。</p><p>4. 核对空间变化：确认起点10、终点8、排除2三项一致，再进入下一步判断。</p><p>5. 到这里就停止：如果没有新增且已验证、可复算的规则或证据，不继续缩小候选。</p><h2>停止条件</h2><p>本文只完成合同要求的这一层主筛选。只有当新增条件也有已验证规则或证据，并且能复算时，才允许继续缩小候选空间。</p><p>没有第二条已验证规则时，就不再往下加过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "6648f11e901769c40c66a38e088147a519a6b7c66c175f7c8b405049eae5099c",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "484880f18c83f34dac988264ce25a7d8a681d133ab22bbe4a346e492d92b31f3",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选遗漏注数计算：用演示数据核对个位主筛选，明确10个候选如何收缩为8个，以及排除2个的确定性结果。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "8个候选",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；没有这类新增条件时，停止在主筛选结果。",
+    "parameter_freeze_rule": "先固定个位、一星直选、近12期、遗漏≥2这组主筛选参数，再看样本复算；不得在观察结果后临时改参数。",
+    "starting_space": "10个候选",
+    "steps": [
+      "先把候选空间定为个位的一星直选，共10个数字。",
+      "固定主筛选参数：近12期、遗漏≥2、数字池筛选。",
+      "按演示数据复算，得到保留8个数字。",
+      "核对排除数量：10个减去8个，排除2个。",
+      "确认没有第二条已验证规则时，停止在这一层，不再继续加过滤器。"
+    ],
+    "stop_condition": "完成10到8、排除2的主筛选核对后停止；若没有新增且可复算的已验证条件，不再缩小候选。"
+  },
+  "primary_keyword": "分分彩一星直选遗漏注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_053e29d2e0a3822e016a825bc73a5c8195a0829e79bab41d07",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "核对一星直选的候选空间计算，逐项确认10到8以及排除2个的确定性结果",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选遗漏注数计算：10个候选为什么变成8个，排除2个怎么算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-omission_threshold-position_filter-space_math",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文只做一层主筛选的空间核对：个位一星直选按近12期当前遗漏≥2数字池收缩，起点10个候选，保留8个，排除2个。内容明确区分候选空间和命中率，并给出可复算的停止条件。",
+  "tags": [
+    "分分彩一星直选遗漏注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "分分彩一星直选遗漏注数计算：10个候选为什么变成8个，排除2个怎么算"
+}

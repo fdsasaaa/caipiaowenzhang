@@ -1,0 +1,104 @@
+{
+  "angle_signature": "be31332d0bfb29508595",
+  "approved_at": "2026-08-17T01:11:15.088334+00:00",
+  "article_id": "LCM-ANGLE-d13d0b0cbc9bef95",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文将筛选过程拆分为两个预先确定的阶段，并按固定顺序讨论：先检查奇偶结构，再依据近12期的当前遗漏条件进行历史复盘。",
+      "claim_type": "methodology",
+      "evidence_note": "这是公开版对文章主题和复算框架的编辑性概括，不提供具体候选项或未来选择建议。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "一星直选关注单个位置的结果，筛选条件会改变待研究样本的组合空间，但不会改变随机结果的生成规则。",
+      "claim_type": "rule_fact",
+      "evidence_note": "该表述属于玩法机制说明，引用父稿提供的规则参考。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开发布所需的风险与证据边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成预先登记的最后一个筛选阶段后，应保留完整复盘记录，并停止继续添加未经验证的条件。",
+      "claim_type": "methodology",
+      "evidence_note": "这是参数预注册和实验边界建议，不构成未来选择指令。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>研究对象与固定顺序</h2><p>本文讨论“分分彩一星直选遗漏奇偶筛选顺序”这一检索主题，重点是如何复核两层筛选的先后关系，而不是给出具体候选项或下一期建议。</p><p>研究流程应在查看历史样本前预先登记。第一层观察目标是奇偶结构，要求结构条件保持一致；第二层再检查近12期的当前遗漏条件。两层之间不临时交换顺序，也不临时增加新的筛选条件。</p><p>一星直选只涉及一个位置的结果。筛选只是对研究样本进行分类和整理，不会改变随机结果的生成机制。</p><h2>两层筛选如何复核</h2><h3>第一层：奇偶结构</h3><p>先记录原始研究空间，并定义“恰好一个单号”这一结构条件。复核时只判断样本是否满足该条件，同时记录筛选前数量、筛选后数量和被排除数量。</p><p>这一层的作用是检验结构分类是否按照预注册定义执行。它不承担遗漏判断，也不能被解释为对未来结果的方向判断。</p><h3>第二层：当前遗漏条件</h3><p>在第一层留下的研究对象上，再按照预先规定的近12期观察窗口计算当前遗漏条件。计算过程应明确窗口范围、遗漏定义、缺失数据处理方式和边界情况。</p><p>第二层完成后，应再次记录筛选前后数量及差值，并核对是否引入了第一层没有登记的新参数。历史窗口中的分类结果只适合用于复盘和比较，不能自动转化为未来优势。</p><h2>记录表与停止条件</h2><p>建议使用统一记录表保存每层的规则名称、参数版本、样本范围、筛选前数量、筛选后数量和排除数量。这样可以区分规则本身与某一段历史样本的偶然结果。</p><p>当预先登记的最后一层完成后，研究流程应停止。若要研究第三层或改变阈值，应另行建立实验方案，并在观察新样本前冻结参数，避免根据已经看到的结果反向调整条件。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。更可靠的研究还需要区分训练样本与样本外数据，比较不同窗口和不同市场阶段，并报告随机波动带来的不确定性。</p><h2>常见误区</h2><p>把“筛选后样本变少”理解为“更容易出现”，是常见误区。空间缩小只说明分类条件更严格，不代表单个结果的基础概率因此改变。</p><p>另一个误区是把高遗漏、奇偶结构或短期频次当成必然回补信号。它们可以作为描述历史数据的变量，但不能单独承担预测结论。</p><p>公开研究应同时保留未筛选基线、筛选规则和样本外检验结果，并避免使用收益、命中或稳定性的承诺性表述。</p>",
+  "content_format": "html",
+  "content_hash": "a4f9650ce2951def2c7ec4d0acf2eb9088260b2888f4ddf113734297c6047b62",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "27cef4c40baa5de5b77763c7fa526af70011ec4148fd1e39d77f7d7a4c7aa0b0",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "multistage_order",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "围绕“分分彩一星直选遗漏奇偶筛选顺序”解释两层筛选的预注册、历史复盘、样本外验证与停止条件，不提供具体候选项或未来选择建议。",
+  "parent_content_hash": "7e4a2064125edd8d11374e78efa85486004d25c6199d96e9bed8b8549e2a330d",
+  "parent_fingerprint": "d13d0b0cbc9bef954922b3e975b24dc02f357843ec8e996b0505341fef337b67",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选遗漏奇偶筛选顺序",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0fd84abc41d8fcd9016a825cc519248196ac14914028cdcfdf",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T01:11:15.088352+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-d13d0b0cbc9bef95:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "理解并复核一星直选中奇偶结构与近12期当前遗漏条件的固定研究顺序、记录方法和最后一层后的停止边界。",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏奇偶筛选顺序",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选遗漏奇偶筛选顺序：两层规则如何复核与停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选遗漏奇偶筛选顺序-恰好1个单号-近12期当前遗漏2数字池",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-006580"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文以教育和研究为导向，说明如何预先登记奇偶结构与近12期当前遗漏条件的两层顺序，记录每层的样本变化，并强调结构分类和历史表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩一星直选遗漏奇偶筛选顺序",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩奇偶筛选",
+    "分分彩遗漏阈值"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "分分彩一星直选遗漏奇偶筛选顺序：两层规则如何复核与停止"
+}

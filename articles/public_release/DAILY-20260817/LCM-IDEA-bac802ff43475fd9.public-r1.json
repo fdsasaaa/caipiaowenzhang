@@ -1,0 +1,110 @@
+{
+  "angle_signature": "196325ede899cfeb9805",
+  "approved_at": "2026-08-17T00:21:54.117532+00:00",
+  "article_id": "LCM-IDEA-bac802ff43475fd9",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "分分彩中三直选属于有序三位组合，未做跨度筛选前共有1000个候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "由三位每位0到9的组合空间推得。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度的计算方式是三个数字中的最大值减最小值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是公开正文中的机制定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度2–6合计保留660个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由跨度2到6各自的组合数汇总得到。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "候选空间从1000到660的变化，只说明这条规则在组合空间中的筛选数量，不说明未来结果会因此改变。",
+      "claim_type": "editorial",
+      "evidence_note": "这是面向公开版的风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必须明确的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法范围</h2><p>本文讨论的是<strong>分分彩中三直选跨度技巧</strong>里的机械筛选问题。对象是中三直选的有序三位组合，先把全部候选空间看清楚，再讨论跨度怎么计算。</p><p>在这个玩法里，三个位置各自都可以取0到9之间的数字，所以未做筛选前，一共有1000个候选。</p><p>这里强调的是组合空间，不是下注建议，也不是未来结果判断。</p><h2>跨度机制</h2><p>跨度的定义很直接：用三个数字里的最大值减去最小值。</p><p>中间那个数字会影响组合本身，但不改变跨度的定义。只要最大值和最小值不变，跨度就不变。</p><p>本文把跨度区间固定为2到6，只用于说明怎样按规则复算候选数量。</p><h2>复算过程</h2><p>跨度按不同数值分组后，可以逐类统计候选数量。每一类都来自同一条定义：先定最小值，再看最大值与排列方式，最后汇总成该跨度下的组合数。</p><p>把跨度为2到6的各类候选加总后，合计是660个。与总空间1000相比，差额是340个。</p><p>这说明筛选规则改变的是候选规模，不是结果方向。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。</p><h2>常见误区</h2><p>第一种误区，是把“筛掉一部分候选”理解成“因此更容易命中”。这两件事不是一回事。</p><p>第二种误区，是用历史样本里的某个结构直接推出下一次会重复出现。样本可以用来复盘，不能单独替代验证。</p><p>第三种误区，是在没有固定参数前先看样本，再回头改区间。公开讨论里应先冻结规则，再做样本外检查。</p><p>如果要继续研究，更合适的方法是把规则先写清楚，再看它在不同样本上的稳定性，而不是把一次整理结果当成结论。</p>",
+  "content_format": "html",
+  "content_hash": "b330878ced339c552d5d59be0bf4793b54a2dc5d6752d3085f3a216c98002f5d",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "13c92daeca5c26339e74cb335d2c468cc7bdc315dbfc861be8a097936b290a1c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释分分彩中三直选跨度技巧：什么是跨度、如何复算候选空间、为什么筛选规模变化不等于预测优势。",
+  "parent_content_hash": "d0598ba36b8339cca616078dda3544f0ff5e8dd71937d32449ff5aff2f80b0ea",
+  "parent_fingerprint": "bac802ff43475fd93bc36b16f1432b22d87398c6ef85a8bd911c17043e87bb22",
+  "play": "中三直选",
+  "primary_keyword": "分分彩中三直选跨度技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0219f763700e794d016a824df5aa988199a9df808ff1742aca",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-08-17T00:21:54.117549+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-bac802ff43475fd9:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "理解中三直选里跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩中三直选跨度技巧：跨度2–6怎么理解与复算",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三直选-span_range",
+  "source_batch_id": "DAILY-20260817",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "公开版用机械视角解释分分彩中三直选跨度技巧，说明跨度定义、候选空间和区间筛选的含义，并明确历史结构不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩中三直选跨度技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "跨度筛选",
+    "组合空间"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "分分彩中三直选跨度技巧：跨度2–6怎么理解与复算"
+}

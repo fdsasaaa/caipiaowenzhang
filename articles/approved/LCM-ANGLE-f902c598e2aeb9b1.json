@@ -1,0 +1,206 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 21996,
+    "final_space": 78004,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值15–30"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "和值15–30"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "2ec482ff7d6d9e54ae5a",
+  "approved_at": "2026-08-16T23:52:34.723328+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-8a9e3c6823dd0318",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=15,max=30/static]:100000->78004",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选和值参数设置",
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 21996,
+      "final_space": 78004,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值15–30"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "和值15–30"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩五星直选和值参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-f902c598e2aeb9b1",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论五星直选的系统研究预设参数边界，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑范围说明，不引入外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这个主筛选只保留和值15到30的五星直选候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已给定的生产过滤合同。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个主筛选把候选空间从100000缩到78004，筛掉21996个。",
+      "claim_type": "calculation",
+      "evidence_note": "按合同给定的起止空间直接复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值15–30是系统研究预设，不是来源推荐。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅作边界说明，不能写成来源指定。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值15–30只说明这一轮筛选的参数边界，不证明有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "不把空间缩小包装成结果优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按 case_bundle 的强制标签标注。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里有12条样本，最新一条是46275。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的样本描述，不用于证明预测。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里最新一条的和值是24、跨度是5、大小形态是小大小大大。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的样本描述，不用于证明预测。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>这篇只看一个主筛选：<strong>分分彩五星直选和值参数设置</strong>里的和值15–30。这个参数属于系统研究预设，不是来源推荐，也不是原文替你选出来的结论。</p><p>按合同，五星直选的候选空间先按5位有序号码看，起始空间是100000。主筛选只保留和值15到30，筛完后空间是78004，合计筛掉21996个。</p><h2>哪些结果由演示样本计算</h2><p>下面这组是<strong>演示数据，不是真实开奖记录</strong>。样本有12条，最新一条是46275。它的和值是24，跨度是5，大小形态是小大小大大。</p><p>这类样本只用来做复算展示，不构成预测证明。你可以把它当成“怎么看一条演示数据”的例子，而不是“这组参数会带来什么结果”的证据。</p><h2>来源能支持什么、不能支持什么</h2><p>来源只支持五星直选这一类玩法的已验证机制：什么是五星、什么是和值筛选、怎样按规则算出保留空间。来源不支持把和值15–30说成原文推荐，也不支持把它写成预测优势。</p><p>所以，写作时要分清两层。第一层是规则层：和值范围可以按已验证机制复算。第二层是归属层：这个范围是系统研究预设，不是来源替你指定。</p><h2>为什么不能事后改参数</h2><p>参数必须先固定，再看样本。否则很容易把“先看结果、再回头挑区间”写成像是有效方法，但那不是合同要求的做法。</p><p>这篇只允许一个主筛选：和值15–30。没有第二条已验证规则或证据时，就不能临时再加新过滤器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>把100000缩到78004，只说明筛选动作发生了，不说明预测更强了。</p><p>同样，演示样本里出现的和值、跨度、频率、大小形态，都只能当描述性结果。它们可以复算，但不能自动升级成结论。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇的停止条件很明确：把主筛选说明清楚，把空间变化复算清楚，把来源边界说清楚，就结束。</p><p>如果后面要继续缩小候选，前提只能是新增条件也有已验证规则或证据，而且能够复算。没有这个前提，就不加第二层过滤。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选参数：五星彩直选只看和值15–30，不先看样本结果。</li><li>再按合同复算空间：从100000算到78004，确认一共筛掉21996个。</li><li>把来源和参数分开写：来源只负责说明机制背景，不负责替你指定这个静态参数。</li><li>检查样本只做展示：演示数据要明确标注，不把12条样本写成真实开奖记录。</li><li>到这里就停：如果没有新增且已验证的规则，就不要再加第二个过滤器。</li></ol><p>这就是这组 <strong>分分彩五星直选和值参数设置</strong> 的边界：它是系统研究预设，不是来源推荐，也不证明预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "02980f3255fe9ce34d85045c3aae217035587c0aad996f16a2618bf3b8e31f81",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "f902c598e2aeb9b17699e6047998a8421aff7ca51ee8d00c44a694b5b108f186",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选和值参数设置案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "78004",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定主筛选参数，再看样本；本篇只允许和值15–30这一项主筛选，不在观察结果后临时改参数。",
+    "starting_space": "100000",
+    "steps": [
+      "固定主筛选参数和值15–30，不先看样本结果。",
+      "按已验证机制把候选空间从100000复算到78004。",
+      "记录被筛掉的21996个候选，确认只发生了这一层缩小。",
+      "把演示数据明确标成演示，不把12条样本写成真实开奖记录。",
+      "检查是否存在第二条已验证规则；没有就停止，不再加新过滤器。"
+    ],
+    "stop_condition": "完成主筛选、空间复算和边界说明后停止；没有新增已验证规则或证据时，不再继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_06037c91bed05fc5016a824d23aa7087d2b2518aa7364ba238",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩五星直选和值参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩五星直选和值参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-sum_range-parameter_boundary",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这篇只讲一个边界：分分彩五星直选和值参数设置里的和值15–30属于系统研究预设，主筛选后候选空间从100000降到78004，筛掉21996个；演示数据仅用于复算展示，不代表真实开奖记录，也不证明预测优势。",
+  "tags": [
+    "分分彩五星直选和值参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "分分彩五星直选和值参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐"
+}

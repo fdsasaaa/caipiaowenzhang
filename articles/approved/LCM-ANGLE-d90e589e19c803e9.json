@@ -1,0 +1,221 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能按固定顺序复算每一步，并知道何时必须停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 7,
+    "final_space": 3,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行恰好1个大号→恰好1个单号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "4247044c51047193fa1d",
+  "approved_at": "2026-08-17T00:13:40.079232+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-9ef460014eddeafc",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=1/static]:10->5>odd_even_filter[odd_count=1/static]:5->3",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选大小奇偶筛选步骤",
+    "reader_question": "按固定顺序执行恰好1个大号→恰好1个单号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 7,
+      "final_space": 3,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行恰好1个大号→恰好1个单号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩一星直选大小奇偶筛选步骤：实际操作按哪几步做，筛到3个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-d90e589e19c803e9",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的是分分彩一星直选大小奇偶筛选步骤的操作合同，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同边界说明本文范围，不引入经济数字。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示样本属性。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第1层 恰好1个大号: 10 -> 5，排除 5；basis=experimental_parameter；support_mode=verified_rule_calculation",
+      "claim_type": "calculation",
+      "evidence_note": "机器合同给出的第一层候选空间收缩结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层 恰好1个单号: 5 -> 3，排除 2；basis=experimental_parameter；support_mode=verified_rule_calculation",
+      "claim_type": "calculation",
+      "evidence_note": "机器合同给出的第二层候选空间收缩结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "整体：10 -> 3，总排除 7。",
+      "claim_type": "calculation",
+      "evidence_note": "两层合同完成后的总候选空间收缩结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个合同只负责把候选空间从 10 缩到 3，不代表预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "对空间收缩与预测优势作边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从10个缩到5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从5个缩到3个，排除2个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从10个缩到3个，总排除7个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>执行前检查参数</h2><p>先确认这篇文章只处理一星直选的大小奇偶筛选步骤，读者视角里统一按分分彩来理解。本文使用的是系统已经固定好的两层合同：先做“恰好1个大号”，再做“恰好1个单号”。参数先冻结，再看样本；这里不临时加第三层。</p><p>演示数据，不是真实开奖记录。下面的样本只用于说明怎么复算空间变化，不用于说明真实走势。</p><p>起始候选空间是 10，完成两层后剩 3，总共排除 7。这个变化只表示候选空间收缩，不表示预测优势。</p><h2>实际操作步骤清单</h2><ol><li>先把起始空间写成 10，确认你处理的是个位这一层的一星直选候选。</li><li>执行第一层：按“恰好1个大号”过滤。系统合同给出的结果是 10 变成 5，排除 5。</li><li>执行第二层：在上一步剩下的 5 个候选上，再按“恰好1个单号”过滤。系统合同给出的结果是 5 变成 3，排除 2。</li><li>把两层结果合起来核对：10 变 3，合计排除 7。</li><li>到这里就停止，不再临时加新过滤器；如果要继续缩小候选，必须先有新的已验证规则或证据，并且在下一次实验前固定参数。</li></ol><h2>每一步如何核对结果</h2><p>第一步只看参数，不看结果。你先确认大号条件是固定的“1”，也就是恰好筛出 1 个大号。只要参数没固定，后面的空间计算就没有意义。</p><p>第二步核对的是空间变化，不是命中率。第一层从 10 到 5，说明有 5 个候选被排除；这一步的工作只是复算“剩多少”，不是判断“准不准”。</p><p>第三步继续沿用同样方法。第二层从 5 到 3，说明又排除了 2 个候选。你只需要把前一层的剩余空间当作本层输入，不能回头改第一层参数。</p><p>第四步检查总账。两层都完成后，最终空间是 3，总排除是 7。只要你复算得到同样的 10、5、3 这组数，说明你执行顺序没有错。</p><h2>何时必须停止</h2><p>一旦完成最后一层，就必须停止。这里的合同已经明确给出两层，不能因为结果看起来更窄，就再补一层没有验证过的新条件。</p><p>如果你想继续缩小候选，只能等下一次实验：先找到新增条件的已验证规则或证据，再把参数固定后重新计算。没有这一步，就不要把临时想法塞进当前流程。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这个合同只负责把候选空间从 10 缩到 3，不代表预测优势。大小、奇偶、遗漏、频率这些词，在这里都只是在描述筛选和样本，不是自动成立的结论。</p><p>演示样本里出现的和值、跨度、遗漏和频率，都只能当作演示数据的描述信息来看，不能倒推出真实开奖规律。来源材料也只说明技术家族背景，不能替代这份合同里的固定参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>停止条件很简单：两层都做完，就结束。不要把已经完成的空间收缩再包装成更强的结论，也不要在没有新证据时临时叠加更多过滤器。</p><p>如果后面真的要扩展流程，唯一合规的做法是先补足新的已验证规则，再从头冻结参数，重新跑一遍。</p><h2>演示样本说明</h2><p>演示数据，不是真实开奖记录。样本仅用于展示合同如何执行，不构成预测。</p><p>这组演示样本的目标很单纯：让你按固定顺序复算、核对每层前后空间，并在两层完成后立即停止。</p>",
+  "content_format": "html",
+  "content_hash": "8c3fd4f8edc8ab1515cbedb93a28a3c48a84b5817eec0267916b1480077aa7d4",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260817",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "d90e589e19c803e91c79b819f47b5a129ddb806ec8f4fbe0ec4ea3f00bfb5ccb",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选大小奇偶筛选步骤：按固定顺序执行恰好1个大号→恰好1个单号，复算候选空间从10缩到3，并明确完成合同后必须停止。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成两层合同后，候选空间从10缩到3，总排除7；到这里停止，不再临时加新过滤器。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且能在下一次实验前固定参数时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数，再看样本；本合同只执行已冻结的两层：恰好1个大号，然后恰好1个单号。",
+    "starting_space": "10",
+    "steps": [
+      "确认对象是分分彩一星直选的个位候选，起始空间记为10。",
+      "固定第一层参数为恰好1个大号，先做这一层，不跳步。",
+      "复算第一层结果：10变5，排除5。",
+      "在剩余5个候选上固定第二层参数为恰好1个单号，再做这一层。",
+      "复算第二层结果：5变3，排除2，并核对总排除为7。",
+      "完成两层后立即停止，不临时加新过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器都必须另有已验证规则或证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩一星直选大小奇偶筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_08135f1fd7301cf6016a825211c94c81909bf3c42756dea406",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "按固定顺序执行恰好1个大号→恰好1个单号，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩一星直选大小奇偶筛选步骤",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "分分彩一星直选大小奇偶筛选步骤：实际操作按哪几步做，筛到3个后什么时候必须停止",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选大小奇偶筛选步骤-实际操作按哪几步做-筛到3个后什么时候必须停止",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "这是一份分分彩一星直选大小奇偶筛选步骤的执行清单：先固定参数，再按恰好1个大号、恰好1个单号的顺序复算候选空间，从10缩到3后立即停止。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "大小筛选",
+    "奇偶筛选",
+    "执行清单",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "分分彩一星直选大小奇偶筛选步骤：实际操作按哪几步做，筛到3个后什么时候必须停止"
+}

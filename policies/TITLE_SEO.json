@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "contract_version": "1.0",
+  "candidate_min": 3,
+  "candidate_max": 5,
+  "title_min_chars": 10,
+  "title_max_chars": 48,
+  "duplicate_similarity_threshold": 0.84,
+  "audit_similarity_threshold": 0.78,
+  "minimum_distinct_candidate_structures": 3,
+  "minimum_candidates_without_lottery_prefix": 2,
+  "generic_prefix_patterns": [
+    "^(?:分分彩|时时彩)?(?:投注技巧|技巧|方法|教程)[：:]",
+    "^(?:分分彩|时时彩)(?:投注技巧|技巧|方法|教程)"
+  ],
+  "clickability_markers_any": [
+    "？", "?", "为什么", "怎么", "如何", "到底", "先", "还是", "从", "到", "误区", "风险", "复盘", "复核", "算清", "看懂", "暴露", "区别", "边界", "结论", "意味着什么"
+  ],
+  "forbidden_hype_terms": [
+    "稳赚", "必中", "包赢", "必赚", "无风险", "轻松盈利", "稳定盈利", "暴利", "躺赚", "稳赚不赔", "百分百中奖", "100%中奖", "90%的人不知道"
+  ],
+  "generic_suffixes": [
+    "投注技巧", "技巧", "方法", "教程", "筛选步骤", "筛选顺序", "注数计算", "参数设置", "演示案例"
+  ],
+  "numeric_units": ["%", "％", "期", "元", "注", "组", "个", "层", "倍", "天", "小时", "分钟"],
+  "critical_gates": [
+    "TITLE_TOPIC_MATCH",
+    "TITLE_DUPLICATION_CHECK",
+    "TITLE_KEYWORD_DIVERSITY",
+    "TITLE_NUMERIC_CLAIM_VERIFIED",
+    "TITLE_SEARCH_INTENT_CHECK",
+    "TITLE_CLICKABILITY_CHECK"
+  ],
+  "quality_floor_lowering_allowed": false,
+  "website_side_effects_allowed": false
+}

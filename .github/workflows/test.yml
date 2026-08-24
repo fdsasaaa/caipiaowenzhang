@@ -6,14 +6,63 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: read
+
 jobs:
+  migrate-title-seo:
+    if: github.event_name == 'pull_request' && github.head_ref == 'feature/title-seo-gates-v1'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/title-seo-gates-v1
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Apply one-time Title SEO branch migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/apply_title_seo_upgrade.py
+          python -m py_compile \
+            engine/title_seo.py \
+            engine/generation_normalization.py \
+            engine/production_controller.py \
+            engine/ai_generation.py \
+            engine/approval.py \
+            engine/creator_first.py \
+            engine/formal_approved_inventory.py \
+            engine/daily_website_ready.py \
+            engine/public_release_revision.py
+      - name: Commit migration output to PR branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add engine scripts agent/results
+          if git diff --cached --quiet; then
+            echo "Migration already applied."
+            exit 0
+          fi
+          git commit -m "Title SEO: integrate gates and generate inventory audit"
+          git push origin HEAD:feature/title-seo-gates-v1
+
   pytest:
+    needs: migrate-title-seo
+    if: always() && (needs.migrate-title-seo.result == 'success' || needs.migrate-title-seo.result == 'skipped')
     runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: ["3.10", "3.13"]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}

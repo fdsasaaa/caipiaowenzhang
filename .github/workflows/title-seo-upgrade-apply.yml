@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - feature/title-seo-gates-v1
+    paths:
+      - '.github/workflows/title-seo-upgrade-apply.yml'
+      - 'scripts/apply_title_seo_upgrade.py'
 
 permissions:
   contents: write
@@ -23,10 +26,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Apply Title SEO integration and generate audit
-        run: python scripts/apply_title_seo_upgrade.py
-      - name: Compile patched modules
+      - name: Apply Title SEO integration and capture diagnostics
+        id: migration
+        continue-on-error: true
+        shell: bash
         run: |
+          set +e
+          mkdir -p agent/results
+          python scripts/apply_title_seo_upgrade.py > agent/results/TITLE_SEO_APPLY.log 2>&1
+          code=$?
+          cat agent/results/TITLE_SEO_APPLY.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit "$code"
+      - name: Compile patched modules
+        if: steps.migration.outcome == 'success'
+        id: compile
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
           python -m py_compile \
             engine/title_seo.py \
             engine/generation_normalization.py \
@@ -36,17 +54,38 @@ jobs:
             engine/creator_first.py \
             engine/formal_approved_inventory.py \
             engine/daily_website_ready.py \
-            engine/public_release_revision.py
-      - name: Commit migration output
+            engine/public_release_revision.py > agent/results/TITLE_SEO_COMPILE.log 2>&1
+          code=$?
+          cat agent/results/TITLE_SEO_COMPILE.log
+          echo "exit_code=$code" >> "$GITHUB_OUTPUT"
+          exit "$code"
+      - name: Commit migration output and diagnostics
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
-          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
-            echo "No migration changes to commit."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add engine scripts agent/results
-          git commit -m "Title SEO: integrate gates and generate formal inventory audit"
-          git push origin HEAD:feature/title-seo-gates-v1
+          if git diff --cached --quiet; then
+            echo "No migration output changed."
+          else
+            git commit -m "Title SEO: integrate gates and persist audit diagnostics"
+            git push origin HEAD:feature/title-seo-gates-v1
+          fi
+      - name: Fail if migration or compile failed
+        if: always()
+        shell: bash
+        env:
+          MIGRATION_OUTCOME: ${{ steps.migration.outcome }}
+          COMPILE_OUTCOME: ${{ steps.compile.outcome }}
+        run: |
+          set -euo pipefail
+          if [ "$MIGRATION_OUTCOME" != "success" ]; then
+            echo "Title SEO migration failed; diagnostics were committed." >&2
+            exit 1
+          fi
+          if [ "$COMPILE_OUTCOME" != "success" ]; then
+            echo "Title SEO compile failed; diagnostics were committed." >&2
+            exit 1
+          fi

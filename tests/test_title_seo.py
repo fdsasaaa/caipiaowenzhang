@@ -8,10 +8,10 @@ from engine.title_seo import (
     TITLE_SEARCH_INTENT_CHECK,
     TITLE_TOPIC_MATCH,
     TITLE_SEO_CONTRACT_VERSION,
-    apply_title_seo,
     audit_public_release_titles,
     evaluate_title_seo,
 )
+from engine.title_seo_runtime import apply_title_seo
 
 
 def _article(title: str) -> dict:

@@ -6,10 +6,6 @@ on:
   pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: read
-
 jobs:
   pytest:
     runs-on: ubuntu-latest
@@ -18,59 +14,9 @@ jobs:
         python-version: ["3.10", "3.13"]
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Apply one-time Title SEO migration in PR workspace
-        if: github.event_name == 'pull_request' && github.head_ref == 'feature/title-seo-gates-v1'
-        id: migration
-        continue-on-error: true
-        shell: bash
-        run: |
-          set +e
-          mkdir -p agent/results
-          {
-            echo '=== apply_title_seo_upgrade.py ==='
-            python scripts/apply_title_seo_upgrade.py
-            code=$?
-            if [ "$code" -eq 0 ]; then
-              echo '=== py_compile ==='
-              python -m py_compile \
-                engine/title_seo.py \
-                engine/generation_normalization.py \
-                engine/production_controller.py \
-                engine/ai_generation.py \
-                engine/approval.py \
-                engine/creator_first.py \
-                engine/formal_approved_inventory.py \
-                engine/daily_website_ready.py \
-                engine/public_release_revision.py
-              code=$?
-            fi
-            echo "exit_code=$code"
-          } > agent/results/TITLE_SEO_MIGRATION_${{ matrix.python-version }}.log 2>&1
-          cat agent/results/TITLE_SEO_MIGRATION_${{ matrix.python-version }}.log
-          exit "$code"
-      - name: Persist migration output from Python 3.13 only
-        if: always() && github.event_name == 'pull_request' && github.head_ref == 'feature/title-seo-gates-v1' && matrix.python-version == '3.13'
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add engine scripts agent/results
-          if git diff --cached --quiet; then
-            echo "Migration produced no tracked changes."
-            exit 0
-          fi
-          git commit -m "Title SEO: persist migration result and inventory audit"
-          git push origin HEAD:feature/title-seo-gates-v1
-      - name: Stop if migration failed
-        if: github.event_name == 'pull_request' && github.head_ref == 'feature/title-seo-gates-v1' && steps.migration.outcome != 'success'
-        run: exit 1
       - run: python -m pip install --upgrade pip pytest
       - run: python -m engine.cli audit
       - run: pytest -q

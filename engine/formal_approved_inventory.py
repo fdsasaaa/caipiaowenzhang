@@ -8,6 +8,7 @@ from pathlib import Path
 from .site_contract import normalize_seo_cluster_assignment, site_category_for
 from .store import ROOT
 from .text import sha256_text
+from .title_seo import validate_title_contract_fields
 
 ARTICLE_ID_RE = re.compile(r"^[A-Za-z0-9._:-]+$")
 
@@ -65,6 +66,15 @@ def validate_formal_approved_package(package: dict) -> None:
         raise FormalInventoryError(str(exc)) from exc
     if (primary is not None or secondary) and actual_category != "tzjq":
         raise FormalInventoryError("SEO cluster metadata is only allowed for tzjq articles")
+
+    # Legacy Approved parents remain valid and immutable. Every new package carrying
+    # Title SEO V1.0 metadata must prove that the complete title contract passed.
+    if package.get("title_seo_contract_version"):
+        title_errors = validate_title_contract_fields(package)
+        if title_errors:
+            raise FormalInventoryError("Title SEO contract invalid: " + "; ".join(title_errors))
+        if (package.get("title_review") or {}).get("passed") is not True:
+            raise FormalInventoryError("Title SEO review must pass before formal inventory")
 
 
 def stage_formal_approved_package(package: dict, approved_root: Path | None = None) -> dict:

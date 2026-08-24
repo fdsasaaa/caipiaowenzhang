@@ -27,6 +27,7 @@ from .public_release_revision import (
 from .public_terminology import audit_article
 from .store import ROOT
 from .text import sha256_text
+from .title_seo_runtime import apply_title_seo
 
 POLICY_PATH = ROOT / "policies" / "DAILY_WEBSITE_READY_PRODUCTION.json"
 REPORT_ROOT = ROOT / "artifacts" / "daily_website_ready"
@@ -122,13 +123,13 @@ def _public_release_prompt(parent: dict) -> str:
     return (
         "你是网站公开版编辑器。下面是已通过内部验证的 Approved parent。"
         "请把它改写为可公开发布、教育/研究导向的版本，只返回结构化JSON。"
-        "必须保留玩法机制、文章主题和 exact Primary Keyword 的搜索意图，但不要复制具体执行方案。\n"
+        "必须保留玩法机制、文章主题和Primary Keyword所代表的搜索意图，但不要为了SEO把exact Primary Keyword机械拼进标题，也不要复制具体执行方案。\n"
         "公开版硬规则：\n"
         "1. 不提供具体候选号码、数字池、逐期选号、下一期建议、跟投/追号/倍投/加倍/资金递进/回本/止损等执行指令。\n"
         "2. 不提供具体下注金额、倍数、投注路径，不把历史结构写成未来预测优势，不承诺收益、胜率或稳定盈利。\n"
         "3. 可以解释组合数学、规则机制、参数预注册、历史复盘、样本外验证、随机波动和常见误区。\n"
         "4. content 使用简单中文HTML，至少3个h2短章节和多个短段落；不得使用script/iframe/form/object/embed。\n"
-        "5. seo_title必须自然包含 exact Primary Keyword；去掉原稿里不适合公开的具体候选数字或操作承诺。\n"
+        "5. seo_title只是公开改写阶段的工作标题。最终标题会在公开正文完成后生成3-5个候选并通过Title SEO Gate；Primary Keyword字段保持不变，但最终标题不要求逐字包含，也不要求以‘分分彩’开头。\n"
         "6. claim_evidence只登记公开正文实际存在的硬声明。verified_rule只能引用parent.rule_refs；"
         "synthetic_case只能引用case_bundle；纯范围/风险说明用editorial且support_refs=[]。\n"
         "7. 至少明确一次：结构分类或历史样本表现不能单独证明未来预测优势。\n\n"
@@ -186,8 +187,8 @@ def public_safety_errors(package: dict, policy: dict) -> list[str]:
     uncertainty_terms = [str(x) for x in policy.get("required_uncertainty_terms_any", [])]
     if uncertainty_terms and not any(term in content for term in uncertainty_terms):
         errors.append("missing_uncertainty_boundary")
-    if str(package.get("primary_keyword") or "") not in str(package.get("seo_title") or ""):
-        errors.append("seo_title_missing_primary_keyword")
+    if package.get("title_seo_contract_version") and (package.get("title_review") or {}).get("passed") is not True:
+        errors.append("title_seo_gate_failed")
     if package.get("content_hash") == package.get("parent_content_hash"):
         errors.append("public_release_content_unchanged")
     terminology = audit_article(f"daily-public:{package.get('article_id')}", package)
@@ -233,6 +234,7 @@ def generate_public_release(parent: dict, *, api_key: str, base_url: str, model:
             "practical_guidance", "editorial_contract_version", "angle_delivery",
             "article_angle_contract", "article_angle_contract_version",
             "angle_contract_verified", "angle_approval_passed",
+            "title_candidates", "title_selection_reason", "title_review", "title_seo_contract_version",
         ):
             revision.pop(field, None)
         revision["content"] = str(patch.get("content") or "").strip()
@@ -244,6 +246,20 @@ def generate_public_release(parent: dict, *, api_key: str, base_url: str, model:
         revision["claim_evidence"] = _sanitize_claims(
             list(patch.get("claim_evidence") or []), list(parent.get("rule_refs") or [])
         )
+        title_review = apply_title_seo(
+            revision,
+            evidence_source=parent,
+            regenerate_candidates=True,
+        )
+        revision["title_review"] = title_review.as_dict()
+        if not title_review.passed:
+            last_errors = ["title_seo:" + error for error in title_review.errors]
+            payload["input"] += (
+                "\n上一次公开版标题未通过Title SEO Gate，原因："
+                + ", ".join(last_errors)
+                + "。请保持正文真实主题，不要添加无依据数字或夸张承诺。"
+            )
+            continue
         revision["content_hash"] = sha256_text(revision["content"])
         revision["approved_at"] = datetime.now(timezone.utc).isoformat()
         revision["source_batch_id"] = str(parent.get("creator_batch_id") or "")

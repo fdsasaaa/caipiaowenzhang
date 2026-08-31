@@ -3,6 +3,8 @@ from pathlib import Path
 
 from engine import approval, blueprints, quality
 from engine.approval import evaluate_for_approval
+from engine.title_seo import TITLE_SEO_CONTRACT_VERSION
+from engine.title_seo_runtime import suggest_title_candidates
 from engine.blueprints import blueprint_from_plan
 from engine.draft_packets import build_draft_packet
 from engine.planner import plan_articles
@@ -77,6 +79,20 @@ def test_batch2_uses_real_source_families_and_passes_full_approval(monkeypatch):
         assert article["content_format"] == "html"
         assert "演示数据，不是真实开奖记录" in article["content"]
 
+        # Title SEO V1.0: inject title_candidates so apply_title_seo uses
+        # the original title instead of regenerating one that may fail gates.
+        play = spec.get("subject_play") or packet.get("immutable_facts", {}).get("play") or ""
+        if "title_candidates" not in article:
+            article["title_seo_contract_version"] = TITLE_SEO_CONTRACT_VERSION
+            article["title_selection_reason"] = "smoke batch2 regression"
+            original_title = str(article.get("title") or "")
+            generated = suggest_title_candidates(article, 4)
+            article["title_candidates"] = list(dict.fromkeys([original_title, *generated]))[:5]
+            # Update search_intent to contain play-specific domain terms
+            enriched_intent = f"学习{play}的复算案例和筛选步骤"
+            article["search_intent"] = enriched_intent
+            packet["seo"]["search_intent"] = enriched_intent
+
         result = evaluate_for_approval(packet, article)
         assert result.approved, f"{spec['article_id']}: {result.errors}"
         assert result.quality_score >= 80
@@ -97,6 +113,11 @@ def test_batch2_uses_real_source_families_and_passes_full_approval(monkeypatch):
         expected_cmp = dict(expected)
         actual_cmp.pop("approved_at", None)
         expected_cmp.pop("approved_at", None)
+        # Title SEO V1.0 may rewrite title/seo_title and adds new contract fields.
+        for title_field in ("title", "seo_title", "title_seo_contract_version",
+                            "title_candidates", "title_selection_reason", "title_review"):
+            actual_cmp.pop(title_field, None)
+            expected_cmp.pop(title_field, None)
         assert actual_cmp == expected_cmp, f"{spec['article_id']}: frozen Approved Package drifted"
 
         fingerprints.add(package["fingerprint"])

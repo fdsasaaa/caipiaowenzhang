@@ -9,7 +9,6 @@ def test_refill_continues_after_public_r1_rejection_until_final_target(monkeypat
     policy = load_daily_policy()
     policy.update({
         "minimum": 2,
-        "operational_minimum": 2,
         "target": 3,
         "maximum": 4,
         "candidate_pool": 4,

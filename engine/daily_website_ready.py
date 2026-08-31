@@ -49,12 +49,6 @@ def load_daily_policy(path: Path | None = None) -> dict:
         raise DailyProductionError("daily volume band must satisfy 1 <= minimum <= target <= maximum")
     if int(data["candidate_pool"]) < target:
         raise DailyProductionError("candidate_pool must be at least target")
-    # V3: operational_minimum is a production health signal, not a discard threshold.
-    # If absent (e.g. legacy test policies), default to minimum so the field is always present.
-    if "operational_minimum" in data:
-        operational_minimum = int(data["operational_minimum"])
-        if not (minimum <= operational_minimum <= target):
-            raise DailyProductionError("operational_minimum must satisfy minimum <= operational_minimum <= target")
     return data
 
 

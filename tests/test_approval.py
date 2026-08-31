@@ -28,7 +28,7 @@ def _packet():
             "slug_seed": "ssc-last3-sum",
             "primary_keyword": "时时彩后三直选技巧",
             "secondary_keywords": ["时时彩技巧"],
-            "search_intent": "学习具体投注技巧并看懂可复算案例",
+            "search_intent": "学习后三直选和值的复算案例和筛选步骤",
         },
         "output_contract": {"required_fields": []},
     }
@@ -42,7 +42,7 @@ def _article():
         "meta_description": "一个清晰、可复算的时时彩后三直选技巧案例说明。",
         "primary_keyword": "时时彩后三直选技巧",
         "secondary_keywords": ["时时彩技巧"],
-        "search_intent": "学习具体投注技巧并看懂可复算案例",
+        "search_intent": "学习后三直选和值的复算案例和筛选步骤",
         "summary": "摘要",
         "content": "<p>演示数据，不是真实开奖记录。</p>" + "<p>这里解释玩法规则、和值计算和案例限制。</p>" * 30,
         "content_format": "html",

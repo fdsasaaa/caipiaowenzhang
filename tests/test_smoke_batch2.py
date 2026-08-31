@@ -113,9 +113,11 @@ def test_batch2_uses_real_source_families_and_passes_full_approval(monkeypatch):
         expected_cmp = dict(expected)
         actual_cmp.pop("approved_at", None)
         expected_cmp.pop("approved_at", None)
-        # Title SEO V1.0 may rewrite title/seo_title and adds new contract fields.
+        # Title SEO V1.0 may rewrite title/seo_title, adds new contract fields,
+        # and requires a play-specific search_intent that differs from the frozen fixture.
         for title_field in ("title", "seo_title", "title_seo_contract_version",
-                            "title_candidates", "title_selection_reason", "title_review"):
+                            "title_candidates", "title_selection_reason", "title_review",
+                            "search_intent"):
             actual_cmp.pop(title_field, None)
             expected_cmp.pop(title_field, None)
         assert actual_cmp == expected_cmp, f"{spec['article_id']}: frozen Approved Package drifted"

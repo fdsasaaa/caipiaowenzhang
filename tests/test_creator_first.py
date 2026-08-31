@@ -24,7 +24,8 @@ def _ffc_mechanic(request: dict) -> dict:
 
 def _good_payload(request: dict) -> dict:
     mechanic = _ffc_mechanic(request)
-    keyword = "分分彩轻量创作者独立技巧测试"
+    play = mechanic["play"]
+    keyword = f"分分彩{play}轻量创作者独立技巧测试"
     content = (
         "<p>这篇只讲一个简单思路：先把玩法规则看清，再用一个自己能复算的小方法做观察。"
         "重点不是堆很多条件，而是每次只改变一个判断，让读者知道自己为什么留下这些候选。</p>"
@@ -36,6 +37,7 @@ def _good_payload(request: dict) -> dict:
         "<p>如果后面想增加第二个条件，先问自己两个问题：它是不是有清楚的规则依据，读者能不能自己重复计算。"
         "两点都说不清，就不要为了显得复杂而继续叠加。这样的写法比套固定模板更容易让普通人看懂。</p>"
     )
+    final_title = keyword + "：一个条件讲清楚就够了"
     return {
         "manifest": {
             "selected_rule_ref": mechanic["rule_ref"],
@@ -56,13 +58,13 @@ def _good_payload(request: dict) -> dict:
         },
         "article": {
             "article_id": request["article_id"],
-            "title": keyword + "：一个条件讲清楚就够了",
-            "seo_title": keyword + "：简单可复算思路",
+            "title": final_title,
+            "seo_title": final_title,
             "slug": "ffc-creator-first-light-test-z9",
             "meta_description": keyword + "案例，用简单中文说明如何固定一个观察条件并保持可复算，不堆叠复杂过滤。",
             "primary_keyword": keyword,
             "secondary_keywords": ["分分彩技巧", "彩票技巧案例"],
-            "search_intent": "学习一个简单、能自己复算的分分彩技巧设计思路",
+            "search_intent": f"学习{play}的简单可复算技巧设计思路和规则边界",
             "summary": "用一个条件说明技巧设计、规则边界和停止继续叠加的方法。",
             "category": "投注技巧",
             "site_category_key": "tzjq",
@@ -76,6 +78,15 @@ def _good_payload(request: dict) -> dict:
             "status": "draft",
             "generation_contract_version": "2.0",
             "claim_evidence": [],
+            "title_seo_contract_version": "1.0",
+            "title_selection_reason": "test fixture: play-specific candidates",
+            "title_candidates": [
+                final_title,
+                f"{play}怎么做研究？先把规则和边界说清",
+                f"从规则到复盘：{play}应该怎样验证",
+                f"{play}为什么容易被误读？从方法到风险边界",
+                f"看懂{play}里的技巧，先分清事实、计算和推断",
+            ],
         },
     }
 

@@ -9,9 +9,7 @@ WORKFLOW = ROOT / ".github" / "workflows" / "daily-website-ready-production.yml"
 def test_closeout_volume_and_quality_contract():
     policy = load_daily_policy()
     assert policy["timezone"] == "Asia/Singapore"
-    assert (policy["minimum"], policy["target"], policy["maximum"]) == (1, 20, 25)
-    assert policy["operational_minimum"] == 10
-    assert policy["partial_batch_retention"] is True
+    assert (policy["minimum"], policy["target"], policy["maximum"]) == (10, 20, 25)
     assert policy["quality_first"] is True
     assert policy["quality_floor_may_be_lowered"] is False
     assert policy["public_release_required_to_count"] is True
@@ -27,13 +25,11 @@ def test_closeout_refill_and_cost_caps_are_bounded():
     assert policy["max_model_generation_attempts_per_day"] <= 150
 
 
-def test_closeout_final_public_r1_count_drives_status_without_discarding_good_partials():
-    assert _status_for_ready(0, minimum=1, target=20) == "BLOCKED_BELOW_MINIMUM"
-    assert _status_for_ready(1, minimum=1, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(8, minimum=1, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(10, minimum=1, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(19, minimum=1, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(20, minimum=1, target=20) == "PASS_TARGET"
+def test_closeout_final_public_r1_count_drives_status():
+    assert _status_for_ready(4, minimum=10, target=20) == "BLOCKED_BELOW_MINIMUM"
+    assert _status_for_ready(10, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(19, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(20, minimum=10, target=20) == "PASS_TARGET"
 
 
 def test_closeout_frozen_tail_and_broad_funding_terms_remain_blocked():

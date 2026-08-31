@@ -29,13 +29,7 @@ from .store import ROOT
 PASS_STATUSES = {"PASS_TARGET", "PASS_PARTIAL_QUALITY_FIRST"}
 
 
-def _status_for_ready(
-    ready: int,
-    *,
-    target: int,
-    minimum: int,
-    operational_minimum: int | None = None,
-) -> str:
+def _status_for_ready(ready: int, *, target: int, minimum: int) -> str:
     if ready >= target:
         return "PASS_TARGET"
     if ready >= minimum:
@@ -55,8 +49,7 @@ def _fatal_report(day: str, policy: dict, exc: Exception) -> dict:
         "batch_id": _batch_id(day),
         "status": "FATAL_ERROR",
         "target": int(policy.get("target") or 20),
-        "minimum": int(policy.get("minimum") or 1),
-        "operational_minimum": int(policy.get("operational_minimum") or 10),
+        "minimum": int(policy.get("minimum") or 10),
         "maximum": int(policy.get("maximum") or 25),
         "website_ready_public_r1": 0,
         "quality_floor_lowered": False,
@@ -287,11 +280,7 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
             stop_reason = "no_approved_progress_before_round_limit"
 
     ready_count = len(public_ready)
-    operational_minimum = int(policy.get("operational_minimum") or minimum)
-    status = _status_for_ready(
-        ready_count, target=target, minimum=minimum,
-        operational_minimum=operational_minimum,
-    )
+    status = _status_for_ready(ready_count, target=target, minimum=minimum)
     manifest = None
     if ready_count >= minimum:
         manifest = write_public_release_manifest(batch_id, expected_count=ready_count)

@@ -12,6 +12,7 @@ from .quality import evaluate as evaluate_quality
 from .seo_keywords import keyword_owners
 from .site_contract import normalize_seo_cluster_assignment, seo_cluster_article_category_key
 from .text import sha256_text
+from .title_seo_runtime import apply_title_seo
 
 
 @dataclass
@@ -88,8 +89,8 @@ def _seo_contract(packet: dict, article: dict) -> tuple[list[str], list[str]]:
     title = article.get("title", "") or ""
     if not title:
         errors.append("title missing")
-    elif seo.get("primary_keyword") and seo["primary_keyword"] not in title:
-        warnings.append("title does not contain exact primary keyword; verify natural SEO wording")
+    # Primary Keyword remains an ownership field. Title SEO V1.0 deliberately does
+    # not require exact-keyword inclusion or a 分分时时彩 prefix in the human title.
     if primary_keyword:
         owners = keyword_owners(primary_keyword, exclude_article_id=article.get("article_id") or packet.get("article_id"))
         if owners:
@@ -162,6 +163,9 @@ def _publish_package(packet: dict, article: dict) -> dict:
         "approved_at": datetime.now(timezone.utc).isoformat(),
         "status": "approved",
     }
+    for field in ("title_seo_contract_version", "title_candidates", "title_selection_reason", "title_review"):
+        if article.get(field) is not None:
+            package[field] = article[field]
     provider_response_id = article.get("provider_response_id") or existing.get("provider_response_id")
     if provider_response_id:
         package["provider_response_id"] = provider_response_id
@@ -195,9 +199,6 @@ def _registry_changes(packet: dict, article: dict) -> dict:
     try:
         primary_cluster, secondary_clusters = _cluster_assignment(packet, existing)
     except ValueError:
-        # Cluster validity is enforced by _seo_contract. Rejected content must still
-        # be recordable without persisting the invalid assignment or crashing the
-        # rejection lifecycle.
         primary_cluster, secondary_clusters = None, []
     changes = {
         "blueprint_id": packet.get("blueprint_id"),
@@ -225,6 +226,9 @@ def _registry_changes(packet: dict, article: dict) -> dict:
         "content_hash": sha256_text(article.get("content", "")) if article.get("content") else None,
         "provider_response_id": article.get("provider_response_id") or existing.get("provider_response_id"),
     }
+    for field in ("title_seo_contract_version", "title_candidates", "title_selection_reason", "title_review"):
+        if article.get(field) is not None:
+            changes[field] = article[field]
     angle_contract = packet.get("article_angle_contract") or {}
     if packet.get("article_angle_contract_version"):
         changes["article_angle_contract_version"] = packet["article_angle_contract_version"]
@@ -248,9 +252,14 @@ def _registry_changes(packet: dict, article: dict) -> dict:
 
 
 def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
+    # Approval owns the final fail-closed decision even if an upstream generation
+    # path did not run normalization. This call is idempotent when candidates and
+    # a selected title already exist.
+    title_report = apply_title_seo(article, packet=packet)
     draft_review = review_draft(packet, article)
     evidence_report = audit_claim_evidence(packet, article)
     enriched = _enrich_for_quality(packet, article)
+    enriched["title_review"] = title_report.as_dict()
     quality_report = evaluate_quality(enriched)
     editorial_report = evaluate_editorial(packet, article)
     angle_report = evaluate_article_angle(packet, article)
@@ -264,7 +273,7 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
 
     errors = list(dict.fromkeys([
         *draft_review.errors, *evidence_report.errors, *quality_report.errors,
-        *editorial_report.errors, *angle_report.errors, *seo_errors,
+        *editorial_report.errors, *angle_report.errors, *title_report.errors, *seo_errors,
     ]))
     warnings = list(dict.fromkeys([
         *draft_review.warnings, *evidence_report.warnings, *quality_report.warnings,
@@ -277,6 +286,7 @@ def evaluate_for_approval(packet: dict, article: dict) -> ApprovalResult:
         and quality_report.passed
         and editorial_report.passed
         and angle_report.passed
+        and title_report.passed
     )
     status = "approved" if approved else "rejected_for_revision"
     package = _publish_package(packet, enriched) if approved else None
@@ -307,6 +317,7 @@ def evaluate_and_record(packet: dict, article: dict) -> ApprovalResult:
             for field in (
                 "article_angle_contract_version", "information_gain_type", "angle_signature",
                 "angle_contract_verified", "angle_approval_passed", "angle_delivery",
+                "title_seo_contract_version", "title_candidates", "title_selection_reason", "title_review",
             ):
                 if field in result.registry_record:
                     record_article[field] = result.registry_record[field]

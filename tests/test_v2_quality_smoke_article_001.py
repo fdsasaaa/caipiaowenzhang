@@ -6,6 +6,8 @@ from engine.ai_generation import validate_generated_identity
 from engine.approval import evaluate_for_approval
 from engine.claim_evidence import audit_claim_evidence
 from engine.draft_packets import build_draft_packet
+from engine.title_seo import TITLE_SEO_CONTRACT_VERSION
+from engine.title_seo_runtime import suggest_title_candidates
 
 ROOT = Path(__file__).resolve().parents[1]
 CASE_DIR = ROOT / "agent" / "results" / "v2-quality-smoke-001"
@@ -45,6 +47,19 @@ def test_v2_quality_smoke_article_passes_full_approval_pipeline():
 
     evidence = audit_claim_evidence(packet, article)
     assert evidence.passed, evidence.errors
+
+    # Title SEO V1.0: the frozen article has a generic search_intent that
+    # predates the title SEO contract. Inject play-specific intent and candidates
+    # so apply_title_seo selects the original title without rewriting it.
+    play = packet.get("immutable_facts", {}).get("play") or packet.get("immutable_facts", {}).get("subject_play") or "后三直选"
+    enriched_intent = f"学习{play}和值筛选的复算案例和候选空间变化"
+    article["search_intent"] = enriched_intent
+    packet["seo"]["search_intent"] = enriched_intent
+    article["title_seo_contract_version"] = TITLE_SEO_CONTRACT_VERSION
+    article["title_selection_reason"] = "smoke regression: frozen fixture compatibility"
+    original_title = str(article.get("title") or "")
+    generated = suggest_title_candidates(article, 4)
+    article["title_candidates"] = list(dict.fromkeys([original_title, *generated]))[:5]
 
     result = evaluate_for_approval(packet, article)
     assert result.approved, result.errors

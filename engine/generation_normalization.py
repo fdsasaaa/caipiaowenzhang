@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import re
 
+from .title_seo_runtime import apply_title_seo
+
 
 _EDITORIAL_SCOPE_MARKERS = (
     "本文", "本篇", "这篇", "本次", "这里只", "只讲", "只说明", "仅说明",
@@ -31,30 +33,27 @@ def _is_pure_editorial_scope_disclaimer(text: str) -> bool:
     )
 
 
-def normalize_generation_metadata(article: dict) -> dict:
-    """Narrow deterministic cleanup for model metadata, never article prose.
+def normalize_generation_metadata(article: dict, packet: dict | None = None) -> dict:
+    """Normalize narrow evidence metadata, then perform post-body Title SEO selection.
 
-    A model sometimes labels a pure scope/disclaimer sentence such as
-    “本文不讨论未核验的平台经济参数” as `source_unverified` merely because
-    source refs are present elsewhere in the packet. That sentence is editorial,
-    not a source claim. Only that exact semantic class is normalized.
-
-    Real source claims, numeric facts, calculations, performance/economics claims,
-    and article prose are never rewritten here.
+    Article prose, immutable mechanics, rules, claims and calculations are not rewritten.
+    The title layer runs only after the generated body already exists, produces 3-5
+    candidates, and records the deterministic gate result for Approval.
     """
     claims = article.get("claim_evidence")
-    if not isinstance(claims, list):
-        return article
-    for row in claims:
-        if not isinstance(row, dict):
-            continue
-        if row.get("claim_type") != "editorial":
-            continue
-        if row.get("support_type") != "source_unverified":
-            continue
-        if not _is_pure_editorial_scope_disclaimer(str(row.get("claim_text") or "")):
-            continue
-        row["support_type"] = "editorial"
-        row["support_refs"] = []
-        row["evidence_note"] = "编辑范围/风险说明，不是来源事实声明。"
+    if isinstance(claims, list):
+        for row in claims:
+            if not isinstance(row, dict):
+                continue
+            if row.get("claim_type") != "editorial":
+                continue
+            if row.get("support_type") != "source_unverified":
+                continue
+            if not _is_pure_editorial_scope_disclaimer(str(row.get("claim_text") or "")):
+                continue
+            row["support_type"] = "editorial"
+            row["support_refs"] = []
+            row["evidence_note"] = "编辑范围/风险说明，不是来源事实声明。"
+
+    apply_title_seo(article, packet=packet)
     return article

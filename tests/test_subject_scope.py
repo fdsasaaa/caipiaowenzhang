@@ -94,7 +94,7 @@ def test_approval_package_carries_subject_without_changing_rule_scope(monkeypatc
             "slug_seed": "subject-scope",
             "primary_keyword": "分分彩前三直选技巧",
             "secondary_keywords": ["分分彩技巧"],
-            "search_intent": "学习具体投注技巧并看懂可复算案例",
+            "search_intent": "学习前三直选和值的复算案例和筛选步骤",
         },
         "output_contract": {"required_fields": []},
     }
@@ -105,7 +105,7 @@ def test_approval_package_carries_subject_without_changing_rule_scope(monkeypatc
         "meta_description": "测试描述",
         "primary_keyword": "分分彩前三直选技巧",
         "secondary_keywords": ["分分彩技巧"],
-        "search_intent": "学习具体投注技巧并看懂可复算案例",
+        "search_intent": "学习前三直选和值的复算案例和筛选步骤",
         "summary": "摘要",
         "content": "<p>规则解释与案例。</p>" * 40,
         "rule_refs": ["R1"],

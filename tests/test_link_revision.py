@@ -23,7 +23,7 @@ def _package():
         "meta_description": "测试描述",
         "primary_keyword": "分分彩定位胆冷热技巧",
         "secondary_keywords": ["定位胆冷热"],
-        "search_intent": "学习具体投注技巧并看懂可复算案例",
+        "search_intent": "学习定位胆冷热的复算案例和风险边界",
         "summary": "摘要",
         "category": "投注技巧",
         "site_category_key": "tzjq",
@@ -89,7 +89,7 @@ def _packet():
             "slug_seed": "revision-test",
             "primary_keyword": "分分彩定位胆冷热技巧",
             "secondary_keywords": ["定位胆冷热"],
-            "search_intent": "学习具体投注技巧并看懂可复算案例",
+            "search_intent": "学习定位胆冷热的复算案例和风险边界",
         },
         "output_contract": {"required_fields": []},
     }

@@ -50,10 +50,11 @@ def load_daily_policy(path: Path | None = None) -> dict:
     if int(data["candidate_pool"]) < target:
         raise DailyProductionError("candidate_pool must be at least target")
     # V3: operational_minimum is a production health signal, not a discard threshold.
-    # It must be >= minimum so that 1..operational_minimum-1 articles are PASS_PARTIAL.
-    operational_minimum = int(data.get("operational_minimum") or minimum)
-    if not (minimum <= operational_minimum <= target):
-        raise DailyProductionError("operational_minimum must satisfy minimum <= operational_minimum <= target")
+    # If absent (e.g. legacy test policies), default to minimum so the field is always present.
+    if "operational_minimum" in data:
+        operational_minimum = int(data["operational_minimum"])
+        if not (minimum <= operational_minimum <= target):
+            raise DailyProductionError("operational_minimum must satisfy minimum <= operational_minimum <= target")
     return data
 
 

@@ -10,12 +10,16 @@ from engine.daily_website_ready import (
 
 def test_daily_policy_volume_band():
     policy = load_daily_policy()
-    assert policy["minimum"] == 10
+    # V3 quality-first: formal commit floor is 1, operational_minimum is 10
+    assert policy["minimum"] == 1
+    assert policy["operational_minimum"] == 10
     assert policy["target"] == 20
     assert policy["maximum"] == 25
     assert policy["candidate_pool"] >= policy["target"]
     assert policy["quality_floor_may_be_lowered"] is False
     assert policy["public_release_required_to_count"] is True
+    assert policy["partial_batch_retention"] is True
+    assert policy["quality_first"] is True
 
 
 def test_production_date_uses_singapore_boundary():

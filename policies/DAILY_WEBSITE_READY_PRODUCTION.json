@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "timezone": "Asia/Singapore",
   "target": 20,
-  "minimum": 10,
+  "minimum": 1,
   "maximum": 25,
   "candidate_pool": 40,
   "internal_batch_size": 20,
@@ -17,7 +17,12 @@
   "refill_approved_batch_size": 20,
   "max_approved_parents_per_day": 80,
   "max_model_generation_attempts_per_day": 120,
-  "model_preference_hints": ["mini", "flash", "small", "lite"],
+  "model_preference_hints": [
+    "mini",
+    "flash",
+    "small",
+    "lite"
+  ],
   "blocked_exact_primary_keywords": [
     "分分彩",
     "分分彩技巧",
@@ -60,5 +65,7 @@
     "publisher_invocation",
     "publisher_cron_change",
     "publication"
-  ]
+  ],
+  "operational_minimum": 10,
+  "partial_batch_retention": true
 }

@@ -10,7 +10,8 @@ from engine.daily_website_ready import (
 
 def test_daily_policy_volume_band():
     policy = load_daily_policy()
-    assert policy["minimum"] == 10
+    # PR #101: formal inventory commit floor changed from 10 to 1
+    assert policy["minimum"] == 1
     assert policy["target"] == 20
     assert policy["maximum"] == 25
     assert policy["candidate_pool"] >= policy["target"]

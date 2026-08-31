@@ -29,7 +29,7 @@ def _packet():
         "seo": {
             "primary_keyword": "分分彩后二直选技巧",
             "secondary_keywords": [],
-            "search_intent": "学习具体投注技巧并看懂可复算案例",
+            "search_intent": "学习后二直选注数的复算案例和风险边界",
         },
     }
 
@@ -42,7 +42,7 @@ def _article(entries):
         "meta_description": "解释后二直选的结果空间和注数。",
         "primary_keyword": "分分彩后二直选技巧",
         "secondary_keywords": [],
-        "search_intent": "学习具体投注技巧并看懂可复算案例",
+        "search_intent": "学习后二直选注数的复算案例和风险边界",
         "summary": "说明规则",
         "category": "投注技巧",
         "site_category_key": "tzjq",

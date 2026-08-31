@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 
 from engine.creator_first import build_creator_request, validate_creator_output
+from engine.title_seo import TITLE_SEO_CONTRACT_VERSION
+from engine.title_seo_runtime import suggest_title_candidates
 from engine.dedup import LEXICAL_DUPLICATE_THRESHOLD, lexical_similarity
 from engine.formal_approved_inventory import validate_formal_approved_package
 from engine.semantic_dedup import STRUCTURAL_DUPLICATE_THRESHOLD, structural_similarity
@@ -50,8 +52,20 @@ def _creator_payload(package: dict) -> tuple[dict, dict]:
     for field in (
         "approved_at", "content_hash", "fingerprint", "creator_batch_id",
         "creator_first_contract_version", "published_url", "published_at",
+        "title_seo_contract_version", "title_candidates", "title_selection_reason",
+        "title_review",
     ):
         article.pop(field, None)
+    # Title SEO V1.0 contract: provide candidates so apply_title_seo uses
+    # the original approved title as candidates[0] instead of regenerating.
+    original_title = str(article.get("title") or "")
+    article["title_seo_contract_version"] = TITLE_SEO_CONTRACT_VERSION
+    article["title_selection_reason"] = "batch regression: original approved title"
+    generated = suggest_title_candidates(article, 4)
+    candidates = list(dict.fromkeys([original_title, *generated]))[:5]
+    if len(candidates) < 3:
+        candidates = list(dict.fromkeys([original_title, *generated, original_title + "：补充"] ))[:5]
+    article["title_candidates"] = candidates
     return request, {"manifest": manifest, "article": article}
 
 

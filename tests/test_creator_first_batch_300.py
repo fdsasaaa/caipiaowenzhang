@@ -95,8 +95,12 @@ def test_creator_first_batch_300_all_pass_existing_approval_and_formal_inventory
 
         generated = result.approval.publish_package
         assert generated is not None
+        # Title SEO V1.0 may rewrite title/seo_title to pass TITLE_KEYWORD_DIVERSITY
+        # (original batch titles start with "分分彩XX技巧" which is a banned generic prefix).
+        # Skip title/seo_title in the frozen comparison; the rewritten title must still
+        # pass all critical gates, which is verified by result.approved above.
         for field in (
-            "article_id", "title", "seo_title", "slug", "meta_description",
+            "article_id", "slug", "meta_description",
             "primary_keyword", "search_intent", "summary", "category",
             "site_category_key", "content_type", "content_format", "content",
             "rule_refs", "source_refs", "case_scope", "lottery", "play",

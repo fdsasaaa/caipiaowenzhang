@@ -69,19 +69,21 @@ def test_closeout_workflow_has_schedule_failure_evidence_ci_and_merge_order():
     text = WORKFLOW.read_text(encoding="utf-8")
     assert "cron: '20 1 * * *'" in text
     assert "MODEL_PROVIDER_API_KEY" in text
-    assert "Verify V3 policy invariant before AI generation" in text
+    assert "assert_v3_policy_invariant" in text
     assert "Produce and refill quality-first website-ready inventory" in text
     assert "Upload daily diagnostic artifact" in text
     assert "diagnostics/daily-website-ready-" in text
+    assert "recovery/daily-website-ready-" in text
+    assert "repository_gate_failed_recovery_only" in text
     assert "python -m engine.cli audit" in text
     assert "pytest -q" in text
     assert "gh workflow run test.yml --ref" in text
     assert "gh run watch \"$RUN_ID\" --exit-status" in text
     assert "gh pr merge \"$PR_URL\" --squash --delete-branch" in text
     assert "--admin" not in text
-    assert "generation-result-recovery" in text.lower() or "Generation result recovery" in text
-    assert text.index("Verify V3 policy invariant before AI generation") < text.index("Produce and refill")
+    assert text.index("assert_v3_policy_invariant") < text.index("Produce and refill")
     assert text.index("Produce and refill quality-first website-ready inventory") < text.index("Run local full repository gates")
+    assert text.index("Run local full repository gates") < text.index("Persist exact generated inventory after repository-gate failure")
     assert text.index("Run local full repository gates") < text.index("Open daily production PR")
     assert text.index("Dispatch independent dual-version CI") < text.index("Squash merge only after CI passes")
 
@@ -91,4 +93,5 @@ def test_closeout_overlap_guard_and_fail_closed_are_present():
     assert "A previous daily production PR is still open" in text
     assert "Daily branch exists without an open PR; fail closed" in text
     assert "Stop after failed quality-first production" in text
+    assert "Stop after failed repository gates" in text
     assert "cancel-in-progress: false" in text

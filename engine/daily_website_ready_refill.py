@@ -15,9 +15,9 @@ from .daily_website_ready import (
     _batch_id,
     _keyword_allowed,
     _write_report,
+    assert_v3_policy_invariant,
     choose_model,
     generate_public_release,
-    load_daily_policy,
     production_date,
 )
 from .formal_approved_inventory import stage_formal_approved_package
@@ -29,7 +29,24 @@ from .store import ROOT
 PASS_STATUSES = {"PASS_TARGET", "PASS_PARTIAL_QUALITY_FIRST"}
 
 
-def _status_for_ready(ready: int, *, target: int, minimum: int) -> str:
+def _status_for_ready(
+    ready: int,
+    *,
+    target: int,
+    minimum: int,
+    operational_minimum: int | None = None,
+) -> str:
+    """Determine production status from the count of website-ready articles.
+
+    V3 semantics:
+      - ready >= target → PASS_TARGET
+      - ready >= minimum (formal retention floor, typically 1) → PASS_PARTIAL_QUALITY_FIRST
+      - ready < minimum → BLOCKED_BELOW_MINIMUM
+
+    operational_minimum (e.g. 10) is a production health signal in the report,
+    NOT a discard threshold. Articles that pass minimum but are below
+    operational_minimum are still retained (partial_batch_retention=true).
+    """
     if ready >= target:
         return "PASS_TARGET"
     if ready >= minimum:
@@ -49,10 +66,13 @@ def _fatal_report(day: str, policy: dict, exc: Exception) -> dict:
         "batch_id": _batch_id(day),
         "status": "FATAL_ERROR",
         "target": int(policy.get("target") or 20),
-        "minimum": int(policy.get("minimum") or 10),
+        "minimum": int(policy.get("minimum") or 1),
+        "operational_minimum": int(policy.get("operational_minimum") or 10),
         "maximum": int(policy.get("maximum") or 25),
         "website_ready_public_r1": 0,
         "quality_floor_lowered": False,
+        "quality_first": True,
+        "partial_batch_retention": True,
         "website_sync_attempted": False,
         "scheduled": False,
         "published": False,
@@ -62,7 +82,7 @@ def _fatal_report(day: str, policy: dict, exc: Exception) -> dict:
 
 
 def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = None) -> dict:
-    policy = load_daily_policy(policy_path)
+    policy = assert_v3_policy_invariant(policy_path)
     day = production_date(now, str(policy["timezone"]))
     report_path = REPORT_ROOT / f"{day}.json"
     if report_path.is_file():
@@ -84,6 +104,7 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
     batch_id = _batch_id(day)
     target = int(policy["target"])
     minimum = int(policy["minimum"])
+    operational_minimum = int(policy.get("operational_minimum") or minimum)
     maximum = int(policy["maximum"])
     max_rounds = max(1, int(policy.get("max_refill_rounds") or 4))
     approved_batch_size = max(1, int(policy.get("refill_approved_batch_size") or 20))
@@ -256,6 +277,7 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
             "status": "IN_PROGRESS_REFILL",
             "target": target,
             "minimum": minimum,
+            "operational_minimum": operational_minimum,
             "maximum": maximum,
             "model": model,
             "base_url": base_url,
@@ -266,6 +288,8 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
             "public_release_failed": public_failed,
             "rounds": rounds,
             "quality_floor_lowered": False,
+            "quality_first": True,
+            "partial_batch_retention": True,
             "website_sync_attempted": False,
             "scheduled": False,
             "published": False,
@@ -280,15 +304,32 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
             stop_reason = "no_approved_progress_before_round_limit"
 
     ready_count = len(public_ready)
-    status = _status_for_ready(ready_count, target=target, minimum=minimum)
+    status = _status_for_ready(
+        ready_count,
+        target=target,
+        minimum=minimum,
+        operational_minimum=operational_minimum,
+    )
+
+    # V3 partial_batch_retention: always write the manifest when ready_count >= minimum,
+    # even if below operational_minimum. This is the formal retention guarantee —
+    # qualified articles are NEVER discarded just because they didn't reach the
+    # operational refill target.
     manifest = None
     if ready_count >= minimum:
         manifest = write_public_release_manifest(batch_id, expected_count=ready_count)
 
     if status == "PASS_PARTIAL_QUALITY_FIRST" and stop_reason == "refill_round_limit_reached":
-        stop_reason = "quality_first_partial_after_hard_cap"
+        if ready_count < operational_minimum:
+            stop_reason = "quality_first_partial_below_operational_minimum_after_hard_cap"
+        else:
+            stop_reason = "quality_first_partial_after_hard_cap"
     elif status == "BLOCKED_BELOW_MINIMUM" and stop_reason == "refill_round_limit_reached":
         stop_reason = "below_minimum_after_hard_cap"
+
+    below_operational_minimum = (
+        status == "PASS_PARTIAL_QUALITY_FIRST" and ready_count < operational_minimum
+    )
 
     report = {
         "schema_version": 2,
@@ -298,6 +339,7 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
         "status": status,
         "target": target,
         "minimum": minimum,
+        "operational_minimum": operational_minimum,
         "maximum": maximum,
         "model": model,
         "base_url": base_url,
@@ -314,6 +356,8 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
         "generation_failed": total_generation_failed,
         "pre_generation_duplicate_blocked": total_duplicate_blocked,
         "website_ready_public_r1": ready_count,
+        "below_operational_minimum": below_operational_minimum,
+        "partial_batch_retention": True,
         "public_release_failed_count": len(public_failed),
         "public_release_failed": public_failed,
         "stop_reason": stop_reason,
@@ -326,6 +370,7 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
         "scheduled": False,
         "published": False,
         "quality_floor_lowered": False,
+        "quality_first": True,
         "public_ready": public_ready,
         "rounds": rounds,
         "recorded_at": datetime.now(timezone.utc).isoformat(),
@@ -339,12 +384,12 @@ def main() -> int:
     parser.add_argument("--policy", type=Path, default=POLICY_PATH)
     args = parser.parse_args()
     try:
-        policy = load_daily_policy(args.policy)
+        policy = assert_v3_policy_invariant(args.policy)
         day = production_date(None, str(policy["timezone"]))
         result = run_daily_refill(policy_path=args.policy)
     except (DailyProductionError, GenerationError, ValueError, OSError) as exc:
         try:
-            policy = load_daily_policy(args.policy)
+            policy = json.loads(args.policy.read_text(encoding="utf-8"))
             day = production_date(None, str(policy["timezone"]))
             report = _fatal_report(day, policy, exc)
             _write_report(day, report)

@@ -9,9 +9,11 @@ WORKFLOW = ROOT / ".github" / "workflows" / "daily-website-ready-production.yml"
 def test_closeout_volume_and_quality_contract():
     policy = load_daily_policy()
     assert policy["timezone"] == "Asia/Singapore"
-    assert (policy["minimum"], policy["target"], policy["maximum"]) == (10, 20, 25)
+    assert policy["version"] == 3
+    assert (policy["minimum"], policy["operational_minimum"], policy["target"], policy["maximum"]) == (1, 10, 20, 25)
     assert policy["quality_first"] is True
     assert policy["quality_floor_may_be_lowered"] is False
+    assert policy["partial_batch_retention"] is True
     assert policy["public_release_required_to_count"] is True
     assert policy["public_release_generation_attempts"] >= 3
 
@@ -26,10 +28,14 @@ def test_closeout_refill_and_cost_caps_are_bounded():
 
 
 def test_closeout_final_public_r1_count_drives_status():
-    assert _status_for_ready(4, minimum=10, target=20) == "BLOCKED_BELOW_MINIMUM"
-    assert _status_for_ready(10, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(19, minimum=10, target=20) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(20, minimum=10, target=20) == "PASS_TARGET"
+    # V3: minimum=1, operational_minimum=10
+    assert _status_for_ready(0, minimum=1, target=20, operational_minimum=10) == "BLOCKED_BELOW_MINIMUM"
+    assert _status_for_ready(1, minimum=1, target=20, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(6, minimum=1, target=20, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(9, minimum=1, target=20, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(10, minimum=1, target=20, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(19, minimum=1, target=20, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(20, minimum=1, target=20, operational_minimum=10) == "PASS_TARGET"
 
 
 def test_closeout_frozen_tail_and_broad_funding_terms_remain_blocked():
@@ -63,16 +69,21 @@ def test_closeout_workflow_has_schedule_failure_evidence_ci_and_merge_order():
     text = WORKFLOW.read_text(encoding="utf-8")
     assert "cron: '20 1 * * *'" in text
     assert "MODEL_PROVIDER_API_KEY" in text
+    assert "assert_v3_policy_invariant" in text
     assert "Produce and refill quality-first website-ready inventory" in text
     assert "Upload daily diagnostic artifact" in text
     assert "diagnostics/daily-website-ready-" in text
+    assert "recovery/daily-website-ready-" in text
+    assert "repository_gate_failed_recovery_only" in text
     assert "python -m engine.cli audit" in text
     assert "pytest -q" in text
     assert "gh workflow run test.yml --ref" in text
     assert "gh run watch \"$RUN_ID\" --exit-status" in text
     assert "gh pr merge \"$PR_URL\" --squash --delete-branch" in text
     assert "--admin" not in text
+    assert text.index("assert_v3_policy_invariant") < text.index("Produce and refill")
     assert text.index("Produce and refill quality-first website-ready inventory") < text.index("Run local full repository gates")
+    assert text.index("Run local full repository gates") < text.index("Persist exact generated inventory after repository-gate failure")
     assert text.index("Run local full repository gates") < text.index("Open daily production PR")
     assert text.index("Dispatch independent dual-version CI") < text.index("Squash merge only after CI passes")
 
@@ -82,4 +93,5 @@ def test_closeout_overlap_guard_and_fail_closed_are_present():
     assert "A previous daily production PR is still open" in text
     assert "Daily branch exists without an open PR; fail closed" in text
     assert "Stop after failed quality-first production" in text
+    assert "Stop after failed repository gates" in text
     assert "cancel-in-progress: false" in text

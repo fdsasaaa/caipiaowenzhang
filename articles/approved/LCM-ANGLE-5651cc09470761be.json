@@ -1,0 +1,304 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100000、终点81390、排除18610。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18610,
+    "final_space": 81390,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到81390以及排除18610个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "320efbf8c950ff12328f",
+  "approved_at": "2026-09-01T04:00:43.011537+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-7b92f33be30eb8e3",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "neighbor_number[pair_difference=1/static]:100000->81390",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选邻号注数计算",
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到81390以及排除18610个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100000、终点81390、排除18610。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18610,
+      "final_space": 81390,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "至少存在一对差1邻号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "至少存在一对差1邻号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对五星直选的候选空间计算，逐项确认100000到81390以及排除18610个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100000、终点81390、排除18610。",
+    "title": "分分彩五星直选邻号注数计算：100000个候选为什么变成81390个，排除18610个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-5651cc09470761be",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论五星直选邻号注数计算的机械过程，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围说明",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选的候选空间起点是100000。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自主筛选合同的静态起点",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按主筛选合同，至少存在一对差1邻号这一层筛完后，候选空间变成81390。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选后的确定性结果",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一层一共排除18610个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "起点减去终点得到排除量",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "100000减去18610，得到81390。",
+      "claim_type": "calculation",
+      "evidence_note": "基础算术核对",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 标签要求",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的样本量是12。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的描述性样本量",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本里，最新一条是64383，和值24，跨度5。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的描述性字段",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的频数分布为0出现5次，1出现4次，2出现6次，3出现5次，4出现7次，5出现5次，6出现7次，7出现4次，8出现7次，9出现10次。",
+      "claim_type": "calculation",
+      "evidence_note": "来自 case_bundle 的描述性频次",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这里的对象是分分彩五星直选的候选空间。主筛选合同给出的起点是100000，意思是先把五星直选的全部有序五位结果当作基准空间，再看“至少存在一对差1邻号”这一条固定条件筛完后还剩多少。</p><p>这一篇只做空间核对，不把筛选包装成命中率，也不讨论未核验的平台经济参数。</p><h2>逐层计算保留与排除数量</h2><p>主筛选条件只有一层：<strong>至少存在一对差1邻号</strong>。这是一条系统研究固定下来的筛选条件，先定参数，再看结果。</p><p>按合同，筛选前空间是100000，筛选后空间是81390。两者相减，排除18610个。</p><p>所以这一步的确定性结果就是：100000个候选，保留81390个，排除18610个。</p><h2>核对起点、终点和总排除</h2><p>核对时只看三件事：起点100000，终点81390，总排除18610。它们之间的关系是固定的算术关系，不是经验猜测。</p><p>可以直接复算：100000 - 18610 = 81390。只要起点和筛选条件不变，这个结果就不需要靠样本去“验证感觉”。</p><h2>为什么这些数字不是命中率</h2><p>81390不是命中率，18610也不是胜率。它们只是候选空间在一个固定机械条件下被删掉和保留下来的数量。</p><p>把“空间缩小了”直接说成“更容易中奖”，这是两个完全不同的概念。前者是集合大小变化，后者是未来结果判断。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这组筛选只说明：在五星直选的候选空间里，按“至少存在一对差1邻号”这条固定条件，能得到81390个保留项。它不自动推出预测优势，也不构成未来收益判断。</p><p>演示数据，不是真实开奖记录。它可以帮助你看懂计算方式，但不能拿来当成真实开奖的证明。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选条件，只认“至少存在一对差1邻号”。</li><li>把五星直选的初始候选空间记为100000，不要拿演示样本12条去替代理论空间。</li><li>按固定条件复算保留数，得到81390。</li><li>再做差：100000减去81390，得到排除18610。</li><li>确认这里已经完成本篇合同要求的唯一主筛选，不临时加第二条过滤器。</li></ol><h2>停止条件</h2><p>到这里就停止。只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选；否则不要把新的想法临时并进来。</p><h2>演示样本说明</h2><p>下面这组只用于说明格式和描述性字段，不是预测依据：演示数据，不是真实开奖记录。样本量是12，最新一条是64383，和值24，跨度5。</p><p>这组演示样本的频数分布为0出现5次，1出现4次，2出现6次，3出现5次，4出现7次，5出现5次，6出现7次，7出现4次，8出现7次，9出现10次。</p>",
+  "content_format": "html",
+  "content_hash": "08fb83be106639cc39544988bb0f373411b430fbbf05a741c35c75390b59338a",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "5651cc09470761be7ec4bba9a317f6b69dde0c1cc1726a0bdbcf7a6f9aade171",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选邻号注数计算：按固定主筛选条件核对100000到81390的确定性变化，说明排除18610个的算术关系，并区分空间缩小与命中率。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "81390",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；否则停止，不临时加第二过滤器。",
+    "parameter_freeze_rule": "先固定主筛选条件“至少存在一对差1邻号”，再看样本或复算结果；参数不能先看样本后回改。",
+    "starting_space": "100000",
+    "steps": [
+      "先把五星直选的初始候选空间记为100000。",
+      "固定唯一主筛选条件：至少存在一对差1邻号。",
+      "按该条件复算保留数，得到81390。",
+      "用100000减去81390，核对排除18610。",
+      "确认本篇只完成这一层，不再追加未验证的新过滤器。"
+    ],
+    "stop_condition": "完成100000到81390、排除18610的核对后立即停止；若没有新增已验证规则，就不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选邻号注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0f0b23e869382576016a964dc9268087d09c30b37b330601ad",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算，逐项确认100000到81390以及排除18610个的确定性结果",
+  "secondary_keywords": [
+    "分分彩五星直选邻号注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "候选空间为什么会变？五星直选邻号的计算过程一次理清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选邻号注数计算-100000个候选为什么变成81390个-排除18610个怎么算",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文按固定主筛选条件核对分分彩五星直选邻号注数计算：起点100000，筛后81390，排除18610。重点是把空间缩小的算术关系讲清楚，并明确它不是命中率，也不是预测优势。",
+  "tags": [
+    "分分彩五星直选邻号注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "候选空间为什么会变？五星直选邻号的计算过程一次理清",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选邻号的计算过程一次理清",
+    "先算注数，再谈五星直选邻号：组合数学能说明到哪一步",
+    "从输入到结果：五星直选邻号的空间计算与停止条件",
+    "五星直选邻号怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的五星直选邻号，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选邻号的计算过程一次理清",
+      "先算注数，再谈五星直选邻号：组合数学能说明到哪一步",
+      "从输入到结果：五星直选邻号的空间计算与停止条件",
+      "五星直选邻号怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的五星直选邻号，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-0b6f9c192c45dc31",
+          "score": 0.8333333333333334,
+          "title": "候选空间为什么会变？中三直选跨度的计算过程一次理清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3043,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "候选空间",
+            "五星直选邻号"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "候选空间为什么会变？五星直选邻号的计算过程一次理清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

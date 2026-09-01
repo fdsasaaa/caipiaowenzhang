@@ -1,0 +1,311 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "multistage_order",
+    "deliverable_summary": "逐层解释和值9–18→跨度2–6的固定顺序和空间变化，完成最后一层后明确停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 604,
+    "final_space": 396,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值9–18",
+      "跨度2–6"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "和值9–18",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "1ea00ec8f31bff391a7f",
+  "approved_at": "2026-09-01T04:10:13.973632+00:00",
+  "article_angle_contract": {
+    "angle_type": "multistage_order",
+    "contract_id": "AAC-3819cd2dac518bab",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:1000->670>span_range[min=2,max=6/static]:670->396",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选和值跨度筛选顺序",
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "required_deliverable": "逐层解释和值9–18→跨度2–6的固定顺序和空间变化，完成最后一层后明确停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 604,
+      "final_space": 396,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值9–18",
+        "跨度2–6"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "和值9–18",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "先列出全部合同阶段",
+      "按固定顺序逐层复算",
+      "逐层核对before/after/excluded",
+      "完成最后一层后停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "逐层解释和值9–18→跨度2–6的固定顺序和空间变化，完成最后一层后明确停止。",
+    "title": "分分彩前三直选和值跨度筛选顺序：2层为什么按和值9–18→跨度2–6这个顺序，逐层各排除多少",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-46a8549683f208da",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文的演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同要求明确披露演示属性。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按照固定顺序先做和值9–18，再做跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "阶段顺序来自系统研究合同的静态机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层和值9–18：1000 -> 670，排除 330。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层候选空间复算结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层跨度2–6：670 -> 396，排除 274。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层候选空间复算结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合计从 1000 缩到 396，总共排除 604。",
+      "claim_type": "calculation",
+      "evidence_note": "全流程空间收缩结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成最后一层后就停止，因为本合同只固定了这两层；再加新过滤器，必须另有已验证规则或证据，并在下一次实验前先冻结参数。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止条件与新增过滤器边界。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层候选空间从1000个缩到670个，排除330个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从670个缩到396个，排除274个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从1000个缩到396个，总排除604个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先看合同阶段</h2><p>这篇只复算一条固定管线：先做和值9–18，再做跨度2–6。总起点是1000个有序三位候选，最后留下396个，合计排除604个。</p><p>本文的演示数据，不是真实开奖记录。</p><h2>按固定顺序复算</h2><p>顺序不能倒。先看和值区间，再看跨度区间，是这份合同里已经固定好的两层。这里的参数先冻结，再看样本，不是先看结果再倒推参数。</p><h3>第1层：和值9–18</h3><p>起点 before_space 是1000。做和值9–18后，after_space 变成670，excluded_space 是330。意思是，先按和值把1000个候选里不落在9到18区间的部分去掉，剩下670个。</p><h3>第2层：跨度2–6</h3><p>上一层结束后，before_space 不是1000，而是670。再按跨度2–6筛一遍，after_space 变成396，excluded_space 是274。也就是说，这一层是在上一层剩下的670个里继续排除274个，最后保留396个。</p><h2>实际怎么操作</h2><ol><li>先确认起点空间是1000，不要先跳到第二层。</li><li>先固定第1层和值9–18，复算出1000 -> 670，排除330。</li><li>再把670作为第2层的输入，固定跨度2–6，复算出670 -> 396，排除274。</li><li>把两层相加核对总结果：1000最终到396，总排除604。</li><li>做到这里就停止，不要临时再加第三个过滤器。</li></ol><h2>边界与误区</h2><p>这只是候选空间缩小，不是预测优势。空间从1000缩到396，只说明筛选更窄了，不代表命中率、胜率或收益被证明更高。</p><p>如果没有另一条已经验证过的规则，就不要把这套复算继续包装成“下一步还能更准”。新增条件只有在有已验证规则或证据、并且参数能在下一次实验前先冻结时，才允许继续缩小候选。</p><h2>停止条件</h2><p>这篇在第二层结束后停止，因为合同只给了两层固定顺序。完成最后一层后，不再临时拼接新过滤器；要继续，只能等下一次有新的已验证规则，再单独冻结后重算。</p>",
+  "content_format": "html",
+  "content_hash": "e7c4475b24ebf87b36b00da1629ca5004500d35795cadf12fe2527061ab72ee0",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "46a8549683f208dac58bb718991aaa44ee2a3dba78193067ba11e3d3e87f70f8",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "multistage_order",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三直选和值跨度筛选顺序案例讲解：按固定顺序复算和值9–18→跨度2–6，逐层核对before、after、excluded，并明确完成最后一层后停止。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完整合同两层完成后，候选空间从1000缩到396，合计排除604。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且参数能在下一次实验前先冻结时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定顺序和参数，再看样本；本合同内只使用和值9–18和跨度2–6，不临时增补过滤器。",
+    "starting_space": "1000",
+    "steps": [
+      "确认起点是1000个有序三位候选。",
+      "先固定和值9–18，复算这一层的before、after、excluded。",
+      "把上一层的after作为下一层的before，再固定跨度2–6复算。",
+      "核对两层合计排除604，最终剩396。",
+      "完成第二层后停止，不再临时加新过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则或证据，并在下一次实验前冻结参数。"
+  },
+  "primary_keyword": "分分彩前三直选和值跨度筛选顺序",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_012e81995db5cdc6016a965000b1f887d08dfc986c27cba034",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先后顺序为什么重要？前三直选和值跨度的多层筛选这样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前三直选和值跨度筛选顺序-2层为什么按和值9-18-跨度2-6这个顺序-逐层各排除多少",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "这篇按固定顺序复算分分彩前三直选和值跨度筛选顺序：先做和值9–18，再做跨度2–6，逐层给出before、after、excluded，并在第二层后停止。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值跨度筛选",
+    "位置筛选",
+    "机械复算"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "先后顺序为什么重要？前三直选和值跨度的多层筛选这样复核",
+  "title_candidates": [
+    "先后顺序为什么重要？前三直选和值跨度的多层筛选这样复核",
+    "从第一层到最后一层：前三直选和值跨度的输入输出与停止边界",
+    "前三直选和值跨度的关键不只是筛选，顺序和停止条件同样重要",
+    "为什么不能随意换顺序？用前三直选和值跨度看连续筛选逻辑",
+    "做到最后一层之后呢？前三直选和值跨度为什么不该继续追加条件"
+  ],
+  "title_review": {
+    "candidates": [
+      "先后顺序为什么重要？前三直选和值跨度的多层筛选这样复核",
+      "从第一层到最后一层：前三直选和值跨度的输入输出与停止边界",
+      "前三直选和值跨度的关键不只是筛选，顺序和停止条件同样重要",
+      "为什么不能随意换顺序？用前三直选和值跨度看连续筛选逻辑",
+      "做到最后一层之后呢？前三直选和值跨度为什么不该继续追加条件"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-0b6f9c192c45dc31",
+          "score": 0.36,
+          "title": "候选空间为什么会变？中三直选跨度的计算过程一次理清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "plain",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "筛选",
+            "顺序"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "和值",
+            "跨度",
+            "筛选",
+            "顺序",
+            "前三直选和值跨度"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先后顺序为什么重要？前三直选和值跨度的多层筛选这样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,354 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从100000到10350的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 89650,
+    "final_space": 10350,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解五星直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好2个大号",
+      "恰好2个单号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "恰好2个大号",
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "f1df095a341f5877b4a3",
+  "approved_at": "2026-09-01T04:05:11.387125+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-fd95ba235d2ccb54",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=2/static]:100000->31250>odd_even_filter[odd_count=2/static]:31250->10350",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选大小奇偶技巧",
+    "reader_question": "理解五星直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从100000到10350的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 89650,
+      "final_space": 10350,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好2个大号",
+        "恰好2个单号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "恰好2个大号",
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：恰好2个大号→恰好2个单号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解五星直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从100000到10350的可复算案例。",
+    "title": "分分彩五星直选大小奇偶技巧：恰好2个大号→恰好2个单号具体怎么算，用完整案例从100000复算到10350",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-df8e1fd701ba00e6",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选先从100000个五位有序号码开始算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应合同起始空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层是恰好2个大号，100000 -> 31250，排除 68750。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层候选空间复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层是恰好2个单号，31250 -> 10350，排除 20900。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层候选空间复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合起来，最终从100000缩到10350，总共排除 89650。",
+      "claim_type": "calculation",
+      "evidence_note": "整体候选空间复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本披露标签。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本一共16期。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本条数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一期是67210。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本开奖号。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一期的和值是16。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本和值。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一期的跨度是7。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本跨度。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一期的大小形态是大大小小小。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一期的单双形态是双单双单双。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的样本描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第1层候选空间从100000个缩到31250个，排除68750个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从31250个缩到10350个，排除20900个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100000个缩到10350个，总排除89650个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>这篇只讲分分彩五星直选的计算方法，不讲未核验的平台经济参数。核心只看两个固定条件：恰好2个大号，接着再看恰好2个单号。</p><p>这里的演示数据，不是真实开奖记录。它只用来把计算过程走一遍，方便你核对每一步怎么算。</p><p>五星直选按五位有序号码来算，起始候选空间是100000。后面的两层筛选都已经在合同里固定，不能临时改顺序，也不能临时再加新条件。</p><h2>方法机制：恰好2个大号→恰好2个单号</h2><p>第一层叫“恰好2个大号”。意思不是看某一位，而是看五位里大号的个数，固定取2个。按合同结果，这一步把100000缩到31250，排除68750。</p><p>第二层叫“恰好2个单号”。它不是重新发明一套筛法，而是在第一层剩下的31250个候选里，再按单号个数固定取2个。按合同结果，这一步把31250缩到10350，排除20900。</p><p>所以这套机制的顺序很简单：先固定“2个大号”，再固定“2个单号”，两步都做完，候选空间就是10350。</p><h2>完整可复算案例</h2><p>先看第一步。起点是100000，按“恰好2个大号”筛完后得到31250。这里要记住，排除的不是一个样本，而是68750个候选。</p><p>再看第二步。不是回到原点重算，而是在31250这个中间结果上继续筛“恰好2个单号”。筛完后得到10350，说明这一层又排除了20900个候选。</p><p>把两步连起来复算，结果就是100000先到31250，再到10350。总排除量是89650。</p><h2>逐步核对候选空间</h2><ol><li>确认起始空间是100000，这是五星直选的完整五位有序号码池。</li><li>固定第一层参数“恰好2个大号”，只算这一层，不加别的条件，结果是100000到31250，排除68750。</li><li>固定第二层参数“恰好2个单号”，只在第一层结果上继续算，结果是31250到10350，排除20900。</li><li>核对总结果，100000减去89650，剩下10350。</li><li>检查说明是否写清楚演示性质，避免把样本当成真实开奖记录，也避免把空间缩小理解成预测优势。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选只是在做候选空间缩减，不是对结果作出未来判断。本文只讲固定合同里的机械计算，不把历史统计写成更准、更有效或者更容易中奖。</p><p>演示数据里的样本条数、最新一期、和值、跨度、大小形态、单双形态，都只是描述性信息，不能直接当成结论去外推。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>到10350就停。因为合同只给了这两层，而且参数已经先固定，再看样本。没有新的、已验证且可复算的条件之前，不要临时再加第三层。</p><p>实际怎么操作就是这样：先记起始空间，再按第一层算出中间空间，再按第二层算出最终空间，最后停止。</p>",
+  "content_format": "html",
+  "content_hash": "24a3c1ee0b63c4eb55f6d2cc88ff2d4a1adc9fbfef14696815090f6bdd718706",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "df8e1fd701ba00e6c907d6000688a9c39bddda5c1f889e98798e8fab6c01af02",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选大小奇偶技巧案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、空间变化和常见误区，不把历史统计包装成结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成合同全部阶段后的最终候选空间是10350；从100000开始共排除89650。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并且能在下一次实验前冻结参数时，才允许继续缩小候选。没有这类条件时就停止，不再临时加第二过滤器或第三过滤器。",
+    "parameter_freeze_rule": "先固定参数，再看样本；本合同中的两层参数都已冻结，不能根据演示结果回头改。",
+    "starting_space": "100000",
+    "steps": [
+      "先确认起始空间是五星直选的100000个五位有序号码。",
+      "按第一层“恰好2个大号”计算，只做这一层，得到100000到31250，排除68750。",
+      "在31250这个中间结果上继续按第二层“恰好2个单号”计算，得到31250到10350，排除20900。",
+      "把两层结果合并核对，最终候选空间是10350，总排除89650。",
+      "确认本文只是在做机械复算，不把演示数据当成真实开奖记录，也不把缩小后的空间说成预测优势。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器都必须另有已验证规则/证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩五星直选大小奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_062bc38e2170a513016a964ed02af887d1a09241c497272896",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选大小奇偶技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "这一步到底怎么算？用五星直选大小奇偶把规则和复算过程讲清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选大小奇偶技巧-恰好2个大号-恰好2个单号-100000-10350",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用简单中文拆开分分彩五星直选大小奇偶技巧的两层固定筛选：先算恰好2个大号，再算恰好2个单号，并按合同把100000复算到10350。文中标明演示数据不是真实开奖记录，只做机械复算，不把候选空间缩小包装成预测优势。",
+  "tags": [
+    "分分彩五星直选大小奇偶技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "这一步到底怎么算？用五星直选大小奇偶把规则和复算过程讲清",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选大小奇偶把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选大小奇偶应该怎样复核",
+    "五星直选大小奇偶为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的五星直选大小奇偶怎样正确理解",
+    "看懂五星直选大小奇偶不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选大小奇偶把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选大小奇偶应该怎样复核",
+      "五星直选大小奇偶为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的五星直选大小奇偶怎样正确理解",
+      "看懂五星直选大小奇偶不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-a5c9a5a73521668d",
+          "score": 0.8076923076923077,
+          "title": "这一步到底怎么算？用前三直选和值把规则和复算过程讲清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1538,
+          "intent_term_hits": [
+            "五星",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "大小",
+            "五星直选大小奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "这一步到底怎么算？用五星直选大小奇偶把规则和复算过程讲清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

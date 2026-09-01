@@ -1,0 +1,451 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文说明五星直选里恰好2个单号的计算方式，给出从100000到31250的可复算演示，并明确停止在主筛选后，不把统计筛选包装成预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 68750,
+    "final_space": 31250,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解五星直选里恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好2个单号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "ce03ddf4e45ee83a0036",
+  "approved_at": "2026-09-01T04:07:49.991133+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-42fc215ba6c0bd4f",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=2/static]:100000->31250",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选奇偶技巧",
+    "reader_question": "理解五星直选里恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释恰好2个单号的机制，并完成从100000到31250的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 68750,
+      "final_space": 31250,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好2个单号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：恰好2个单号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解五星直选里恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释恰好2个单号的机制，并完成从100000到31250的可复算案例。",
+    "title": "分分彩五星直选奇偶技巧：恰好2个单号具体怎么算，用完整案例从100000复算到31250",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-64423d444192d985",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲分分彩五星直选的计算机制，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑边界声明，不涉及外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的主筛选合同是：在五星直选的有序5位候选空间里，筛“恰好2个单号”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选合同来自规则引用。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "五星直选可以看成5个位置依次排列，每个位置都看单号还是双号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法机制表述，引用规则。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "所谓“恰好2个单号”，就是5个位置里只有2个位置取单号，其余3个位置取双号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对主筛选条件的机械解释。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按固定合同，起始候选空间是100000，主筛选后的空间是31250，排除掉68750。",
+      "claim_type": "calculation",
+      "evidence_note": "空间数值来自已验证规则计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是说，这一步只保留“恰好2个单号”的候选，其余都筛掉。",
+      "claim_type": "calculation",
+      "evidence_note": "对候选筛选结果的复述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个结果只说明空间被缩小了，不说明它有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明，不是来源事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "下面用固定演示案例复算一次。",
+      "claim_type": "editorial",
+      "evidence_note": "演示引导，指向合成样本。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本标注为：演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "再次明确演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "案例里给出的最新一组演示数据是86483，对应的5个数字分别是8、6、4、8、3。",
+      "claim_type": "source_claim",
+      "evidence_note": "来自合成样本的具体数字。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按奇偶看，8是双，6是双，4是双，8是双，3是单，所以这一组的单号个数是1个，不满足“恰好2个单号”。",
+      "claim_type": "calculation",
+      "evidence_note": "由合成样本直接复算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果只按这个单一条件筛选，那么这一组会被排除；但本篇演示的是合同里的主筛选规则，不再追加别的条件。",
+      "claim_type": "editorial",
+      "evidence_note": "对演示案例的处理说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第一步，先固定参数：选择“五星直选”，指标是odd_count，参数是2个单号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同参数固定步骤。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二步，从100000个有序5位候选开始看。",
+      "claim_type": "calculation",
+      "evidence_note": "候选空间起点。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的100000就是起始空间，不是样本条数。",
+      "claim_type": "editorial",
+      "evidence_note": "防止把样本数误当空间数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第三步，应用“恰好2个单号”后，留下31250个候选，排除68750个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选后的空间和排除量。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第四步，核对合同结束点：本篇到这里就停止，不再临时加新的过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据里出现的和值、跨度、频率、遗漏，只能当描述信息看，不能直接当成未来结论。",
+      "claim_type": "editorial",
+      "evidence_note": "对演示指标的使用边界。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源提到的技巧家族，只能说明方法归属，不等于来源给出了可验证的预测优势。",
+      "claim_type": "source_claim",
+      "evidence_note": "来源仅作归属说明，未把其升级为事实。",
+      "support_refs": [
+        "BRBCW-000716"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "所以这类筛选适合用来做机械复算，不适合被写成“更容易中奖”的承诺。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑性风险提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇已经完成合同要求的唯一主筛选、空间核对和演示复算。",
+      "claim_type": "editorial",
+      "evidence_note": "完成态说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "停止条件很简单：只有新增条件也有已验证规则或证据，并且可以复算，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "否则就停在31250这个结果，不再往下拼第二步。",
+      "claim_type": "calculation",
+      "evidence_note": "合同结束点的候选空间结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇已经完成合同要求的唯一主筛选、空间核对和演示复算。",
+      "claim_type": "editorial",
+      "evidence_note": "重复出现的完成态声明，单独登记。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "停止条件很简单：只有新增条件也有已验证规则或证据，并且可以复算，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "重复出现的停止条件声明，单独登记。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "否则就停在31250这个结果，不再往下拼第二步。",
+      "claim_type": "calculation",
+      "evidence_note": "重复出现的结果边界声明，单独登记。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲分分彩五星直选的计算机制，不讨论未核验的平台经济参数。</p><p>这里的主筛选合同是：在五星直选的有序5位候选空间里，筛“恰好2个单号”。这个条件在本篇里是唯一主筛选，不再临时加第二个过滤器。</p><h2>方法机制：恰好2个单号</h2><p>五星直选可以看成5个位置依次排列，每个位置都看单号还是双号。所谓“恰好2个单号”，就是5个位置里只有2个位置取单号，其余3个位置取双号。</p><p>按固定合同，起始候选空间是100000，主筛选后的空间是31250，排除掉68750。也就是说，这一步只保留“恰好2个单号”的候选，其余都筛掉。</p><p>这个结果只说明空间被缩小了，不说明它有预测优势。</p><h2>完整可复算案例</h2><p>下面用固定演示案例复算一次。演示数据，不是真实开奖记录。</p><p>演示样本标注为：演示数据，不是真实开奖记录。</p><p>案例里给出的最新一组演示数据是86483，对应的5个数字分别是8、6、4、8、3。按奇偶看，8是双，6是双，4是双，8是双，3是单，所以这一组的单号个数是1个，不满足“恰好2个单号”。</p><p>如果只按这个单一条件筛选，那么这一组会被排除；但本篇演示的是合同里的主筛选规则，不再追加别的条件。</p><h2>逐步核对候选空间</h2><p>第一步，先固定参数：选择“五星直选”，指标是odd_count，参数是2个单号。</p><p>第二步，从100000个有序5位候选开始看。这里的100000就是起始空间，不是样本条数。</p><p>第三步，应用“恰好2个单号”后，留下31250个候选，排除68750个候选。</p><p>第四步，核对合同结束点：本篇到这里就停止，不再临时加新的过滤器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>演示数据里出现的和值、跨度、频率、遗漏，只能当描述信息看，不能直接当成未来结论。</p><p>来源提到的技巧家族，只能说明方法归属，不等于来源给出了可验证的预测优势。</p><p>所以这类筛选适合用来做机械复算，不适合被写成“更容易中奖”的承诺。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经完成合同要求的唯一主筛选、空间核对和演示复算。</p><p>停止条件很简单：只有新增条件也有已验证规则或证据，并且可以复算，才允许继续缩小候选。否则就停在31250这个结果，不再往下拼第二步。</p><h2>实际怎么操作</h2><ol><li>先确认玩法是五星直选，固定只看5个位置。</li><li>再固定主筛选条件：恰好2个单号。</li><li>从100000个有序5位候选开始，按这个条件筛一遍。</li><li>核对结果：保留31250个，排除68750个。</li><li>最后只做复算和核对，不把这个结果直接写成预测优势。</li></ol>",
+  "content_format": "html",
+  "content_hash": "0a92dc734c8f9062b41c6eaa1538fa0832e2ff624dceef2d7d933c599e29350e",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "64423d444192d9850b8fba8d95954a9e73bee31681182f2b9ee9583bab3f11fe",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选奇偶技巧案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "31250",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数，再看样本；本篇只允许使用‘恰好2个单号’这一主筛选。",
+    "starting_space": "100000",
+    "steps": [
+      "先固定玩法为五星直选，只看5个位置，不扩展到别的玩法。",
+      "先固定主筛选参数为“恰好2个单号”，不要先看样本再倒推参数。",
+      "从100000个有序5位候选开始复算，确认这是起始空间，不是样本条数。",
+      "应用主筛选后，核对只剩31250个候选，并确认排除了68750个候选。",
+      "只做这一层复算，完成后停止；没有新增且已验证的条件，就不要再加第二个过滤器。"
+    ],
+    "stop_condition": "完成合同要求的唯一主筛选、空间核对和演示复算后停止；没有新增的已验证规则或证据时，不再继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0736cbcf9abd287c016a964f63731487d0bdf41fdf49a781a7",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选奇偶技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-odd_even_filter-position_filter",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用简单中文解释分分彩五星直选里“恰好2个单号”的计算方法，只做机制和复算演示，不把演示数据写成真实开奖记录，也不把筛选结果包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "奇偶技巧",
+    "定位胆机制",
+    "演示复算",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选奇偶把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+    "五星直选奇偶为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的五星直选奇偶怎样正确理解",
+    "看懂五星直选奇偶不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选奇偶把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+      "五星直选奇偶为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的五星直选奇偶怎样正确理解",
+      "看懂五星直选奇偶不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-df8e1fd701ba00e6",
+          "score": 0.32653061224489793,
+          "title": "这一步到底怎么算？用五星直选大小奇偶把规则和复算过程讲清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2381,
+          "intent_term_hits": [
+            "五星",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "五星直选奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

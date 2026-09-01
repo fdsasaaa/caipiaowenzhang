@@ -1,0 +1,152 @@
+{
+  "approved_public_release_count": 14,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-0b6f9c192c45dc31",
+      "content_hash": "51f20e7f103a3c73f3d421c86ab283c98669e30639e85a6f5d57792bed6d5239",
+      "fingerprint": "dec6d363871e169fc1669a20ead0a84caed6978cfa6c7f7508f6243495e4db4e",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-0b6f9c192c45dc31.public-r1.json",
+      "primary_keyword": "分分彩中三直选跨度注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-0b6f9c192c45dc31:public-r1",
+      "slug": "分分彩中三直选跨度注数计算-1000个候选为什么变成660个-排除340个怎么算"
+    },
+    {
+      "article_id": "LCM-ANGLE-11c1d01b80765af0",
+      "content_hash": "dc4cf3d7fec4c154204f1ad501f233742dbcc12da8e76923d09c59e38d4bce08",
+      "fingerprint": "0c09af291387b0bc06f8e393c31bce03c52c35916101c1d504ae80dcd158b5fc",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-11c1d01b80765af0.public-r1.json",
+      "primary_keyword": "分分彩中三组选3和值注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-11c1d01b80765af0:public-r1",
+      "slug": "分分彩-中三组选3-sum_range-space_math"
+    },
+    {
+      "article_id": "LCM-ANGLE-18a402b082dd7faf",
+      "content_hash": "d332421c5d02aeebefcfaedfd77832e30ca19ace4a6f11a7c6996373ead2e3f8",
+      "fingerprint": "4f650e16572148fedd674ed1357b2937b9ce0055977284caa239b2ee2aa4cfea",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-18a402b082dd7faf.public-r1.json",
+      "primary_keyword": "分分彩五星直选奇偶注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-18a402b082dd7faf:public-r1",
+      "slug": "分分彩-五星直选-odd_even_filter-position_filter-space_math"
+    },
+    {
+      "article_id": "LCM-ANGLE-325fb8546444112c",
+      "content_hash": "85d4e089db931ca35af457c471b485648bf8c8d678e1fcfda98bf66c9ad5b603",
+      "fingerprint": "7d30560025dfee01400de862e0c778b633fc3559845a836f89fd174435754634",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-325fb8546444112c.public-r1.json",
+      "primary_keyword": "分分彩后二组选和值筛选步骤",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-325fb8546444112c:public-r1",
+      "slug": "分分彩-后二组选-sum_range-execution_checklist"
+    },
+    {
+      "article_id": "LCM-ANGLE-46a8549683f208da",
+      "content_hash": "934d26cc29d3a46590a1020a82ad0745171c4223a9a9c60462fd34f1b77c0d47",
+      "fingerprint": "4818ae6fdc8238a420c1a4dd034b2eda704a80fef6467e3893b1af0735dd7a4a",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-46a8549683f208da.public-r1.json",
+      "primary_keyword": "分分彩前三直选和值跨度筛选顺序",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-46a8549683f208da:public-r1",
+      "slug": "分分彩前三直选和值跨度筛选顺序-2层为什么按和值9-18-跨度2-6这个顺序-逐层各排除多少"
+    },
+    {
+      "article_id": "LCM-ANGLE-5651cc09470761be",
+      "content_hash": "46b5a137ccf49d46b63498fc6a2ff3d0967d7e61b4c27b9280a1825d7cfa79d8",
+      "fingerprint": "bf3991e4a62722d5992974ea989a2ed12e5176ae4b9cd32641872310d8ba42a4",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-5651cc09470761be.public-r1.json",
+      "primary_keyword": "分分彩五星直选邻号注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-5651cc09470761be:public-r1",
+      "slug": "分分彩五星直选邻号注数计算-100000个候选为什么变成81390个-排除18610个怎么算"
+    },
+    {
+      "article_id": "LCM-ANGLE-5db22b80db0713c9",
+      "content_hash": "26544992c3e297a039f1167afa61b67cf0dd8edd2f747ecf79e248570ae979ed",
+      "fingerprint": "bb1f4c4663646f429eec30560b3b8210b9366a17cdf459d3e7faa7c7486bb76e",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-5db22b80db0713c9.public-r1.json",
+      "primary_keyword": "分分彩前二直选奇偶注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-5db22b80db0713c9:public-r1",
+      "slug": "分分彩-前二直选-odd_even_filter-position_filter-space_math"
+    },
+    {
+      "article_id": "LCM-ANGLE-68ce325edd5f6fc5",
+      "content_hash": "04cc699a54f50ce193de758f04ce3f70bc2eba8f22f70933624975253aa9df2f",
+      "fingerprint": "44680e03ded66d85bb3afa46ab243ebcab5ff208105b432d2733fca08c7c664e",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-68ce325edd5f6fc5.public-r1.json",
+      "primary_keyword": "分分彩前二直选和值筛选步骤",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-68ce325edd5f6fc5:public-r1",
+      "slug": "分分彩-前二直选-sum_range-execution_checklist"
+    },
+    {
+      "article_id": "LCM-ANGLE-b753326417728ee1",
+      "content_hash": "558ef319d84c293ed6ec7179e827afbfb5d3f7f9c04e30e93adc74cd639f4f1d",
+      "fingerprint": "3dc1f97d20f44e94e4b97bfb947c6951092e4ff28b6e6d7f2d7a8664ee4b7dfb",
+      "path": "articles/public_release/DAILY-20260901/LCM-ANGLE-b753326417728ee1.public-r1.json",
+      "primary_keyword": "分分彩后二直选和值跨度筛选顺序",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-b753326417728ee1:public-r1",
+      "slug": "ffcm-houer-zhixuan-hezhi-kuandu-shaixuan-shunxu"
+    },
+    {
+      "article_id": "LCM-IDEA-0b7736a707e6608c",
+      "content_hash": "bc3502ffc44eae285a9b8aaa0d9d40751ec2544159eb18d2260b1013d98fd107",
+      "fingerprint": "e0952f9440b52ecd0ddb31ba2d5b6f22491607138d31ede175c03f6f8501a9e5",
+      "path": "articles/public_release/DAILY-20260901/LCM-IDEA-0b7736a707e6608c.public-r1.json",
+      "primary_keyword": "分分彩五星直选冷热技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-0b7736a707e6608c:public-r1",
+      "slug": "分分彩五星直选冷热技巧-近12期热号前5数字池具体怎么算-用完整案例从100000复算到3125"
+    },
+    {
+      "article_id": "LCM-IDEA-18149d90338bf75f",
+      "content_hash": "a112bf04bf2b54214d717c6e1f9f29712e3ed7a128da4ea44ac3d32f667d4800",
+      "fingerprint": "b668d6766e736bf9f8db65505d5e660f474781c3c7a9227cbec7c7111f834009",
+      "path": "articles/public_release/DAILY-20260901/LCM-IDEA-18149d90338bf75f.public-r1.json",
+      "primary_keyword": "分分彩后二直选和值跨度技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-18149d90338bf75f:public-r1",
+      "slug": "分分彩后二直选和值跨度技巧-和值6-12-跨度2-6-完整案例"
+    },
+    {
+      "article_id": "LCM-IDEA-64423d444192d985",
+      "content_hash": "636983917ac5c417c03b93c4a022121b1e800360b3f03cd2c42389864db7ed82",
+      "fingerprint": "7a394bcd831e58d2e750eced01237dd9edc0644f515424e78ac2758562639635",
+      "path": "articles/public_release/DAILY-20260901/LCM-IDEA-64423d444192d985.public-r1.json",
+      "primary_keyword": "分分彩五星直选奇偶技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-64423d444192d985:public-r1",
+      "slug": "分分彩-五星直选-odd_even_filter-position_filter"
+    },
+    {
+      "article_id": "LCM-IDEA-df8e1fd701ba00e6",
+      "content_hash": "b42ea89219de9c21bb3ebdcdd1e0de2012747df3b4481aec3e523845bed063fc",
+      "fingerprint": "678012da03306085f20ceef40f7099a0ce621e603df9bc41b24abc8e91144655",
+      "path": "articles/public_release/DAILY-20260901/LCM-IDEA-df8e1fd701ba00e6.public-r1.json",
+      "primary_keyword": "分分彩五星直选大小奇偶技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-df8e1fd701ba00e6:public-r1",
+      "slug": "分分彩五星直选大小奇偶技巧-恰好2个大号-恰好2个单号-100000-10350"
+    },
+    {
+      "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+      "content_hash": "56b06c257a7b06c058159079c67870f681ebb9c261a31215186d5dbf76d7dcb7",
+      "fingerprint": "62fb9aeb32ba9073781b0139874c664481ab08990b1d7c6936d1f830a3cb4c2e",
+      "path": "articles/public_release/DAILY-20260901/LCM-IDEA-e0a0e0b1ce0eba2b.public-r1.json",
+      "primary_keyword": "分分彩前四直选大小奇偶技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-e0a0e0b1ce0eba2b:public-r1",
+      "slug": "分分彩-前四直选-big_small_filter-odd_even_filter"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 14,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20260901",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

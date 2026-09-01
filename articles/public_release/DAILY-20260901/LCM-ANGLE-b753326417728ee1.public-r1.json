@@ -1,0 +1,210 @@
+{
+  "angle_signature": "1f3d315d09161df05d7a",
+  "approved_at": "2026-09-01T04:39:51.586196+00:00",
+  "article_id": "LCM-ANGLE-b753326417728ee1",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文按固定顺序复算两层筛选，第一层是和值6–12，第二层是跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了两层筛选的合同顺序与阈值。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层的输入是100个有序两位候选，筛完后剩58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文包含起始空间、筛后数量和排除数量的复算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层接着第1层的58个继续筛，筛完后剩36个，排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文包含第二层的输入输出与排除数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合起来从100个候选收敛到36个，合计排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文直接给出总前后规模与总排除数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成最后一层后应停止，不再临时追加新的过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了停止边界的规则性表述。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "空间收缩本身不是预测优势，也不能把历史样本表现单独当作未来预测优势的证明。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确加入了风险与误区说明，避免把筛选结果解释成预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>固定顺序</h2><p>本文只复算两层筛选：先看和值6–12，再看跨度2–6。顺序不交换，前一层的结果直接作为后一层输入。</p><p>这里关注的是复算过程是否可核对，不讨论任何未核验的平台参数，也不把筛选写成未来结果的暗示。</p><p>演示中使用的是合约内的机械规则，不是实时开奖记录；因此，重点在于输入、输出和边界，而不是追逐某种表面上的“更好看”结果。</p><h2>逐层复算</h2><p>起始空间按合同设为100个有序两位候选。第1层先按和值6–12筛，筛完后留下58个，排除42个。</p><p>这一步的判断非常直接：和值落在区间内就保留，不在区间内就排除。它说明的是一个分类过程，不是收益过程，也不是命中率承诺。</p><p>第2层从第1层留下的58个继续筛，不回到100个重算。第二层只检查跨度2–6，筛完后留下36个，排除22个。</p><p>因此，两层合起来是从100个收敛到36个，总共排除64个。这个结果可以用于复算核对，但不能被解释成未来会更容易成立的证据。</p><h2>before / after / excluded</h2><p>第1层：before 100，after 58，excluded 42。</p><p>第2层：before 58，after 36，excluded 22。</p><p>合计：before 100，after 36，excluded 64。</p><p>如果复算时发现数量对不上，通常先检查顺序、输入是否沿用上一层结果，以及阈值是否被改动。只要这三点不一致，最后的总数就不会稳定。</p><h2>方法边界</h2><p>这种写法只是在固定规则下做空间收缩，不是在做预测模型。它回答的是“怎么筛、筛掉多少、什么时候停”，不是“下一次会不会更容易中”。</p><p>结构分类或历史样本表现都不能单独证明未来预测优势。即使某个区间在历史样本里看起来更集中，也仍然可能只是样本波动或规则约束造成的外观结果。</p><p>因此，复算时应该把每一层当成独立的机械步骤，而不是把中间收缩误读成统计上的超额优势。</p><h2>停止条件</h2><p>完成最后一层后就停止。后面如果没有新的、已验证的规则，就不要继续追加第三层或第四层。</p><p>这种停止不是技巧，而是边界管理。它能保证复算对象固定，方便对照、复核和样本外检查。</p><p>在研究语境里，更有价值的是保留参数和顺序，做重复验证；不是在完成一轮之后继续寻找临时补丁。</p>",
+  "content_format": "html",
+  "content_hash": "558ef319d84c293ed6ec7179e827afbfb5d3f7f9c04e30e93adc74cd639f4f1d",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "3dc1f97d20f44e94e4b97bfb947c6951092e4ff28b6e6d7f2d7a8664ee4b7dfb",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "multistage_order",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版教育/研究向复算说明：按固定顺序复算后二直选两层筛选，展示输入输出、排除数与停止边界，并说明结构分类或历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "76af5d3b5db80f42e11f38319488bacf76d1568c486e2d362183aaf59940946a",
+  "parent_fingerprint": "b753326417728ee17bf43e6f6cfae5f9dd3ed631966bb33ab56f244c2ccb6dcc",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选和值跨度筛选顺序",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_06f10cf9062107a3016a9654ff420087d1b1b7300803e5e89e",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:39:51.586211+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-b753326417728ee1:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+  "site_category_key": "tzjq",
+  "slug": "ffcm-houer-zhixuan-hezhi-kuandu-shaixuan-shunxu",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "公开版保留了两层机械筛选的复算关系：先和值6–12，再跨度2–6，逐层写明 before、after、excluded，并强调完成最后一层后停止。正文同时补充了方法边界，明确结构分类和历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值筛选",
+    "跨度筛选",
+    "位置筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+  "title_candidates": [
+    "先后顺序为什么重要？后二直选和值跨度的多层筛选这样复核",
+    "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+    "后二直选和值跨度的关键不只是筛选，顺序和停止条件同样重要",
+    "为什么不能随意换顺序？用后二直选和值跨度看连续筛选逻辑",
+    "做到最后一层之后呢？后二直选和值跨度为什么不该继续追加条件"
+  ],
+  "title_review": {
+    "candidates": [
+      "先后顺序为什么重要？后二直选和值跨度的多层筛选这样复核",
+      "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+      "后二直选和值跨度的关键不只是筛选，顺序和停止条件同样重要",
+      "为什么不能随意换顺序？用后二直选和值跨度看连续筛选逻辑",
+      "做到最后一层之后呢？后二直选和值跨度为什么不该继续追加条件"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-325fb8546444112c",
+          "score": 0.41509433962264153,
+          "title": "后二组选和值怎么检查才不漏步骤？先看输入、输出和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "plain",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度",
+            "后二直选和值跨度"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

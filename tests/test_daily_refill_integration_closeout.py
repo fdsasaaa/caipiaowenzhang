@@ -8,7 +8,8 @@ from engine.daily_website_ready import DailyProductionError, load_daily_policy
 def test_refill_continues_after_public_r1_rejection_until_final_target(monkeypatch, tmp_path):
     policy = load_daily_policy()
     policy.update({
-        "minimum": 2,
+        "minimum": 1,
+        "operational_minimum": 2,
         "target": 3,
         "maximum": 4,
         "candidate_pool": 4,
@@ -127,6 +128,8 @@ def test_refill_continues_after_public_r1_rejection_until_final_target(monkeypat
     assert result["rounds"][1]["website_ready_added"] == 2
     assert result["stop_reason"] == "website_ready_target_reached"
     assert result["quality_floor_lowered"] is False
+    assert result["partial_batch_retention"] is True
+    assert result["quality_first"] is True
     assert result["website_sync_attempted"] is False
     assert build_calls["count"] == 2
     assert reports[-1]["status"] == "PASS_TARGET"

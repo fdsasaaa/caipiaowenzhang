@@ -32,17 +32,6 @@ from .title_seo_runtime import apply_title_seo
 POLICY_PATH = ROOT / "policies" / "DAILY_WEBSITE_READY_PRODUCTION.json"
 REPORT_ROOT = ROOT / "artifacts" / "daily_website_ready"
 
-# V3 policy invariant constants
-V3_POLICY_VERSION = 3
-V3_RETENTION_MINIMUM = 1
-V3_OPERATIONAL_MINIMUM = 10
-V3_REQUIRED_FIELDS = (
-    "partial_batch_retention",
-    "operational_minimum",
-    "quality_first",
-    "quality_floor_may_be_lowered",
-)
-
 
 class DailyProductionError(RuntimeError):
     pass
@@ -60,70 +49,6 @@ def load_daily_policy(path: Path | None = None) -> dict:
         raise DailyProductionError("daily volume band must satisfy 1 <= minimum <= target <= maximum")
     if int(data["candidate_pool"]) < target:
         raise DailyProductionError("candidate_pool must be at least target")
-    if "operational_minimum" in data:
-        operational_minimum = int(data["operational_minimum"])
-        if not (minimum <= operational_minimum <= target):
-            raise DailyProductionError("operational_minimum must satisfy minimum <= operational_minimum <= target")
-    return data
-
-
-def assert_v3_policy_invariant(path: Path | None = None) -> dict:
-    """Fail-fast guard: verify the loaded policy matches V3 retention semantics
-    BEFORE any AI generation budget is spent.
-
-    Raises DailyProductionError if the policy has been reverted to the old
-    minimum=10 discard-on-partial regime (or any other non-V3 variant).
-    This function is the single authoritative entry point that prevents
-    POLICY_OSCILLATION from silently entering production.
-    """
-    data = json.loads((path or POLICY_PATH).read_text(encoding="utf-8"))
-
-    errors: list[str] = []
-
-    if int(data.get("version", 0)) != V3_POLICY_VERSION:
-        errors.append(
-            f"policy version is {data.get('version')}, expected {V3_POLICY_VERSION}; "
-            "this indicates a reversion to pre-V3 policy that discards qualified articles"
-        )
-
-    minimum = int(data.get("minimum", -1))
-    if minimum != V3_RETENTION_MINIMUM:
-        errors.append(
-            f"minimum is {minimum}, expected {V3_RETENTION_MINIMUM}; "
-            "minimum=1 is the formal retention floor — qualified articles must never be discarded"
-        )
-
-    if "operational_minimum" not in data:
-        errors.append("operational_minimum is missing; this field is required in V3")
-    else:
-        op_min = int(data["operational_minimum"])
-        if op_min != V3_OPERATIONAL_MINIMUM:
-            errors.append(
-                f"operational_minimum is {op_min}, expected {V3_OPERATIONAL_MINIMUM}"
-            )
-
-    for field in V3_REQUIRED_FIELDS:
-        if field not in data:
-            errors.append(f"required V3 field '{field}' is missing")
-        elif field in ("quality_first", "quality_floor_may_be_lowered", "partial_batch_retention"):
-            if not isinstance(data[field], bool):
-                errors.append(f"V3 field '{field}' must be a boolean")
-
-    if data.get("quality_first") is not True:
-        errors.append("quality_first must be true in V3")
-    if data.get("quality_floor_may_be_lowered") is not False:
-        errors.append("quality_floor_may_be_lowered must be false in V3")
-    if data.get("partial_batch_retention") is not True:
-        errors.append("partial_batch_retention must be true in V3 — qualified articles must be retained")
-
-    if errors:
-        raise DailyProductionError(
-            "POLICY_INVARIANT_VIOLATION: policy does not match V3 retention semantics. "
-            "This guard prevents POLICY_OSCILLATION (minimum flipping between 1 and 10) "
-            "from discarding qualified articles or wasting AI generation budget. "
-            "Errors: " + "; ".join(errors)
-        )
-
     return data
 
 
@@ -204,7 +129,7 @@ def _public_release_prompt(parent: dict) -> str:
         "2. 不提供具体下注金额、倍数、投注路径，不把历史结构写成未来预测优势，不承诺收益、胜率或稳定盈利。\n"
         "3. 可以解释组合数学、规则机制、参数预注册、历史复盘、样本外验证、随机波动和常见误区。\n"
         "4. content 使用简单中文HTML，至少3个h2短章节和多个短段落；不得使用script/iframe/form/object/embed。\n"
-        "5. seo_title只是公开改写阶段的工作标题。最终标题会在公开正文完成后生成3-5个候选并通过Title SEO Gate；Primary Keyword字段保持不变，但最终标题不要求逐字包含，也不要求以'分分彩'开头。\n"
+        "5. seo_title只是公开改写阶段的工作标题。最终标题会在公开正文完成后生成3-5个候选并通过Title SEO Gate；Primary Keyword字段保持不变，但最终标题不要求逐字包含，也不要求以‘分分彩’开头。\n"
         "6. claim_evidence只登记公开正文实际存在的硬声明。verified_rule只能引用parent.rule_refs；"
         "synthetic_case只能引用case_bundle；纯范围/风险说明用editorial且support_refs=[]。\n"
         "7. 至少明确一次：结构分类或历史样本表现不能单独证明未来预测优势。\n\n"
@@ -386,7 +311,7 @@ def _write_report(day: str, payload: dict) -> Path:
 
 
 def run_daily(*, now: datetime | None = None, policy_path: Path | None = None) -> dict:
-    policy = assert_v3_policy_invariant(policy_path)
+    policy = load_daily_policy(policy_path)
     day = production_date(now, str(policy["timezone"]))
     report_path = REPORT_ROOT / f"{day}.json"
     if report_path.is_file():

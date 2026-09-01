@@ -10,6 +10,7 @@ from engine.title_seo import (
     TITLE_SEO_CONTRACT_VERSION,
     audit_public_release_titles,
     evaluate_title_seo,
+    public_release_records,
 )
 from engine.title_seo_runtime import apply_title_seo
 
@@ -127,10 +128,27 @@ def test_apply_title_seo_generates_three_to_five_post_body_candidates() -> None:
 
 
 def test_main_formal_public_release_inventory_audit_is_read_only_and_complete() -> None:
+    """TITLE_SEO_AUDIT_SUPPORTS_INVENTORY_GROWTH without a frozen count.
+
+    The expected inventory is derived from the canonical public-release scanner,
+    while the audit output is independently checked for count, identity, and path
+    completeness. This remains valid when formal inventory grows beyond 68.
+    """
+    expected_records = public_release_records()
+    expected_ids = {str(row["article_id"]) for row in expected_records}
+
     report = audit_public_release_titles()
-    assert report["formal_public_release_count"] == 68
+    rows = report["rows"]
+    row_ids = [str(row["article_id"]) for row in rows]
+    paths = [str(row["path"]) for row in rows]
+
+    assert expected_records
+    assert report["formal_public_release_count"] == len(expected_records)
+    assert len(rows) == len(expected_records)
+    assert len(row_ids) == len(set(row_ids))
+    assert set(row_ids) == expected_ids
+    assert len(paths) == len(set(paths))
     assert report["articles_modified"] is False
     assert report["website_side_effects"] is False
-    assert len(report["rows"]) == 68
-    assert all(len(row["suggested_title_1"]) > 0 for row in report["rows"])
-    assert all("path" in row for row in report["rows"])
+    assert all(len(row["suggested_title_1"]) > 0 for row in rows)
+    assert all(path for path in paths)

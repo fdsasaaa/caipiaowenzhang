@@ -1,0 +1,216 @@
+{
+  "angle_signature": "8eb0f99360d20f30d4c8",
+  "approved_at": "2026-09-01T04:22:16.326199+00:00",
+  "article_id": "LCM-ANGLE-18a402b082dd7faf",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲五星直选奇偶注数的确定性计算，不把统计筛选包装成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开写作边界声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "讨论起点是100000个候选，主条件是“恰好2个单号”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "沿用已验证的主条件与起点空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在这个固定条件下，保留31250个候选，排除68750个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "对已验证规则下的确定性结果做公开表述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "100000减去31250，结果正好是68750。",
+      "claim_type": "calculation",
+      "evidence_note": "基础算术核对。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现，也不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明，避免把样本表现误读为预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史样本可以用来做复盘、样本外验证和误区检查，但它不能自动推出后续更准。",
+      "claim_type": "editorial",
+      "evidence_note": "方法论边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这篇不展开具体执行方案，也不提供候选号码、数字池、逐期选号或任何跟投建议。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版禁用操作性建议。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>候选空间</h2><p>这篇只讲五星直选奇偶注数的确定性计算，不把统计筛选包装成预测优势。讨论起点是100000个候选，主条件是“恰好2个单号”。</p><p>这里的参数必须先固定，再做复算；不能先看结果，再回头改条件。结构分类或历史样本表现，也不能单独证明未来预测优势。</p><h2>怎么算保留与排除</h2><p>在这个固定条件下，保留31250个候选，排除68750个候选。</p><p>这三项关系是直接可核对的：100000减去31250，结果正好是68750。它说明的是空间缩小，不是命中率、准确率或收益变化。</p><p>如果没有新增且可复算的已验证规则，就不应继续追加过滤器，也不应把描述项改写成结论。</p><h2>哪些量能说，哪些量不能说</h2><p>像奇偶、单号、频率、和值、跨度这类内容，在这里都只适合当描述变量，用来解释规则怎么作用，而不是用来承诺结果。</p><p>历史样本可以用来做复盘、样本外验证和误区检查，但它不能自动推出后续更准，更不能推出稳定盈利。</p><h2>复盘边界</h2><p>这篇到“100000、31250、68750”这一步就结束，不展开具体执行方案，也不提供候选号码、数字池、逐期选号或任何跟投建议。</p><p>公开版的作用是把机制和数学关系讲清楚，避免把候选空间缩减误读成收益优势。</p><p>演示数据只能说明写法，不代表真实开奖记录。</p>",
+  "content_format": "html",
+  "content_hash": "d332421c5d02aeebefcfaedfd77832e30ca19ace4a6f11a7c6996373ead2e3f8",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "4f650e16572148fedd674ed1357b2937b9ce0055977284caa239b2ee2aa4cfea",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版只解释分分彩五星直选奇偶注数的组合数学、保留与排除关系、样本外验证边界，不提供选号、追号或收益承诺。",
+  "parent_content_hash": "3affe72d67d6e30434422f36f93a708d57c32ec8a462c551fe0f5c8e448810b3",
+  "parent_fingerprint": "18a402b082dd7faf1ef03674c40ac77295756dbf4487109b88ed20f7a6df7b6f",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0c9800ee2f411be2016a964f973c7887d082ce74b65524eb58",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:22:16.326214+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-18a402b082dd7faf:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算与规则机制，确认保留和排除数量的确定性结果",
+  "secondary_keywords": [
+    "分分彩五星直选奇偶注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-odd_even_filter-position_filter-space_math",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文面向公开发布，聚焦分分彩五星直选奇偶注数的确定性核算：起点候选空间、固定条件下的保留与排除数量、以及历史样本不能单独证明未来预测优势的边界。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "奇偶注数计算",
+    "候选空间",
+    "空间数学",
+    "定位胆技巧"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选奇偶的计算过程一次理清",
+    "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：五星直选奇偶的空间计算与候选空间",
+    "五星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂五星直选的五星直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选奇偶的计算过程一次理清",
+      "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：五星直选奇偶的空间计算与候选空间",
+      "五星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂五星直选的五星直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-11c1d01b80765af0",
+          "score": 0.7659574468085106,
+          "title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1364,
+          "intent_term_hits": [
+            "五星",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "注数",
+            "五星直选奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

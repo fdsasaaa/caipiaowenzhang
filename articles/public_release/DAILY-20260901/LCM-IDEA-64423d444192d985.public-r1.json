@@ -1,0 +1,238 @@
+{
+  "angle_signature": "ce03ddf4e45ee83a0036",
+  "approved_at": "2026-09-01T04:20:58.400017+00:00",
+  "article_id": "LCM-IDEA-64423d444192d985",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲分分彩五星直选的计算机制，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版范围限定，不属于规则或计算硬声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选可以看成5个位置依次排列，每个位置都看单号还是双号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是对已验证玩法结构的规则性表述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "所谓“恰好2个单号”，就是5个位置里只有2个位置取单号，其余3个位置取双号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对单号计数条件的直接释义。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按固定合同，起始候选空间是100000，主筛选后的空间是31250，排除掉68750。",
+      "claim_type": "calculation",
+      "evidence_note": "由5位有序空间和二项式计数得到的公开计算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个结果只说明空间被缩小了，不说明它有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必须明确的风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "对案例性质的说明，避免把示例混同为真实历史。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果一组5位号码里只有1个单号，就不满足“恰好2个单号”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按奇偶计数规则可直接判定。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据里的和值、跨度、频率、遗漏只能当描述信息看，不能直接当成未来结论。",
+      "claim_type": "editorial",
+      "evidence_note": "风险与误区说明，不构成规则事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源提到的技巧家族，只能说明方法归属，不等于来源给出了可验证的预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "对来源解读边界的公开说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "按用户要求明确加入的公开风险声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法范围</h2><p>本文只讲分分彩五星直选里的计算机制，不讨论未核验的平台经济参数。</p><p>主线只有一个：在五星直选的有序5位候选空间里，核对“恰好2个单号”这个条件怎么理解、怎么复算。</p><h2>机制说明</h2><p>五星直选可以看成5个位置依次排列，每个位置都只看单号还是双号。</p><p>所谓“恰好2个单号”，就是5个位置里只有2个位置取单号，其余3个位置取双号。</p><p>按这个固定条件，起始候选空间是100000，筛完以后留下31250，排除68750。这个结果只说明空间被缩小了，不说明它有预测优势。</p><h2>复算演示</h2><p>下面用固定演示案例复算一次。演示数据，不是真实开奖记录。</p><p>示例号码为86483。按奇偶看，8是双，6是双，4是双，8是双，3是单，所以这一组只有1个单号，不满足“恰好2个单号”。</p><p>如果只按这个单一条件筛选，这组示例会被排除。这里展示的是机械复核过程，不是下一期建议。</p><h2>边界与误区</h2><p>和值、跨度、频率、遗漏都可以当作描述信息，但不能直接当成未来结论。</p><p>来源里出现的技巧家族，只能说明方法归属，不等于已经证明了可验证的预测优势。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。</p><p>因此，这类内容适合做规则理解、参数预注册、历史复盘和样本外验证，不适合写成收益承诺。</p><h2>复核要点</h2><p>先确认玩法是五星直选，再固定只看5个位置。</p><p>再固定主条件：恰好2个单号。</p><p>最后只做复算和核对，不再临时加第二个过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "636983917ac5c417c03b93c4a022121b1e800360b3f03cd2c42389864db7ed82",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "7a394bcd831e58d2e750eced01237dd9edc0644f515424e78ac2758562639635",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版用简单中文解释分分彩五星直选里“恰好2个单号”的计算机制、复算方法和常见误区，只保留规则与教育性内容。",
+  "parent_content_hash": "0a92dc734c8f9062b41c6eaa1538fa0832e2ff624dceef2d7d933c599e29350e",
+  "parent_fingerprint": "64423d444192d9850b8fba8d95954a9e73bee31681182f2b9ee9583bab3f11fe",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0736cbcf9abd287c016a964f63731487d0bdf41fdf49a781a7",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:20:58.400031+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-64423d444192d985:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里恰好2个单号的计算方法，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选奇偶技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-odd_even_filter-position_filter",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文以分分彩五星直选为例，说明“恰好2个单号”的规则含义、候选空间如何计算、演示案例如何复核，并明确区分规则理解与预测结论。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "奇偶技巧",
+    "定位胆机制",
+    "演示复算",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选奇偶把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+    "五星直选奇偶为什么容易算错？关键在输入、计算和候选空间",
+    "先看规则，再看案例：五星直选里的五星直选奇偶怎样正确理解",
+    "看懂五星直选奇偶不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选奇偶把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选奇偶应该怎样复核",
+      "五星直选奇偶为什么容易算错？关键在输入、计算和候选空间",
+      "先看规则，再看案例：五星直选里的五星直选奇偶怎样正确理解",
+      "看懂五星直选奇偶不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-18149d90338bf75f",
+          "score": 0.782608695652174,
+          "title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2381,
+          "intent_term_hits": [
+            "五星",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "五星直选奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

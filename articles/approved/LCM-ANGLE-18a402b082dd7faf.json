@@ -1,0 +1,294 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100000、终点31250、排除68750。",
+    "evidence_mode": "static_only",
+    "excluded_space": 68750,
+    "final_space": 31250,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到31250以及排除68750个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好2个单号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "8eb0f99360d20f30d4c8",
+  "approved_at": "2026-09-01T04:08:19.652437+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-c995a4734159aab6",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=2/static]:100000->31250",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选奇偶注数计算",
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到31250以及排除68750个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100000、终点31250、排除68750。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 68750,
+      "final_space": 31250,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好2个单号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对五星直选的候选空间计算，逐项确认100000到31250以及排除68750个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100000、终点31250、排除68750。",
+    "title": "分分彩五星直选奇偶注数计算：100000个候选为什么变成31250个，排除68750个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-18a402b082dd7faf",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲五星直选候选空间的确定性计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围说明",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选的起点候选空间是100000。",
+      "claim_type": "calculation",
+      "evidence_note": "契合 draft packet 的 starting_space",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛选条件是恰好2个单号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "契合 draft packet 的静态阶段标签",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按这个固定条件，保留31250个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "契合 draft packet 的 after_filter_space",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此排除68750个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "起点减终点得到排除数",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这不是命中率，也不是胜率。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，避免把空间缩减误读成结果概率",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 标签要求",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "示例中的5注演示数据只是说明写法，不代表真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本说明",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只核对五星直选的候选空间怎么算，不把统计筛选说成预测优势。本文只讲五星直选候选空间的确定性计算，不讨论未核验的平台经济参数。</p><p>本合同里的起点候选空间是100000，主筛选条件是“恰好2个单号”。这个条件是固定后再看样本，不能倒过来先看样本再改参数。</p><h2>逐层计算保留与排除数量</h2><p>五星直选的起点候选空间是100000。</p><p>筛选条件是恰好2个单号。</p><p>按这个固定条件，保留31250个候选。</p><p>因此排除68750个候选。</p><p>这里没有第二道已验证过滤器，所以到这里就停止，不临时再加新条件。</p><h2>核对起点、终点和总排除</h2><p>把三项数对一遍：100000减去31250，结果就是68750。</p><p>这个结果只说明候选空间被缩小了，不说明命中率提高了。</p><h2>为什么这些数字不是命中率</h2><p>31250和68750都是候选数量，不是胜率、准确率或收益。</p><p>演示数据，不是真实开奖记录。</p><p>示例中的5注演示数据只是说明写法，不代表真实开奖记录。</p><p>像“频率”“和值”“跨度”这类数字，在这里都只适合当描述项，不能直接升级成预测结论。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这套合同只负责把空间算清楚，不负责证明后续一定更准。</p><p>只要没有新增且可复算的已验证规则，就不要继续缩小候选，也不要把来源经验写成预测优势。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经完成唯一主筛选：100000到31250，排除68750。</p><p>到这里就停，不再追加未核验的第二过滤器。</p><h3>实际怎么操作</h3><ul><li>先锁定起点候选空间100000，不要先看样本再改参数。</li><li>再固定主筛选条件“恰好2个单号”，只执行这一层。</li><li>复算保留数31250，并用100000减去31250核对排除数68750。</li><li>确认没有第二条已验证规则后，停止继续缩小。</li></ul>",
+  "content_format": "html",
+  "content_hash": "3affe72d67d6e30434422f36f93a708d57c32ec8a462c551fe0f5c8e448810b3",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "18a402b082dd7faf1ef03674c40ac77295756dbf4487109b88ed20f7a6df7b6f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选奇偶注数计算：核对100000个候选如何按恰好2个单号缩到31250个，并算出排除68750个的确定性结果。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "31250",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；否则在主筛选后停止。",
+    "parameter_freeze_rule": "先固定参数再看样本，主筛选参数与顺序都按系统研究合同冻结，不从样本反推。",
+    "starting_space": "100000",
+    "steps": [
+      "先确认起点候选空间是100000。",
+      "固定唯一主筛选条件：恰好2个单号。",
+      "按合同复算保留数量为31250，并核对排除数量68750。",
+      "检查是否存在第二条已验证规则；若没有，立即停止。"
+    ],
+    "stop_condition": "完成100000到31250、排除68750的主筛选核算后停止，不临时加新过滤器。"
+  },
+  "primary_keyword": "分分彩五星直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0c9800ee2f411be2016a964f973c7887d082ce74b65524eb58",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算，逐项确认100000到31250以及排除68750个的确定性结果",
+  "secondary_keywords": [
+    "分分彩五星直选奇偶注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-odd_even_filter-position_filter-space_math",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "这篇只核对分分彩五星直选奇偶注数计算的空间结果：起点100000，按恰好2个单号的固定条件缩到31250，排除68750。它只做确定性数学核算，不把候选空间缩减包装成命中率或收益。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "奇偶注数计算",
+    "候选空间",
+    "空间数学",
+    "定位胆技巧"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选奇偶的计算过程一次理清",
+    "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：五星直选奇偶的空间计算与停止条件",
+    "五星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的五星直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选奇偶的计算过程一次理清",
+      "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：五星直选奇偶的空间计算与停止条件",
+      "五星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的五星直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-6fc1ff9b6c5b9e40",
+          "score": 0.3111111111111111,
+          "title": "分分彩五星直选奇偶筛选步骤：机制、计数与复盘边界"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1364,
+          "intent_term_hits": [
+            "五星",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "注数",
+            "五星直选奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

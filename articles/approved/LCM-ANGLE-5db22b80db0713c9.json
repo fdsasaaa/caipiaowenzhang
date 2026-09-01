@@ -1,0 +1,301 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100、终点50、排除50。",
+    "evidence_mode": "static_only",
+    "excluded_space": 50,
+    "final_space": 50,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前二直选的候选空间计算，逐项确认100到50以及排除50个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好1个单号"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "5226b14d86049308a72c",
+  "approved_at": "2026-09-01T04:30:10.048214+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-20e0e89f5b8eee3d",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:100->50",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二直选奇偶注数计算",
+    "reader_question": "核对前二直选的候选空间计算，逐项确认100到50以及排除50个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100、终点50、排除50。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 50,
+      "final_space": 50,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好1个单号"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前二直选的候选空间计算，逐项确认100到50以及排除50个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100、终点50、排除50。",
+    "title": "分分彩前二直选奇偶注数计算：100个候选为什么变成50个，排除50个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-5db22b80db0713c9",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论前二直选的候选空间计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑边界说明，避免把经济参数写成已核验事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前二直选的起点候选空间是100个。",
+      "claim_type": "calculation",
+      "evidence_note": "按合同给定的主筛选合同起点空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选参数固定为“恰好1个单号”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按生产过滤合同中的静态参数写法。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步保留50个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "按合同给定的 after_filter_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步排除50个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "按合同给定的 excluded_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "100个候选减去50个保留项，得到50个被排除项。",
+      "claim_type": "calculation",
+      "evidence_note": "起点、终点与排除量之间的等式关系。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文中的50个不是命中率，也不是准确率。",
+      "claim_type": "editorial",
+      "evidence_note": "说明数学筛选结果不等于预测表现。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这些数字只说明候选空间被缩小了50个。",
+      "claim_type": "editorial",
+      "evidence_note": "说明结果只属于空间收缩，不扩展为预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "对 case_bundle 的强制标签说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只核对一个确定性问题：前二直选的候选空间，从100个缩到50个，排除50个，怎么算清楚。</p><p>主筛选合同已经固定，参数是“恰好1个单号”。在这篇里，它只作为系统研究合同下的静态筛选条件，不当作来源推荐，也不当作预测优势。</p><h2>逐层计算保留与排除数量</h2><p>起点是100个候选。按“恰好1个单号”这个单层筛选，保留50个，排除50个。</p><p>也就是说，100个候选中，有50个通过这一步，另外50个被筛掉。这个结果是确定性的空间收缩，不是概率判断。</p><p>如果把它写成最短的算式，就是：100 - 50 = 50。这里的50表示被排除的数量，不是命中率。</p><h2>核对起点、终点和总排除</h2><p>起点空间是100，终点空间是50，总排除是50。三项必须一起看，不能只拿终点50单独下结论。</p><p>所以，这一层筛选后的候选空间就是50个；被移出的候选也是50个。两者合起来仍然对应最初的100个。</p><h2>为什么这些数字不是命中率</h2><p>这里的100、50、50，只是候选空间的计数变化，不是历史命中率，也不是未来准确率。</p><p>即使某个样本里出现了特定分布，那也只能说明样本描述，不足以把空间收缩直接改写成预测结论。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这一步只是在固定规则下做空间切分。它告诉你哪些候选留下，哪些候选被排除，不告诉你结果会不会更准。</p><p>如果没有第二条已经验证过的规则，就不要继续临时加筛选器。否则，空间变化就不再是同一个合同下的结果，不能混着算。</p><h2>实际怎么操作</h2><p>第一步，先把候选起点固定为100，不要先看样本。</p><p>第二步，只套用本篇唯一主筛选条件“恰好1个单号”，把这条规则当作唯一过滤器。</p><p>第三步，逐项核对保留数是50、排除数是50，并确认总和仍然回到100。</p><p>第四步，确认这里的50只是空间结果，不是命中率、胜率或收益。</p><p>第五步，如果没有新增且已验证的规则，就停止在这一步，不再继续缩小候选。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经完成合同要求的唯一主筛选：100到50，排除50。</p><p>后面只有在新增条件也有已验证规则、而且能够复算时，才允许继续缩小候选。没有这两个条件，就到此停止。</p><h2>演示样本说明</h2><p>下面这组样本是演示数据，不是真实开奖记录：30354、29360、05207、49415、87201、68802、44001、81085、52450、28327、67627、00698、08204、34432、29619、86076。</p><p>它只用来展示样本格式和描述项，不用来替代前面的确定性空间计算。</p>",
+  "content_format": "html",
+  "content_hash": "757cc8f6256ecd3b616b72b372642c8a81cf859a3b522c6011b61512680548d5",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "5db22b80db0713c988318df919e17233325d0ff408ed131babd1f8c01b27ca5f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二直选奇偶注数计算案例讲解：先说明前二直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "50",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；否则在本篇唯一主筛选后停止。",
+    "parameter_freeze_rule": "先固定主筛选参数“恰好1个单号”，再看样本；样本不反向改参数。",
+    "starting_space": "100",
+    "steps": [
+      "先确认候选起点是100个。",
+      "只使用主筛选参数“恰好1个单号”。",
+      "复算保留50个、排除50个。",
+      "核对100、50、50三者关系，确认总量闭合。",
+      "检查是否有新增且已验证的规则；没有就停止。"
+    ],
+    "stop_condition": "完成100到50、排除50的主筛选后立即停止，不临时追加第二过滤器。"
+  },
+  "primary_keyword": "分分彩前二直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0e745af0ccc0a7e1016a9654b1396487d19843d97bccf73750",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，逐项确认100到50以及排除50个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二直选奇偶注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二直选奇偶的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-odd_even_filter-position_filter-space_math",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文只核对前二直选的候选空间数学：起点100，按“恰好1个单号”这一主筛选收缩到50，排除50个。正文同时说明这不是命中率，不把统计筛选包装成预测优势，并给出可直接复算的操作步骤。",
+  "tags": [
+    "分分彩前二直选奇偶注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "从输入到结果：前二直选奇偶的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选奇偶的计算过程一次理清",
+    "先算注数，再谈前二直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：前二直选奇偶的空间计算与停止条件",
+    "前二直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的前二直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选奇偶的计算过程一次理清",
+      "先算注数，再谈前二直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：前二直选奇偶的空间计算与停止条件",
+      "前二直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的前二直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-d90e589e19c803e9",
+          "score": 0.34782608695652173,
+          "title": "分分彩一星直选大小奇偶筛选步骤：机制、复算与停止原则"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "前二直选奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二直选奇偶的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

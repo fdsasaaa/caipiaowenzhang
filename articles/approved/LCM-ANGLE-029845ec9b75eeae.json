@@ -1,0 +1,298 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点10000、终点7310、排除2690。",
+    "evidence_mode": "static_only",
+    "excluded_space": 2690,
+    "final_space": 7310,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前四直选的候选空间计算，逐项确认10000到7310以及排除2690个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值12–24"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "和值12–24"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "0ac3efe9446c8d00c214",
+  "approved_at": "2026-09-01T04:16:37.658402+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-e1ec301fbc63de9e",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=12,max=24/static]:10000->7310",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选和值注数计算",
+    "reader_question": "核对前四直选的候选空间计算，逐项确认10000到7310以及排除2690个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点10000、终点7310、排除2690。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 2690,
+      "final_space": 7310,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值12–24"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "和值12–24"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前四直选的候选空间计算，逐项确认10000到7310以及排除2690个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点10000、终点7310、排除2690。",
+    "title": "分分彩前四直选和值注数计算：10000个候选为什么变成7310个，排除2690个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-029845ec9b75eeae",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只做候选空间的机械计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "按 mechanics_only 范围约束，给出边界说明，不展开任何未核验经济值。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前四直选的主筛选是和值12到24。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选合同给定的静态参数，作为本文唯一主筛选。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起点是10000个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的 starting_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛完后剩7310个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的 after_filter_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "一共排除2690个。",
+      "claim_type": "calculation",
+      "evidence_note": "10000减7310得到2690。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文的候选空间起点是10000，终点是7310，排除2690个。",
+      "claim_type": "calculation",
+      "evidence_note": "三项机器事实的汇总表述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "仅说明空间缩减不等于结果概率，不引入未验证表现。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "把统计筛选包装成预测优势是不对的。",
+      "claim_type": "editorial",
+      "evidence_note": "对应合同中的 predictive_advantage_claimed=false。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这一步只完成主筛选，后面不临时加第二过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "对应 stop_after_primary_filter=true 与停止条件要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只核对一件事：前四直选在主筛选“和值12到24”之后，候选空间为什么会从10000变成7310，并且排除2690个。</p><p>这里的数字是确定性空间计算，不是命中率，也不是历史表现总结。本文不讨论未核验的平台经济参数。</p><h2>逐层计算保留与排除数量</h2><p>主筛选只有一层，标签是“和值12–24”。按合同，起点是10000个候选，筛完后剩7310个。</p><p>所以被排除的数量就是10000减7310，结果是2690个。这个排除数来自机械计算，不是额外加出来的第二条件。</p><h2>核对起点、终点和总排除</h2><p>三项结果要一起看：10000是起点，7310是终点，2690是总排除。</p><p>它们之间的关系很简单：10000 = 7310 + 2690。只要这组等式成立，就说明主筛选的空间收缩已经算清楚。</p><h2>为什么这些数字不是命中率</h2><p>10000、7310、2690说的是候选空间大小，不是命中率、准确率或成功率。</p><p>空间变小，只代表可选范围被压缩，不代表结果就更容易出现。把统计筛选包装成预测优势是不对的。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这里的和值12到24，是系统研究定义的主筛选参数，不是来源替你指定的参数。它只负责把前四直选的候选空间按固定规则缩小。</p><p>演示数据，不是真实开奖记录，只用于说明这种空间缩减怎么复算。样本能说明写法，但不能替代规则，也不能替代独立验证。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选，只看“前四直选 + 和值12到24”。</li><li>把起点记为10000，不要拿演示样本条数去代替理论候选空间。</li><li>按主筛选结果记下终点7310，并计算10000减7310得到2690。</li><li>把三项结果写成一组等式核对：10000、7310、2690。</li><li>检查自己有没有临时加第二过滤器；如果没有已验证规则或证据，就停止在这一步。</li></ol><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇只完成唯一主筛选。已经有的合同到这里就结束，不再追加没有已验证规则的新条件。</p><p>只有新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。否则就停在7310这个终点。</p><h2>演示说明</h2><p>本文中的演示数据，不是真实开奖记录。它只用来展示前四直选的空间计算过程，不构成预测保证。</p>",
+  "content_format": "html",
+  "content_hash": "fe8e2e075a6cd80c77b35d37f841b87887a496fb031aa65926c74424c08f52c8",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "029845ec9b75eeae8a52f10e9e434923350bdc961ffb2a79c57c1bcacdf59eb0",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选和值注数计算案例讲解：先说明前四直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后候选空间是7310个，比起点10000个少了2690个。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；没有这种条件就停止。",
+    "parameter_freeze_rule": "先固定‘前四直选 + 和值12到24’，再看结果，不要先看样本再倒推参数。",
+    "starting_space": "起点是10000个候选。",
+    "steps": [
+      "固定主筛选为前四直选和值12到24。",
+      "确认起点空间为10000个候选。",
+      "按主筛选结果读出终点空间7310个。",
+      "用10000减7310，算出排除2690个。",
+      "核对这一步只做空间缩减，不加入第二过滤器。"
+    ],
+    "stop_condition": "完成10000到7310、排除2690的核对后停止；没有新增已验证规则时不继续缩小。"
+  },
+  "primary_keyword": "分分彩前四直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_063a6c6481788002016a96518680cc87d18741e47941fb5f09",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "核对前四直选的候选空间计算，逐项确认10000到7310以及排除2690个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前四直选和值注数计算",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "候选空间为什么会变？前四直选和值的计算过程一次理清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前四直选和值注数计算-10000个候选为什么变成7310个-排除2690个怎么算",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "本文只核对分分彩前四直选的主筛选空间计算：起点10000，经过和值12到24这一层后剩7310，排除2690。内容只做机械复算，不把空间缩减包装成命中率或预测优势。",
+  "tags": [
+    "分分彩前四直选和值注数计算",
+    "分分彩前四直选",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "候选空间为什么会变？前四直选和值的计算过程一次理清",
+  "title_candidates": [
+    "候选空间为什么会变？前四直选和值的计算过程一次理清",
+    "先算注数，再谈前四直选和值：组合数学能说明到哪一步",
+    "从输入到结果：前四直选和值的空间计算与停止条件",
+    "前四直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的前四直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前四直选和值的计算过程一次理清",
+      "先算注数，再谈前四直选和值：组合数学能说明到哪一步",
+      "从输入到结果：前四直选和值的空间计算与停止条件",
+      "前四直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的前四直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-0b6f9c192c45dc31",
+          "score": 0.8333333333333334,
+          "title": "候选空间为什么会变？中三直选跨度的计算过程一次理清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3043,
+          "intent_term_hits": [
+            "前四",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前四",
+            "直选",
+            "和值",
+            "候选空间",
+            "前四直选和值"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "候选空间为什么会变？前四直选和值的计算过程一次理清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

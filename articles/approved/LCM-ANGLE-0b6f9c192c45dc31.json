@@ -1,0 +1,299 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点1000、终点660、排除340。",
+    "evidence_mode": "static_only",
+    "excluded_space": 340,
+    "final_space": 660,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对中三直选的候选空间计算，逐项确认1000到660以及排除340个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "7186b3336d6b8e919ff5",
+  "approved_at": "2026-09-01T03:57:36.223378+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-135239efd8737392",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:1000->660",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选跨度注数计算",
+    "reader_question": "核对中三直选的候选空间计算，逐项确认1000到660以及排除340个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点1000、终点660、排除340。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 340,
+      "final_space": 660,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对中三直选的候选空间计算，逐项确认1000到660以及排除340个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点1000、终点660、排除340。",
+    "title": "分分彩中三直选跨度注数计算：1000个候选为什么变成660个，排除340个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-0b6f9c192c45dc31",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论中三直选的候选空间怎么算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围声明；不涉及外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "对案例性质作明确标注。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "中三直选先按固定参数把候选空间从1000个压到660个，排除340个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同给定的静态机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先按跨度2–6筛选，保留660个候选，排除340个。",
+      "claim_type": "calculation",
+      "evidence_note": "正文中的主筛选结论，和合同机器事实一致。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的起点是1000个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同指定起点。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的终点是660个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同指定终点。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步一共排除340个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同指定排除量。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的660不是命中率，340也不是收益或中奖数。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不引入经济参数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "中三直选跨度注数计算",
+      "claim_type": "editorial",
+      "evidence_note": "主词自然进入正文标题与内容。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只做一件事：把<strong>分分彩中三直选跨度注数计算</strong>的候选空间算清楚。合同给出的主筛选只有一层，筛选名是<strong>跨度2–6</strong>，参数先固定，再看样本，不再临时加第二个过滤器。</p><p>这里的起点是<strong>1000</strong>个候选，筛完后剩下<strong>660</strong>个，合计排除<strong>340</strong>个。这个结果是确定性的空间计算，不是命中率，也不是预测优势。</p><h2>逐层计算保留与排除数量</h2><p>主筛选规则只有一条：按跨度2–6保留候选。按照合同机器事实，这一步从1000个候选里保留660个，排除340个。</p><p>也就是说，计算关系很直接：<strong>1000 - 660 = 340</strong>。这就是本篇要核对的全部数学结果。</p><h2>核对起点、终点和总排除</h2><p>起点是1000个，终点是660个，总排除是340个。三者必须一起看，不能只看保留数，也不能把排除数单独拿去讲成别的含义。</p><p>如果把这一步写成流程，就是：先固定“跨度2–6”，再从1000个候选中筛出660个，最后确认被排除的是340个。</p><h2>为什么这些数字不是命中率</h2><p>660只是筛选后留下的候选规模，340只是被筛掉的规模。它们都只是空间大小，不是命中率、准确率、胜率，也不是收益。</p><p>这类数字可以帮助你复算候选空间，但不能自动推出下一期更容易中。合同也明确要求这里不写成预测优势。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选只说明候选被怎么收缩，不说明未来结果会怎样。即使某个历史样本看起来顺手，也不能把样本观察直接升级成稳定结论。</p><p>本篇只完成合同指定的主筛选，不增加第二条未经验证的过滤器。只有当新增条件本身也有已验证规则、并且可以复算时，才允许继续缩小候选。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>到这里就停止。合同已经要求只做单层主筛选，且止于最终阶段，不再引入新的参数，不再把演示样本当成理论空间。</p><p>如果后面要继续做更细的缩小，前提只能是新增条件有已验证规则或证据，并且能独立复算；否则就停在660个这个结果上。</p><h2>实际怎么操作</h2><ol><li>先固定筛选参数为“跨度2–6”，不要先看样本再改参数。</li><li>从起点1000个候选开始复算，确认这是主筛选前的空间。</li><li>套用主筛选后，核对保留660个、排除340个。</li><li>把660和340都当作空间结果，不要写成命中、收益或概率结论。</li><li>如果想继续缩小候选，先检查新条件是否有已验证规则和可复算依据；没有就停止。</li></ol><p>演示数据，不是真实开奖记录。本文只用于复算空间，不用于替代真实开奖判断。</p>",
+  "content_format": "html",
+  "content_hash": "a37a1379bb8611f5ff041ad4a590bfe323fd4c9401352049fe5cd6b02089cdce",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "0b6f9c192c45dc315908606815c1bb9b7134cf58b15a3a01da800204f2c27b3f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选跨度注数计算：按固定的跨度2–6主筛选，复算候选空间从1000个到660个，排除340个，只讲确定性数学过程，不把筛选结果包装成预测优势。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "660",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定主筛选参数“跨度2–6”，再看样本；不允许根据样本临时改参数。",
+    "starting_space": "1000",
+    "steps": [
+      "先把起点记为1000个候选，作为主筛选前空间。",
+      "固定唯一主筛选参数为跨度2–6，不增加第二条过滤器。",
+      "按主筛选复算后，确认保留660个。",
+      "核对排除数量为340个，并用1000-660=340复验。",
+      "把660和340都当作空间结果，不当作命中率、收益或预测优势。"
+    ],
+    "stop_condition": "完成1000到660、排除340的确定性复算后立即停止，不临时加新过滤器。"
+  },
+  "primary_keyword": "分分彩中三直选跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0257b7a689348899016a964d10706087d09c43540c249bc0bb",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "核对中三直选的候选空间计算，逐项确认1000到660以及排除340个的确定性结果",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选跨度注数计算-1000个候选为什么变成660个-排除340个怎么算",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文按合同只核对分分彩中三直选跨度注数计算的主筛选空间：起点1000个，经过跨度2–6这一层后剩660个，排除340个，并说明这只是确定性的空间收缩，不是命中率或预测优势。",
+  "tags": [
+    "分分彩中三直选跨度注数计算",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+  "title_candidates": [
+    "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+    "先算注数，再谈中三直选跨度：组合数学能说明到哪一步",
+    "从输入到结果：中三直选跨度的空间计算与停止条件",
+    "中三直选跨度怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的中三直选跨度，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+      "先算注数，再谈中三直选跨度：组合数学能说明到哪一步",
+      "从输入到结果：中三直选跨度的空间计算与停止条件",
+      "中三直选跨度怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的中三直选跨度，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-a5c9a5a73521668d",
+          "score": 0.32653061224489793,
+          "title": "这一步到底怎么算？用前三直选和值把规则和复算过程讲清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3043,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "跨度",
+            "候选空间",
+            "中三直选跨度"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "候选空间为什么会变？中三直选跨度的计算过程一次理清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,330 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释后二直选里和值6–12和跨度2–6分别怎么算，并按固定演示数据把候选空间从100复算到36，逐层写清每一步排除了多少。",
+    "evidence_mode": "static_only",
+    "excluded_space": 64,
+    "final_space": 36,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解后二直选里和值6–12→跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "7e9f3643b04b8ba9f98a",
+  "approved_at": "2026-09-01T04:10:45.812625+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-4e81f86d52d5f607",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58>span_range[min=2,max=6/static]:58->36",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选和值跨度技巧",
+    "reader_question": "理解后二直选里和值6–12→跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值6–12→跨度2–6的机制，并完成从100到36的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 64,
+      "final_space": 36,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值6–12→跨度2–6",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解后二直选里和值6–12→跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值6–12→跨度2–6的机制，并完成从100到36的可复算案例。",
+    "title": "分分彩后二直选和值跨度技巧：和值6–12→跨度2–6具体怎么算，用完整案例从100复算到36",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-18149d90338bf75f",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲分分彩后二直选的计算机制，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机制边界说明，未引入经济参数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "二直选里，先看两个位置的数字，再按它们的和值和跨度做筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对玩法和计算对象的概括。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同要求标注样本属性。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据的起始候选空间是100个两位有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示数据的候选空间起点。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "和值6–12这一层把100个候选复算到58个，排除了42个。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层空间变化。 [system-normalized: exact pipeline provenance -> verified_rule]",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度2–6这一层把58个候选复算到36个，又排除了22个。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层空间变化。 [system-normalized: exact pipeline provenance -> verified_rule]",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合起来，候选空间从100个减少到36个，总共排除了64个。",
+      "claim_type": "calculation",
+      "evidence_note": "整体空间变化。 [system-normalized: exact pipeline provenance -> verified_rule]",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这不是命中率、准确率或收益结论，只是候选空间的确定性缩减。",
+      "claim_type": "editorial",
+      "evidence_note": "明确限制统计筛选的含义。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从100个缩到58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从58个缩到36个，排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100个缩到36个，总排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>这篇只讲分分彩后二直选的计算机制。正文里的“二直选”按两个位置来理解，先固定读两个位置，再看这两个数字的和值和跨度怎么筛。</p><p>先说清楚边界：这里不讨论未核验的平台经济参数，也不把筛选结果包装成预测优势。你看到的是一套可复算的机械计算。</p><h2>方法机制：和值6–12→跨度2–6</h2><p>第一层是和值6–12。意思是把两个位置上的数字相加，结果落在6到12之间，才保留。</p><p>第二层是跨度2–6。跨度就是两个数字里较大值减较小值的差，差值落在2到6之间，才保留。</p><p>这两个条件是按顺序用的。先做和值，再在剩下的候选里做跨度。</p><h2>完整可复算案例</h2><p>演示数据，不是真实开奖记录。</p><p>这组演示数据的起始候选空间是100个两位有序组合。</p><p>第一层“和值6–12”把100个候选复算到58个，排除了42个。</p><p>第二层“跨度2–6”再把58个候选复算到36个，又排除了22个。</p><p>两层合起来，候选空间从100个减少到36个，总共排除了64个。</p><h2>逐步核对候选空间</h2><ol><li>先固定参数：第一层和值区间是6到12，第二层跨度区间是2到6。</li><li>先看第一层：只要两个位置的数字加起来不在6到12之间，就先排除。</li><li>再看第二层：在第一层留下的58个候选里，再计算每组数字的跨度，跨度不在2到6之间的继续排除。</li><li>最后得到36个候选。这个结果只说明空间被缩小到36，不说明这些候选更容易中。</li><li>如果要继续加新过滤器，必须先有新的已验证规则或证据，并且在下一次实验前把参数先冻结。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类计算的作用，是把候选空间按固定规则缩小，方便复算和核对。</p><p>它不是命中率，不是准确率，也不是收益结论。今天复算出36个，不等于后面就更容易出结果。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>到这里就停止。因为合同已经给了两层固定步骤，顺序、参数和结果都已确定。</p><p>如果后面还想继续缩小，只能等新增条件也有已验证规则或证据，而且能复算，再在下一次实验前冻结参数。</p><h2>实际怎么操作</h2><ol><li>先确认对象是分分彩后二直选，只处理两个位置的数字。</li><li>先算和值，保留6到12之间的组合。</li><li>再算跨度，保留2到6之间的组合。</li><li>按顺序核对每一层的 before_space、after_space 和 excluded_space。</li><li>算到36个以后就停，不再临时加别的筛选条件。</li></ol>",
+  "content_format": "html",
+  "content_hash": "bff9db4d7a6b92a5ea578cc2199b2292748596e019b691e1e51ab5a213d3b500",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "18149d90338bf75f88c581e1e7942224f6b31f30e977d9b6f4abd59c9fcd039b",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值跨度技巧案例讲解：先说明后二直选规则，再用可复算演示数据展示筛选步骤、注数检查和边界，不把历史统计包装成必中结论。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "完成和值6–12和跨度2–6两层后，候选空间从100个缩到36个，合计排除64个。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且能在下一次实验前先冻结参数时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定和值6–12和跨度2–6这两个参数，再看样本和复算空间；不允许先看结果再回改参数。",
+    "starting_space": "100",
+    "steps": [
+      "先确认对象是分分彩后二直选，只处理两个位置的数字。",
+      "先算和值，保留6到12之间的组合。",
+      "再算跨度，保留2到6之间的组合。",
+      "按顺序核对每一层的 before_space、after_space 和 excluded_space。",
+      "算到36个以后就停，不再临时加别的筛选条件。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则或证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩后二直选和值跨度技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0a416a5856860891016a965026b9ac87d0bcff05965fa17316",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "理解后二直选里和值6–12→跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩后二直选和值跨度技巧",
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩后二直选和值跨度技巧-和值6-12-跨度2-6-完整案例",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "用简单中文讲清分分彩后二直选里和值6–12和跨度2–6分别怎么算，并按固定演示数据从100个两位有序组合复算到36个，明确每一步排除多少，最后在合同边界内停止。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值筛选",
+    "跨度筛选",
+    "位置筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用后二直选和值跨度把规则和复算过程讲清",
+    "从玩法规则到完整案例：后二直选和值跨度应该怎样复核",
+    "后二直选和值跨度为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的后二直选和值跨度怎样正确理解",
+    "看懂后二直选和值跨度不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用后二直选和值跨度把规则和复算过程讲清",
+      "从玩法规则到完整案例：后二直选和值跨度应该怎样复核",
+      "后二直选和值跨度为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的后二直选和值跨度怎样正确理解",
+      "看懂后二直选和值跨度不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-64423d444192d985",
+          "score": 0.782608695652174,
+          "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3043,
+          "intent_term_hits": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度",
+            "后二直选和值跨度"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

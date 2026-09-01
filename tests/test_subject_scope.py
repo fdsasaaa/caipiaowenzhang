@@ -31,7 +31,10 @@ def _plan():
 
 def test_blueprint_separates_subject_from_rule_scope(monkeypatch):
     monkeypatch.setattr(blueprints, "duplicate_candidates", lambda candidate: [])
-    bp = blueprints.blueprint_from_plan(_plan())
+    # Subject-scope unit test: isolate from the live registry keyword-owner gate
+    # so the assertion target (subject vs rule separation) does not depend on
+    # the current formal inventory. Production default stays apply_registry_gates=True.
+    bp = blueprints.blueprint_from_plan(_plan(), apply_registry_gates=False)
     assert bp["lottery"] == "通用五位数"
     assert bp["play"] == "前三直选"
     assert bp["subject_lottery"] == "分分彩"
@@ -42,7 +45,10 @@ def test_blueprint_separates_subject_from_rule_scope(monkeypatch):
 
 def test_draft_packet_freezes_subject_and_rejects_tampering(monkeypatch):
     monkeypatch.setattr(blueprints, "duplicate_candidates", lambda candidate: [])
-    bp = blueprints.blueprint_from_plan(_plan())
+    # Subject-scope unit test: isolate from the live registry keyword-owner gate
+    # ("keyword_blocked" is a real inventory collision, not the target of this
+    # test). Production default stays apply_registry_gates=True.
+    bp = blueprints.blueprint_from_plan(_plan(), apply_registry_gates=False)
     packet = build_draft_packet(bp)
     assert packet["immutable_facts"]["lottery"] == "通用五位数"
     assert packet["immutable_facts"]["subject_lottery"] == "分分彩"

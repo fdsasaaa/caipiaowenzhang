@@ -1,0 +1,204 @@
+{
+  "angle_signature": "7186b3336d6b8e919ff5",
+  "approved_at": "2026-09-01T04:18:07.458539+00:00",
+  "article_id": "LCM-ANGLE-0b6f9c192c45dc31",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只核对分分彩中三直选跨度注数计算的候选空间变化，不提供具体选号或投注执行指令。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版范围声明，明确仅做空间核对。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "筛选参数固定为跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已批准父稿的单层主筛选条件。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "从1000个候选中筛后剩余660个，排除340个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自已批准父稿的确定性空间计算结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "660和340都只是候选空间大小，不能单独说明命中率、准确率、胜率或收益。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必须明确的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果新增条件没有已验证规则或可复算依据，就不应继续缩小候选。",
+      "claim_type": "methodology",
+      "evidence_note": "公开版方法论边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看定义</h2><p>这篇只做候选空间核对，主题是分分彩中三直选跨度注数计算。重点不是给出选号办法，而是把已固定的筛选条件和计算结果讲清楚。</p><p>本次只看一层主筛选，参数先固定，再看结果，不把演示样本当成新的规则来源。</p><h2>空间怎么收缩</h2><p>主筛选条件是跨度2–6。按这个条件复算，候选空间从1000个缩到660个，排除340个。</p><p>这个关系是确定性的空间计算，核心就是1000减去660，得到340。它说明的是保留与排除的规模，不是命中表现。</p><h2>这些数字代表什么</h2><p>660表示筛选后留下的候选规模，340表示被筛掉的规模。它们可以用于复算空间，但不能直接解释为命中率、胜率、收益或稳定优势。</p><p>结构分类或历史样本表现也不能单独证明未来预测优势。样本看起来顺手，只能说明样本内现象，不能自动推出样本外结论。</p><h2>复算边界</h2><p>这类核对适合做规则理解、参数确认和历史复盘，但前提是每一步都能独立复算。只要新增条件没有已验证规则或可复算依据，就不应继续缩小候选。</p><p>因此，这篇只停在660个这个结果，不延伸到未来判断，也不把空间收缩写成执行建议。</p><h2>常见误区</h2><p>常见问题是把筛选后的规模变化当成预测优势。事实上，候选变少只代表空间被收缩，不代表下一次更容易命中。</p><p>另一个误区是把历史样本里的结构分类直接当成稳定规律。研究上可以观察，但不能跳过验证步骤就下结论。</p>",
+  "content_format": "html",
+  "content_hash": "51f20e7f103a3c73f3d421c86ab283c98669e30639e85a6f5d57792bed6d5239",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "dec6d363871e169fc1669a20ead0a84caed6978cfa6c7f7508f6243495e4db4e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版核对分分彩中三直选跨度注数计算的候选空间收缩过程，说明跨度2–6下从1000到660、排除340的确定性结果，并区分空间计算与预测优势。",
+  "parent_content_hash": "a37a1379bb8611f5ff041ad4a590bfe323fd4c9401352049fe5cd6b02089cdce",
+  "parent_fingerprint": "0b6f9c192c45dc315908606815c1bb9b7134cf58b15a3a01da800204f2c27b3f",
+  "play": "中三直选",
+  "primary_keyword": "分分彩中三直选跨度注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0257b7a689348899016a964d10706087d09c43540c249bc0bb",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:18:07.458554+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-0b6f9c192c45dc31:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "核对中三直选的候选空间计算，逐项确认1000到660以及排除340的确定性结果",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选跨度注数计算-1000个候选为什么变成660个-排除340个怎么算",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-001451"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文以教育/研究导向核对分分彩中三直选跨度注数计算的候选空间变化：固定跨度2–6后，从1000个候选收缩到660个，排除340个。内容只解释规则机制、空间计算和常见误区，不提供选号或投注执行指令。",
+  "tags": [
+    "分分彩中三直选跨度注数计算",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩跨度筛选"
+  ],
+  "technique_atoms": [
+    "span_range"
+  ],
+  "title": "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+  "title_candidates": [
+    "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+    "先算注数，再谈中三直选跨度：组合数学能说明到哪一步",
+    "从输入到结果：中三直选跨度的空间计算与常见误区",
+    "中三直选跨度怎么算才不混淆？复核候选空间的关键点",
+    "看懂中三直选的中三直选跨度，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？中三直选跨度的计算过程一次理清",
+      "先算注数，再谈中三直选跨度：组合数学能说明到哪一步",
+      "从输入到结果：中三直选跨度的空间计算与常见误区",
+      "中三直选跨度怎么算才不混淆？复核候选空间的关键点",
+      "看懂中三直选的中三直选跨度，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-029845ec9b75eeae",
+          "score": 0.8333333333333334,
+          "title": "候选空间为什么会变？前四直选和值的计算过程一次理清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3043,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "跨度",
+            "候选空间",
+            "中三直选跨度"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "候选空间为什么会变？中三直选跨度的计算过程一次理清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

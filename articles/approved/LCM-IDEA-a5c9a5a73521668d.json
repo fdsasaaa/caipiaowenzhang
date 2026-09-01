@@ -1,0 +1,414 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释和值9–18的机制，并完成从1000到670的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 330,
+    "final_space": 670,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前三直选里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "3ea7c366c1913bf1e2be",
+  "approved_at": "2026-09-01T03:54:27.907179+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-e807451bc5d59c27",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:1000->670",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选和值技巧",
+    "reader_question": "理解前三直选里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值9–18的机制，并完成从1000到670的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 330,
+      "final_space": 670,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值9–18",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前三直选里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值9–18的机制，并完成从1000到670的可复算案例。",
+    "title": "分分彩前三直选和值技巧：和值9–18具体怎么算，用完整案例从1000复算到670",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-a5c9a5a73521668d",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲前三直选里和值9–18怎么计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机制范围声明，符合 mechanics_only 边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前三直选是按前三个位置分别看数字，和值9–18是把这三个位置上的数字相加，判断总和是否落在9到18之间。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对玩法机制的解释，来自已验证玩法规则。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇的主筛选只有一层：和值9–18。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同指定的单阶段筛选。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个主筛选从1000个有序三位候选里，保留670个，剔除330个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的静态空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签声明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签再次出现时的保留说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本里共有12条数据，和值序列是13、22、17、7、12、18、11、21、16、18、14、10。",
+      "claim_type": "calculation",
+      "evidence_note": "样本条数与和值序列来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的最新一条是14506，和值是10。",
+      "claim_type": "calculation",
+      "evidence_note": "最新样本字段复述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的频率里，0出现3次，1出现1次，2出现2次，3出现4次，4出现3次，5出现6次，6出现5次，7出现6次，8出现6次，9出现0次。",
+      "claim_type": "calculation",
+      "evidence_note": "频率字段复述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的跨度序列是6、2、4、5、6、5、6、3、3、2、4、4。",
+      "claim_type": "calculation",
+      "evidence_note": "跨度字段复述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲前三直选里和值9–18怎么计算，不讨论未核验的平台经济参数。</p><p>这里的计算对象是前三直选的三个位置。把这三个位置上的数字相加，得到和值；如果和值落在9到18之间，就进入这次主筛选。</p><p>本篇只用这一层筛选，不再临时加第二个过滤器。</p><h2>方法机制：和值9–18</h2><p>和值的意思很直接：把前三个位置的数字逐个相加。</p><p>例如，某一组前三号码如果是1、4、5，和值就是1+4+5=10。只要总和在9到18之间，就算通过；如果低于9或高于18，就不通过。</p><p>这不是预测结论，只是一个固定的筛选范围。</p><h2>完整可复算案例</h2><p>下面用演示数据，不是真实开奖记录，来完整复算一次。</p><p>演示数据里共有12条，和值序列依次是13、22、17、7、12、18、11、21、16、18、14、10。</p><p>先固定参数：筛选条件是和值9–18。</p><p>再看样本：12条里，落在9到18之间的有13、17、12、18、11、16、18、14、10，共9条。</p><p>不在范围内的有22、7、21，共3条。</p><p>所以，这组演示样本里，按和值9–18筛过去后，保留9条，剔除3条。</p><p>演示样本的最新一条是14506，和值是10，也落在9到18之间。</p><h2>逐步核对候选空间</h2><ol><li>先确认起始空间是1000个有序三位候选。</li><li>只应用一个主筛选：和值9–18。</li><li>筛选后空间是670。</li><li>被排除的空间是330。</li></ol><p>也就是说，从1000到670，实际剔除了330个候选。</p><p>这一步已经完成合同要求的空间复算。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>和值9–18只说明一个机械筛选口径，不说明未来一定更容易中。</p><p>演示样本里的频率、跨度、和值序列，都只是描述性数据，不能直接当成预测优势。</p><p>本篇不把这类统计结果包装成命中保证，也不把它写成收益结论。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇文章到这里就停止。</p><p>如果要继续缩小候选，只能等到出现新的、已验证的规则或证据，并且能够复算；没有这类新增条件，就不要临时再加筛选器。</p><p>这也是本篇的停止条件。</p><h2>实际怎么操作</h2><ol><li>先固定规则：只看前三直选的和值9–18。</li><li>把前三个位置的数字相加，算出和值。</li><li>检查和值是否落在9到18之间。</li><li>落在区间内就保留，不在区间内就排除。</li><li>按合同核对空间：1000个起始候选，筛后670个，剔除330个。</li><li>做到这一步就停止，不要额外叠加未验证的第二条件。</li></ol>",
+  "content_format": "html",
+  "content_hash": "0544241f952455a00ff428f82f17777ac2c555382f1f751effd120f7cabe5885",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "a5c9a5a73521668d6ebdb6ba51f3711ac9f537e26b4ea6fd3e2d8949f7a9bafd",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三直选和值技巧案例讲解：先说明前三直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "670",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定和值9–18，再看样本；没有新增已验证规则前，不临时追加第二过滤器。",
+    "starting_space": "1000",
+    "steps": [
+      "先固定主筛选参数为和值9–18，不先看样本再改参数。",
+      "把前三个位置的数字相加，逐条判断和值是否落在9到18之间。",
+      "按合同核对空间：起始1000个有序三位候选，筛后670个，剔除330个。",
+      "用演示样本复算一遍，确认9条保留、3条排除。",
+      "完成这一层后停止；只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选。"
+    ],
+    "stop_condition": "完成和值9–18这一层主筛选并复算空间后停止，不临时增加未验证的第二过滤器。"
+  },
+  "primary_keyword": "分分彩前三直选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_01b0bd60e9272ee1016a964c4a4ff887d0afefcc9e02520c2c",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "理解前三直选里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前三直选和值技巧",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "这一步到底怎么算？用前三直选和值把规则和复算过程讲清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三直选-position_filter-sum_range",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本文用简单中文解释分分彩前三直选里和值9–18怎么计算，并用演示数据完整复算一次。主筛选只有一层：从1000个有序三位候选里按和值9–18保留670个、剔除330个；文末也明确了停止条件，不把统计筛选写成预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值技巧",
+    "位置筛选",
+    "演示数据",
+    "可复算"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "这一步到底怎么算？用前三直选和值把规则和复算过程讲清",
+  "title_candidates": [
+    "这一步到底怎么算？用前三直选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前三直选和值应该怎样复核",
+    "前三直选和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前三直选和值怎样正确理解",
+    "看懂前三直选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前三直选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前三直选和值应该怎样复核",
+      "前三直选和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前三直选和值怎样正确理解",
+      "看懂前三直选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-e7b5e90b14b7f266",
+          "score": 0.35294117647058826,
+          "title": "分分彩前三直选和值注数计算：规则机制、候选空间与复盘方法"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2083,
+          "intent_term_hits": [
+            "前三",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "和值",
+            "前三直选和值"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "这一步到底怎么算？用前三直选和值把规则和复算过程讲清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

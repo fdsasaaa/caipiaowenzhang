@@ -1,0 +1,449 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从10000到1446的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 8554,
+    "final_space": 1446,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前四直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好2个大号",
+      "恰好2个单号"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "恰好2个大号",
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "2d020f710df898da9765",
+  "approved_at": "2026-09-01T04:28:52.229639+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-5ebdda0ca37b046a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=2/static]:10000->3750>odd_even_filter[odd_count=2/static]:3750->1446",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选大小奇偶技巧",
+    "reader_question": "理解前四直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从10000到1446的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 8554,
+      "final_space": 1446,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好2个大号",
+        "恰好2个单号"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "恰好2个大号",
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：恰好2个大号→恰好2个单号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前四直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从10000到1446的可复算案例。",
+    "title": "分分彩前四直选大小奇偶技巧：恰好2个大号→恰好2个单号具体怎么算，用完整案例从10000复算到1446",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+  "case_scope": "mechanics_only",
+  "category": "腾讯分分彩技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲前四直选里的机械筛选，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "读者看到的彩种显示名统一按“分分彩”写。",
+      "claim_type": "editorial",
+      "evidence_note": "按展示规范改写术语。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前四直选的计算对象，是按顺序排列的4位数字候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自规则引用的玩法机制描述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的起点空间是10000，表示0000到9999这1万种有序4位结果。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定的起始候选空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文使用的规则顺序是固定的：先做“恰好2个大号”，再做“恰好2个单号”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同冻结的阶段顺序。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一层“恰好2个大号”，是把10000个有序4位候选里，筛出大号数量正好等于2的那一部分。",
+      "claim_type": "rule_fact",
+      "evidence_note": "第一层机制描述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "系统合同给出的结果是从10000缩到3750，排除6250。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层候选空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层“恰好2个单号”，只在上一层剩下的3750个候选里继续筛，保留单号数量正好等于2的部分。",
+      "claim_type": "rule_fact",
+      "evidence_note": "第二层机制描述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "系统合同给出的结果是从3750缩到1446，排除2304。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层候选空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这两层合起来，就是一个两步机械复算：先看大号个数，再看单号个数。",
+      "claim_type": "editorial",
+      "evidence_note": "对合同流程的编辑性概括。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "它只是在缩小候选空间，不自动等于更准，也不自动等于预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不含可验证性能断言。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第2步，应用“恰好2个大号”，候选从10000变成3750，减少6250。",
+      "claim_type": "calculation",
+      "evidence_note": "第一步复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第3步，在3750的基础上应用“恰好2个单号”，候选从3750变成1446，再减少2304。",
+      "claim_type": "calculation",
+      "evidence_note": "第二步复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第4步，把两次排除加总：6250 + 2304 = 8554，所以总排除是8554。",
+      "claim_type": "calculation",
+      "evidence_note": "总排除数复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第5步，最终空间核对成立：10000 - 8554 = 1446。",
+      "claim_type": "calculation",
+      "evidence_note": "最终空间核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一层核对：10000 - 3750 = 6250，和合同里的排除数一致。",
+      "claim_type": "calculation",
+      "evidence_note": "第一层核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层核对：3750 - 1446 = 2304，和合同里的排除数一致。",
+      "claim_type": "calculation",
+      "evidence_note": "第二层核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "总量核对：10000 - 1446 = 8554，也和合同里的总排除数一致。",
+      "claim_type": "calculation",
+      "evidence_note": "总量核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这说明这是一条可以按数字直接复算的机械路径，读者只要按顺序代入，就能得到同样的空间结果。",
+      "claim_type": "editorial",
+      "evidence_note": "操作性评价，不是预测声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这类筛选的作用，是把候选空间从10000缩到1446，不是证明下一期更容易中。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本里的和值、跨度、频率、最近形态，只能作为演示数据中的描述信息，不能直接当成对未来的保证。",
+      "claim_type": "editorial",
+      "evidence_note": "样本边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文已经按合同完成两层固定筛选，所以此处应停止。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则、并且参数在观察前冻结，才允许下一轮再继续缩小候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "继续筛选的前提条件。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层候选空间从10000个缩到3750个，排除6250个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从3750个缩到1446个，排除2304个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从10000个缩到1446个，总排除8554个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲前四直选里的机械筛选，不讨论未核验的平台经济参数。读者看到的彩种显示名统一按“分分彩”写。</p><p>前四直选的计算对象，是按顺序排列的4位数字候选。这里的起点空间是10000，表示0000到9999这1万种有序4位结果。</p><p>本文使用的规则顺序是固定的：先做“恰好2个大号”，再做“恰好2个单号”。参数先冻结，再看样本或结果。</p><p>演示数据，不是真实开奖记录。</p><h2>方法机制：恰好2个大号→恰好2个单号</h2><p>第一层“恰好2个大号”，是把10000个有序4位候选里，筛出大号数量正好等于2的那一部分。系统合同给出的结果是从10000缩到3750，排除6250。</p><p>第二层“恰好2个单号”，只在上一层剩下的3750个候选里继续筛，保留单号数量正好等于2的部分。系统合同给出的结果是从3750缩到1446，排除2304。</p><p>这两层合起来，就是一个两步机械复算：先看大号个数，再看单号个数。它只是在缩小候选空间，不自动等于更准，也不自动等于预测优势。</p><h2>完整可复算案例</h2><p>下面按合同顺序完整走一遍。</p><p>第1步，起始空间是10000。</p><p>第2步，应用“恰好2个大号”，候选从10000变成3750，减少6250。</p><p>第3步，在3750的基础上应用“恰好2个单号”，候选从3750变成1446，再减少2304。</p><p>第4步，把两次排除加总：6250 + 2304 = 8554，所以总排除是8554。</p><p>第5步，最终空间核对成立：10000 - 8554 = 1446。</p><h2>逐步核对候选空间</h2><p>第一层核对：10000 - 3750 = 6250，和合同里的排除数一致。</p><p>第二层核对：3750 - 1446 = 2304，和合同里的排除数一致。</p><p>总量核对：10000 - 1446 = 8554，也和合同里的总排除数一致。</p><p>这说明这是一条可以按数字直接复算的机械路径，读者只要按顺序代入，就能得到同样的空间结果。</p><p>本篇只到合同规定的最后一层，不再临时加第三个过滤器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选的作用，是把候选空间从10000缩到1446，不是证明下一期更容易中。</p><p>样本里的和值、跨度、频率、最近形态，只能作为演示数据中的描述信息，不能直接当成对未来的保证。</p><p>同样，来源只负责说明这类技巧原子从哪里来，不负责替本文里的演示数据作证。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本文已经按合同完成两层固定筛选，所以此处应停止。只有当新增条件本身也有已验证规则、并且参数在观察前冻结，才允许下一轮再继续缩小候选。</p><p>如果没有第二条已验证规则，就不要为了显得更实用而临时拼第三层、第四层过滤器。</p><h2>实际怎么操作</h2><ol><li>先确认对象是前四直选，起始空间按10000处理。</li><li>先固定第一层参数“恰好2个大号”，只算这一层，把10000复算到3750。</li><li>再固定第二层参数“恰好2个单号”，只在3750的结果里继续算到1446。</li><li>逐层记录before_space、after_space和excluded_space，检查是否分别等于10000→3750、3750→1446。</li><li>算到1446就停，不加未验证的新过滤器，也不把这组机械筛选说成预测结论。</li></ol>",
+  "content_format": "html",
+  "content_hash": "563159e905f7efab00b583887e4b8cf38b4961daf5d2150b160f4e4ed8406b32",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "e0a0e0b1ce0eba2b0c51948cfcb79da2a92c461f8aab69f7c38088defd80fa5e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选大小奇偶技巧案例讲解：先说明前四直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "1446",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数再看样本；第一层和第二层都按合同预冻结参数执行，不能边看边改。",
+    "starting_space": "10000",
+    "steps": [
+      "确认对象是前四直选，起始空间按10000处理。",
+      "先固定第一层参数“恰好2个大号”，只算这一层，把10000复算到3750。",
+      "再固定第二层参数“恰好2个单号”，只在3750的结果里继续算到1446。",
+      "逐层记录before_space、after_space和excluded_space，检查是否分别等于10000→3750、3750→1446。",
+      "算到1446就停，不加未验证的新过滤器，也不把这组机械筛选说成预测结论。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则/证据并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩前四直选大小奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_00ee08a903787b7e016a9654516a7487d0bd12f6da308ee989",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "理解前四直选里恰好2个大号→恰好2个单号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前四直选大小奇偶技巧",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前四直选-big_small_filter-odd_even_filter",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "用简单中文解释恰好2个大号→恰好2个单号的机制，并完成从10000到1446的可复算案例。",
+  "tags": [
+    "分分彩前四直选大小奇偶技巧",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件",
+  "title_candidates": [
+    "这一步到底怎么算？用前四直选大小奇偶把规则和复算过程讲清",
+    "从玩法规则到完整案例：前四直选大小奇偶应该怎样复核",
+    "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前四直选大小奇偶怎样正确理解",
+    "看懂前四直选大小奇偶不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前四直选大小奇偶把规则和复算过程讲清",
+      "从玩法规则到完整案例：前四直选大小奇偶应该怎样复核",
+      "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前四直选大小奇偶怎样正确理解",
+      "看懂前四直选大小奇偶不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 29
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-d90e589e19c803e9",
+          "score": 0.35294117647058826,
+          "title": "分分彩一星直选大小奇偶筛选步骤：机制、复算与停止原则"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1923,
+          "intent_term_hits": [
+            "前四",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前四",
+            "直选",
+            "奇偶",
+            "大小",
+            "前四直选大小奇偶"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

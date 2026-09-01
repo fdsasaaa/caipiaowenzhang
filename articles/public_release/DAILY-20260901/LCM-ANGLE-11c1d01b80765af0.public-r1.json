@@ -1,0 +1,191 @@
+{
+  "angle_signature": "c7305ddcda516f47b42b",
+  "approved_at": "2026-09-01T04:24:19.462185+00:00",
+  "article_id": "LCM-ANGLE-11c1d01b80765af0",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "中三组选3的公开版本可以只讨论候选空间的核算，不讨论具体选号或投注执行。",
+      "claim_type": "editorial",
+      "evidence_note": "正文定位为机制与数学核对，未给出具体执行方案。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "和值9-18是固定的参数筛选条件，属于预注册的规则约束，而不是从样本中反推出来的经验结论。",
+      "claim_type": "rule_fact",
+      "evidence_note": "保留参数先定的机制表述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "候选空间变小只能说明筛选范围缩小，不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "按公开版要求加入边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "90、46、44是候选数，不是命中率、准确率、成功率或胜率。",
+      "claim_type": "editorial",
+      "evidence_note": "属于风险澄清与概念区分。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>这篇只做一件事：核对中三组选3在给定条件下的候选空间怎么算。</p><p>讨论对象仍然是中三组选3，主题不变；但这里不展开任何具体选号、跟进或投注执行。</p><p>先把边界说清楚，再谈数字，结论才不会被混用。</p><h2>参数先固定</h2><p>公开版保留的是规则核算，不是临场判断。这里的主筛选条件是和值9-18，参数在计算前就已经固定下来，不是从样本里临时倒推出来的。</p><p>这种写法的重点是“先定规则，再算空间”。它只回答候选数量怎么变，不回答后续结果会不会因此更好。</p><p>如果把参数筛选直接理解成预测增强，那就是把机制和结果混在一起了。</p><h2>数字如何对应</h2><p>按已验证的核算口径，筛选前的候选空间是90个。</p><p>套入和值9-18后，保留46个，排除44个。</p><p>这里的三组数字必须一起看：90是起点，46是终点，44是差值。它们描述的是候选空间的收缩，不是命中率，也不是收益能力。</p><h2>为什么不能把样本表现直接外推</h2><p>历史样本里的结构分类，或者某一段样本里看起来更集中的分布，都不能单独证明未来有预测优势。</p><p>这一点很关键，因为“看起来更集中”只说明样本内部的分布状态，不等于样本外也会保持同样表现。</p><p>公开讨论里，更可靠的说法是：可以复核规则、复算空间、检查样本外验证是否成立；不能直接把历史结构当成未来稳定优势。</p><h2>常见误区</h2><p>第一个误区，是把候选数当成命中率。90、46、44只是数量，不是概率承诺。</p><p>第二个误区，是把空间缩小理解成效果变强。候选变少，只代表筛选更窄，不代表结果自动更准。</p><p>第三个误区，是把固定参数当成临时经验结论。这里的和值9-18是规则约束，不是从单次样本里硬推出来的故事。</p><h2>适合怎样复核</h2><p>如果只是做教育或研究型阅读，可以按这个顺序复核：先确认对象是中三组选3，再确认主筛选是和值9-18，然后检查起点90、终点46、差值44是否一致。</p><p>复核到这里就足够了。再往下，就应该进入更完整的规则说明、样本外检验或更广的机制比较，而不是补充临场执行建议。</p><p>这类内容的价值，在于把规则说清楚，把计算关系说清楚，把边界也说清楚。</p>",
+  "content_format": "html",
+  "content_hash": "dc4cf3d7fec4c154204f1ad501f233742dbcc12da8e76923d09c59e38d4bce08",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0c09af291387b0bc06f8e393c31bce03c52c35916101c1d504ae80dcd158b5fc",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版围绕分分彩中三组选3和值注数计算，解释90到46、排除44的候选空间核算，并说明这不等于命中率或未来预测优势。",
+  "parent_content_hash": "5e1f1f408f9e3a9ab9cbc0da29cd18c9b14740cfd2efc9fbfea6371f34bf7c9a",
+  "parent_fingerprint": "11c1d01b80765af02a5bbc388f411b41633f15ec59320098a2bf3d491853601e",
+  "play": "中三组选3",
+  "primary_keyword": "分分彩中三组选3和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0827cde2cf3c437f016a96508a131087d0a1c85d5fa3dcee77",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:24:19.462200+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-11c1d01b80765af0:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+  ],
+  "search_intent": "核对中三组选3的候选空间计算，理解和值9-18下90到46、排除44的确定性结果，并辨析其与预测优势的区别",
+  "secondary_keywords": [
+    "分分彩中三组选3和值注数计算",
+    "分分彩技巧",
+    "中三组选3技巧",
+    "分分彩中三组选3投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三组选3-sum_range-space_math",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三组选3",
+  "summary": "公开版保留中三组选3和值注数计算的主题与搜索意图，改写为教育/研究导向内容。正文只讨论规则核算、候选空间收缩和常见误区，明确90到46、排除44的关系，并说明历史样本或结构分类不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "中三组选3",
+    "和值注数计算",
+    "候选空间",
+    "空间核算"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+  "title_candidates": [
+    "候选空间为什么会变？中三组选3和值的计算过程一次理清",
+    "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+    "从输入到结果：中三组选3和值的空间计算与常见误区",
+    "中三组选3和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂中三组选3的中三组选3和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？中三组选3和值的计算过程一次理清",
+      "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+      "从输入到结果：中三组选3和值的空间计算与常见误区",
+      "中三组选3和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂中三组选3的中三组选3和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-18a402b082dd7faf",
+          "score": 0.7659574468085106,
+          "title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "numeric",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [
+            "3"
+          ],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2174,
+          "intent_term_hits": [
+            "中三",
+            "组选3",
+            "组选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "组选3",
+            "组选",
+            "和值",
+            "注数",
+            "中三组选3和值"
+          ],
+          "subject_play": "中三组选3"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,199 @@
+{
+  "angle_signature": "5226b14d86049308a72c",
+  "approved_at": "2026-09-01T04:38:58.011679+00:00",
+  "article_id": "LCM-ANGLE-5db22b80db0713c9",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "“恰好1个单号”可以作为固定规则下的静态筛选条件，但不能当作来源推荐或预测优势。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文将该条件限定为固定规则下的静态筛选，不延伸为预测结论。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "100、50、50只是候选空间的计数变化，不是历史命中率，也不是未来准确率。",
+      "claim_type": "editorial",
+      "evidence_note": "正文直接区分了空间计数与命中率/准确率。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史样本里的特定分布只能说明样本描述，不足以把空间收缩直接改写成预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "正文明确提醒不能把样本分布当作预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "在没有第二条已经验证过的规则时，不应继续临时加筛选器。",
+      "claim_type": "editorial",
+      "evidence_note": "正文给出边界条件，说明追加未验证筛选会改变同一合同下的结果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果新增条件也有已验证规则且能够复算，才可以继续缩小候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文将继续筛选的前提限定为已验证且可复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>本文只讨论一个确定性问题：在前二直选的研究框架里，如何把候选空间的变化核对清楚。重点不是追着结果走，而是先把起点、筛选条件和终点算明白。</p><p>这里的主筛选条件是“恰好1个单号”。它被当作固定规则下的静态筛选项，用来做空间切分，不被当作来源推荐，也不被当作预测优势。</p><h2>空间怎么收缩</h2><p>如果起点空间设为100个候选，按这一条主筛选条件逐项核对，保留50个，排除50个。这个变化是确定性的计数结果，不是概率判断。</p><p>写成最短的算式，就是100减去50，剩下50。这里的50表示被排除的数量，也表示收缩后的终点空间，不等于命中率，更不等于胜率。</p><p>所以，看到“100、50、50”时，应该先问三件事：起点是不是100，终点是不是50，排除的是不是50。三项必须一起看，不能只拿终点单独下结论。</p><h2>为什么不能直接推未来</h2><p>空间收缩只说明候选变少了，不说明结果会更准。历史样本里出现过某种分布，也只能说明样本长什么样，不能单独证明未来会有预测优势。</p><p>这是常见误区：把规则筛选得到的结构，直接写成下一期表现更好的证据。两者不是一回事。前者是规则内的计数，后者是对未来的断言，必须分开处理。</p><p>同样地，100到50只是候选集合的变化，不是收益说明，也不是命中率说明。只要离开了样本外验证，这类结构就不能被当成稳定结论。</p><h2>复算时看什么</h2><p>复算时先固定起点，再固定筛选条件，然后看保留数和排除数是否与规则一致。这样做的目的是确认计算过程，而不是制造一个看起来更强的结论。</p><p>如果没有第二条已经验证过的规则，就不要继续临时加筛选器。筛选条件一变，讨论的就不是同一个空间，结果也不能混在一起比较。</p><p>只有在新增条件同样经过验证，并且能够复算时，才适合继续缩小候选。否则，就停在这一层，把这次收缩当作一个独立的规则结果来记录。</p><h2>历史样本该怎么用</h2><p>历史样本可以用来做复盘、检查描述是否一致、确认规则是否写对，但不能单独拿来证明未来优势。样本是材料，不是结论。</p><p>更稳妥的做法，是先把规则写清楚，再看样本能不能覆盖规则边界。能覆盖，不代表能预测；不能覆盖，也不等于规则失效，只能说明样本还不够。</p><p>因此，任何关于前二直选的结构分类，都应该先回到定义本身：起点是多少，条件是什么，收缩到哪里，排除了多少。把这四项核对完，才谈得上继续研究。</p><h2>演示用样本说明</h2><p>下面这组内容只用于说明样本格式，不代表真实开奖记录，也不用于替代前面的确定性计算：30354、29360、05207、49415、87201、68802、44001、81085、52450、28327、67627、00698、08204、34432、29619、86076。</p><p>它的作用只是帮助读者检查表述是否一致。真正的核心仍然是候选空间怎么从100收缩到50，以及为什么这个结果不能直接等同于未来判断。</p><p>如果要继续研究，下一步也应当先检查规则是否已经固定，再决定是否还有新的、同样可复算的筛选层。没有这两个前提，就没有必要把结果往更远处解释。</p>",
+  "content_format": "html",
+  "content_hash": "26544992c3e297a039f1167afa61b67cf0dd8edd2f747ecf79e248570ae979ed",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "bb1f4c4663646f429eec30560b3b8210b9366a17cdf459d3e7faa7c7486bb76e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用教育和研究视角核对分分彩前二直选的候选空间收缩，说明100到50、排除50的确定性计算，以及为何不能把结构分类直接当作未来预测优势。",
+  "parent_content_hash": "757cc8f6256ecd3b616b72b372642c8a81cf859a3b522c6011b61512680548d5",
+  "parent_fingerprint": "5db22b80db0713c988318df919e17233325d0ff408ed131babd1f8c01b27ca5f",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0e745af0ccc0a7e1016a9654b1396487d19843d97bccf73750",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:38:58.011695+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-5db22b80db0713c9:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，理解100到50、排除50的确定性结果，并区分规则计数与预测结论",
+  "secondary_keywords": [
+    "分分彩前二直选奇偶注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二直选奇偶的空间计算与常见误区",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-odd_even_filter-position_filter-space_math",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文从研究视角核对前二直选的候选空间变化：在固定规则“恰好1个单号”下，起点100个候选收缩到50个、排除50个。正文强调这只是确定性的计数结果，不是命中率或未来优势，并说明历史样本、结构分类与样本外验证之间的边界。",
+  "tags": [
+    "分分彩前二直选奇偶注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "从输入到结果：前二直选奇偶的空间计算与常见误区",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选奇偶的计算过程一次理清",
+    "先算注数，再谈前二直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：前二直选奇偶的空间计算与常见误区",
+    "前二直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二直选的前二直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选奇偶的计算过程一次理清",
+      "先算注数，再谈前二直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：前二直选奇偶的空间计算与常见误区",
+      "前二直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二直选的前二直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-d084fc762d65a3cd",
+          "score": 0.3333333333333333,
+          "title": "分分彩后二直选和值跨度筛选步骤：公开研究方法与常见误区"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "前二直选奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二直选奇偶的空间计算与常见误区"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,294 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点90、终点46、排除44。",
+    "evidence_mode": "static_only",
+    "excluded_space": 44,
+    "final_space": 46,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对中三组选3的候选空间计算，逐项确认90到46以及排除44个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 90,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "c7305ddcda516f47b42b",
+  "approved_at": "2026-09-01T04:12:23.167523+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-e06ba38585f80841",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:90->46",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三组选3和值注数计算",
+    "reader_question": "核对中三组选3的候选空间计算，逐项确认90到46以及排除44个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点90、终点46、排除44。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 44,
+      "final_space": 46,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 90,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对中三组选3的候选空间计算，逐项确认90到46以及排除44个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点90、终点46、排除44。",
+    "title": "分分彩中三组选3和值注数计算：90个候选为什么变成46个，排除44个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-11c1d01b80765af0",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论中三组选3的候选空间计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围声明，避免把经济参数写成事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "中三组选3先按和值9–18做主筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已给定的主筛选合同与规则引用。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的筛选前候选空间是90个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的 starting_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛到和值9–18后，剩下46个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的 after_filter_space。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此排除44个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "90减46等于44。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这不是命中率，也不是收益率，只是候选空间被缩小了。",
+      "claim_type": "editorial",
+      "evidence_note": "纯解释性边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 明确标注的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据的样本量是12条。",
+      "claim_type": "calculation",
+      "evidence_note": "case_bundle descriptive sample_size。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只做一件事：核对中三组选3的候选空间怎么算。</p><p>主筛选条件是和值9–18。系统合同里给出的起点是90个，筛完后是46个，所以排除44个。</p><p><strong>演示数据，不是真实开奖记录。</strong></p><h2>逐层计算保留与排除数量</h2><p>第一步先固定参数，再看结果。这里唯一主筛选就是和值9–18，参数范围是先定好的，不是从样本里反推出来的。</p><p>按合同，筛选前候选空间是90个；套入和值9–18后，保留46个；两者相减，排除44个。</p><p>这个过程只说明空间变小了，不说明下一期会更容易中，也不说明有任何收益优势。</p><h2>核对起点、终点和总排除</h2><p>起点：90个。</p><p>终点：46个。</p><p>总排除：44个。</p><p>这三项必须同时成立，才算把这一步算对了。</p><h2>为什么这些数字不是命中率</h2><p>90、46、44都只是候选数，不是命中率、准确率、成功率，也不是胜率。</p><p>它们只回答“筛掉了多少”，不回答“未来会不会更准”。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这里的和值9–18是系统研究里固定下来的主筛选参数。正文只把它当作候选空间的数学合同，不把它写成来源推荐，也不把它写成预测优势。</p><p>如果只看到“剩46个”就直接往“更容易中”上面想，那是把空间筛选和结果预测混在一起了。</p><h2>实际怎么操作</h2><ol><li>先确认对象是中三组选3，再确认只看和值9–18这一条主筛选。</li><li>固定起点空间为90个，不要拿演示样本条数去替代理论候选空间。</li><li>按主筛选计算保留空间，结果应是46个。</li><li>用90减46，复核排除数应是44个。</li><li>到这里就停止，不再临时加第二条未验证过滤器。</li></ol><h2>停止条件</h2><p>本篇已经完成合同要求的唯一主筛选核算，所以到此停止。</p><p>只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选空间。</p><p>这条边界不变：先固定参数，再算空间；算完这一层，就不临时加新过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "5e1f1f408f9e3a9ab9cbc0da29cd18c9b14740cfd2efc9fbfea6371f34bf7c9a",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "11c1d01b80765af02a5bbc388f411b41633f15ec59320098a2bf3d491853601e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三组选3和值注数计算案例讲解：先说明主筛选和值9–18，再用可复算的确定性数字展示90个候选变成46个、排除44个的过程，不把空间缩小包装成预测优势。",
+  "play": "中三组选3",
+  "practical_guidance": {
+    "after_primary_filter_space": "46个候选",
+    "next_step_policy": "只有新增条件具有已验证规则或可复算证据时，才允许继续缩小候选；否则在完成这一层主筛选后停止，不临时加第二过滤器。",
+    "parameter_freeze_rule": "先固定和值9–18这一主筛选参数，再看候选空间结果，不从样本倒推参数。",
+    "starting_space": "90个候选",
+    "steps": [
+      "先确认对象是中三组选3，主筛选只用和值9–18。",
+      "把筛选前候选空间固定为90个，不拿演示样本条数替代理论空间。",
+      "按和值9–18复算保留空间，结果应为46个。",
+      "用90减46复核，排除数应为44个。",
+      "完成这一层后停止，不再临时增加未验证的新过滤器。"
+    ],
+    "stop_condition": "当起点90、终点46、排除44三项都核对一致后，停止在主筛选层，不再继续追加未验证条件。"
+  },
+  "primary_keyword": "分分彩中三组选3和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0827cde2cf3c437f016a96508a131087d0a1c85d5fa3dcee77",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-GROUP3-V1"
+  ],
+  "search_intent": "核对中三组选3的候选空间计算，逐项确认90到46以及排除44个的确定性结果",
+  "secondary_keywords": [
+    "分分彩中三组选3和值注数计算",
+    "分分彩技巧",
+    "中三组选3技巧",
+    "分分彩中三组选3投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三组选3-sum_range-space_math",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三组选3",
+  "summary": "本文只做中三组选3的候选空间核算：主筛选为和值9–18，起点90个，终点46个，排除44个，并明确说明这只是空间缩小，不是命中率或预测优势。",
+  "tags": [
+    "分分彩",
+    "中三组选3",
+    "和值注数计算",
+    "候选空间",
+    "空间核算"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+  "title_candidates": [
+    "候选空间为什么会变？中三组选3和值的计算过程一次理清",
+    "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+    "从输入到结果：中三组选3和值的空间计算与停止条件",
+    "中三组选3和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的中三组选3和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？中三组选3和值的计算过程一次理清",
+      "先算注数，再谈中三组选3和值：组合数学能说明到哪一步",
+      "从输入到结果：中三组选3和值的空间计算与停止条件",
+      "中三组选3和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的中三组选3和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-18a402b082dd7faf",
+          "score": 0.7659574468085106,
+          "title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "numeric",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [
+            "3"
+          ],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1739,
+          "intent_term_hits": [
+            "中三",
+            "组选3",
+            "组选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "组选3",
+            "组选",
+            "和值",
+            "注数",
+            "中三组选3和值"
+          ],
+          "subject_play": "中三组选3"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先算注数，再谈中三组选3和值：组合数学能说明到哪一步"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

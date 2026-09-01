@@ -1,0 +1,203 @@
+{
+  "angle_signature": "449972ad42c98e704eb5",
+  "approved_at": "2026-09-01T04:40:43.967992+00:00",
+  "article_id": "LCM-ANGLE-325fb8546444112c",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "公开版只讲机制，不讲未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "强调范围边界，属于公开正文中的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇的主筛选对象是后二组选，参数为和值6–12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自parent中的固定机制描述，公开版保留玩法机制与参数范围。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起始候选空间按45个计算，主筛选后剩27个，被筛掉18个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自parent中的演示性计算关系，公开版仅用于机制说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成主筛选后应停止，不再临时增加第二个过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文中的停止条件说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必须明确的风险边界与方法论提醒。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定边界</h2><p>这篇只讲机制和检查方法，不讲未核验的平台参数，也不把演示材料包装成真实结论。读者可以把它当成一份公开版的规则说明，重点是看清输入、输出和停止条件。</p><p>主题仍然是后二组选和值筛选步骤，但公开版只保留可复核的结构，不提供具体候选号码、逐期选号或任何执行指令。</p><h2>看懂筛选对象</h2><p>这里的筛选对象是后二组选。它的核心不是追逐某个单期结果，而是先把玩法对象固定下来，再按既定和值区间做机械检查。</p><p>公开版保留的主筛选条件是和值6–12。这个条件只说明如何定义筛选范围，不说明未来会更容易命中，也不构成收益承诺。</p><p>如果对象不是后二组选，或者和值范围被改写成别的区间，那就已经不是这份公开说明覆盖的内容。</p><h2>怎么复核步骤</h2><p>第一步先确认对象。只看后二组选，不扩展到其他玩法，这样后面的检查才有统一口径。</p><p>第二步确认参数。和值6–12是本篇唯一保留的主筛选条件，不能在阅读过程中临时替换成别的区间，也不能把别的维度塞进来混用。</p><p>第三步确认候选空间。公开说明中的起始候选空间按45个理解，主筛选之后剩27个，被排除18个。这个关系属于可复算的机械结果，不是预测优势。</p><p>第四步确认停止点。完成这一层主筛选后就应停止，不再临时增加第二个过滤器。只有当新增条件同样有已验证规则，并且能被复算时，才谈得上继续讨论。</p><h2>为什么不能过度解读</h2><p>结构分类只是结构分类，历史样本表现只是历史样本表现。它们都可以帮助你理解规则怎么运作，但不能单独证明未来预测优势。</p><p>这也是公开版和内部验证版的分界线。内部材料可能包含更细的演示路径，公开版则只保留教育和研究导向的解释，避免把统计筛选说成稳定可迁移的结果。</p><p>换句话说，样本频率、和值分布、跨度变化这些内容可以用于复盘和说明，但不能直接推出下一步该怎么选，更不能据此承诺命中率。</p><h2>如何做研究式阅读</h2><p>如果你是为了复盘理解，最有效的方式是把每个条件拆开看：对象是否固定，参数是否明确，候选空间是否可复算，停止条件是否清楚。</p><p>当这些问题都能回答时，这份材料的价值就在于帮助你建立一致的检查顺序，而不是制造临场判断。只要有一步不能复核，就应该把它视为未完成的说明，而不是可直接执行的方案。</p>",
+  "content_format": "html",
+  "content_hash": "85d4e089db931ca35af457c471b485648bf8c8d678e1fcfda98bf66c9ad5b603",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "7d30560025dfee01400de862e0c778b633fc3559845a836f89fd174435754634",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版的后二组选和值筛选说明，重点讲清对象、参数、候选空间、停止条件与常见误区，适合教育和研究式阅读。",
+  "parent_content_hash": "70879e6582e5d77911438c22e207d61fdd3ec54c086e84fb6c9054a5f17d1b5c",
+  "parent_fingerprint": "325fb8546444112c9917f17bf603dc11fc7fb3329305dfe12c2690dde6403cdf",
+  "play": "后二组选",
+  "primary_keyword": "分分彩后二组选和值筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0498b0737c6ecccf016a96558af71887d0880737eda22b7261",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:40:43.968007+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-325fb8546444112c:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-GROUP-V1"
+  ],
+  "search_intent": "了解后二组选和值筛选的固定检查顺序、参数边界和停止条件，用于教育与研究，不用于下注执行。",
+  "secondary_keywords": [
+    "分分彩后二组选和值筛选步骤",
+    "分分彩技巧",
+    "后二组选技巧",
+    "分分彩后二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "后二组选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-后二组选-sum_range-execution_checklist",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二组选",
+  "summary": "公开版保留后二组选和值筛选的机制说明：先固定对象和和值区间，再复核候选空间与停止条件，并明确不能把结构分类或历史样本表现直接当成未来预测优势。",
+  "tags": [
+    "分分彩",
+    "后二组选",
+    "和值筛选步骤",
+    "演示数据",
+    "可执行清单",
+    "机制说明"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "后二组选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+  "title_candidates": [
+    "做到哪一步应该停？后二组选和值的复核清单",
+    "后二组选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+    "从规则到复核：后二组选这套筛选流程最容易错在哪里",
+    "先固定步骤，再看结果：后二组选和值的执行边界",
+    "后二组选和值不是越筛越好，关键在什么时候停止"
+  ],
+  "title_review": {
+    "candidates": [
+      "做到哪一步应该停？后二组选和值的复核清单",
+      "后二组选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+      "从规则到复核：后二组选这套筛选流程最容易错在哪里",
+      "先固定步骤，再看结果：后二组选和值的执行边界",
+      "后二组选和值不是越筛越好，关键在什么时候停止"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-b753326417728ee1",
+          "score": 0.41509433962264153,
+          "title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question",
+            "question_contrast"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.4,
+          "intent_term_hits": [
+            "后二",
+            "组选",
+            "和值",
+            "停止条件",
+            "后二组选和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "组选",
+            "和值",
+            "停止条件",
+            "后二组选和值"
+          ],
+          "subject_play": "后二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "后二组选和值怎么检查才不漏步骤？先看输入、输出和停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

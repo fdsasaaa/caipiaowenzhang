@@ -1,0 +1,191 @@
+{
+  "angle_signature": "def23ccc13a4dd40a1ea",
+  "approved_at": "2026-09-01T04:41:21.539859+00:00",
+  "article_id": "LCM-IDEA-0b7736a707e6608c",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选的基础候选空间是100000，后续筛选是在这个空间里做数学缩小。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了玩法空间的定义，但没有展开任何具体执行指令。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "近12期热号前5数字池可按频次降序、数字升序排序后取前5个数字形成。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了参数化筛选规则的机制描述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "top_frequency_digits 只是按样本频次排序，不代表未来命中率提高。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版必须明确保留的风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文中明确加入的风险边界表述。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法范围</h2><p>本文只讲分分彩五星直选里的统计筛选机制，不展开任何具体下注方案，也不把样本结果写成未来预测。</p><p>五星直选的基础候选空间是<strong>100000</strong>。后面的处理，都是在这个固定空间里做数学缩小。</p><h2>筛选机制</h2><p>这里使用的是近12期热号前5数字池。做法是先统计样本里每个数字的出现次数，再按<strong>频次降序、数字升序</strong>排序，取前5个数字组成数字池。</p><p>这个过程属于参数预注册后的复算，不是先看结果再临时加规则。只要参数不变，统计口径就应保持一致。</p><h2>复算示例</h2><p>在固定演示案例里，统计结果会先得到一个5个数字组成的池子。把五星直选理解成5个位置分别从这个池子里选1个数字，那么总组合数就是<strong>5^5</strong>，也就是<strong>3125</strong>。</p><p>因此，候选空间会从<strong>100000</strong>缩到<strong>3125</strong>，减少<strong>96875</strong>个组合。这个结果只说明筛选后的空间更小，不说明命中会更好。</p><h2>边界与误区</h2><p><strong>结构分类或历史样本表现不能单独证明未来预测优势。</strong></p><p>也就是说，热号、冷号、频次排序、样本复盘，都只能说明过去的统计结构，不能自动推出未来结果。</p><p>如果要继续讨论，也只能讨论规则是否可复算、参数是否固定、样本外验证是否成立，而不是把历史结构直接包装成收益或胜率。</p><h2>停止条件</h2><p>当主筛选已经完成，就应当停止，不再临时追加新的过滤器。新增条件只有在同样具备可验证规则时，才适合进入下一轮复算。</p><p>这类说明更适合用来理解机制、核对口径和检查误区，不适合当作下注指令或稳定盈利依据。</p>",
+  "content_format": "html",
+  "content_hash": "bc3502ffc44eae285a9b8aaa0d9d40751ec2544159eb18d2260b1013d98fd107",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "e0952f9440b52ecd0ddb31ba2d5b6f22491607138d31ede175c03f6f8501a9e5",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版解释分分彩五星直选冷热筛选的计算机制、复算口径和常见误区，不提供选号或投注建议。",
+  "parent_content_hash": "c7221aa7883f9e65c3e3e99a6b48566bbc20fa351a6a1732e0a0f5f7e361f39a",
+  "parent_fingerprint": "0b7736a707e6608c5299d821bb29cdb76a2e4c76fd8ee3abb5d0529464d583bd",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选冷热技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0e28809c799a60b1016a96566c897087d089d05a4b7f2abb00",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-01T04:41:21.539873+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-0b7736a707e6608c:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩五星直选里近12期热号前5数字池的计算机制，并用固定演示案例复算空间缩小过程",
+  "secondary_keywords": [
+    "分分彩五星直选冷热技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩冷热频率",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "五星直选冷热为什么容易算错？关键在输入、计算和停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选冷热技巧-近12期热号前5数字池具体怎么算-用完整案例从100000复算到3125",
+  "source_batch_id": "DAILY-20260901",
+  "source_refs": [
+    "BRBCW-000201"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文保留分分彩五星直选冷热筛选的机制与复算框架，解释近12期热号前5数字池如何形成、空间如何缩小，并明确指出历史样本不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩五星直选冷热技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩冷热频率",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "cold_hot_split",
+    "position_filter"
+  ],
+  "title": "五星直选冷热为什么容易算错？关键在输入、计算和停止条件",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选冷热把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选冷热应该怎样复核",
+    "五星直选冷热为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：五星直选里的五星直选冷热怎样正确理解",
+    "看懂五星直选冷热不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选冷热把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选冷热应该怎样复核",
+      "五星直选冷热为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：五星直选里的五星直选冷热怎样正确理解",
+      "看懂五星直选冷热不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+          "score": 0.8076923076923077,
+          "title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1667,
+          "intent_term_hits": [
+            "五星",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "冷热",
+            "五星直选冷热"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "五星直选冷热为什么容易算错？关键在输入、计算和停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,454 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "multistage_order",
+    "deliverable_summary": "按固定顺序复算和值6–12→跨度2–6两层筛选，逐层写清 before/after/excluded，最后一层后停止，不新增过滤器。",
+    "evidence_mode": "static_only",
+    "excluded_space": 64,
+    "final_space": 36,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "1f3d315d09161df05d7a",
+  "approved_at": "2026-09-01T04:31:37.257291+00:00",
+  "article_angle_contract": {
+    "angle_type": "multistage_order",
+    "contract_id": "AAC-df3428d0d3b5c83a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58>span_range[min=2,max=6/static]:58->36",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选和值跨度筛选顺序",
+    "reader_question": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "required_deliverable": "逐层解释和值6–12→跨度2–6的固定顺序和空间变化，完成最后一层后明确停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 64,
+      "final_space": 36,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "先列出全部合同阶段",
+      "按固定顺序逐层复算",
+      "逐层核对before/after/excluded",
+      "完成最后一层后停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "逐层解释和值6–12→跨度2–6的固定顺序和空间变化，完成最后一层后明确停止。",
+    "title": "分分彩后二直选和值跨度筛选顺序：2层为什么按和值6–12→跨度2–6这个顺序，逐层各排除多少",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-b753326417728ee1",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只按合同固定顺序复算两层：第一层是和值6–12，第二层是跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应合同阶段顺序。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里讨论的是候选空间怎么逐层缩小，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "合同起点是100个有序两位候选，最后收敛到36个，合计排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "合同结果给定的空间计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层先看和值6–12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "阶段1标签。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起始空间是100，筛完后剩58，排除42。",
+      "claim_type": "calculation",
+      "evidence_note": "阶段1 before/after/excluded。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的计算方式很直接：先把和值不在6到12之间的候选排掉，剩下的就是58个。",
+      "claim_type": "calculation",
+      "evidence_note": "对阶段1的复算解释。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层再看跨度2–6。",
+      "claim_type": "rule_fact",
+      "evidence_note": "阶段2标签。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "它不是从100重新算，而是接着第1层的58个继续筛。",
+      "claim_type": "rule_fact",
+      "evidence_note": "固定顺序与串联复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步筛完后剩36，说明这一层又排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "阶段2 before/after/excluded。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层：before 100，after 58，excluded 42。",
+      "claim_type": "calculation",
+      "evidence_note": "阶段1空间核对。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层：before 58，after 36，excluded 22。",
+      "claim_type": "calculation",
+      "evidence_note": "阶段2空间核对。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合起来：100到36，总共排除64。",
+      "claim_type": "calculation",
+      "evidence_note": "整体结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先固定合同顺序，只认“和值6–12”这一层，不先看第二层。",
+      "claim_type": "editorial",
+      "evidence_note": "操作建议，基于合同顺序。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "从100个两位候选开始，逐个判断和值是否落在6到12之间，得到第1层的58个结果。",
+      "claim_type": "calculation",
+      "evidence_note": "第1步操作描述。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把第1层留下的58个，原样作为第2层输入，不重新回到100个起算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "串联复算规则。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再逐个判断跨度是否落在2到6之间，得到最终36个结果。",
+      "claim_type": "calculation",
+      "evidence_note": "第2步操作描述。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成第2层后就停止，不再临时加新过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这只是固定顺序下的空间收缩，不是预测优势，也不是命中率承诺。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不含经济或预测承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "“先和值、后跨度”是合同里的阶段顺序；它的作用是让复算过程可核对，而不是把统计筛选包装成更容易中奖的结论。",
+      "claim_type": "editorial",
+      "evidence_note": "边界与误区说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有新的已验证规则或证据，就不要在这条管线后面继续加第三层、第四层。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止与新增条件边界。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成最后一层后停止。",
+      "claim_type": "rule_fact",
+      "evidence_note": "明确停止条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "只有新增条件也有已验证规则或证据，并且在下一次实验前先冻结参数，才允许继续缩小候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "next step policy。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第1层候选空间从100个缩到58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从58个缩到36个，排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100个缩到36个，总排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先列出全部合同阶段</h2><p>本文只按合同固定顺序复算两层：第一层是和值6–12，第二层是跨度2–6。</p><p>演示数据，不是真实开奖记录。</p><p>这里讨论的是候选空间怎么逐层缩小，不讨论未核验的平台经济参数。</p><p>合同起点是100个有序两位候选，最后收敛到36个，合计排除64个。</p><h2>按固定顺序逐层复算</h2><p>第1层先看和值6–12。起始空间是100，筛完后剩58，排除42。</p><p>这一步的计算方式很直接：先把和值不在6到12之间的候选排掉，剩下的就是58个。</p><p>第2层再看跨度2–6。它不是从100重新算，而是接着第1层的58个继续筛。</p><p>这一步筛完后剩36，说明这一层又排除22个。</p><h2>逐层核对 before / after / excluded</h2><p>第1层：before 100，after 58，excluded 42。</p><p>第2层：before 58，after 36，excluded 22。</p><p>两层合起来：100到36，总共排除64。</p><h2>实际怎么操作</h2><ol><li>先固定合同顺序，只认“和值6–12”这一层，不先看第二层。</li><li>从100个两位候选开始，逐个判断和值是否落在6到12之间，得到第1层的58个结果。</li><li>把第1层留下的58个，原样作为第2层输入，不重新回到100个起算。</li><li>再逐个判断跨度是否落在2到6之间，得到最终36个结果。</li><li>完成第2层后就停止，不再临时加新过滤器。</li></ol><h2>边界与误区</h2><p>这只是固定顺序下的空间收缩，不是预测优势，也不是命中率承诺。</p><p>“先和值、后跨度”是合同里的阶段顺序；它的作用是让复算过程可核对，而不是把统计筛选包装成更容易中奖的结论。</p><p>如果没有新的已验证规则或证据，就不要在这条管线后面继续加第三层、第四层。</p><h2>停止条件</h2><p>完成最后一层后停止。只有新增条件也有已验证规则或证据，并且在下一次实验前先冻结参数，才允许继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "76af5d3b5db80f42e11f38319488bacf76d1568c486e2d362183aaf59940946a",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260901",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "b753326417728ee17bf43e6f6cfae5f9dd3ed631966bb33ab56f244c2ccb6dcc",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "multistage_order",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值跨度筛选顺序讲解：按固定顺序复算和值6–12到跨度2–6的两层筛选，逐层看before/after/excluded，并明确完成最后一层后停止。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "36",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；本合同只允许按已冻结顺序复算两层。",
+    "starting_space": "100",
+    "steps": [
+      "先固定两层顺序：和值6–12在前，跨度2–6在后。",
+      "从100个有序两位候选起算，先做第1层和值筛选。",
+      "核对第1层结果：100变58，排除42。",
+      "把58个结果直接送入第2层跨度筛选。",
+      "核对第2层结果：58变36，排除22；到这里就停止，不再加新过滤器。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何新增条件都必须另有已验证规则或证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩后二直选和值跨度筛选顺序",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_06f10cf9062107a3016a9654ff420087d1b1b7300803e5e89e",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "复算2层筛选的固定顺序、每层before/after/excluded，并说明完成最后一层后为什么停止",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+  "site_category_key": "tzjq",
+  "slug": "ffcm-houer-zhixuan-hezhi-kuandu-shaixuan-shunxu",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "本文只按合同复算腾讯分分彩后二直选的两层筛选：先和值6–12，再跨度2–6。正文逐层写清 before、after、excluded，并在最后一层完成后停止，不把空间收缩包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值筛选",
+    "跨度筛选",
+    "位置筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+  "title_candidates": [
+    "先后顺序为什么重要？后二直选和值跨度的多层筛选这样复核",
+    "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+    "后二直选和值跨度的关键不只是筛选，顺序和停止条件同样重要",
+    "为什么不能随意换顺序？用后二直选和值跨度看连续筛选逻辑",
+    "做到最后一层之后呢？后二直选和值跨度为什么不该继续追加条件"
+  ],
+  "title_review": {
+    "candidates": [
+      "先后顺序为什么重要？后二直选和值跨度的多层筛选这样复核",
+      "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界",
+      "后二直选和值跨度的关键不只是筛选，顺序和停止条件同样重要",
+      "为什么不能随意换顺序？用后二直选和值跨度看连续筛选逻辑",
+      "做到最后一层之后呢？后二直选和值跨度为什么不该继续追加条件"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-18149d90338bf75f",
+          "score": 0.39215686274509803,
+          "title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "plain",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度",
+            "后二直选和值跨度"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从第一层到最后一层：后二直选和值跨度的输入输出与停止边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

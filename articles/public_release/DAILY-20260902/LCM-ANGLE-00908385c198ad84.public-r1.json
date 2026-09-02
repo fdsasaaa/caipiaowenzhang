@@ -1,0 +1,197 @@
+{
+  "angle_signature": "6d92202d22b5ebc1bb18",
+  "approved_at": "2026-09-02T04:07:14.506038+00:00",
+  "article_id": "LCM-ANGLE-00908385c198ad84",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文围绕前三直选邻号注数计算，核对候选空间从1000个变为438个，并由此得到排除562个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了起点1000、保留438、排除562这一确定性空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "1000减438等于562，三者关系可写成1000 = 438 + 562。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文明确给出等式关系，用于复核候选空间的算术一致性。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "438描述的是筛选后留下的空间规模，562描述的是被筛掉的空间规模，它们不等于中奖概率。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确区分了空间规模与概率含义。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示样本中的和值、跨度、频率只能当作样本说明，不能直接推出未来结果。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文包含样本外推边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版必须保留的边界声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>这篇只讨论前三直选邻号注数的空间核对，不讨论具体执行方案。目标很明确：先确认候选空间的起点、保留量和排除量，再看这组数字能说明什么、不能说明什么。</p><p>在这类问题里，关键不是把话说得复杂，而是把口径固定住。先定规则，再算结果；先确认定义，再谈比较。否则，样本条数、展示条数、理论候选空间很容易混在一起，最后得到的只是看起来像分析、实际上不可复核的结论。</p><p>本文采用的口径是固定的主筛选条件：至少存在一对差1邻号。这个条件只用于空间统计，不会被扩展成后续的执行建议，也不会被解释成对结果的承诺。</p><h2>怎么算出438和562</h2><p>在这套口径下，起点是1000个候选，主筛选后保留438个。这个数字不是经验猜测，而是确定性的空间统计结果。</p><p>对应的排除数量也很直接：1000减438，等于562。也就是说，在同一口径下，一共排除了562个候选。</p><p>最简单的复核方式，就是检查这条等式是否成立：1000 = 438 + 562。只要三者对得上，说明你拿到的是同一套筛选定义；如果对不上，通常意味着口径被改过，或者把不同层级的数据混在了一起。</p><p>这里要特别区分“空间规模”和“结果概率”。438表示通过筛选后留下了多少候选，562表示被剔除了多少候选。它们描述的是集合变化，不描述中奖概率，也不构成对未来走势的推断。</p><h2>这类数字能说明什么</h2><p>这类计算的价值，在于把候选集合变小，把规则口径说清楚。它适合做复核、归档和样本整理，也适合做后续研究时的基础对照。</p><p>它不能自动生成预测优势。结构分类、历史样本表现、展示频率，最多说明过去的样子是什么，不足以单独证明未来会更容易命中。这个边界必须写在前面，否则分析很容易被误读成预测。</p><p>如果你想继续做研究，正确方向是核对规则是否一致、参数是否预注册、样本是否可复算、是否存在样本外验证。只有在这些条件都成立时，空间统计才有比较稳的研究意义。</p><h2>常见误区</h2><p>第一个误区，是把筛选后的空间大小当成胜率。空间变小，只能说明候选少了，不等于结果更容易出现。</p><p>第二个误区，是把历史样本里的结构当成未来优势。历史样本可以帮助理解机制，但不能单独证明下一次仍然有效。</p><p>第三个误区，是在同一个口径里临时加条件。只要条件变了，438和562就不再对应同一个计算体系，前面的核对也就失去意义。</p><p>第四个误区，是把说明性文本写成操作清单。研究导向的公开内容应该保留机制和边界，不输出具体执行路径。</p><h2>研究怎么做更稳</h2><p>更稳妥的做法，是先把规则固定下来，再做重复计算。记录清楚起点、筛选条件、保留量、排除量，然后检查每一步是否可复算。</p><p>如果后面要比较不同口径，也应该先说明参数差异，再比较结果差异。这样做的重点不是追求更漂亮的数字，而是保证每一层结果都能被重新算出来。</p><p>在公开研究里，最重要的不是“看起来有用”，而是“别人拿到同样的规则也能算出同样的结果”。这也是为什么本文只保留空间计算和方法边界，不把它包装成对未来的判断。</p><p>总之，前三直选邻号注数计算可以清楚地告诉你：在固定条件下，1000个候选如何变成438个，以及为什么会排除562个。但它只能说明规则下的空间变化，不能单独证明未来预测优势。</p><h2>样本说明</h2><p>示例数据只用于说明文本结构，不代表真实开奖记录，也不提供下一步执行建议。样本中看到的和值、跨度、形态，只是样本特征本身，不能直接外推成未来判断。</p><p>公开版保留到这里就够了：先理解规则，再核对空间，再确认边界。这样得到的是可复核的研究材料，而不是被误读成方法承诺的结论。</p>",
+  "content_format": "html",
+  "content_hash": "7f0ef524d2c31aa6a2ac6692ed833e363bbca9e2d7c83c2429f2b9f1a74c127f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "3e3736ea476b47228a3546f13022ac2cf538f7664f75b803a4148c13cf4a0e9e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开核对前三直选邻号注数的空间计算，说明1000、438、562的确定性关系，并解释为什么历史样本和结构分类不能单独证明未来预测优势。",
+  "parent_content_hash": "5ab89ac05cd9747e0a88ac97584afcc4e0fbed7e96648e0a1ad269bc767e0915",
+  "parent_fingerprint": "00908385c198ad8466ed925c6f9a74fee08a7db940ba5b4dcdf73f8388e54dd8",
+  "play": "前三直选",
+  "primary_keyword": "分分彩前三直选邻号注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0a4c1584f837f76f016a979baddb9087d09edd670b5e60dfe8",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-02T04:07:14.506052+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-00908385c198ad84:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "核对前三直选的候选空间计算，逐项确认1000到438以及排除562个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前三直选邻号注数计算",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前三直选邻号注数计算-1000个候选为什么变成438个-排除562个怎么算",
+  "source_batch_id": "DAILY-20260902",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本文面向研究和复核，说明前三直选邻号注数从1000个候选到438个保留、排除562个的确定性空间计算，并强调这类结构统计只能说明规则下的候选变化，不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "邻号注数计算",
+    "空间数学",
+    "位置筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+  "title_candidates": [
+    "候选空间为什么会变？前三直选邻号的计算过程一次理清",
+    "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+    "从输入到结果：前三直选邻号的空间计算与常见误区",
+    "前三直选邻号怎么算才不混淆？复核候选空间的关键点",
+    "看懂前三直选的前三直选邻号，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前三直选邻号的计算过程一次理清",
+      "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+      "从输入到结果：前三直选邻号的空间计算与常见误区",
+      "前三直选邻号怎么算才不混淆？复核候选空间的关键点",
+      "看懂前三直选的前三直选邻号，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-18a402b082dd7faf",
+          "score": 0.8260869565217391,
+          "title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1364,
+          "intent_term_hits": [
+            "前三",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "注数",
+            "前三直选邻号"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先算注数，再谈前三直选邻号：组合数学能说明到哪一步"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

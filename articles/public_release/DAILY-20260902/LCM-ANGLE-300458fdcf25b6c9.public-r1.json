@@ -1,0 +1,216 @@
+{
+  "angle_signature": "74183ab2b3f1c779dd58",
+  "approved_at": "2026-09-02T04:08:46.423323+00:00",
+  "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选的候选空间可以先按100000个有序五位候选来核对。",
+      "claim_type": "rule_fact",
+      "evidence_note": "保留父文的空间起点设定，用于公开版的确定性计数说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在示例设定下，第一层筛选后候选空间从100000缩到31250，排除68750个。",
+      "claim_type": "calculation",
+      "evidence_note": "保留父文中两层筛选的中间结果，不附带任何执行建议。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在示例设定下，第二层筛选后候选空间从31250缩到10350，排除20900个。",
+      "claim_type": "calculation",
+      "evidence_note": "保留父文中两层筛选的终点结果，不把空间收缩写成预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "100000减去89650等于10350。",
+      "claim_type": "calculation",
+      "evidence_note": "用于复核总排除数与终点空间的一致性。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "候选空间大小的变化只能说明筛掉了多少组合，不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确给出公开版的不确定性边界，避免把结构化筛选误读成稳定收益或命中优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果新增条件没有经过已验证规则和参数冻结，就不应继续把它当作下一层过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "保留停止条件的原则性表述，但不提供具体执行路径。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>本文只做五星直选大小奇偶注数计算的公开核对，不讨论具体下注方法，也不把空间收缩说成结果优势。示例采用固定参数，便于复算。</p><p>起点按100000个有序五位候选来算，后面的重点是确认每一层筛选后还剩多少，而不是判断哪一组更容易出现。</p><h2>两层筛选怎么收缩</h2><p>第一层按“恰好2个大号”筛选，候选空间从100000缩到31250，排除68750个。</p><p>第二层按“恰好2个单号”筛选，候选空间从31250缩到10350，排除20900个。</p><p>把两层放在一起看，总排除数是89650个，终点回到10350个候选。</p><h2>复核关系</h2><p>只要把起点、终点和排除数放在同一条算式里，就能得到100000减去89650等于10350。这个关系说明的是计数是否一致，不是对未来结果的判断。</p><p>同样的道理也适用于其他大小奇偶类筛选。它们能帮助你检查空间是否算对，但不能单独证明未来预测优势。</p><h2>边界在哪里</h2><p>这里的内容只覆盖确定性计数和规则核对。历史样本里出现过的结构，只能说明过去样本长什么样，不能自动推出下一次会怎么开。</p><p>如果某个新增条件既没有经过规则确认，也没有完成参数冻结，就不该临时塞进后续筛选里。</p><h2>如何理解这类计算</h2><p>这类注数计算本质上是在做组合空间的分层统计。每一层都应当有清楚的定义，起点、终点和排除数也要能互相对上。</p><p>只要定义固定，复算就应当得到同样的结果；如果结果对不上，优先检查的是规则定义，而不是先把偏差解释成经验优势。</p>",
+  "content_format": "html",
+  "content_hash": "4398ed2cbaa929ac498008bd7ae657c550236e4401aa7ae07972b89a572ee0be",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "cec5219f211b99fd942c2e77bbb10c365c1e7453cc340ad082a8fcbba500e339",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开核对五星直选大小奇偶注数计算的空间收缩过程，说明两层筛选后的候选数与排除数如何复核，并强调历史结构不能单独证明未来预测优势。",
+  "parent_content_hash": "fde5447ab46c30f8fe6e561bbdc9d5e2ab80ec4adc62402f0d9cf1b5329e4261",
+  "parent_fingerprint": "300458fdcf25b6c97d6d92d0f5420dd104e0a5ba86a70294057eb9fdcac49c8b",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选大小奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0e9cb2bc27da5031016a979ca591a087d0a72522746b02e8cf",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-02T04:08:46.423335+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-300458fdcf25b6c9:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算，理解大小奇偶筛选如何缩减组合，并确认这类统计不能直接推出预测优势",
+  "secondary_keywords": [
+    "分分彩五星直选大小奇偶注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：五星直选大小奇偶的空间计算与候选空间",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选大小奇偶注数计算-100000个候选为什么变成10350个-排除89650个怎么算",
+  "source_batch_id": "DAILY-20260902",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文以公开、教育导向的方式核对五星直选大小奇偶注数计算：从100000个有序五位候选出发，经过两层固定筛选后得到10350个候选，总排除89650个。正文强调这是确定性计数，不是命中率、预测优势或收益承诺，并明确说明历史样本结构不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "大小奇偶注数计算",
+    "候选空间",
+    "空间数学",
+    "演示数据",
+    "机械核对"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "从输入到结果：五星直选大小奇偶的空间计算与候选空间",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选大小奇偶的计算过程一次理清",
+    "先算注数，再谈五星直选大小奇偶：组合数学能说明到哪一步",
+    "从输入到结果：五星直选大小奇偶的空间计算与候选空间",
+    "五星直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂五星直选的五星直选大小奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选大小奇偶的计算过程一次理清",
+      "先算注数，再谈五星直选大小奇偶：组合数学能说明到哪一步",
+      "从输入到结果：五星直选大小奇偶的空间计算与候选空间",
+      "五星直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂五星直选的五星直选大小奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-5db22b80db0713c9",
+          "score": 0.6956521739130435,
+          "title": "从输入到结果：前二直选奇偶的空间计算与常见误区"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.5,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "奇偶",
+            "大小",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "大小",
+            "候选空间",
+            "五星直选大小奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：五星直选大小奇偶的空间计算与候选空间"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

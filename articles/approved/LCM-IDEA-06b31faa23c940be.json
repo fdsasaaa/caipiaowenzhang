@@ -1,0 +1,393 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释近12期当前遗漏≥2数字池的机制，并完成从10到8的可复算案例。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 2,
+    "final_space": 8,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解一星直选里近12期当前遗漏≥2数字池分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "fdb3155ea3d8c7f0cd87",
+  "approved_at": "2026-09-02T04:00:22.292753+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-22569373ab93b7be",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "omission_threshold[lookback=12,threshold=2/sample]:10->8",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选遗漏技巧",
+    "reader_question": "理解一星直选里近12期当前遗漏≥2数字池分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释近12期当前遗漏≥2数字池的机制，并完成从10到8的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 2,
+      "final_space": 8,
+      "sample_stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：近12期当前遗漏≥2数字池",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解一星直选里近12期当前遗漏≥2数字池分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释近12期当前遗漏≥2数字池的机制，并完成从10到8的可复算案例。",
+    "title": "分分彩一星直选遗漏技巧：近12期当前遗漏≥2数字池具体怎么算，用完整案例从10复算到8",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-06b31faa23c940be",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只做一星直选里近12期当前遗漏≥2数字池的机制说明和演示复算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑范围说明；不涉及经济事实",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "一星直选这里按个位来算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法部位说明，来自已验证规则合同",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇使用的是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示性质",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "近12期当前遗漏≥2数字池，就是先看个位在近12期里每个数字当前已经漏了多少期，再把当前遗漏大于等于2的数字留下。",
+      "claim_type": "rule_fact",
+      "evidence_note": "阈值筛选定义，按规则合同表达",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在这个演示数据里，留下来的数字是0、1、2、3、4、6、7、9，共8个。",
+      "claim_type": "calculation",
+      "evidence_note": "样本计算结果，严格来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "所以从10个数字里筛掉了2个，候选空间由10缩到8。",
+      "claim_type": "calculation",
+      "evidence_note": "空间收缩结果，严格来自样本计算",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个阈值筛选只描述样本状态，不意味着高遗漏数字下一期更可能出现。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不作预测承诺",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本篇的主筛选参数是系统研究合同固定的：看个位，回看12期，阈值是当前遗漏>=2。",
+      "claim_type": "rule_fact",
+      "evidence_note": "系统参数边界说明，来自主筛选合同",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据中最近一期是38938，所以个位是8。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内最新一期读取，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字0的当前遗漏是7。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字1的当前遗漏是12。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字2的当前遗漏是3。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字3的当前遗漏是2。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字4的当前遗漏是12。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字5的当前遗漏是1。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字6的当前遗漏是9。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字7的当前遗漏是8。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字8的当前遗漏是0。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这组演示数据回看12期，个位数字9的当前遗漏是12。",
+      "claim_type": "calculation",
+      "evidence_note": "样本内遗漏值，来自 case_bundle",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>这篇只讲一星直选里的个位。读者要看的不是中奖结果，而是一个固定的遗漏阈值筛选怎么计算。</p><p>本篇使用的是演示数据，不是真实开奖记录。它只用来复算步骤，不代表真实走势。</p><p>主筛选参数已经固定：看个位，回看12期，阈值是当前遗漏>=2。参数先固定，再看样本，这是本篇唯一的主合同。</p><h2>方法机制：近12期当前遗漏≥2数字池</h2><p>这里的意思很简单：先统计个位0到9在近12期里各自已经漏了多少期，再把当前遗漏大于等于2的数字挑出来。</p><p>当前遗漏小于2的数字，不进这个数字池。这个动作只是在做样本内筛选，不是在给下一期下结论。</p><h2>完整可复算案例</h2><p>演示数据的最近一期是38938，所以个位是8。</p><p>按这组演示数据回看12期，个位数字0的当前遗漏是7。</p><p>按这组演示数据回看12期，个位数字1的当前遗漏是12。</p><p>按这组演示数据回看12期，个位数字2的当前遗漏是3。</p><p>按这组演示数据回看12期，个位数字3的当前遗漏是2。</p><p>按这组演示数据回看12期，个位数字4的当前遗漏是12。</p><p>按这组演示数据回看12期，个位数字5的当前遗漏是1。</p><p>按这组演示数据回看12期，个位数字6的当前遗漏是9。</p><p>按这组演示数据回看12期，个位数字7的当前遗漏是8。</p><p>按这组演示数据回看12期，个位数字8的当前遗漏是0。</p><p>按这组演示数据回看12期，个位数字9的当前遗漏是12。</p><p>把当前遗漏>=2的数字留下，就得到0、1、2、3、4、6、7、9，共8个数字。</p><h2>逐步核对候选空间</h2><p>一开始是10个个位数字，空间是10。</p><p>演示筛选后留下8个数字，所以最后空间是8。</p><p>被筛掉的是2个数字，分别是5和8。</p><p>所以这次从10复算到8，缩小了2个候选。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这个阈值筛选只描述样本状态，不意味着高遗漏数字下一期更可能出现。</p><p>它的作用是把当前样本整理成一个更小的数字池，方便后续继续看，但不能自己变成预测结论。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇到这里就停。因为本篇只约定了这一层主筛选，没有第二条已验证规则，就不能临时再加一个新过滤器来继续缩小。</p><p>如果后面要继续缩小，新增条件必须先有已验证规则或可复算证据，再按同样方法重新计算。</p><h2>实际怎么操作</h2><ol><li>先固定参数：个位、回看12期、阈值当前遗漏>=2。</li><li>再读取近12期数据，按个位统计0到9各自的当前遗漏。</li><li>把当前遗漏大于等于2的数字放进候选池。</li><li>核对候选池数量，确认是否从10缩到8，顺手记录被筛掉的2个数字。</li><li>到这一步就停止，不额外加没有验证过的新条件。</li></ol>",
+  "content_format": "html",
+  "content_hash": "dd35740ebf6c17e81eac4cb3795ee1ff0e643112711d271429e54c3633c376fc",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "06b31faa23c940bea304e8c48f3af1c8d6525e6726575a59e2b5bced762fe521",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选遗漏技巧案例讲解：先说明一星直选规则，再用可复算演示数据展示筛选步骤、候选空间变化和常见误区，不把历史统计包装成预测结论。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "8",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定个位、回看12期、当前遗漏>=2，再读取样本；不在看样本后补改参数。",
+    "starting_space": "10",
+    "steps": [
+      "先把主筛选参数固定为个位、回看12期、当前遗漏>=2。",
+      "读取近12期演示数据，先确认最近一期个位是8，再逐个统计0到9的当前遗漏。",
+      "把当前遗漏大于等于2的数字放入候选池，得到0、1、2、3、4、6、7、9。",
+      "核对数量变化：从10个数字缩到8个数字，明确筛掉5和8，共2个。",
+      "确认这一步就是本篇唯一主筛选，若没有新的已验证规则，就停止。"
+    ],
+    "stop_condition": "完成这一层主筛选后立即停止；没有第二条已验证规则或可复算证据，不再继续加过滤器。"
+  },
+  "primary_keyword": "分分彩一星直选遗漏技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0d6dcec82626d9cf016a979f2b2d4887d0b1e77efbb01fb6b2",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "理解一星直选里近12期当前遗漏≥2数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先看规则，再看案例：这一玩法里的一星直选遗漏怎样正确理解",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选遗漏技巧-近12期当前遗漏2数字池具体怎么算-用完整案例从10复算到8",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "这篇用演示数据说明分分彩一星直选里近12期当前遗漏≥2数字池怎么计算。先固定个位、回看12期、当前遗漏>=2，再把个位0到9逐个复算，演示结果从10个数字缩到8个，筛掉2个。全文只做机制和案例说明，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩一星直选遗漏技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩位置筛选",
+    "分分彩遗漏阈值"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "先看规则，再看案例：这一玩法里的一星直选遗漏怎样正确理解",
+  "title_candidates": [
+    "这一步到底怎么算？用一星直选遗漏把规则和复算过程讲清",
+    "从玩法规则到完整案例：一星直选遗漏应该怎样复核",
+    "一星直选遗漏为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的一星直选遗漏怎样正确理解",
+    "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用一星直选遗漏把规则和复算过程讲清",
+      "从玩法规则到完整案例：一星直选遗漏应该怎样复核",
+      "一星直选遗漏为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的一星直选遗漏怎样正确理解",
+      "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-64423d444192d985",
+          "score": 0.375,
+          "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.24,
+          "intent_term_hits": [
+            "直选",
+            "遗漏"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "遗漏",
+            "一星直选遗漏"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先看规则，再看案例：这一玩法里的一星直选遗漏怎样正确理解"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

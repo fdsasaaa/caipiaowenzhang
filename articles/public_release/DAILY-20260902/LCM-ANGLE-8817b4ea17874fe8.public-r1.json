@@ -1,0 +1,198 @@
+{
+  "angle_signature": "7a425c5b712cc9858510",
+  "approved_at": "2026-09-02T04:12:24.674694+00:00",
+  "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "前二组选的公开版可按固定参数先定义候选空间，再做样本核对。",
+      "claim_type": "methodology",
+      "evidence_note": "公开正文的研究流程表述，不涉及具体选号。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "在示例参数下，筛选前候选空间为45个，筛选后剩余27个，排除18个。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文保留了这组三个确定性数字关系，但不提供执行方案。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "45、27和18是候选空间的数学结果，不是命中率或胜率。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应公开正文中的机制边界说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确加入的风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示样本可以用于说明复算过程，但不能等同于真实开奖记录或预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文保留的样本边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>这篇只做一件事：核对前二组选的候选空间怎么算。方法是先把参数固定，再检查筛选前后空间的变化。它讨论的是规则和结构，不讨论任何具体下注安排。</p><p>在这类研究里，先定义空间比先谈结果更重要。因为如果参数还没固定，后面的统计数字就没有统一口径，算出来也很容易互相打架。</p><p>公开版保留的是机制层面的说明：先有候选空间，再看筛选后的剩余量。这个顺序本身就是复核的基础。</p><h2>怎么算出45、27和18</h2><p>示例里，筛选前的候选空间是45个。经过一层固定筛选后，剩下27个。两者相减，排除18个。</p><p>这三个数要连着看。45是起点，27是保留结果，18是被排除的数量。它们描述的是同一条空间收缩链条，不是三套互不相关的口径。</p><p>如果只盯着27个，就会误以为这是一个孤立结论。实际上，真正需要复核的是“从45到27，中间到底排除了什么”。</p><p>这也是为什么公开研究里更强调可复算，而不是只给一个最终数字。没有起点和差值，结论就不完整。</p><h2>它说明什么，不说明什么</h2><p>45、27和18只是在说明候选空间怎么收缩，不能直接解释命中率，也不能推出胜率，更不能当成稳定盈利的证据。</p><p>同样重要的是，结构分类或历史样本表现不能单独证明未来预测优势。样本看起来整齐，最多说明这一组数据在这个规则下怎么分布，不等于未来也会按同样方式展开。</p><p>所以，这类内容适合做规则复核、样本核对和方法学习，不适合被读成结果承诺。</p><h2>复核时要注意的边界</h2><p>第一，先固定参数，再讨论样本。参数不先定下来，后面的数字没有统一标准，容易把不同口径混在一起。</p><p>第二，只核对已经写明的那一层筛选。公开研究里，叠加新的过滤条件必须另有已验证规则；否则，数字会越来越像临时拼出来的。</p><p>第三，演示样本只用于说明复算过程。它可以帮助读者理解规则是怎么工作的，但不能替代真实记录，也不能直接外推未来。</p><p>第四，不要把候选空间变小，误解成更容易命中。空间缩小只是空间缩小，和结果是否出现是两回事。</p><h2>适合怎样使用这类结果</h2><p>如果你的目标是研究前二组选的机制，这类结果最适合拿来做三件事：核对定义、复算数量、检查口径是否一致。</p><p>具体来说，可以先确认筛选前是多少，再确认筛选后剩多少，最后用差值检查有没有算错。只要这三步对得上，说明你理解的是空间变化，而不是把数字当成预测结论。</p><p>如果后续还要扩展分析，也应该先补充新的规则依据，再重新计算，而不是直接把旧结果继续往外推。</p><p>公开版到这里就够了。它的重点是把前二组选的候选空间讲清楚，而不是把它包装成结果优势。</p><h2>结论</h2><p>这组示例的核心结论很简单：前二组选的候选空间可以按固定规则复算出45、27和18这三个对应关系。</p><p>但这只是数学上的空间结果，不是命中率，不是胜率，也不是未来表现的证明。把结构看清楚，才有资格继续做更严格的研究。</p>",
+  "content_format": "html",
+  "content_hash": "b63af3e13eb9a02bcf59add76910509fc524129198109f43b7ec2e6a6c050d23",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "d3459e7fa1efa7d1996f12a0f569f3081d79e0dcac3b845f4f1c044edd63af84",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版核对分分彩前二组选组选和值的候选空间计算，说明45、27和18的关系，并区分规则复核与未来预测。",
+  "parent_content_hash": "654be276c6bf14fd75abb9f7d823c2b11df5c8746dacc0073742dd6d8607a13a",
+  "parent_fingerprint": "8817b4ea17874fe8078c4db6eab7631c7ff4c9dea7660159c5dcf6d571a7499a",
+  "play": "前二组选",
+  "primary_keyword": "分分彩前二组选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0cdc139585de79fc016a979e54754487d081f593426e0a6ec2",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-02T04:12:24.674708+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "核对前二组选的候选空间计算，理解45到27、排除18的规则关系，并明确其不等于预测优势。",
+  "secondary_keywords": [
+    "分分彩前二组选和值注数计算",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二组选和值的空间计算与候选空间",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二组选-sum_range-space_math",
+  "source_batch_id": "DAILY-20260902",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "公开版核对分分彩前二组选的候选空间计算，保留45、27、18的确定性关系，强调这是规则复核与样本核对，不是命中率、胜率或未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值区间",
+    "注数计算",
+    "空间计算"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "从输入到结果：前二组选和值的空间计算与候选空间",
+  "title_candidates": [
+    "候选空间为什么会变？前二组选和值的计算过程一次理清",
+    "先算注数，再谈前二组选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二组选和值的空间计算与候选空间",
+    "前二组选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二组选的前二组选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二组选和值的计算过程一次理清",
+      "先算注数，再谈前二组选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二组选和值的空间计算与候选空间",
+      "前二组选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二组选的前二组选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+          "score": 0.7727272727272727,
+          "title": "从输入到结果：前二直选和值的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.4,
+          "intent_term_hits": [
+            "前二",
+            "组选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "候选空间",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二组选和值的空间计算与候选空间"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

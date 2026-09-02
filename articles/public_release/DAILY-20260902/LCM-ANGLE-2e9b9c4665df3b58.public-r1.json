@@ -1,0 +1,185 @@
+{
+  "angle_signature": "d8e3ac6f79f0499f638f",
+  "approved_at": "2026-09-02T04:05:50.538827+00:00",
+  "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "公开版正文应保留前二直选和值6–12这一类固定参数下的候选空间复算主题。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已验证父稿的主题与玩法机制要求。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "公开版正文需要明确说明：结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "满足公开版硬规则中关于风险边界与误区的要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "公开版正文可以讨论组合数学、规则机制、参数预注册、历史复盘、样本外验证、随机波动和常见误区。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是公开版允许的教育/研究导向范围。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>这篇只讨论一个固定的核对主题：前二直选和值6–12这一层的候选空间变化。写法上只保留可复算的规则关系，不把它写成下一期建议，也不把它改写成执行方案。</p><p>在公开讨论里，关键不是“怎么追”，而是“在固定参数下，空间如何被收缩、哪些数字是核对结果、哪些数字只是样本记录”。这样写更适合做复盘，也更容易检查表达是否越界。</p><p>同一套说法也适用于其他类似的筛选场景：先确认输入条件，再核对输出空间，最后看是否真的完成了该层规则要求。</p><h2>为什么只谈机制</h2><p>候选空间计算属于规则层面的工作，不等于预测结论。前二直选、和值区间、位置筛选，这些都是描述“筛选如何发生”的语言，不是承诺“下一次会怎样”的语言。</p><p>如果一个表述只是展示某种结构被筛掉多少、保留多少，它说明的是空间变化，不说明结果优势。把这两件事混在一起，通常会把复盘写成误导性的预告。</p><p>因此，公开版只保留机制解释、参数边界和复算口径，不提供号码清单、下一步跟随路线，也不提供任何形式的递进投注建议。</p><h2>复算时看什么</h2><p>复算的核心是参数是否先固定。只要条件在观察前已经确定，就可以把它当作一个静态合同来核对：输入是什么，筛选层是什么，输出应当如何记录。</p><p>这样的核对可以帮助识别常见问题，比如把筛选后的结构当成可重复优势，把一次样本里的收缩幅度当成长期结论，或者在看完样本后倒过来修参数。</p><p>公开讨论里最稳妥的做法，是把每一步都写成可检查的定义，而不是写成“接下来应该怎么做”。这样既能保留研究价值，也能避免把复盘变成投注指令。</p><h2>样本与误区</h2><p>历史样本可以帮助理解波动、结构和筛选方式，但历史样本表现不能单独证明未来预测优势。尤其是当样本很小、筛选规则很多、又没有样本外验证时，结果更容易被偶然波动放大。</p><p>另一个常见误区，是把“结构分类”误读成“稳定命中”。分类只是把对象分到不同盒子里，不能自动推出未来有更高收益、更高胜率或更稳定的表现。</p><p>所以，公开版只承认可以复算的规则关系，不把结构本身包装成结果保证，也不把历史表现包装成未来承诺。</p><h2>怎么理解固定参数</h2><p>参数预注册的意义，在于把观察前的条件锁定下来。先锁条件，再做复算，才能知道结果是规则本身带来的，还是事后调整带来的。</p><p>如果条件是在看完样本以后才改的，那得到的数字就不适合再拿去解释原始规则。那不是更精确，而是把解释对象换掉了。</p><p>公开版因此只讨论“固定参数下的空间变化”，不讨论临场修正，更不讨论用历史结构推导下一步优势。</p><h2>边界与停止</h2><p>当一层规则已经复算完，且没有新的已验证规则可接入时，就应当停止在当前结果上，不再临时追加过滤器。继续往下写，必须有新的可复核依据，而不是凭经验补条件。</p><p>这种停止条件本身也是研究方法的一部分。它能防止把一个有限的规则问题，写成无穷加码的经验故事。</p><p>如果只看这篇文章的范围，结论就是：我们讨论的是前二直选和值6–12这一层的空间核对、参数边界和常见误区，而不是任何形式的未来预测。</p><p>最后再强调一次，结构分类或历史样本表现都不能单独证明未来预测优势。能做的是复算、核对和验证，不能做的是把它直接写成收益判断。</p>",
+  "content_format": "html",
+  "content_hash": "26d28de508573399d7995620c30c9e49c04195d028a5d34574be447239dad85c",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8b3d00a1d829a034235992a9c3f8dccbae828438526b9560a7f5348f9fcfc5fc",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开讨论前二直选和值6–12这一层的候选空间复算、参数固定、样本外验证与常见误区，不给出号码或下注指令。",
+  "parent_content_hash": "c8fa0f7a21d38017ab547328f5e998f0bc3ad02f4c6a8a42bfbc7a44147e9dc2",
+  "parent_fingerprint": "2e9b9c4665df3b583e815c6524be2943cda6e5d72670d906c19fd510cf75b9e1",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0bf8f9d4e2988d62016a979ab7887c87d18279cb4332df7b82",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-02T04:05:50.538842+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-2e9b9c4665df3b58:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，并理解固定参数下的空间收缩与复盘边界",
+  "secondary_keywords": [
+    "分分彩前二直选和值注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二直选和值的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前二直选和值注数计算-100个候选为什么变成58个-排除42个怎么算",
+  "source_batch_id": "DAILY-20260902",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "这是一篇教育/研究导向的公开改写，只保留前二直选和值6–12这一层的候选空间核对、参数预注册、样本外验证和常见误区，不提供号码、投注路径或任何递进执行建议。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "和值注数计算",
+    "位置筛选",
+    "空间数学",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "从输入到结果：前二直选和值的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选和值的计算过程一次理清",
+    "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二直选和值的空间计算与停止条件",
+    "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选和值的计算过程一次理清",
+      "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二直选和值的空间计算与停止条件",
+      "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+          "score": 0.782608695652174,
+          "title": "从输入到结果：五星直选大小奇偶的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "和值",
+            "前二直选和值"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二直选和值的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

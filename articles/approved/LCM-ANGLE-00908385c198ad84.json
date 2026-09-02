@@ -1,0 +1,301 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点1000、终点438、排除562。",
+    "evidence_mode": "static_only",
+    "excluded_space": 562,
+    "final_space": 438,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前三直选的候选空间计算，逐项确认1000到438以及排除562个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "6d92202d22b5ebc1bb18",
+  "approved_at": "2026-09-02T03:45:57.078476+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-4674b4b366907f1d",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "neighbor_number[pair_difference=1/static]:1000->438",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选邻号注数计算",
+    "reader_question": "核对前三直选的候选空间计算，逐项确认1000到438以及排除562个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点1000、终点438、排除562。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 562,
+      "final_space": 438,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "至少存在一对差1邻号"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "至少存在一对差1邻号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前三直选的候选空间计算，逐项确认1000到438以及排除562个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点1000、终点438、排除562。",
+    "title": "分分彩前三直选邻号注数计算：1000个候选为什么变成438个，排除562个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-00908385c198ad84",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只核对前三直选邻号注数的候选空间，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑边界说明，符合 mechanics_only 与经济参数回避要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文使用的演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注样本为演示数据。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "把条件固定为“至少存在一对差1邻号”后，前三直选的候选空间从1000个变成438个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同给定的静态主筛选结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此一共排除了562个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "1000减438等于562。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个438只是候选空间的保留数，不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "澄清空间数与概率指标不同。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "下面的12条样本只是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本展示边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这12条演示样本中，最新一期是57372，前三为573，和值15，跨度4，形态是3个不同数字。",
+      "claim_type": "calculation",
+      "evidence_note": "由 case_bundle.descriptive.latest 直接复算得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示样本的跨度序列为4、1、5、3、8、8、2、9、5、5、3、4，和值序列为6、2、15、5、13、12、4、16、13、14、19、15。",
+      "claim_type": "calculation",
+      "evidence_note": "按 case_bundle.descriptive 给出的序列原样整理。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这些数字只说明样本长什么样，不构成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "限制样本用途，避免把演示数据写成预测结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只做一件事：核对前三直选邻号注数计算，确认为什么候选空间是从1000个变成438个，并且排除562个。</p><p>这里的主筛选合同已经固定，唯一条件是“至少存在一对差1邻号”。参数先定，再看结果，不再追加第二条未验证过滤器。</p><h2>逐层计算保留与排除数量</h2><p>按合同，起点是1000个候选，主筛选后保留438个。</p><p>计算方式很直接：1000减438，得到562。也就是，这一步一共排除了562个候选。</p><p>这组数字是确定性的空间计算，不是命中率，也不是胜率，更不是对未来结果的预测。</p><h2>核对起点、终点和总排除</h2><p>起点必须记成1000，终点必须记成438，总排除必须记成562。三者关系只有一个：1000 = 438 + 562。</p><p>如果这个等式对不上，说明你拿的是别的筛选口径，或者把样本数、展示数和理论候选空间混在了一起。</p><h2>实际怎么操作</h2><p>第一步，先把主筛选条件固定为“至少存在一对差1邻号”。</p><p>第二步，确认候选空间起点是1000，不要把演示样本条数当成候选空间。</p><p>第三步，按合同给出的主筛选结果记录保留438个，同时写下排除562个。</p><p>第四步，复核算式是否成立：1000减438等于562。</p><p>第五步，只保留这一层结果，不临时加新过滤器。</p><h2>为什么这些数字不是命中率</h2><p>438是筛选后留下的空间规模，562是被筛掉的空间规模。它们描述的是空间变化，不描述中奖概率。</p><p>演示样本里的和值、跨度、频率，只能当作样本说明，不能直接推出未来结果。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类空间计算的作用，是让候选集合变小、口径变清楚。</p><p>它不自动带来预测优势，也不应该被写成“更容易中”的结论。</p><p>如果后面还想继续缩小空间，前提只能是新增条件也有已验证规则或可复算证据。</p><h2>停止条件</h2><p>本篇只完成这一层主筛选。到438就停止，不临时拼第二过滤器。</p><p>只有当新增条件具有已验证规则或证据，并且能复算时，才允许继续缩小候选。</p><h2>演示样本说明</h2><p>下面的12条只是演示数据，不是真实开奖记录：74967、28637、03137、67678、24043、10164、62797、32008、08525、92121、20202、07919。</p><p>这组演示样本中，最新一期是57372，前三为573，和值15，跨度4，形态是3个不同数字。</p><p>这些数字只说明样本长什么样，不构成预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "5ab89ac05cd9747e0a88ac97584afcc4e0fbed7e96648e0a1ad269bc767e0915",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "00908385c198ad8466ed925c6f9a74fee08a7db940ba5b4dcdf73f8388e54dd8",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三直选邻号注数计算：核对从1000到438的候选空间变化，逐项说明排除562个的确定性结果，并明确这只是空间计算，不是预测结论。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "438个候选",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定主筛选条件“至少存在一对差1邻号”，再看候选空间变化；不临时追加第二过滤器。",
+    "starting_space": "1000个候选",
+    "steps": [
+      "先把主筛选条件固定为“至少存在一对差1邻号”。",
+      "确认候选空间起点是1000个，不把演示样本条数当成理论候选空间。",
+      "按合同结果记录主筛选后的保留数438个。",
+      "用1000减438复核排除数，得到562个。",
+      "只停留在这一层，不再临时加新过滤器。"
+    ],
+    "stop_condition": "完成从1000到438、排除562的复算后立即停止；没有新增已验证规则时不继续缩小。"
+  },
+  "primary_keyword": "分分彩前三直选邻号注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0a4c1584f837f76f016a979baddb9087d09edd670b5e60dfe8",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "核对前三直选的候选空间计算，逐项确认1000到438以及排除562个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前三直选邻号注数计算",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前三直选邻号注数计算-1000个候选为什么变成438个-排除562个怎么算",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本文只核对前三直选邻号注数的确定性空间计算：起点1000、主筛选后438、排除562，并用演示数据说明这是空间数学，不是命中率或预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "邻号注数计算",
+    "空间数学",
+    "位置筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+  "title_candidates": [
+    "候选空间为什么会变？前三直选邻号的计算过程一次理清",
+    "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+    "从输入到结果：前三直选邻号的空间计算与停止条件",
+    "前三直选邻号怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的前三直选邻号，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前三直选邻号的计算过程一次理清",
+      "先算注数，再谈前三直选邻号：组合数学能说明到哪一步",
+      "从输入到结果：前三直选邻号的空间计算与停止条件",
+      "前三直选邻号怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的前三直选邻号，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-18a402b082dd7faf",
+          "score": 0.8260869565217391,
+          "title": "先算注数，再谈五星直选奇偶：组合数学能说明到哪一步"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1364,
+          "intent_term_hits": [
+            "前三",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "注数",
+            "前三直选邻号"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先算注数，再谈前三直选邻号：组合数学能说明到哪一步"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

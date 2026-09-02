@@ -1,0 +1,243 @@
+{
+  "approval_failed": 31,
+  "approved": 9,
+  "approved_staged": 9,
+  "article_angle_distribution": {
+    "execution_checklist": 1,
+    "mechanics_case": 1,
+    "parameter_boundary": 1,
+    "space_math": 6
+  },
+  "attempted": 41,
+  "base_url": "https://api.synapai.top/v1",
+  "batch_id": "DAILY-20260902",
+  "below_operational_minimum": true,
+  "candidate_pool_per_round": 40,
+  "date": "2026-09-02",
+  "editorial_score_average": 100.0,
+  "generated": 40,
+  "generation_failed": 1,
+  "manifest": {
+    "approved_public_release_count": 7,
+    "articles": [
+      {
+        "article_id": "LCM-ANGLE-00908385c198ad84",
+        "content_hash": "7f0ef524d2c31aa6a2ac6692ed833e363bbca9e2d7c83c2429f2b9f1a74c127f",
+        "fingerprint": "3e3736ea476b47228a3546f13022ac2cf538f7664f75b803a4148c13cf4a0e9e",
+        "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-00908385c198ad84.public-r1.json",
+        "primary_keyword": "分分彩前三直选邻号注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-00908385c198ad84:public-r1",
+        "slug": "分分彩前三直选邻号注数计算-1000个候选为什么变成438个-排除562个怎么算"
+      },
+      {
+        "article_id": "LCM-ANGLE-14ced969a7f0f581",
+        "content_hash": "e34308ec7c40242e7de2545288ff9ba0a39ef0fec39fd1751aa52b416e8cd795",
+        "fingerprint": "8dc39bf758bb33ad36389909b76b006be6a401bbcc4e590b8d4acbd855cd32fc",
+        "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-14ced969a7f0f581.public-r1.json",
+        "primary_keyword": "分分彩前三直选和值筛选步骤",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-14ced969a7f0f581:public-r1",
+        "slug": "分分彩-前三直选-position_filter-sum_range-execution_checklist"
+      },
+      {
+        "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+        "content_hash": "26d28de508573399d7995620c30c9e49c04195d028a5d34574be447239dad85c",
+        "fingerprint": "8b3d00a1d829a034235992a9c3f8dccbae828438526b9560a7f5348f9fcfc5fc",
+        "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-2e9b9c4665df3b58.public-r1.json",
+        "primary_keyword": "分分彩前二直选和值注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-2e9b9c4665df3b58:public-r1",
+        "slug": "分分彩前二直选和值注数计算-100个候选为什么变成58个-排除42个怎么算"
+      },
+      {
+        "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+        "content_hash": "4398ed2cbaa929ac498008bd7ae657c550236e4401aa7ae07972b89a572ee0be",
+        "fingerprint": "cec5219f211b99fd942c2e77bbb10c365c1e7453cc340ad082a8fcbba500e339",
+        "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-300458fdcf25b6c9.public-r1.json",
+        "primary_keyword": "分分彩五星直选大小奇偶注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-300458fdcf25b6c9:public-r1",
+        "slug": "分分彩五星直选大小奇偶注数计算-100000个候选为什么变成10350个-排除89650个怎么算"
+      },
+      {
+        "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+        "content_hash": "b63af3e13eb9a02bcf59add76910509fc524129198109f43b7ec2e6a6c050d23",
+        "fingerprint": "d3459e7fa1efa7d1996f12a0f569f3081d79e0dcac3b845f4f1c044edd63af84",
+        "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-8817b4ea17874fe8.public-r1.json",
+        "primary_keyword": "分分彩前二组选和值注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+        "slug": "分分彩-前二组选-sum_range-space_math"
+      },
+      {
+        "article_id": "LCM-ANGLE-e4f3482c8b9bfe8b",
+        "content_hash": "69a2816ae74cde63f2a6396e739ba8b8c835ef55e3f99e9ce01b350bafad2175",
+        "fingerprint": "136e8d1e71da42c6b3fce13df1b88f0ae80c0579f9e2a0fc2e0cce7dfca5f2ef",
+        "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-e4f3482c8b9bfe8b.public-r1.json",
+        "primary_keyword": "分分彩前四直选奇偶注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-e4f3482c8b9bfe8b:public-r1",
+        "slug": "分分彩前四直选奇偶注数计算-10000到3750-排除6250怎么算"
+      },
+      {
+        "article_id": "LCM-IDEA-06b31faa23c940be",
+        "content_hash": "15811bc96972550eb067415076e0931fcbd23074e8ad55369f9ba2c884f288b2",
+        "fingerprint": "2a6b5a63c30fae444daea011d9534310285d6bcfdf3501d5391dfc9a48ec7423",
+        "path": "articles/public_release/DAILY-20260902/LCM-IDEA-06b31faa23c940be.public-r1.json",
+        "primary_keyword": "分分彩一星直选遗漏技巧",
+        "release_revision": 1,
+        "revision_id": "LCM-IDEA-06b31faa23c940be:public-r1",
+        "slug": "分分彩一星直选遗漏技巧-近12期当前遗漏2数字池具体怎么算-用完整案例从10复算到8"
+      }
+    ],
+    "canary_ingestion_allowed": true,
+    "expected_count": 7,
+    "path": "articles/public_release/manifests/DAILY-20260902.json",
+    "revision_kind": "website_public_release",
+    "schema_version": 1,
+    "source_batch_id": "DAILY-20260902",
+    "status": "complete",
+    "website_batch_ingestion_allowed": true
+  },
+  "max_approved_parents_per_day": 80,
+  "max_model_generation_attempts_per_day": 120,
+  "max_refill_rounds": 4,
+  "maximum": 25,
+  "minimum": 1,
+  "model": "gpt-5.4-mini",
+  "operational_minimum": 10,
+  "partial_batch_retention": true,
+  "play_distribution": {
+    "一星直选": 1,
+    "中三直选": 1,
+    "五星直选": 1,
+    "前三直选": 2,
+    "前二直选": 2,
+    "前二组选": 1,
+    "前四直选": 1
+  },
+  "pre_generation_duplicate_blocked": 0,
+  "public_ready": [
+    {
+      "article_id": "LCM-ANGLE-14ced969a7f0f581",
+      "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-14ced969a7f0f581.public-r1.json",
+      "primary_keyword": "分分彩前三直选和值筛选步骤",
+      "revision_id": "LCM-ANGLE-14ced969a7f0f581:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+      "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-2e9b9c4665df3b58.public-r1.json",
+      "primary_keyword": "分分彩前二直选和值注数计算",
+      "revision_id": "LCM-ANGLE-2e9b9c4665df3b58:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-00908385c198ad84",
+      "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-00908385c198ad84.public-r1.json",
+      "primary_keyword": "分分彩前三直选邻号注数计算",
+      "revision_id": "LCM-ANGLE-00908385c198ad84:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+      "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-300458fdcf25b6c9.public-r1.json",
+      "primary_keyword": "分分彩五星直选大小奇偶注数计算",
+      "revision_id": "LCM-ANGLE-300458fdcf25b6c9:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-e4f3482c8b9bfe8b",
+      "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-e4f3482c8b9bfe8b.public-r1.json",
+      "primary_keyword": "分分彩前四直选奇偶注数计算",
+      "revision_id": "LCM-ANGLE-e4f3482c8b9bfe8b:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+      "path": "articles/public_release/DAILY-20260902/LCM-ANGLE-8817b4ea17874fe8.public-r1.json",
+      "primary_keyword": "分分彩前二组选和值注数计算",
+      "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-IDEA-06b31faa23c940be",
+      "path": "articles/public_release/DAILY-20260902/LCM-IDEA-06b31faa23c940be.public-r1.json",
+      "primary_keyword": "分分彩一星直选遗漏技巧",
+      "revision_id": "LCM-IDEA-06b31faa23c940be:public-r1",
+      "round": 1
+    }
+  ],
+  "public_release_failed": [
+    {
+      "article_id": "LCM-ANGLE-8cefd046fcdfef90",
+      "error": "public release safety gate failed: operational_pattern:(翻倍|加倍|追号|追投|回本|止损|资金递进|资金路径)",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-9bda897adef1dd7b",
+      "error": "public release safety gate failed: operational_pattern:(翻倍|加倍|追号|追投|回本|止损|资金递进|资金路径)",
+      "round": 1
+    }
+  ],
+  "public_release_failed_count": 2,
+  "published": false,
+  "quality_first": true,
+  "quality_floor_lowered": false,
+  "quality_score_average": 100.0,
+  "recorded_at": "2026-09-02T04:18:12.283266+00:00",
+  "refill_rounds_completed": 3,
+  "rounds": [
+    {
+      "approval_failed": 29,
+      "approved": 9,
+      "approved_staged": 9,
+      "attempted": 38,
+      "candidate_count_offered": 38,
+      "editorial_score_average": 100.0,
+      "generated": 38,
+      "generation_failed": 0,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 2,
+      "quality_score_average": 100.0,
+      "round": 1,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 7,
+      "website_ready_after": 7,
+      "website_ready_before": 0
+    },
+    {
+      "approval_failed": 2,
+      "approved": 0,
+      "approved_staged": 0,
+      "attempted": 3,
+      "candidate_count_offered": 3,
+      "editorial_score_average": null,
+      "generated": 2,
+      "generation_failed": 1,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 0,
+      "quality_score_average": null,
+      "round": 2,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 0,
+      "website_ready_after": 7,
+      "website_ready_before": 7
+    },
+    {
+      "round": 3,
+      "status": "NO_CANDIDATES",
+      "website_ready_after": 7,
+      "website_ready_before": 7
+    }
+  ],
+  "scheduled": false,
+  "schema_version": 2,
+  "status": "PASS_PARTIAL_QUALITY_FIRST",
+  "stop_reason": "candidate_capacity_exhausted",
+  "target": 20,
+  "timezone": "Asia/Singapore",
+  "website_ready_public_r1": 7,
+  "website_sync_attempted": false
+}

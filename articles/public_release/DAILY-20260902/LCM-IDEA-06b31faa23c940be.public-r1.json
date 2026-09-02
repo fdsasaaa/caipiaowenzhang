@@ -1,0 +1,191 @@
+{
+  "angle_signature": "fdb3155ea3d8c7f0cd87",
+  "approved_at": "2026-09-02T04:13:33.446734+00:00",
+  "article_id": "LCM-IDEA-06b31faa23c940be",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论一星直选里的个位遗漏计算，不给出具体选号或下一期建议。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版范围说明，避免操作性内容。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "主筛选参数是固定的：看个位，回看12期，阈值为当前遗漏不小于2。",
+      "claim_type": "rule_fact",
+      "evidence_note": "沿用已验证规则的参数设定，不展开执行方案。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确风险边界，避免把样本内结果误读为预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "若没有新的已验证规则，就不应再临时叠加第二层过滤条件。",
+      "claim_type": "methodology",
+      "evidence_note": "说明复盘与规则闭合边界，不提供追加操作路径。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>规则范围</h2><p>本文只讲一星直选里的个位遗漏怎么算，不展开任何具体选号动作，也不提供下一期建议。</p><p>你要看的重点是参数先固定，再按样本复算。这里讨论的是规则机制，不是收益判断。</p><h2>遗漏计算</h2><p>当前遗漏的意思，是某个个位数字在回看窗口里已经连续缺席了多少期。先把窗口长度固定，再统计个位0到9各自的遗漏状态。</p><p>在这篇的公开说明里，筛选阈值固定为当前遗漏不小于2。满足阈值的数字进入候选池，不满足的数字就不纳入这一层。</p><p>这个动作只是在整理样本，不是在推导未来走势。历史样本怎么被筛出来，只能说明样本当下长什么样，不能单独证明未来会更好。</p><h2>演示复算</h2><p>下面用演示数据说明复算方式。最近一期个位为8，回看12期后，个位0到9分别对应不同的当前遗漏值。</p><p>演示里，满足阈值的数字进入候选池，不满足阈值的数字被排除。最后得到的候选空间比原始空间更小，但这仍然只是样本内整理结果。</p><p>公开版只保留机制层面的复算结论，不把任何中间状态写成下一期判断，也不把缩小后的空间包装成预测优势。</p><h2>边界说明</h2><p>如果没有新的已验证规则，就不要临时再加第二层过滤条件。复盘可以继续，前提是新增条件本身也能被复算并且有明确来源。</p><p>这类内容适合做方法学习、样本核对和参数理解，不适合被读成稳定盈利方案。统计筛选和历史结构都不能替代样本外验证。</p><p>因此，本文到这里就结束：保留规则，保留复算，保留边界，不延伸到执行指令。</p>",
+  "content_format": "html",
+  "content_hash": "15811bc96972550eb067415076e0931fcbd23074e8ad55369f9ba2c884f288b2",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260902",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "2a6b5a63c30fae444daea011d9534310285d6bcfdf3501d5391dfc9a48ec7423",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开版教育说明：讲清一星直选个位遗漏的固定参数、复算逻辑、候选空间变化和常见误区，不提供具体选号或下注建议。",
+  "parent_content_hash": "dd35740ebf6c17e81eac4cb3795ee1ff0e643112711d271429e54c3633c376fc",
+  "parent_fingerprint": "06b31faa23c940bea304e8c48f3af1c8d6525e6726575a59e2b5bced762fe521",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选遗漏技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0d6dcec82626d9cf016a979f2b2d4887d0b1e77efbb01fb6b2",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-02T04:13:33.446748+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-06b31faa23c940be:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "理解一星直选里近12期当前遗漏≥2数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "一星直选遗漏为什么容易算错？关键在输入、计算和候选空间",
+  "site_category_key": "tzjq",
+  "slug": "分分彩一星直选遗漏技巧-近12期当前遗漏2数字池具体怎么算-用完整案例从10复算到8",
+  "source_batch_id": "DAILY-20260902",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文把一星直选里的个位遗漏计算改写为公开版说明，保留固定参数、样本内复算和候选空间变化的机制解释，同时移除具体选号、下一期建议和任何操作性指令。",
+  "tags": [
+    "分分彩一星直选遗漏技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩位置筛选",
+    "分分彩遗漏阈值"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "一星直选遗漏为什么容易算错？关键在输入、计算和候选空间",
+  "title_candidates": [
+    "这一步到底怎么算？用一星直选遗漏把规则和复算过程讲清",
+    "从玩法规则到完整案例：一星直选遗漏应该怎样复核",
+    "一星直选遗漏为什么容易算错？关键在输入、计算和候选空间",
+    "先看规则，再看案例：一星直选里的一星直选遗漏怎样正确理解",
+    "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用一星直选遗漏把规则和复算过程讲清",
+      "从玩法规则到完整案例：一星直选遗漏应该怎样复核",
+      "一星直选遗漏为什么容易算错？关键在输入、计算和候选空间",
+      "先看规则，再看案例：一星直选里的一星直选遗漏怎样正确理解",
+      "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-0b7736a707e6608c",
+          "score": 0.72,
+          "title": "五星直选冷热为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "直选",
+            "遗漏"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "遗漏",
+            "候选空间",
+            "一星直选遗漏"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "一星直选遗漏为什么容易算错？关键在输入、计算和候选空间"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

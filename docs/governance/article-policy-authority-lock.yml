@@ -1,0 +1,77 @@
+name: article-policy-authority-lock
+
+# BASE-BRANCH-ANCHORED POLICY AUTHORITY LOCK
+# Structural fix for POLICY_OSCILLATION (PR #110/#485 showed a PR can modify
+# the policy AND its own validator/tests, so head-run CI can be made to pass).
+#
+# SECURITY MODEL:
+# - Runs via pull_request_target: uses the TRUSTED workflow file from the base
+#   branch (main) — a PR can never alter this workflow's own logic.
+# - Does NOT checkout, execute, or import ANY code from the PR head.
+# - Reads ONLY the PR head's policy JSON via the GitHub API, parses it with
+#   stdlib json, and asserts the canonical V3 values.
+# - The workflow file itself is a protected governance file (branch protection).
+#
+# A PR that tries to regress the policy to minimum=10 will FAIL this check even
+# if it simultaneously rewrites engine/daily_website_ready.py and the tests.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  article-policy-authority-lock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assert canonical V3 policy at PR head (via GitHub API only)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+
+          repo = os.environ["REPO"]
+          head = os.environ["HEAD_SHA"]
+          token = os.environ["GH_TOKEN"]
+          url = f"https://api.github.com/repos/{repo}/contents/policies/DAILY_WEBSITE_READY_PRODUCTION.json?ref={head}"
+          req = urllib.request.Request(url, headers={
+              "Authorization": f"Bearer {token}",
+              "Accept": "application/vnd.github.raw+json",
+              "User-Agent": "article-policy-authority-lock",
+          })
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  raw = r.read().decode("utf-8")
+          except urllib.error.HTTPError as e:
+              raise SystemExit(f"cannot read policy at PR head {head}: HTTP {e.code}")
+
+          p = json.loads(raw)
+          failures = []
+          if p.get("version") != 3:
+              failures.append(f"version must be 3, got {p.get('version')!r}")
+          if p.get("target") != 20:
+              failures.append(f"target must be 20, got {p.get('target')!r}")
+          if p.get("minimum") != 1:
+              failures.append(f"minimum must be 1 (FORMAL_RETENTION_MINIMUM), got {p.get('minimum')!r}")
+          if p.get("operational_minimum") != 10:
+              failures.append(f"operational_minimum must be 10, got {p.get('operational_minimum')!r}")
+          if p.get("partial_batch_retention") is not True:
+              failures.append(f"partial_batch_retention must be true, got {p.get('partial_batch_retention')!r}")
+          if p.get("quality_first") is not True:
+              failures.append(f"quality_first must be true, got {p.get('quality_first')!r}")
+          if p.get("quality_floor_may_be_lowered") is not False:
+              failures.append(f"quality_floor_may_be_lowered must be false, got {p.get('quality_floor_may_be_lowered')!r}")
+          if failures:
+              for f in failures:
+                  print("FAIL:", f)
+              raise SystemExit(1)
+          print("ARTICLE_POLICY_AUTHORITY_LOCK=PASS version=3 target=20 minimum=1 operational_minimum=10 pbr=true qf=true qfloor=false")
+          PY

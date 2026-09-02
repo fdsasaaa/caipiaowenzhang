@@ -3,16 +3,24 @@ from engine.daily_website_ready_refill import _mean, _status_for_ready
 
 
 def test_refill_status_uses_final_public_r1_count():
-    assert _status_for_ready(20, target=20, minimum=10) == "PASS_TARGET"
-    assert _status_for_ready(14, target=20, minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
-    assert _status_for_ready(4, target=20, minimum=10) == "BLOCKED_BELOW_MINIMUM"
+    # V3: minimum=1, operational_minimum=10
+    assert _status_for_ready(20, target=20, minimum=1, operational_minimum=10) == "PASS_TARGET"
+    assert _status_for_ready(14, target=20, minimum=1, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(6, target=20, minimum=1, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(1, target=20, minimum=1, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
+    assert _status_for_ready(0, target=20, minimum=1, operational_minimum=10) == "BLOCKED_BELOW_MINIMUM"
+    assert _status_for_ready(9, target=20, minimum=1, operational_minimum=10) == "PASS_PARTIAL_QUALITY_FIRST"
 
 
 def test_refill_policy_has_quality_preserving_hard_caps():
     policy = load_daily_policy()
+    assert policy["version"] == 3
     assert policy["target"] == 20
-    assert policy["minimum"] == 10
+    assert policy["minimum"] == 1
+    assert policy["operational_minimum"] == 10
     assert policy["maximum"] == 25
+    assert policy["partial_batch_retention"] is True
+    assert policy["quality_first"] is True
     assert policy["max_refill_rounds"] >= 2
     assert policy["max_approved_parents_per_day"] >= policy["target"]
     assert policy["max_model_generation_attempts_per_day"] >= policy["max_approved_parents_per_day"]

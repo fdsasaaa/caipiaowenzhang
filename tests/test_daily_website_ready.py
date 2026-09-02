@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 
 from engine.daily_website_ready import (
     _keyword_allowed,
+    assert_v3_policy_invariant,
     load_daily_policy,
     production_date,
     public_safety_errors,
@@ -10,12 +11,24 @@ from engine.daily_website_ready import (
 
 def test_daily_policy_volume_band():
     policy = load_daily_policy()
-    assert policy["minimum"] == 10
+    assert policy["version"] == 3
+    assert policy["minimum"] == 1
+    assert policy["operational_minimum"] == 10
     assert policy["target"] == 20
     assert policy["maximum"] == 25
     assert policy["candidate_pool"] >= policy["target"]
     assert policy["quality_floor_may_be_lowered"] is False
     assert policy["public_release_required_to_count"] is True
+    assert policy["partial_batch_retention"] is True
+    assert policy["quality_first"] is True
+
+
+def test_v3_policy_invariant_guard_passes_for_current_policy():
+    policy = assert_v3_policy_invariant()
+    assert policy["version"] == 3
+    assert policy["minimum"] == 1
+    assert policy["operational_minimum"] == 10
+    assert policy["partial_batch_retention"] is True
 
 
 def test_production_date_uses_singapore_boundary():

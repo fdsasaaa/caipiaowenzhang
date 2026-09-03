@@ -94,7 +94,11 @@ def test_partition_uses_small_safe_internal_batches():
     assert partition_batches(52, 25) == [25, 25, 2]
 
 
-def test_execute_controller_stages_approved_without_website_side_effects():
+def test_execute_controller_stages_approved_without_website_side_effects(monkeypatch):
+    # This test verifies controller staging/side-effect semantics, not live dedup.
+    # Keep it independent from mutable production Registry contents.
+    monkeypatch.setattr("engine.production_controller.duplicate_candidates", lambda blueprint: [])
+    monkeypatch.setattr("engine.production_controller.structural_duplicate_candidates", lambda blueprint: [])
     seen = {}
 
     def fake_generate(packet, **kwargs):
@@ -133,7 +137,11 @@ def test_execute_controller_stages_approved_without_website_side_effects():
     assert seen["packet"]["immutable_facts"]["primary_seo_cluster_id"] == "ffc_research"
 
 
-def test_controller_does_not_count_failed_approval_toward_target():
+def test_controller_does_not_count_failed_approval_toward_target(monkeypatch):
+    # This test verifies approval accounting, not live dedup. Isolate the Registry.
+    monkeypatch.setattr("engine.production_controller.duplicate_candidates", lambda blueprint: [])
+    monkeypatch.setattr("engine.production_controller.structural_duplicate_candidates", lambda blueprint: [])
+
     def fake_generate(packet, **kwargs):
         return SimpleNamespace(article={"article_id": packet["article_id"]})
 

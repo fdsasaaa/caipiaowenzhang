@@ -1,0 +1,196 @@
+{
+  "angle_signature": "d8e3ac6f79f0499f638f",
+  "approved_at": "2026-09-03T16:31:12.532843+00:00",
+  "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲一个主筛选：前二直选的和值6到12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文明确限定了玩法机制与参数范围。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起点是100个候选，主筛选后剩下58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文保留了确定性空间计算结果，并给出减法核对关系。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "100减58等于42。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文包含该算式作为核对关系。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确做了风险边界说明，避免把空间收缩或样本描述解释为预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只讨论分分彩前二直选里的一个固定筛选：和值6到12。这里的重点不是给出选号方法，而是把候选空间怎么算清楚，先知道从哪里开始，再知道筛完以后还剩多少。</p><p>在这类规则里，计算的对象是候选空间，不是开奖结果本身。把对象先分清，后面的核对才有意义。</p><h2>把数字算对</h2><p>按已验证规则，起点是100个候选。经过和值6到12这一层筛选后，保留58个，排除42个。</p><p>这个关系可以直接核对为100减58等于42。它说明的是筛选前后数量的变化，不是命中率，也不是收益表现。</p><p>如果只看结果数字，容易把“剩余更少”误读成“更容易中”。这两件事不是一回事。</p><h2>为什么要先固定参数</h2><p>做空间计算时，参数必须先预注册并保持不变，才能复算出一致结果。这里的参数就是前二直选和值6到12，规则边界清楚，结果才可核对。</p><p>这类写法更接近研究记录，而不是实战指引。它的作用是把筛选逻辑拆开，让读者看见每一步到底在删掉什么。</p><h2>怎么看历史样本</h2><p>历史样本只能帮助理解字段和结构，不能单独证明未来预测优势。即使某些样本里常见和值、跨度或形态重复出现，也不能直接推出以后还会继续出现同样的优势。</p><p>更稳妥的做法是把样本当成复盘材料：看规则是否一致，看计算是否可重复，看样本外是否还能成立，而不是把局部结果直接当结论。</p><h2>常见误区</h2><p>第一个误区，是把候选空间缩小理解成胜率提高。空间变小只表示筛选更窄，不表示结果更好。</p><p>第二个误区，是把历史结构当成未来预测依据。结构描述可以帮助理解，不等于已经证明有效。</p><p>第三个误区，是把一次算对当成长期有效。任何规则都需要在同一口径下反复复算，并接受样本外检查。</p><h2>结论</h2><p>这篇内容的核心很简单：前二直选和值6到12这一层筛选，从100个候选收缩到58个，合计排除42个。</p><p>它解决的是空间核对问题，不提供具体选号、下注或下一步执行建议。对读者来说，真正重要的是理解规则、算式和边界，而不是把结果误读成预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "54297a44fdb14fc3046e500427b5ae8fa9554f88885e1144d1e4bf98a2f74506",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "07f75e5562dc66edb5f4f49d88ebfdb0d8a298a3436474315b4b6fcb714fc8c7",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "面向分分彩前二直选和值6到12的公开说明：解释100到58、排除42的候选空间计算，并说明历史样本、结构分类与未来预测不能直接画等号。",
+  "parent_content_hash": "468dd2e0f776ecab67d95a40e9f1d76ed0495cfde666350c72f118fc8fcf7a5b",
+  "parent_fingerprint": "2e9b9c4665df3b583e815c6524be2943cda6e5d72670d906c19fd510cf75b9e1",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_063d82aa3b9d8841016a999b10668087d0a5a36459ecac0223",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T16:31:12.532864+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-2e9b9c4665df3b58:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二直选和值注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-position_filter-sum_range-space_math",
+  "source_batch_id": "DAILY-20260904",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文公开解释分分彩前二直选和值6到12的候选空间计算：从100个候选收缩到58个，排除42个，并说明这只是规则筛选结果，不是命中率、收益或未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "和值注数计算",
+    "位置筛选",
+    "候选空间",
+    "演示数据",
+    "空间数学",
+    "技巧讲解"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选和值的计算过程一次理清",
+    "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二直选和值的空间计算与常见误区",
+    "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选和值的计算过程一次理清",
+      "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二直选和值的空间计算与常见误区",
+      "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-CREATOR-cf300-20260813-009",
+          "score": 0.32,
+          "title": "分分彩后二直选和值4到8研究技巧：先算结构，再控制投入"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2857,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "和值",
+            "前二直选和值"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

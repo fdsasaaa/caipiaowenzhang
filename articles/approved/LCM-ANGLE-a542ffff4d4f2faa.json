@@ -1,0 +1,342 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点1000、终点153、排除847。",
+    "evidence_mode": "static_only",
+    "excluded_space": 847,
+    "final_space": 153,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对后三直选的候选空间计算，逐项确认1000到153以及排除847个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "恰好1个大号",
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "facfc3f98b14f38f0e3b",
+  "approved_at": "2026-09-03T16:29:25.032948+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-4ade3a62204cbc4d",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "big_small_filter[big_count=1/static]:1000->375>odd_even_filter[odd_count=1/static]:375->153",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后三直选大小奇偶注数计算",
+    "reader_question": "核对后三直选的候选空间计算，逐项确认1000到153以及排除847个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点1000、终点153、排除847。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 847,
+      "final_space": 153,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "恰好1个大号",
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对后三直选的候选空间计算，逐项确认1000到153以及排除847个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点1000、终点153、排除847。",
+    "title": "分分彩后三直选大小奇偶注数计算：1000个候选为什么变成153个，排除847个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-a542ffff4d4f2faa",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只核对后三直选的候选空间计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑范围说明，符合 mechanics_only 边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注的安全披露标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "后三直选的起点候选空间是1000。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同给定的静态起点。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一层是“恰好1个大号”，从1000个候选里保留375个，排除625个。",
+      "claim_type": "calculation",
+      "evidence_note": "机器合同给定的确定性分层结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层是“恰好1个单号”，从375个候选里保留153个，排除222个。",
+      "claim_type": "calculation",
+      "evidence_note": "机器合同给定的确定性分层结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两层合计后，终点候选空间是153。",
+      "claim_type": "calculation",
+      "evidence_note": "合同最终空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "总共排除847个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "1000减去153等于847。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "153不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "说明空间数与命中率不是同一概念。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "375也不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "说明中间层空间数与命中率不是同一概念。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "847也不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "说明排除数与命中率不是同一概念。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从1000个缩到375个，排除625个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从375个缩到153个，排除222个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从1000个缩到153个，总排除847个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只做一件事：核对<em>分分彩后三直选大小奇偶注数计算</em>里的候选空间怎么从1000变成153，以及为什么会排除847个。</p><p>这里的“候选空间”指的是按固定条件筛出来的注数数量，不是命中率，也不是收益率。</p><p>本文只核对后三直选的候选空间计算，不讨论未核验的平台经济参数。</p><p>演示数据，不是真实开奖记录。</p><h2>逐层计算保留与排除数量</h2><p>第一层是“恰好1个大号”。系统合同把起点固定为1000个候选，经过这一层后保留375个，排除625个。</p><p>这一步的意思很直接：1000减去625，剩下375。</p><p>第二层是“恰好1个单号”。这一层不是从1000重新算，而是接着上一层的375个继续算。筛完后保留153个，排除222个。</p><p>这一步同样是直接相减：375减去222，得到153。</p><h2>核对起点、终点和总排除</h2><p>把两层串起来看，起点是1000，终点是153，总共排除847个。</p><p>这个总排除不是额外推出来的结论，直接用1000减153就能复核：1000 - 153 = 847。</p><h2>为什么这些数字不是命中率</h2><p>153不是命中率。它只是最终留下来的候选数量。</p><p>375也不是命中率。它只是第一层之后剩下的候选数量。</p><p>847也不是命中率。它只是被排除掉的候选数量。</p><p>所以，这组数字只能说明空间收缩到什么程度，不能直接说明更容易中什么。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这里的两层筛选都已经在合同里固定好，参数先固定，再看样本或结果。</p><p>它们只能说明一个确定性的数学收缩过程，不能自动升级成预测优势。</p><p>换句话说，空间变小，只代表筛选更窄，不代表结论更强。</p><h2>实际怎么操作</h2><ol><li>先把候选空间定在1000个，这是起点。</li><li>按第一层“恰好1个大号”筛一次，记录从1000到375，排除625。</li><li>再按第二层“恰好1个单号”接着筛，记录从375到153，排除222。</li><li>最后复核总数：1000减153，得到847，确认终点和总排除一致。</li><li>如果要继续缩小，只能等新增条件也有已验证规则或证据，并且在下一次实验前先冻结参数；没有这一步，就应在153这里停止。</li></ol><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇已经按合同完成两层筛选，应该在153这个终点停止。</p><p>如果后面还想加条件，新的条件必须先有已验证规则或证据，而且能复算，不能临时拼第三层来凑结果。</p>",
+  "content_format": "html",
+  "content_hash": "98c2a2c2c048ed9c4a8a11ed0f7d5c1c34ee639f52fa2d3b64e39c65f87135f8",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "a542ffff4d4f2faa79a096a9d38373afa1c6cddac40f77d1fd1bdd1a844023ab",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后三直选大小奇偶注数计算：核对1000个候选如何逐层缩到153个，排除847个，并明确这只是确定性的空间计算，不是命中率。",
+  "play": "后三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "全部合同阶段完成后的最终候选空间是153；相较起点1000，合计排除847。",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并且可以复算时，才允许继续缩小候选；否则应在153这里停止。",
+    "parameter_freeze_rule": "参数先固定，再看样本或结果；本篇只按已冻结的两层合同顺序计算，不临时加新过滤器。",
+    "starting_space": "1000",
+    "steps": [
+      "确认起点候选空间为1000。",
+      "执行第1层“恰好1个大号”，复核1000 -> 375，排除625。",
+      "执行第2层“恰好1个单号”，复核375 -> 153，排除222。",
+      "用1000 - 153 = 847复核总排除。",
+      "核对终点153后停止，不再临时追加新条件。"
+    ],
+    "stop_condition": "完成最后一层后停止；任何额外新过滤器必须另有已验证规则/证据，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩后三直选大小奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_08801c3a1b6103a3016a99a04200a487d095df280bdb062829",
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "核对后三直选的候选空间计算，逐项确认1000到153以及排除847个的确定性结果",
+  "secondary_keywords": [
+    "分分彩后三直选大小奇偶注数计算",
+    "分分彩技巧",
+    "后三直选技巧",
+    "分分彩后三直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：后三直选大小奇偶的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩后三直选大小奇偶注数计算-1000个候选为什么变成153个-排除847个怎么算",
+  "source_refs": [
+    "BRBCW-005641"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "本文按合同核对分分彩后三直选大小奇偶注数计算：起点1000个候选，先经“恰好1个大号”缩到375，再经“恰好1个单号”缩到153，合计排除847。全文只做确定性的空间复算，不把筛选结果包装成命中率或预测优势。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "大小奇偶",
+    "注数计算",
+    "空间数学",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "从输入到结果：后三直选大小奇偶的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？后三直选大小奇偶的计算过程一次理清",
+    "先算注数，再谈后三直选大小奇偶：组合数学能说明到哪一步",
+    "从输入到结果：后三直选大小奇偶的空间计算与停止条件",
+    "后三直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的后三直选大小奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？后三直选大小奇偶的计算过程一次理清",
+      "先算注数，再谈后三直选大小奇偶：组合数学能说明到哪一步",
+      "从输入到结果：后三直选大小奇偶的空间计算与停止条件",
+      "后三直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的后三直选大小奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-8bb328486dd299cc",
+          "score": 0.8260869565217391,
+          "title": "从输入到结果：中三直选频率的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3043,
+          "intent_term_hits": [
+            "后三",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后三",
+            "直选",
+            "奇偶",
+            "大小",
+            "后三直选大小奇偶"
+          ],
+          "subject_play": "后三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：后三直选大小奇偶的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

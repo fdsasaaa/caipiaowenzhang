@@ -1,0 +1,280 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 50,
+    "final_space": 50,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好1个单号"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "8b3e1729585636d4097c",
+  "approved_at": "2026-09-03T16:36:43.892243+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-333c7e142e544763",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:100->50",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二直选奇偶参数设置",
+    "reader_question": "区分前二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 50,
+      "final_space": 50,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好1个单号"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前二直选奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-ac4bf0d315816980",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文仅做机制说明，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "边界声明，不引入未核验经济事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前二直选的主筛选参数是恰好1个单号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应合同中的系统研究预设参数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个筛选把 100 个有序两位候选缩到 50 个。",
+      "claim_type": "calculation",
+      "evidence_note": "由已给定的静态合同参数复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是说，主筛选一共剔除了 50 个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由 starting_space 100 与 after_filter_space 50 相减得到。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签，明确说明 case_bundle 只用于演示。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录中的前二样本共有 12 条。",
+      "claim_type": "calculation",
+      "evidence_note": "样本条数来自 case_bundle 的 synthetic data。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>这篇只讲边界，不讲扩展玩法。当前主筛选参数是“恰好1个单号”，它属于系统研究预设，不是来源推荐，也不是从演示样本里反推出来的。</p><p>合同里给得很清楚：前二直选的起始候选空间是 100 个有序两位组合，按“恰好1个单号”筛完后剩 50 个，主筛选剔除了 50 个。这个变化只是候选空间收缩，不自动代表任何预测优势。</p><h2>哪些结果由演示样本计算</h2><p>下面这组数据是<strong>演示数据，不是真实开奖记录</strong>，只用来展示怎么复算，不拿来证明未来结果。</p><p>演示样本里，前二对应的最近一期显示为 4 和 5，属于双单、两不同、大小为小大，和值 9，跨度 1。样本总条数是 12，这些都只是描述性结果。</p><p>如果只看这组演示数据里的和值、跨度、频率，它们可以被算出来，但不能直接升级成预测结论。</p><h2>来源能支持什么、不能支持什么</h2><p>来源能支持的是玩法机制和广义技术归属。这里的主筛选参数、阶段顺序和固定阈值，按合同归系统研究管理，不能写成来源原文推荐。</p><p>来源不能替系统研究预设作证，更不能替演示样本证明“更容易中”。本篇也不把统计筛选包装成预测优势。</p><h2>为什么不能事后改参数</h2><p>参数必须先固定，再看样本。这样做的原因很直接：先定规则，后看结果，才能复算；反过来临时改参数，只会把合同变成事后解释。</p><p>这也是为什么本篇只保留一个主筛选，不临时加第二条过滤器。没有第二条已验证规则或证据时，应该停止，而不是为了显得更实用去拼新条件。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>“恰好1个单号”是系统研究预设的筛选条件，不是来源推荐，不是样本结论，也不是未来结果保证。</p><p>演示样本里能看到一些分布信息，比如频次、和值和跨度，但这些信息本身只是描述，不是胜率证明，也不是可直接外推的预测优势。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇文章的合同已经完成：固定一个主参数，复算一次空间变化，说明来源边界，再说明样本边界。</p><p>如果后面要继续缩小候选，只允许在新增条件同样具有已验证规则、并且可以复算时再进行。没有这个条件，就在这里停止。</p><h2>实际怎么操作</h2><ol><li>先固定主参数：前二直选只按“恰好1个单号”处理，不先看样本。</li><li>按合同复算起始空间 100 个，筛后空间 50 个，确认剔除了 50 个。</li><li>把演示数据标成“演示数据，不是真实开奖记录”，只用于说明样本描述，不用于证明预测。</li><li>检查正文里的每个结论：凡是涉及筛选、数量、和值、跨度、频率或任何结果判断，都要区分是系统研究预设、演示样本计算，还是来源提到的经验。</li><li>读到这里就停止；只有新增条件也有已验证规则或证据，并且能复算时，才允许继续缩小候选。</li></ol>",
+  "content_format": "html",
+  "content_hash": "bffbeb347e79ff1a112ad6055c5636cd50604e15af43f9e32fadd71e3be8747c",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "ac4bf0d315816980b1246655f4577d849bb84c018da4e43d0fe8f67c93c98f80",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二直选奇偶参数设置案例讲解：先说明前二直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "50",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；本篇只使用主筛选合同中的“恰好1个单号”，不在观察后临时改参数。",
+    "starting_space": "100",
+    "steps": [
+      "固定主筛选参数为“恰好1个单号”，并确认这是系统研究预设，不写成来源推荐。",
+      "按合同复算前二直选的理论候选空间，从 100 个有序两位组合开始。",
+      "应用主筛选后得到 50 个候选，明确记录剔除了 50 个。",
+      "把 case_bundle 标记为“演示数据，不是真实开奖记录”，只做样本描述，不做结果承诺。",
+      "检查是否还有第二条已验证规则；如果没有，就停止，不再追加过滤器。"
+    ],
+    "stop_condition": "完成主筛选合同、复算空间变化、说明样本边界后立即停止；没有新增已验证规则或可复算证据，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前二直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0cbc0270388e230d016a99a1f9672087d1977f0040e5aa314e",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "区分前二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前二直选奇偶参数设置",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前二直选奇偶参数设置-系统研究预设-来源推荐边界",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文只讲分分彩前二直选奇偶参数设置的边界：主筛选“恰好1个单号”归系统研究预设，按合同可把 100 个候选缩到 50 个，剔除 50 个；演示数据只用于复算和说明，不被写成来源推荐，也不证明预测优势。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "奇偶参数设置",
+    "系统研究预设",
+    "演示数据",
+    "候选空间",
+    "机制说明"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？前二直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+    "从参数到结果：前二直选奇偶哪些能预设，哪些不能事后改",
+    "前二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前二直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+      "从参数到结果：前二直选奇偶哪些能预设，哪些不能事后改",
+      "前二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-f47065d79b123b86",
+          "score": 0.3111111111111111,
+          "title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3478,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "参数",
+            "前二直选奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

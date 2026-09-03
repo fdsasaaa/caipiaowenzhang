@@ -1,0 +1,401 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点1000、终点125、排除875。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 875,
+    "final_space": 125,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对中三直选的候选空间计算，逐项确认1000到125以及排除875个的确定性结果",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "306ae6f36569404b2946",
+  "approved_at": "2026-09-03T16:14:30.689149+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-373a6991a733efa9",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:1000->125",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选频率注数计算",
+    "reader_question": "核对中三直选的候选空间计算，逐项确认1000到125以及排除875个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点1000、终点125、排除875。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 875,
+      "final_space": 125,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对中三直选的候选空间计算，逐项确认1000到125以及排除875个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点1000、终点125、排除875。",
+    "title": "分分彩中三直选频率注数计算：1000个候选为什么变成125个，排除875个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-8bb328486dd299cc",
+  "case_scope": "mechanics_only",
+  "category": "技术技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的是演示数据，演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按合同必须明确标注演示数据，不得写成真实开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围内的免责声明，不涉及具体经济数值。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇唯一主筛选合同是：近12期频率前5数字池。",
+      "claim_type": "rule_fact",
+      "evidence_note": "原子级主筛选合同，按 Draft Packet 原样使用。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的参数是系统研究定义的固定参数：lookback=12，top_n=5，排序规则是frequency_desc_then_digit_asc。",
+      "claim_type": "rule_fact",
+      "evidence_note": "作为合同中的系统固定参数说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按合同，主筛选后的空间是125。",
+      "claim_type": "calculation",
+      "evidence_note": "由给定 starting_space 与 after_filter_space 直接复算得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "所以，排除数量就是875，计算式是：1000 - 125 = 875。",
+      "claim_type": "calculation",
+      "evidence_note": "排除数为演示合同中的确定性算式结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果只看数量关系，本篇的确定性结果就是：1000 → 125，排除875。",
+      "claim_type": "calculation",
+      "evidence_note": "对同一数学事实的汇总表达，仍需单独登记。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "125只是筛选后的候选数，不是命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "对结果含义的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "875只是被剔除的候选数，也不是失败率或准确率。",
+      "claim_type": "editorial",
+      "evidence_note": "对结果含义的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇的计算只说明空间缩小了多少，不说明未来会不会更容易中。",
+      "claim_type": "editorial",
+      "evidence_note": "明确不把统计筛选包装成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据里的频率、跨度、和值，都只是描述样本的统计状态，不自动等于未来优势。",
+      "claim_type": "editorial",
+      "evidence_note": "基于演示样本的描述性边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本里给出了近12期的示例池和频率排序结果，用来演示如何得到125这个结果。",
+      "claim_type": "editorial",
+      "evidence_note": "说明演示样本用途，不作真实开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里再次强调：演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "再次标注演示属性。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本中的频率前5数字池，是按合同参数从演示数据里算出来的，不是外部来源替你证明的结论。",
+      "claim_type": "editorial",
+      "evidence_note": "样本计算归属演示数据。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "不要把“候选数变少”直接写成“更容易命中”。",
+      "claim_type": "editorial",
+      "evidence_note": "误区提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "不要把“近12期频率前5数字池”当成已经验证的胜率公式。",
+      "claim_type": "editorial",
+      "evidence_note": "误区提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这篇只做空间数学，不做收益判断。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按这个顺序做，就能把候选空间复算清楚。",
+      "claim_type": "editorial",
+      "evidence_note": "操作指引，不含预测承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成这一个主筛选后就停止，不临时加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "next_step_policy 边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这篇合同的确定性结果很简单：起点1000，终点125，排除875。",
+      "claim_type": "calculation",
+      "evidence_note": "结论性数学结果，需登记。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "它说明的是候选空间怎么缩小，不是命中率，也不是预测保证。",
+      "claim_type": "editorial",
+      "evidence_note": "结论边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先把问题说清楚</h2><p>这篇只回答一个问题：<strong>分分彩中三直选频率注数计算</strong>里，为什么候选空间会从1000变成125，并且排除875个。</p><p>本文使用的是演示数据，<strong>演示数据，不是真实开奖记录</strong>。它只用于复算空间，不用于证明未来结果。</p><p>另外，本文不讨论未核验的平台经济参数。</p><h2>一、先定义候选空间</h2><p>合同给出的起点是<strong>1000</strong>，对应的是中三直选的有序三位候选空间。</p><p>也就是说，先把三位位置都放开看，总候选数记作1000。</p><p>这一步先定基准，不先看样本。</p><h2>二、主筛选只有一层</h2><p>本篇唯一主筛选合同是：<strong>近12期频率前5数字池</strong>。</p><p>这一步的参数是系统研究定义的固定参数：<code>lookback=12</code>，<code>top_n=5</code>，排序规则是<code>frequency_desc_then_digit_asc</code>。</p><p>这不是来源推荐，也不是来源指定；它只是本篇合同里的唯一主筛选。</p><p>按合同，主筛选后的空间是<strong>125</strong>。</p><p>所以，排除数量就是<strong>875</strong>，计算式是：<code>1000 - 125 = 875</code>。</p><h2>三、逐项核对保留与排除数量</h2><p>把这一步写成最直接的复算方式：</p><ol><li>先从中三直选的总候选空间开始，记为1000。</li><li>再套用唯一主筛选“近12期频率前5数字池”。</li><li>筛完以后，保留125个候选。</li><li>因此被排除的候选是875个。</li></ol><p>如果只看数量关系，本篇的确定性结果就是：<strong>1000 → 125，排除875</strong>。</p><h2>四、为什么这些数字不是命中率</h2><p>125只是筛选后的候选数，不是命中率。</p><p>875只是被剔除的候选数，也不是失败率或准确率。</p><p>本篇的计算只说明空间缩小了多少，不说明未来会不会更容易中。</p><p>演示数据里的频率、跨度、和值，都只是描述样本的统计状态，不自动等于未来优势。</p><h2>五、演示数据怎么读</h2><p>演示样本里给出了近12期的示例池和频率排序结果，用来演示如何得到125这个结果。</p><p>这里再次强调：<strong>演示数据，不是真实开奖记录</strong>。它只用于复算，不用于当成真实开奖记录解释。</p><p>样本中的频率前5数字池，是按合同参数从演示数据里算出来的，不是外部来源替你证明的结论。</p><h2>六、边界与误区</h2><p>不要把统计筛选包装成预测优势。</p><p>不要把“候选数变少”直接写成“更容易命中”。</p><p>不要把“近12期频率前5数字池”当成已经验证的胜率公式。</p><p>这篇只做空间数学，不做收益判断。</p><h2>七、实际怎么操作</h2><ol><li>先固定玩法对象：中三直选。</li><li>再固定主筛选：近12期频率前5数字池。</li><li>先算起点空间：1000。</li><li>再算筛选后空间：125。</li><li>最后核对排除数：875。</li></ol><p>按这个顺序做，就能把候选空间复算清楚。</p><h2>八、停止条件</h2><p>完成这一个主筛选后就停止，不临时加第二个过滤器。</p><p>只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。</p><p>如果没有第二条已验证规则，就不要往下拼接。</p><h2>结论</h2><p>这篇合同的确定性结果很简单：<strong>起点1000，终点125，排除875</strong>。</p><p>它说明的是候选空间怎么缩小，不是命中率，也不是预测保证。</p>",
+  "content_format": "html",
+  "content_hash": "9b098f80ad5af2bb41c0c50cadffffb5b4d8b995fde823abfcac677e83733ef5",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "8bb328486dd299cc335ba75fb3d3cac70b5e9c02a0c983664a9270c1b78504c1",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选频率注数计算案例讲解：先说明中三直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "125",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且可以复算时，才允许继续缩小候选；否则保持在125个候选，不再加过滤器。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；本篇唯一主筛选为近12期频率前5数字池，lookback=12、top_n=5、排序规则 frequency_desc_then_digit_asc，且只做这一层。",
+    "starting_space": "1000",
+    "steps": [
+      "先固定玩法对象为中三直选，不先看样本结果。",
+      "再固定唯一主筛选：近12期频率前5数字池，参数按合同写死。",
+      "先核对筛选前候选空间是1000，再核对筛选后空间是125。",
+      "计算排除数：1000减125，得到875，并把这一步写清楚。",
+      "确认本篇只做这一层主筛选，不再临时追加第二个过滤器。"
+    ],
+    "stop_condition": "完成主筛选后立即停止；没有新增且已验证、可复算的条件时，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩中三直选频率注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_089a7af7d8804ad0016a999cb70aec87d0b6e6585b4869c025",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "核对中三直选的候选空间计算，逐项确认1000到125以及排除875个的确定性结果",
+  "secondary_keywords": [
+    "分分彩中三直选频率注数计算",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：中三直选频率的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三直选-frequency_window-space_math",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文只做候选空间的确定性计算：从1000个中三直选候选，按固定的近12期频率前5数字池筛选后保留125个，排除875个。演示数据明确标注为演示，不构成真实开奖记录，也不把统计筛选写成预测优势。",
+  "tags": [
+    "分分彩",
+    "中三直选",
+    "频率注数计算",
+    "候选空间",
+    "演示数据",
+    "空间数学",
+    "技巧"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "从输入到结果：中三直选频率的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？中三直选频率的计算过程一次理清",
+    "先算注数，再谈中三直选频率：组合数学能说明到哪一步",
+    "从输入到结果：中三直选频率的空间计算与停止条件",
+    "中三直选频率怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的中三直选频率，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？中三直选频率的计算过程一次理清",
+      "先算注数，再谈中三直选频率：组合数学能说明到哪一步",
+      "从输入到结果：中三直选频率的空间计算与停止条件",
+      "中三直选频率怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的中三直选频率，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+          "score": 0.8181818181818182,
+          "title": "从输入到结果：前二直选和值的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "中三",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "频率",
+            "中三直选频率"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：中三直选频率的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

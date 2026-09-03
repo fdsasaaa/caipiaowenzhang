@@ -1,0 +1,353 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 330,
+    "final_space": 670,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "7084f3fdeffb7703e165",
+  "approved_at": "2026-09-03T16:05:56.963754+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-85b09cbd09e357ca",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:1000->670",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选和值筛选步骤",
+    "reader_question": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 330,
+      "final_space": 670,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩前三直选和值筛选步骤：实际操作按哪几步做，筛到670个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-14ced969a7f0f581",
+  "case_scope": "mechanics_only",
+  "category": "技巧研究",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲分分彩前三直选和值筛选步骤的机械操作，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的主筛选合同只有一个：和值9–18。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选参数来自 Draft Packet 的 verified_rule/production filter contract。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文只讲分分彩前三直选和值筛选步骤的机械操作，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机械范围内的免责声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "下面的示例都带有“演示数据，不是真实开奖记录”标签，只用于说明怎么复算，不代表真实开奖。",
+      "claim_type": "editorial",
+      "evidence_note": "演示标签说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "确认筛选前空间是1000，筛选后空间是670，一共排除了330个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同给定候选空间计算结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "确认这一步是系统研究合同里固定下来的参数，不是来源推荐参数。",
+      "claim_type": "editorial",
+      "evidence_note": "参数边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按合同复算：以1000个有序三位候选为起点，计算落入和值9–18的候选。",
+      "claim_type": "calculation",
+      "evidence_note": "起点与主筛选规则。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后剩下670个，说明被筛掉330个。",
+      "claim_type": "calculation",
+      "evidence_note": "筛选前后空间与排除数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这组数据只说明样本里出现过哪些和值，不代表未来会重复。",
+      "claim_type": "editorial",
+      "evidence_note": "对演示样本的边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本中，最新一组显示为83184，前三值为8、3、1，和值是12，跨度是7。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示样本的复算描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本的和值序列是：12, 15, 11, 16, 15, 8, 15, 13, 17, 18, 11, 12。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示样本的序列复算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "一旦你完成“和值9–18”这一个主筛选，就应当停止，不要临时再加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有第二条已经验证的规则或证据，就不要继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则、并且可以复算时，才允许继续下一轮缩小。",
+      "claim_type": "editorial",
+      "evidence_note": "next-step policy。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "不要把统计筛选包装成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "主筛选把空间从1000缩到670，只说明候选被重新整理了，不说明命中会更容易。",
+      "claim_type": "editorial",
+      "evidence_note": "不把筛选当作预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看清楚这篇文章做什么</h2><p>本文只讲<strong>分分彩前三直选和值筛选步骤</strong>的机械操作，不讨论未核验的平台经济参数。</p><p>这里的主筛选合同只有一个：<strong>和值9–18</strong>。它的参数先固定，再看结果；不能先看样本，再反推参数。</p><p>下面的示例都带有<strong>“演示数据，不是真实开奖记录”</strong>标签，只用于说明怎么复算，不代表真实开奖。</p><h2>执行前检查参数</h2><ul><li>先确认玩法是<strong>前三直选</strong>，不是别的玩法。</li><li>再确认主筛选只有一个：<strong>和值9–18</strong>。</li><li>确认筛选前空间是<strong>1000</strong>，筛选后空间是<strong>670</strong>，一共排除了<strong>330</strong>个候选。</li><li>确认这一步是系统研究合同里固定下来的参数，不是来源推荐参数。</li></ul><h2>实际操作步骤清单</h2><ol><li>固定条件：先把“前三直选”和“和值9–18”写下来，再开始检查。</li><li>按合同复算：以<strong>1000</strong>个有序三位候选为起点，计算落入和值9–18的候选。</li><li>核对结果：主筛选后剩下<strong>670</strong>个，说明被筛掉<strong>330</strong>个。</li><li>保留记录：把筛选前、筛选后、排除数都记清楚，方便以后重复核对。</li></ol><h2>示范怎么核对结果</h2><p>如果你手里只有一张表，就按同一套条件复查：先看每个三位候选的和值，再判断是否落在9到18之间。</p><p>凡是不在这个区间里的候选，都应排除。这样复算后，候选空间就从<strong>1000</strong>缩到<strong>670</strong>，排除数是<strong>330</strong>。</p><h2>演示数据怎么理解</h2><p>下面这组是<strong>演示数据，不是真实开奖记录</strong>，只用于说明描述性信息，不构成预测保证。</p><p>演示样本中，最新一组显示为<strong>83184</strong>，前三值为<strong>8、3、1</strong>，和值是<strong>12</strong>，跨度是<strong>7</strong>。这只是样本说明，不是结论。</p><p>演示样本的和值序列是：<code>12, 15, 11, 16, 15, 8, 15, 13, 17, 18, 11, 12</code>。这组数据只说明样本里出现过哪些和值，不代表未来会重复。</p><h2>何时必须停止</h2><p>一旦你完成“和值9–18”这一个主筛选，就应当停止，不要临时再加第二个过滤器。</p><p>如果没有第二条已经验证的规则或证据，就不要继续缩小候选。</p><p>只有当新增条件本身也有已验证规则、并且可以复算时，才允许继续下一轮缩小。</p><h2>边界与误区</h2><p>不要把统计筛选包装成预测优势。主筛选把空间从1000缩到670，只说明候选被重新整理了，不说明命中会更容易。</p><p>来源提到的经验，只能当作来源背景；本文的主参数仍以系统研究合同为准。</p><p>如果你想继续做别的筛选，必须先确认新的条件也有可复算依据，再单独开始。</p><h2>可重复的人工操作清单</h2><ul><li>先写玩法：前三直选。</li><li>再写主条件：和值9–18。</li><li>再写起点：1000。</li><li>再写结果：670。</li><li>再写排除：330。</li><li>最后写停止条件：完成本次主筛选后停止，不临时加新过滤器。</li></ul><p>按这个顺序做，你就能把一次筛选复算成一张固定清单。</p>",
+  "content_format": "html",
+  "content_hash": "4494a2935e78768764f38a286afa60e08341315b54a32ecf066efb4bf94d87ed",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "14ced969a7f0f58133535bdc6e43b2fecad0e122f2690ab2e959533e8747895f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三直选和值筛选步骤案例讲解：先说明前三直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "670个有序三位候选",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并且可以复算时，才允许继续下一轮缩小。",
+    "parameter_freeze_rule": "先固定‘前三直选’和‘和值9–18’，再开始看样本；不能先看样本再改参数。",
+    "starting_space": "1000个有序三位候选",
+    "steps": [
+      "先固定玩法为前三直选，再固定主筛选条件为和值9–18。",
+      "把筛选前空间写成1000，把筛选后空间写成670，同时写明排除330个候选。",
+      "按同一规则复算每个有序三位候选的和值，只保留9到18之间的候选。",
+      "复算完成后立刻停止，不要在没有新证据时加第二个过滤器。",
+      "只把这次结果当作机械筛选记录，不把它解释成预测优势。"
+    ],
+    "stop_condition": "完成和值9–18这一个主筛选后停止；如果没有第二条已验证规则或证据，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前三直选和值筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0ca43fe7c3fa93a1016a999a856a8c87d2b4fd98d48c86168f",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "按固定顺序执行和值9–18，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩前三直选和值筛选步骤",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先固定步骤，再看结果：前三直选和值的执行边界",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三直选-position_filter-sum_range-execution_checklist",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "这篇文章把分分彩前三直选的和值9–18筛选，改写成可执行清单：先固定参数，再按步骤复算1000到670的空间变化，最后说明何时必须停止，不把统计筛选当成预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值筛选",
+    "位置筛选",
+    "技巧清单",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "先固定步骤，再看结果：前三直选和值的执行边界",
+  "title_candidates": [
+    "做到哪一步应该停？前三直选和值的复核清单",
+    "前三直选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+    "从规则到复核：这一玩法这套筛选流程最容易错在哪里",
+    "先固定步骤，再看结果：前三直选和值的执行边界",
+    "前三直选和值不是越筛越好，关键在什么时候停止"
+  ],
+  "title_review": {
+    "candidates": [
+      "做到哪一步应该停？前三直选和值的复核清单",
+      "前三直选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+      "从规则到复核：这一玩法这套筛选流程最容易错在哪里",
+      "先固定步骤，再看结果：前三直选和值的执行边界",
+      "前三直选和值不是越筛越好，关键在什么时候停止"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-68ce325edd5f6fc5",
+          "score": 0.358974358974359,
+          "title": "做到哪一步应该停？前二直选和值的复核清单"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question",
+            "question_contrast"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1579,
+          "intent_term_hits": [
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "和值",
+            "前三直选和值"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先固定步骤，再看结果：前三直选和值的执行边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -4,6 +4,7 @@ from engine.store import ROOT
 
 
 WORKFLOW = ROOT / ".github" / "workflows" / "daily-website-ready-production.yml"
+RELAY_WORKFLOW = ROOT / ".github" / "workflows" / "relay-dispatched-required-checks.yml"
 
 
 def test_closeout_volume_and_quality_contract():
@@ -65,8 +66,9 @@ def test_closeout_forbidden_website_side_effects_remain_explicit():
     } <= forbidden
 
 
-def test_closeout_workflow_has_schedule_failure_evidence_ci_and_merge_order():
+def test_closeout_workflow_has_schedule_failure_evidence_ci_and_merge_handoff():
     text = WORKFLOW.read_text(encoding="utf-8")
+    relay = RELAY_WORKFLOW.read_text(encoding="utf-8")
     assert "cron: '20 1 * * *'" in text
     assert "MODEL_PROVIDER_API_KEY" in text
     assert "assert_v3_policy_invariant" in text
@@ -79,13 +81,24 @@ def test_closeout_workflow_has_schedule_failure_evidence_ci_and_merge_order():
     assert "pytest -q" in text
     assert "gh workflow run test.yml --ref" in text
     assert "gh run watch \"$RUN_ID\" --exit-status" in text
-    assert "gh pr merge \"$PR_URL\" --squash --delete-branch" in text
+    assert "Hand off protected merge to required-check relay" in text
+
+    # GitHub blocks PR checks caused by a PR opened with GITHUB_TOKEN. The
+    # independent dispatch therefore stays the source test run; the relay verifies
+    # its two matrix jobs, publishes the exact protected contexts, then merges.
+    assert "workflow_run:" in relay
+    assert 'github.event.workflow_run.event == \'workflow_dispatch\'' in relay
+    assert '"pytest (3.10)" "pytest (3.13)"' in relay
+    assert "statuses/${HEAD_SHA}" in relay
+    assert "gh pr merge \"$PR_URL\" --squash --delete-branch" in relay
     assert "--admin" not in text
+    assert "--admin" not in relay
+
     assert text.index("assert_v3_policy_invariant") < text.index("Produce and refill")
     assert text.index("Produce and refill quality-first website-ready inventory") < text.index("Run local full repository gates")
     assert text.index("Run local full repository gates") < text.index("Persist exact generated inventory after repository-gate failure")
     assert text.index("Run local full repository gates") < text.index("Open daily production PR")
-    assert text.index("Dispatch independent dual-version CI") < text.index("Squash merge only after CI passes")
+    assert text.index("Dispatch independent dual-version CI") < text.index("Hand off protected merge to required-check relay")
 
 
 def test_closeout_overlap_guard_and_fail_closed_are_present():

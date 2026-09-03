@@ -1,0 +1,495 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100、终点58、排除42。",
+    "evidence_mode": "static_only",
+    "excluded_space": 42,
+    "final_space": 58,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值6–12"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "d8e3ac6f79f0499f638f",
+  "approved_at": "2026-09-03T16:07:36.531517+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-1d91e8598c98ab25",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二直选和值注数计算",
+    "reader_question": "核对前二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100、终点58、排除42。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 42,
+      "final_space": 58,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值6–12"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100、终点58、排除42。",
+    "title": "分分彩前二直选和值注数计算：100个候选为什么变成58个，排除42个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "这篇只讲一个主筛选：前二直选的和值6–12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应主筛选合同的唯一原子和值区间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文面向读者的彩种统一写作分分彩；内部规则名和来源存档仍按合同保留。",
+      "claim_type": "editorial",
+      "evidence_note": "读者显示层术语处理。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里先给出固定起点：starting_space = 100。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的起点。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后的结果是58，所以总共排除42个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同机器事实中的终点与排除量。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选规则只有一层：selector=前二，metric=digit_sum，atom=sum_range，参数是6到12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选规范的合同表达。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这组参数在合同里是系统研究预设，先固定，再看结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数冻结前观察的合同要求。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按合同给出的确定性结果，100个候选经过这一步后剩下58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "起点、终点、排除量的复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个减法关系就是：100 - 58 = 42。",
+      "claim_type": "calculation",
+      "evidence_note": "基础算术关系。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "你可以把它记成三项核对：",
+      "claim_type": "editorial",
+      "evidence_note": "结构性引导语。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "起点：100",
+      "claim_type": "calculation",
+      "evidence_note": "起点数值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "终点：58",
+      "claim_type": "calculation",
+      "evidence_note": "终点数值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "排除：42",
+      "claim_type": "calculation",
+      "evidence_note": "排除数值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本里给出的最新一期是59667，其描述字段显示为：前二、和值14、跨度4、两不同、单单、大小为大大。",
+      "claim_type": "editorial",
+      "evidence_note": "演示数据字段说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本总数是12，这只是演示数据规模，不是理论候选空间。",
+      "claim_type": "calculation",
+      "evidence_note": "样本规模说明，不能当候选空间。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里的58和42只是候选空间的保留与排除数量，不是命中率、准确率或胜率。",
+      "claim_type": "rule_fact",
+      "evidence_note": "空间数学与命中率区分。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "它只说明筛选后还剩多少，不说明以后会中多少。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "同样，样本里出现的频率、和值、跨度、遗漏，都是演示性描述，不应直接当成未来结果。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本用途限制。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "先固定主筛选参数：前二直选，和值范围6到12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "操作步骤对应主筛选。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再确认起点是100个候选，不要把样本条数当成候选总数。",
+      "claim_type": "calculation",
+      "evidence_note": "起点与样本规模区分。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按规则复算：100个候选经过主筛选后剩58个。",
+      "claim_type": "calculation",
+      "evidence_note": "复算结论。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "做减法核对：100减58，得到排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "排除量核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "核对到这一步就停，不要临时再加第二个未验证过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止条件。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 免责声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "也不要把“空间变小”理解成“更容易赢”。",
+      "claim_type": "editorial",
+      "evidence_note": "误区提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "空间收缩只是筛选结果，不是预测优势。",
+      "claim_type": "rule_fact",
+      "evidence_note": "不把筛选结果升级为预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果后面还想继续缩小候选，只有在新增条件也有已验证规则或可复算证据时，才可以继续做下一层筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "next_step_policy 的条件限制。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇只完成合同要求的唯一主筛选：和值6–12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "单一主筛选合同。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "到这里就停止，不临时拼第二过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止后不加新过滤器。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果没有新的已验证规则、也没有可复算证据，就不要继续往下缩小候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "继续缩小候选的前提。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这就是本篇的核心：把分分彩前二直选和值注数计算的起点、终点和排除数算清楚，且只算到合同要求的那一步。",
+      "claim_type": "editorial",
+      "evidence_note": "总结性收束。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先把候选空间定义清楚</h2><p>这篇只讲一个主筛选：<strong>前二直选</strong>的<strong>和值6–12</strong>。本文面向读者的彩种统一写作<strong>分分彩</strong>；内部规则名和来源存档仍按合同保留。</p><p>这里先给出固定起点：<strong>starting_space = 100</strong>。主筛选后的结果是<strong>58</strong>，所以总共排除<strong>42</strong>个候选。</p><h2>逐层计算保留与排除数量</h2><p>主筛选规则只有一层：<code>selector=前二</code>，<code>metric=digit_sum</code>，<code>atom=sum_range</code>，参数是<strong>6到12</strong>。这组参数在合同里是系统研究预设，先固定，再看结果。</p><p>按合同给出的确定性结果，<strong>100</strong>个候选经过这一步后剩下<strong>58</strong>个，排除<strong>42</strong>个。这个减法关系就是：<strong>100 - 58 = 42</strong>。</p><h2>核对起点、终点和总排除</h2><p>你可以把它记成三项核对：</p><ul><li>起点：<strong>100</strong></li><li>终点：<strong>58</strong></li><li>排除：<strong>42</strong></li></ul><p>只要这三项对上，就说明本篇的空间数学核对是闭合的。</p><h2>演示数据标签要先看清</h2><p><strong>演示数据，不是真实开奖记录</strong>。下面这组样本只用于说明如何理解描述字段，不代表真实开奖，也不构成预测。</p><p>样本里给出的最新一期是<strong>59667</strong>，其描述字段显示为：前二、和值14、跨度4、两不同、单单、大小为大大。样本总数是<strong>12</strong>，这只是演示数据规模，不是理论候选空间。</p><h2>为什么这些数字不是命中率</h2><p>这里的<strong>58</strong>和<strong>42</strong>只是候选空间的保留与排除数量，不是命中率、准确率或胜率。它只说明筛选后还剩多少，不说明以后会中多少。</p><p>同样，样本里出现的频率、和值、跨度、遗漏，都是演示性描述，不应直接当成未来结果。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选参数：前二直选，和值范围6到12。</li><li>再确认起点是100个候选，不要把样本条数当成候选总数。</li><li>按规则复算：100个候选经过主筛选后剩58个。</li><li>做减法核对：100减58，得到排除42个。</li><li>核对到这一步就停，不要临时再加第二个未验证过滤器。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>本文不讨论未核验的平台经济参数。</p><p>也不要把“空间变小”理解成“更容易赢”。空间收缩只是筛选结果，不是预测优势。</p><p>如果后面还想继续缩小候选，只有在新增条件也有已验证规则或可复算证据时，才可以继续做下一层筛选。</p><h2>停止条件</h2><p>本篇只完成合同要求的唯一主筛选：和值6–12。到这里就停止，不临时拼第二过滤器。</p><p>如果没有新的已验证规则、也没有可复算证据，就不要继续往下缩小候选。</p><p>这就是本篇的核心：把分分彩前二直选和值注数计算的起点、终点和排除数算清楚，且只算到合同要求的那一步。</p>",
+  "content_format": "html",
+  "content_hash": "468dd2e0f776ecab67d95a40e9f1d76ed0495cfde666350c72f118fc8fcf7a5b",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "2e9b9c4665df3b583e815c6524be2943cda6e5d72670d906c19fd510cf75b9e1",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二直选和值注数计算案例讲解：先说明前二直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "58",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "主筛选参数必须先固定，再看样本；本篇唯一主筛选合同是前二直选和值6到12。",
+    "starting_space": "100",
+    "steps": [
+      "先固定主筛选：前二直选，和值6到12。",
+      "把起点记为100个候选，不要把样本条数当成候选总数。",
+      "按合同复算主筛选后剩58个，确认排除42个。",
+      "检查三项核对：起点100、终点58、排除42。",
+      "只做到这一步就停止，不额外加入没有已验证规则的新过滤器。"
+    ],
+    "stop_condition": "完成起点100到终点58、排除42的核对后停止；没有新增已验证规则或可复算证据时，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前二直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_063d82aa3b9d8841016a999b10668087d0a5a36459ecac0223",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二直选和值注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二直选和值的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-position_filter-sum_range-space_math",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文用简单步骤把分分彩前二直选的和值注数计算讲清楚：起点100，经过唯一主筛选“和值6–12”后变成58，合计排除42个，并说明这只是候选空间收缩，不是命中率或预测优势。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "和值注数计算",
+    "位置筛选",
+    "候选空间",
+    "演示数据",
+    "空间数学",
+    "技巧讲解"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "从输入到结果：前二直选和值的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选和值的计算过程一次理清",
+    "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二直选和值的空间计算与停止条件",
+    "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的前二直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选和值的计算过程一次理清",
+      "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二直选和值的空间计算与停止条件",
+      "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的前二直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-5db22b80db0713c9",
+          "score": 0.7272727272727273,
+          "title": "从输入到结果：前二直选奇偶的空间计算与常见误区"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "和值",
+            "前二直选和值"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二直选和值的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,209 @@
+{
+  "angle_signature": "eee1c374086c471271a3",
+  "approved_at": "2026-09-03T16:34:08.771401+00:00",
+  "article_id": "LCM-ANGLE-e4f3482c8b9bfe8b",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "分分彩前四直选可以先视为一个有序四位结构，起点候选数为10000。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来源于已验证规则的结构化候选空间定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选条件是“恰好2个单号”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来源于已验证规则的筛选条件描述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按该条件复核后，候选空间从10000缩小到3750，确定性排除6250个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由已验证规则对应的候选空间计算得出。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "10000减去3750等于6250。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文中的一致性复核算式。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类只能说明“剩下多少”，不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "教育/研究导向的风险提示与方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确区分样本内描述与样本外结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>本文只做规则核对，不做结果预测。讨论对象是分分彩前四直选的候选空间计算，也就是先把“有多少种可能”算清楚。</p><p>前四直选可以先视为一个有序四位结构，起点候选数为 10000。这个数字代表全部可能的四位组合，不代表任何命中概率。</p><p>在研究这类问题时，先确认空间大小，再讨论筛选条件，通常比直接谈结果更稳妥。</p><h2>筛选条件怎么作用</h2><p>这里的主筛选条件是“恰好 2 个单号”。它属于结构分类条件，作用是把原始候选空间按规则切分。</p><p>按已验证规则复核后，候选空间会从 10000 缩小到 3750，同时确定性排除 6250 个候选。</p><p>这类数字描述的是集合规模变化，不是中奖率、准确率，也不是收益表现。</p><h2>为什么不能把分类当成预测优势</h2><p>结构分类只能说明“剩下多少”，不能单独证明未来预测优势。历史样本表现也一样，不能仅凭样本内结果推导出样本外更好的判断。</p><p>如果把候选变少直接理解成更容易命中，就会把组合数学误读成预测能力。公开写作里需要把这两层意思分开。</p><p>因此，本文只保留可复算的空间结论，不把历史结构包装成未来优势，也不承诺任何稳定结果。</p><h2>核对方法与常见误区</h2><p>核对这类问题时，最重要的是把起点、终点和排除量一起看。这里可以直接检查：10000 减去 3750，差值正好是 6250。</p><p>这说明公开版关注的是规则一致性，而不是临场判断。只要条件没有改变，数值关系就应当能被重复复核。</p><p>常见误区有两个：一是把候选数量缩小理解成命中率提升；二是把过去样本里的结构特征，误当成未来一定有效的信号。</p><h2>样本、复核与边界</h2><p>演示样本只能帮助理解写法，不能当作预测依据。样本内出现某种单双组合、和值或跨度，只能说明该样本如何记录，不能证明下一次会重复。</p><p>更规范的做法是把规则、参数和样本范围预先定义好，再做复算和样本外验证。这样更适合教育或研究场景，也更容易避免概念混淆。</p><p>如果后续要继续讨论其他筛选条件，前提应是这些条件本身有明确规则来源，并且可以独立复核。</p><p>结论很简单：这里的核心是候选空间从 10000 缩到 3750，确定性排除 6250。它说明的是规则筛选结果，不是预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "3ee1788010eedd39795ad8736e355ae825f3d350325982d756b714df03219fa4",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8fd66b6144ec94cb11bae631e3495ab4093cd0178b3f6e73f755f9e0eaf2d9c2",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从组合数学角度解释分分彩前四直选奇偶注数计算，说明候选空间、筛选规则、排除数量与常见误区，不提供选号建议。",
+  "parent_content_hash": "26d7c0a598dd0f6799cc1d6e4635b6117b5c88f4d91963a8e040ba5b2be595b9",
+  "parent_fingerprint": "e4f3482c8b9bfe8b73a7f7a25a9ea1222714d8b2dc5c8be1b4682b1af9c0a462",
+  "play": "前四直选",
+  "primary_keyword": "分分彩前四直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_01034da0ddd12cbb016a999e1d2d1c87d091b997321ccb45b0",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T16:34:08.771422+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-e4f3482c8b9bfe8b:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "核对前四直选的候选空间计算，逐项确认10000到3750以及排除6250个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前四直选奇偶注数计算",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前四直选奇偶怎么算才不混淆？复核候选空间的关键点",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前四直选奇偶注数计算-10000个候选为什么变成3750个-排除6250个怎么算",
+  "source_batch_id": "DAILY-20260904",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "公开版聚焦分分彩前四直选的候选空间复核：从有序四位结构出发，解释“恰好2个单号”如何把10000个候选缩小到3750个，并强调这只是规则筛选结果，不是命中率或未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前四直选",
+    "奇偶筛选",
+    "候选空间",
+    "空间计算"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "前四直选奇偶怎么算才不混淆？复核候选空间的关键点",
+  "title_candidates": [
+    "候选空间为什么会变？前四直选奇偶的计算过程一次理清",
+    "先算注数，再谈前四直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：前四直选奇偶的空间计算与常见误区",
+    "前四直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂前四直选的前四直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前四直选奇偶的计算过程一次理清",
+      "先算注数，再谈前四直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：前四直选奇偶的空间计算与常见误区",
+      "前四直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂前四直选的前四直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+          "score": 0.4,
+          "title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2727,
+          "intent_term_hits": [
+            "前四",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前四",
+            "直选",
+            "奇偶",
+            "候选空间",
+            "前四直选奇偶"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前四直选奇偶怎么算才不混淆？复核候选空间的关键点"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

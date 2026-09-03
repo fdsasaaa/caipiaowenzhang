@@ -17,7 +17,15 @@ def _load(name: str) -> dict:
     return json.loads((CASE_DIR / name).read_text(encoding="utf-8"))
 
 
-def test_v2_quality_smoke_article_passes_full_approval_pipeline():
+def test_v2_quality_smoke_article_passes_full_approval_pipeline(monkeypatch):
+    # This is a frozen pipeline regression fixture, not a live inventory/dedup test.
+    # Isolate it from mutable production Registry state so later real articles cannot
+    # make the historical smoke fixture fail simply by owning the same SEO/structure.
+    monkeypatch.setattr("engine.quality.duplicate_candidates", lambda article: [])
+    monkeypatch.setattr("engine.quality.structural_duplicate_candidates", lambda article: [])
+    monkeypatch.setattr("engine.approval.keyword_owners", lambda *args, **kwargs: [])
+    monkeypatch.setattr("engine.approval._existing_identity", lambda article_id: {})
+
     blueprint = _load("blueprint.json")
     article = _load("article.json")
     packet = build_draft_packet(blueprint)

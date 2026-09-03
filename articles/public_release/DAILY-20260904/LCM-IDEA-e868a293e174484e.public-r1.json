@@ -1,0 +1,197 @@
+{
+  "angle_signature": "9335c77933bb067c7c22",
+  "approved_at": "2026-09-03T16:34:27.093222+00:00",
+  "article_id": "LCM-IDEA-e868a293e174484e",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲前四直选里一个固定筛选：和值12–24。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文明确限定了玩法范围与筛选区间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "计算方法是取前四位数字逐位相加，得到和值；和值在12到24之间则保留，不在则排除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "公开正文保留了基础计算机制与区间判断规则。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "起始候选空间是10000个四位有序候选。",
+      "claim_type": "calculation",
+      "evidence_note": "公开正文保留了四位有序候选空间的规模表述。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这类筛选只是在固定规则下缩小候选，不等于能提高未来命中率，也不等于能替代独立验证。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文包含明确的风险与边界说明，避免将历史结构解释为未来优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文明确给出这一边界判断。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法范围</h2><p>本文只讨论前四直选中的一个固定筛选：和值12到24。这里的“前四”只看前四个位置，先把这四个数字相加，再判断总和是否落在设定区间内。</p><p>本文不讨论未核验的平台参数，也不把任何历史样本直接写成未来结论。</p><h2>计算机制</h2><p>规则本身很简单：取前四位数字，逐位相加，得到和值。若和值在12到24之间，就保留；不在这个区间，就排除。</p><p>这是一条先固定参数、再做复算的规则。它描述的是筛选方式，不是对结果的承诺。</p><h2>示例复算</h2><p>下面的示例只用于演示计算，不是真实开奖记录。若前四位是3827，那么和值就是3+8+2+7=20。20落在12到24之间，所以这条样本通过该筛选。</p><p>同一演示中，只取前四位来算，后面的位数不参与这个规则的判断。</p><h2>样本边界</h2><p>在演示复算里，起始候选空间可记为10000个四位有序候选；按这一条主筛选后，剩余7310个，排除2690个。</p><p>这类结构分类或历史样本表现，不能单独证明未来预测优势。它最多说明规则怎么计算，不能替代独立验证，也不能证明后续结果会按同样方向发展。</p><h2>理解误区</h2><p>常见误区是把“筛掉了一部分候选”理解成“未来更容易命中”。这两件事不是一回事。固定规则只是在定义样本如何被保留或排除。</p><p>另一种误区是把演示样本里的形态、频率或区间表现，直接当成真实规律。公开讨论里更稳妥的做法，是先确认规则，再看它在样本中的计算结果。</p>",
+  "content_format": "html",
+  "content_hash": "26bb88345813df57b6b104b4ad977f38759c587229471ec2b40ecd4968979fcf",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "506f829ee4ac2dedaadfd0bb62bdb50303424c6012a15eeb8d8da665c2ab5b49",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "公开说明前四直选和值12到24的计算机制、候选空间复算与样本边界，强调历史结构不能单独证明未来预测优势。",
+  "parent_content_hash": "7b0b91673ee52e4b4daaea0948831288373cd2e7ebbb4b51f57ca5ceea850af8",
+  "parent_fingerprint": "e868a293e174484e5bef18fbd8c51207169255955c4df1d27c36128e7e07e0a7",
+  "play": "前四直选",
+  "primary_keyword": "分分彩前四直选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_04cdf0157ef42035016a999f32d1a887d08045cda53de4e271",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T16:34:27.093242+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-e868a293e174484e:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "理解前四直选里和值12–24分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前四直选和值技巧",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前四直选和值为什么容易算错？关键在输入、计算和常见误区",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前四直选和值技巧-和值12-24-具体怎么算-用完整案例从10000复算到7310",
+  "source_batch_id": "DAILY-20260904",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "公开版保留前四直选和值12到24的规则解释、候选空间复算和边界说明，不提供选号建议、下注指令或任何未来优势承诺。",
+  "tags": [
+    "分分彩前四直选和值技巧",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "前四直选和值为什么容易算错？关键在输入、计算和常见误区",
+  "title_candidates": [
+    "这一步到底怎么算？用前四直选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前四直选和值应该怎样复核",
+    "前四直选和值为什么容易算错？关键在输入、计算和常见误区",
+    "先看规则，再看案例：前四直选里的前四直选和值怎样正确理解",
+    "看懂前四直选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前四直选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前四直选和值应该怎样复核",
+      "前四直选和值为什么容易算错？关键在输入、计算和常见误区",
+      "先看规则，再看案例：前四直选里的前四直选和值怎样正确理解",
+      "看懂前四直选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+          "score": 0.7307692307692307,
+          "title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "前四",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前四",
+            "直选",
+            "和值",
+            "前四直选和值"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前四直选和值为什么容易算错？关键在输入、计算和常见误区"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

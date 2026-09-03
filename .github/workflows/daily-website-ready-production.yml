@@ -285,11 +285,13 @@ jobs:
           echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
           gh run watch "$RUN_ID" --exit-status
 
-      - name: Squash merge only after CI passes
+      - name: Hand off protected merge to required-check relay
         if: steps.meta.outputs.completed != 'true'
         shell: bash
         env:
           PR_URL: ${{ steps.current.outputs.pr_url }}
+          CI_RUN_ID: ${{ steps.ci.outputs.run_id }}
         run: |
           set -euo pipefail
-          gh pr merge "$PR_URL" --squash --delete-branch
+          echo "Independent dual-version CI passed for ${PR_URL}."
+          echo "relay-dispatched-required-checks will publish the protected status contexts from run ${CI_RUN_ID} and perform the squash merge."

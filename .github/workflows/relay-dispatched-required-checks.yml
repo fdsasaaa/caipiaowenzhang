@@ -1,0 +1,77 @@
+name: relay-dispatched-required-checks
+
+on:
+  workflow_run:
+    workflows: ["test"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+  statuses: write
+
+jobs:
+  relay-and-merge:
+    if: >-
+      github.event.workflow_run.event == 'workflow_dispatch' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      startsWith(github.event.workflow_run.head_branch, 'automation/daily-website-ready-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SOURCE_RUN_ID: ${{ github.event.workflow_run.id }}
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+      HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
+    steps:
+      - name: Verify exact dual-version jobs succeeded
+        id: verify
+        shell: bash
+        run: |
+          set -euo pipefail
+          JOBS_JSON="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}/jobs?per_page=100")"
+          for CONTEXT in "pytest (3.10)" "pytest (3.13)"; do
+            COUNT="$(printf '%s' "$JOBS_JSON" | jq --arg n "$CONTEXT" '[.jobs[] | select(.name == $n and .conclusion == "success")] | length')"
+            if [ "$COUNT" -ne 1 ]; then
+              echo "Required dispatched job did not succeed exactly once: $CONTEXT" >&2
+              exit 21
+            fi
+          done
+
+      - name: Relay verified jobs into protected-branch status contexts
+        shell: bash
+        run: |
+          set -euo pipefail
+          TARGET_URL="https://github.com/${GITHUB_REPOSITORY}/actions/runs/${SOURCE_RUN_ID}"
+          for CONTEXT in "pytest (3.10)" "pytest (3.13)"; do
+            gh api \
+              --method POST \
+              -H "Accept: application/vnd.github+json" \
+              "repos/${GITHUB_REPOSITORY}/statuses/${HEAD_SHA}" \
+              -f state='success' \
+              -f context="$CONTEXT" \
+              -f description='Verified by dispatched dual-version CI' \
+              -f target_url="$TARGET_URL" >/dev/null
+          done
+
+      - name: Merge matching daily production PR after protection sees statuses
+        shell: bash
+        run: |
+          set -euo pipefail
+          PR_URL="$(gh pr list --state open --head "$HEAD_BRANCH" --base main --limit 1 --json url --jq '.[0].url // empty')"
+          if [ -z "$PR_URL" ]; then
+            echo "No matching open daily production PR; status relay completed without merge."
+            exit 0
+          fi
+
+          for _ in $(seq 1 12); do
+            if gh pr merge "$PR_URL" --squash --delete-branch; then
+              echo "Merged $PR_URL after relayed required checks."
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "Required checks were relayed, but protected merge still did not become available." >&2
+          exit 22

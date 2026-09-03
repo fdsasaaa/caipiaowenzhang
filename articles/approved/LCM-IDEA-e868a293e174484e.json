@@ -1,0 +1,278 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释和值12–24的机制，并完成从10000到7310的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 2690,
+    "final_space": 7310,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前四直选里和值12–24分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值12–24"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "和值12–24"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "9335c77933bb067c7c22",
+  "approved_at": "2026-09-03T16:24:48.554675+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-4a91811ae452b497",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=12,max=24/static]:10000->7310",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选和值技巧",
+    "reader_question": "理解前四直选里和值12–24分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值12–24的机制，并完成从10000到7310的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 2690,
+      "final_space": 7310,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值12–24"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "和值12–24"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值12–24",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前四直选里和值12–24分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值12–24的机制，并完成从10000到7310的可复算案例。",
+    "title": "分分彩前四直选和值技巧：和值12–24具体怎么算，用完整案例从10000复算到7310",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-e868a293e174484e",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "前四直选是按前四个位置分别看号码，不是把整期所有位数混在一起算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "前四直选机制说明",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值12–24是把前四个位置的数字相加，再看这个总和是否落在12到24之间。",
+      "claim_type": "rule_fact",
+      "evidence_note": "区间筛选定义",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步从10000个四位有序候选里筛到7310个，排除2690个。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选空间变化",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本性质标注",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里给出的前四样本是3827，和值是20，跨度是6，重复形态是1-1-1-1。",
+      "claim_type": "calculation",
+      "evidence_note": "按case_bundle样本复算",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里这组样本的最新一期是38275。",
+      "claim_type": "editorial",
+      "evidence_note": "样本展示值，不作预测",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲前四直选里一个固定筛选：和值12–24。这里的“前四”是指只看前四个位置，先把这四个数字相加，再判断总和是否落在12到24之间。</p><p>本文不讨论未核验的平台经济参数。</p><h2>方法机制：和值12–24</h2><p>计算方法很直接：取前四位数字，逐位相加，得到一个和值。只要这个和值在12到24之间，就保留；不在这个区间，就排除。</p><p>这里用的是固定的主筛选合同，参数先固定，再看样本。这个合同里只有这一条筛选，不再临时加第二条未验证过滤器。</p><h2>完整可复算案例</h2><p>下面用演示数据，不是真实开奖记录。示例前四是3827，计算过程是3+8+2+7=20。20落在12到24之间，所以这条样本通过“和值12–24”这一步。</p><p>同一组演示数据里，最新一期写的是38275。按前四只取3827来算，和值仍然是20，跨度是8-2=6，形态是1-1-1-1。</p><h2>逐步核对候选空间</h2><p>第一步，起始候选空间是10000个四位有序候选。</p><p>第二步，按“前四直选，和值12–24”这一条主筛选，剩下7310个。</p><p>第三步，被排除的候选是2690个，计算方式是10000-7310=2690。</p><p>第四步，到这里就停止，不再把这条合同包装成预测优势，也不再临时追加第二筛选器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选只是在固定规则下缩小候选，不等于能提高未来命中率，也不等于能替代独立验证。</p><p>演示数据里看到的和值、跨度、频率、重复形态，只能说明这组样本怎么计算，不能直接当成真实开奖规律。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本文的停止条件很明确：只完成“前四直选”和“和值12–24”这一条已验证规则的复算。只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。</p><p>换句话说，先固定参数，再复算空间；只要没有第二条已验证规则，就停在7310这个结果，不再往下加条件。</p><h2>实际怎么操作</h2><ol><li>先确认你看的是前四，不要把后面的位数混进来。</li><li>把前四位逐个相加，得到和值。</li><li>用固定区间12到24去判断：在区间内就保留，不在区间内就排除。</li><li>按合同复算候选空间：从10000算到7310，排除2690。</li><li>只做到这一层就停，不要自己再加没有验证的第二筛选。</li></ol>",
+  "content_format": "html",
+  "content_hash": "7b0b91673ee52e4b4daaea0948831288373cd2e7ebbb4b51f57ca5ceea850af8",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260904",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "e868a293e174484e5bef18fbd8c51207169255955c4df1d27c36128e7e07e0a7",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选和值技巧案例讲解：先说明前四直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "7310",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定前四和值12–24这个主筛选，再看样本或演示数据，不得先看样本再改参数。",
+    "starting_space": "10000",
+    "steps": [
+      "确认主筛选只看前四，不扩展到其他位置。",
+      "把前四四位数字逐位相加，得到和值。",
+      "用12到24这个固定区间判断是否保留。",
+      "从10000个四位有序候选复算到7310个，明确排除2690个。",
+      "完成这一步后停止，不追加未验证的第二过滤器。"
+    ],
+    "stop_condition": "完成和值12–24这一条主筛选的复算后立即停止；若没有新增已验证规则或证据，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩前四直选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_04cdf0157ef42035016a999f32d1a887d08045cda53de4e271",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "理解前四直选里和值12–24分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前四直选和值技巧",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先看规则，再看案例：这一玩法里的前四直选和值怎样正确理解",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前四直选和值技巧-和值12-24-具体怎么算-用完整案例从10000复算到7310",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "本文用简单中文解释分分彩前四直选里和值12–24的计算方法，并按固定演示案例复算从10000到7310的主筛选结果，同时说明演示数据只用于展示，不构成真实开奖记录。",
+  "tags": [
+    "分分彩前四直选和值技巧",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "先看规则，再看案例：这一玩法里的前四直选和值怎样正确理解",
+  "title_candidates": [
+    "这一步到底怎么算？用前四直选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前四直选和值应该怎样复核",
+    "前四直选和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前四直选和值怎样正确理解",
+    "看懂前四直选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前四直选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前四直选和值应该怎样复核",
+      "前四直选和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前四直选和值怎样正确理解",
+      "看懂前四直选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-18149d90338bf75f",
+          "score": 0.4,
+          "title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.24,
+          "intent_term_hits": [
+            "前四",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前四",
+            "直选",
+            "和值",
+            "前四直选和值"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先看规则，再看案例：这一玩法里的前四直选和值怎样正确理解"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

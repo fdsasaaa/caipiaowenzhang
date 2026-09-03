@@ -1,0 +1,204 @@
+{
+  "angle_signature": "eb75f3d5e8297a16fe62",
+  "approved_at": "2026-09-03T13:35:43.104532+00:00",
+  "article_id": "LCM-ANGLE-9bda897adef1dd7b",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "中三直选的参数可以在研究开始前预设，并用于统一观察口径。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已验证规则对机制和预设边界的支持。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值区间可以作为固定筛选条件讨论，其作用是压缩候选空间。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来源支持玩法机制层面的筛选方式。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "参数固定后，后续复盘才有同一套标准，便于复算和比较。",
+      "claim_type": "methodology",
+      "evidence_note": "这是研究方法层面的说明，不依赖具体规则原文。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必须明确的风险与边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史复盘可以帮助理解规则稳定性，但不能替代样本外验证。",
+      "claim_type": "methodology",
+      "evidence_note": "属于教育/研究导向的通用方法说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "公开内容不应承诺收益、胜率或稳定盈利。",
+      "claim_type": "editorial",
+      "evidence_note": "合规边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先把研究边界定下来</h2><p>本文只讨论中三直选里，哪些参数可以在研究开始前先固定，哪些内容应该留在观察之后再判断。重点不是临场选号，也不是给出可直接照做的下一步方案。</p><p>围绕“和值区间”这类参数，公开版只讲机制：它属于可预设、可复算、可验证的筛选条件之一，但不等于推荐值，更不等于预测能力本身。</p><p>如果把参数先冻结，后面所有统计和复盘才有同一套标准。否则今天改一组、明天换一组，结果就不再是同一个研究问题。</p><h2>参数预设与复盘的区别</h2><p>研究预设的意义，是让规则先于结果存在。比如先定义一个和值区间，再去看样本是否能按同一标准落位，这样才便于复算和对比。</p><p>但要注意，参数能先固定，只说明这是一种结构化筛选方式，不说明它天然更准。结构分类或历史样本表现，不能单独证明未来预测优势。</p><p>这是公开内容里最容易被误解的一点：样本里看起来“更集中”的结果，可能只是筛选后候选变少了，而不是判断能力提升了。</p><h2>组合空间为什么会变化</h2><p>从组合数学角度看，任何固定条件都会压缩候选空间。条件越明确，剩余组合越少；条件越宽，剩余组合越多。这是机制层面的事实，不是收益层面的承诺。</p><p>因此，讨论“分分彩中三直选和值参数设置”时，重点应放在参数如何影响样本空间，而不是把“更少”直接解释成“更好”。减少候选，只表示过滤更严格，不表示结果更有优势。</p><p>同样地，历史复盘可以帮助理解规则的稳定性，但复盘本身不能替代样本外验证。只有把同一套规则放到未参与设定的数据中，才更适合检查它是否只是偶然有效。</p><h2>常见误区要提前避开</h2><p>第一个误区，是把研究参数写成建议参数。前者是为了统一观察口径，后者才涉及实际应用取舍，两者不能混为一谈。</p><p>第二个误区，是把样本里的集中现象当成未来优势。公开版不能也不应据此给出收益、胜率或稳定盈利之类的结论。</p><p>第三个误区，是把历史结构当成未来预测的证明。历史可以描述规律感，但不能自动推出下一次结果会沿着同样方向发展。</p><h2>怎样理解“可固定”的参数</h2><p>在研究语境里，可固定的通常是定义明确、边界清晰、能够复算的参数。它们的作用是让观察对象一致，方便比较不同样本的表现。</p><p>以和值区间为例，先把区间范围写死，再回看数据是否满足条件，这是一种标准化方法。它的价值在于统一口径，而不是提前断言哪一侧更有利。</p><p>如果后续要继续扩展，也应该先确认新条件是否同样有明确规则、是否能被独立复算、是否已经进入验证范围。没有这些前提，继续叠加条件只会让研究口径越来越不稳定。</p><h2>适合公开讨论的结论</h2><p>公开层面可以确认的是：中三直选的参数设置可以被研究性地预注册，和值区间也可以作为固定筛选条件来讨论。</p><p>同时也必须明确：参数固定、样本复盘、结构分类，都只能说明方法怎么运作，不能单独证明未来会更容易判断，也不能据此推导收益。</p><p>所以，围绕“分分彩中三直选和值参数设置”的公开讨论，最合适的落点不是给出执行指令，而是把规则边界、样本边界和解释边界分开。</p><p>当边界分清之后，研究才有可复算性，讨论也才不会从机制说明滑向结果承诺。</p>",
+  "content_format": "html",
+  "content_hash": "d169f72d6a422d307e1c87fd11e6c2b96b7244dbd680432f9a44243e29ee8a45",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "05accbaa24cb7e7d54c7f2bc4de756c2ee6183d9033a621764d21425ccda330c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "面向研究与教育场景，说明分分彩中三直选和值参数设置中哪些参数可预设、如何理解组合空间变化，以及为什么历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "2aba406ecacfe6821a248d6483815c9152f4e033deee877707bde2cc80822624",
+  "parent_fingerprint": "9bda897adef1dd7b0078b98b8a927cf49d43592f2f89a28713187a8506efba7a",
+  "play": "中三直选",
+  "primary_keyword": "分分彩中三直选和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0316a02d0989c1b8016a99736dad1c87d1ae65b7bc741561e7",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T13:35:43.104546+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-9bda897adef1dd7b:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "区分中三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩中三直选和值参数设置",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？中三直选和值的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选和值参数设置-系统研究预设-不是来源推荐",
+  "source_batch_id": "DAILY-20260903",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "公开版围绕分分彩中三直选和值参数设置的研究边界展开，强调和值区间可作为预设筛选条件，但结构分类、历史复盘和候选空间变化都不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩中三直选和值参数设置",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "哪些参数能提前固定？中三直选和值的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？中三直选和值的边界先说清",
+    "来源经验和系统参数有什么区别？用中三直选和值拆开看",
+    "从参数到结果：中三直选和值哪些能预设，哪些不能事后改",
+    "中三直选和值为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？中三直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？中三直选和值的边界先说清",
+      "来源经验和系统参数有什么区别？用中三直选和值拆开看",
+      "从参数到结果：中三直选和值哪些能预设，哪些不能事后改",
+      "中三直选和值为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？中三直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-f47065d79b123b86",
+          "score": 0.8095238095238095,
+          "title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "和值",
+            "参数",
+            "中三直选和值"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？中三直选和值的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

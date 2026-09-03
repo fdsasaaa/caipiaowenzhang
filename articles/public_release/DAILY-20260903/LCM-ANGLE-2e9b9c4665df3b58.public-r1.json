@@ -1,0 +1,200 @@
+{
+  "angle_signature": "d8e3ac6f79f0499f638f",
+  "approved_at": "2026-09-03T13:31:23.616042+00:00",
+  "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+  "case_scope": "mechanics_only",
+  "category": "技巧文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文讨论的是分分彩前二直选的候选空间计算。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版定位说明，不依赖外部规则引用。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按已核验的规则口径，筛选前候选空间为100，经过和值6–12后保留58、排除42。",
+      "claim_type": "calculation",
+      "evidence_note": "来自已通过内部验证的规则合同与计算结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值区间只是一个约束条件，不能自动给出未来走势。",
+      "claim_type": "rule_fact",
+      "evidence_note": "与已验证机制一致：规则只约束候选空间，不构成预测承诺。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版风险提示，强调样本与未来之间不能直接等同。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史结构只能说明过去，并不能单独证明未来。",
+      "claim_type": "editorial",
+      "evidence_note": "样本外验证不足时的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先说明本文做什么</h2><p>本文只做一件事：把分分彩前二直选的候选空间计算讲清楚，重点放在规则、边界和复算方法。</p><p>起点、终点和中间变化都按固定参数核对，不讨论具体候选号码，也不提供逐期执行方案。</p><p>本文的目标是帮助读者理解“空间如何被规则压缩”，而不是把筛选结果包装成可预测优势。</p><h2>固定玩法与筛选口径</h2><p>这里讨论的对象是前二直选，计算思路围绕位置、和值区间和候选空间展开。</p><p>在公开可读的表达里，最重要的是先把口径固定，再去看计算结果是否一致。口径不固定，后面的数字就没有可比性。</p><p>本文保留的是机制层面的描述：从总候选开始，经过和值区间筛选后，得到一个更小的保留集合。</p><h2>空间计算的结果如何理解</h2><p>按已核验的规则口径，筛选前的候选空间是 <strong>100</strong>，经过和值6–12这一层后，保留 <strong>58</strong>，排除 <strong>42</strong>。</p><p>这是一组确定性的空间计算结果，意思是“有多少组合被规则留下”，不是命中率，也不是收益率。</p><p>如果只看保留数，容易误以为空间变小就意味着更容易出现结果；这并不成立。</p><p>结构分类或历史样本表现，不能单独证明未来预测优势。</p><h2>为什么不能把筛选结果直接当结论</h2><p>和值区间只是一个约束条件，它能改变候选数量，但不能自动给出未来走势。</p><p>历史样本里出现过的集中分布，可能只是样本波动、区间定义或展示方式造成的视觉结果，不等于可重复的预测能力。</p><p>因此，复盘时更重要的是确认规则有没有被正确执行，而不是把“缩小了多少”直接等同于“更有效”。</p><h2>复算时该核对哪些点</h2><p>第一，确认玩法是前二直选，而不是其他位置或其他玩法。</p><p>第二，确认筛选参数只看和值6–12，没有混入额外条件。</p><p>第三，确认总数、保留数和排除数能互相对应：100、58、42 三者要同时成立。</p><p>第四，确认这是一道规则过滤，而不是样本拟合，更不是对下一期的预测。</p><p>只要口径一致，这类计算就适合做教育、研究和复盘。</p><h2>常见误区与边界</h2><p>一个常见误区，是把候选空间变小理解为“更有把握”。其实，空间变小只是说明约束更强了。</p><p>另一个误区，是把某次历史样本里的结构直接移植到未来。若没有样本外验证，历史结构只能说明过去，并不能单独证明未来。</p><p>还有一种误区，是在没有新增验证条件时继续叠加过滤器。这样会让规则越来越复杂，但不一定更可靠。</p><h2>怎么把这类内容用于学习</h2><p>如果你是为了研究，可以把它当作一个固定合同：先定玩法，再定参数，再复算候选空间。</p><p>如果你是为了核对文章或笔记，可以只检查三件事：起点是否为100，和值区间是否为6–12，结果是否为58和42。</p><p>如果后续要继续讨论，也应该先补充新的已验证规则，再谈下一层计算。</p><p>在没有新增证据前，停留在已核验的空间计算上，就是最稳妥的做法。</p>",
+  "content_format": "html",
+  "content_hash": "f0f388f8f89c4a6fee91cb4e3cddb4a231dac148d32287bbf18d77000fb9e990",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "5ca2ad67ab944542bcef2d9f63c93b38614ef25e83af1ed6789d2c0f280ce022",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用公开、教育导向的方式说明分分彩前二直选的候选空间如何按和值区间计算，解释100、58、42的关系，以及为什么历史样本不能单独证明未来优势。",
+  "parent_content_hash": "60e6c8286782917680c654ba3d590e1e0e2281a51028a6913e97ad4b8b19686f",
+  "parent_fingerprint": "2e9b9c4665df3b583e815c6524be2943cda6e5d72670d906c19fd510cf75b9e1",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0c7d45e2f06535f6016a99703e019487d0bb483746cec5cd20",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T13:31:23.616056+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-2e9b9c4665df3b58:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，理解和值区间筛选后的确定性结果与边界",
+  "secondary_keywords": [
+    "分分彩前二直选和值注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-position_filter-sum_range-space_math",
+  "source_batch_id": "DAILY-20260903",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文以分分彩前二直选为对象，说明在固定和值6–12参数下，候选空间如何从100收缩到58、排除42，并强调这只是规则计算，不是命中率或未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "和值区间",
+    "位置筛选",
+    "候选空间计算",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选和值的计算过程一次理清",
+    "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二直选和值的空间计算与常见误区",
+    "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选和值的计算过程一次理清",
+      "先算注数，再谈前二直选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二直选和值的空间计算与常见误区",
+      "前二直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-46829c10b563a447",
+          "score": 0.4,
+          "title": "看懂后三直选和值不靠口诀，先把计算逻辑拆开"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "和值",
+            "前二直选和值"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

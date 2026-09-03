@@ -1,0 +1,294 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "说明静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 68750,
+    "final_space": 31250,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好2个单号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "c4e58fac330552b6f37d",
+  "approved_at": "2026-09-03T13:14:00.212506+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-de8b4acd2790a54a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=2/static]:100000->31250",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选奇偶参数设置",
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 68750,
+      "final_space": 31250,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好2个单号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩五星直选奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-f47065d79b123b86",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论机械规则与演示计算，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "范围声明，不引入经济数字。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选先按系统研究预设参数做一次固定筛选：恰好2个单号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是合同指定的主筛选参数边界，不是来源推荐。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在100000个有序五位候选里，这一步筛到31250个，排除68750个。",
+      "claim_type": "calculation",
+      "evidence_note": "候选空间按合同机器事实复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步不是把来源经验直接写成参数，而是把系统研究预设与来源信息分开。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本标签声明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录里的最新样本是99232，和值25，跨度7，形态为单单双单双。",
+      "claim_type": "calculation",
+      "evidence_note": "对给定演示样本做描述性复算，不代表真实开奖。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录里的样本量是12条。",
+      "claim_type": "calculation",
+      "evidence_note": "样本条数来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "原文如果只提到技巧家族或方法原子，也只能说明来源经验来自哪里，不能证明这个恰好2个单号就是来源推荐。",
+      "claim_type": "source_claim",
+      "evidence_note": "source_refs 仅用于来源经验归属，且需保留未验证限定。",
+      "support_refs": [
+        "BRBCW-000716"
+      ],
+      "support_type": "source_unverified"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>这篇只讲一件事：<strong>分分彩五星直选奇偶参数设置</strong>里，哪些是系统研究预设，哪些只是来源经验，哪些又只是演示计算。</p><p>主筛选只有一条，参数先固定，再看样本：五星直选按<strong>恰好2个单号</strong>做一次静态筛选。这个参数归系统研究，不是来源推荐，也不是从演示样本里倒推出来的。</p><p>按合同机器事实，候选空间从100000个有序五位候选收缩到31250个，排除68750个。这里说的是空间大小变化，不是预测优势。</p><h2>哪些结果由演示样本计算</h2><p>下面这组是演示数据，不是真实开奖记录：99232、79983、42259、23932、49888、53803、64306、81154、18413、47040、49889、61030、06372、87044、67553、04620。</p><p>按这个演示样本看，最新样本是99232，和值25，跨度7，形态为单单双单双。样本量是12条。这里只能说明这组演示数据的描述结果，不能反推预测优势。</p><p>如果你要复算，先把样本标签和样本来源分清，再看每一条数字是否落在“恰好2个单号”这个固定参数里。演示样本只是说明计算方法，不承担推荐职责。</p><h2>来源能支持什么、不能支持什么</h2><p>来源原文或来源引用，最多只能支持一个更宽的技术家族背景，比如某类方法原子或机制背景。它不能自动变成“恰好2个单号”这个具体参数，也不能把这个参数升级成原文推荐。</p><p>所以这类写法要分开：来源提到的是经验从哪里来；系统研究预设的是本篇采用的固定参数；演示样本计算出来的是样本描述值。三者不能互相替代。</p><h2>为什么不能事后改参数</h2><p>参数一旦在观察前冻结，就不能因为演示样本看起来顺眼，临时改成别的奇偶条件。这样做会把筛选过程写成事后拼接，失去合同里的边界意义。</p><p>本篇唯一主筛选就是“恰好2个单号”。没有第二条已验证规则时，就不继续加新过滤器，也不把别的描述项包装成第二层筛选。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>空间变小，只说明候选集合被压缩了；它不自动等于更容易命中，更不等于存在可验证的预测优势。</p><p>同样，演示样本里的和值、跨度、频率、形态，都只是描述性结果。没有单独验证之前，不能把这些数字说成事实性的胜率、准确率或收益依据。</p><h2>实际怎么操作</h2><ol><li>先固定主参数：五星直选只看“恰好2个单号”。</li><li>再按候选空间复算：从100000个有序五位候选缩到31250个，排除68750个。</li><li>然后只用演示数据做描述检查：确认样本标签是演示数据，不是真实开奖记录，再看和值、跨度、形态等描述值。</li><li>最后停在合同边界内：没有新增、已验证、可复算的条件，就不再往下缩小候选。</li></ol><h2>停止条件</h2><p>本篇到这里就停。只有当新增条件本身具有已验证规则或证据，并且可以复算时，才允许继续缩小候选。否则就保持当前主筛选结果，不临时加第二过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "7a0020c7d137665b60da788b034cbf90768b0c7a16f6b9eae57fcb267d96cdee",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "f47065d79b123b86db81082b51da7ccd53503d65e1142b6ef3878784ff596c23",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选奇偶参数设置讲清系统研究预设与来源经验的边界：主筛选固定为恰好2个单号，演示数据只用于复算，不把统计筛选写成预测优势。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "31250",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选；否则停止在当前主筛选结果。",
+    "parameter_freeze_rule": "先固定主参数“恰好2个单号”，再看演示样本；不得根据样本事后改参数。",
+    "starting_space": "100000",
+    "steps": [
+      "固定主筛选参数为“恰好2个单号”。",
+      "按五位有序候选从100000复算到31250，并确认排除68750。",
+      "把演示数据标为“演示数据，不是真实开奖记录”，只做描述性复核。",
+      "检查和值、跨度、形态等结果，只把它们当作样本描述，不当作预测优势。",
+      "若没有新增且已验证可复算的条件，立即停止，不再加第二过滤器。"
+    ],
+    "stop_condition": "完成主筛选和演示复算后停止；没有新增已验证规则就不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0b4291ddba77fb64016a997276af5887d19c1a2d8830f39908",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩五星直选奇偶参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？五星直选奇偶的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩五星直选奇偶参数设置-系统研究预设-来源推荐边界",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用固定的五星直选主参数“恰好2个单号”说明系统研究预设、来源经验和演示样本的边界：先按100000到31250复算空间变化，再用演示数据做描述检查，但不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩五星直选奇偶参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "哪些参数能提前固定？五星直选奇偶的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？五星直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用五星直选奇偶拆开看",
+    "从参数到结果：五星直选奇偶哪些能预设，哪些不能事后改",
+    "五星直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？五星直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用五星直选奇偶拆开看",
+      "从参数到结果：五星直选奇偶哪些能预设，哪些不能事后改",
+      "五星直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-6fc1ff9b6c5b9e40",
+          "score": 0.37209302325581395,
+          "title": "分分彩五星直选奇偶筛选步骤：机制、计数与复盘边界"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "参数",
+            "五星直选奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

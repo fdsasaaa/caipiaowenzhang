@@ -1,0 +1,324 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 330,
+    "final_space": 670,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分中三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "eb75f3d5e8297a16fe62",
+  "approved_at": "2026-09-03T13:18:08.504770+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-9a094e8d85e46e4e",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:1000->670",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选和值参数设置",
+    "reader_question": "区分中三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 330,
+      "final_space": 670,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分中三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩中三直选和值参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-9bda897adef1dd7b",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "这篇只讲中三直选的参数边界，不把未核验的平台经济参数写进去。",
+      "claim_type": "editorial",
+      "evidence_note": "范围说明，按 mechanics_only 处理。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文先固定“和值9–18”这个系统研究预设，再看演示数据怎么复算。",
+      "claim_type": "editorial",
+      "evidence_note": "说明参数先于样本，属于边界叙述。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "“和值9–18”是系统研究预设，不是来源推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "直接对应角度合同的边界要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "“和值9–18”只减少候选空间，不证明有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不作预测承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按这组固定参数，起始空间是1000，主筛选后剩下670，排除了330。",
+      "claim_type": "calculation",
+      "evidence_note": "来自合同机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步把候选空间从1000缩到670，排除了330。",
+      "claim_type": "calculation",
+      "evidence_note": "同一机器事实的另一句表述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须标注的样本性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本组演示数据共有12条。",
+      "claim_type": "calculation",
+      "evidence_note": "样本条数来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新一组演示数据是 2、0、5，和值7，跨度5，组三，小小大，双双单。",
+      "claim_type": "calculation",
+      "evidence_note": "样本描述来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组演示数据里，和值7出现1次，和值20出现2次，和值18出现1次。",
+      "claim_type": "calculation",
+      "evidence_note": "频率来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果只看这个演示样本，和值区间9–18一共覆盖了670个有序三位数候选。",
+      "claim_type": "calculation",
+      "evidence_note": "机器候选空间计算，不是预测结论。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个筛选排除了330个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "机器候选空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>这篇只讲中三直选的参数边界，不把未核验的平台经济参数写进去。读者先记住一件事：<strong>“和值9–18”是系统研究预设，不是来源推荐</strong>。</p><p>合同里已经把主筛选写死了，参数归系统研究，顺序也归系统研究。这里的任务不是临时找第二层过滤器，而是把第一层怎么固定、怎么复算、怎么停下来讲清楚。</p><h2>哪些结果由演示样本计算</h2><p>本组数据标注为<strong>演示数据，不是真实开奖记录</strong>。样本共12条，最后一条写成 2、0、5，对应和值7、跨度5、组三、小小大、双双单。</p><p>这些都是演示样本的描述，不是现实开奖的断言。样本里的和值频数也只是描述信息，比如和值7出现1次，和值20出现2次，和值18出现1次。</p><h2>来源能支持什么、不能支持什么</h2><p>来源只负责支持这条玩法机制：中三直选可以按和值区间做固定筛选。来源不负责替系统研究决定参数，也不负责把这个参数说成原文推荐。</p><p>所以这里可以说“来源提到这个原子方法属于可用技巧家族”，但不能说“来源证明了9–18更准”。这两句话不是一回事。</p><h2>为什么不能事后改参数</h2><p>参数一旦在观察前冻结，就不能为了样本看起来更顺眼再往上加条件。先定 9–18，再看样本，是为了让筛选规则可复算。</p><p>如果事后改成别的和值区间，前后其实已经不是同一套规则，结果也就不能再拿来和这次合同里的670个候选直接比较。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这一步把候选空间从1000缩到670，排除了330。它说明的是候选变少了，不是命中率被证明更高了。</p><p>如果把统计筛选包装成预测优势，就把“减少候选”和“提高判断能力”混成了一件事。合同没有给这类结论，正文也不能自己补。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选参数：中三直选使用“和值9–18”。</li><li>再按固定参数复算空间：从1000个有序三位数里，留下670个，排除330个。</li><li>然后只检查演示样本是否能按同一规则落位，不把样本频率当成预测结论。</li><li>最后停在主筛选这一步，不再临时加第二层过滤器。</li></ol><p>按这组固定参数，起始空间是1000，主筛选后剩下670，排除了330。这个结果可以复算，但它仍然只是合同内的空间边界，不是来源推荐，也不是预测优势。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>这篇到主筛选就结束。只有当新增条件也有已验证规则、能复算、而且合同允许继续缩小时，才可以往下走。</p><p>没有第二条已验证规则时，就停在这里。</p>",
+  "content_format": "html",
+  "content_hash": "2aba406ecacfe6821a248d6483815c9152f4e033deee877707bde2cc80822624",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "9bda897adef1dd7b0078b98b8a927cf49d43592f2f89a28713187a8506efba7a",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选和值参数设置讲解：先固定系统研究预设参数，再用演示数据复算筛选空间，说明来源经验只能支持机制边界，不能写成推荐或预测优势。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "670",
+    "next_step_policy": "只有新增条件具有已验证规则、可复算，并且合同明确允许继续缩小时，才允许继续缩小候选；否则必须停在主筛选。",
+    "parameter_freeze_rule": "先固定“和值9–18”，再看样本；冻结前不根据样本回头改参数。",
+    "starting_space": "1000",
+    "steps": [
+      "先确认主筛选参数是系统研究预设的“和值9–18”，不要写成来源推荐。",
+      "按固定参数复算候选空间，从1000个有序三位数里筛到670个，排除330个。",
+      "核对演示数据标注，确认它是“演示数据，不是真实开奖记录”。",
+      "只用同一规则检查演示样本，不把频数、和值、跨度改写成预测优势。",
+      "完成主筛选后立即停止，不临时增加第二个过滤器。"
+    ],
+    "stop_condition": "完成主筛选并复算到670个候选后停止；除非新增条件同时具备已验证规则和可复算结果，否则不继续缩小。"
+  },
+  "primary_keyword": "分分彩中三直选和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0316a02d0989c1b8016a99736dad1c87d1ae65b7bc741561e7",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "区分中三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩中三直选和值参数设置",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？中三直选和值的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "分分彩中三直选和值参数设置-系统研究预设-不是来源推荐",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文只处理分分彩中三直选和值参数设置的边界问题：系统研究预设的“和值9–18”先固定，再用演示数据复算候选空间从1000缩到670，排除330，并明确来源只能支持机制说明，不能写成推荐或预测优势。",
+  "tags": [
+    "分分彩中三直选和值参数设置",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "哪些参数能提前固定？中三直选和值的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？中三直选和值的边界先说清",
+    "来源经验和系统参数有什么区别？用中三直选和值拆开看",
+    "从参数到结果：中三直选和值哪些能预设，哪些不能事后改",
+    "中三直选和值为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？中三直选和值的边界先说清",
+      "来源经验和系统参数有什么区别？用中三直选和值拆开看",
+      "从参数到结果：中三直选和值哪些能预设，哪些不能事后改",
+      "中三直选和值为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-f47065d79b123b86",
+          "score": 0.8095238095238095,
+          "title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "和值",
+            "参数",
+            "中三直选和值"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？中三直选和值的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

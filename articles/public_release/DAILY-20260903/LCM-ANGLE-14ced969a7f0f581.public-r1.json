@@ -1,0 +1,216 @@
+{
+  "angle_signature": "7084f3fdeffb7703e165",
+  "approved_at": "2026-09-03T13:30:30.733970+00:00",
+  "article_id": "LCM-ANGLE-14ced969a7f0f581",
+  "case_scope": "mechanics_only",
+  "category": "技巧研究",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论规则结构、参数固定和复算方法，不讨论任何具体投注执行。",
+      "claim_type": "editorial",
+      "evidence_note": "公开定位说明，属于编辑性范围声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这类内容适合用来做教育性复盘，帮助读者理解“筛选”与“预测”并不是一回事。",
+      "claim_type": "editorial",
+      "evidence_note": "教育导向表述，不涉及可验证外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数预注册越清晰，后面的复算越容易保持一致。",
+      "claim_type": "methodology",
+      "evidence_note": "方法论表达，用于说明流程一致性。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "筛选动作本质上是在候选空间里做收缩，而不是把历史结构直接等同为未来优势。",
+      "claim_type": "methodology",
+      "evidence_note": "对筛选机制的抽象说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这类变化可以用于理解规则机制，但不能单独证明未来预测优势。",
+      "claim_type": "rule_fact",
+      "evidence_note": "明确的风险/边界说明，符合公开版硬规则。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果复算结果能稳定重复，说明你验证的是规则执行的一致性，而不是在验证收益。",
+      "claim_type": "methodology",
+      "evidence_note": "方法论边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史样本可以帮助你检查流程是否清楚，但样本表现本身不能推出稳定可迁移的预测结论。",
+      "claim_type": "methodology",
+      "evidence_note": "样本与结论之间的限制性说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有新的、同样可复算且已预先确认的规则，就应该停在当前层级，不再继续扩展。",
+      "claim_type": "methodology",
+      "evidence_note": "停止边界说明，不含执行建议。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先明确这篇文章讲什么</h2><p>本文围绕分分彩前三直选的和值筛选机制展开，只讨论规则结构、参数固定和复算方法，不讨论任何具体投注执行。</p><p>核心重点是：先固定筛选条件，再检查候选空间，最后确认何时应停止继续缩小。</p><p>这类内容适合用来做教育性复盘，帮助读者理解“筛选”与“预测”并不是一回事。</p><h2>先把参数固定下来</h2><p>在这类玩法里，最重要的是先定义清楚对象：是前三直选，不是其他玩法。</p><p>随后再固定主筛选条件，例如和值区间这类可复算参数，避免在中途随意叠加未经验证的新条件。</p><p>从方法论上说，参数预注册越清晰，后面的复算越容易保持一致。</p><h2>如何理解候选空间的变化</h2><p>筛选动作本质上是在候选空间里做收缩，而不是把历史结构直接等同为未来优势。</p><p>例如，先有一个初始候选集合，再按固定规则剔除不符合条件的部分，剩余部分只是更小的样本子集。</p><p>这种变化可以用于理解规则机制，但不能单独证明未来预测优势。</p><h2>复算与复盘应当怎么做</h2><p>做复算时，重点是确认每一步是否遵守同一套规则：对象是否一致、参数是否一致、统计口径是否一致。</p><p>如果复算结果能稳定重复，说明你验证的是规则执行的一致性，而不是在验证收益。</p><p>历史样本可以帮助你检查流程是否清楚，但样本表现本身不能推出稳定可迁移的预测结论。</p><h2>常见误区与停止边界</h2><p>常见误区之一，是把一个固定区间的筛选动作误解成必然更优的判断工具。</p><p>另一个误区，是在只有单一规则时继续临时加条件，把简单的机制分析写成复杂的胜率叙事。</p><p>如果没有新的、同样可复算且已预先确认的规则，就应该停在当前层级，不再继续扩展。</p>",
+  "content_format": "html",
+  "content_hash": "64582ceef565d4f90d1ce58c8525b6a43ec7185a17420e85c5fced9a7b3de945",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "a488b75da083a5b909a0e48994e84de43991f367e126a7f0a6a752fc7e3aef4c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用教育视角解释分分彩前三直选的和值筛选机制、参数固定、候选空间变化、复盘方法与停止边界，不提供具体选号或投注指令。",
+  "parent_content_hash": "941ab13693702077ec1e88a7e46242d28d3de7c4d5c0df032fc7188233eab1b9",
+  "parent_fingerprint": "14ced969a7f0f58133535bdc6e43b2fecad0e122f2690ab2e959533e8747895f",
+  "play": "前三直选",
+  "primary_keyword": "分分彩前三直选和值筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_000c90dc5a25e018016a996fe0e7d887d0b77da857b0a3b679",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T13:30:30.733985+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-14ced969a7f0f581:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩前三直选和值筛选步骤背后的规则机制、参数固定、候选空间变化与复算边界",
+  "secondary_keywords": [
+    "分分彩前三直选和值筛选步骤",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从规则到复核：前三直选这套筛选流程最容易错在哪里",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三直选-position_filter-sum_range-execution_checklist",
+  "source_batch_id": "DAILY-20260903",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "公开版改写聚焦分分彩前三直选和值筛选的规则机制、参数预注册、候选空间收缩和复盘方法，强调历史样本不能单独证明未来预测优势，不包含具体选号、下注或执行建议。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值筛选",
+    "位置筛选",
+    "技巧研究",
+    "执行清单"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "从规则到复核：前三直选这套筛选流程最容易错在哪里",
+  "title_candidates": [
+    "做到哪一步应该停？前三直选和值的复核清单",
+    "前三直选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+    "从规则到复核：前三直选这套筛选流程最容易错在哪里",
+    "先固定步骤，再看结果：前三直选和值的执行边界",
+    "前三直选和值不是越筛越好，关键在什么时候停止"
+  ],
+  "title_review": {
+    "candidates": [
+      "做到哪一步应该停？前三直选和值的复核清单",
+      "前三直选和值怎么检查才不漏步骤？先看输入、输出和停止条件",
+      "从规则到复核：前三直选这套筛选流程最容易错在哪里",
+      "先固定步骤，再看结果：前三直选和值的执行边界",
+      "前三直选和值不是越筛越好，关键在什么时候停止"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e26af4298869ed05",
+          "score": 0.3111111111111111,
+          "title": "从玩法规则到完整案例：中三直选频率应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question",
+            "question_contrast"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2273,
+          "intent_term_hits": [
+            "前三",
+            "直选",
+            "筛选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "筛选"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从规则到复核：前三直选这套筛选流程最容易错在哪里"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

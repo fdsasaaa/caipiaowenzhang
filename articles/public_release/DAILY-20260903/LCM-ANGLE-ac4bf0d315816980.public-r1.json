@@ -1,0 +1,204 @@
+{
+  "angle_signature": "8b3e1729585636d4097c",
+  "approved_at": "2026-09-03T13:42:59.892406+00:00",
+  "article_id": "LCM-ANGLE-ac4bf0d315816980",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "系统参数的重点在可复算，来源经验的重点在可追溯。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版的概念性区分说明，不对应父文硬规则。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数要在观察样本之前固定下来，再按同一规则复算。",
+      "claim_type": "methodology",
+      "evidence_note": "公开版方法说明，用于教育性表达。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "候选变少，只说明范围变窄，并不自动意味着命中更稳、胜率更高或更容易稳定盈利。",
+      "claim_type": "editorial",
+      "evidence_note": "风险/边界说明，不作为收益承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现，不能单独证明未来预测优势。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父文规则边界：不能把历史结构写成未来预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "样本外验证才更接近真正的研究检验。",
+      "claim_type": "methodology",
+      "evidence_note": "方法学表述，用于公开教育内容。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果只看一段历史样本，很容易把随机波动误读成规律。",
+      "claim_type": "editorial",
+      "evidence_note": "随机波动风险提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先分清两类信息</h2><p>这篇只讨论研究边界，不讨论具体选号。前二直选里的“系统参数”，是先写好的筛选条件；“来源经验”，是某类做法的出处或演变线索。两者不是一回事。</p><p>系统参数的重点在可复算，来源经验的重点在可追溯。把两者混在一起，容易把解释性内容误当成有效预测依据。</p><h2>参数为什么要先冻结</h2><p>研究时，参数要在观察样本之前固定下来，再按同一规则复算。这样做的意义，是保证前后口径一致，而不是保证结果一定更好。</p><p>如果先看样本、再回头改参数，就会把同一套规则改成不同版本，前面的复算结果也就失去可比性。</p><h2>候选缩减不等于预测优势</h2><p>在组合规则里，筛选条件通常会让候选数减少。候选变少，只说明范围变窄，并不自动意味着命中更稳、胜率更高或更容易稳定盈利。</p><p>这一点很重要：结构分类或历史样本表现，不能单独证明未来预测优势。它们最多说明某种规则在过去样本里如何呈现，不能直接推出下一次会怎样。</p><h2>演示样本能说明什么</h2><p>演示样本适合用来复算规则、检查口径、理解参数含义，但不适合直接当成未来依据。样本外验证才更接近真正的研究检验。</p><p>如果只看一段历史样本，很容易把随机波动误读成规律。尤其在样本较少时，这种误读更常见。</p><h2>常见误区</h2><p>常见误区包括：把来源写成推荐，把历史复盘写成预测结论，把筛选缩减写成优势证明。</p><p>更稳妥的做法，是把三件事分开看：机制解释、样本复算、边界说明。只要没有经过可复算和样本外检验，就不要把它说成确定有效。</p><h2>适合怎样理解这类内容</h2><p>可以把它当成一种方法学练习：先看规则怎么定义，再看参数怎么复算，最后看哪些结论只能停留在解释层面。</p><p>这样读，能帮助你理解前二直选相关研究里，哪些属于机制、哪些属于经验、哪些只是历史现象。</p>",
+  "content_format": "html",
+  "content_hash": "d9d3223eaed8328342bf0eddbbc05377eb41bd682e509f4b1bb5ae6783c1f92f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "aae4a1ec26075254bb59bdb40fbeac5a7ae310b0055420d76b768ad4eef8be6b",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用教育视角解释前二直选中的系统参数、来源经验、候选缩减、历史复盘和样本外验证边界，避免把历史样本误读为预测优势。",
+  "parent_content_hash": "1bf189512dfa20d87a5eced01820e8aa34ccfe526e2039b2bcaef6c3217f023a",
+  "parent_fingerprint": "ac4bf0d315816980b1246655f4577d849bb84c018da4e43d0fe8f67c93c98f80",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0ad6b2479d9fbad2016a9978619c2487d08aaad44418d18794",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T13:42:59.892421+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-ac4bf0d315816980:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "区分前二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前二直选奇偶参数设置",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+  "site_category_key": "tzjq",
+  "slug": "分分彩前二直选奇偶参数设置-系统研究预设-来源推荐边界",
+  "source_batch_id": "DAILY-20260903",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "这是一篇面向研究与教育的公开版说明：重点区分系统参数和来源经验，解释候选缩减、历史复盘与样本外验证的边界，并明确历史样本不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩前二直选奇偶参数设置",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？前二直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+    "从参数到结果：前二直选奇偶哪些能预设，哪些不能事后改",
+    "前二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？前二直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前二直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用前二直选奇偶拆开看",
+      "从参数到结果：前二直选奇偶哪些能预设，哪些不能事后改",
+      "前二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？前二直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-f47065d79b123b86",
+          "score": 0.3111111111111111,
+          "title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3478,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "参数",
+            "前二直选奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

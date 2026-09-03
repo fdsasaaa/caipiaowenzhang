@@ -1,0 +1,452 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点10、终点5、排除5。",
+    "evidence_mode": "static_only",
+    "excluded_space": 5,
+    "final_space": 5,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好1个单号"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "46c3978f844874d1531d",
+  "approved_at": "2026-09-03T13:16:59.408012+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-6317d2dfa889aa0e",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:10->5",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选奇偶注数计算",
+    "reader_question": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点10、终点5、排除5。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 5,
+      "final_space": 5,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好1个单号"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点10、终点5、排除5。",
+    "title": "分分彩一星直选奇偶注数计算：10个候选为什么变成5个，排除5个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-baccd22be44c88c1",
+  "case_scope": "mechanics_only",
+  "category": "技巧研究",
+  "claim_evidence": [
+    {
+      "claim_text": "这篇只讲分分彩一星直选奇偶注数计算里的确定性空间变化，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑范围说明，符合 mechanics_only 限制。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇的主筛选只有一条：个位这一层，按恰好1个单号来筛。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选机制来自已给 rule_refs。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的起点候选空间是10，终点是5，所以总共排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "与主筛选合同中的 starting_space、after_filter_space、excluded_space 一致。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选参数先固定：selector=个位，metric=odd_count，params={\"odd_count\":1}。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按合同原样写出 selector/metric/params。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按这个固定条件，10个候选里，保留5个，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "候选空间计算结果来自主筛选合同。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是说，starting_space=10，after_primary_filter_space=5，excluded_space=5。",
+      "claim_type": "calculation",
+      "evidence_note": "把机器事实原样落地到正文。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这组数字的意义只是空间收缩：从10个候选里，经过一次主筛选后，变成5个候选。",
+      "claim_type": "editorial",
+      "evidence_note": "解释性表述，不引入新事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "把三件事合在一起核对：起点是10，终点是5，排除是5。",
+      "claim_type": "calculation",
+      "evidence_note": "复核主筛选合同的三项机器事实。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个结果已经完成本篇合同要求的唯一主筛选，不能再临时加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果你只想复算，就记住这一句：10 - 5 = 5，所以剩下5个。",
+      "claim_type": "calculation",
+      "evidence_note": "简单算式表达同一机器事实。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "10到5，只说明候选被缩小了一半，不等于命中率、准确率或胜率。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不作性能声称。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "即使候选变少，也不能把这种统计筛选包装成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "风险提示，不作预测声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这类计算只回答“剩多少”，不回答“下一次一定中什么”。",
+      "claim_type": "editorial",
+      "evidence_note": "说明空间数学与预测的边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇使用的参数属于系统研究预设，不是来源推荐参数。",
+      "claim_type": "editorial",
+      "evidence_note": "参数边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源只负责说明这类玩法机械怎么理解，不能把本篇这个主筛选写成来源声称的预测结论。",
+      "claim_type": "source_claim",
+      "evidence_note": "使用来源时加了限定语，且不把来源经验升级为事实。",
+      "support_refs": [
+        "BRBCW-004589"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "如果你看到别的写法把“空间变小”直接说成“更容易中奖”，那就是把数学收缩误写成了预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "误区提醒。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先固定主筛选：只看个位，规则是恰好1个单号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "操作步骤对应主筛选合同。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先写出起点空间：10。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤中的起点数值。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再写出主筛选后的空间：5。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤中的结果数值。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "最后写出排除数量：5。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤中的排除数值。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "核对公式：10减去5，等于5。",
+      "claim_type": "calculation",
+      "evidence_note": "复算公式。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇到这里就停止。",
+      "claim_type": "editorial",
+      "evidence_note": "明确 stop_after_final_stage。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果后面要继续缩小候选，只有在新增条件也有已验证规则或可复算证据时，才允许继续。",
+      "claim_type": "editorial",
+      "evidence_note": "next_step_policy。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "没有第二条已验证规则时，就不要把新的经验判断硬塞进来。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件补充说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 指定演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本条数：12",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本条数来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最新样本：1，标注为单、大小为小、和值为1、跨度为0",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本描述，非真实开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "该演示样本的当前遗漏与频率信息仅作展示，不代表未来结果",
+      "claim_type": "editorial",
+      "evidence_note": "样本仅供展示，不作预测。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>这篇只讲<a href=\"#\">分分彩一星直选奇偶注数计算</a>里的确定性空间变化，不讨论未核验的平台经济参数。</p><p>本篇的主筛选只有一条：<strong>个位</strong>这一层，按<strong>恰好1个单号</strong>来筛。</p><p>这里的起点候选空间是<strong>10</strong>，终点是<strong>5</strong>，所以总共排除<strong>5</strong>个。</p><h2>逐层计算保留与排除数量</h2><p>主筛选参数先固定：selector=个位，metric=odd_count，params={\"odd_count\":1}。</p><p>按这个固定条件，10个候选里，保留5个，排除5个。</p><p>也就是说，<strong>starting_space=10</strong>，<strong>after_primary_filter_space=5</strong>，<strong>excluded_space=5</strong>。</p><p>这组数字的意义只是空间收缩：从10个候选里，经过一次主筛选后，变成5个候选。</p><h2>核对起点、终点和总排除</h2><p>把三件事合在一起核对：起点是10，终点是5，排除是5。</p><p>这个结果已经完成本篇合同要求的唯一主筛选，不能再临时加第二个过滤器。</p><p>如果你只想复算，就记住这一句：<strong>10 - 5 = 5</strong>，所以剩下5个。</p><h2>为什么这些数字不是命中率</h2><p>10到5，只说明候选被缩小了一半，不等于命中率、准确率或胜率。</p><p>即使候选变少，也不能把这种统计筛选包装成预测优势。</p><p>这类计算只回答“剩多少”，不回答“下一次一定中什么”。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>本篇使用的参数属于系统研究预设，不是来源推荐参数。</p><p>来源只负责说明这类玩法机械怎么理解，不能把本篇这个主筛选写成来源声称的预测结论。</p><p>如果你看到别的写法把“空间变小”直接说成“更容易中奖”，那就是把数学收缩误写成了预测优势。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选：只看个位，规则是恰好1个单号。</li><li>先写出起点空间：10。</li><li>再写出主筛选后的空间：5。</li><li>最后写出排除数量：5。</li><li>核对公式：10减去5，等于5。</li></ol><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇到这里就停止。</p><p>如果后面要继续缩小候选，只有在新增条件也有已验证规则或可复算证据时，才允许继续。</p><p>没有第二条已验证规则时，就不要把新的经验判断硬塞进来。</p><h2>演示说明</h2><p><strong>演示数据，不是真实开奖记录</strong>。下面这组样本只用于说明“个位”这一类描述性检查怎么写，不构成预测。</p><ul><li>样本条数：12</li><li>最新样本：1，标注为单、大小为小、和值为1、跨度为0</li><li>该演示样本的当前遗漏与频率信息仅作展示，不代表未来结果</li></ul>",
+  "content_format": "html",
+  "content_hash": "c574dfeb3729da390b04f45c08c830b229b8c471cf782d3ca5f0551cf59f56aa",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "baccd22be44c88c17f5696746413f18b65ab4767287eb59e27e9aadafb0973f9",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选奇偶注数计算：先核对候选空间起点10和终点5，再把排除5个的确定性过程算清楚，说明这只是空间收缩，不是命中率。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "5",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；本篇只使用 selector=个位、metric=odd_count、params={\"odd_count\":1} 这一条主筛选。",
+    "starting_space": "10",
+    "steps": [
+      "先固定主筛选，只看个位，规则是恰好1个单号。",
+      "先写出起点空间10。",
+      "再写出主筛选后的空间5。",
+      "最后写出排除数量5，并核对10减去5等于5。",
+      "完成这一步后立即停止，不再临时加第二个过滤器。"
+    ],
+    "stop_condition": "完成本篇唯一主筛选后停止；如果没有新增且已验证的规则或可复算证据，就不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩一星直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_00a1576ab248ef82016a9972fd91e887d0ba08a71926580f8e",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "核对一星直选的候选空间计算，逐项确认10到5以及排除5个的确定性结果",
+  "secondary_keywords": [
+    "分分彩一星直选奇偶注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：一星直选奇偶的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-odd_even_filter-space_math",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文只做一件事：把分分彩一星直选奇偶注数计算的候选空间算清楚。起点是10，经过“恰好1个单号”的主筛选后剩5个，合计排除5个；同时说明这不是命中率，也不是预测优势。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "奇偶筛选",
+    "注数计算",
+    "空间数学",
+    "技巧研究"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "从输入到结果：一星直选奇偶的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？一星直选奇偶的计算过程一次理清",
+    "先算注数，再谈一星直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：一星直选奇偶的空间计算与停止条件",
+    "一星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的一星直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？一星直选奇偶的计算过程一次理清",
+      "先算注数，再谈一星直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：一星直选奇偶的空间计算与停止条件",
+      "一星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的一星直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+          "score": 0.8181818181818182,
+          "title": "从输入到结果：前二直选和值的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "奇偶",
+            "一星直选奇偶"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：一星直选奇偶的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

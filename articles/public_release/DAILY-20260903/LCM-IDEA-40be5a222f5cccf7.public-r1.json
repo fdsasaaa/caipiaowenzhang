@@ -1,0 +1,201 @@
+{
+  "angle_signature": "1893eb973521d0e38553",
+  "approved_at": "2026-09-03T13:29:45.601213+00:00",
+  "article_id": "LCM-IDEA-40be5a222f5cccf7",
+  "case_scope": "mechanics_only",
+  "category": "技巧研究",
+  "claim_evidence": [
+    {
+      "claim_text": "跨度指一组数字中的最大值减最小值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已验证的五星直选机械规则定义。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "五星直选的跨度筛选参数可固定为2到6。",
+      "claim_type": "methodology",
+      "evidence_note": "公开版保留已验证的参数区间表述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定演示样本可用于帮助读者看懂计算步骤，但样本本身不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "面向公开发布的风险与方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史结构、样本表现和筛选结果只能说明规则如何工作，不能直接推出后续结果会更好。",
+      "claim_type": "editorial",
+      "evidence_note": "面向公开发布的风险与方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "单次样本不够说明长期规律，随机波动始终存在。",
+      "claim_type": "editorial",
+      "evidence_note": "面向公开发布的风险与方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法机制与本文范围</h2><p>本文只讲五星直选里“跨度”这个规则怎么理解，不讲具体选号方案，也不把任何历史样本包装成未来优势。</p><p>这里的核心是把每个五位结果看成五个独立位置，再按统一规则去算跨度。跨度指的是同一组数字中的最大值减最小值。</p><p>本文只讨论已固定的参数区间：跨度2到6。除此之外，不再额外叠加别的筛选器。</p><h2>如何复算跨度</h2><p>复算时，先找出一组数字里的最大值和最小值，再做差，得到跨度。</p><p>如果结果落在2到6之间，就进入该规则的保留范围；如果不在这个区间内，就不进入。</p><p>这种写法的重点是规则本身，而不是预测下一期会出现什么。</p><h2>样本演示与边界</h2><p>固定演示样本可以帮助读者看懂计算步骤，但演示样本本身并不能单独证明未来预测优势。</p><p>因此，历史结构、样本表现、筛选结果这些内容，只能说明规则如何工作，不能直接推出后续结果会更好。</p><p>在研究中，更合适的做法是先固定规则，再看样本，并把它当作机械复算，而不是收益判断。</p><h2>常见误区</h2><p>一个常见误区，是把“筛掉了多少候选”理解成“更容易命中”。这两者不是一回事。</p><p>另一个误区，是把单次复算结果当成稳定结论。对这类玩法来说，随机波动始终存在，单次样本不够说明长期规律。</p><p>如果后续还要继续研究，应该先确认新增条件是否有已验证的规则来源，再决定是否继续复算。</p>",
+  "content_format": "html",
+  "content_hash": "ddfe93043c499bb1f89f299a30ee40d4d6bb1a35de178b7abbf9321bce0289c2",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "8f4145fe0a60127b35fbc3176a0625d77dc10d6556ec98f7981361841259f889",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释五星直选里跨度2到6的计算方法、复算顺序和常见误区，并说明历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "fcd3b8e3360a384dee843c67aa9f646ce124df0477dc6299d5c61dec5a2b6891",
+  "parent_fingerprint": "40be5a222f5cccf776ee62af932e0824c0d5d386eddb5d8b9bb9b00b0eef4c9e",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选跨度技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0984dbfa7b4c0519016a996f2c788087d0837ea4ae95f56f8a",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T13:29:45.601228+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-40be5a222f5cccf7:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里跨度2–6分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选跨度技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "五星直选跨度为什么容易算错？关键在输入、计算和常见误区",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-span_range",
+  "source_batch_id": "DAILY-20260903",
+  "source_refs": [
+    "BRBCW-002590"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用教育/研究视角解释五星直选跨度2到6的规则机制、复算方法和常见误区，强调历史样本不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "跨度2–6",
+    "跨度筛选",
+    "位置筛选",
+    "技巧研究",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range"
+  ],
+  "title": "五星直选跨度为什么容易算错？关键在输入、计算和常见误区",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选跨度把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选跨度应该怎样复核",
+    "五星直选跨度为什么容易算错？关键在输入、计算和常见误区",
+    "先看规则，再看案例：五星直选里的五星直选跨度怎样正确理解",
+    "看懂五星直选跨度不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选跨度把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选跨度应该怎样复核",
+      "五星直选跨度为什么容易算错？关键在输入、计算和常见误区",
+      "先看规则，再看案例：五星直选里的五星直选跨度怎样正确理解",
+      "看懂五星直选跨度不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-0b7736a707e6608c",
+          "score": 0.76,
+          "title": "五星直选冷热为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "跨度"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "跨度",
+            "五星直选跨度"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "五星直选跨度为什么容易算错？关键在输入、计算和常见误区"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

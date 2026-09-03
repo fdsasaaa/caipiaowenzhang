@@ -1,0 +1,200 @@
+{
+  "angle_signature": "c8bb8c16028651fd6e7b",
+  "approved_at": "2026-09-03T13:33:39.124462+00:00",
+  "article_id": "LCM-ANGLE-8cefd046fcdfef90",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "前二直选可以抽象为一个有序两位组合的候选空间，研究时先固定起点，再按明确条件逐层筛除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已验证的机制规则，公开版保留了空间分层这一机制描述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "大小筛选和奇偶筛选属于分类工具，能帮助缩小候选空间，但不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是公开版的教育性边界说明，用于避免将筛选结果误读为预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版明确加入的风险提示，强调历史表现不构成未来优势证明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史复盘适合验证算式是否自洽，样本外验证适合观察规则在未见数据上的表现是否仍然一致。",
+      "claim_type": "methodology",
+      "evidence_note": "属于公开版研究方法说明，不涉及具体下注或执行建议。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "公开版不提供具体候选号码、逐期建议或任何执行路径。",
+      "claim_type": "editorial",
+      "evidence_note": "内容边界声明，符合公开发布限制。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看研究对象</h2><p>本文讨论的是分分彩前二直选大小奇偶注数计算中的候选空间核对方法。重点不在结果猜测，而在于把固定规则下的空间变化算清楚。</p><p>这里的核心问题是：在预先冻结的规则参数下，候选组合如何从初始空间逐层缩小，以及每一步对应多少保留、多少排除。</p><p>这类内容适合做规则学习、复核演算和样本外验证的基础说明，但不适合被理解为可直接转化为预测优势的结论。</p><h2>候选空间如何分层</h2><p>前二直选可以先抽象成一个有序两位组合的空间。公开讨论时，通常先固定起点，再按明确条件逐层筛掉不符合要求的部分。</p><p>在这种写法里，最重要的是记录每一层的输入空间、输出空间和被排除的数量。这样做的好处是，读者可以复核每一步是否自洽，而不是把“变少了”误读成“更容易命中”。</p><p>如果规则已经预先写定，那么计算的任务就是按顺序执行，不额外引入临时参数，也不把样本中的偶然形态当成稳定规律。</p><h2>大小与奇偶只是分类，不是预测</h2><p>大小筛选和奇偶筛选本质上是分类工具。它们能帮助把候选拆成更细的子集，便于统计与复盘，但不能单独证明未来会更准。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。历史上某个样本看起来更集中，只能说明过去出现过这样的形态，并不自动推出后续仍会持续成立。</p><p>因此，研究时更合适的做法是把它们看成“空间缩减规则”，而不是“胜率提升规则”。</p><h2>复核时看哪些量</h2><p>做这类核对，通常关注三项：起始空间、保留空间、排除空间。三者之间必须能互相对上，才说明计算链条没有断裂。</p><p>如果一套规则写成“先缩小、再缩小”，就应该分别检查每层的输入和输出是否一致，而不是只看最后剩下多少个。只有把中间过程写清楚，才方便别人复算。</p><p>另一个常见误区，是把“候选更少”理解成“判断更强”。实际上，候选减少只是筛选更细，不代表未来结果具备可迁移的确定性。</p><h2>历史复盘与样本外验证</h2><p>如果要研究这类机制，较稳妥的方式是先预注册参数，再做历史复盘，最后留出样本外区间检查稳定性。这样可以减少“看完数据再改规则”的偏差。</p><p>历史复盘适合验证算式是否自洽，样本外验证适合观察规则在未见数据上的表现是否仍然一致。两者都属于研究方法，不等于收益承诺。</p><p>在公开表达中，也应避免把局部表现解释为长期优势。随机波动本来就会让短期样本看起来忽高忽低，这并不罕见。</p><h2>常见误区与边界</h2><p>第一类误区，是把分类结果直接包装成预测结论。第二类误区，是把历史样本的集中度当成稳定规律。第三类误区，是把规则收缩后的空间大小，直接等同于命中概率。</p><p>本文只讨论规则机制、空间核对和研究方法，不提供具体候选号码、逐期建议或任何执行路径，也不讨论收益、胜率或稳定盈利。</p><p>如果后续还要继续做分析，应该先确认新增条件是否已经被正式定义，并在冻结参数后再开展下一轮复核，而不是边看边改。</p>",
+  "content_format": "html",
+  "content_hash": "6bd15da4a296a45e2e6e30432acd663141b656c3c720be1a4893e70dc90c8b12",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0e7f1f297f9f8599a513610d2fd19e723921655c25af77053f9cf2406f3f2a6e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "围绕分分彩前二直选大小奇偶注数计算，说明候选空间如何分层、如何复核保留与排除数量，以及为什么历史样本不能单独证明未来优势。",
+  "parent_content_hash": "c2230fc342ca0a11b47bb0e48d25432fc461ca8bbe9609596ef159d2b3fb5742",
+  "parent_fingerprint": "8cefd046fcdfef90ce9aea0133105695d5496b911f8a5c29378872a204613cdd",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选大小奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0a653fe45f453c66016a99725468f087d1be80dfd7b701fb41",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-03T13:33:39.124477+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-8cefd046fcdfef90:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，逐项确认100到26以及排除74个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二直选大小奇偶注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前二直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-big_small_filter-odd_even_filter-space_math",
+  "source_batch_id": "DAILY-20260903",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "公开版改写聚焦分分彩前二直选大小奇偶注数计算的研究性说明：解释候选空间分层、大小奇偶作为分类工具的作用、历史复盘与样本外验证的方法，并明确历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "大小奇偶",
+    "注数计算",
+    "空间数学",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "前二直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选大小奇偶的计算过程一次理清",
+    "先算注数，再谈前二直选大小奇偶：组合数学能说明到哪一步",
+    "从输入到结果：前二直选大小奇偶的空间计算与常见误区",
+    "前二直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二直选的前二直选大小奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选大小奇偶的计算过程一次理清",
+      "先算注数，再谈前二直选大小奇偶：组合数学能说明到哪一步",
+      "从输入到结果：前二直选大小奇偶的空间计算与常见误区",
+      "前二直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二直选的前二直选大小奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-59f2ed2b9478f5e2",
+          "score": 0.43137254901960786,
+          "title": "分分彩一星直选大小奇偶注数计算：规则机制与候选空间研究"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "大小",
+            "候选空间",
+            "前二直选大小奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前二直选大小奇偶怎么算才不混淆？复核候选空间的关键点"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

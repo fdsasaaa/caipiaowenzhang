@@ -1,0 +1,566 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释和值9–18的机制，并完成从120到88的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 32,
+    "final_space": 88,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 120,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "b14d7783c9880758a412",
+  "approved_at": "2026-09-03T13:19:39.517494+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-08297314de263499",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:120->88",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三组选6和值技巧",
+    "reader_question": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值9–18的机制，并完成从120到88的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 32,
+      "final_space": 88,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 120,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值9–18",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值9–18的机制，并完成从120到88的可复算案例。",
+    "title": "分分彩前三组选6和值技巧：和值9–18具体怎么算，用完整案例从120复算到88",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-6cf2b63751987ec0",
+  "case_scope": "mechanics_only",
+  "category": "腾讯分分彩技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲机制，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑范围说明，不涉及外部事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的重点是：在分分彩前三组选6里，先看前三位组成的组合，再按和值来做区间筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法与筛选范围说明来自已验证规则引用。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇使用的案例是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "明确标注演示数据属性。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "例如，前三位如果是 6、5、2，那么和值就是 6+5+2=13。",
+      "claim_type": "calculation",
+      "evidence_note": "演示计算步骤，样本来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "当规则固定为和值9–18时，意思就是：只保留和值落在 9 到 18 之间的组合，其他组合都排除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "区间定义属于规则事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的参数先固定，再看样本。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数冻结顺序属于合同化规则。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是说，先按系统研究合同确定“和值9–18”，然后再拿演示数据去复算，不反过来根据样本临时改参数。",
+      "claim_type": "editorial",
+      "evidence_note": "对本篇演示流程的说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "下面这组数据为演示数据，不是真实开奖记录：",
+      "claim_type": "editorial",
+      "evidence_note": "样本声明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本期数：12",
+      "claim_type": "calculation",
+      "evidence_note": "case_bundle 提供 sample_size=12。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "前三样本和值序列：3、19、16、14、10、18、5、12、14、9、11、13",
+      "claim_type": "calculation",
+      "evidence_note": "直接来自 case_bundle 的 sum_series。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按这个规则逐个复算：",
+      "claim_type": "editorial",
+      "evidence_note": "演示流程引导。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "3，不在9–18，排除。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "19，不在9–18，排除。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "16，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "14，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "10，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "18，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "5，不在9–18，排除。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "12，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "14，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "9，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "11，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "13，在9–18，保留。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本逐项判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "复算后，留下 9 期，排除 3 期。",
+      "claim_type": "calculation",
+      "evidence_note": "按 12 条演示样本逐项统计得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本合同给出的主筛选空间是从 120 到 88，所以筛前候选空间是 120，筛后候选空间是 88，共排除 32。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选空间与排除量来自已给定机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这三组数字要一起看：120 是筛前空间，88 是筛后空间，32 是被排除的空间。",
+      "claim_type": "calculation",
+      "evidence_note": "重复说明同一机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一过程只说明空间怎么变，不说明它有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源提到的广义技巧家族，只能说明这类方法属于什么方向；本文的具体参数、阶段顺序和静态合同，都是系统研究选择，不是来源替你定下来的。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅限定来源经验边界，不把来源经验升级为事实。",
+      "support_refs": [
+        "BRBCW-001458"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "本篇不写第二条未验证过滤器，也不临时加新条件。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑约束说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果后续没有新增的、已验证的规则或证据，就应停在这里，不再继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "当你完成“和值9–18”这一个主筛选，并且已经把 120、88、32 复算清楚，就应该停止。",
+      "claim_type": "editorial",
+      "evidence_note": "停止于合同主筛选后的流程边界。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则或证据，并且能够复算时，才允许继续缩小候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "继续缩小候选的条件边界。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "否则，继续加条件只是临时拼接，不符合本文合同。",
+      "claim_type": "editorial",
+      "evidence_note": "合同边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先固定规则：只用和值9–18。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤中的规则固定。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再看对象：把前三位数字相加，算出和值。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤中的计算动作。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "逐个判断：和值在 9 到 18 之间就保留，不在就排除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "区间筛选动作。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "核对空间：记住筛前 120、筛后 88、排除 32。",
+      "claim_type": "calculation",
+      "evidence_note": "机器事实复核。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "到此停止：没有新验证条件，就不要再加第二层筛选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件再次说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "分分彩前三组选6和值技巧的核心，不是猜结果，而是先把和值9–18的计算方法固定下来，再按合同把 120 复算到 88，并明确知道排除了 32。",
+      "claim_type": "editorial",
+      "evidence_note": "总结性表述，包含机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲机制，不讨论未核验的平台经济参数。</p><p>这里的重点是：在<strong>分分彩前三组选6</strong>里，先看前三位组成的组合，再按<strong>和值</strong>来做区间筛选。本文的主筛选只有一个：<strong>和值9–18</strong>。</p><p>本篇使用的案例是<strong>演示数据，不是真实开奖记录</strong>。它只用来说明怎么复算，不代表真实开奖结果。</p><h2>方法机制：和值9–18</h2><p>和值，就是把前三位数字相加。</p><p>例如，前三位如果是 6、5、2，那么和值就是 6+5+2=13。</p><p>当规则固定为<strong>和值9–18</strong>时，意思就是：只保留和值落在 9 到 18 之间的组合，其他组合都排除。</p><p>这里的参数先固定，再看样本。也就是说，先按系统研究合同确定“和值9–18”，然后再拿演示数据去复算，不反过来根据样本临时改参数。</p><h2>完整可复算案例</h2><p>下面这组数据为<strong>演示数据，不是真实开奖记录</strong>：</p><ul><li>样本期数：12</li><li>前三样本和值序列：3、19、16、14、10、18、5、12、14、9、11、13</li><li>筛选规则：和值9–18</li></ul><p>按这个规则逐个复算：</p><ol><li>3，不在9–18，排除。</li><li>19，不在9–18，排除。</li><li>16，在9–18，保留。</li><li>14，在9–18，保留。</li><li>10，在9–18，保留。</li><li>18，在9–18，保留。</li><li>5，不在9–18，排除。</li><li>12，在9–18，保留。</li><li>14，在9–18，保留。</li><li>9，在9–18，保留。</li><li>11，在9–18，保留。</li><li>13，在9–18，保留。</li></ol><p>复算后，留下 9 期，排除 3 期。</p><p>本合同给出的主筛选空间是从 120 到 88，所以<strong>筛前候选空间是 120</strong>，<strong>筛后候选空间是 88</strong>，<strong>共排除 32</strong>。</p><p>这三组数字要一起看：120 是筛前空间，88 是筛后空间，32 是被排除的空间。</p><h2>逐步核对候选空间</h2><p>第一步，先确认主筛选合同只有一个，就是<strong>和值9–18</strong>。</p><p>第二步，确认筛前空间是 120，不要把演示样本的 12 条当成理论候选空间。</p><p>第三步，按固定参数复算后，得到筛后空间 88。</p><p>第四步，核对排除量：120−88=32，所以排除的是 32。</p><p>这一过程只说明空间怎么变，不说明它有预测优势。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>和值区间只是一个筛选条件，不是中奖保证。</p><p>来源提到的广义技巧家族，只能说明这类方法属于什么方向；本文的具体参数、阶段顺序和静态合同，都是系统研究选择，不是来源替你定下来的。</p><p>本篇不写第二条未验证过滤器，也不临时加新条件。</p><p>如果后续没有新增的、已验证的规则或证据，就应停在这里，不再继续缩小候选。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>当你完成“和值9–18”这一个主筛选，并且已经把 120、88、32 复算清楚，就应该停止。</p><p>只有当新增条件本身也有已验证规则或证据，并且能够复算时，才允许继续缩小候选。</p><p>否则，继续加条件只是临时拼接，不符合本文合同。</p><h2>实际怎么操作</h2><ol><li>先固定规则：只用和值9–18。</li><li>再看对象：把前三位数字相加，算出和值。</li><li>逐个判断：和值在 9 到 18 之间就保留，不在就排除。</li><li>核对空间：记住筛前 120、筛后 88、排除 32。</li><li>到此停止：没有新验证条件，就不要再加第二层筛选。</li></ol><p><strong>一句话总结：</strong>分分彩前三组选6和值技巧的核心，不是猜结果，而是先把和值9–18的计算方法固定下来，再按合同把 120 复算到 88，并明确知道排除了 32。</p>",
+  "content_format": "html",
+  "content_hash": "963fb9c3958518a49b852ee804e6a220a20f4b5eef857dc6a5fa22412529da1f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260903",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "6cf2b63751987ec05abc7d42c1027eb0a606dbd4a2b17ce76f16768635282126",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三组选6和值技巧案例讲解：先说明前三组选6规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前三组选6",
+  "practical_guidance": {
+    "after_primary_filter_space": "88",
+    "next_step_policy": "只有新增条件本身具有已验证规则或证据，并且可以复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定和值9–18，再看样本；不能根据样本临时改参数。",
+    "starting_space": "120",
+    "steps": [
+      "先固定主筛选：只用和值9–18，不先加第二层条件。",
+      "把前三位数字相加，得到每一组的和值。",
+      "逐个对照区间：和值在9到18之间就保留，不在就排除。",
+      "核对候选空间：筛前是120，筛后是88，排除32。",
+      "如果没有新增且已验证的规则或证据，就在这里停止，不再继续缩小。"
+    ],
+    "stop_condition": "完成和值9–18这一个主筛选，并把120、88、32复算清楚后停止。"
+  },
+  "primary_keyword": "分分彩前三组选6和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0bb79ca19b6dee9b016a9973ae9ce887d0bcedfd0166a4b40f",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+  ],
+  "search_intent": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前三组选6和值技巧",
+    "分分彩技巧",
+    "前三组选6技巧",
+    "分分彩前三组选6投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三组选6-sum_range",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三组选6",
+  "summary": "本文用简单中文讲清分分彩前三组选6里和值9–18的计算方法，并用演示数据复算从120到88的筛选过程。",
+  "tags": [
+    "分分彩",
+    "前三组选6",
+    "和值技巧",
+    "演示数据",
+    "筛选复算",
+    "定位胆机制"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用前三组选6和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+    "前三组选6和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前三组选6和值怎样正确理解",
+    "看懂前三组选6和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前三组选6和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+      "前三组选6和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前三组选6和值怎样正确理解",
+      "看懂前三组选6和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-18149d90338bf75f",
+          "score": 0.8085106382978723,
+          "title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "numeric",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [
+            "6"
+          ],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3182,
+          "intent_term_hits": [
+            "前三",
+            "组选6",
+            "组选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "组选6",
+            "组选",
+            "和值",
+            "前三组选6和值"
+          ],
+          "subject_play": "前三组选6"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：前三组选6和值应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

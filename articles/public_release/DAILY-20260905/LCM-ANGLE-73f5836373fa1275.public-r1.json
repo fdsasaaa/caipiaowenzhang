@@ -1,0 +1,200 @@
+{
+  "angle_signature": "5db9dfaf273527737eb9",
+  "approved_at": "2026-09-05T06:26:27.119792+00:00",
+  "article_id": "LCM-ANGLE-73f5836373fa1275",
+  "case_scope": "mechanics_only",
+  "category": "腾讯分分彩技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "在五星直选的有序五位数空间里，主筛选关注的是至少存在一对差1邻号这一类结构。",
+      "claim_type": "rule_fact",
+      "evidence_note": "由已核验玩法机制支持：五星直选的有序五位数结构可按邻号关系进行机械识别。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "规则引用只支持五星直选的机械机制：在有序五位数中，至少存在一对差1邻号这一类结构，可以作为已验证的玩法机制来理解。",
+      "claim_type": "rule_fact",
+      "evidence_note": "仅保留机制层面的公开表述，不延伸为任何收益判断。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "换句话说，结构分类可以帮助理解样本怎么被整理，但不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版边界说明：分类和历史表现不等于预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果来源没有被独立验证，就只能按未验证经验处理，不能直接升级成事实。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版对来源可信度的处理原则，属于编辑说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这类内容更适合用于教育、研究和复盘，而不是用于承诺型判断。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版定位说明，不含执行指令或收益承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先说边界：这篇只讲参数归属，不讲未核验结果</h2><p>本文聚焦<strong>分分彩五星直选邻号参数设置</strong>，只解释系统研究预设参数、来源经验和演示样本之间的边界。</p><p>这里先说明：本文不讨论未核验的平台经济参数。</p><p>在五星直选的有序五位数空间里，主筛选关注的是<strong>至少存在一对差1邻号</strong>这一类结构。这里的参数属于系统研究预设，不等于来源推荐。</p><h2>哪些参数归系统研究</h2><p>主筛选合同的参数是先固定的，再去看样本。这样做的目的，是避免看完结果后再反向调整条件。</p><p>这组参数的归属是系统研究预设，不是来源作者给出的推荐，也不是演示样本算出来后再倒推出来的。</p><p>合同要求参数先固定，再看样本；因此本文不会把事后观察到的结果再改写成前置规则。</p><h2>筛选前后空间怎么变</h2><p>在这个主筛选里，筛选前的候选空间更大，筛选后会变小。</p><p>这种空间变化只说明：按既定规则做了机器候选空间缩减，不代表有预测优势。</p><p>换句话说，结构分类可以帮助理解样本怎么被整理，但不能单独证明未来预测优势。</p><h2>哪些结果来自演示样本</h2><p>下面的样本是<strong>演示数据，不是真实开奖记录</strong>。</p><p>演示数据可以用来展示复算方法，比如怎么看和值、跨度、位数结构和是否存在邻号。</p><p>这些数值只用于说明计算过程，不是对未来的结论，也不应被理解为稳定命中信号。</p><p>演示样本中的序列，只能帮助读者理解如何复核样本结构，不能直接推出后续走势。</p><h2>来源能支持什么，不能支持什么</h2><p>规则引用只支持五星直选的机械机制：在有序五位数中，至少存在一对差1邻号这一类结构，可以作为已验证的玩法机制来理解。</p><p>来源提到的内容，只能说明经验从哪里来，不能把系统研究参数写成来源指定。</p><p>如果来源没有被独立验证，就只能按未验证经验处理，不能直接升级成事实。</p><p>因此，来源可以帮助理解“为什么会选这个结构”，但不能证明这个参数有预测优势。</p><h2>为什么不能事后改参数</h2><p>因为规则要求先冻结，再观察样本。</p><p>如果先看了样本结果，再把筛选条件改成别的形式，前后的研究对象就已经不是同一套条件了。</p><p>参数一旦事后改动，前面的筛选结果就不能再当成同一套研究结论来复算。</p><h2>边界与误区：不把统计筛选包装成优势</h2><p>这篇文章只做边界说明：系统研究预设不等于来源推荐，也不等于预测优势。</p><p>“至少存在一对差1邻号”只是一个静态筛选条件；它能帮助理解候选空间如何变化，但不能写成原文推荐，更不能写成对结果的保证。</p><p>和值、跨度、频率、邻号等描述，只能作为样本复盘信息，不能单独当成预测结论。</p><h2>复盘时怎么理解这类参数</h2><p>先固定主筛选参数，再按固定条件复算空间变化，确认筛选前后差异来自规则本身，而不是临时调整。</p><p>查看来源时，只接受它对机械机制的背景说明；若来源没有独立验证，就按未验证经验处理。</p><p>完成这一步后就停止，不临时加第二个过滤器，也不把结构解释延伸成未来承诺。</p><p>这类内容更适合用于教育、研究和复盘，而不是用于承诺型判断。</p>",
+  "content_format": "html",
+  "content_hash": "02e7622d4f083fb1c51e638e9003cdfeeb43662bcd8243339f9b3cf5f8392b44",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "63d6a1159dc0432f473e8b8b39ac7969b50e163bf6fa37375a0160dfaa3a3426",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "面向教育与研究，解释分分彩五星直选邻号参数设置中系统预设、来源经验和演示样本的边界；说明结构分类、历史样本和机械筛选不能单独证明未来预测优势。",
+  "parent_content_hash": "bfc3001d74b0ca83b60ff2fb411609fe567cae629990109a9d58e4419bf68215",
+  "parent_fingerprint": "73f5836373fa1275a81764b15fe71313babd97757f5b6bb8662790992683bec1",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选邻号参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0207c364eebdeb5c016a9bb008346487d09b03f477ea124fa7",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:26:27.119809+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-73f5836373fa1275:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩五星直选邻号参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-neighbor_number-position_filter-parameter_boundary",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "公开版只保留玩法机制、参数归属和复盘边界：解释五星直选邻号结构如何作为研究性筛选条件被固定、如何复算样本空间、以及为什么历史样本和结构分类不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩五星直选邻号参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选",
+    "分分彩邻号结构",
+    "参数边界",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？五星直选邻号的边界先说清",
+    "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+    "从参数到结果：五星直选邻号哪些能预设，哪些不能事后改",
+    "五星直选邻号为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？五星直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？五星直选邻号的边界先说清",
+      "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+      "从参数到结果：五星直选邻号哪些能预设，哪些不能事后改",
+      "五星直选邻号为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？五星直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-ac4bf0d315816980",
+          "score": 0.8333333333333334,
+          "title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3478,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "参数",
+            "五星直选邻号"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,235 @@
+{
+  "angle_signature": "46c3978f844874d1531d",
+  "approved_at": "2026-09-05T06:29:12.005786+00:00",
+  "article_id": "LCM-ANGLE-baccd22be44c88c1",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文讨论的是一星直选里按奇偶做候选核对的空间计算，不讨论平台参数、下注方案或任何执行指令。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "在这个固定规则下，先把候选空间理解为10个，再看筛选后留下多少个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父级规则中的确定性候选空间设定。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的核心是“恰好1个单号”的奇偶筛选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父级规则描述。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按这个合同，候选从10个变成5个，也就是排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "来自父级已验证的确定性空间变化。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个变化可以直接理解为：筛选前后是一个确定性的数量变化，而不是对未来结果的预测。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版解释性表述。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示样本只用于解释规则，不代表真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版风险提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必要边界声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "研究这类问题时，可以关注规则是否固定、参数是否预注册、历史样本是否可复算，以及样本外验证是否成立。",
+      "claim_type": "methodology",
+      "evidence_note": "研究导向方法建议。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "常见误区是把候选空间缩小，直接理解成更容易命中；这并不成立。",
+      "claim_type": "editorial",
+      "evidence_note": "风险与误区说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只说明一星直选奇偶筛选在给定规则下如何完成候选空间核对：从10到5，排除5个。",
+      "claim_type": "calculation",
+      "evidence_note": "结论性数量核对。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>先看候选空间</h2><p>本文讨论的是一星直选里按奇偶做候选核对的空间计算，不讨论平台参数、下注方案或任何执行指令。</p><p>在这个固定规则下，先把候选空间理解为10个，再看筛选后留下多少个。</p><p>本文只做可复算的规则说明，不把筛选结果写成命中率、收益判断或未来优势。</p><h2>规则怎么影响数量</h2><p>这里的核心是“恰好1个单号”的奇偶筛选。按这个合同，候选从10个变成5个，也就是排除5个。</p><p>这个变化可以直接理解为：筛选前后是一个确定性的数量变化，而不是对未来结果的预测。</p><p>如果把静态筛选结果直接解释成更高预测能力，就会混淆规则核对和结果判断。</p><h2>演示计算与真实结果要区分</h2><p>为了说明方法，可以用演示样本来展示奇偶核对的过程。但演示样本只用于解释规则，不代表真实开奖记录。</p><p>因此，样本里的数量变化只能说明“怎么计算”，不能说明“未来会怎样”。</p><p>结构分类或历史样本表现不能单独证明未来预测优势，这一点必须单独区分。</p><h2>样本、复盘与常见误区</h2><p>研究这类问题时，可以关注规则是否固定、参数是否预注册、历史样本是否可复算，以及样本外验证是否成立。</p><p>常见误区是把候选空间缩小，直接理解成更容易命中；这并不成立，因为空间变化不等于预测能力提升。</p><p>另一个误区是把一次复盘结论推广为长期稳定结论；没有额外证据时，不应这样延伸。</p><h2>结语</h2><p>本文只说明一星直选奇偶筛选在给定规则下如何完成候选空间核对：从10到5，排除5个。</p><p>这类内容适合做规则学习、组合数学理解和方法复盘，不适合被当作收益承诺或确定性预测工具。</p>",
+  "content_format": "html",
+  "content_hash": "60ac381228728226651561d7e485a5d2454766ea0bc925195df20828e73dc46f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "46b477261bb83d9c0cb202411f603e14e4a61a6026da11615ad6cbd97901d7b7",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释一星直选奇偶筛选的候选空间计算、规则核对、样本复盘与常见误区，强调这不是收益承诺或未来预测。",
+  "parent_content_hash": "658d1c7f8fd287f8f3ffb95f30bac8077f549ea4ba24c7739dc6a596c51ab521",
+  "parent_fingerprint": "baccd22be44c88c17f5696746413f18b65ab4767287eb59e27e9aadafb0973f9",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0abb03050a1f7c8e016a9bb1fa637087d0b47b44af2d5c74ef",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:29:12.005803+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-baccd22be44c88c1:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "核对一星直选的候选空间计算，理解奇偶筛选如何导致数量变化，并区分规则说明与预测优势",
+  "secondary_keywords": [
+    "分分彩一星直选奇偶注数计算",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂一星直选的一星直选奇偶，先分清计算结果和预测结论",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-odd_even_filter-space_math",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文将一星直选奇偶筛选改写为公开可读的教育版：强调候选空间核对、数量变化、样本外验证和常见误区，不提供号码、金额或跟投指令，并明确结构或历史样本不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "奇偶筛选",
+    "注数计算",
+    "空间数学",
+    "技巧解析"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "看懂一星直选的一星直选奇偶，先分清计算结果和预测结论",
+  "title_candidates": [
+    "候选空间为什么会变？一星直选奇偶的计算过程一次理清",
+    "先算注数，再谈一星直选奇偶：组合数学能说明到哪一步",
+    "从输入到结果：一星直选奇偶的空间计算与常见误区",
+    "一星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂一星直选的一星直选奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？一星直选奇偶的计算过程一次理清",
+      "先算注数，再谈一星直选奇偶：组合数学能说明到哪一步",
+      "从输入到结果：一星直选奇偶的空间计算与常见误区",
+      "一星直选奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂一星直选的一星直选奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+          "score": 0.76,
+          "title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "直选",
+            "奇偶"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "奇偶",
+            "一星直选奇偶"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂一星直选的一星直选奇偶，先分清计算结果和预测结论"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

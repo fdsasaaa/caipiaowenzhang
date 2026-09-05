@@ -1,0 +1,183 @@
+{
+  "angle_signature": "7a425c5b712cc9858510",
+  "approved_at": "2026-09-05T06:29:51.672402+00:00",
+  "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "前二组选在固定和值6到12的前提下，候选空间可以从45个缩减到27个，排除18个。",
+      "claim_type": "calculation",
+      "evidence_note": "由已验证玩法规则对应的确定性空间计算得出。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "45表示筛选前的候选总数，27表示按和值6到12保留下来的数量，18表示被排除的数量。",
+      "claim_type": "methodology",
+      "evidence_note": "对固定筛选条件下的空间含义进行说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版风险提示与研究边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先认识候选空间</h2><p>本文只做前二组选的候选空间核对，主筛选只看和值6到12。</p><p>文章使用“分分彩”作为公开展示名称，但不讨论任何未核验的平台参数。</p><p>在这个固定规则下，候选空间可以从45个缩减到27个，等于排除18个。</p><h2>为什么是45、27和18</h2><p>这里说的是组合空间大小，不是中奖率，也不是收益率。</p><p>45表示筛选前的候选总数，27表示按和值6到12保留下来的数量，18表示被排除的数量。</p><p>这类计算的作用，是帮助读者核对规则是否一致，而不是把空间缩小直接解释成优势。</p><h2>样本和演示数据怎么理解</h2><p>文中的示例数据只用于说明计算过程，不代表真实开奖记录，也不用于预测后续结果。</p><p>历史样本可以用来复盘规则是否被正确执行，但历史结构或历史样本表现不能单独证明未来预测优势。</p><p>因此，样本复盘更适合做规则核对、参数检查和样本外验证准备，而不是当作稳定结论。</p><h2>常见误区</h2><p>一个常见误区，是把“候选变少”直接等同于“更容易命中”。</p><p>另一个误区，是在没有额外验证依据的情况下，继续叠加新的筛选条件，然后把结果包装成确定优势。</p><p>对于研究型阅读来说，更重要的是先确认规则、再核对结果、最后判断这些结果能否复算。</p><h2>阅读与复核的边界</h2><p>如果只讨论已固定的和值区间，那么本文的结论就只到空间计算为止。</p><p>一旦缺少可复算证据，就不应继续把统计筛选解释成未来判断依据。</p><p>这也是本文的停止条件：先完成规则核对，再决定是否进入更进一步的样本分析。</p>",
+  "content_format": "html",
+  "content_hash": "128810ab03e7488b63ef136bd8e0466dbf24323d0d62f9cb6fe4c258fae82a32",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "33bcac2d8202697c21b77b9f101b7339071f151526daee943ac65b5e1ce2800d",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "以教育和研究视角解释前二组选的候选空间计算，说明45、27、18的含义、复核思路与常见误区，不提供选号或投注指令。",
+  "parent_content_hash": "e71c721d7cbb4af46b1f0be1952372ec2a53f035de2088c64c6257f66e27c23f",
+  "parent_fingerprint": "8817b4ea17874fe8078c4db6eab7631c7ff4c9dea7660159c5dcf6d571a7499a",
+  "play": "前二组选",
+  "primary_keyword": "分分彩前二组选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0e60878300ca7aa9016a9bb359d9d487d1ab35a34a8a791f28",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:29:51.672419+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "核对前二组选的候选空间计算，逐项确认45到27以及排除18个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二组选和值注数计算",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二组选和值的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二组选-sum_range-space_math",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "本文以研究导向说明前二组选的和值区间空间计算：在固定和值6到12的前提下，候选空间可由45个缩减到27个，排除18个；同时强调这只是规则核对，不是预测承诺。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值区间",
+    "注数计算",
+    "空间数学",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "从输入到结果：前二组选和值的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？前二组选和值的计算过程一次理清",
+    "先算注数，再谈前二组选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二组选和值的空间计算与停止条件",
+    "前二组选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二组选的前二组选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二组选和值的计算过程一次理清",
+      "先算注数，再谈前二组选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二组选和值的空间计算与停止条件",
+      "前二组选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二组选的前二组选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-8bb328486dd299cc",
+          "score": 0.7727272727272727,
+          "title": "从输入到结果：中三直选频率的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "组选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二组选和值的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

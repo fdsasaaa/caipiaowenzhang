@@ -1,0 +1,198 @@
+{
+  "angle_signature": "0d0015aa4495e4afc9d1",
+  "approved_at": "2026-09-05T06:27:29.369590+00:00",
+  "article_id": "LCM-IDEA-e26af4298869ed05",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "中三直选可按有序三位组合理解，若不加额外限制，理论空间为1000种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "由已验证玩法机制可支持的空间描述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "频率池是按既定样本和预先约定规则得到的筛选结果，不等于预测结果。",
+      "claim_type": "methodology",
+      "evidence_note": "公开版中的方法性说明，属于编辑性表述。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数一旦预注册，复核时应按同一套规则重新计算，以保持可比性。",
+      "claim_type": "rule_fact",
+      "evidence_note": "与已验证机制一致的规则化表述。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版必须明确的风险与边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "对于随机波动较强的玩法，单次案例只能用来说明方法，不能用来证明规律。",
+      "claim_type": "editorial",
+      "evidence_note": "研究导向的风险提示与方法边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法范围</h2><p>本文面向的是“分分彩中三直选频率技巧”这一主题，但只讨论规则机制、样本复核和常见误区，不提供任何具体执行方案。</p><p>这里的重点是理解：在中三直选里，怎样按预先约定的规则去统计近12期出现频率较高的数字，并据此形成一个演示用的数字池。</p><p>文中使用的是演示数据，不是真实开奖记录。所有结论都只适用于这组演示样本，不能直接外推到未来。</p><h2>频率池怎么定义</h2><p>方法本身很简单：先固定回看期数，再按既定排序规则统计各数字出现次数，最后取频率靠前的若干个数字组成数字池。</p><p>这里的关键不是“猜什么”，而是“怎么算”。参数一旦预注册，复核时就应按同一套规则重新计算，避免事后改条件。</p><p>在演示样本中，按约定规则统计后可以得到一个固定的前列数字集合。这个集合只是一种筛选结果，不等于预测结果。</p><h2>候选空间怎样变化</h2><p>中三直选可以理解为有序三位组合问题。若不加额外限制，三位号码的理论空间是1000种。</p><p>当三个位次都只允许从一个固定数字池中取值时，候选空间会按乘法规则缩小。这个缩小过程是组合计数，不是胜负判断。</p><p>本篇的演示只展示这种空间变化如何复算。它说明的是“范围变窄了多少”，不是“未来更容易出现什么”。</p><p>同时要注意，结构分类或历史样本表现都不能单独证明未来预测优势。频率排序只是对过去样本的描述，不构成稳定优势的证据。</p><h2>复核与样本外验证</h2><p>如果要把这类方法用于研究，最重要的是先固定规则，再做样本外验证。也就是说，先写清回看期数、排序方式和取池数量，再拿未参与规则设计的新样本去检查。</p><p>这样做的目的，是区分“样本内复盘”与“样本外表现”。前者只能说明计算是否正确，后者才更接近方法是否可重复。</p><p>很多误区都来自把历史结构当成未来信号，或者把一次复核当成长期规律。对于随机波动较强的玩法，这种推断尤其容易失真。</p><h2>常见误区</h2><p>第一个误区，是把频率池说成稳定优势来源。实际上，频率池只是一个基于既定样本的统计筛选结果。</p><p>第二个误区，是把固定样本里的排序结果直接当成未来方向。这样的理解会把历史描述误读成未来预测。</p><p>第三个误区，是忽略参数预注册。若规则在看完样本后临时变化，复核结果会失去可比性。</p><p>第四个误区，是只看一次演示就下结论。对于随机波动明显的序列，单次案例只能用来说明方法，不能用来证明规律。</p><h2>研究导向的正确打开方式</h2><p>如果把它当作研究题目，最合适的做法是先把变量固定，再重复复核同类样本，观察结果是否稳定。</p><p>如果只想理解机制，则关注三件事：数字池如何生成、候选空间如何计算、以及为什么历史表现不能自动转化为未来优势。</p><p>本文的目标到这里就结束了：帮助读者看懂规则、看懂复算、看懂边界，而不是提供任何具体执行建议。</p>",
+  "content_format": "html",
+  "content_hash": "3e72bd68ea32e56a9f3b582d15e43cafbc50bd7534c93afdf90bfc6246c80d67",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "0cd477eac3ad73003577503979cefa30f39790d4851863e94cf4a70ece82e9d0",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用教育和研究视角解释分分彩中三直选的频率池如何定义、候选空间如何复算，以及为什么历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "b9e204dfbf210f249e037e2d5fc3b727d8c4af76696b58d62fce2ae7b5431c05",
+  "parent_fingerprint": "e26af4298869ed05ce8b491ad11671abe1df7267a667e4bd5fd30b4d58c2b80f",
+  "play": "中三直选",
+  "primary_keyword": "分分彩中三直选频率技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0f350da97f417f68016a9bb0487a2c87d09836870f6c765a42",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:27:29.369608+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-e26af4298869ed05:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "理解中三直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩中三直选频率技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：中三直选频率应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三直选-frequency_window",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "公开版改写为教育/研究导向内容，保留中三直选频率池、候选空间复算、参数预注册和样本外验证等机制说明，同时删除任何具体执行方案与可操作选号指令，并明确历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "中三直选",
+    "频率技巧",
+    "数字池",
+    "演示数据",
+    "可复算案例"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "从玩法规则到完整案例：中三直选频率应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用中三直选频率把规则和复算过程讲清",
+    "从玩法规则到完整案例：中三直选频率应该怎样复核",
+    "中三直选频率为什么容易算错？关键在输入、计算和常见误区",
+    "先看规则，再看案例：中三直选里的中三直选频率怎样正确理解",
+    "看懂中三直选频率不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用中三直选频率把规则和复算过程讲清",
+      "从玩法规则到完整案例：中三直选频率应该怎样复核",
+      "中三直选频率为什么容易算错？关键在输入、计算和常见误区",
+      "先看规则，再看案例：中三直选里的中三直选频率怎样正确理解",
+      "看懂中三直选频率不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-64423d444192d985",
+          "score": 0.8181818181818182,
+          "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2857,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "频率"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "频率",
+            "中三直选频率"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：中三直选频率应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

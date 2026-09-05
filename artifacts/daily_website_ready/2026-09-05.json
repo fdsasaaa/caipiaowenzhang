@@ -1,0 +1,270 @@
+{
+  "approval_failed": 27,
+  "approved": 9,
+  "approved_staged": 9,
+  "article_angle_distribution": {
+    "mechanics_case": 6,
+    "parameter_boundary": 1,
+    "space_math": 2
+  },
+  "attempted": 39,
+  "base_url": "https://api.synapai.top/v1",
+  "batch_id": "DAILY-20260905",
+  "below_operational_minimum": true,
+  "candidate_pool_per_round": 40,
+  "date": "2026-09-05",
+  "editorial_score_average": 100.0,
+  "generated": 36,
+  "generation_failed": 3,
+  "manifest": {
+    "approved_public_release_count": 8,
+    "articles": [
+      {
+        "article_id": "LCM-ANGLE-73f5836373fa1275",
+        "content_hash": "02e7622d4f083fb1c51e638e9003cdfeeb43662bcd8243339f9b3cf5f8392b44",
+        "fingerprint": "63d6a1159dc0432f473e8b8b39ac7969b50e163bf6fa37375a0160dfaa3a3426",
+        "path": "articles/public_release/DAILY-20260905/LCM-ANGLE-73f5836373fa1275.public-r1.json",
+        "primary_keyword": "分分彩五星直选邻号参数设置",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-73f5836373fa1275:public-r1",
+        "slug": "分分彩-五星直选-neighbor_number-position_filter-parameter_boundary"
+      },
+      {
+        "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+        "content_hash": "128810ab03e7488b63ef136bd8e0466dbf24323d0d62f9cb6fe4c258fae82a32",
+        "fingerprint": "33bcac2d8202697c21b77b9f101b7339071f151526daee943ac65b5e1ce2800d",
+        "path": "articles/public_release/DAILY-20260905/LCM-ANGLE-8817b4ea17874fe8.public-r1.json",
+        "primary_keyword": "分分彩前二组选和值注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+        "slug": "分分彩-前二组选-sum_range-space_math"
+      },
+      {
+        "article_id": "LCM-ANGLE-baccd22be44c88c1",
+        "content_hash": "60ac381228728226651561d7e485a5d2454766ea0bc925195df20828e73dc46f",
+        "fingerprint": "46b477261bb83d9c0cb202411f603e14e4a61a6026da11615ad6cbd97901d7b7",
+        "path": "articles/public_release/DAILY-20260905/LCM-ANGLE-baccd22be44c88c1.public-r1.json",
+        "primary_keyword": "分分彩一星直选奇偶注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-baccd22be44c88c1:public-r1",
+        "slug": "分分彩-一星直选-odd_even_filter-space_math"
+      },
+      {
+        "article_id": "LCM-IDEA-06b31faa23c940be",
+        "content_hash": "3df2a13ffcd9e80a3c75e3061ed24f3c72f7b503fb25df05ea17fe221ac42945",
+        "fingerprint": "2ea02f497aaa57862d4df237919b5cbbd0e1340e0f254e77fe1761254e2843fe",
+        "path": "articles/public_release/DAILY-20260905/LCM-IDEA-06b31faa23c940be.public-r1.json",
+        "primary_keyword": "分分彩一星直选遗漏技巧",
+        "release_revision": 1,
+        "revision_id": "LCM-IDEA-06b31faa23c940be:public-r1",
+        "slug": "分分彩-一星直选-omission_threshold-position_filter"
+      },
+      {
+        "article_id": "LCM-IDEA-46829c10b563a447",
+        "content_hash": "b8aa6192ad1c031ec74882abec26e997eaea4e497f15a86575472d5301a20e3f",
+        "fingerprint": "fafc508e3733cf4c4b699dc7bdd331c314420eb416fa817bfcebc41ad811ba1c",
+        "path": "articles/public_release/DAILY-20260905/LCM-IDEA-46829c10b563a447.public-r1.json",
+        "primary_keyword": "分分彩后三直选和值技巧",
+        "release_revision": 1,
+        "revision_id": "LCM-IDEA-46829c10b563a447:public-r1",
+        "slug": "分分彩-后三直选-sum_range"
+      },
+      {
+        "article_id": "LCM-IDEA-8c6c8c83c6f2d638",
+        "content_hash": "440921524cccebf8e06194ebc82ce51bc71ec92b1d665c7a1d22c5e8251e2137",
+        "fingerprint": "3f89bb146009c9400eaf646a02ab37ae7a9bb5a798cd979e8ec6b5b69cfc53c8",
+        "path": "articles/public_release/DAILY-20260905/LCM-IDEA-8c6c8c83c6f2d638.public-r1.json",
+        "primary_keyword": "分分彩前二组选和值技巧",
+        "release_revision": 1,
+        "revision_id": "LCM-IDEA-8c6c8c83c6f2d638:public-r1",
+        "slug": "ffcsqezhxsjq-hezhi6-12-jueti-zenme-suan-wanzheng-anli-cong45-fusuan-dao27"
+      },
+      {
+        "article_id": "LCM-IDEA-dda4419236ecdcae",
+        "content_hash": "def79f5f92adcd72febaeade4f5743884d728d0d890f17c10eae9fb93a62a795",
+        "fingerprint": "fecb110d19f2fa86286c2aef2d9897e0ea3de9f436cd86e407606c6aeb1fe74c",
+        "path": "articles/public_release/DAILY-20260905/LCM-IDEA-dda4419236ecdcae.public-r1.json",
+        "primary_keyword": "分分彩五星直选和值技巧",
+        "release_revision": 1,
+        "revision_id": "LCM-IDEA-dda4419236ecdcae:public-r1",
+        "slug": "分分彩-五星直选-position_filter-sum_range"
+      },
+      {
+        "article_id": "LCM-IDEA-e26af4298869ed05",
+        "content_hash": "3e72bd68ea32e56a9f3b582d15e43cafbc50bd7534c93afdf90bfc6246c80d67",
+        "fingerprint": "0cd477eac3ad73003577503979cefa30f39790d4851863e94cf4a70ece82e9d0",
+        "path": "articles/public_release/DAILY-20260905/LCM-IDEA-e26af4298869ed05.public-r1.json",
+        "primary_keyword": "分分彩中三直选频率技巧",
+        "release_revision": 1,
+        "revision_id": "LCM-IDEA-e26af4298869ed05:public-r1",
+        "slug": "分分彩-中三直选-frequency_window"
+      }
+    ],
+    "canary_ingestion_allowed": true,
+    "expected_count": 8,
+    "path": "articles/public_release/manifests/DAILY-20260905.json",
+    "revision_kind": "website_public_release",
+    "schema_version": 1,
+    "source_batch_id": "DAILY-20260905",
+    "status": "complete",
+    "website_batch_ingestion_allowed": true
+  },
+  "max_approved_parents_per_day": 80,
+  "max_model_generation_attempts_per_day": 120,
+  "max_refill_rounds": 4,
+  "maximum": 25,
+  "minimum": 1,
+  "model": "gpt-5.4-mini",
+  "operational_minimum": 10,
+  "partial_batch_retention": true,
+  "play_distribution": {
+    "一星直选": 2,
+    "中三直选": 1,
+    "五星直选": 3,
+    "前二组选": 2,
+    "后三直选": 1
+  },
+  "pre_generation_duplicate_blocked": 0,
+  "public_ready": [
+    {
+      "article_id": "LCM-IDEA-dda4419236ecdcae",
+      "path": "articles/public_release/DAILY-20260905/LCM-IDEA-dda4419236ecdcae.public-r1.json",
+      "primary_keyword": "分分彩五星直选和值技巧",
+      "revision_id": "LCM-IDEA-dda4419236ecdcae:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-73f5836373fa1275",
+      "path": "articles/public_release/DAILY-20260905/LCM-ANGLE-73f5836373fa1275.public-r1.json",
+      "primary_keyword": "分分彩五星直选邻号参数设置",
+      "revision_id": "LCM-ANGLE-73f5836373fa1275:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-IDEA-e26af4298869ed05",
+      "path": "articles/public_release/DAILY-20260905/LCM-IDEA-e26af4298869ed05.public-r1.json",
+      "primary_keyword": "分分彩中三直选频率技巧",
+      "revision_id": "LCM-IDEA-e26af4298869ed05:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-baccd22be44c88c1",
+      "path": "articles/public_release/DAILY-20260905/LCM-ANGLE-baccd22be44c88c1.public-r1.json",
+      "primary_keyword": "分分彩一星直选奇偶注数计算",
+      "revision_id": "LCM-ANGLE-baccd22be44c88c1:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-IDEA-8c6c8c83c6f2d638",
+      "path": "articles/public_release/DAILY-20260905/LCM-IDEA-8c6c8c83c6f2d638.public-r1.json",
+      "primary_keyword": "分分彩前二组选和值技巧",
+      "revision_id": "LCM-IDEA-8c6c8c83c6f2d638:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+      "path": "articles/public_release/DAILY-20260905/LCM-ANGLE-8817b4ea17874fe8.public-r1.json",
+      "primary_keyword": "分分彩前二组选和值注数计算",
+      "revision_id": "LCM-ANGLE-8817b4ea17874fe8:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-IDEA-46829c10b563a447",
+      "path": "articles/public_release/DAILY-20260905/LCM-IDEA-46829c10b563a447.public-r1.json",
+      "primary_keyword": "分分彩后三直选和值技巧",
+      "revision_id": "LCM-IDEA-46829c10b563a447:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-IDEA-06b31faa23c940be",
+      "path": "articles/public_release/DAILY-20260905/LCM-IDEA-06b31faa23c940be.public-r1.json",
+      "primary_keyword": "分分彩一星直选遗漏技巧",
+      "revision_id": "LCM-IDEA-06b31faa23c940be:public-r1",
+      "round": 1
+    }
+  ],
+  "public_release_failed": [
+    {
+      "article_id": "LCM-IDEA-6f058f0954d5ee63",
+      "error": "public release safety gate failed: title_seo:[TITLE_DUPLICATION_CHECK] title similarity 0.885 >= 0.84 against LCM-IDEA-df8e1fd701ba00e6",
+      "round": 2
+    }
+  ],
+  "public_release_failed_count": 1,
+  "published": false,
+  "quality_first": true,
+  "quality_floor_lowered": false,
+  "quality_score_average": 100.0,
+  "recorded_at": "2026-09-05T06:39:30.186688+00:00",
+  "refill_rounds_completed": 4,
+  "rounds": [
+    {
+      "approval_failed": 24,
+      "approved": 8,
+      "approved_staged": 8,
+      "attempted": 34,
+      "candidate_count_offered": 34,
+      "editorial_score_average": 100.0,
+      "generated": 32,
+      "generation_failed": 2,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 0,
+      "quality_score_average": 100.0,
+      "round": 1,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 8,
+      "website_ready_after": 8,
+      "website_ready_before": 0
+    },
+    {
+      "approval_failed": 3,
+      "approved": 1,
+      "approved_staged": 1,
+      "attempted": 4,
+      "candidate_count_offered": 4,
+      "editorial_score_average": 100.0,
+      "generated": 4,
+      "generation_failed": 0,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 1,
+      "quality_score_average": 100.0,
+      "round": 2,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 0,
+      "website_ready_after": 8,
+      "website_ready_before": 8
+    },
+    {
+      "approval_failed": 0,
+      "approved": 0,
+      "approved_staged": 0,
+      "attempted": 1,
+      "candidate_count_offered": 1,
+      "editorial_score_average": null,
+      "generated": 0,
+      "generation_failed": 1,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 0,
+      "quality_score_average": null,
+      "round": 3,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 0,
+      "website_ready_after": 8,
+      "website_ready_before": 8
+    },
+    {
+      "round": 4,
+      "status": "NO_CANDIDATES",
+      "website_ready_after": 8,
+      "website_ready_before": 8
+    }
+  ],
+  "scheduled": false,
+  "schema_version": 2,
+  "status": "PASS_PARTIAL_QUALITY_FIRST",
+  "stop_reason": "candidate_capacity_exhausted",
+  "target": 20,
+  "timezone": "Asia/Singapore",
+  "website_ready_public_r1": 8,
+  "website_sync_attempted": false
+}

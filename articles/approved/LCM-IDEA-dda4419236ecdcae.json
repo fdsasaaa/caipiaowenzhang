@@ -1,0 +1,481 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释和值15–30的机制，并完成从100000到78004的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 21996,
+    "final_space": 78004,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解五星直选里和值15–30分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值15–30"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "和值15–30"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "432c23a0435e8ad07f2d",
+  "approved_at": "2026-09-05T05:55:00.019256+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-914b178240d8e29a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=15,max=30/static]:100000->78004",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选和值技巧",
+    "reader_question": "理解五星直选里和值15–30分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值15–30的机制，并完成从100000到78004的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 21996,
+      "final_space": 78004,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值15–30"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "和值15–30"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值15–30",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解五星直选里和值15–30分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值15–30的机制，并完成从100000到78004的可复算案例。",
+    "title": "分分彩五星直选和值技巧：和值15–30具体怎么算，用完整案例从100000复算到78004",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-dda4419236ecdcae",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "这篇只讲分分彩五星直选技巧里的一个主筛选：和值15–30。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑性导语，围绕合同主题展开。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇使用的是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "明确标注 case_bundle 为演示数据。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "机制范围免责声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "和 值，就是把一个五星号码的5个数字相加。",
+      "claim_type": "rule_fact",
+      "evidence_note": "五星直选和值的基础机制说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇主筛选合同只保留一个条件：和值在15到30之间，也就是总和大于等于15，且小于等于30。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选参数按合同固定。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个筛选只是在做候选空间切分，不等于预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "下面用固定演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "演示标签说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录：98345、64016、99759、83673、98790、09309、44329、57119、07746、18788、96166、14179、43296、06151、65686、49050。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 原样样本集合说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "49050 的5位数字是 4、9、0、5、0，相加得到 18，所以它落在和值15–30内。",
+      "claim_type": "calculation",
+      "evidence_note": "按演示样本复算和值。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "49050 的和值是 18，跨度是 9，位数有 4 个不同数字，且有邻号特征。",
+      "claim_type": "calculation",
+      "evidence_note": "描述性样本复算，来源于 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "主筛选前，候选空间是 100000 个五位有序号码。",
+      "claim_type": "calculation",
+      "evidence_note": "按五位有序号码空间计算起始规模。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按和值15–30筛选后，候选空间是 78004 个。",
+      "claim_type": "calculation",
+      "evidence_note": "按合同给定的主筛选结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是说，这一步一共筛掉了 21996 个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由 100000 与 78004 相减得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先把参数固定为和值最小 15、最大 30。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数冻结后再观察。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再对每个五星号码把5位数字相加。",
+      "claim_type": "rule_fact",
+      "evidence_note": "和值计算动作。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "只保留总和在 15 到 30 之间的号码。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "最后核对数量：从 100000 到 78004，减少 21996。",
+      "claim_type": "calculation",
+      "evidence_note": "空间变化复核。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这类筛选是规则计算，不是结果保证。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源提到的经验，只能说明这个方法来自哪里，不能把它直接写成结论。",
+      "claim_type": "source_claim",
+      "evidence_note": "对来源经验的限定表述，未升级为事实。",
+      "support_refs": [
+        "BRBCW-006020"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "演示样本里的和值、跨度、频率、大小、单双，都只是演示数据的描述，不构成对下一次结果的保证。",
+      "claim_type": "editorial",
+      "evidence_note": "演示数据边界，不作未来保证。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本篇只完成一个主筛选：和值15–30。",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同要求只保留一个主筛选。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "没有第二条已验证规则或证据时，就应停止，不要临时再加新过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "next step policy。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先确认你看的对象是五星直选，不要把别的玩法混进来。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "把和值区间固定为 15 到 30，先定参数，再看号码。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数先固定。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "拿到一个五星号码后，按位相加，算出和值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "操作步骤。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "判断这个和值是否落在 15–30；落在就保留，不落在就剔除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "操作步骤。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "复核空间变化：从 100000 个缩到 78004 个，共剔除 21996 个。",
+      "claim_type": "calculation",
+      "evidence_note": "空间核对。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果没有新的已验证规则，就停在这里，不再追加第二层筛选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只做机制说明和复算示范，不把统计筛选包装成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "总结边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>这篇只讲 <strong>分分彩五星直选和值技巧</strong> 里的一个主筛选：<strong>和值15–30</strong>。这里的“五星直选”按五位顺序号码来理解，先固定参数，再看样本。</p><p>本文不讨论未核验的平台经济参数。</p><p>本篇使用的是演示数据，不是真实开奖记录。</p><h2>方法机制：和值15–30</h2><p>和值，就是把一个五星号码的5个数字相加。</p><p>本篇主筛选合同只保留一个条件：<strong>和值在15到30之间</strong>，也就是总和大于等于15，且小于等于30。</p><p>这个筛选只是在做候选空间切分，不等于预测优势。</p><h2>完整可复算案例</h2><p>下面用固定演示数据，不是真实开奖记录。</p><p>演示数据，不是真实开奖记录：<code>98345</code>、<code>64016</code>、<code>99759</code>、<code>83673</code>、<code>98790</code>、<code>09309</code>、<code>44329</code>、<code>57119</code>、<code>07746</code>、<code>18788</code>、<code>96166</code>、<code>14179</code>、<code>43296</code>、<code>06151</code>、<code>65686</code>、<code>49050</code>。</p><p>先看一组样本：<code>49050</code> 的5位数字是 4、9、0、5、0，相加得到 18，所以它落在和值15–30内。</p><p>再看描述性样本里最后一组：<code>49050</code> 的和值是 18，跨度是 9，位数有 4 个不同数字，且有邻号特征。</p><h2>逐步核对候选空间</h2><p>主筛选前，候选空间是 <strong>100000</strong> 个五位有序号码。</p><p>按和值15–30筛选后，候选空间是 <strong>78004</strong> 个。</p><p>也就是说，这一步一共筛掉了 <strong>21996</strong> 个候选。</p><ol><li>先把参数固定为和值最小 15、最大 30。</li><li>再对每个五星号码把5位数字相加。</li><li>只保留总和在 15 到 30 之间的号码。</li><li>最后核对数量：从 100000 到 78004，减少 21996。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类筛选是规则计算，不是结果保证。</p><p>来源提到的经验，只能说明这个方法来自哪里，不能把它直接写成结论。</p><p>演示样本里的和值、跨度、频率、大小、单双，都只是演示数据的描述，不构成对下一次结果的保证。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇只完成一个主筛选：和值15–30。</p><p>没有第二条已验证规则或证据时，就应停止，不要临时再加新过滤器。</p><p>只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选空间。</p><h2>实际怎么操作</h2><ol><li>先确认你看的对象是五星直选，不要把别的玩法混进来。</li><li>把和值区间固定为 15 到 30，先定参数，再看号码。</li><li>拿到一个五星号码后，按位相加，算出和值。</li><li>判断这个和值是否落在 15–30；落在就保留，不落在就剔除。</li><li>复核空间变化：从 100000 个缩到 78004 个，共剔除 21996 个。</li><li>如果没有新的已验证规则，就停在这里，不再追加第二层筛选。</li></ol><p>本文只做机制说明和复算示范，不把统计筛选包装成预测优势。</p>",
+  "content_format": "html",
+  "content_hash": "75b059ef58ad9dcd99ef2b4a4e8c891a17c2a98e5384015101b1dce527756467",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "dda4419236ecdcaea709327e8547c810751365c20912e0edde2c7a1ff50fb1d9",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选和值技巧案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "78004个五位有序号码",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定和值区间15–30，再观察样本；参数不可因样本临时改动。",
+    "starting_space": "100000个五位有序号码",
+    "steps": [
+      "先确认对象是五星直选，避免把别的玩法混进来。",
+      "把主筛选参数固定为和值最小15、最大30，先定参数，再看样本。",
+      "拿一个五星号码，按位相加，算出和值。",
+      "判断和值是否落在15–30；落在就保留，不落在就剔除。",
+      "核对空间变化：从100000个缩到78004个，共剔除21996个。",
+      "如果没有新的已验证规则或证据，就停止，不再临时加第二层筛选。"
+    ],
+    "stop_condition": "完成和值15–30后停止；没有第二条已验证规则或可复算证据时，不再追加新过滤器。"
+  },
+  "primary_keyword": "分分彩五星直选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_005fcd7aa4a79ae0016a9bae7fe80c87d0875ae42abbcdfa14",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里和值15–30分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选和值技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先看规则，再看案例：这一玩法里的五星直选和值怎样正确理解",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-sum_range",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用简单中文解释分分彩五星直选里和值15–30怎么算，并按固定演示数据从100000复算到78004。重点是看懂机制、会复算、知道何时停止，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "和值技巧",
+    "位置筛选",
+    "演示数据",
+    "可复算案例",
+    "分分彩五星直选和值技巧"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "先看规则，再看案例：这一玩法里的五星直选和值怎样正确理解",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选和值应该怎样复核",
+    "五星直选和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的五星直选和值怎样正确理解",
+    "看懂五星直选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选和值应该怎样复核",
+      "五星直选和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的五星直选和值怎样正确理解",
+      "看懂五星直选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-64423d444192d985",
+          "score": 0.4166666666666667,
+          "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.24,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "和值",
+            "五星直选和值"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先看规则，再看案例：这一玩法里的五星直选和值怎样正确理解"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,592 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释近12期频率前5数字池的机制，并完成从100000到3125的可复算案例。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 96875,
+    "final_space": 3125,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解五星直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "aeb3eec8ac93e16c3a2a",
+  "approved_at": "2026-09-05T06:33:49.751621+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-38f3642ddae9170f",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:100000->3125",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选频率技巧",
+    "reader_question": "理解五星直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释近12期频率前5数字池的机制，并完成从100000到3125的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 96875,
+      "final_space": 3125,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：近12期频率前5数字池",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解五星直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释近12期频率前5数字池的机制，并完成从100000到3125的可复算案例。",
+    "title": "分分彩五星直选频率技巧：近12期频率前5数字池具体怎么算，用完整案例从100000复算到3125",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-6f058f0954d5ee63",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文面向的是分分彩五星直选频率技巧，",
+      "claim_type": "editorial",
+      "evidence_note": "编辑性引导，符合站点显示层术语优先使用分分彩。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的“五星直选”按五位数顺序来看，理论候选空间是 100000 注。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已给定规则引用，属于玩法机制陈述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇只用一条主筛选合同：近12期频率前5数字池。",
+      "claim_type": "editorial",
+      "evidence_note": "合同范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这意味着，先固定一个回看窗口，再按窗口内数字出现次数做排序，取前5个数字组成数字池，然后只看这个池子里的数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对已给定筛选机制的解释。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "文中的案例是演示数据，不是真实开奖记录，",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这条筛选只看三件事：",
+      "claim_type": "editorial",
+      "evidence_note": "结构性引导语。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "回看多少期：12期。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示样本设定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "怎么排：按“频率从高到低，频率相同再按数字从小到大”。",
+      "claim_type": "rule_fact",
+      "evidence_note": "排序规则来自合同给定参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "取几个：5个数字。",
+      "claim_type": "calculation",
+      "evidence_note": "来自演示样本设定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "在这份演示里，12期样本算出的前5数字池是 0、1、2、3、9。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本计算结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这只是按样本频次排出来的池子，不代表命中率提高。",
+      "claim_type": "editorial",
+      "evidence_note": "对演示样本的限制说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "需要说明的是：这里的生产参数属于系统研究合同定义，本文只复算已给定的固定池子，不把它写成来源推荐，也不把样本结果升级成预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "参数边界与编辑说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示样本的12期数据如下，按合同给出的统计结果来复算：",
+      "claim_type": "editorial",
+      "evidence_note": "引导进入演示案例。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本期数：12",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本规模。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "数字频次：0=10，1=8，2=6，3=6，4=3，5=3，6=4，7=5，8=5，9=10",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本频次表。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "排序规则：frequency_desc_then_digit_asc",
+      "claim_type": "rule_fact",
+      "evidence_note": "合同指定排序规则。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "取前5个数字：0，1，2，3，9",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本计算结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这一步复算后，主筛选得到的数字池大小是 5 个数字。",
+      "claim_type": "calculation",
+      "evidence_note": "池子大小来自演示样本结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果把五星直选看成五个位置都只能从这5个数字里选，那么候选数就是：",
+      "claim_type": "editorial",
+      "evidence_note": "为数学推导做过渡。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "5 × 5 × 5 × 5 × 5 = 3125",
+      "claim_type": "calculation",
+      "evidence_note": "按照五位顺序、每位5个可选数字推得候选数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是从原始 100000 注缩到 3125 注，排除掉 96875 注。",
+      "claim_type": "calculation",
+      "evidence_note": "候选空间收缩量的复算结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据里还给了最新一期的描述信息：和值 24，跨度 8，号码 69612。",
+      "claim_type": "calculation",
+      "evidence_note": "演示样本描述信息。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这些都只是样本说明，不是预测依据。",
+      "claim_type": "editorial",
+      "evidence_note": "对样本用途的限制。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "样本说明中的“演示数据，不是真实开奖记录”必须和正文一起理解，不能把它当成真实开奖记录来用。",
+      "claim_type": "editorial",
+      "evidence_note": "再次强调演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "先固定基础空间：五星直选按五位顺序，起始空间是 100000。",
+      "claim_type": "calculation",
+      "evidence_note": "基础候选空间复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再固定主筛选：近12期频率前5数字池，池子数字是 0、1、2、3、9。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选后的池子来自演示样本。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "把每一位都限制在这个池子里后，空间变成 5^5=3125。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选后的候选空间公式。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "所以本步一共排除了 100000-3125=96875 注。",
+      "claim_type": "calculation",
+      "evidence_note": "筛掉数量复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的计算只完成到主筛选这一层。",
+      "claim_type": "editorial",
+      "evidence_note": "合同边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "合同要求在主筛选后停止，不临时再加第二条过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止条件来自合同约束。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这类频率池只是统计筛选，不是保证结果的工具。",
+      "claim_type": "editorial",
+      "evidence_note": "风险说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本里的高频数字，只说明它们在这12期里出现得多，不说明下一期一定更容易出现。",
+      "claim_type": "editorial",
+      "evidence_note": "限制性说明，不能升级为预测。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台赔率、返点、奖金、收益。",
+      "claim_type": "editorial",
+      "evidence_note": "符合 mechanics_only 边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇到这里就停止。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果后面要继续缩小，只能等新增条件同时满足两点：有已验证规则或证据，而且能够重新复算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "继续缩小候选的条件约束。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "否则就应停在 3125 注，不再加新过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "最终停止条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先确认你看的就是五星直选，基础空间按 100000 记。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "把回看窗口固定为 12 期，不要先看样本再改参数。",
+      "claim_type": "rule_fact",
+      "evidence_note": "参数先固定再看样本。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按“频率从高到低、同频按数字从小到大”排出前5个数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选排序规则。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把这5个数字组成池子，按 5^5 复算主筛选后的空间。",
+      "claim_type": "calculation",
+      "evidence_note": "空间复算方法。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "核对排除量：100000 减去 3125，得到 96875。",
+      "claim_type": "calculation",
+      "evidence_note": "排除量复算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "到这一步就停，不再临时加第二个过滤器。",
+      "claim_type": "rule_fact",
+      "evidence_note": "停止条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果你后面想继续缩小候选，只能等新的条件有独立验证，并且可以按同样方式复算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "next step policy。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文面向的是<strong>分分彩五星直选频率技巧</strong>，只讲机制，不展开未核验的平台经济参数。这里的“五星直选”按五位数顺序来看，理论候选空间是 <code>100000</code> 注。</p><p>本篇只用一条主筛选合同：<strong>近12期频率前5数字池</strong>。它的意思是，先固定一个回看窗口，再按窗口内数字出现次数做排序，取前5个数字组成数字池，然后只看这个池子里的数字。</p><p>文中的案例是<strong>演示数据，不是真实开奖记录</strong>，只是为了复算步骤，不代表真实结果，也不代表未来会有同样表现。</p><h2>方法机制：近12期频率前5数字池</h2><p>这条筛选只看三件事：</p><ul><li>回看多少期：<code>12</code> 期。</li><li>怎么排：按“频率从高到低，频率相同再按数字从小到大”。</li><li>取几个：<code>5</code> 个数字。</li></ul><p>在这份演示里，12期样本算出的前5数字池是 <code>0、1、2、3、9</code>。这只是按样本频次排出来的池子，不代表命中率提高。</p><p>需要说明的是：这里的生产参数属于系统研究合同定义，本文只复算已给定的固定池子，不把它写成来源推荐，也不把样本结果升级成预测结论。</p><h2>完整可复算案例</h2><p>演示样本的12期数据如下，按合同给出的统计结果来复算：</p><ul><li>样本期数：<code>12</code></li><li>数字频次：<code>0=10，1=8，2=6，3=6，4=3，5=3，6=4，7=5，8=5，9=10</code></li><li>排序规则：<code>frequency_desc_then_digit_asc</code></li><li>取前5个数字：<code>0，1，2，3，9</code></li></ul><p>这一步复算后，主筛选得到的数字池大小是 <code>5</code> 个数字。</p><p>如果把五星直选看成五个位置都只能从这5个数字里选，那么候选数就是：</p><p><code>5 × 5 × 5 × 5 × 5 = 3125</code></p><p>也就是从原始 <code>100000</code> 注缩到 <code>3125</code> 注，排除掉 <code>96875</code> 注。</p><h3>演示数据里的辅助描述</h3><p>这组演示数据里还给了最新一期的描述信息：和值 <code>24</code>，跨度 <code>8</code>，号码 <code>69612</code>。这些都只是样本说明，不是预测依据。</p><p>样本说明中的“演示数据，不是真实开奖记录”必须和正文一起理解，不能把它当成真实开奖记录来用。</p><h2>逐步核对候选空间</h2><ol><li>先固定基础空间：五星直选按五位顺序，起始空间是 <code>100000</code>。</li><li>再固定主筛选：近12期频率前5数字池，池子数字是 <code>0、1、2、3、9</code>。</li><li>把每一位都限制在这个池子里后，空间变成 <code>5^5=3125</code>。</li><li>所以本步一共排除了 <code>100000-3125=96875</code> 注。</li></ol><p>这里的计算只完成到主筛选这一层。合同要求在主筛选后停止，不临时再加第二条过滤器。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这类频率池只是统计筛选，不是保证结果的工具。样本里的高频数字，只说明它们在这12期里出现得多，不说明下一期一定更容易出现。</p><p>所以，本文只做两件事：一是把规则讲清，二是把 <code>100000</code> 到 <code>3125</code> 的复算过程讲清。本文不讨论未核验的平台赔率、返点、奖金、收益。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇到这里就停止。原因很简单：合同里只有这一条已给定的主筛选，没有第二条已验证规则可以继续缩小候选。</p><p>如果后面要继续缩小，只能等新增条件同时满足两点：有已验证规则或证据，而且能够重新复算。否则就应停在 <code>3125</code> 注，不再加新过滤器。</p><h2>实际怎么操作</h2><ol><li>先确认你看的就是五星直选，基础空间按 <code>100000</code> 记。</li><li>把回看窗口固定为 <code>12</code> 期，不要先看样本再改参数。</li><li>按“频率从高到低、同频按数字从小到大”排出前5个数字。</li><li>把这5个数字组成池子，按 <code>5^5</code> 复算主筛选后的空间。</li><li>核对排除量：<code>100000</code> 减去 <code>3125</code>，得到 <code>96875</code>。</li><li>到这一步就停，不再临时加第二个过滤器。</li></ol><p>如果你后面想继续缩小候选，只能等新的条件有独立验证，并且可以按同样方式复算。</p>",
+  "content_format": "html",
+  "content_hash": "4aba6865bb6ab0509a654e8f6d660c286c3a1c90033ce6e8689b6448747829a4",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "6f058f0954d5ee63802783a1aaaea989d188c80c120c863dba6b88189f9c659a",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选频率技巧案例讲解：先说明五星直选规则，再用演示数据展示近12期频率前5数字池的筛选步骤、候选空间核对和停止条件，不把统计筛选包装成预测结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "3125",
+    "next_step_policy": "只有新增条件同时具有已验证规则/证据并且能够复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定回看窗口、排序规则和取前数量，再查看样本结果；不能根据样本临时改参数。",
+    "starting_space": "100000",
+    "steps": [
+      "先固定五星直选的基础空间为100000，不要先看样本再改参数。",
+      "把回看窗口固定为12期，按频率从高到低、同频按数字从小到大排序。",
+      "取前5个数字组成近12期频率前5数字池，本例得到0、1、2、3、9。",
+      "把五位每一位都限制在这个池子里，按5^5复算主筛选后的空间。",
+      "核对排除量：100000减去3125，得到96875。",
+      "只做到主筛选这一层就停止，不临时加第二个过滤器。"
+    ],
+    "stop_condition": "完成近12期频率前5数字池这一条主筛选后立即停止；如果没有新增且已验证的规则或证据，就不再继续缩小。"
+  },
+  "primary_keyword": "分分彩五星直选频率技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0b17e9820b6fdce6016a9bb788cbc487d0b2db2ad294f28ad8",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选频率技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-frequency_window",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用简单中文讲清腾讯分分彩五星直选里近12期频率前5数字池怎么计算，并用演示数据从100000复算到3125；同时说明这只是筛选机制，不是预测优势。",
+  "tags": [
+    "分分彩五星直选频率技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩窗口频率",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选频率把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选频率应该怎样复核",
+    "五星直选频率为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解",
+    "看懂五星直选频率不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选频率把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选频率应该怎样复核",
+      "五星直选频率为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解",
+      "看懂五星直选频率不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-dda4419236ecdcae",
+          "score": 0.7692307692307693,
+          "title": "先看规则，再看案例：五星直选里的五星直选和值怎样正确理解"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.24,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "频率"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "频率",
+            "五星直选频率"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

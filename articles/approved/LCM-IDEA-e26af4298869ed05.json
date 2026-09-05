@@ -1,0 +1,514 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释近12期频率前5数字池的机制，并完成从1000到125的可复算案例。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 875,
+    "final_space": 125,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解中三直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "0d0015aa4495e4afc9d1",
+  "approved_at": "2026-09-05T06:02:47.629626+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-6e20ca7a8cb65862",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:1000->125",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选频率技巧",
+    "reader_question": "理解中三直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释近12期频率前5数字池的机制，并完成从1000到125的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 875,
+      "final_space": 125,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：近12期频率前5数字池",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解中三直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释近12期频率前5数字池的机制，并完成从1000到125的可复算案例。",
+    "title": "分分彩中三直选频率技巧：近12期频率前5数字池具体怎么算，用完整案例从1000复算到125",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-e26af4298869ed05",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文面向的是分分彩中三直选频率技巧。",
+      "claim_type": "editorial",
+      "evidence_note": "读者显示层统一使用分分彩。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇的合同目标是：理解近12期频率前5数字池分别计算什么，并用固定演示案例把候选空间从1000复算到125。",
+      "claim_type": "editorial",
+      "evidence_note": "对应角度合同的交付目标。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇使用的演示样本标注为演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "文中所有样本计算都只基于这组演示数据，不代表真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "样本边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里的合同参数是固定的：回看期数是12，排序规则是“频率高者在前，频率相同按数字小者在前”，取前5个。",
+      "claim_type": "rule_fact",
+      "evidence_note": "规则/计算口径说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "根据演示数据的12期样本，数字频次分别是：0出现5次，1出现3次，2出现2次，3出现3次，4出现1次，5出现2次，6出现5次，7出现7次，8出现2次，9出现6次。",
+      "claim_type": "calculation",
+      "evidence_note": "由case_bundle频次表直接复算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按“频率降序、数字升序”排完，前5个数字是7、9、0、6、1。",
+      "claim_type": "calculation",
+      "evidence_note": "由演示频次表排序得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "所以，这个“近12期频率前5数字池”在本篇里不是预测结论，而是一个固定筛选结果：只把数字池限定为[0,1,6,7,9]，后面只看这5个数字能组成哪些中三直选三位数。",
+      "claim_type": "editorial",
+      "evidence_note": "演示数据池的展示性结论。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据的最新一期是92553，文中只取其中的“中三”相关展示，不把它写成真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "先把主筛选参数固定：回看12期、按频率前5取池、数字池为0、1、6、7、9。",
+      "claim_type": "editorial",
+      "evidence_note": "主筛选参数来自演示案例。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "参数先固定，再看样本，这是本篇的操作顺序。",
+      "claim_type": "editorial",
+      "evidence_note": "操作原则。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "接着看中三直选的候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "流程提示。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "中三直选按有序三位数看，起始空间是1000。",
+      "claim_type": "calculation",
+      "evidence_note": "按有序三位空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先不加第二条过滤器，只做这一条主筛选。",
+      "claim_type": "editorial",
+      "evidence_note": "停止在单一主筛选。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "当三位每一位都只能从数字池[0,1,6,7,9]里选时，候选数变成5×5×5=125。",
+      "claim_type": "calculation",
+      "evidence_note": "演示池复算结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "因此，筛选后空间是125，被筛掉的是875。",
+      "claim_type": "calculation",
+      "evidence_note": "1000到125的空间差。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一减法是完整可复算的：1000-125=875。",
+      "claim_type": "calculation",
+      "evidence_note": "空间差复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果你按演示数据继续复核，会得到同样的结果：主筛选只保留数字池，不再额外加别的统计条件，所以最终空间就是125，不是别的数字。",
+      "claim_type": "calculation",
+      "evidence_note": "演示案例复核。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第一步，确认玩法空间。中三直选按有序三位数看，起始空间是1000。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤1。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二步，固定主筛选参数。合同里只有一个主筛选：近12期频率前5数字池。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤2。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第三步，算出数字池。按演示数据的12期频次，取前5个数字是0、1、6、7、9。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤3。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "第四步，复算空间。每一位都有5种选择，所以是5的3次方，得到125。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤4。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第五步，核对剔除量。1000减125，得到875，说明主筛选一共排除了875个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤5。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个方法只说明“怎么筛”，不说明“下一期会开什么”。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "top_frequency_digits只是按样本频次排序，不代表未来命中率提高。",
+      "claim_type": "editorial",
+      "evidence_note": "必须保留的演示说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果有人把近12期频率前5数字池说成“更容易中”“有预测优势”，那就超出了本篇合同，也超出了这组演示数据能支持的范围。",
+      "claim_type": "editorial",
+      "evidence_note": "风险边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只做机械复算，不把统计筛选包装成预测优势，也不讨论未核验的平台赔率、返点、奖金、收益等具体事实或数字。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇到这里就停止。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "因为合同里只有这一条已验证的主筛选：近12期频率前5数字池。",
+      "claim_type": "editorial",
+      "evidence_note": "主筛选唯一性。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "如果后面还想继续缩小候选，只有在新增条件也有已验证规则或证据、并且能够复算时，才允许继续；否则就应该停在125，不再临时加第二过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件与下一步政策。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先把玩法范围定死：这里只看分分彩中三直选。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤1概括。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "再固定主参数：近12期、频率前5、数字池为0、1、6、7、9。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤2概括。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按数字频次排序，复算出前5个数字，不要先看结果再倒推参数。",
+      "claim_type": "editorial",
+      "evidence_note": "操作纪律。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "把三位直选的每一位都限定在这个数字池里，算出125。",
+      "claim_type": "calculation",
+      "evidence_note": "操作步骤4概括。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "最后检查停止条件：本篇到125就结束，不临时加别的统计筛选。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤5概括。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文面向的是<strong>分分彩中三直选频率技巧</strong>。这里先把范围说清楚：只讲机制，只讲演示数据的复算，不讨论未核验的平台经济参数。</p><p>本篇的合同目标是：理解<strong>近12期频率前5数字池</strong>分别计算什么，并用固定演示案例把候选空间从<strong>1000</strong>复算到<strong>125</strong>。</p><p>本篇使用的演示样本标注为<strong>演示数据，不是真实开奖记录</strong>。文中所有样本计算都只基于这组演示数据，不代表真实开奖记录。</p><h2>方法机制：近12期频率前5数字池</h2><p>这一步只做一件事：把近12期里出现得最多的数字排出来，取前5个数字，组成一个数字池。这里的合同参数是固定的：回看期数是12，排序规则是“频率高者在前，频率相同按数字小者在前”，取前5个。</p><p>根据演示数据的12期样本，数字频次分别是：0出现5次，1出现3次，2出现2次，3出现3次，4出现1次，5出现2次，6出现5次，7出现7次，8出现2次，9出现6次。按“频率降序、数字升序”排完，前5个数字是<strong>7、9、0、6、1</strong>。</p><p>所以，这个“近12期频率前5数字池”在本篇里不是预测结论，而是一个固定筛选结果：只把数字池限定为<strong>[0,1,6,7,9]</strong>，后面只看这5个数字能组成哪些中三直选三位数。</p><h2>完整可复算案例</h2><p>演示数据的最新一期是<strong>92553</strong>，文中只取其中的“中三”相关展示，不把它写成真实开奖记录。该组样本展示到这里，目的只是说明怎么算，不是说明未来会开什么。</p><p>先把主筛选参数固定：回看12期、按频率前5取池、数字池为0、1、6、7、9。参数先固定，再看样本，这是本篇的操作顺序。</p><p>接着看中三直选的候选空间。三位直选按顺序计数，起始空间是<strong>1000</strong>，也就是所有000到999的有序三位数。先不加第二条过滤器，只做这一条主筛选。</p><p>当三位每一位都只能从数字池<strong>[0,1,6,7,9]</strong>里选时，候选数变成<strong>5×5×5=125</strong>。因此，筛选后空间是<strong>125</strong>，被筛掉的是<strong>875</strong>。这一减法是完整可复算的：<strong>1000-125=875</strong>。</p><p>如果你按演示数据继续复核，会得到同样的结果：主筛选只保留数字池，不再额外加别的统计条件，所以最终空间就是125，不是别的数字。</p><h2>逐步核对候选空间</h2><ol><li>第一步，确认玩法空间。中三直选按有序三位数看，起始空间是1000。</li><li>第二步，固定主筛选参数。合同里只有一个主筛选：近12期频率前5数字池。</li><li>第三步，算出数字池。按演示数据的12期频次，取前5个数字是0、1、6、7、9。</li><li>第四步，复算空间。每一位都有5种选择，所以是5的3次方，得到125。</li><li>第五步，核对剔除量。1000减125，得到875，说明主筛选一共排除了875个候选。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这个方法只说明“怎么筛”，不说明“下一期会开什么”。<strong>top_frequency_digits只是按样本频次排序，不代表未来命中率提高。</strong></p><p>如果有人把近12期频率前5数字池说成“更容易中”“有预测优势”，那就超出了本篇合同，也超出了这组演示数据能支持的范围。</p><p>本文只做机械复算，不把统计筛选包装成预测优势，也不讨论未核验的平台赔率、返点、奖金、收益等具体事实或数字。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇到这里就停止。因为合同里只有这一条已验证的主筛选：近12期频率前5数字池。</p><p>如果后面还想继续缩小候选，只有在新增条件也有已验证规则或证据、并且能够复算时，才允许继续；否则就应该停在125，不再临时加第二过滤器。</p><h2>实际怎么操作</h2><ol><li>先把玩法范围定死：这里只看分分彩中三直选。</li><li>再固定主参数：近12期、频率前5、数字池为0、1、6、7、9。</li><li>按数字频次排序，复算出前5个数字，不要先看结果再倒推参数。</li><li>把三位直选的每一位都限定在这个数字池里，算出125。</li><li>最后检查停止条件：本篇到125就结束，不临时加别的统计筛选。</li></ol>",
+  "content_format": "html",
+  "content_hash": "b9e204dfbf210f249e037e2d5fc3b727d8c4af76696b58d62fce2ae7b5431c05",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "e26af4298869ed05ce8b491ad11671abe1df7267a667e4bd5fd30b4d58c2b80f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选频率技巧案例讲解：先说明中三直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "125",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；本篇主筛选只允许使用近12期频率前5数字池。",
+    "starting_space": "1000",
+    "steps": [
+      "先固定玩法范围，只看分分彩中三直选。",
+      "再固定主筛选参数：近12期、按频率前5取池、数字池为0、1、6、7、9。",
+      "按演示数据的12期频次复算前5数字，不要先看结果再倒推参数。",
+      "把三位直选的每一位都限定在这个数字池里，算出125，并核对从1000到125一共筛掉875。",
+      "完成这一步后停止，不临时加第二过滤器。"
+    ],
+    "stop_condition": "完成1000到125的主筛选复算后停止；没有新增已验证规则或证据时，不再继续缩小候选。"
+  },
+  "primary_keyword": "分分彩中三直选频率技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0f350da97f417f68016a9bb0487a2c87d09836870f6c765a42",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "理解中三直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩中三直选频率技巧",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：中三直选频率应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-中三直选-frequency_window",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "本文用演示数据说明分分彩中三直选里“近12期频率前5数字池”怎么计算，并按固定步骤把候选空间从1000复算到125。内容只讲机制、算式和边界，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "中三直选",
+    "频率技巧",
+    "数字池",
+    "演示数据",
+    "可复算案例"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "从玩法规则到完整案例：中三直选频率应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用中三直选频率把规则和复算过程讲清",
+    "从玩法规则到完整案例：中三直选频率应该怎样复核",
+    "中三直选频率为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的中三直选频率怎样正确理解",
+    "看懂中三直选频率不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用中三直选频率把规则和复算过程讲清",
+      "从玩法规则到完整案例：中三直选频率应该怎样复核",
+      "中三直选频率为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的中三直选频率怎样正确理解",
+      "看懂中三直选频率不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-64423d444192d985",
+          "score": 0.8181818181818182,
+          "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2857,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "频率"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "频率",
+            "中三直选频率"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：中三直选频率应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

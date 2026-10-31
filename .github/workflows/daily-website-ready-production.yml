@@ -13,6 +13,7 @@ permissions:
   contents: write
   pull-requests: write
   actions: write
+  statuses: write
 
 concurrency:
   group: daily-website-ready-production
@@ -285,13 +286,17 @@ jobs:
           echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
           gh run watch "$RUN_ID" --exit-status
 
-      - name: Hand off protected merge to required-check relay
+      - name: Verify dispatched CI and confirm protected merge
         if: steps.meta.outputs.completed != 'true'
         shell: bash
         env:
           PR_URL: ${{ steps.current.outputs.pr_url }}
           CI_RUN_ID: ${{ steps.ci.outputs.run_id }}
+          HEAD_SHA: ${{ steps.current.outputs.head_sha }}
         run: |
           set -euo pipefail
-          echo "Independent dual-version CI passed for ${PR_URL}."
-          echo "relay-dispatched-required-checks will publish the protected status contexts from run ${CI_RUN_ID} and perform the squash merge."
+          python -m engine.daily_ci_closeout \
+            --repository "$GITHUB_REPOSITORY" \
+            --run-id "$CI_RUN_ID" \
+            --pr-url "$PR_URL" \
+            --expected-sha "$HEAD_SHA"

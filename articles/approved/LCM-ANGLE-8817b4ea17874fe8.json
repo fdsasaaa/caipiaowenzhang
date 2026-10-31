@@ -1,0 +1,421 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点45、终点27、排除18。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18,
+    "final_space": 27,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前二组选的候选空间计算，逐项确认45到27以及排除18个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值6–12"
+    ],
+    "starting_space": 45,
+    "static_stage_labels": [
+      "和值6–12"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "7a425c5b712cc9858510",
+  "approved_at": "2026-09-05T06:15:35.132656+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-6dcc2403bba6d51b",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:45->27",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二组选和值注数计算",
+    "reader_question": "核对前二组选的候选空间计算，逐项确认45到27以及排除18个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点45、终点27、排除18。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18,
+      "final_space": 27,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值6–12"
+      ],
+      "starting_space": 45,
+      "static_stage_labels": [
+        "和值6–12"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前二组选的候选空间计算，逐项确认45到27以及排除18个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点45、终点27、排除18。",
+    "title": "分分彩前二组选和值注数计算：45个候选为什么变成27个，排除18个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-8817b4ea17874fe8",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只核对一个主筛选：和值6–12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选参数来自已验证规则引用。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这是本篇唯一主筛选合同，参数先固定，再看样本。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑要求：先固定参数再看样本。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇面向读者的显示名统一用分分彩。",
+      "claim_type": "editorial",
+      "evidence_note": "显示术语改写要求，非来源事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "文中不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 范围内的免责声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的起点是45个前二组选候选，终点是27个，合计排除18个。",
+      "claim_type": "calculation",
+      "evidence_note": "起点、终点与排除数来自合同机器事实。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按这个固定规则，筛选前空间是45，筛选后空间是27，所以被排除的是18。",
+      "claim_type": "calculation",
+      "evidence_note": "空间数学结果，使用已验证规则支持。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步只是候选空间缩小，不代表命中率提高，也不代表结果会按某个方向变化。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不构成可验证性能声称。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本中，前二的和值演示序列可以写成：5、5、7、12、8、7、10、10、7、7、6、7。",
+      "claim_type": "calculation",
+      "evidence_note": "样本序列来自 case_bundle，仅作演示。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "它只是演示计算，不是预测依据。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "再看一个演示样本的最新值：5、2，和值是7，跨度是3。",
+      "claim_type": "calculation",
+      "evidence_note": "样本值、和值与跨度均来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这只是样例展示，不是对后续结果的保证。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本不构成预测保证。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "45、27、18 说的是空间大小，不是胜率、准确率或收益率。",
+      "claim_type": "editorial",
+      "evidence_note": "明确区分空间数学与性能指标。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "换句话说，45个候选为什么变成27个，回答的是“保留多少、排除多少”；它不是“能中多少”的承诺。",
+      "claim_type": "editorial",
+      "evidence_note": "解释空间数学含义，不作预测承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果把空间缩小说成预测优势，就会把筛选数学和结果判断混在一起。",
+      "claim_type": "editorial",
+      "evidence_note": "方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇只做一个已固定参数的空间计算：和值6到12。",
+      "claim_type": "rule_fact",
+      "evidence_note": "唯一主筛选参数来自已验证规则。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "除此之外，不临时追加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有第二条已验证规则或可复算证据，就应该停在这里，不继续往下拼新的条件。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件与边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "所以，本篇的结论只到主筛选结束：起点45，终点27，排除18。",
+      "claim_type": "calculation",
+      "evidence_note": "结论复述，仍是空间数学。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇已经完成合同要求的唯一主筛选核对。",
+      "claim_type": "editorial",
+      "evidence_note": "流程完成说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "接下来只有在新增条件也有已验证规则或可复算证据时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "next_step_policy。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有这些新增依据，就应保持当前结果，不再扩展解释。",
+      "claim_type": "editorial",
+      "evidence_note": "停止后续扩展。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这篇文章只回答一个问题：分分彩前二组选和值注数计算里，为什么会从45个候选变成27个，并排除18个。",
+      "claim_type": "editorial",
+      "evidence_note": "文章目标陈述。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "答案是：按和值6–12这个固定筛选，筛选前45，筛选后27，排除18。",
+      "claim_type": "calculation",
+      "evidence_note": "最终空间数学结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "它是确定性的空间计算，不是预测承诺。",
+      "claim_type": "editorial",
+      "evidence_note": "明确非预测属性。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只核对一个主筛选：<strong>和值6–12</strong>。这是本篇唯一主筛选合同，参数先固定，再看样本。</p><p>本篇面向读者的显示名统一用<strong>分分彩</strong>。文中不讨论未核验的平台经济参数。</p><p>这里的起点是<strong>45</strong>个前二组选候选，终点是<strong>27</strong>个，合计排除<strong>18</strong>个。</p><h2>逐层计算保留与排除数量</h2><p>主筛选规则是：在前二组选里，只保留和值落在6到12之间的候选。</p><p>按这个固定规则，筛选前空间是<strong>45</strong>，筛选后空间是<strong>27</strong>，所以被排除的是<strong>18</strong>。</p><p>这一步只是候选空间缩小，不代表命中率提高，也不代表结果会按某个方向变化。</p><h2>演示数据怎么用</h2><p><strong>演示数据，不是真实开奖记录</strong>。下面这组样本只用于说明如何看数，不用于证明真实开奖走势。</p><p>演示样本中，前二的和值演示序列可以写成：5、5、7、12、8、7、10、10、7、7、6、7。它只是演示计算，不是预测依据。</p><p>再看一个演示样本的最新值：<strong>5、2</strong>，和值是<strong>7</strong>，跨度是<strong>3</strong>。这只是样例展示，不是对后续结果的保证。</p><h2>为什么这些数字不是命中率</h2><p>45、27、18 说的是空间大小，不是胜率、准确率或收益率。</p><p>换句话说，<strong>45个候选为什么变成27个</strong>，回答的是“保留多少、排除多少”；它不是“能中多少”的承诺。</p><p>如果把空间缩小说成预测优势，就会把筛选数学和结果判断混在一起。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>本篇只做一个已固定参数的空间计算：和值6到12。除此之外，不临时追加第二个过滤器。</p><p>如果没有第二条已验证规则或可复算证据，就应该停在这里，不继续往下拼新的条件。</p><p>所以，本篇的结论只到主筛选结束：起点45，终点27，排除18。</p><h2>实际怎么操作</h2><ol><li>先确认你看的对象是前二组选，不要把别的玩法混进来。</li><li>再固定唯一主筛选：和值6到12。</li><li>从45个候选起算，按这个条件复算保留数。</li><li>核对结果是否为27个，并确认排除18个。</li><li>只要主筛选已经完成，就先停止，不要临时再加一个未经验证的新过滤器。</li></ol><h2>停止条件</h2><p>本篇已经完成合同要求的唯一主筛选核对。接下来只有在新增条件也有已验证规则或可复算证据时，才允许继续缩小候选。</p><p>如果没有这些新增依据，就应保持当前结果，不再扩展解释。</p><h2>小结</h2><p>这篇文章只回答一个问题：分分彩前二组选和值注数计算里，为什么会从45个候选变成27个，并排除18个。</p><p>答案是：按和值6–12这个固定筛选，筛选前45，筛选后27，排除18。它是确定性的空间计算，不是预测承诺。</p>",
+  "content_format": "html",
+  "content_hash": "e71c721d7cbb4af46b1f0be1952372ec2a53f035de2088c64c6257f66e27c23f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "8817b4ea17874fe8078c4db6eab7631c7ff4c9dea7660159c5dcf6d571a7499a",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二组选和值注数计算案例讲解：先说明前二组选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前二组选",
+  "practical_guidance": {
+    "after_primary_filter_space": "27个候选",
+    "next_step_policy": "只有新增条件具有已验证规则/证据并可复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "参数必须先固定再看样本；本篇只使用和值6到12这一条主筛选。",
+    "starting_space": "45个候选",
+    "steps": [
+      "先确认对象是前二组选，不要混入别的玩法。",
+      "固定唯一主筛选：和值6到12。",
+      "从45个候选起算，按这个条件复算保留数。",
+      "核对结果是否为27个，并确认排除18个。",
+      "主筛选完成后先停止，不要临时再加一个未经验证的新过滤器。"
+    ],
+    "stop_condition": "完成唯一主筛选后停止；如果没有第二条已验证规则或可复算证据，不再追加过滤器。"
+  },
+  "primary_keyword": "分分彩前二组选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0e60878300ca7aa9016a9bb359d9d487d1ab35a34a8a791f28",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "核对前二组选的候选空间计算，逐项确认45到27以及排除18个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二组选和值注数计算",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二组选和值的空间计算与停止条件",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二组选-sum_range-space_math",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "本文只做候选空间的确定性核对：前二组选先从45个候选起算，再按和值6到12保留27个，排除18个。文中会用演示数据说明计算步骤，但不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值区间",
+    "注数计算",
+    "空间数学",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "从输入到结果：前二组选和值的空间计算与停止条件",
+  "title_candidates": [
+    "候选空间为什么会变？前二组选和值的计算过程一次理清",
+    "先算注数，再谈前二组选和值：组合数学能说明到哪一步",
+    "从输入到结果：前二组选和值的空间计算与停止条件",
+    "前二组选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的前二组选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二组选和值的计算过程一次理清",
+      "先算注数，再谈前二组选和值：组合数学能说明到哪一步",
+      "从输入到结果：前二组选和值的空间计算与停止条件",
+      "前二组选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的前二组选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-8bb328486dd299cc",
+          "score": 0.7727272727272727,
+          "title": "从输入到结果：中三直选频率的空间计算与停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "组选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二组选和值的空间计算与停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

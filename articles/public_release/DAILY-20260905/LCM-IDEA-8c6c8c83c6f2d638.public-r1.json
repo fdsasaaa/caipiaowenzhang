@@ -1,0 +1,200 @@
+{
+  "angle_signature": "e6b0cf895b5aaa454054",
+  "approved_at": "2026-09-05T06:29:29.488808+00:00",
+  "article_id": "LCM-IDEA-8c6c8c83c6f2d638",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲前二组选里“和值6–12”这一类计算方法，不讨论平台参数或其他未核验信息。",
+      "claim_type": "editorial",
+      "evidence_note": "公开边界声明，属于编辑性说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "“和值”就是把前二的两个数字相加，得到一个总和。",
+      "claim_type": "rule_fact",
+      "evidence_note": "由已验证玩法规则引用。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文的主筛选条件只有一个：和值落在6到12之间的候选保留，其余候选排除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应已验证的玩法机制说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类、和值区间，或者某段历史样本里的表现，都不能单独证明未来有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "研究导向的风险与边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果后续还要继续收窄范围，新的条件也应当有独立的规则依据或可复算证据。",
+      "claim_type": "methodology",
+      "evidence_note": "方法论建议，非具体规则事实。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法范围与计算对象</h2><p>本文只讲前二组选里“和值6–12”这一类计算方法，不讨论平台参数或其他未核验信息。</p><p>这里的前二组选，是先固定前面两个位置，再按组选思路理解两个数字的关系；全文只围绕这个固定筛选条件展开。</p><p>文中案例使用演示数据，不是真实开奖记录，只用于说明怎么算，不代表真实开奖结果。</p><h2>和值机制怎么理解</h2><p>“和值”就是把前二的两个数字相加，得到一个总和。</p><p>本文的主筛选条件只有一个：和值落在6到12之间的候选保留，其余候选排除。</p><p>这类写法的重点是先固定参数，再做复算；不是先看样本，再反过来改规则。</p><h2>演示复算与候选变化</h2><p>按照文中的演示设置，筛选前候选空间是45，经过“和值6–12”这一项主筛选后，剩下27个，排除18个。</p><p>这个变化只是在说明机械筛选的结果，不是在说明下一次会出现什么。</p><p>读者如果要核对，只需要先把前二两个数字相加，再判断是否落在6到12之间。</p><h2>常见误区与研究视角</h2><p>需要特别注意：结构分类、和值区间，或者某段历史样本里的表现，都不能单独证明未来有预测优势。</p><p>这些信息更适合用来做规则理解、样本复盘和样本外验证，而不是直接当成预测结论。</p><p>如果把描述性筛选误当成稳定优势，就容易把“算清楚”误读成“能预测”。</p><h2>停止条件与边界</h2><p>本文只完成已经明确的主筛选，不临时叠加第二条未经验证的规则。</p><p>如果后续还要继续收窄范围，新的条件也应当有独立的规则依据或可复算证据。</p><p>在没有这些依据时，最稳妥的做法就是停在已定义的机制层面，不把筛选结果包装成收益判断。</p>",
+  "content_format": "html",
+  "content_hash": "440921524cccebf8e06194ebc82ce51bc71ec92b1d665c7a1d22c5e8251e2137",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "3f89bb146009c9400eaf646a02ab37ae7a9bb5a798cd979e8ec6b5b69cfc53c8",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释前二组选和值6–12的计算逻辑、候选空间变化、常见误区与停止条件，适合做规则理解和复盘参考。",
+  "parent_content_hash": "f241ac6fd06f1339a3244bb7e68438cad6fcab053690bc7974c35fb9cca8c148",
+  "parent_fingerprint": "8c6c8c83c6f2d6381fc3c5056c505de8bf99e0adb649259df5ad58d38b69380f",
+  "play": "前二组选",
+  "primary_keyword": "分分彩前二组选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_09eb40ec30f85d3c016a9bb3230b6c87d0ac97591ac94cccff",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:29:29.488826+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-8c6c8c83c6f2d638:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "理解前二组选里和值6–12分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前二组选和值技巧",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+  "site_category_key": "tzjq",
+  "slug": "ffcsqezhxsjq-hezhi6-12-jueti-zenme-suan-wanzheng-anli-cong45-fusuan-dao27",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "公开版围绕前二组选和值6–12的计算逻辑展开，保留玩法机制、候选空间变化与复盘思路，强调演示数据仅用于说明，不构成未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值6-12",
+    "技巧",
+    "演示数据",
+    "可复算案例",
+    "候选空间",
+    "筛选步骤"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+  "title_candidates": [
+    "这一步到底怎么算？用前二组选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前二组选和值应该怎样复核",
+    "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：前二组选里的前二组选和值怎样正确理解",
+    "看懂前二组选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前二组选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前二组选和值应该怎样复核",
+      "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：前二组选里的前二组选和值怎样正确理解",
+      "看懂前二组选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+          "score": 0.8076923076923077,
+          "title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "前二",
+            "组选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

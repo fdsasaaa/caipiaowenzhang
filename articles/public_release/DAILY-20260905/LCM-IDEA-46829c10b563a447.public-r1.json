@@ -1,0 +1,210 @@
+{
+  "angle_signature": "11462f725c71d850b007",
+  "approved_at": "2026-09-05T06:31:00.367136+00:00",
+  "article_id": "LCM-IDEA-46829c10b563a447",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讨论分分彩里的后三直选和值机制。",
+      "claim_type": "rule_fact",
+      "evidence_note": "沿用父稿中的玩法范围与规则家族。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "“后三直选”是指只看后三位，并且按位置分别处理。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父稿对玩法对象的定义。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "“和值”是把后三位数字加在一起，再看总和是否落入预先设定的区间。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父稿中的计算逻辑。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文沿用的主筛选条件是和值9到18。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父稿的固定参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-3STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现，不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版的风险提示与方法边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只做教育和研究导向的讲解，不提供任何选号指令。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先说明对象</h2><p>本文只讨论分分彩里的后三直选和值机制。</p><p>这里关注的是后三位数字相加后，结果落在哪个区间，以及这个区间在规则里起什么作用。</p><p>本文只做教育和研究导向的讲解，不提供任何选号指令，也不把历史样本当成未来结论。</p><h2>和值区间怎么理解</h2><p>“后三直选”是指只看后三位，并且按位置分别处理。</p><p>“和值”是把后三位数字加在一起，再看总和是否落入预先设定的区间。</p><p>本文沿用的主筛选条件是和值9到18。它只是一个固定的观察框架，不代表优势，更不代表结果会按同样方式重复。</p><p>区间筛选的作用，是把规则表达得更清楚，方便复算和核对。</p><h2>固定参数后再做样本复算</h2><p>研究这类玩法时，常见做法是先把参数固定，再观察样本怎么通过筛选。</p><p>这样可以避免把规则、样本和推断混在一起。</p><p>如果没有新的、已经验证过的规则，就不应在同一套说明里临时叠加更多过滤条件。</p><h2>演示案例如何复算</h2><p><strong>提示：下面只用演示样本说明机制，不是真实开奖记录，也不代表任何后续趋势。</strong></p><p>演示样本共十六条。做法很简单：先取每条记录的后三位，再把三位相加，最后判断是否落在9到18之间。</p><p>例如，某些样本相加后落入区间，就保留；相加后落在区间外，就剔除。这个过程的重点是“怎么算”，不是“选什么”。</p><p>在这组演示数据里，按同一条规则复算后，保留项多于剔除项，但这只是样本中的机械结果，不能据此推出未来会更容易出现同类结果。</p><h2>空间变化只说明筛选，不说明预测</h2><p>从理论候选空间看，先有完整空间，再经过和值9到18这一道主筛选，空间会缩小。</p><p>这种缩小说明的是规则过滤效果，不是中奖率提升，也不是稳定盈利的证据。</p><p>结构分类或历史样本表现，不能单独证明未来预测优势。</p><p>如果要继续研究，只能在有明确规则、可复算、可验证的前提下讨论方法本身，而不是把一次筛选当成结果承诺。</p><h2>常见误区</h2><p>第一个误区，是把“区间命中”理解成未来更有把握。这种推断并不成立。</p><p>第二个误区，是把历史样本里的筛选结果直接当成长期规律。样本只是样本，不能自动变成结论。</p><p>第三个误区，是把机制讲解和执行建议混为一谈。本文只讲机制，不提供具体操作方案。</p><p>如果需要继续研究，应该优先关注规则是否清晰、参数是否预先固定、样本是否可复算，而不是追求表面上的“更像答案”。</p>",
+  "content_format": "html",
+  "content_hash": "b8aa6192ad1c031ec74882abec26e997eaea4e497f15a86575472d5301a20e3f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "fafc508e3733cf4c4b699dc7bdd331c314420eb416fa817bfcebc41ad811ba1c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释分分彩后三直选和值的计算逻辑、区间筛选与样本复算，强调规则机制、随机波动和常见误区，不提供选号建议。",
+  "parent_content_hash": "84107a28adf9f4b1733390d03963f81c2a332eeaaceae1abcced7f26c9cf0531",
+  "parent_fingerprint": "46829c10b563a447efb23b56ce77dc43940361fca14f9adfe396e140bd479150",
+  "play": "后三直选",
+  "primary_keyword": "分分彩后三直选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_003aee62922ca1ed016a9bb3fe81ac87d0b63faa7e144b92d0",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:31:00.367152+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-46829c10b563a447:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-3STAR-LAST-V1"
+  ],
+  "search_intent": "理解后三直选里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩后三直选和值技巧",
+    "分分彩技巧",
+    "后三直选技巧",
+    "分分彩后三直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂后三直选和值不靠口诀，先把计算逻辑拆开",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-后三直选-sum_range",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后三直选",
+  "summary": "本文用简单中文解释分分彩后三直选和值的计算逻辑、区间筛选方式和样本复算思路，强调参数固定、机制核对、随机波动与常见误区，不提供具体选号或执行建议。",
+  "tags": [
+    "分分彩",
+    "后三直选",
+    "和值9-18",
+    "技巧讲解",
+    "演示数据",
+    "候选空间",
+    "复算案例"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "看懂后三直选和值不靠口诀，先把计算逻辑拆开",
+  "title_candidates": [
+    "这一步到底怎么算？用后三直选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：后三直选和值应该怎样复核",
+    "后三直选和值为什么容易算错？关键在输入、计算和常见误区",
+    "先看规则，再看案例：后三直选里的后三直选和值怎样正确理解",
+    "看懂后三直选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用后三直选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：后三直选和值应该怎样复核",
+      "后三直选和值为什么容易算错？关键在输入、计算和常见误区",
+      "先看规则，再看案例：后三直选里的后三直选和值怎样正确理解",
+      "看懂后三直选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 21
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-06b31faa23c940be",
+          "score": 0.8,
+          "title": "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2632,
+          "intent_term_hits": [
+            "后三",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后三",
+            "直选",
+            "和值",
+            "后三直选和值"
+          ],
+          "subject_play": "后三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂后三直选和值不靠口诀，先把计算逻辑拆开"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

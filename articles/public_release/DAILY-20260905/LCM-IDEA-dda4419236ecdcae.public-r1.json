@@ -1,0 +1,201 @@
+{
+  "angle_signature": "432c23a0435e8ad07f2d",
+  "approved_at": "2026-09-05T06:26:03.377562+00:00",
+  "article_id": "LCM-IDEA-dda4419236ecdcae",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按五位顺序号码来理解，和值是把5个数字相加。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自已核验规则引用，属于玩法机制定义。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇只保留和值在15到30之间的条件，即总和大于等于15且小于等于30。",
+      "claim_type": "rule_fact",
+      "evidence_note": "基于已核验规则引用进行的公开表述。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示号码列表仅用于说明机制，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版风险提示，避免把演示样本误读为真实数据。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这一类筛选只是做候选空间切分，不等于预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版风险说明，强调样本外不确定性。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲五星直选里的一个规则筛选：和值区间 15–30。这里的五星直选，按五位顺序号码来理解，先固定规则，再做计算。</p><p>本文不讨论未核验的平台经济参数，也不提供下一步操作建议。</p><p>下面使用的是演示数据，用于说明机制，不是真实开奖记录。</p><h2>方法机制：和值怎么理解</h2><p>和值，就是把一个五星号码的 5 个数字相加。</p><p>本篇只保留一个条件：和值在 15 到 30 之间，也就是总和大于等于 15，且小于等于 30。</p><p>这个筛选本质上是在做候选空间切分，不等于预测优势。</p><h2>可复算演示</h2><p>演示号码包括：<code>98345</code>、<code>64016</code>、<code>99759</code>、<code>83673</code>、<code>98790</code>、<code>09309</code>、<code>44329</code>、<code>57119</code>、<code>07746</code>、<code>18788</code>、<code>96166</code>、<code>14179</code>、<code>43296</code>、<code>06151</code>、<code>65686</code>、<code>49050</code>。</p><p>例如 <code>49050</code> 的 5 位数字相加后得到 18，所以它落在和值 15–30 之内。</p><p>这一类演示只用于复算规则，不用于推断未来结果。</p><h2>候选空间与边界</h2><p>在这个规则下，候选空间从 <strong>100000</strong> 个五位有序号码，缩小到 <strong>78004</strong> 个。</p><p>也就是说，共剔除了 <strong>21996</strong> 个候选。</p><p>这只是一次规则过滤，不能单独证明未来预测优势。历史样本表现也不能单独证明未来预测优势。</p><h2>常见误区</h2><p>第一，不能把“筛掉了很多号码”直接理解为“更容易命中”。</p><p>第二，不能把历史样本中的和值、跨度、频率或单双结构，直接写成下一次的预测依据。</p><p>第三，不能在没有新增已验证规则时，继续临时叠加过滤条件。</p><p>如果只是做学习和研究，最重要的是先确认规则，再复算过程，最后再看样本是否与规则一致。</p>",
+  "content_format": "html",
+  "content_hash": "def79f5f92adcd72febaeade4f5743884d728d0d890f17c10eae9fb93a62a795",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "fecb110d19f2fa86286c2aef2d9897e0ea3de9f436cd86e407606c6aeb1fe74c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释五星直选和值15–30的计算规则、候选空间变化和常见误区，重点是机制理解与复算，不涉及选号建议。",
+  "parent_content_hash": "75b059ef58ad9dcd99ef2b4a4e8c891a17c2a98e5384015101b1dce527756467",
+  "parent_fingerprint": "dda4419236ecdcaea709327e8547c810751365c20912e0edde2c7a1ff50fb1d9",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_005fcd7aa4a79ae0016a9bae7fe80c87d0875ae42abbcdfa14",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:26:03.377583+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-dda4419236ecdcae:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解五星直选里和值15–30分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩五星直选和值技巧",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先看规则，再看案例：五星直选里的五星直选和值怎样正确理解",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-position_filter-sum_range",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文用简单中文解释五星直选和值15–30怎么算，并按固定演示数据说明从100000复算到78004。重点是看懂机制、会复算、知道何时停止，不把统计筛选包装成预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "和值技巧",
+    "位置筛选",
+    "演示数据",
+    "可复算案例",
+    "分分彩五星直选和值技巧"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "先看规则，再看案例：五星直选里的五星直选和值怎样正确理解",
+  "title_candidates": [
+    "这一步到底怎么算？用五星直选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：五星直选和值应该怎样复核",
+    "五星直选和值为什么容易算错？关键在输入、计算和常见误区",
+    "先看规则，再看案例：五星直选里的五星直选和值怎样正确理解",
+    "看懂五星直选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用五星直选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：五星直选和值应该怎样复核",
+      "五星直选和值为什么容易算错？关键在输入、计算和常见误区",
+      "先看规则，再看案例：五星直选里的五星直选和值怎样正确理解",
+      "看懂五星直选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-64423d444192d985",
+          "score": 0.4166666666666667,
+          "title": "从玩法规则到完整案例：五星直选奇偶应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3182,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "和值",
+            "五星直选和值"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先看规则，再看案例：五星直选里的五星直选和值怎样正确理解"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

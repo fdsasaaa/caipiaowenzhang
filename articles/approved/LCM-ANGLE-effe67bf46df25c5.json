@@ -1,0 +1,331 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把前二直选候选空间的确定性数学过程算清楚：起点100个，经过近12期频率前5数字池后保留25个，排除75个。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 75,
+    "final_space": 25,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对前二直选的候选空间计算，逐项确认100到25以及排除75个的确定性结果",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "1dab94b990b5f328fc8d",
+  "approved_at": "2026-10-31T00:40:41.518459+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-7f4008f41499ec10",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:100->25",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二直选频率注数计算",
+    "reader_question": "核对前二直选的候选空间计算，逐项确认100到25以及排除75个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100、终点25、排除75。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 75,
+      "final_space": 25,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对前二直选的候选空间计算，逐项确认100到25以及排除75个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100、终点25、排除75。",
+    "title": "分分彩前二直选频率注数计算：100个候选为什么变成25个，排除75个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-effe67bf46df25c5",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "在本合同中，前二直选按两个有顺序的位置计算，第一位和第二位各从0到9取一个数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "说明本篇使用的前二直选有序两位候选空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，第一位有10种选择，第二位也有10种选择，起点候选空间就是10×10=100个。",
+      "claim_type": "calculation",
+      "evidence_note": "由已核验的有序两位玩法机制复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文使用的案例标签是“演示数据，不是真实开奖记录”。",
+      "claim_type": "editorial",
+      "evidence_note": "明确案例性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "合同指定的唯一阶段是“近12期频率前5数字池”，观察窗口为12期，排序规则为频率降序、数字升序，取前5个数字。",
+      "claim_type": "calculation",
+      "evidence_note": "记录本篇系统合同中的阶段和参数；具体数字池来自演示数据计算，不是来源指定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本案例按合同给出的演示参数使用数字池0、1、2、5、7，共5个数字。",
+      "claim_type": "calculation",
+      "evidence_note": "数字池属于case_bundle中的演示计算参数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "两个有顺序的位置都只从这5个数字中取值，所以保留空间是5×5=25个。",
+      "claim_type": "calculation",
+      "evidence_note": "由演示数字池和前二直选有序位置复算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "从起点100个候选中保留25个，排除数量就是100-25=75个。",
+      "claim_type": "calculation",
+      "evidence_note": "由合同起点和阶段终点直接计算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "因此，100-75=25，起点、排除量和终点能够闭合核对。",
+      "claim_type": "calculation",
+      "evidence_note": "对同一演示筛选结果进行总量校验。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里的25个只是候选空间的数量，不是命中率、准确率或未来结果的保证。",
+      "claim_type": "editorial",
+      "evidence_note": "说明数学空间与预测表现的边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "频率、遗漏、和值和跨度如果没有另外的已验证规则支持，在本文中都只能作为描述性信息，不能直接变成预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "限定统计字段的使用范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "符合mechanics_only范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成这一个主筛选后，候选空间停在25个，不再临时加入第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "说明合同要求的停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件同时具备已验证的规则或证据，并且能够按同一口径复算时，才允许继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "说明后续筛选政策。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文只核对分分彩前二直选频率注数计算中的空间变化，不把统计筛选写成预测结论。</p><p>在本合同中，前二直选按两个有顺序的位置计算，第一位和第二位各从0到9取一个数字。</p><p>因此，第一位有10种选择，第二位也有10种选择，起点候选空间就是10×10=100个。</p><p>这里的“有顺序”很重要。第一位和第二位分别占用一个位置，同样的两个数字换位后，属于不同的前二直选候选。</p><p><strong>演示数据，不是真实开奖记录。</strong>下面的数字池和计算只用于复算合同中的候选空间。</p><h2>逐层计算保留与排除</h2><h3>第1层：近12期频率前5数字池</h3><p>合同指定的唯一阶段是“近12期频率前5数字池”，观察窗口为12期，排序规则为频率降序、数字升序，取前5个数字。</p><p>本案例按合同给出的演示参数使用数字池0、1、2、5、7，共5个数字。</p><p>两个有顺序的位置都只从这5个数字中取值，所以保留空间是5×5=25个。</p><p>这一步没有再叠加和值、跨度、遗漏或其他条件。它只完成一个数字池筛选。</p><h2>核对100、25和75</h2><p>从起点100个候选中保留25个，排除数量就是100-25=75个。</p><p>因此，100-75=25，起点、排除量和终点能够闭合核对。</p><ul><li>筛选前：100个有序两位候选。</li><li>主筛选后：25个有序两位候选。</li><li>本层排除：75个候选。</li></ul><p>这里的25个只是候选空间的数量，不是命中率、准确率或未来结果的保证。</p><h2>为什么这些数字不是命中率</h2><p>100到25描述的是组合数量变化。它回答的是“按指定数字池，还剩多少个有序候选”，并没有回答“未来哪个候选会出现”。</p><p>频率、遗漏、和值和跨度如果没有另外的已验证规则支持，在本文中都只能作为描述性信息，不能直接变成预测结论。</p><p>本篇的数字池是演示数据中的固定计算结果，不能改写成来源推荐，也不能据此声称筛选带来了预测优势。</p><p>本篇不讨论未核验的平台经济参数。</p><h2>实际怎么操作</h2><ol><li>先确认玩法对象是前二直选，并把第一位、第二位视为两个有顺序的位置。</li><li>先记录筛选前的理论空间：10×10=100个候选。</li><li>固定本合同的主筛选规则：使用近12期频率前5数字池，频率相同按数字升序处理。</li><li>在演示数据中核对数字池0、1、2、5、7，再按两个位置分别取值，得到5×5=25个候选。</li><li>用100-25复核排除量，确认排除了75个候选。</li><li>完成这一层后停止，不把样本中的其他字段临时拼成第二个过滤器。</li></ol><h2>边界与停止条件</h2><p>本篇的结论范围只到候选空间计算：100个起点、25个终点、75个排除量。它不提供未来结果判断。</p><p>完成这一个主筛选后，候选空间停在25个，不再临时加入第二个过滤器。</p><p>只有新增条件同时具备已验证的规则或证据，并且能够按同一口径复算时，才允许继续缩小候选空间。</p>",
+  "content_format": "html",
+  "content_hash": "c4bc3120defc82d4db3c7cb38b1ed8d4b9f6bb5781b48133b030469b21f8e16e",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261031",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "effe67bf46df25c5989191041fe3d593f9b971b0698e13056acc02332921b485",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二直选频率注数计算案例讲解：从100个有序候选开始，用演示数据复核保留25个和排除75个的计算过程，并说明统计筛选的边界。",
+  "play": "前二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "25个有序两位候选",
+    "next_step_policy": "只有新增条件同时具备已验证的规则或证据，并且能够按同一口径复算时，才允许继续缩小候选空间。",
+    "parameter_freeze_rule": "先固定前二直选、近12期观察窗口、频率降序后数字升序、取前5个数字的选择规则，再读取演示数据计算数字池；不得根据结果临时改参数。",
+    "starting_space": "100个有序两位候选，即10×10。",
+    "steps": [
+      "确认前二直选的两个位置有顺序，建立100个候选的起点。",
+      "固定唯一主筛选：近12期频率前5数字池，排序为频率降序、数字升序。",
+      "按演示数据核对数字池0、1、2、5、7，共5个数字。",
+      "计算两个位置各从5个数字取值，得到5×5=25个候选。",
+      "计算100-25=75，核对筛选前、筛选后和排除数量。",
+      "到25个候选后停止，不临时加入第二过滤器。"
+    ],
+    "stop_condition": "完成唯一主筛选后停止，最终空间为25个；除非新增条件具备已验证规则或证据且可复算，否则不得继续缩小。"
+  },
+  "primary_keyword": "分分彩前二直选频率注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0d2a17f4fc641e0a016ae538b72f808191b4b62d14bf3176ee",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "核对前二直选的候选空间计算，逐项确认100到25以及排除75个的确定性结果",
+  "secondary_keywords": [
+    "分分彩前二直选频率注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂这一玩法的前二直选频率，先分清计算结果和预测结论",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-frequency_window-space_math",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文用标注为“演示数据，不是真实开奖记录”的案例，复核分分彩前二直选从100个有序候选，经近12期频率前5数字池后保留25个、排除75个的确定性计算，并说明筛选不等于预测优势。",
+  "tags": [
+    "分分彩前二直选频率注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "频率窗口",
+    "候选空间计算"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "看懂这一玩法的前二直选频率，先分清计算结果和预测结论",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选频率的计算过程一次理清",
+    "先算注数，再谈前二直选频率：组合数学能说明到哪一步",
+    "从输入到结果：前二直选频率的空间计算与停止条件",
+    "前二直选频率怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的前二直选频率，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选频率的计算过程一次理清",
+      "先算注数，再谈前二直选频率：组合数学能说明到哪一步",
+      "从输入到结果：前二直选频率的空间计算与停止条件",
+      "前二直选频率怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的前二直选频率，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-2e9b9c4665df3b58",
+          "score": 0.76,
+          "title": "看懂前二直选的前二直选和值，先分清计算结果和预测结论"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2083,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "频率",
+            "前二直选频率"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂这一玩法的前二直选频率，先分清计算结果和预测结论"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

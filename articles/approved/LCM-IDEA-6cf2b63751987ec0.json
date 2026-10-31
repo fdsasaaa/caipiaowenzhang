@@ -1,0 +1,390 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "解释前三组选6与和值的计算口径，用按和值分组计数和枚举步骤复算120到88的候选空间变化，再用固定演示号码核对取位、去重和求和。",
+    "evidence_mode": "static_only",
+    "excluded_space": 32,
+    "final_space": 88,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 120,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "b14d7783c9880758a412",
+  "approved_at": "2026-10-31T00:51:38.740190+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-08297314de263499",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:120->88",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三组选6和值技巧",
+    "reader_question": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值9–18的机制，并完成从120到88的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 32,
+      "final_space": 88,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 120,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值9–18",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值9–18的机制，并完成从120到88的可复算案例。",
+    "title": "分分彩前三组选6和值技巧：和值9–18具体怎么算，用完整案例从120复算到88",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-6cf2b63751987ec0",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前三指取号码最左边的三个数字；组选6要求这三个数字互不相同，计算组合时不区分排列顺序。",
+      "claim_type": "rule_fact",
+      "evidence_note": "前三取位、组选6互异条件及无序组合口径由指定玩法机制支持。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "从0至9中选出三个不同数字，理论候选空间为C(10,3)=10×9×8÷(3×2×1)=120个无序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "按组选6无序且数字互异的规则计算组合数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值就是所取三个数字相加，和值9–18表示保留总和大于或等于9、且小于或等于18的组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "和值计算采用digit_sum；区间端点由本篇系统研究参数固定。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇先固定取位为“前三”、指标为digit_sum、下限为9、上限为18，再查看演示数据；这些是系统研究预设参数。",
+      "claim_type": "editorial",
+      "evidence_note": "参数及先冻结后观察的顺序来自生产筛选合同，不归因于来源或样本。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "枚举时让整数a、b、c满足0≤a＜b＜c≤9，每组只记录一次，再计算s=a+b+c。",
+      "claim_type": "calculation",
+      "evidence_note": "严格递增枚举覆盖所有互异无序三数组合且不重复。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值9、10、11、12、13分别对应7、8、9、10、10个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "对0≤a＜b＜c≤9按a+b+c分组逐项计数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值14、15、16、17、18分别对应10、10、9、8、7个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "对0≤a＜b＜c≤9按a+b+c分组逐项计数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "区间内合计为7+8+9+10+10+10+10+9+8+7=88个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "累加和值9至18对应的组合数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值低于9的组合有16个，高于18的组合也有16个，因此共筛掉32个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "低端和值3至8的计数为1、1、2、3、4、5，合计16；映射数字d为9-d可得高端对应计数，亦为16。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "核对结果为：筛选前120个组合，筛选后88个组合，排除120−88=32个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "理论起点、区间内计数和差额相互核对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按case_bundle指定标签明确标注演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "固定演示号码为65261，取前三得到6、5、2，三个数字互不相同，按升序记为组合{2,5,6}。",
+      "claim_type": "calculation",
+      "evidence_note": "直接使用case_bundle所给号码65261，取最左三位并排序。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "该演示组合的和值为6+5+2=13，满足9≤13≤18，因此通过本篇固定的和值筛选。",
+      "claim_type": "calculation",
+      "evidence_note": "根据固定演示号码计算和值，并与预设闭区间比较。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这一演示只用于核对取位、互异和求和，不参与区间参数的选择，也不构成预测证据。",
+      "claim_type": "editorial",
+      "evidence_note": "限定演示样本用途，与参数不由演示样本推导的合同一致。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按递增顺序枚举不同数字组合，不把同一组数字的不同排列重复计入候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "操作步骤沿用组选6无序组合的计数口径。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "逐组相加，只保留满足9≤digit_sum≤18的组合，并按和值分组核对上面的计数。",
+      "claim_type": "calculation",
+      "evidence_note": "将合同唯一主筛选应用于按玩法规则生成的理论组合空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成“和值9–18”这一阶段后停止，不根据演示结果临时追加过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "落实单阶段合同及完成后停止的要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且能够复算时，才允许在另行明确的研究方案中继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "规定后续研究准入条件，不为本篇追加阶段。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只交付机制与计算核对，不据此主张预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确文章的机制说明范围，不提出表现或未来预测结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>理解分分彩前三组选6和值技巧，先把“取哪些数字”“如何计数组合”和“如何求和”分开。</p><p>前三指取号码最左边的三个数字；组选6要求这三个数字互不相同，计算组合时不区分排列顺序。</p><p>从0至9中选出三个不同数字，理论候选空间为C(10,3)=10×9×8÷(3×2×1)=120个无序组合。</p><h2>方法机制：和值9–18</h2><p>和值就是所取三个数字相加，和值9–18表示保留总和大于或等于9、且小于或等于18的组合。</p><p>本篇先固定取位为“前三”、指标为digit_sum、下限为9、上限为18，再查看演示数据；这些是系统研究预设参数。</p><p>参数的归属按本篇研究合同记录，不归因于来源推荐，也不根据演示结果倒推修改。</p><h2>完整可复算案例：逐步核对候选空间</h2><p>枚举时让整数a、b、c满足0≤a＜b＜c≤9，每组只记录一次，再计算s=a+b+c。</p><p>手工核对时，可以先固定a，再逐个增加b，最后让c从b+1逐个增加到9；把每个组合记到对应的和值栏中。</p><p>和值9、10、11、12、13分别对应7、8、9、10、10个组合。</p><p>和值14、15、16、17、18分别对应10、10、9、8、7个组合。</p><p>区间内合计为7+8+9+10+10+10+10+9+8+7=88个组合。</p><p>和值低于9的组合有16个，高于18的组合也有16个，因此共筛掉32个组合。</p><p>核对结果为：筛选前120个组合，筛选后88个组合，排除120−88=32个组合。</p><h3>用固定演示号码核对计算动作</h3><p><strong>演示数据，不是真实开奖记录。</strong></p><p>固定演示号码为65261，取前三得到6、5、2，三个数字互不相同，按升序记为组合{2,5,6}。</p><p>该演示组合的和值为6+5+2=13，满足9≤13≤18，因此通过本篇固定的和值筛选。</p><p>这一演示只用于核对取位、互异和求和，不参与区间参数的选择，也不构成预测证据。</p><h2>实际怎么操作</h2><ol><li>先在记录页固定取位、指标和区间上下限，再打开演示数据。</li><li>按递增顺序枚举不同数字组合，不把同一组数字的不同排列重复计入候选。</li><li>逐组相加，只保留满足9≤digit_sum≤18的组合，并按和值分组核对上面的计数。</li><li>把保留数与排除数相加，检查是否回到理论起始空间；演示样本条数不能代替理论候选规模。</li><li>完成“和值9–18”这一阶段后停止，不根据演示结果临时追加过滤器。</li></ol><h2>边界与误区</h2><p>这里统计的是无序组合空间，不能把演示记录、数字排列和候选组合混在一起计数。</p><p>本文只交付机制与计算核对，不据此主张预测优势。</p><h2>停止条件</h2><p>本篇的操作到固定区间筛选及数量核对完成为止。</p><p>只有新增条件具有已验证规则或证据，并且能够复算时，才允许在另行明确的研究方案中继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "1c1be3f643485959c38e9dadfcf5988929c2674fab56a848a75236406a905e89",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261031",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "6cf2b63751987ec05abc7d42c1027eb0a606dbd4a2b17ce76f16768635282126",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三组选6和值技巧机制案例：先固定和值9–18，再按无序组合枚举复算120到88、排除32的过程，并用明确标注的演示号码核对取位与求和，说明操作步骤及停止条件。",
+  "play": "前三组选6",
+  "practical_guidance": {
+    "after_primary_filter_space": "唯一主筛选为前三、digit_sum、9≤和值≤18；筛选后保留88个无序组合，较起始120个排除32个。",
+    "next_step_policy": "本篇完成唯一阶段后停止；只有新增条件具有已验证规则或证据并且能够复算时，才允许在另行明确的研究方案中继续缩小候选。",
+    "parameter_freeze_rule": "查看演示数据前，先固定selector=前三、metric=digit_sum、min=9、max=18及筛选规则；参数由system_research预设，不由来源推荐或演示结果推导。",
+    "starting_space": "前三组选6从0至9中选择三个互不相同的数字，不区分排列顺序，理论起始空间为C(10,3)=120个无序组合。",
+    "steps": [
+      "先记录取位为前三、指标为digit_sum、区间为9至18且包含端点，再查看演示数据。",
+      "枚举满足0≤a＜b＜c≤9的所有组合，确保同一组数字只记录一次。",
+      "计算每组a+b+c，仅保留和值在9至18之间的组合。",
+      "按和值分组核对计数，确认保留88个、排除32个，合计回到120个。",
+      "用标注为演示数据的65261核对取位、互异条件与求和动作，不据此改动参数。",
+      "完成唯一主筛选及计数核对后停止，不临时拼接第二过滤器。"
+    ],
+    "stop_condition": "完成“和值9–18”阶段，核对120=88+32后停止；本篇不追加其他筛选阶段。"
+  },
+  "primary_keyword": "分分彩前三组选6和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0e7f7de59ec48185016ae53b5e0d5881968ed3875bea7b4e69",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-GROUP6-V1"
+  ],
+  "search_intent": "理解前三组选6里和值9–18分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前三组选6和值技巧",
+    "分分彩技巧",
+    "前三组选6技巧",
+    "分分彩前三组选6投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front3-group6-sum-range-9-18-mechanics-case",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三组选6",
+  "summary": "围绕分分彩前三组选6和值技巧，说明前三取位、互异数字、无序组合与和值的关系。先冻结系统研究区间9–18，再按和值分组复算理论候选从120到88、排除32的过程；固定演示号码仅用于核对计算动作，完成唯一阶段后停止。",
+  "tags": [
+    "分分彩",
+    "前三组选6",
+    "和值计算",
+    "机制复算",
+    "演示案例"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+  "title_candidates": [
+    "这一步到底怎么算？用前三组选6和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+    "前三组选6和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前三组选6和值怎样正确理解",
+    "看懂前三组选6和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前三组选6和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前三组选6和值应该怎样复核",
+      "前三组选6和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前三组选6和值怎样正确理解",
+      "看懂前三组选6和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-18149d90338bf75f",
+          "score": 0.8085106382978723,
+          "title": "从玩法规则到完整案例：后二直选和值跨度应该怎样复核"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "numeric",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [
+            "6"
+          ],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3182,
+          "intent_term_hits": [
+            "前三",
+            "组选6",
+            "组选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "组选6",
+            "组选",
+            "和值",
+            "前三组选6和值"
+          ],
+          "subject_play": "前三组选6"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从玩法规则到完整案例：前三组选6和值应该怎样复核"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

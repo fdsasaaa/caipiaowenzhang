@@ -1,0 +1,202 @@
+{
+  "angle_signature": "1dab94b990b5f328fc8d",
+  "approved_at": "2026-10-31T01:02:36.283982+00:00",
+  "article_id": "LCM-ANGLE-effe67bf46df25c5",
+  "case_scope": "mechanics_only",
+  "category": "tzjq",
+  "claim_evidence": [
+    {
+      "claim_text": "前二直选区分第一位和第二位；两个位置各有10种数字取值，因此完整的有序组合空间为10×10=100种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已验证的前二直选机制：两个位置分别取值，位置顺序影响组合的识别。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "若两个位置各允许m种取值，且允许范围内的任意两项都可组合，则组合数量为m×m。",
+      "claim_type": "calculation",
+      "evidence_note": "由两个有序位置的独立取值机制应用乘法原理推导；此处是组合计数，不是假设开奖概率独立。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "当两个位置各有5种允许取值且任意两项都可组合时，保留数量为5×5=25种，相对完整空间排除100−25=75种。",
+      "claim_type": "calculation",
+      "evidence_note": "这是基于玩法机制和明确数学假设的算术示例，不使用历史开奖或具体数字池，不依赖演示案例数据。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "25种表示假设条件下保留的组合数量，本身不能解释为25%的命中率。",
+      "claim_type": "editorial",
+      "evidence_note": "限定组合计数的解释范围，避免将空间数量直接当作概率结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "公开正文的研究边界与风险说明，不主张任何筛选方法具有预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先看懂前二直选的计数单位</h2><p>讨论分分彩前二直选的频率与注数计算，需要先区分三个问题：历史数字出现了多少次、某个条件下有多少种组合，以及这些信息能否支持未来判断。本文围绕前两个问题解释计算口径。</p><p>前二直选区分第一位和第二位。两个位置各有10种数字取值，因此完整的有序组合空间为10×10=100种。</p><p>位置顺序属于玩法机制的一部分。两个不同取值交换位置后，构成不同的有序组合。核对数量时，应保留这个位置区别。</p><h2>100、25和75分别表示什么</h2><p>可以用一个抽象数学假设说明空间变化：若两个位置各允许m种取值，且允许范围内的任意两项都可组合，则组合数量为m×m。这里不列出具体取值，也不指定频率筛选参数。</p><p>当两个位置各有5种允许取值时，保留数量为5×5=25种。相对完整的100种组合，排除数量为100−25=75种。</p><p>这组算式只用于核对组合数量：25+75=100。它不依赖某段真实开奖记录，也没有给出可用于后续期次的候选清单。</p><p>乘法计数还需要检查条件。如果另有跨位置限制，使部分搭配不再允许，就不能直接沿用上述乘积作为最终数量。</p><h2>频率统计与组合计算如何衔接</h2><p>频率统计描述指定历史样本中某类取值出现的次数。组合计算则回答：在已经明确的允许范围与搭配条件下，共有多少种有序组合。</p><p>阅读相关研究时，可以检查作者是否说明观察窗口、统计位置、并列频率的处理方式，以及这些口径是否在查看评价结果之前确定。这些说明有助于理解结果是怎样得到的。</p><p>如果允许取值的数量已经确定，组合数量可以按相应条件复算。但频率排序为什么得到这些取值、这种排序是否具有预测价值，仍是另外的研究问题。</p><h2>为什么组合减少不等于预测更准</h2><p>25种表示假设条件下保留的组合数量，本身不能解释为25%的命中率。把组合数转成概率结论，还需要明确结果分布等假设，并提供相应依据。</p><p><strong>结构分类或历史样本表现不能单独证明未来预测优势。</strong>历史频率、分类结果和空间缩小幅度，都不能单独承担这样的证明。</p><p>因此，100到25的变化适合用于讲解组合数学，不足以说明未来结果更容易被判断，也不能据此承诺收益或稳定表现。</p><h2>研究复盘应记录哪些信息</h2><p>教育与研究用途的复盘，可以记录数据来源、样本区间、缺失数据处理方式和统计口径，并保留可供复核的计算过程。</p><p>若研究进一步涉及预测能力评价，应预先写明参数和评价指标，区分用于设定方法的样本与用于检验的样本，并如实报告样本外结果及其不确定性。</p><p>解读时还应考虑随机波动、样本规模，以及是否反复修改过条件。本文的算术结论止于有序组合的数量关系，不提供具体候选号码或后续期次建议。</p>",
+  "content_format": "html",
+  "content_hash": "59cb51ffe346d43651445097e88491a5aa4e5da6d67a1d5c817f8d97de0501e2",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261031",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "d6de1cc1402dc9ee8dec5a0f383d80d2e9ddca7d22b0b1ebb5cf158fb68f22bc",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从前二直选的有序组合机制出发，解释100种完整组合、25种保留组合与75种排除组合的数学关系，并区分历史频率、组合计数和未来预测结论。",
+  "parent_content_hash": "c4bc3120defc82d4db3c7cb38b1ed8d4b9f6bb5781b48133b030469b21f8e16e",
+  "parent_fingerprint": "effe67bf46df25c5989191041fe3d593f9b971b0698e13056acc02332921b485",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选频率注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0d2a17f4fc641e0a016ae538b72f808191b4b62d14bf3176ee",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-10-31T01:02:36.283999+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-effe67bf46df25c5:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "围绕Primary Keyword“分分彩前二直选频率注数计算”，核对前二直选有序组合的计算口径，理解100到25及排除75种的条件，并辨别频率统计与预测结论的边界。",
+  "secondary_keywords": [
+    "分分彩前二直选频率注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：前二直选频率的空间计算与组合数学",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前二直选-frequency_window-space_math",
+  "source_batch_id": "DAILY-20261031",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "本文以抽象数学假设解释前二直选的组合空间：完整空间为100种，两个位置各有5种允许取值且任意搭配时保留25种、排除75种。文章不列具体号码或筛选方案，并说明历史频率和结构分类不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩前二直选频率注数计算",
+    "分分彩技巧",
+    "前二直选技巧",
+    "频率窗口",
+    "候选空间计算"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "从输入到结果：前二直选频率的空间计算与组合数学",
+  "title_candidates": [
+    "候选空间为什么会变？前二直选频率的计算过程一次理清",
+    "先算注数，再谈前二直选频率：组合数学能说明到哪一步",
+    "从输入到结果：前二直选频率的空间计算与组合数学",
+    "前二直选频率怎么算才不混淆？复核候选空间的关键点",
+    "看懂前二直选的前二直选频率，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？前二直选频率的计算过程一次理清",
+      "先算注数，再谈前二直选频率：组合数学能说明到哪一步",
+      "从输入到结果：前二直选频率的空间计算与组合数学",
+      "前二直选频率怎么算才不混淆？复核候选空间的关键点",
+      "看懂前二直选的前二直选频率，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-5db22b80db0713c9",
+          "score": 0.7272727272727273,
+          "title": "从输入到结果：前二直选奇偶的空间计算与常见误区"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "频率",
+            "组合",
+            "前二直选频率"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "频率",
+            "组合",
+            "前二直选频率"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：前二直选频率的空间计算与组合数学"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

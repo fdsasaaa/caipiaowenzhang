@@ -1,0 +1,200 @@
+{
+  "angle_signature": "4ee04bfbcf860780ea02",
+  "approved_at": "2026-10-31T01:02:06.001494+00:00",
+  "article_id": "LCM-IDEA-846f2cde5b0b6f3e",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前二直选按顺序区分前两个位置，每个位置可取0至9，允许两个位置出现相同数字，理论空间共有10×10＝100种有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据玩法机制说明位置顺序、单位置取值范围及重复数字的有效性；100种结果由两个位置的取值数量相乘得到。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "若统计口径是将每期前两个位置合并计数，那么12期包含12×2＝24个数字位置。",
+      "claim_type": "calculation",
+      "evidence_note": "12期是本文讨论的研究窗口参数；每期提取两个位置，因此计数总量为24。这是统计口径的算术说明，不是历史样本结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "从纯组合数学看，如果两个位置各自允许使用同一个含k个不同元素的集合，且允许重复，有序组合数量就是k×k。",
+      "claim_type": "calculation",
+      "evidence_note": "由前二直选的位置有序、允许重复机制推导，使用符号解释集合大小与组合数量的关系，不给出具体集合。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "集合缩小描述的是研究范围发生变化，不能直接解释为命中能力提高。",
+      "claim_type": "editorial",
+      "evidence_note": "限定组合计数的解释范围，避免将集合大小变化包装成效果证据。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确历史描述与未来预测之间的证据边界，不作收益或效果承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>前二直选频率在统计什么</h2><p>研究分分彩前二直选的窗口频率，首先要分清三个概念：用来观察的历史窗口、数字出现次数的统计表，以及按某种规则定义的数字集合。它们分别回答观察哪些记录、怎样计数、怎样描述集合的问题。</p><p>前二直选按顺序区分前两个位置，每个位置可取0至9，允许两个位置出现相同数字，理论空间共有10×10＝100种有序结果。交换位置可能改变结果，因此不能把有序结果当成不分顺序的组合。</p><h2>理解近12期与频率前5的含义</h2><p>在这一研究主题中，近12期表示观察窗口的长度，频率表示数字在窗口内出现的次数，前5表示按既定排序口径保留五个不同数字的集合定义。这些参数说明统计方法，不代表它们具有预测效果。</p><p>若统计口径是将每期前两个位置合并计数，那么12期包含12×2＝24个数字位置。同一期的两个位置即使出现相同数字，也分别计入次数。</p><p>合并频率与分位置频率回答不同问题：前者描述两个位置合在一起的出现次数，后者分别描述各位置。阅读研究结果时，需要先确认采用的是哪种口径。</p><p>本文只解释这些概念，不列出具体数字集合或逐期筛选结果。</p><h2>组合数量与预测能力的边界</h2><p>从纯组合数学看，如果两个位置各自允许使用同一个含k个不同元素的集合，且允许重复，有序组合数量就是k×k。这个算式用于解释集合大小与组合数量的关系。</p><p>集合缩小描述的是研究范围发生变化，不能直接解释为命中能力提高。组合数量的计算本身没有提供未来结果更偏向某个集合的证据。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。窗口中的高频或低频，首先只是对该段样本的描述。</p><h2>参数预注册与历史复盘</h2><p>教育性复盘可以把窗口长度、合并或分位置计数、同频处理方式和评价指标写成研究协议。预注册的作用是让读者看清哪些条件在观察结果前已经确定，哪些属于事后调整。</p><p>完整的复盘记录应说明数据范围、排列顺序、缺失记录处理方式和计数口径，并区分数据质量检查与效果评价。这里的研究目标是核对统计定义能否被一致理解和复算。</p><p>如果研究过程中更改参数，应保留修改记录，并将修改后的分析视为新的探索，避免把事后挑选的结果写成原先设定的结论。</p><h2>样本外验证与随机波动</h2><p>进一步研究时，可以将用于形成方法的样本与用于评价方法的样本分开。评价口径应事先说明，并同时呈现观察区间、比较基准和不确定性。</p><p>解读结果时，需要考虑随机波动、重复比较和样本选择的影响。某段窗口的表现可以成为继续研究的问题，但不能直接转化为下一期建议。</p><p>本文讨论玩法机制、组合数学与研究方法，不提供候选号码、投注安排或收益承诺。</p>",
+  "content_format": "html",
+  "content_hash": "1aa2dc0c3b2a950c0f74edf8e75a84dbd43696872dd35d56f541bfb212538512",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261031",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "241d80ca766cb6903444ad7d3c029bd6487b3dfeb550f7ba9207f0ddb9aa4e51",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "理解分分彩前二直选中的近12期窗口、合并频率与前5集合概念，区分组合数量和预测能力，并认识参数预注册、历史复盘与样本外验证的证据边界。",
+  "parent_content_hash": "e19ac6203185ab4dcf88dd635e012541be841bfd05099a835cb1b7c80084f7d1",
+  "parent_fingerprint": "846f2cde5b0b6f3eb1f385b2ed6ae6a5431f87fd0c1369a8d1440664b317bdd4",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选频率技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0150c2b7afc9e306016ae538796d9087d2a4672256b338f724",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-10-31T01:02:06.001510+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-846f2cde5b0b6f3e:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩前二直选中近12期窗口、合并频率和前5数字集合分别统计什么，掌握计数与组合数学的关系，并了解历史复盘和预测结论之间的证据边界。",
+  "secondary_keywords": [
+    "分分彩前二直选频率技巧",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前二直选频率为什么容易算错？关键在输入、计算和参数预注册",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front2-frequency-window-case",
+  "source_batch_id": "DAILY-20261031",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "从前二直选的有序位置机制出发，解释近12期窗口、合并频率和前5集合的统计含义，通过通用算式说明组合数量，并介绍参数预注册、历史复盘和样本外验证。明确结构分类或历史样本表现不能单独证明未来预测优势，不提供具体数字集合或执行方案。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "频率统计",
+    "演示案例",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "前二直选频率为什么容易算错？关键在输入、计算和参数预注册",
+  "title_candidates": [
+    "这一步到底怎么算？用前二直选频率把规则和复算过程讲清",
+    "从玩法规则到完整案例：前二直选频率应该怎样复核",
+    "前二直选频率为什么容易算错？关键在输入、计算和参数预注册",
+    "先看规则，再看案例：前二直选里的前二直选频率怎样正确理解",
+    "看懂前二直选频率不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前二直选频率把规则和复算过程讲清",
+      "从玩法规则到完整案例：前二直选频率应该怎样复核",
+      "前二直选频率为什么容易算错？关键在输入、计算和参数预注册",
+      "先看规则，再看案例：前二直选里的前二直选频率怎样正确理解",
+      "看懂前二直选频率不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-8c6c8c83c6f2d638",
+          "score": 0.7058823529411765,
+          "title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "频率"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "频率",
+            "参数",
+            "前二直选频率"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前二直选频率为什么容易算错？关键在输入、计算和参数预注册"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

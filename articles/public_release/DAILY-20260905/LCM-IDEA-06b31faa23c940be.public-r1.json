@@ -1,0 +1,191 @@
+{
+  "angle_signature": "fdb3155ea3d8c7f0cd87",
+  "approved_at": "2026-09-05T06:31:17.635774+00:00",
+  "article_id": "LCM-IDEA-06b31faa23c940be",
+  "case_scope": "mechanics_only",
+  "category": "技术文章",
+  "claim_evidence": [
+    {
+      "claim_text": "本文讨论的是分分彩的一星直选，只看个位这一位的统计变化。",
+      "claim_type": "rule_fact",
+      "evidence_note": "来自父级已核验规则的玩法与位置范围说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在已核验规则里，筛选条件可以概括为：回看近12期，位置限定为个位，只保留当前遗漏达到2期及以上的数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应父级规则中的lookback=12、threshold=2、selector=个位。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类、遗漏分布、历史样本表现，都只能说明过去样本中的状态。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版的风险/方法边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "它们不能单独证明未来具有预测优势，也不能直接推出稳定结果。",
+      "claim_type": "editorial",
+      "evidence_note": "公开版明确加入的研究边界提醒。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文讨论的是分分彩的一星直选，只看个位这一位的统计变化。这里讲的重点，是“近12期当前遗漏≥2”的数字池如何计算，而不是给出任何选号建议。</p><p>先说明边界：本文只做规则机制和可复算演示，不涉及具体下注方案，也不讨论资金安排。</p><h2>方法机制：近12期当前遗漏≥2数字池</h2><p>这个方法只做一件事：按个位统计每个数字最近一次出现后，到当前为止已经遗漏了多少期。</p><p>在已核验规则里，筛选条件可以概括为：回看近12期，位置限定为个位，只保留当前遗漏达到2期及以上的数字。</p><p>这一步的作用只是缩小观察范围，不等于得出预测结论。</p><h2>复算演示：只看样本，不外推结果</h2><p>下面的演示数据仅用于说明计算过程，不代表真实开奖结果。</p><p>按照给定样本复算后，可以得到个位上各数字的当前遗漏值，并据此筛出满足条件的数字池。演示中，原始空间是0到9共10个数字，筛选后剩余8个。</p><p>这个过程展示的是“怎么数”，不是“下一期会出什么”。</p><h2>边界与常见误区</h2><p>结构分类、遗漏分布、历史样本表现，都只能说明过去样本中的状态。</p><p>它们不能单独证明未来具有预测优势，也不能直接推出稳定结果。把样本内的筛选表现理解成未来优势，是最常见的误区之一。</p><p>同样，遗漏高低、频率变化、和值或跨度，都是描述性指标，不能自动变成结论。</p><h2>如何理解这种筛法</h2><p>从研究角度看，这类方法适合用来练习三件事：一是明确统计口径，二是复算每一步，三是检查筛选后空间是否真的变化。</p><p>如果要继续研究，重点应放在规则是否清晰、样本是否一致、口径是否稳定，而不是把单次样本结果当成可复制优势。</p><p>本文只完成机制解释与样本演示，到此结束。</p>",
+  "content_format": "html",
+  "content_hash": "3df2a13ffcd9e80a3c75e3061ed24f3c72f7b503fb25df05ea17fe221ac42945",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "2ea02f497aaa57862d4df237919b5cbbd0e1340e0f254e77fe1761254e2843fe",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "用简单中文解释分分彩一星直选中近12期当前遗漏≥2的计算逻辑、复算步骤和常见误区，强调样本表现不能直接证明未来预测优势。",
+  "parent_content_hash": "002cc965a239b06227cbf531902698374f769b95e79be0209cfc87699a575fb6",
+  "parent_fingerprint": "06b31faa23c940bea304e8c48f3af1c8d6525e6726575a59e2b5bced762fe521",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选遗漏技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0548b474d4bee36a016a9bb4a7016c87d0a5e948e8fad2036e",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-09-05T06:31:17.635791+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-06b31faa23c940be:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "理解一星直选里近12期当前遗漏≥2数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-omission_threshold-position_filter",
+  "source_batch_id": "DAILY-20260905",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "本文用教育/研究视角说明分分彩一星直选的遗漏统计口径、近12期当前遗漏≥2的筛选机制与复算思路，并提醒不要把历史样本表现当成未来预测优势。",
+  "tags": [
+    "分分彩一星直选遗漏技巧",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开",
+  "title_candidates": [
+    "这一步到底怎么算？用一星直选遗漏把规则和复算过程讲清",
+    "从玩法规则到完整案例：一星直选遗漏应该怎样复核",
+    "一星直选遗漏为什么容易算错？关键在输入、计算和常见误区",
+    "先看规则，再看案例：一星直选里的一星直选遗漏怎样正确理解",
+    "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用一星直选遗漏把规则和复算过程讲清",
+      "从玩法规则到完整案例：一星直选遗漏应该怎样复核",
+      "一星直选遗漏为什么容易算错？关键在输入、计算和常见误区",
+      "先看规则，再看案例：一星直选里的一星直选遗漏怎样正确理解",
+      "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 21
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-46829c10b563a447",
+          "score": 0.8,
+          "title": "看懂后三直选和值不靠口诀，先把计算逻辑拆开"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2632,
+          "intent_term_hits": [
+            "直选",
+            "遗漏"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "遗漏",
+            "一星直选遗漏"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

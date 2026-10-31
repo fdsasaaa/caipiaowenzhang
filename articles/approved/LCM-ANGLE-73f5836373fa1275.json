@@ -1,0 +1,514 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18610,
+    "final_space": 81390,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "5db9dfaf273527737eb9",
+  "approved_at": "2026-09-05T06:01:43.210993+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-fc41abe384884c78",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "neighbor_number[pair_difference=1/static]:100000->81390",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选邻号参数设置",
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18610,
+      "final_space": 81390,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "至少存在一对差1邻号"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "至少存在一对差1邻号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩五星直选邻号参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-73f5836373fa1275",
+  "case_scope": "mechanics_only",
+  "category": "腾讯分分彩技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文聚焦分分彩五星直选邻号参数设置，只解释系统研究预设参数、来源经验和演示样本之间的边界。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里先说明：本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "符合 mechanics_only 的免责声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按照合同，本篇的主筛选只有一条：在五星直选的有序五位数空间里，筛选至少存在一对差1邻号。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选合同来自规则引用。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这一步的参数是系统研究预设，不是来源推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "边界说明，不把参数归给来源。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "主筛选合同的参数是固定的：selector 为五星，metric 为 neighbor_pair，atom 为 neighbor_number，pair_difference 为 1，circular_0_9 为 false。",
+      "claim_type": "rule_fact",
+      "evidence_note": "与主筛选合同一致的固定参数说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这组参数的归属是系统研究预设，不是来源作者给出的推荐，也不是演示样本算出来后再倒推出来的。",
+      "claim_type": "editorial",
+      "evidence_note": "参数归属边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "合同要求参数必须先固定，再看样本；因此本篇不会在看到结果后临时改参数。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应 parameter_freeze_before_observation 与 selection_rule_freeze_before_observation。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在这个主筛选里，筛选前的候选空间是 100000。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选前空间来自合同机器事实。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后，候选空间变成 81390。",
+      "claim_type": "calculation",
+      "evidence_note": "主筛选后空间来自合同机器事实。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "也就是说，这一步一共筛掉了 18610 个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "由 100000 与 81390 复算得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个空间变化只说明：按已给定规则做了机器候选空间缩减，不代表有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "方法边界说明，不作优势宣称。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "下面的样本是演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须明确标注演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据里，最新一组为 86012，五位分别是 8、6、0、1、2。",
+      "claim_type": "source_claim",
+      "evidence_note": "来自 case_bundle 的演示样本。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这一组的和值是 17，跨度是 8，号码个数是 5，且存在邻号。",
+      "claim_type": "calculation",
+      "evidence_note": "对演示样本的复算描述。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这只是演示样本的描述，不是对未来的结论。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本边界说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示样本共 12 组，跨度序列为 9、6、4、7、8、7、8、9、5、6、6、8；和值序列为 20、27、7、24、17、19、27、20、21、12、17、17。",
+      "claim_type": "calculation",
+      "evidence_note": "样本序列来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这些序列只用于展示如何复算样本，不构成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本用途限定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "规则引用只支持五星直选的机械机制：在有序五位数中，至少存在一对差1邻号这一类结构，可以作为已验证的玩法机制来理解。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对已验证玩法机制的说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "来源提到的内容，只能说明经验从哪里来，不能把系统研究参数写成来源指定。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅限来源经验背景，不升级为事实。",
+      "support_refs": [
+        "BRBCW-000431"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "原文声称的经验，如果未独立验证，就只能按未验证经验处理，不能直接升级成事实。",
+      "claim_type": "source_claim",
+      "evidence_note": "对来源经验的限定性表述。",
+      "support_refs": [
+        "BRBCW-000431"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "因此，来源可以帮助理解“为什么会选这个原子”，但不能证明这个参数有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "不把来源经验升级为预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "因为合同要求 selection rule freeze before observation，也就是先冻结规则，再看样本。",
+      "claim_type": "rule_fact",
+      "evidence_note": "对应冻结规则要求。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果先看了演示结果，再把 pair_difference 改成别的值，或者把 circular_0_9 改成 true，就已经不是同一个合同了。",
+      "claim_type": "editorial",
+      "evidence_note": "事后改参的边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数一旦事后改动，前面的筛选结果就不能再当成同一套研究结论来复算。",
+      "claim_type": "editorial",
+      "evidence_note": "复算边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这篇文章只做边界说明：系统研究预设不等于来源推荐，也不等于预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "核心边界总结。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "“至少存在一对差1邻号”只是一个静态筛选条件；它能缩小候选空间，但不能被写成原文推荐，更不能写成对结果的保证。",
+      "claim_type": "editorial",
+      "evidence_note": "静态筛选不等于保证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "演示样本里出现的和值、跨度、频率、邻号，都只是描述性信息，不能单独当成预测结论。",
+      "claim_type": "editorial",
+      "evidence_note": "样本描述性边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先固定主筛选参数：selector=五星，metric=neighbor_pair，atom=neighbor_number，pair_difference=1，circular_0_9=false。",
+      "claim_type": "rule_fact",
+      "evidence_note": "操作步骤中的固定参数，来自主筛选合同。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再按固定参数去复算有序五位数空间，确认筛选前是 100000，筛选后是 81390，排除了 18610 个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "空间复算与排除量。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "检查样本时，只把“演示数据，不是真实开奖记录”当作演示用途，不把样本里的和值、跨度、邻号当成预测承诺。",
+      "claim_type": "editorial",
+      "evidence_note": "演示样本用途限定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "查看来源时，只接受它对机械机制的背景说明；若来源没有独立验证，就按未验证经验处理。",
+      "claim_type": "source_claim",
+      "evidence_note": "来源边界说明。",
+      "support_refs": [
+        "BRBCW-000431"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "完成这一步后就停止，不临时加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇已经完成唯一主筛选合同，所以应当在这里停止。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件总结。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则或证据，并且能够复算时，才允许继续缩小候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "继续缩小候选的前提条件。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果没有第二条已验证规则，就不要为了显得更实用而临时拼第二过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "禁止临时拼第二过滤器。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先说边界：这篇只讲参数归属，不讲未核验收益</h2><p>本文聚焦<strong>分分彩五星直选邻号参数设置</strong>，只解释系统研究预设参数、来源经验和演示样本之间的边界。</p><p>这里先说明：本文不讨论未核验的平台经济参数。</p><p>按照合同，本篇的主筛选只有一条：在五星直选的有序五位数空间里，筛选<strong>至少存在一对差1邻号</strong>。这一步的参数是系统研究预设，不是来源推荐。</p><h2>哪些参数归系统研究</h2><p>主筛选合同的参数是固定的：selector 为五星，metric 为 neighbor_pair，atom 为 neighbor_number，pair_difference 为 1，circular_0_9 为 false。</p><p>这组参数的归属是系统研究预设，不是来源作者给出的推荐，也不是演示样本算出来后再倒推出来的。</p><p>合同要求参数必须先固定，再看样本；因此本篇不会在看到结果后临时改参数。</p><h2>筛选前后空间怎么变</h2><p>在这个主筛选里，筛选前的候选空间是 100000。</p><p>主筛选后，候选空间变成 81390。</p><p>也就是说，这一步一共筛掉了 18610 个候选。</p><p>这个空间变化只说明：按已给定规则做了机器候选空间缩减，不代表有预测优势。</p><h2>哪些结果由演示样本计算</h2><p>下面的样本是<strong>演示数据，不是真实开奖记录</strong>。</p><p>演示数据里，最新一组为 86012，五位分别是 8、6、0、1、2。</p><p>这一组的和值是 17，跨度是 8，号码个数是 5，且存在邻号。</p><p>这只是演示样本的描述，不是对未来的结论。</p><p>演示样本共 12 组，跨度序列为 9、6、4、7、8、7、8、9、5、6、6、8；和值序列为 20、27、7、24、17、19、27、20、21、12、17、17。</p><p>这些序列只用于展示如何复算样本，不构成预测优势。</p><h2>来源能支持什么，不能支持什么</h2><p>规则引用只支持五星直选的机械机制：在有序五位数中，至少存在一对差1邻号这一类结构，可以作为已验证的玩法机制来理解。</p><p>来源提到的内容，只能说明经验从哪里来，不能把系统研究参数写成来源指定。</p><p>原文声称的经验，如果未独立验证，就只能按未验证经验处理，不能直接升级成事实。</p><p>因此，来源可以帮助理解“为什么会选这个原子”，但不能证明这个参数有预测优势。</p><h2>为什么不能事后改参数</h2><p>因为合同要求 selection rule freeze before observation，也就是先冻结规则，再看样本。</p><p>如果先看了演示结果，再把 pair_difference 改成别的值，或者把 circular_0_9 改成 true，就已经不是同一个合同了。</p><p>参数一旦事后改动，前面的筛选结果就不能再当成同一套研究结论来复算。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这篇文章只做边界说明：系统研究预设不等于来源推荐，也不等于预测优势。</p><p>“至少存在一对差1邻号”只是一个静态筛选条件；它能缩小候选空间，但不能被写成原文推荐，更不能写成对结果的保证。</p><p>演示样本里出现的和值、跨度、频率、邻号，都只是描述性信息，不能单独当成预测结论。</p><h2>实际怎么操作</h2><ol><li>先固定主筛选参数：selector=五星，metric=neighbor_pair，atom=neighbor_number，pair_difference=1，circular_0_9=false。</li><li>再按固定参数去复算有序五位数空间，确认筛选前是 100000，筛选后是 81390，排除了 18610 个候选。</li><li>检查样本时，只把“演示数据，不是真实开奖记录”当作演示用途，不把样本里的和值、跨度、邻号当成预测承诺。</li><li>查看来源时，只接受它对机械机制的背景说明；若来源没有独立验证，就按未验证经验处理。</li><li>完成这一步后就停止，不临时加第二个过滤器。</li></ol><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇已经完成唯一主筛选合同，所以应当在这里停止。</p><p>只有当新增条件本身也有已验证规则或证据，并且能够复算时，才允许继续缩小候选。</p><p>如果没有第二条已验证规则，就不要为了显得更实用而临时拼第二过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "bfc3001d74b0ca83b60ff2fb411609fe567cae629990109a9d58e4419bf68215",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "73f5836373fa1275a81764b15fe71313babd97757f5b6bb8662790992683bec1",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选邻号参数设置案例讲解：先说明五星直选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "81390",
+    "next_step_policy": "只有当新增条件本身具有已验证规则/证据，并且能够复算时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "必须先固定参数，再看样本；不得在观察结果后回改 pair_difference、circular_0_9 等主筛选参数。",
+    "starting_space": "100000",
+    "steps": [
+      "先固定主筛选参数：selector=五星，metric=neighbor_pair，atom=neighbor_number，pair_difference=1，circular_0_9=false。",
+      "按固定参数复算有序五位数空间：筛选前 100000，筛选后 81390，排除 18610 个候选。",
+      "再查看演示数据，只把“演示数据，不是真实开奖记录”当作样本说明，不把样本统计当成预测承诺。",
+      "核对来源时，只接受其对机械机制的背景说明；若没有独立验证，就按未验证经验处理。",
+      "完成唯一主筛选后立即停止；没有第二条已验证规则，就不要临时加第二过滤器。"
+    ],
+    "stop_condition": "完成本篇唯一主筛选后停止；若没有新增且可复算的已验证规则，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩五星直选邻号参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0207c364eebdeb5c016a9bb008346487d09b03f477ea124fa7",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩五星直选邻号参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-五星直选-neighbor_number-position_filter-parameter_boundary",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文只讲分分彩五星直选邻号参数设置的边界：哪些参数属于系统研究预设，哪些结果只来自演示数据，来源能说明经验背景，但不能把参数写成来源推荐，也不能把筛选结果写成预测优势。",
+  "tags": [
+    "分分彩五星直选邻号参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩位置筛选",
+    "分分彩邻号结构",
+    "参数边界",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？五星直选邻号的边界先说清",
+    "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+    "从参数到结果：五星直选邻号哪些能预设，哪些不能事后改",
+    "五星直选邻号为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？五星直选邻号的边界先说清",
+      "来源经验和系统参数有什么区别？用五星直选邻号拆开看",
+      "从参数到结果：五星直选邻号哪些能预设，哪些不能事后改",
+      "五星直选邻号为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-ac4bf0d315816980",
+          "score": 0.8333333333333334,
+          "title": "来源经验和系统参数有什么区别？用前二直选奇偶拆开看"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3478,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "参数",
+            "五星直选邻号"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

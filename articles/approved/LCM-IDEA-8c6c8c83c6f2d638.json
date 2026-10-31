@@ -1,0 +1,473 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "用简单中文解释和值6–12的机制，并完成从45到27的可复算案例。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18,
+    "final_space": 27,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前二组选里和值6–12分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值6–12"
+    ],
+    "starting_space": 45,
+    "static_stage_labels": [
+      "和值6–12"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "e6b0cf895b5aaa454054",
+  "approved_at": "2026-09-05T06:14:48.862629+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-ba476c0edb41ce4a",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:45->27",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二组选和值技巧",
+    "reader_question": "理解前二组选里和值6–12分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释和值6–12的机制，并完成从45到27的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18,
+      "final_space": 27,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值6–12"
+      ],
+      "starting_space": 45,
+      "static_stage_labels": [
+        "和值6–12"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：和值6–12",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前二组选里和值6–12分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释和值6–12的机制，并完成从45到27的可复算案例。",
+    "title": "分分彩前二组选和值技巧：和值6–12具体怎么算，用完整案例从45复算到27",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-8c6c8c83c6f2d638",
+  "case_scope": "mechanics_only",
+  "category": "technique_article",
+  "claim_evidence": [
+    {
+      "claim_text": "本文只讲分分彩前二组选和值技巧里的计算方法，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "纯编辑边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的“前二组选”，就是先看前面两个位置，再把两个数字按组选思路处理；本篇只围绕“和值6–12”这个固定筛选条件展开。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法与筛选范围说明，引用已给定规则引用。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "注意：文中案例使用的是演示数据，不是真实开奖记录，只用于说明怎么算，不代表真实开奖结果。",
+      "claim_type": "editorial",
+      "evidence_note": "演示标签说明，按合规要求引用 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "“和值”就是把前二这两个数字相加，得到一个总和。",
+      "claim_type": "rule_fact",
+      "evidence_note": "和值定义为计算机制说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇的主筛选合同只有一个：和值6–12，也就是把前二组选里，和值落在6到12之间的候选留下，其余候选排除。",
+      "claim_type": "rule_fact",
+      "evidence_note": "主筛选参数按合同固定。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这个筛选是先固定参数，再看样本；不先看样本去改参数。",
+      "claim_type": "editorial",
+      "evidence_note": "流程约束说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按合同，筛选前候选空间是45，主筛选后候选空间是27，一共排除了18个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "45-27=18，为候选空间复算结果。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "下面用固定演示案例复算一次。",
+      "claim_type": "editorial",
+      "evidence_note": "案例引导语，引用演示数据。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录：前二组选候选池按合同先有45个，经过“和值6–12”这一个主筛选后，剩下27个。",
+      "claim_type": "calculation",
+      "evidence_note": "演示案例中的空间变化说明。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "先把“前二”这个范围固定住，只看前两个数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "范围固定说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "再按“和值6–12”计算：把两个数字相加，只保留总和在6到12之间的候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "筛选规则说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因为这是主筛选合同，所以只做这一层，不临时再加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "停止加条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "复算结果是：45个候选里，留下27个，排除18个。",
+      "claim_type": "calculation",
+      "evidence_note": "候选空间变化复算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "筛选前空间是45。",
+      "claim_type": "calculation",
+      "evidence_note": "起始候选空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后的空间是27。",
+      "claim_type": "calculation",
+      "evidence_note": "筛后候选空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "所以被排除的空间是18，也就是从45里减掉18，得到27。",
+      "claim_type": "calculation",
+      "evidence_note": "排除空间的算术关系。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果你只拿样本条数来理解这个数字，就会混淆概念；这里的45和27是候选空间，不是样本条数。",
+      "claim_type": "editorial",
+      "evidence_note": "概念边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这个合同只说明怎么算，不说明一定会怎样。",
+      "claim_type": "editorial",
+      "evidence_note": "机制与结果边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "频率、和值、跨度这些，放在这里都只是描述性信息；它们不能直接等同于下一次的结果。",
+      "claim_type": "editorial",
+      "evidence_note": "描述性信息与预测结果边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "也不要把“筛掉18个候选”理解成有了预测优势；本篇只做机械筛选复算，不做收益承诺，也不做未来结果保证。",
+      "claim_type": "editorial",
+      "evidence_note": "不把统计筛选包装成预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇到这里就停止。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "停止条件很简单：只完成已经明确的主筛选“和值6–12”，不再临时增加第二条未经验证的规则。",
+      "claim_type": "editorial",
+      "evidence_note": "完成合同后停止。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "next_step_policy 说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有第二条已验证依据，就应当停在这里，不继续往下拼接过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "明确停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先固定玩法范围：只看前二组选，不把其他玩法混进来。",
+      "claim_type": "editorial",
+      "evidence_note": "实操步骤 1。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "再固定主筛选参数：和值6–12，先定参数，再看样本。",
+      "claim_type": "editorial",
+      "evidence_note": "实操步骤 2。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "拿到一个前二组合后，先把两个数字相加，算出和值。",
+      "claim_type": "editorial",
+      "evidence_note": "实操步骤 3。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果和值在6到12之间，就保留；不在这个区间，就排除。",
+      "claim_type": "editorial",
+      "evidence_note": "实操步骤 4。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "核对空间时记住：本合同从45到27，排除了18个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "步骤中的空间核对数字。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成这一步就停止，不要因为想“更细”而临时加第二个未验证条件。",
+      "claim_type": "editorial",
+      "evidence_note": "停止与边界说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "以上就是本篇的固定演示流程：先算和值，再核对区间，最后看候选空间变化。",
+      "claim_type": "editorial",
+      "evidence_note": "流程总结。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>本文只讲<strong>分分彩前二组选和值技巧</strong>里的计算方法，不讨论未核验的平台经济参数。</p><p>这里的“前二组选”，就是先看前面两个位置，再把两个数字按组选思路处理；本篇只围绕“和值6–12”这个固定筛选条件展开。</p><p>注意：文中案例使用的是<strong>演示数据，不是真实开奖记录</strong>，只用于说明怎么算，不代表真实开奖结果。</p><h2>方法机制：和值6–12</h2><p>“和值”就是把前二这两个数字相加，得到一个总和。</p><p>本篇的主筛选合同只有一个：<strong>和值6–12</strong>，也就是把前二组选里，和值落在6到12之间的候选留下，其余候选排除。</p><p>这个筛选是先固定参数，再看样本；不先看样本去改参数。</p><p>按合同，筛选前候选空间是<strong>45</strong>，主筛选后候选空间是<strong>27</strong>，一共排除了<strong>18</strong>个候选。</p><h2>完整可复算案例</h2><p>下面用固定演示案例复算一次。</p><p><strong>演示数据，不是真实开奖记录：</strong>前二组选候选池按合同先有45个，经过“和值6–12”这一个主筛选后，剩下27个。</p><ol><li>先把“前二”这个范围固定住，只看前两个数字。</li><li>再按“和值6–12”计算：把两个数字相加，只保留总和在6到12之间的候选。</li><li>因为这是主筛选合同，所以只做这一层，不临时再加第二个过滤器。</li><li>复算结果是：45个候选里，留下27个，排除18个。</li></ol><p>这一步的关键不是“猜”，而是“算”：先看两个数字之和，再判断是否落在6到12。</p><h2>逐步核对候选空间</h2><p>筛选前空间是<strong>45</strong>。</p><p>主筛选后的空间是<strong>27</strong>。</p><p>所以被排除的空间是<strong>18</strong>，也就是从45里减掉18，得到27。</p><p>如果你只拿样本条数来理解这个数字，就会混淆概念；这里的45和27是候选空间，不是样本条数。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这个合同只说明怎么算，不说明一定会怎样。</p><p>频率、和值、跨度这些，放在这里都只是描述性信息；它们不能直接等同于下一次的结果。</p><p>也不要把“筛掉18个候选”理解成有了预测优势；本篇只做机械筛选复算，不做收益承诺，也不做未来结果保证。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本篇到这里就停止。</p><p>停止条件很简单：只完成已经明确的主筛选“和值6–12”，不再临时增加第二条未经验证的规则。</p><p>只有当新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。</p><p>如果没有第二条已验证依据，就应当停在这里，不继续往下拼接过滤器。</p><h2>实际怎么操作</h2><ol><li>先固定玩法范围：只看前二组选，不把其他玩法混进来。</li><li>再固定主筛选参数：和值6–12，先定参数，再看样本。</li><li>拿到一个前二组合后，先把两个数字相加，算出和值。</li><li>如果和值在6到12之间，就保留；不在这个区间，就排除。</li><li>核对空间时记住：本合同从45到27，排除了18个候选。</li><li>完成这一步就停止，不要因为想“更细”而临时加第二个未验证条件。</li></ol><p>以上就是本篇的固定演示流程：先算和值，再核对区间，最后看候选空间变化。</p>",
+  "content_format": "html",
+  "content_hash": "f241ac6fd06f1339a3244bb7e68438cad6fcab053690bc7974c35fb9cca8c148",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20260905",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "8c6c8c83c6f2d6381fc3c5056c505de8bf99e0adb649259df5ad58d38b69380f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二组选和值技巧案例讲解：先说明前二组选规则，再用可复算演示数据展示筛选步骤、注数检查和常见误区，不把历史统计包装成必中结论。",
+  "play": "前二组选",
+  "practical_guidance": {
+    "after_primary_filter_space": "27",
+    "next_step_policy": "只有新增条件本身也有已验证规则或可复算证据时，才允许继续缩小候选。",
+    "parameter_freeze_rule": "先固定参数，再看样本；本篇主筛选参数为和值6–12。",
+    "starting_space": "45",
+    "steps": [
+      "先固定玩法范围：只看前二组选，不把其他玩法混进来。",
+      "再固定主筛选参数：和值6–12，先定参数，再看样本。",
+      "拿到一个前二组合后，先把两个数字相加，算出和值。",
+      "如果和值在6到12之间，就保留；不在这个区间，就排除。",
+      "核对空间时记住：本合同从45到27，排除了18个候选。",
+      "完成这一步就停止，不要因为想“更细”而临时加第二个未验证条件。"
+    ],
+    "stop_condition": "只完成已明确的主筛选“和值6–12”，不再临时增加第二条未经验证的规则。"
+  },
+  "primary_keyword": "分分彩前二组选和值技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_09eb40ec30f85d3c016a9bb3230b6c87d0ac97591ac94cccff",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "理解前二组选里和值6–12分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前二组选和值技巧",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+  "site_category_key": "tzjq",
+  "slug": "ffcsqezhxsjq-hezhi6-12-jueti-zenme-suan-wanzheng-anli-cong45-fusuan-dao27",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "本文用简单中文说明分分彩前二组选和值6–12的计算方法，并用演示数据从45个候选复算到27个，帮助读者按固定步骤核对，不把统计筛选误当成预测优势。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值6-12",
+    "技巧",
+    "演示数据",
+    "可复算案例",
+    "候选空间",
+    "筛选步骤"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+  "title_candidates": [
+    "这一步到底怎么算？用前二组选和值把规则和复算过程讲清",
+    "从玩法规则到完整案例：前二组选和值应该怎样复核",
+    "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前二组选和值怎样正确理解",
+    "看懂前二组选和值不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前二组选和值把规则和复算过程讲清",
+      "从玩法规则到完整案例：前二组选和值应该怎样复核",
+      "前二组选和值为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前二组选和值怎样正确理解",
+      "看懂前二组选和值不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e0a0e0b1ce0eba2b",
+          "score": 0.8076923076923077,
+          "title": "前四直选大小奇偶为什么容易算错？关键在输入、计算和停止条件"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "前二",
+            "组选",
+            "和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前二组选和值为什么容易算错？关键在输入、计算和停止条件"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

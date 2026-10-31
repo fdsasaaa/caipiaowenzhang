@@ -1,0 +1,361 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "解释窗口长度、频率排序和数字池各自计算什么，使用固定演示数据复算频率表、数字池及从100到25的候选空间变化。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 75,
+    "final_space": 25,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前二直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "4ee04bfbcf860780ea02",
+  "approved_at": "2026-10-31T00:39:17.588004+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-bacdac15002d008f",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:100->25",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二直选频率技巧",
+    "reader_question": "理解前二直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释近12期频率前5数字池的机制，并完成从100到25的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 75,
+      "final_space": 25,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：近12期频率前5数字池",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前二直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释近12期频率前5数字池的机制，并完成从100到25的可复算案例。",
+    "title": "分分彩前二直选频率技巧：近12期频率前5数字池具体怎么算，用完整案例从100复算到25",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-846f2cde5b0b6f3e",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前二直选按顺序读取开奖号码的前两个位置，每个位置可取0至9，允许相同数字，因此理论候选空间为10×10＝100个有序号码。",
+      "claim_type": "rule_fact",
+      "evidence_note": "前二直选的位置、顺序和数字范围，以及由此得到的有序空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "例如01与10是不同候选，00也在理论候选空间内。",
+      "claim_type": "rule_fact",
+      "evidence_note": "有序号码保留位置差异，并允许重复数字。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "使用案例包指定的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本例先固定选择规则：selector＝前二，metric＝top_frequency_digit_pool，lookback＝12，top_n＝5，production_top_n_policy＝5，ranking＝frequency_desc_then_digit_asc，ranking_source＝full_frequency_table_top5。",
+      "claim_type": "calculation",
+      "evidence_note": "逐项使用唯一主筛选合同；按频率降序、数字升序排序。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里的12表示回看窗口长度；频率表示数字在窗口内两个位置合并出现的次数；前5表示从完整频率表选出排序最靠前的五个不同数字。",
+      "claim_type": "calculation",
+      "evidence_note": "解释固定案例采用的合并计数和取池机制。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这些选择规则由系统研究合同预先固定，具体数字池则由演示样本计算得出，不能说成来源推荐，也不能说成看样本之前已经知道池内数字。",
+      "claim_type": "editorial",
+      "evidence_note": "区分预先固定的选择规则与样本解析得到的数字池。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按案例包的排列顺序取末尾12条，完整演示号码依次为：87179、69185、55493、55227、34691、81573、37275、90496、21306、00053、72263、41995。",
+      "claim_type": "calculation",
+      "evidence_note": "从draws末尾取固定窗口，保留前导零。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "对应的前二依次为：87、69、55、55、34、81、37、90、21、00、72、41；合并后共有12×2＝24个数字位置。",
+      "claim_type": "calculation",
+      "evidence_note": "逐条提取前两个字符，重复数字分别计数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "逐个计数得到：0出现3次，1出现3次，2出现2次，3出现2次，4出现2次，5出现4次，6出现1次，7出现3次，8出现2次，9出现2次。",
+      "claim_type": "calculation",
+      "evidence_note": "与案例包完整frequency表一致，合计24次。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按频率从高到低、同频时数字从小到大排序，结果为5、0、1、7、2、3、4、8、9、6；取前5个，再按数字升序展示，得到digits＝[0,1,2,5,7]。",
+      "claim_type": "calculation",
+      "evidence_note": "排序后第五位为2，完整复算主筛选合同的数字池。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "案例包另有top_frequency_digits＝[5,0,1]的简略字段，本篇按ranking_source＝full_frequency_table_top5使用完整频率表，不把该简略字段当作最终数字池。",
+      "claim_type": "calculation",
+      "evidence_note": "明确简略字段与唯一主筛选合同的取值边界。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本例要求两个位置都取自数字池[0,1,2,5,7]，各有5种选择，主筛选后留下5×5＝25个有序候选，筛掉100－25＝75个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "按固定数字池作有序笛卡尔积，结果与主筛选合同一致。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按首位分组核对全部保留候选：00、01、02、05、07；10、11、12、15、17；20、21、22、25、27；50、51、52、55、57；70、71、72、75、77。",
+      "claim_type": "calculation",
+      "evidence_note": "仅为候选集合的数学枚举，用于核对笛卡尔积，无投注执行指令。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "窗口样本条数用于统计频率，理论候选空间用于枚举有序号码，两者不能互相替代。",
+      "claim_type": "editorial",
+      "evidence_note": "说明样本量与候选空间的概念边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的频率只描述演示窗口，候选减少也只是集合变化，不能据此认定具有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "不从描述性样本推导表现或未来预测。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成数字池筛选及空间核对后立即停止，不临时追加和值、跨度或遗漏条件；只有新增条件具有已验证规则或证据，并且可复算时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "落实单阶段停止条件及后续条件的证据要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>理解分分彩前二直选频率技巧，先分清三个对象：用于统计的窗口、统计后选出的数字池，以及筛选后的有序候选集合。</p><p>前二直选按顺序读取开奖号码的前两个位置，每个位置可取0至9，允许相同数字，因此理论候选空间为10×10＝100个有序号码。</p><p>例如01与10是不同候选，00也在理论候选空间内。</p><h2>方法机制：近12期频率前5数字池</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>本例先固定选择规则：selector＝前二，metric＝top_frequency_digit_pool，lookback＝12，top_n＝5，production_top_n_policy＝5，ranking＝frequency_desc_then_digit_asc，ranking_source＝full_frequency_table_top5。</p><p>这里的12表示回看窗口长度；频率表示数字在窗口内两个位置合并出现的次数；前5表示从完整频率表选出排序最靠前的五个不同数字。</p><p>这些选择规则由系统研究合同预先固定，具体数字池则由演示样本计算得出，不能说成来源推荐，也不能说成看样本之前已经知道池内数字。</p><h2>完整可复算案例</h2><p>按案例包的排列顺序取末尾12条，完整演示号码依次为：87179、69185、55493、55227、34691、81573、37275、90496、21306、00053、72263、41995。</p><p>对应的前二依次为：87、69、55、55、34、81、37、90、21、00、72、41；合并后共有12×2＝24个数字位置。</p><p>计数时逐个位置累加，遇到相同数字也分别记录，不能把重复出现的数字合并成一次。</p><p>逐个计数得到：0出现3次，1出现3次，2出现2次，3出现2次，4出现2次，5出现4次，6出现1次，7出现3次，8出现2次，9出现2次。</p><p>按频率从高到低、同频时数字从小到大排序，结果为5、0、1、7、2、3、4、8、9、6；取前5个，再按数字升序展示，得到digits＝[0,1,2,5,7]。</p><p>案例包另有top_frequency_digits＝[5,0,1]的简略字段，本篇按ranking_source＝full_frequency_table_top5使用完整频率表，不把该简略字段当作最终数字池。</p><h2>逐步核对候选空间</h2><p>本例要求两个位置都取自数字池[0,1,2,5,7]，各有5种选择，主筛选后留下5×5＝25个有序候选，筛掉100－25＝75个候选。</p><p>按首位分组核对全部保留候选：00、01、02、05、07；10、11、12、15、17；20、21、22、25、27；50、51、52、55、57；70、71、72、75、77。</p><p>这份枚举用于检查集合是否漏项或重复。</p><h2>实际怎么操作</h2><ol><li>观察样本前，写下前文的窗口长度、取池数量及同频排序规则，复算过程中保持不变。</li><li>按既定顺序截取窗口，保留完整号码的前导零，再提取前二。</li><li>逐个数字位置累加频次，用完整频率表排序，检查同频时是否按数字升序处理。</li><li>按固定取池规则得到数字池，再让两个位置分别从池中取值。</li><li>对照前文的候选枚举和空间算式检查结果，完成后停止。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>窗口样本条数用于统计频率，理论候选空间用于枚举有序号码，两者不能互相替代。</p><p>这里的频率只描述演示窗口，候选减少也只是集合变化，不能据此认定具有预测优势。</p><p>本文不讨论未核验的平台经济参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成数字池筛选及空间核对后立即停止，不临时追加和值、跨度或遗漏条件；只有新增条件具有已验证规则或证据，并且可复算时，才允许继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "e19ac6203185ab4dcf88dd635e012541be841bfd05099a835cb1b7c80084f7d1",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261031",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "846f2cde5b0b6f3eb1f385b2ed6ae6a5431f87fd0c1369a8d1440664b317bdd4",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二直选频率技巧完整演示：固定近12期窗口与同频排序规则，逐项复算频率表和前5数字池，解释候选空间如何从100变为25，并明确统计边界与停止条件。",
+  "play": "前二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后为25个有序候选；两个位置均从[0,1,2,5,7]取值，5×5＝25，相比起始空间筛掉75个。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选；本篇完成唯一主筛选后停止。",
+    "parameter_freeze_rule": "观察样本前固定selector=前二、metric=top_frequency_digit_pool、lookback=12、top_n=5、production_top_n_policy=5、ranking=frequency_desc_then_digit_asc、ranking_source=full_frequency_table_top5；具体digits由固定演示窗口计算，结果为[0,1,2,5,7]，不得把样本计算结果冒充事前固定值。",
+    "starting_space": "前二直选的理论候选空间为100个有序号码，即两个位置分别取0至9，10×10＝100；演示窗口的12条数据不是理论候选空间。",
+    "steps": [
+      "观察样本前固定窗口长度、取池数量及同频排序规则。",
+      "取案例包末尾12条演示号码，逐条提取前二并保留前导零。",
+      "合并两个位置的24个数字位置，逐项统计完整频率表。",
+      "按频率降序、同频数字升序排序，取前5个不同数字，得到[0,1,2,5,7]。",
+      "让两个位置分别从该池取值，枚举并核对25个有序候选及排除的75个候选。",
+      "完成唯一主筛选后停止，不临时增加其他过滤条件。"
+    ],
+    "stop_condition": "完成近12期频率前5数字池及100到25的空间核对后立即停止。"
+  },
+  "primary_keyword": "分分彩前二直选频率技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": null,
+  "provider_response_id": "resp_0150c2b7afc9e306016ae538796d9087d2a4672256b338f724",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "理解前二直选里近12期频率前5数字池分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前二直选频率技巧",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂前二直选频率不靠口诀，先把计算逻辑拆开",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front2-frequency-window-case",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "用明确标注的演示数据，解释分分彩前二直选频率技巧中的窗口、合并频率和数字池，按预先固定的排序规则复算出[0,1,2,5,7]，核对候选空间从100变为25、排除75，并在唯一主筛选完成后停止。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "频率统计",
+    "演示案例",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "看懂前二直选频率不靠口诀，先把计算逻辑拆开",
+  "title_candidates": [
+    "这一步到底怎么算？用前二直选频率把规则和复算过程讲清",
+    "从玩法规则到完整案例：前二直选频率应该怎样复核",
+    "前二直选频率为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前二直选频率怎样正确理解",
+    "看懂前二直选频率不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前二直选频率把规则和复算过程讲清",
+      "从玩法规则到完整案例：前二直选频率应该怎样复核",
+      "前二直选频率为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前二直选频率怎样正确理解",
+      "看懂前二直选频率不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 21
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-06b31faa23c940be",
+          "score": 0.8,
+          "title": "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2632,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "频率"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "频率",
+            "前二直选频率"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂前二直选频率不靠口诀，先把计算逻辑拆开"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

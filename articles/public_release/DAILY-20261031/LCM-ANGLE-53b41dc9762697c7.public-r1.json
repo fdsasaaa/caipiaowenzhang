@@ -1,0 +1,208 @@
+{
+  "angle_signature": "0efd15943af939f1055e",
+  "approved_at": "2026-10-31T01:03:19.543537+00:00",
+  "article_id": "LCM-ANGLE-53b41dc9762697c7",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "中三直选取五位结果中间的三个位置，并按位置顺序区分结果；每个位置有10种数字取值，包含前导零的有序三位结果共1000种。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据parent提供的中三直选机制：三个位置分别取值，顺序有效，前导零有效；理论结果数为10×10×10。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "每个位置的奇数和偶数各有5种取值，零归入偶数。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据parent中的数字取值范围与奇偶定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "按奇数个数分类，0个、1个、2个和3个奇数对应的有序结果数依次为125、375、375和125，总计1000。",
+      "claim_type": "calculation",
+      "evidence_note": "从已验证机制推导：每种固定奇偶位置排列对应5×5×5=125种结果；四类分别包含1、3、3、1种位置排列。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "研究预设应在查看待评价样本之前记录；查看结果后修改条件，应作为新的研究版本记录。",
+      "claim_type": "methodology",
+      "evidence_note": "公开版采用的研究记录原则，用于区分预先提出的条件与事后探索，不表示已完成实证验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "限定组合计算和历史复盘的解释范围，避免将结构数量或样本内表现直接解释为预测能力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本外验证应使用未参与条件选择的数据，评价口径也应事先明确；单次结果较好仍可能包含随机波动。",
+      "claim_type": "methodology",
+      "evidence_note": "用于教育性说明研究评价边界，不宣称任何参数已通过样本外验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>讨论分分彩中三直选的奇偶参数设置，首先要分清规则定义、研究预设与样本结果。规则说明怎样识别和计数，研究预设说明准备观察什么，样本结果则用于核对既定定义下发生了什么。</p><p>本文从组合数学与研究记录出发，解释哪些内容可以提前约定，哪些变化需要另作记录，不提供具体选号方案。</p><h2>先理解位置与奇偶计数</h2><p>中三直选取五位结果中间的三个位置，并按位置顺序区分结果。每个位置有10种数字取值，包含前导零的有序三位结果共10×10×10＝1000种。</p><p>每个位置的奇数和偶数各有5种取值，零归入偶数。研究奇偶结构时，可以记录三个位置中的奇数个数，也可以记录奇偶所在的位置；两种指标回答的问题不同。</p><h2>组合数量说明什么</h2><p>每种固定的奇偶位置排列，都对应5×5×5＝125种有序结果。按奇数个数分类，0个、1个、2个和3个奇数对应的结果数依次为125、375、375和125，总计1000。</p><p>这些数量描述的是理论结果空间的组成。比较不同类别的历史出现次数时，需要同时考虑类别本身的大小，不能只凭某类出现次数较多就判断它具有特殊规律。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。组合数量也不能直接回答某一类在下一次结果中是否会出现。</p><h2>哪些参数应该提前记录</h2><p>研究预设应在查看待评价样本之前记录。记录内容可以包括观察位置、指标定义、样本范围、缺失数据处理方式，以及采用什么评价口径。</p><p>参数预注册的作用，是让读者看清研究原本提出了什么问题。它本身不是参数有效的证据，也不能把研究者自行设定的条件写成来源推荐。</p><p>查看结果后修改条件，应作为新的研究版本记录。新的定义可以用于后续探索，但不能继续以原先预设的名义解释修改后的结果。</p><h2>历史复盘与样本外验证</h2><p>历史复盘适合检查定义是否一致、计数是否正确，以及结论依赖哪一段样本。报告时应说明观察范围和参数版本，让他人能够复算。</p><p>样本外验证应使用未参与条件选择的数据，评价口径也应事先明确。单次结果较好仍可能包含随机波动，因此需要同时交代不确定性，避免只展示有利片段。</p><p>本文仅解释规则机制与研究方法，没有提供任何参数已通过样本外验证的证据。</p><h2>常见误区：把分类当成结论</h2><p>把结果分成更小的类别，只是改变了观察范围。类别变小、历史频次较高或某段样本符合条件，都不足以单独支持未来预测判断。</p><p>阅读相关研究时，可以分别核对规则依据、参数设定时间和评价数据来源。把这三项写清楚，才能判断一项结论究竟属于规则计算、事后描述，还是仍需验证的研究假设。</p>",
+  "content_format": "html",
+  "content_hash": "37a15c6e4875efd85136aa80ca1d1283e812a3fbda238d1f281d517935fb4d2c",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261031",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "5ab2713668255e96901d6f59ecae1e02a5ac447aaecd72a4a287c1a85fc3ceb1",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从中三直选的位置规则与奇偶组合数量出发，解释参数预注册、历史复盘和样本外验证的区别，明确结构分类与历史表现不能单独证明未来预测优势。",
+  "parent_content_hash": "4d6cae3a37907ca36240e7187be412c22eae6072dad093831f031177d8c7cc2e",
+  "parent_fingerprint": "53b41dc9762697c7ebbcb4340af2bfa209d20d4fe990dafa522d1db258bd02e5",
+  "play": "中三直选",
+  "primary_keyword": "分分彩中三直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_09d1f0670741640c016ae53a6ec52481998e64a5d238523b2d",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-10-31T01:03:19.543574+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-53b41dc9762697c7:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "帮助查询分分彩中三直选奇偶参数设置的读者区分规则机制、研究预设与样本结果，理解参数应如何记录、变更和验证，避免把具体条件当成来源推荐或预测优势。",
+  "secondary_keywords": [
+    "分分彩中三直选奇偶参数设置",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改",
+  "site_category_key": "tzjq",
+  "slug": "ffc-middle3-direct-odd-even-parameter-boundary",
+  "source_batch_id": "DAILY-20261031",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "以中三直选的奇偶结构为例，说明有序结果空间的组合计算，以及参数预注册、版本记录、历史复盘和样本外验证的研究边界，不提供具体选号方案或未来结果建议。",
+  "tags": [
+    "分分彩",
+    "中三直选",
+    "奇偶参数",
+    "系统研究预设",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改",
+  "title_candidates": [
+    "哪些参数能提前固定？中三直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用中三直选奇偶拆开看",
+    "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改",
+    "中三直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？中三直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？中三直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用中三直选奇偶拆开看",
+      "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改",
+      "中三直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？中三直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-a542ffff4d4f2faa",
+          "score": 0.375,
+          "title": "从输入到结果：后三直选大小奇偶的空间计算与候选空间"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3636,
+          "intent_term_hits": [
+            "中三",
+            "直选",
+            "奇偶",
+            "参数",
+            "中三直选奇偶"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "奇偶",
+            "参数",
+            "中三直选奇偶"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,52 @@
+{
+  "approved_public_release_count": 4,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-53b41dc9762697c7",
+      "content_hash": "37a15c6e4875efd85136aa80ca1d1283e812a3fbda238d1f281d517935fb4d2c",
+      "fingerprint": "5ab2713668255e96901d6f59ecae1e02a5ac447aaecd72a4a287c1a85fc3ceb1",
+      "path": "articles/public_release/DAILY-20261031/LCM-ANGLE-53b41dc9762697c7.public-r1.json",
+      "primary_keyword": "分分彩中三直选奇偶参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-53b41dc9762697c7:public-r1",
+      "slug": "ffc-middle3-direct-odd-even-parameter-boundary"
+    },
+    {
+      "article_id": "LCM-ANGLE-effe67bf46df25c5",
+      "content_hash": "59cb51ffe346d43651445097e88491a5aa4e5da6d67a1d5c817f8d97de0501e2",
+      "fingerprint": "d6de1cc1402dc9ee8dec5a0f383d80d2e9ddca7d22b0b1ebb5cf158fb68f22bc",
+      "path": "articles/public_release/DAILY-20261031/LCM-ANGLE-effe67bf46df25c5.public-r1.json",
+      "primary_keyword": "分分彩前二直选频率注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-effe67bf46df25c5:public-r1",
+      "slug": "分分彩-前二直选-frequency_window-space_math"
+    },
+    {
+      "article_id": "LCM-IDEA-6cf2b63751987ec0",
+      "content_hash": "f627fbcde7047facbce33f32aa471e4700d30e379a529290bd92b06d28b0ade3",
+      "fingerprint": "ec209788d5df0af158f2b9b697edaaf32815436de8a3152021d70a58bd42c596",
+      "path": "articles/public_release/DAILY-20261031/LCM-IDEA-6cf2b63751987ec0.public-r1.json",
+      "primary_keyword": "分分彩前三组选6和值技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-6cf2b63751987ec0:public-r1",
+      "slug": "ffc-front3-group6-sum-range-9-18-mechanics-case"
+    },
+    {
+      "article_id": "LCM-IDEA-846f2cde5b0b6f3e",
+      "content_hash": "1aa2dc0c3b2a950c0f74edf8e75a84dbd43696872dd35d56f541bfb212538512",
+      "fingerprint": "241d80ca766cb6903444ad7d3c029bd6487b3dfeb550f7ba9207f0ddb9aa4e51",
+      "path": "articles/public_release/DAILY-20261031/LCM-IDEA-846f2cde5b0b6f3e.public-r1.json",
+      "primary_keyword": "分分彩前二直选频率技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-846f2cde5b0b6f3e:public-r1",
+      "slug": "ffc-front2-frequency-window-case"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 4,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261031",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

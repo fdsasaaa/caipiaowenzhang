@@ -1,0 +1,36 @@
+name: recover-verified-daily-closeout-20261031
+
+on:
+  push:
+    branches: [repair/daily-closeout-recovery-20261031]
+
+permissions:
+  actions: read
+  contents: write
+  pull-requests: write
+  statuses: write
+
+concurrency:
+  group: verified-daily-closeout-recovery-20261031
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 25855808fd5cc488d76c48d01ed31c8046f4c711
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Recover only the already-tested PR 117 at its frozen head
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python -m engine.daily_ci_closeout \
+            --repository fdsasaaa/caipiaowenzhang \
+            --run-id 33950476507 \
+            --pr-url https://github.com/fdsasaaa/caipiaowenzhang/pull/117 \
+            --expected-sha 0121391f4ed8501de45d7e9c5057232596b8367d

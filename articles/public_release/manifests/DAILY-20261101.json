@@ -1,0 +1,42 @@
+{
+  "approved_public_release_count": 3,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+      "content_hash": "9e886605dc5d64c4636434f2a22a365634af62099a2842d1e59a165081c0606f",
+      "fingerprint": "fcdfae5da417a593bf56c7f1513977ca139b315642c24eb0cd3f95eba9177bf9",
+      "path": "articles/public_release/DAILY-20261101/LCM-ANGLE-300458fdcf25b6c9.public-r1.json",
+      "primary_keyword": "分分彩五星直选大小奇偶注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-300458fdcf25b6c9:public-r1",
+      "slug": "ffc-five-direct-size-parity-space-math-300458fd"
+    },
+    {
+      "article_id": "LCM-ANGLE-cb745be9f679a94f",
+      "content_hash": "a2a348776402dbee42fd9539ef1af770bdd9069e5d8f7c8a792c5196cdad57d0",
+      "fingerprint": "6ca4cd0fa117dd3ff394b5208fb7832f49a7066d44ca675656c071dfcd92a60c",
+      "path": "articles/public_release/DAILY-20261101/LCM-ANGLE-cb745be9f679a94f.public-r1.json",
+      "primary_keyword": "分分彩前三直选邻号参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-cb745be9f679a94f:public-r1",
+      "slug": "ffc-front3-direct-neighbor-parameter-boundary"
+    },
+    {
+      "article_id": "LCM-IDEA-409bcf7c040ebcad",
+      "content_hash": "1a51fb75dfc223e15a872213a6a0e85388bf936f049d282757e74ead9a75b3df",
+      "fingerprint": "ef8093ee9ac77617177dd758a470791a5236632c13c7ed01b21db46696801c7f",
+      "path": "articles/public_release/DAILY-20261101/LCM-IDEA-409bcf7c040ebcad.public-r1.json",
+      "primary_keyword": "分分彩前二直选奇偶技巧",
+      "release_revision": 1,
+      "revision_id": "LCM-IDEA-409bcf7c040ebcad:public-r1",
+      "slug": "ffc-front2-direct-odd-count-one-mechanics-case"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 3,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261101",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

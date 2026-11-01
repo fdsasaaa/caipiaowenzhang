@@ -1,0 +1,391 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "mechanics_case",
+    "deliverable_summary": "解释前二直选的取位范围与单号计数方法，按固定参数odd_count=1复算100个有序候选如何保留50个、排除50个，并用指定演示案例核对判断过程。",
+    "evidence_mode": "static_only",
+    "excluded_space": 50,
+    "final_space": 50,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "理解前二直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好1个单号"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "dd3c83d0de681cd993c6",
+  "approved_at": "2026-11-01T08:02:15.022870+00:00",
+  "article_angle_contract": {
+    "angle_type": "mechanics_case",
+    "contract_id": "AAC-02f481b2951dc2ea",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:100->50",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二直选奇偶技巧",
+    "reader_question": "理解前二直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "required_deliverable": "用简单中文解释恰好1个单号的机制，并完成从100到50的可复算案例。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 50,
+      "final_space": 50,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好1个单号"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "玩法与计算范围",
+      "方法机制：恰好1个单号",
+      "完整可复算案例",
+      "逐步核对候选空间",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "理解前二直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "用简单中文解释恰好1个单号的机制，并完成从100到50的可复算案例。",
+    "title": "分分彩前二直选奇偶技巧：恰好1个单号具体怎么算，用完整案例从100复算到50",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-IDEA-409bcf7c040ebcad",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前二直选取前两个位置，按位置顺序区分候选，每个位置可取0至9，允许数字重复，也保留开头的0。",
+      "claim_type": "rule_fact",
+      "evidence_note": "前二直选的取位、有序数字对与数字范围机制。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，筛选前的理论候选空间为10×10=100个有序数字对，范围从00到99。",
+      "claim_type": "calculation",
+      "evidence_note": "两个位置分别有10种取值，按乘法原理计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇先固定selector=前二、metric=odd_count、params={\"odd_count\":1}，再查看演示案例。",
+      "claim_type": "editorial",
+      "evidence_note": "执行系统研究预设的唯一主筛选合同。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这组参数由系统研究预设，不归属于来源推荐，也不根据演示结果调整。",
+      "claim_type": "editorial",
+      "evidence_note": "说明系统参数归属及冻结边界，不对来源提出额外事实声称。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的单号是奇数数字，集合为{1,3,5,7,9}；双号是偶数数字，集合为{0,2,4,6,8}，0按双号计算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "十进制数字的奇偶划分及该筛选的计算基础。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "odd_count计算前两个位置中单号的个数；恰好1个单号，就是只保留单双或双单，排除单单与双双。",
+      "claim_type": "calculation",
+      "evidence_note": "将odd_count=1应用于两个有序位置，得到允许和排除的奇偶结构。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按case_bundle要求标注演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "固定案例取演示号码41446，按前二取位得到41，后面的446不参与本次计算。",
+      "claim_type": "calculation",
+      "evidence_note": "取case_bundle.descriptive.latest_draw的前两个字符。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "在41中，4是双号，1是单号，所以odd_count=0+1=1，结构为双单，符合本次保留条件。",
+      "claim_type": "calculation",
+      "evidence_note": "对演示案例逐位判断奇偶并求单号个数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "判断过程只检查前二的单号个数，不读取这个演示号码的和值、跨度或出现频率。",
+      "claim_type": "editorial",
+      "evidence_note": "限定案例演示范围，不引入样本统计过滤器。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第一组为单双：首位从{1,3,5,7,9}中取，次位从{0,2,4,6,8}中取，共5×5=25个有序候选。",
+      "claim_type": "calculation",
+      "evidence_note": "单双结构的两个位置各有5种取值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二组为双单：首位从{0,2,4,6,8}中取，次位从{1,3,5,7,9}中取，同样有5×5=25个有序候选。",
+      "claim_type": "calculation",
+      "evidence_note": "双单结构的两个位置各有5种取值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两组首位的奇偶属性不同，不会重叠，因此主筛选后保留25+25=50个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "单双与双单互斥，数量可直接相加。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "排除部分为单单的5×5=25个，加上双双的5×5=25个，共排除50个候选；也可用100−50=50交叉核对。",
+      "claim_type": "calculation",
+      "evidence_note": "按补集和被排除结构分别复算，结果一致。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "单双与双单都必须保留，因为条件只限制单号个数，没有指定单号所在位置。",
+      "claim_type": "calculation",
+      "evidence_note": "odd_count=1不包含额外的位置奇偶限制。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把前二写成不计顺序的组合，或把0漏掉，都会改变本篇的候选空间。",
+      "claim_type": "calculation",
+      "evidence_note": "本篇候选空间明确为包含0的两位有序数字对。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示案例用于展示规则如何执行，不用于证明筛选具有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "限定文章证据用途，不作表现或未来预测声称。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only范围声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成本次主筛选并核对数量后停止，不临时叠加和值、跨度、冷热或位置限制。",
+      "claim_type": "editorial",
+      "evidence_note": "落实唯一主筛选和完成后停止的合同要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且计算过程可以复算时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "后续扩展的必要条件，不表示本篇已具备新增过滤器。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>玩法与计算范围</h2><p>前二直选取前两个位置，按位置顺序区分候选，每个位置可取0至9，允许数字重复，也保留开头的0。</p><p>因此，筛选前的理论候选空间为10×10=100个有序数字对，范围从00到99。</p><p>本篇先固定selector=前二、metric=odd_count、params={\"odd_count\":1}，再查看演示案例。</p><p>这组参数由系统研究预设，不归属于来源推荐，也不根据演示结果调整。</p><h2>方法机制：恰好1个单号</h2><p>这里的单号是奇数数字，集合为{1,3,5,7,9}；双号是偶数数字，集合为{0,2,4,6,8}，0按双号计算。</p><p>odd_count计算前两个位置中单号的个数；恰好1个单号，就是只保留单双或双单，排除单单与双双。</p><h2>完整可复算案例</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>固定案例取演示号码41446，按前二取位得到41，后面的446不参与本次计算。</p><p>在41中，4是双号，1是单号，所以odd_count=0+1=1，结构为双单，符合本次保留条件。</p><p>判断过程只检查前二的单号个数，不读取这个演示号码的和值、跨度或出现频率。</p><h2>逐步核对候选空间</h2><p>第一组为单双：首位从{1,3,5,7,9}中取，次位从{0,2,4,6,8}中取，共5×5=25个有序候选。</p><p>第二组为双单：首位从{0,2,4,6,8}中取，次位从{1,3,5,7,9}中取，同样有5×5=25个有序候选。</p><p>两组首位的奇偶属性不同，不会重叠，因此主筛选后保留25+25=50个候选。</p><p>排除部分为单单的5×5=25个，加上双双的5×5=25个，共排除50个候选；也可用100−50=50交叉核对。</p><h2>实际怎么操作</h2><ol><li>先记录上述selector、metric和参数，冻结后再打开演示案例。</li><li>建立完整的前二有序候选清单，保留开头的0及重复数字。</li><li>逐个检查两个位置的奇偶，按固定条件标记保留或排除。</li><li>按单双、双单分别核对保留清单，再按单单、双双核对排除清单，使用上面的算式交叉检查。</li><li>对照固定演示案例复算取位和单号计数，完成后停止。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>单双与双单都必须保留，因为条件只限制单号个数，没有指定单号所在位置。</p><p>把前二写成不计顺序的组合，或把0漏掉，都会改变本篇的候选空间。</p><p>演示案例用于展示规则如何执行，不用于证明筛选具有预测优势。</p><p>本文不讨论未核验的平台经济参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成本次主筛选并核对数量后停止，不临时叠加和值、跨度、冷热或位置限制。</p><p>只有新增条件具有已验证规则或证据，并且计算过程可以复算时，才允许继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "e816d415e1502e905f8244127b4e570c91301960e0e0cb9dc3fb7e19d4e7fd3a",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261101",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "409bcf7c040ebcad3881a03bc4d31828c20ed20092018f8407bdccc53550e1bb",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二直选奇偶技巧案例讲解：先固定恰好1个单号的参数，再复算有序候选从100到50的过程，用明确标注的演示数据核对取位与计数，并说明停止条件。",
+  "play": "前二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后保留50个有序候选，排除50个；保留部分由单双25个与双单25个组成。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且计算过程可以复算时，才允许继续缩小候选；本篇完成唯一静态阶段后停止。",
+    "parameter_freeze_rule": "观察演示案例前固定selector=前二、metric=odd_count、params={\"odd_count\":1}；参数由系统研究预设，不归因于来源，也不根据演示案例修改。",
+    "starting_space": "前二直选的理论候选为00至99的100个有序数字对，即10×10=100；演示样本条数不参与候选空间计算。",
+    "steps": [
+      "先固定selector=前二、metric=odd_count、params={\"odd_count\":1}，再查看演示案例。",
+      "建立00至99的完整有序候选清单，保留开头的0和重复数字。",
+      "逐个计算前两个位置的单号个数，只保留odd_count=1的候选。",
+      "分别核对单双与双单各25个，合计保留50个；用单单与双双各25个核对排除50个。",
+      "将演示号码41446取前二得到41，核对4为双、1为单，odd_count=1，完成后停止。"
+    ],
+    "stop_condition": "完成恰好1个单号这一静态阶段，确认100个候选中保留50个、排除50个后停止，不临时增加第二过滤器。"
+  },
+  "primary_keyword": "分分彩前二直选奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_004c824eb1f6a467016ae6f1c5bf3c819997f9bb30af1c2908",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "理解前二直选里恰好1个单号分别计算什么，并用固定演示案例完整复算一次",
+  "secondary_keywords": [
+    "分分彩前二直选奇偶技巧",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front2-direct-odd-count-one-mechanics-case",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "围绕分分彩前二直选奇偶技巧，解释取位、单号计数与有序候选的关系，按系统预设的恰好1个单号条件复算候选空间，并用标明性质的演示案例展示判断过程，完成后停止筛选。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "奇偶筛选",
+    "机制复算",
+    "演示案例"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开",
+  "title_candidates": [
+    "这一步到底怎么算？用前二直选奇偶把规则和复算过程讲清",
+    "从玩法规则到完整案例：前二直选奇偶应该怎样复核",
+    "前二直选奇偶为什么容易算错？关键在输入、计算和停止条件",
+    "先看规则，再看案例：这一玩法里的前二直选奇偶怎样正确理解",
+    "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前二直选奇偶把规则和复算过程讲清",
+      "从玩法规则到完整案例：前二直选奇偶应该怎样复核",
+      "前二直选奇偶为什么容易算错？关键在输入、计算和停止条件",
+      "先看规则，再看案例：这一玩法里的前二直选奇偶怎样正确理解",
+      "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 21
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-06b31faa23c940be",
+          "score": 0.8,
+          "title": "看懂一星直选遗漏不靠口诀，先把计算逻辑拆开"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2105,
+          "intent_term_hits": [
+            "前二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "前二直选奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

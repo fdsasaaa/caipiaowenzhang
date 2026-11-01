@@ -1,0 +1,206 @@
+{
+  "angle_signature": "7592a747179984f5999a",
+  "approved_at": "2026-11-01T08:20:29.583858+00:00",
+  "article_id": "LCM-ANGLE-cb745be9f679a94f",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前三直选按位置区分有序数字组合，每个位置可取0至9，重复数字和前导0均属于规则允许的组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已批准父稿引用的前三直选规则机制，说明位置顺序、数字范围及重复数字、前导0的处理。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "由此可得，理论组合空间共有10×10×10＝1000个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "由三个位置各有10种取值，按乘法原理计算；该数量描述完整理论空间，不表示筛选结果或预测能力。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在本文讨论的研究定义中，“邻号”指所选三个数字中，至少有一对数字的绝对差为1。数字所在的位置不必相邻，0与9也不按首尾相接处理。",
+      "claim_type": "methodology",
+      "evidence_note": "这是本文沿用的研究定义及讨论范围，不声称它是玩法强制规则或经验证有效的参数推荐。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "预注册的作用是留下可核对的研究约定，减少把观察后的调整写成事先选择的空间。",
+      "claim_type": "methodology",
+      "evidence_note": "属于研究记录方法的说明，不涉及具体选号流程或有效性承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确结构描述、历史观察与未来预测之间的证据边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本外验证有助于检查结论能否延续，但一次验证结果仍不足以保证未来表现。",
+      "claim_type": "methodology",
+      "evidence_note": "说明样本外验证的研究用途及局限，不承诺任何实际收益或预测效果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究分分彩前三直选中的邻号参数，首先要分清玩法规则、研究定义和历史观察。位置如何区分属于玩法机制；怎样定义邻号属于研究约定；某种结构在样本中出现多少次，则属于观察结果。这三类信息承担不同的证明作用。</p><h2>先理解前三直选的组合空间</h2><p>前三直选按位置区分有序数字组合，每个位置可取0至9，重复数字和前导0均属于规则允许的组合。</p><p>由此可得，理论组合空间共有10×10×10＝1000个有序组合。这里计算的是完整空间，历史记录的条数不能代替这个数量。</p><p>位置顺序也是组合定义的一部分。研究数字之间的关系时，需要保留这一前提，避免混用有序组合与不区分顺序的分类。</p><h2>邻号定义有哪些边界</h2><p>在本文讨论的研究定义中，“邻号”指所选三个数字中，至少有一对数字的绝对差为1。数字所在的位置不必相邻，0与9也不按首尾相接处理。</p><p>差值标准、位置关系和是否首尾循环，都是需要写清的研究口径。上述口径用于解释结构分类，并非玩法要求，也不是参数推荐。</p><p>经验材料可以提供研究问题的背景，但不能代替对参数效果的独立验证。定义清楚，只能让分类更容易核对。</p><h2>预注册关注哪些信息</h2><p>教育与研究记录可以事先说明研究对象、结构定义、观察区间、评价指标以及数据处理方式。预注册的作用是留下可核对的研究约定，减少把观察后的调整写成事先选择的空间。</p><p>如果在看过结果后改变差值标准、位置范围或循环方式，应将其记录为新的探索版本，并交代修改原因。原有结果与修改后的结果需要分别报告。</p><p>本文不提供候选号码、数字池或逐期筛选安排；参数讨论仅用于理解研究设计。</p><h2>历史复盘能说明什么</h2><p>历史复盘可以描述特定样本中某类结构的出现情况。解释结果时，需要同时交代样本范围、分类口径，以及是否尝试过其他定义。</p><p><strong>结构分类或历史样本表现不能单独证明未来预测优势。</strong>某段样本中的集中出现或暂时缺少，都需要结合随机波动理解，不能直接转化为下一期判断。</p><p>研究还可以在定义固定后，使用未参与参数选择的数据进行样本外验证。样本外验证有助于检查结论能否延续，但一次验证结果仍不足以保证未来表现。</p><h2>读懂结果，避免误读</h2><p>结构类别的规模、历史出现频率和未来预测能力，是不同的问题。缩小研究范围本身，不能证明剩余类别更值得期待。</p><p>阅读此类文章时，可以重点核对：定义是否清楚，参数是否事先说明，修改是否如实记录，以及结论是否超出了证据能够支持的范围。</p>",
+  "content_format": "html",
+  "content_hash": "a2a348776402dbee42fd9539ef1af770bdd9069e5d8f7c8a792c5196cdad57d0",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261101",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "6ca4cd0fa117dd3ff394b5208fb7832f49a7066d44ca675656c071dfcd92a60c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从组合数学与研究方法理解分分彩前三直选邻号参数，说明差值、位置和循环定义的边界，以及预注册、历史复盘和样本外验证的作用，明确历史表现不能单独证明未来预测优势。",
+  "parent_content_hash": "31462b0e6244da4bef9e4f20158e50be01e641bf3dcfed98e1a4c175142ea48c",
+  "parent_fingerprint": "cb745be9f679a94fb33c3ae378909ba1dfac0bf973cd7651aa2b1f717dc28d39",
+  "play": "前三直选",
+  "primary_keyword": "分分彩前三直选邻号参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_09a03c01d1e6d496016ae6ef6a8064819b82f96e4468494e33",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-01T08:20:29.583873+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-cb745be9f679a94f:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩前三直选邻号参数的定义、预先固定的研究口径及证据边界，区分玩法机制、经验背景与历史观察，不将参数设置视为选号建议或预测优势。",
+  "secondary_keywords": [
+    "分分彩前三直选邻号参数设置",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？前三直选邻号的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front3-direct-neighbor-parameter-boundary",
+  "source_batch_id": "DAILY-20261101",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本文以前三直选的组合机制为基础，解释邻号差值、位置关系与首尾循环的研究定义，介绍参数预注册、历史复盘和样本外验证的用途，并明确结构分类与历史表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "邻号参数",
+    "系统研究预设",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "哪些参数能提前固定？前三直选邻号的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？前三直选邻号的边界先说清",
+    "来源经验和系统参数有什么区别？用前三直选邻号拆开看",
+    "从参数到结果：前三直选邻号哪些能预设，哪些不能事后改",
+    "前三直选邻号为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？前三直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前三直选邻号的边界先说清",
+      "来源经验和系统参数有什么区别？用前三直选邻号拆开看",
+      "从参数到结果：前三直选邻号哪些能预设，哪些不能事后改",
+      "前三直选邻号为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？前三直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-f47065d79b123b86",
+          "score": 0.8095238095238095,
+          "title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.4,
+          "intent_term_hits": [
+            "前三",
+            "直选",
+            "参数",
+            "前三直选邻号"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "参数",
+            "前三直选邻号"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？前三直选邻号的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

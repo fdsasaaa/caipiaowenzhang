@@ -1,0 +1,222 @@
+{
+  "angle_signature": "74183ab2b3f1c779dd58",
+  "approved_at": "2026-11-01T08:21:02.877454+00:00",
+  "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选区分五个位置，每个位置有10种数字取值，允许前导零和数字重复，因此完整结果空间为10⁵＝100000个有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法机制依据所列规则；100000为五个位置各有10种取值的乘法计数结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在以5为大小分界的分类口径下，大小两类各有5种取值；奇偶两类也各有5种取值，0归入偶数。",
+      "claim_type": "calculation",
+      "evidence_note": "在规则规定的十进制数字范围内，按正文明确给定的大小分类口径及整数奇偶定义直接计数；大小分界作为本文分析约定，不表述为来源推荐。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "若只研究五个位置中恰有b个位置属于大号这一结构，其有序结果数量为C(5,b)×5⁵，其中b为0至5的整数。",
+      "claim_type": "calculation",
+      "evidence_note": "由位置组合数与各位置取值数相乘得到；b是解释计数原理的变量，不是建议采用的筛选参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在本文分类口径下，大号中奇数有3种、偶数有2种，小号中奇数有2种、偶数有3种，因此同时涉及大小与奇偶时需要考虑交叉分类。",
+      "claim_type": "calculation",
+      "evidence_note": "依据规则中的数字取值范围，按正文约定计算四个交叉类别的容量；不能由两类各占一半直接推定分类独立。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "连续条件的总排除数量，可以用完整集合数量减去最终交集数量核对，也可以将各阶段新增排除数量相加核对。",
+      "claim_type": "methodology",
+      "evidence_note": "这是对嵌套集合计数的研究方法说明，不涉及推荐采用任何具体条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确说明组合计数和历史复盘的解释边界，不将结果空间缩小表述为预测能力提升。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "研究中应事先记录分类定义、统计指标与样本范围，并将参数探索与样本外验证分开。",
+      "claim_type": "methodology",
+      "evidence_note": "作为降低事后解释偏差的通用研究建议，不构成具体选号或投注执行方案。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先理解五星直选的计数对象</h2><p>核对分分彩五星直选的大小、奇偶注数，首先要分清完整结果空间与条件集合。本文讨论有序结果的组合数量，不列出具体候选号码，也不将集合数量换算为投注安排。</p><p>五星直选区分五个位置，每个位置有10种数字取值，允许前导零和数字重复。因此，完整结果空间为10⁵＝100000个有序结果。忽略位置差异，或漏掉前导零、重复数字，都会改变计数对象。</p><h2>单一结构怎样计数</h2><p>本文以5为大小分界，大小两类各有5种取值；奇偶两类也各有5种取值，0归入偶数。这是计算前需要明确的分类口径。</p><p>用b表示五个位置中大号位置的数量，其中b为0至5的整数。只讨论这一结构时，有序结果数量为C(5,b)×5⁵。</p><p>C(5,b)表示从五个位置中选出b个位置的方式数；5⁵表示位置类别确定后，五个位置各有5种取值。这里的b是解释公式的变量，不代表推荐采用某个结构参数。</p><h2>大小与奇偶为什么要交叉分类</h2><p>两种分类各自平分数字范围，并不意味着它们相互独立。在本文口径下，大号中奇数有3种、偶数有2种；小号中奇数有2种、偶数有3种。</p><p>因此，同时研究大小数量与奇数数量时，需要考虑四个交叉类别。不能仅凭“各占一半”，就把两个单独条件的保留比例直接相乘。</p><p>理解这类计算的重点，是确认分类是否互不重叠、是否覆盖全部情况，以及每一类的位置安排和取值数量是否匹配。</p><h2>怎样阅读逐层计数结果</h2><p>连续条件对应集合的逐步取交集。完整集合数量减去最终交集数量，得到总排除数量；各阶段新增排除数量相加，也应得到同一结果。</p><p>后一阶段的新增排除已经包含在总排除中，不能再从最终集合重复扣除。阅读研究报告时，应区分“本阶段新增排除”和“截至本阶段累计排除”。</p><p>这些数字描述的是集合规模。集合变小本身不能说明保留结果更值得期待，也不能直接当作实测命中率。</p><h2>历史复盘能说明什么</h2><p>结构分类或历史样本表现不能单独证明未来预测优势。某种结构在一段历史中较多出现，仍可能受到随机波动、样本选择和反复调整参数的影响。</p><p>研究中应事先记录分类定义、统计指标与样本范围，并将参数探索与样本外验证分开。用同一批数据反复修改条件，再用这批数据评价效果，会削弱结论的可信度。</p><p>一份清楚的复盘应说明研究口径、计数方法和结论边界。组合数学用于核对数量，历史观察用于描述样本，两者都需要与未来预测能力的判断分开。</p>",
+  "content_format": "html",
+  "content_hash": "9e886605dc5d64c4636434f2a22a365634af62099a2842d1e59a165081c0606f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261101",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "fcdfae5da417a593bf56c7f1513977ca139b315642c24eb0cd3f95eba9177bf9",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从五星直选的十万种有序结果出发，解释大小与奇偶的组合计数、交叉分类及逐层排除核对，说明历史复盘和样本外验证的边界。",
+  "parent_content_hash": "20acbcf0552643e1ec0cf8eed86414eebf739caf7d3b87740b97877618d8e90c",
+  "parent_fingerprint": "300458fdcf25b6c97d6d92d0f5420dd104e0a5ba86a70294057eb9fdcac49c8b",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选大小奇偶注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_003e63f714598ca8016ae6f13aa8f48198a3d121485cc92d30",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-01T08:21:02.877471+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-300458fdcf25b6c9:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "Primary Keyword：分分彩五星直选大小奇偶注数计算。满足核对完整结果空间、大小奇偶条件计数及逐层排除关系的教育与研究需求，不提供具体选号方案。",
+  "secondary_keywords": [
+    "分分彩五星直选大小奇偶注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩大小筛选",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：五星直选大小奇偶的空间计算与样本外验证",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-size-parity-space-math-300458fd",
+  "source_batch_id": "DAILY-20261101",
+  "source_refs": [
+    "BRBCW-003787"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "围绕五星直选大小与奇偶的注数计算，解释100000个有序结果的来源、单一结构的通用公式、交叉分类与排除数量核对，并说明参数预注册、样本外验证及预测结论的边界。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "大小筛选",
+    "奇偶筛选",
+    "候选空间计算"
+  ],
+  "technique_atoms": [
+    "big_small_filter",
+    "odd_even_filter"
+  ],
+  "title": "从输入到结果：五星直选大小奇偶的空间计算与样本外验证",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选大小奇偶的计算过程一次理清",
+    "先算注数，再谈五星直选大小奇偶：组合数学能说明到哪一步",
+    "从输入到结果：五星直选大小奇偶的空间计算与样本外验证",
+    "五星直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+    "看懂五星直选的五星直选大小奇偶，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选大小奇偶的计算过程一次理清",
+      "先算注数，再谈五星直选大小奇偶：组合数学能说明到哪一步",
+      "从输入到结果：五星直选大小奇偶的空间计算与样本外验证",
+      "五星直选大小奇偶怎么算才不混淆？复核候选空间的关键点",
+      "看懂五星直选的五星直选大小奇偶，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-a542ffff4d4f2faa",
+          "score": 0.7346938775510204,
+          "title": "从输入到结果：后三直选大小奇偶的空间计算与候选空间"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.4167,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "奇偶",
+            "大小",
+            "五星直选大小奇偶"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "奇偶",
+            "大小",
+            "样本",
+            "验证",
+            "五星直选大小奇偶"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：五星直选大小奇偶的空间计算与样本外验证"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

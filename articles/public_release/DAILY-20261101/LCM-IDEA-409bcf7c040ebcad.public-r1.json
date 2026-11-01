@@ -1,0 +1,214 @@
+{
+  "angle_signature": "dd3c83d0de681cd993c6",
+  "approved_at": "2026-11-01T08:23:52.567619+00:00",
+  "article_id": "LCM-IDEA-409bcf7c040ebcad",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前二直选读取前两个位置，并区分位置顺序。每个位置可取0至9，允许数字重复，开头的0也计入。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已核验的前二直选机制，说明取位、顺序和数字取值范围。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "理论样本空间为10×10＝100种有序结果。",
+      "claim_type": "calculation",
+      "evidence_note": "由两个位置各有10种取值、允许重复且区分顺序，通过乘法原理计算得出。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "单号指奇数数字，双号指偶数数字，0属于偶数；恰好1个单号包含单双与双单两种结构。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据前二奇偶计数机制说明术语和分类，不列举具体号码。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "每个位置各有5种奇数取值和5种偶数取值，因此单双与双单各有25种有序结果，合计50种，占完整样本空间的一半。",
+      "claim_type": "calculation",
+      "evidence_note": "两类分别按5×5计算，且互不重叠，因此合计25＋25＝50；50÷100＝50%。这里描述的是结构数量占比。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "单单和双双各有25种有序结果，四类合计100种。",
+      "claim_type": "calculation",
+      "evidence_note": "单单和双双分别按5×5计算，四种奇偶结构互斥且覆盖完整的前二有序样本空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "说明组合计数与历史复盘的解释边界，不提出任何未来表现或收益承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先理解前二直选的计数单位</h2><p>研究分分彩前二直选的奇偶问题，可以先明确三个概念：读取哪些位置、是否区分顺序，以及怎样计算单号个数。</p><p>前二直选读取前两个位置，并区分位置顺序。每个位置可取0至9，允许数字重复，开头的0也计入。</p><p>因此，理论样本空间为10×10＝100种有序结果。这里的计数单位是有序结果，不能直接改用不计顺序的组合算法。</p><h2>恰好一个单号是什么意思</h2><p>这里的单号指奇数数字，双号指偶数数字，0属于偶数。单号计数只统计前两个位置中有几个奇数。</p><p>“恰好1个单号”包含单双与双单两种结构。这个条件限定的是个数，没有指定奇数必须出现在哪个位置。</p><p>后续位置不参与这项计数，和值、跨度和历史频率也不是这个定义的一部分。</p><h2>用组合数学复核结构数量</h2><p>每个位置各有5种奇数取值和5种偶数取值。按乘法原理，单双结构有5×5＝25种有序结果，双单结构同样有25种。</p><p>两类结构互不重叠，因此恰好1个单号对应25＋25＝50种有序结果，占完整样本空间的一半。这个比例描述的是结构数量。</p><p>也可以从其余两类交叉核对：单单和双双各有25种有序结果，四类合计100种。上述计算用于理解分类机制，不列出具体号码或选号清单。</p><h2>历史复盘怎样保留研究意义</h2><p>如果研究历史样本，可在查看结果前记录取位范围、单号计数定义、观察区间和评价指标，形成预先确定的研究方案。</p><p>复盘时应区分理论结构数量与样本中实际出现的次数，并保留与预期不一致的结果。对既有数据形成的解释，可以再用未参与规则制定的样本进行检验。</p><p>研究中若改变分类条件或观察窗口，宜记录变更原因，并重新安排独立检验，避免把反复调整后的结果当作原先设定的验证结果。</p><h2>结构比例的解释边界</h2><p>结构分类或历史样本表现不能单独证明未来预测优势。理解某类结构包含多少种结果，与判断未来某次结果属于哪一类，是不同的问题。</p><p>历史复盘需要考虑随机波动，也应检查数据范围、记录完整性和分析条件。本文仅讨论玩法机制、组合计数与研究方法，不提供逐期建议，也不据此推导收益或胜率承诺。</p>",
+  "content_format": "html",
+  "content_hash": "1a51fb75dfc223e15a872213a6a0e85388bf936f049d282757e74ead9a75b3df",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261101",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "ef8093ee9ac77617177dd758a470791a5236632c13c7ed01b21db46696801c7f",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "mechanics_case",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从前二直选的取位与顺序规则出发，解释恰好一个单号的含义，复核奇偶结构数量，并介绍参数预注册、历史复盘与样本外验证的研究边界。",
+  "parent_content_hash": "e816d415e1502e905f8244127b4e570c91301960e0e0cb9dc3fb7e19d4e7fd3a",
+  "parent_fingerprint": "409bcf7c040ebcad3881a03bc4d31828c20ed20092018f8407bdccc53550e1bb",
+  "play": "前二直选",
+  "primary_keyword": "分分彩前二直选奇偶技巧",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_004c824eb1f6a467016ae6f1c5bf3c819997f9bb30af1c2908",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-01T08:23:52.567633+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-IDEA-409bcf7c040ebcad:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-DIRECT-V1"
+  ],
+  "search_intent": "理解分分彩前二直选奇偶技巧相关搜索中的规则与计算问题：明确前二取位、单号计数及有序样本空间，理解恰好1个单号的结构数量，并辨别历史复盘与未来预测之间的边界。",
+  "secondary_keywords": [
+    "分分彩前二直选奇偶技巧",
+    "分分彩技巧",
+    "前二直选技巧",
+    "分分彩前二直选投注技巧",
+    "分分彩奇偶筛选",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前二直选奇偶为什么容易算错？关键在输入、计算和组合数学",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front2-direct-odd-count-one-mechanics-case",
+  "source_batch_id": "DAILY-20261101",
+  "source_refs": [
+    "BRBCW-000716"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二直选",
+  "summary": "以教育与研究为目的，解释前二直选的有序取位规则、恰好1个单号的分类含义及组合数量，介绍预先确定研究参数和样本外验证的基本思路，并明确结构分类或历史表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二直选",
+    "奇偶筛选",
+    "机制复算",
+    "演示案例"
+  ],
+  "technique_atoms": [
+    "odd_even_filter",
+    "position_filter"
+  ],
+  "title": "前二直选奇偶为什么容易算错？关键在输入、计算和组合数学",
+  "title_candidates": [
+    "这一步到底怎么算？用前二直选奇偶把规则和复算过程讲清",
+    "从玩法规则到完整案例：前二直选奇偶应该怎样复核",
+    "前二直选奇偶为什么容易算错？关键在输入、计算和组合数学",
+    "先看规则，再看案例：前二直选里的前二直选奇偶怎样正确理解",
+    "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开"
+  ],
+  "title_review": {
+    "candidates": [
+      "这一步到底怎么算？用前二直选奇偶把规则和复算过程讲清",
+      "从玩法规则到完整案例：前二直选奇偶应该怎样复核",
+      "前二直选奇偶为什么容易算错？关键在输入、计算和组合数学",
+      "先看规则，再看案例：前二直选里的前二直选奇偶怎样正确理解",
+      "看懂前二直选奇偶不靠口诀，先把计算逻辑拆开"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-846f2cde5b0b6f3e",
+          "score": 0.7843137254901961,
+          "title": "前二直选频率为什么容易算错？关键在输入、计算和参数预注册"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.25,
+          "intent_term_hits": [
+            "前二",
+            "直选",
+            "奇偶",
+            "前二直选奇偶"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "直选",
+            "奇偶",
+            "组合",
+            "前二直选奇偶"
+          ],
+          "subject_play": "前二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前二直选奇偶为什么容易算错？关键在输入、计算和组合数学"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

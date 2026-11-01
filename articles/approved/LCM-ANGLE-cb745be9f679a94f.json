@@ -1,0 +1,354 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "说明前三直选邻号筛选的静态参数由系统研究预设，来源仅提供技巧背景；用独立标注的演示数据解释判定方法，并给出可复算的候选空间和停止条件。",
+    "evidence_mode": "static_only",
+    "excluded_space": 562,
+    "final_space": 438,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "至少存在一对差1邻号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "7592a747179984f5999a",
+  "approved_at": "2026-11-01T07:52:20.446438+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-63e3c631af4fa056",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "neighbor_number[pair_difference=1/static]:1000->438",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选邻号参数设置",
+    "reader_question": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 562,
+      "final_space": 438,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "至少存在一对差1邻号"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "至少存在一对差1邻号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前三直选邻号参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-cb745be9f679a94f",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文的前三位置、差值阈值、不首尾循环、筛选顺序和停止位置，均由系统研究合同预设，不能写成来源推荐，也不能写成从演示样本中发现的参数。",
+      "claim_type": "editorial",
+      "evidence_note": "参数归属来自 production_filter_contract 与 article_angle_contract；这是研究设置的归属说明，不是玩法强制规则。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇固定 selector=前三、metric=neighbor_pair、pair_difference=1、circular_0_9=false，唯一筛选阶段为“至少存在一对差1邻号”。",
+      "claim_type": "editorial",
+      "evidence_note": "逐项保留 primary_filter_spec 的选择器、指标和参数，唯一阶段与合同一致。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按这套预设，比较所选三个数字之间的绝对差，只要任意一对的差等于1就保留；数字在位置上不必相邻，0与9不按首尾相接处理。",
+      "claim_type": "calculation",
+      "evidence_note": "在已验证前三直选机制上执行 neighbor_pair 判定，pair_difference=1 且 circular_0_9=false；此处解释预设的执行语义，不声称玩法要求使用该筛选。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "前三直选按位置区分有序数字组合，每个位置可取0至9，重复数字和前导0都计入候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "使用 Draft Packet 指定的前三直选派生机制。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，筛选前的理论候选空间为10×10×10=1000个有序组合；按固定邻号条件枚举后保留438个，排除1000−438=562个。",
+      "claim_type": "calculation",
+      "evidence_note": "遍历 a、b、c∈{0,…,9}，保留 abs(a-b)=1 或 abs(a-c)=1 或 abs(b-c)=1 的组合；结果与合同机器事实一致。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "同一组合即使有多对数字满足条件，也只保留一次，不重复计数。",
+      "claim_type": "calculation",
+      "evidence_note": "筛选是对有序组合执行布尔保留条件，满足条件的配对数量不改变组合计数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按 case_bundle.must_label_as 标注样本性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "取所给演示记录85769，前三为857，其中8与7的绝对差为1，因此该演示组合满足固定邻号条件。",
+      "claim_type": "calculation",
+      "evidence_note": "取 case_bundle.latest_draw 的前三位，计算 |8−7|=1；仅演示条件判定。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里的样本计算只回答这条演示记录是否满足条件，没有用它生成参数，也没有增加样本筛选阶段。",
+      "claim_type": "editorial",
+      "evidence_note": "演示仅作判定说明；合同的 evidence_mode 为 static_only，sample_stage_labels 为空。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源提到邻号相关的技巧思路，这类经验尚未独立验证，在本文中仅用于交代研究背景。",
+      "claim_type": "source_claim",
+      "evidence_note": "来源仅支持 broad 技巧家族或原子层面的背景归属，不支持具体参数或预测表现。",
+      "support_refs": [
+        "BRBCW-000431"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "来源不能替本文的静态参数、候选空间计算或演示记录作证；这些内容应分别按系统设置、规则计算和演示数据说明。",
+      "claim_type": "editorial",
+      "evidence_note": "执行 source_use.production_parameter_instruction 及参数归属边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "先固定规则再看样本，才能清楚记录本次研究实际检查的条件；看过样本后再改差值、位置或循环方式，应另立研究版本，不能冒充原来的固定方案。",
+      "claim_type": "editorial",
+      "evidence_note": "落实 parameter_freeze_before_observation 与 selection_rule_freeze_before_observation。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "候选空间变小只说明排除了不符合预设的组合，不能据此认定保留组合具有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "合同明确 predictive_advantage_claimed=false；候选空间计算没有提供表现验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成唯一主筛选并核对结果后立即停止，不临时叠加和值、跨度、冷热或遗漏条件。",
+      "claim_type": "editorial",
+      "evidence_note": "落实 stop_after_primary_filter 与 stop_after_final_stage，不引入未验证第二过滤器。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且能够复算，才允许在另行明确的研究方案中继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "规定后续研究的证据门槛；本篇仍在合同最终阶段停止。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "遵守 mechanics_only 范围。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>理解分分彩前三直选邻号参数设置，先要分清参数由谁决定、计算依据是什么、演示数据承担什么作用。本文的前三位置、差值阈值、不首尾循环、筛选顺序和停止位置，均由系统研究合同预设，不能写成来源推荐，也不能写成从演示样本中发现的参数。</p><h2>哪些参数归系统研究</h2><p>本篇固定 selector=前三、metric=neighbor_pair、pair_difference=1、circular_0_9=false，唯一筛选阶段为“至少存在一对差1邻号”。</p><p>按这套预设，比较所选三个数字之间的绝对差，只要任意一对的差等于1就保留；数字在位置上不必相邻，0与9不按首尾相接处理。</p><p>需要区分“研究选择这样筛”和“玩法要求这样筛”。这里的差值与循环方式属于前者。</p><h2>实际怎么操作：先冻结，再枚举</h2><ol><li>先写下上述选择器、指标和参数，同时记录唯一阶段名称；在查看演示数据之前冻结设置。</li><li>建立完整的前三直选有序候选集合，保留位置顺序，不因数字重复或前导0而删减。</li><li>逐个比较候选内部各对数字的绝对差；满足固定条件就保留，否则排除。</li><li>检查保留集合与排除集合是否完整覆盖起始集合，并检查是否重复计数。</li><li>用已标注的演示记录核对判定过程，核对完成即停止，不根据样本表现追加条件。</li></ol><p>前三直选按位置区分有序数字组合，每个位置可取0至9，重复数字和前导0都计入候选。</p><p>因此，筛选前的理论候选空间为10×10×10=1000个有序组合；按固定邻号条件枚举后保留438个，排除1000−438=562个。</p><p>同一组合即使有多对数字满足条件，也只保留一次，不重复计数。</p><p>复算时可按位置依次遍历数字，再判断是否满足 <code>abs(a-b)==1 或 abs(a-c)==1 或 abs(b-c)==1</code>。这里计算的是理论候选集合，不能用演示记录的条数代替。</p><h2>哪些结果由演示样本计算</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>取所给演示记录85769，前三为857，其中8与7的绝对差为1，因此该演示组合满足固定邻号条件。</p><p>这里的样本计算只回答这条演示记录是否满足条件，没有用它生成参数，也没有增加样本筛选阶段。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到邻号相关的技巧思路，这类经验尚未独立验证，在本文中仅用于交代研究背景。</p><p>来源不能替本文的静态参数、候选空间计算或演示记录作证；这些内容应分别按系统设置、规则计算和演示数据说明。</p><h2>为什么不能事后改参数</h2><p>先固定规则再看样本，才能清楚记录本次研究实际检查的条件；看过样本后再改差值、位置或循环方式，应另立研究版本，不能冒充原来的固定方案。</p><p>记录时可分别写清“预先选择的条件”和“执行后得到的结果”，避免把观察后的调整写成预先设定。</p><h2>边界与误区：筛选规模不代表预测优势</h2><p>候选空间变小只说明排除了不符合预设的组合，不能据此认定保留组合具有预测优势。</p><p>本文不讨论未核验的平台经济参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成唯一主筛选并核对结果后立即停止，不临时叠加和值、跨度、冷热或遗漏条件。</p><p>只有新增条件具有已验证规则或证据，并且能够复算，才允许在另行明确的研究方案中继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "31462b0e6244da4bef9e4f20158e50be01e641bf3dcfed98e1a4c175142ea48c",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261101",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "cb745be9f679a94fb33c3ae378909ba1dfac0bf973cd7651aa2b1f717dc28d39",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "解析分分彩前三直选邻号参数设置的归属边界：明确差1、不首尾循环等条件由系统研究预设，说明候选空间复算方法、演示数据用途，以及完成主筛选后的停止条件。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "按唯一主筛选条件保留438个有序组合，排除562个；不得把演示样本条数当作理论候选空间。",
+    "next_step_policy": "本篇完成唯一主筛选后停止；只有新增条件具有已验证规则或证据并可复算时，才允许在另行明确的研究方案中继续缩小候选。",
+    "parameter_freeze_rule": "查看样本前固定 selector=前三、metric=neighbor_pair、pair_difference=1、circular_0_9=false，以及唯一阶段“至少存在一对差1邻号”；参数属于系统研究预设，不归属于来源推荐，也不从演示样本反推。",
+    "starting_space": "前三直选完整有序候选空间为10×10×10=1000个组合，包含重复数字与前导0。",
+    "steps": [
+      "观察样本前记录并冻结选择器、指标、差值、不首尾循环设置及唯一筛选阶段。",
+      "枚举前三位置各取0至9的全部有序组合，建立1000个组合的起始集合。",
+      "对每个组合计算任意两位数字的绝对差，至少存在一对差1时保留，0与9不作循环邻号。",
+      "按组合去重并核对结果：保留438个、排除562个，两部分合计为1000个。",
+      "将案例明确标为“演示数据，不是真实开奖记录”，仅用其核对条件判定过程。",
+      "核对完成后停止，不因演示结果临时追加和值、跨度、冷热或遗漏过滤器。"
+    ],
+    "stop_condition": "完成“至少存在一对差1邻号”阶段、核对保留与排除数量后立即停止；本篇没有获准继续执行的第二筛选阶段。"
+  },
+  "primary_keyword": "分分彩前三直选邻号参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_09a03c01d1e6d496016ae6ef6a8064819b82f96e4468494e33",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前三直选邻号参数设置",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩邻号结构",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？前三直选邻号的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front3-direct-neighbor-parameter-boundary",
+  "source_refs": [
+    "BRBCW-000431"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本文围绕分分彩前三直选邻号参数设置，说明差值与循环方式属于系统研究预设，来源仅提供经验背景，演示数据仅用于解释判定。文章提供完整候选集合的复算步骤，并明确完成唯一主筛选后停止，不把候选缩减解释为预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "邻号参数",
+    "系统研究预设",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "neighbor_number",
+    "position_filter"
+  ],
+  "title": "哪些参数能提前固定？前三直选邻号的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？前三直选邻号的边界先说清",
+    "来源经验和系统参数有什么区别？用前三直选邻号拆开看",
+    "从参数到结果：前三直选邻号哪些能预设，哪些不能事后改",
+    "前三直选邻号为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前三直选邻号的边界先说清",
+      "来源经验和系统参数有什么区别？用前三直选邻号拆开看",
+      "从参数到结果：前三直选邻号哪些能预设，哪些不能事后改",
+      "前三直选邻号为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-f47065d79b123b86",
+          "score": 0.8095238095238095,
+          "title": "哪些参数能提前固定？五星直选奇偶的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "前三",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "参数",
+            "前三直选邻号"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？前三直选邻号的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

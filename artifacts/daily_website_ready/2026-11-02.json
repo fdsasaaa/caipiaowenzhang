@@ -1,0 +1,158 @@
+{
+  "approval_failed": 20,
+  "approved": 3,
+  "approved_staged": 3,
+  "article_angle_distribution": {
+    "parameter_boundary": 2,
+    "space_math": 1
+  },
+  "attempted": 27,
+  "base_url": "https://api.synapai.top/v1",
+  "batch_id": "DAILY-20261102",
+  "below_operational_minimum": true,
+  "candidate_pool_per_round": 40,
+  "date": "2026-11-02",
+  "editorial_score_average": 100.0,
+  "generated": 23,
+  "generation_failed": 4,
+  "manifest": {
+    "approved_public_release_count": 3,
+    "articles": [
+      {
+        "article_id": "LCM-ANGLE-3519851e4b91c8c9",
+        "content_hash": "856d1a750457f5e07c196064a0d01527aa1a7bd3030af96fcf6b1e7ba05b7dfd",
+        "fingerprint": "fc319d083c8a99460c846f0dfa7b6ee4dbf0ee9e9d8620541e0b3a0f2b098206",
+        "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-3519851e4b91c8c9.public-r1.json",
+        "primary_keyword": "分分彩五星直选和值注数计算",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-3519851e4b91c8c9:public-r1",
+        "slug": "ffc-five-direct-sum-range-space-math"
+      },
+      {
+        "article_id": "LCM-ANGLE-819b975da420036f",
+        "content_hash": "7614ea1cefac0a6ab44f34ecc73a5c824481e9acad15cdd2b5bd197edfee0c89",
+        "fingerprint": "6361b88a9b5379854cd2f4d46afbfe94e1df38f553463a5a7306a847c9be5162",
+        "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-819b975da420036f.public-r1.json",
+        "primary_keyword": "分分彩中三直选频率参数设置",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-819b975da420036f:public-r1",
+        "slug": "ffc-middle3-frequency-window-parameter-boundary"
+      },
+      {
+        "article_id": "LCM-ANGLE-ebe5e6f7504025cc",
+        "content_hash": "d872d141a1b9290ef14cdae4df1fc50beccab0179e688b8ecbc0d1f5e52410a8",
+        "fingerprint": "7a5b315a12a739fa345d6c430688dc62f7808bde037ba16841ba154d0a34f3eb",
+        "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-ebe5e6f7504025cc.public-r1.json",
+        "primary_keyword": "分分彩前二组选和值参数设置",
+        "release_revision": 1,
+        "revision_id": "LCM-ANGLE-ebe5e6f7504025cc:public-r1",
+        "slug": "ffc-front2-group-sum-range-parameter-boundary"
+      }
+    ],
+    "canary_ingestion_allowed": true,
+    "expected_count": 3,
+    "path": "articles/public_release/manifests/DAILY-20261102.json",
+    "revision_kind": "website_public_release",
+    "schema_version": 1,
+    "source_batch_id": "DAILY-20261102",
+    "status": "complete",
+    "website_batch_ingestion_allowed": true
+  },
+  "max_approved_parents_per_day": 80,
+  "max_model_generation_attempts_per_day": 120,
+  "max_refill_rounds": 4,
+  "maximum": 25,
+  "minimum": 1,
+  "model": "gpt-5.5",
+  "operational_minimum": 10,
+  "partial_batch_retention": true,
+  "play_distribution": {
+    "中三直选": 1,
+    "五星直选": 1,
+    "前二组选": 1
+  },
+  "pre_generation_duplicate_blocked": 0,
+  "public_ready": [
+    {
+      "article_id": "LCM-ANGLE-3519851e4b91c8c9",
+      "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-3519851e4b91c8c9.public-r1.json",
+      "primary_keyword": "分分彩五星直选和值注数计算",
+      "revision_id": "LCM-ANGLE-3519851e4b91c8c9:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-819b975da420036f",
+      "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-819b975da420036f.public-r1.json",
+      "primary_keyword": "分分彩中三直选频率参数设置",
+      "revision_id": "LCM-ANGLE-819b975da420036f:public-r1",
+      "round": 1
+    },
+    {
+      "article_id": "LCM-ANGLE-ebe5e6f7504025cc",
+      "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-ebe5e6f7504025cc.public-r1.json",
+      "primary_keyword": "分分彩前二组选和值参数设置",
+      "revision_id": "LCM-ANGLE-ebe5e6f7504025cc:public-r1",
+      "round": 1
+    }
+  ],
+  "public_release_failed": [],
+  "public_release_failed_count": 0,
+  "published": false,
+  "quality_first": true,
+  "quality_floor_lowered": false,
+  "quality_score_average": 100.0,
+  "recorded_at": "2026-11-02T08:31:46.102647+00:00",
+  "refill_rounds_completed": 3,
+  "rounds": [
+    {
+      "approval_failed": 19,
+      "approved": 3,
+      "approved_staged": 3,
+      "attempted": 26,
+      "candidate_count_offered": 26,
+      "editorial_score_average": 100.0,
+      "generated": 22,
+      "generation_failed": 4,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 0,
+      "quality_score_average": 100.0,
+      "round": 1,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 3,
+      "website_ready_after": 3,
+      "website_ready_before": 0
+    },
+    {
+      "approval_failed": 1,
+      "approved": 0,
+      "approved_staged": 0,
+      "attempted": 1,
+      "candidate_count_offered": 1,
+      "editorial_score_average": null,
+      "generated": 1,
+      "generation_failed": 0,
+      "production_stop_reason": "candidate_capacity_exhausted",
+      "public_release_failed_added": 0,
+      "quality_score_average": null,
+      "round": 2,
+      "status": "PARTIAL_STOPPED",
+      "website_ready_added": 0,
+      "website_ready_after": 3,
+      "website_ready_before": 3
+    },
+    {
+      "round": 3,
+      "status": "NO_CANDIDATES",
+      "website_ready_after": 3,
+      "website_ready_before": 3
+    }
+  ],
+  "scheduled": false,
+  "schema_version": 2,
+  "status": "PASS_PARTIAL_QUALITY_FIRST",
+  "stop_reason": "candidate_capacity_exhausted",
+  "target": 20,
+  "timezone": "Asia/Singapore",
+  "website_ready_public_r1": 3,
+  "website_sync_attempted": false
+}

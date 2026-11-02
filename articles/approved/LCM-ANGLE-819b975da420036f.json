@@ -1,0 +1,340 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "明确系统预先冻结的选择规则与样本计算结果的边界，保留合同中的数字池及空间规模，同时指出合同数字池与完整频率表的排序结果不一致，停止执行并等待数据核对。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 875,
+    "final_space": 125,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分中三直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+    "sample_stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期频率前5数字池"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "789325b5fce3efe4f401",
+  "approved_at": "2026-11-02T07:58:55.001207+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-2f8f6458b9e277c7",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "frequency_window[lookback=12,top_n=5/sample]:1000->125",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩中三直选频率参数设置",
+    "reader_question": "区分中三直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+    "required_deliverable": "解释参数归属边界：规则先冻结，样本型具体结果由演示数据计算，来源不得替系统参数背书。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 875,
+      "final_space": 125,
+      "sample_stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期频率前5数字池"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分中三直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释参数归属边界：规则先冻结，样本型具体结果由演示数据计算，来源不得替系统参数背书。",
+    "title": "分分彩中三直选频率参数设置：哪些规则先冻结，哪些数字池只能由演示样本算出来",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-819b975da420036f",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "使用案例包指定的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本篇由系统研究先固定选择规则：selector=中三，metric=top_frequency_digit_pool，lookback=12，top_n=5，production_top_n_policy=5，ranking=frequency_desc_then_digit_asc，ranking_source=full_frequency_table_top5。",
+      "claim_type": "editorial",
+      "evidence_note": "参数归属与选择规则来自系统研究合同，不归属于来源推荐；冻结对象是选择规则。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的排序含义是频次从高到低，频次相同则数字从小到大。",
+      "claim_type": "editorial",
+      "evidence_note": "解释系统合同中frequency_desc_then_digit_asc的含义。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "案例包的完整频率表为：0出现3次，1出现4次，2出现5次，3出现5次，4出现1次，5出现5次，6出现2次，7出现5次，8出现2次，9出现4次。",
+      "claim_type": "calculation",
+      "evidence_note": "逐项引用案例包的完整频率表，仅描述演示样本。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按冻结的排序规则，完整频率表给出的前5项依次是2、3、5、7、1。",
+      "claim_type": "calculation",
+      "evidence_note": "频次为5的数字按升序排列为2、3、5、7；频次为4的1排在9之前，故第五项为1。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "但主筛选合同保存的参数是digits=[0,1,6,7,9]，与上述复算结果不一致。",
+      "claim_type": "calculation",
+      "evidence_note": "对比案例包primary_filter_spec.params.digits与按完整频率表得到的排序结果。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "中三直选取五位号码的中间三位，按位置区分，每位可取0至9，允许数字重复。",
+      "claim_type": "rule_fact",
+      "evidence_note": "中三直选的基础位置机制与有序三位候选定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，筛选前的理论候选空间为10×10×10=1000个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "依据三个位置各有十种取值，使用乘法原理计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "若按合同将各位置都限制在其保存的5个数字内，主筛选后的空间为5×5×5=125个有序组合，排除1000−125=875个。",
+      "claim_type": "calculation",
+      "evidence_note": "按案例包主筛选合同的数字池规模与有序三位空间复算；仅证明空间规模，不证明该池符合频率排序。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "近12期是演示统计窗口，不能把12当成筛选前的候选空间。",
+      "claim_type": "calculation",
+      "evidence_note": "区分案例包lookback与starting_space，两个字段描述不同对象。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源在本稿中只承担频率统计这一技巧家族的出处标记，具体内容尚未独立验证。",
+      "claim_type": "source_claim",
+      "evidence_note": "遵循source_use对来源用途的限制，不推断原文具体参数。",
+      "support_refs": [
+        "BRBCW-003459"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "窗口长度、取池数量、并列处理方式和具体数字池均不得写成来源推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "系统参数的归属边界由article_angle_contract及source_use规定。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本例只展示统计排序与候选空间的关系，不据此主张未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "界定文章研究范围，不陈述表现或未来结果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且能够复算时，才允许另行研究继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "落实下一步研究政策，不构成新增筛选规则。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>分分彩中三直选频率参数设置，首先要分清两个对象：生成前冻结的选择规则，以及应用规则后才得到的具体数字池。规则由系统研究确定；数字池需要用演示样本复算，来源不能替这些参数背书。</p><p><strong>演示数据，不是真实开奖记录。</strong></p><h2>哪些参数归系统研究</h2><p>本篇由系统研究先固定选择规则：selector=中三，metric=top_frequency_digit_pool，lookback=12，top_n=5，production_top_n_policy=5，ranking=frequency_desc_then_digit_asc，ranking_source=full_frequency_table_top5。</p><p>这里的排序含义是频次从高到低，频次相同则数字从小到大。</p><p>先冻结的是窗口、取池数量和排序方式。具体入池数字属于计算结果，不能在观察样本前就冒充已经算出的结果，也不能在看到结果后反过来调整选择规则。</p><h2>哪些结果由演示样本计算</h2><p>案例包的完整频率表为：0出现3次，1出现4次，2出现5次，3出现5次，4出现1次，5出现5次，6出现2次，7出现5次，8出现2次，9出现4次。</p><p>按冻结的排序规则，完整频率表给出的前5项依次是2、3、5、7、1。</p><p>但主筛选合同保存的参数是digits=[0,1,6,7,9]，与上述复算结果不一致。</p><p><strong>这处差异需要保留并核对。</strong>本文保留原合同参数，同时展示频率表的复算结果，不擅自替换数字池，也不把合同中的数字池描述成已经通过复算。当前案例可以检查空间计算，但不能作为已核对通过的频率筛选结果执行。</p><h2>空间规模能核对到哪一步</h2><p>中三直选取五位号码的中间三位，按位置区分，每位可取0至9，允许数字重复。</p><p>因此，筛选前的理论候选空间为10×10×10=1000个有序组合。</p><p>若按合同将各位置都限制在其保存的5个数字内，主筛选后的空间为5×5×5=125个有序组合，排除1000−125=875个。</p><p>近12期是演示统计窗口，不能把12当成筛选前的候选空间。</p><p>空间计算成立，只能说明池大小与组合数量的关系。它不能消除数字池与频率排序之间的差异。</p><h2>来源能支持什么、不能支持什么</h2><p>来源在本稿中只承担频率统计这一技巧家族的出处标记，具体内容尚未独立验证。</p><p>窗口长度、取池数量、并列处理方式和具体数字池均不得写成来源推荐。</p><p>样本表也有自己的证据边界：它能供本例复算，不能代替来源核验，更不能用来源编号掩盖案例内部的不一致。</p><h2>实际怎么操作</h2><ol><li>在读取样本前，保存上述选择规则，并记录规则版本；具体数字池留待计算。</li><li>按固定窗口读取演示样本，只提取中三位置，汇总完整数字频率表。</li><li>严格按已冻结的排序方式取池，保留排序过程，核对计算结果与合同保存的digits。</li><li>检查有序候选空间的乘法计算，并分别记录筛选前规模、主筛选后规模和排除规模。</li><li>执行一致性检查；当前案例存在数字池差异，应停止执行并记录待核对项，不能自行选择一个池继续。</li><li>完成主筛选合同后停止，不临时叠加和值、跨度或其他过滤条件。</li></ol><h2>为什么不能事后改参数</h2><p>看完样本再换窗口、取池数量或并列处理方式，会改变原先约定的问题。此时即使得到更顺眼的数字池，也无法说明原规则按约执行。</p><p>处理当前差异，应回到样本、频率表和合同记录核对。若需要修订合同，应另存版本并重新复算，不能把修订后的结果冒充原合同结果。</p><h2>边界与停止条件</h2><p>本例只展示统计排序与候选空间的关系，不据此主张未来预测优势。</p><p>当前先停在数字池一致性核对处；核对完成后，也只完成合同指定的“近12期频率前5数字池”阶段。</p><p>只有新增条件具有已验证规则或证据，并且能够复算时，才允许另行研究继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "e9c8a9615833690f221c861f047fdfa9b9c741fb4864ce03ae22980618ff301f",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261102",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "819b975da420036fe65c39af632158a55ccfa4c8766780b1db9935718d750ab5",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩中三直选频率参数设置：解释系统先冻结的窗口与排序规则、演示样本计算出的数字池，以及来源归属边界；核对候选空间，并指出合同数字池与频率表不一致时的停止条件。",
+  "play": "中三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "合同主筛选后为125个有序组合，按5×5×5计算，排除875个；该规模不代表合同数字池已通过样本排序核对。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许另行研究继续缩小候选；当前先核对数字池不一致，不能临时拼接第二过滤器。",
+    "parameter_freeze_rule": "观察样本前冻结selector=中三、metric=top_frequency_digit_pool、lookback=12、top_n=5、production_top_n_policy=5、ranking=frequency_desc_then_digit_asc、ranking_source=full_frequency_table_top5。具体数字池由样本计算；保留合同digits=[0,1,6,7,9]作为待核对记录，不将其误写为观察前已确定的样本结果。",
+    "starting_space": "中三直选的理论起始空间为1000个有序组合，即10×10×10；演示窗口的12期不是候选空间。",
+    "steps": [
+      "读取样本前保存系统研究选择规则及版本。",
+      "按近12期窗口提取中三，统计完整数字频率表。",
+      "按频次降序、同频数字升序取前5项，得到排序结果2、3、5、7、1。",
+      "将复算结果与合同digits=[0,1,6,7,9]逐项核对，记录不一致。",
+      "单独核对合同空间：1000个起始组合，主筛选后125个，排除875个。",
+      "停止执行并核对数据；完成核对后仍在合同唯一阶段结束，不添加临时过滤条件。"
+    ],
+    "stop_condition": "本例数字池与完整频率表排序结果不一致，当前停止执行并待核对；一致性问题解决后，完成“近12期频率前5数字池”阶段即停止。"
+  },
+  "primary_keyword": "分分彩中三直选频率参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_068d400d12c46b8a016ae84275104c81948fdd82977a137aa4",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-MIDDLE3-DIRECT-V1"
+  ],
+  "search_intent": "区分中三直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+  "secondary_keywords": [
+    "分分彩中三直选频率参数设置",
+    "分分彩技巧",
+    "中三直选技巧",
+    "分分彩中三直选投注技巧",
+    "分分彩窗口频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用中三直选频率拆开看",
+  "site_category_key": "tzjq",
+  "slug": "ffc-middle3-frequency-window-parameter-boundary",
+  "source_refs": [
+    "BRBCW-003459"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "中三直选",
+  "summary": "分分彩中三直选频率参数设置需要先冻结系统选择规则，再由演示样本计算数字池。本文保留主筛选合同，核对空间规模，并明确指出合同数字池与完整频率表排序结果不一致，当前应停止执行、核对数据，不能借来源背书或临时追加过滤条件。",
+  "tags": [
+    "分分彩",
+    "中三直选",
+    "频率参数",
+    "参数边界",
+    "演示数据"
+  ],
+  "technique_atoms": [
+    "frequency_window"
+  ],
+  "title": "来源经验和系统参数有什么区别？用中三直选频率拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？中三直选频率的边界先说清",
+    "来源经验和系统参数有什么区别？用中三直选频率拆开看",
+    "从参数到结果：中三直选频率哪些能预设，哪些不能事后改",
+    "中三直选频率为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？中三直选频率的边界先说清",
+      "来源经验和系统参数有什么区别？用中三直选频率拆开看",
+      "从参数到结果：中三直选频率哪些能预设，哪些不能事后改",
+      "中三直选频率为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 25
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-73f5836373fa1275",
+          "score": 0.8333333333333334,
+          "title": "来源经验和系统参数有什么区别？用五星直选邻号拆开看"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1739,
+          "intent_term_hits": [
+            "中三",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "中三",
+            "直选",
+            "频率",
+            "参数",
+            "中三直选频率"
+          ],
+          "subject_play": "中三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用中三直选频率拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

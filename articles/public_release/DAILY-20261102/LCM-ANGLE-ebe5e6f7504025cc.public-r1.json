@@ -1,0 +1,199 @@
+{
+  "angle_signature": "01869c85e1400817048b",
+  "approved_at": "2026-11-02T08:28:44.811453+00:00",
+  "article_id": "LCM-ANGLE-ebe5e6f7504025cc",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前二组选研究可将观察位置固定为前两个位置，并以两位数字之和作为研究指标。",
+      "claim_type": "rule_fact",
+      "evidence_note": "这是对文章研究对象和指标口径的机制性说明，不代表该指标具有预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "前二组选由两个不同数字组成无序组合，交换顺序不另计，因此理论候选空间为10×9÷2=45个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "计算基于十个数字中选取两个不同数字且不区分顺序的组合口径。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在和值区间6至12包含端点的研究预设下，符合条件的组合数量为27个，区间外组合数量为18个。",
+      "claim_type": "calculation",
+      "evidence_note": "该结果是静态组合计数，不是历史表现或未来结果预测。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "研究参数应在查看样本前预先固定，并记录参数版本及调整理由。",
+      "claim_type": "methodology",
+      "evidence_note": "这是公开研究方法建议，用于区分预设条件与事后观察，不能证明参数存在预测价值。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "这是风险与证据边界说明，强调静态计数、样本复盘和预测验证之间的区别。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究“前二组选和值参数设置”时，先要区分玩法规则、研究预设和样本观察。和值区间可以作为一个可复算的分类条件，但它本身不等于预测工具，也不代表某种结果更容易出现。</p><p>本文将前二固定为观察位置，将两位数字之和作为研究指标，并把和值6至12作为一个预先设定的研究区间。这个区间属于研究设计参数，不是来源推荐，也不是根据样本表现倒推出来的结论。</p><h2>玩法机制与组合空间</h2><p>前二组选关注前两个位置中的两个不同数字。由于组选不区分两个数字的先后顺序，交换位置后仍视为同一个无序组合。</p><p>从十个可用数字中选择两个不同数字，理论组合数量为10×9÷2，即45个。这个数量描述的是筛选前的完整组合空间，不涉及任何具体号码或未来结果。</p><p>如果把和值6至12作为包含边界的研究分类，符合该区间的组合数量为27个，其余18个组合落在区间之外。这个结果只是组合数学上的静态计数，不能被解释为命中率、收益率或未来优势。</p><h2>参数预注册与历史复盘</h2><p>研究参数应在查看历史样本前写明，包括观察位置、指标定义、区间边界和参数版本。这样才能判断哪些内容是预先设定，哪些内容只是对既有记录的描述。</p><p>历史记录可以用于检查取位、求和和分类是否按照同一口径完成，也可以用于发现记录格式或计算过程中的错误。它不能替代样本外验证，更不能因为某段历史表现符合区间，就把该区间改写成未来预测依据。</p><p>如果研究者希望比较其他区间，应将其作为新的参数版本，单独说明形成原因、评估标准和验证范围。事后反复移动边界，会增加选择偏差，使结果难以解释和复核。</p><h2>证据边界与常见误区</h2><p>“保留组合更多”或“排除组合更多”只说明筛选条件产生了分类作用。它没有说明被保留类别在未来一定更常见，也不能单独证明参数具有预测价值。</p><p>结构分类、和值分布和历史样本表现都需要放在明确的研究设计中理解。若要讨论预测效果，还需要预先定义评价指标，并使用独立的样本外数据进行验证，避免把同一批记录同时用于设定参数和评估参数。</p><p>来源中的经验性描述可以作为研究问题的线索，但不能替代规则核对、组合计数和独立验证。文章中的参数也不应被理解为下注建议、跟投方案或收益承诺。</p><h2>如何保持研究可复核</h2><p>一份可复核的研究记录，应保存玩法口径、指标定义、区间边界、组合计数结果以及样本使用范围。记录还应标明哪些内容来自规则，哪些内容来自研究预设，哪些内容只是观察结果。</p><p>完成静态组合核对后，应停止临时增加其他筛选条件。冷热、跨度或其他分类指标如果要纳入研究，应另行建立研究问题和验证标准，不能在看到结果后不断追加条件。</p><p>最重要的边界是：结构分类或历史样本表现不能单独证明未来预测优势。它们可以帮助说明机制、检查计算并提出待验证的问题，但不能承诺结果、胜率或稳定盈利。</p>",
+  "content_format": "html",
+  "content_hash": "d872d141a1b9290ef14cdae4df1fc50beccab0179e688b8ecbc0d1f5e52410a8",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261102",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "7a5b315a12a739fa345d6c430688dc62f7808bde037ba16841ba154d0a34f3eb",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从玩法机制、组合数学和研究方法出发，解释前二组选和值区间如何作为预设参数进行复核，并说明历史样本不能单独证明未来预测优势。",
+  "parent_content_hash": "5a056150eb4cf1e50069ed21f5b3ce83dfd78708069d322f1bab1f93aa35ee88",
+  "parent_fingerprint": "ebe5e6f7504025cc4f8d108bc627cf19e81bf52328cc692c0bb05ee0095a3bcf",
+  "play": "前二组选",
+  "primary_keyword": "分分彩前二组选和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_078d55674d0eb21c016ae846610d40819abeee3607cd4b3524",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-02T08:28:44.811478+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-ebe5e6f7504025cc:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "区分前二组选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前二组选和值参数设置",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？前二组选和值的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front2-group-sum-range-parameter-boundary",
+  "source_batch_id": "DAILY-20261102",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "文章以教育和研究为导向，说明前二组选的无序组合机制、理论组合空间及和值区间的静态计数，并强调参数预注册、历史复盘与样本外验证的区别。和值区间只是研究分类条件，结构分类或历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值参数",
+    "系统研究预设",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "哪些参数能提前固定？前二组选和值的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？前二组选和值的边界先说清",
+    "来源经验和系统参数有什么区别？用前二组选和值拆开看",
+    "从参数到结果：前二组选和值哪些能预设，哪些不能事后改",
+    "前二组选和值为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？前二组选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前二组选和值的边界先说清",
+      "来源经验和系统参数有什么区别？用前二组选和值拆开看",
+      "从参数到结果：前二组选和值哪些能预设，哪些不能事后改",
+      "前二组选和值为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？前二组选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-cb745be9f679a94f",
+          "score": 0.8095238095238095,
+          "title": "哪些参数能提前固定？前三直选邻号的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "前二",
+            "组选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "参数",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？前二组选和值的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

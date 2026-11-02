@@ -1,0 +1,356 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "解释前二组选和值区间的系统研究参数归属，复算静态候选空间，区分来源经验、演示样本与预测证据，并给出冻结参数和完成主筛选后停止的操作步骤。",
+    "evidence_mode": "static_only",
+    "excluded_space": 18,
+    "final_space": 27,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前二组选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值6–12"
+    ],
+    "starting_space": 45,
+    "static_stage_labels": [
+      "和值6–12"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "01869c85e1400817048b",
+  "approved_at": "2026-11-02T08:16:04.245447+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-210b8e184fb7cbdb",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:45->27",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前二组选和值参数设置",
+    "reader_question": "区分前二组选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 18,
+      "final_space": 27,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值6–12"
+      ],
+      "starting_space": 45,
+      "static_stage_labels": [
+        "和值6–12"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前二组选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前二组选和值参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-ebe5e6f7504025cc",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文把观察位置固定为前二，把指标固定为数字之和（digit_sum），把唯一主筛选固定为和值区间（sum_range），下限min=6、上限max=12，包含两个端点。",
+      "claim_type": "editorial",
+      "evidence_note": "参数来自系统研究合同的唯一主筛选设定，basis为experimental_parameter；这是参数归属声明，不是来源推荐或玩法强制要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这些具体参数由系统研究预设，须在查看样本前固定，不是来源推荐，也不是从演示样本反推出来的。",
+      "claim_type": "editorial",
+      "evidence_note": "对应parameter_owner、parameter_freeze_before_observation、source_recommendation_claimed及resolved_parameters_derived_from_synthetic_case。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前二组选按前两个位置的两个不同数字组成无序组合，数字取自0至9，交换顺序不另计，两个相同数字不进入这里的候选集合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按提供的前二组选派生机制及unordered_2digit候选空间口径说明。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，筛选前的理论候选空间是10×9÷2=45个无序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "从十个数字中选两个不同数字且忽略顺序，计算为45。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在这一候选集合中，和值6、7、8、9、10、11、12对应的组合数量依次为3、4、4、5、4、4、3，相加得到27个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "枚举0≤a<b≤9并按a+b分组；这里只计算静态区间覆盖数量，不验证区间选择的预测价值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "主筛选后保留27个组合，筛掉45−27=18个组合。",
+      "claim_type": "calculation",
+      "evidence_note": "与primary_filter_spec及单阶段流水线的起始、最终和排除空间一致。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "以下案例为演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "使用case_bundle指定演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "所给演示记录45599的前二是4和5，和值为4+5=9，落在预先固定的区间内。",
+      "claim_type": "calculation",
+      "evidence_note": "使用case_bundle.descriptive.latest_draw及latest.values、latest.sum；仅示范取位、求和和区间判断。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个演示结果只说明该记录符合既定条件，不构成预测证据。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle限定为descriptive_only，predictive_guarantee为false。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源提到的和值筛选经验，在本文仅作方法来源线索，相关经验效果尚未独立验证。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅保留来源对sum_range方法家族的归属支持，不将具体区间、阶段设置或表现归给来源。",
+      "support_refs": [
+        "BRBCW-001458"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "规则支持组合口径和数学复算，不替系统预设区间提供预测优势证明。",
+      "claim_type": "editorial",
+      "evidence_note": "明确已验证机制与参数效果证据的边界；合同不声称预测优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "开始前，记录玩法为前二组选、selector为前二、metric为digit_sum、筛选为sum_range、min为6、max为12，并冻结这份设置。",
+      "claim_type": "editorial",
+      "evidence_note": "操作步骤逐项采用唯一主筛选合同的selector、metric与参数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "建立基表：枚举0≤a<b≤9的数字对，核对总数为45个。",
+      "claim_type": "calculation",
+      "evidence_note": "用升序数字对消除顺序重复，并排除相同数字，得到45个候选。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "执行主筛选：逐对计算a+b，只保留6≤a+b≤12的组合，核对保留27个、排除18个。",
+      "claim_type": "calculation",
+      "evidence_note": "在已验证无序组合机制上执行固定区间，复算主筛选的保留和排除规模。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完成“和值6–12”这一静态阶段后停止，不临时叠加冷热、跨度或其他过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "合同仅有一个静态阶段，stop_after_final_stage及stop_after_primary_filter均为true。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且能够独立复算时，才允许在另行明确的研究合同中继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "给出新增筛选条件的准入边界，不授权在本文流水线内追加阶段。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>分分彩前二组选和值参数设置，首先要交代参数是谁定的。本文把观察位置固定为前二，把指标固定为数字之和（digit_sum），把唯一主筛选固定为和值区间（sum_range），下限min=6、上限max=12，包含两个端点。</p><p>这些具体参数由系统研究预设，须在查看样本前固定，不是来源推荐，也不是从演示样本反推出来的。</p><h2>哪些参数归系统研究</h2><p>这里要分清两件事：玩法机制决定怎样构造候选，研究设置决定保留哪个和值区间。能按规则算清区间覆盖范围，不代表已经验证了选择这个区间的效果。</p><p>前二组选按前两个位置的两个不同数字组成无序组合，数字取自0至9，交换顺序不另计，两个相同数字不进入这里的候选集合。</p><p>因此，筛选前的理论候选空间是10×9÷2=45个无序组合。</p><p>在这一候选集合中，和值6、7、8、9、10、11、12对应的组合数量依次为3、4、4、5、4、4、3，相加得到27个组合。</p><p>主筛选后保留27个组合，筛掉45−27=18个组合。</p><h2>哪些结果由演示样本计算</h2><p><strong>以下案例为演示数据，不是真实开奖记录。</strong></p><p>所给演示记录45599的前二是4和5，和值为4+5=9，落在预先固定的区间内。</p><p>这个演示结果只说明该记录符合既定条件，不构成预测证据。</p><p>本篇没有用样本生成参数的阶段。演示记录用于说明怎样取位和求和；理论候选空间则来自玩法组合机制，不能拿样本条数替代。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到的和值筛选经验，在本文仅作方法来源线索，相关经验效果尚未独立验证。</p><p>引用来源时，应保留这个限定。具体上下限的归属应写成系统研究预设，不能改写成原文建议，也不能让来源替演示记录或静态计数作证。</p><p>规则支持组合口径和数学复算，不替系统预设区间提供预测优势证明。</p><h2>为什么不能事后改参数</h2><p>先固定参数，再查看样本，才能清楚区分预设条件与观察结果。如果看完记录后反复移动边界，再把调整后的区间写成原先设定，就混淆了这两者。</p><p>需要研究其他边界时，应另建记录，说明调整理由、参数版本和验证办法。本篇继续执行已固定的设置。</p><h2>实际怎么操作</h2><ol><li>开始前，记录玩法为前二组选、selector为前二、metric为digit_sum、筛选为sum_range、min为6、max为12，并冻结这份设置。</li><li>建立基表：枚举0≤a&lt;b≤9的数字对，核对总数为45个。</li><li>执行主筛选：逐对计算a+b，只保留6≤a+b≤12的组合，核对保留27个、排除18个。</li><li>完成静态计数后，再查看演示记录，按取前二、求和值、判断是否落入区间的顺序核对，并保留演示标签。</li><li>保存参数记录、候选清单及排除清单，检查是否存在重复数字对、相同数字对或区间外组合。</li></ol><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>候选减少说明筛选条件产生了排除作用。要判断研究参数的预测价值，需要另有相应验证；静态覆盖计数和演示记录不能承担这项证明。</p><p>本文只讨论玩法机制与参数边界。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成“和值6–12”这一静态阶段后停止，不临时叠加冷热、跨度或其他过滤器。</p><p>只有新增条件具有已验证规则或证据，并且能够独立复算时，才允许在另行明确的研究合同中继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "5a056150eb4cf1e50069ed21f5b3ce83dfd78708069d322f1bab1f93aa35ee88",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261102",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "ebe5e6f7504025cc4f8d108bc627cf19e81bf52328cc692c0bb05ee0095a3bcf",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前二组选和值参数设置：说明和值6–12属于系统研究预设，复算候选从45个保留到27个、排除18个，区分来源经验与演示数据，并明确冻结参数和完成主筛选后的停止条件。",
+  "play": "前二组选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后保留27个无序组合，排除18个；计算为45−27=18。",
+    "next_step_policy": "本篇完成唯一静态阶段即停止；只有新增条件具有已验证规则或证据并可独立复算时，才允许在另行明确的研究合同中继续缩小候选。",
+    "parameter_freeze_rule": "查看样本前固定subject_play=前二组选、selector=前二、metric=digit_sum、atom=sum_range、min=6、max=12，区间包含端点；参数归system_research，不归来源，也不从演示样本反推。",
+    "starting_space": "筛选前为45个前二组选无序组合，以0≤a<b≤9枚举，计算为10×9÷2=45；不是演示样本条数。",
+    "steps": [
+      "在查看样本前记录并冻结selector=前二、metric=digit_sum、sum_range及min=6、max=12。",
+      "枚举0≤a<b≤9的无序数字对，建立45个候选的基表。",
+      "计算每个数字对的a+b，仅保留6≤a+b≤12的组合，核对保留27个、排除18个。",
+      "完成静态复算后再查看演示记录，按取前二、求和值、判断区间的顺序核对，保留“演示数据，不是真实开奖记录”标签。",
+      "保存参数、保留清单和排除清单，完成“和值6–12”阶段后停止。"
+    ],
+    "stop_condition": "唯一静态阶段“和值6–12”完成且候选数量复核一致后停止；本篇不追加第二过滤器，不因演示结果临时更改边界。"
+  },
+  "primary_keyword": "分分彩前二组选和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_078d55674d0eb21c016ae846610d40819abeee3607cd4b3524",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT2-GROUP-V1"
+  ],
+  "search_intent": "区分前二组选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前二组选和值参数设置",
+    "分分彩技巧",
+    "前二组选技巧",
+    "分分彩前二组选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "哪些参数能提前固定？前二组选和值的边界先说清",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front2-group-sum-range-parameter-boundary",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前二组选",
+  "summary": "分分彩前二组选和值参数设置中的和值6–12属于系统研究预设，不是来源推荐，也不是由演示样本反推。文章按玩法机制复算45个候选保留27个、排除18个，说明演示记录只用于操作核对，并要求先冻结参数、完成唯一静态阶段后停止。",
+  "tags": [
+    "分分彩",
+    "前二组选",
+    "和值参数",
+    "系统研究预设",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "哪些参数能提前固定？前二组选和值的边界先说清",
+  "title_candidates": [
+    "哪些参数能提前固定？前二组选和值的边界先说清",
+    "来源经验和系统参数有什么区别？用前二组选和值拆开看",
+    "从参数到结果：前二组选和值哪些能预设，哪些不能事后改",
+    "前二组选和值为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前二组选和值的边界先说清",
+      "来源经验和系统参数有什么区别？用前二组选和值拆开看",
+      "从参数到结果：前二组选和值哪些能预设，哪些不能事后改",
+      "前二组选和值为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 22
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-cb745be9f679a94f",
+          "score": 0.8095238095238095,
+          "title": "哪些参数能提前固定？前三直选邻号的边界先说清"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2,
+          "intent_term_hits": [
+            "前二",
+            "组选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前二",
+            "组选",
+            "和值",
+            "参数",
+            "前二组选和值"
+          ],
+          "subject_play": "前二组选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "哪些参数能提前固定？前二组选和值的边界先说清"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

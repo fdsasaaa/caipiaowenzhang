@@ -1,0 +1,221 @@
+{
+  "angle_signature": "54926f3fe61f250a8b03",
+  "approved_at": "2026-11-02T08:26:42.270410+00:00",
+  "article_id": "LCM-ANGLE-3519851e4b91c8c9",
+  "case_scope": "mechanics_only",
+  "category": "技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "五星直选按位置区分结果，每个位置可取0至9，允许数字重复，也保留前导零，因此完整有序空间包含10×10×10×10×10＝100000种结果。",
+      "claim_type": "calculation",
+      "evidence_note": "位置、数字取值、重复及前导零规则依据所引规则；总数由五个位置各有10种取值，按乘法原理推导。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值是五个位置数字的总和，取值范围为0至45。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据五个位置各取0至9的规则，最小总和为0，最大总和为5×9＝45。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在多项式(1＋z＋z²＋…＋z⁹)⁵中，zˢ项的系数就是和值为s的有序结果数量；所有系数相加等于100000。",
+      "claim_type": "calculation",
+      "evidence_note": "每个因子对应一个位置，指数记录该位置的数字；展开后，同次幂系数统计相同和值的有序结果。令z＝1可核对系数总和。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "将每个位置的数字d替换为9−d，会使和值s变为45−s，因此这两个和值对应的有序结果数量相同。",
+      "claim_type": "calculation",
+      "evidence_note": "替换在合法数字范围内形成可逆的一一映射，且五个位置替换后的总和为45减去原和值。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "采用隔板法时，如果只要求各位置为非负整数而没有加入每个位置不超过9的限制，就会把不符合数字规则的解计入。",
+      "claim_type": "calculation",
+      "evidence_note": "由各位置数字上限为9的规则推导；无上界非负整数解与合法五位数字结果的计数对象不同。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "历史样本中的占比属于描述性统计，可能受到样本规模、观察窗口和随机波动的影响；结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "说明组合计数、历史描述与预测结论的证据边界，不作收益、胜率或预测效果承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "参数预注册有助于明确分析边界，样本外验证有助于检查结论在未参与参数选择的数据上的表现，但这些方法本身不保证存在预测优势。",
+      "claim_type": "methodology",
+      "evidence_note": "属于研究方法与局限说明，未引用具体样本，也未声称任何参数已经通过预测验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>核对五星直选和值注数，首先要分清三个对象：完整有序空间、某个和值对应的结果数量，以及历史样本中该和值出现的次数。它们回答的问题不同，不能相互替代。</p><p>本文以分分彩五星直选的规则模型为背景，解释组合计数及其研究边界，帮助读者理解“注数怎么算、计算结果能说明什么”。</p><h2>先明确计数对象</h2><p>五星直选按位置区分结果，每个位置可取0至9，允许数字重复，也保留前导零。因此，完整有序空间包含10×10×10×10×10＝100000种结果。</p><p>和值是五个位置数字的总和，取值范围为0至45。按和值分类时，统计单位仍然是有序结果，不能把不同位置上的数字当作无序组合处理。</p><p>本文中的“注数”用于说明规则模型下的组合数量，不涉及投注金额或操作安排。</p><h2>和值数量如何计算</h2><p>可以用生成函数表达完整的计数问题。在多项式(1＋z＋z²＋…＋z⁹)⁵中，每个因子代表一个位置，指数代表该位置的数字。</p><p>展开后，zˢ项的系数就是和值为s的有序结果数量。将各个和值对应的系数相加，应当得到100000；这也提供了总量核对的方法。</p><p>如果使用隔板法，需要额外处理数字上限。只要求各位置为非负整数、却没有加入每个位置不超过9的限制，就会把不符合规则的解计入。容斥原理可以用于修正这类越界计数。</p><h2>用对称性检查结果</h2><p>将每个位置的数字d替换为9−d，会使原来的和值s变为45−s。这个变换可以逆向还原，因此两类结果之间存在一一对应关系。</p><p>由此可知，和值s与和值45−s对应的有序结果数量相同。研究中可以用这种对称性检查计算结果，再与总量核对结合，发现漏算或重复计数。</p><p>这种对称关系描述的是完整空间的数学结构，不构成未来走势的判断依据。</p><h2>研究参数为什么要预先记录</h2><p>如果研究问题涉及和值分组，应在查看用于评价的样本之前，记录分组定义、端点是否包含、数据范围和评价指标。这属于参数预注册，有助于明确分析边界。</p><p>历史复盘还应交代数据来源，并区分真实记录与演示数据。演示数据可以帮助解释计算方法，其表现不能作为真实历史表现的证据。</p><p>若要进一步讨论某项历史观察是否能够重复，需要使用未参与参数选择的数据进行样本外验证。参数预注册和样本外验证本身都不保证存在预测优势。</p><h2>数量、频次与预测要分开理解</h2><p>完整空间中的组合数量是规则下的确定性计数；历史样本中的出现次数则属于观察结果。历史占比可能受到样本规模、观察窗口和随机波动的影响。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。即使某项计数已经核对无误，也不能据此承诺收益、胜率或稳定盈利。</p><p>阅读和值研究时，可以分别检查计数对象是否明确、数字上限是否处理、总量与对称性是否一致，以及结论是否超出了证据范围。这样才能理解计算结果的含义。</p>",
+  "content_format": "html",
+  "content_hash": "856d1a750457f5e07c196064a0d01527aa1a7bd3030af96fcf6b1e7ba05b7dfd",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261102",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "fc319d083c8a99460c846f0dfa7b6ee4dbf0ee9e9d8620541e0b3a0f2b098206",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "解释分分彩五星直选和值注数的组合计数原理，梳理有序空间、生成函数、对称性与数字上限，并说明参数预注册、历史复盘和样本外验证的证据边界。",
+  "parent_content_hash": "cafa49ffb1f28f04e4904ba1eb29b06e566381a5b14893ce7ae27c56d2e6a822",
+  "parent_fingerprint": "3519851e4b91c8c930cfb60fadaeecf59b1836bc46ce045d48d403f423b03f0c",
+  "play": "五星直选",
+  "primary_keyword": "分分彩五星直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0417ec5d038732fe016ae840410b8c819fa08eb67dd9f9fa0d",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-02T08:26:42.270428+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-3519851e4b91c8c9:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "理解并核对分分彩五星直选和值注数的计算方法，区分完整有序空间、和值分类数量与历史样本频次，识别组合计数和预测结论之间的证据边界。",
+  "secondary_keywords": [
+    "分分彩五星直选和值注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：五星直选和值的空间计算与参数预注册",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-sum-range-space-math",
+  "source_batch_id": "DAILY-20261102",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "从五星直选的100000种有序结果出发，解释和值计数的生成函数、数字上限与对称性核对方法，并介绍参数预注册和样本外验证的用途，明确结构分类及历史表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "和值区间",
+    "候选空间",
+    "注数计算"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "从输入到结果：五星直选和值的空间计算与参数预注册",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选和值的计算过程一次理清",
+    "先算注数，再谈五星直选和值：组合数学能说明到哪一步",
+    "从输入到结果：五星直选和值的空间计算与参数预注册",
+    "五星直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂五星直选的五星直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选和值的计算过程一次理清",
+      "先算注数，再谈五星直选和值：组合数学能说明到哪一步",
+      "从输入到结果：五星直选和值的空间计算与参数预注册",
+      "五星直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂五星直选的五星直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+          "score": 0.6666666666666666,
+          "title": "从输入到结果：五星直选大小奇偶的空间计算与样本外验证"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3182,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "和值",
+            "五星直选和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "和值",
+            "参数",
+            "五星直选和值"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：五星直选和值的空间计算与参数预注册"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

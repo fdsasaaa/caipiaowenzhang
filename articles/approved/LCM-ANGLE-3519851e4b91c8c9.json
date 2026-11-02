@@ -1,0 +1,415 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "通过完整有序候选空间、低和值计数和对称映射，复算100000个候选保留78004个、排除21996个的确定性结果。",
+    "evidence_mode": "static_only",
+    "excluded_space": 21996,
+    "final_space": 78004,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到78004以及排除21996个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值15–30"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "和值15–30"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "54926f3fe61f250a8b03",
+  "approved_at": "2026-11-02T07:49:35.363041+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-690200c11137053e",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=15,max=30/static]:100000->78004",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选和值注数计算",
+    "reader_question": "核对五星直选的候选空间计算，逐项确认100000到78004以及排除21996个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100000、终点78004、排除21996。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 21996,
+      "final_space": 78004,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值15–30"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "和值15–30"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对五星直选的候选空间计算，逐项确认100000到78004以及排除21996个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100000、终点78004、排除21996。",
+    "title": "分分彩五星直选和值注数计算：100000个候选为什么变成78004个，排除21996个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-3519851e4b91c8c9",
+  "case_scope": "mechanics_only",
+  "category": "技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "分分彩五星直选和值注数计算：100000个候选为什么变成78004个，排除21996个怎么算",
+      "claim_type": "calculation",
+      "evidence_note": "标题中的数量对应固定和值区间15至30的完整有序候选空间计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "固定和值15至30后，五星直选的100000个有序候选保留78004个，排除21996个。",
+      "claim_type": "calculation",
+      "evidence_note": "完整空间为10的5次方；两端各排除10998个，保留100000−21996＝78004个。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "五星直选按位置区分候选，每个位置可取0至9，允许重复数字，也保留前导零。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据五星直选的有序五位数字机制定义枚举对象。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，起点空间为10×10×10×10×10＝100000个有序候选。",
+      "claim_type": "calculation",
+      "evidence_note": "五个位置各有十种取值，按乘法原理计算。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值就是五个位置数字相加，最小为0，最大为45。",
+      "claim_type": "calculation",
+      "evidence_note": "五位数字各在0至9之间，因此和值范围为0至5×9。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇唯一筛选阶段为“和值15–30”：selector=五星，metric=digit_sum，min=15，max=30，两个端点都保留。",
+      "claim_type": "editorial",
+      "evidence_note": "直接执行primary_filter_spec及单阶段合同，参数属于系统研究设定。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这些参数由系统研究合同预设，须在查看样本前固定；它们不归属于来源推荐，也不由演示样本推导。",
+      "claim_type": "editorial",
+      "evidence_note": "依据parameter_owner、参数冻结要求及禁止来源参数归属的合同边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "附带案例的标签为“演示数据，不是真实开奖记录”；本次计算只使用完整候选空间，不使用案例中的样本统计。",
+      "claim_type": "editorial",
+      "evidence_note": "保留case_bundle指定演示标签；本篇采用static_only，不调用样本数字。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "区间外的候选分为和值0至14与和值31至45两组。",
+      "claim_type": "calculation",
+      "evidence_note": "从和值全域0至45中取闭区间15至30的补集，两组互不重叠。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "先暂时不限制每个位置的数字上限，满足x₁＋x₂＋x₃＋x₄＋x₅≤14的非负整数解共有C(19,5)＝11628个。",
+      "claim_type": "calculation",
+      "evidence_note": "引入一个非负松弛变量后，六个非负整数之和为14，隔板法得C(14＋6−1,6−1)。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "若指定某个位置至少为10，先减去10，剩余总和上限为4，对应C(9,5)＝126个解。",
+      "claim_type": "calculation",
+      "evidence_note": "对指定变量平移10后，五个非负变量之和不超过4，计数为C(4＋5,5)。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "总和不超过14时，不可能同时有两个位置至少为10，因此需要扣除的越界解共有5×126＝630个。",
+      "claim_type": "calculation",
+      "evidence_note": "两个变量同时至少为10会使总和至少为20，故五组越界解不相交。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "所以，和值0至14的合法候选共有11628−630＝10998个。",
+      "claim_type": "calculation",
+      "evidence_note": "从无上限计数中扣除所有超过单位置数字上限的解。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把每个位置的数字d替换为9−d，和值S就变为45−S，这是一一对应的映射。",
+      "claim_type": "calculation",
+      "evidence_note": "逐位补数变换可逆，变换后五位数字之和为5×9−S。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，和值31至45与和值0至14的候选数量相同，也有10998个。",
+      "claim_type": "calculation",
+      "evidence_note": "补数映射把31至45恰好映射为14至0，且保持一一对应。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "总排除数量为10998＋10998＝21996个，最终保留数量为100000−21996＝78004个。",
+      "claim_type": "calculation",
+      "evidence_note": "两端排除集合不相交，以完整空间减去两端合计。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "反向核对：78004＋21996＝100000，保留集合与排除集合恰好覆盖起点空间。",
+      "claim_type": "calculation",
+      "evidence_note": "闭区间及其补集互斥且完备，数量加总回到完整空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "建立00000至99999的完整有序候选集，检查总数为100000，并保留前导零。",
+      "claim_type": "calculation",
+      "evidence_note": "按固定宽度枚举全部五位数字串，与10的5次方一致。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "逐个相加五位数字，只保留15≤digit_sum≤30的候选。",
+      "claim_type": "editorial",
+      "evidence_note": "将唯一主筛选合同转为可执行的闭区间判断。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "核对保留78004个、排除21996个，并检查两者相加等于100000。",
+      "claim_type": "calculation",
+      "evidence_note": "枚举应与前述组合计数及补集加总得到一致结果。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的注数计算只核对单个有序候选的数量，不提供命中率或预测优势结论。",
+      "claim_type": "editorial",
+      "evidence_note": "限定信息增益为静态候选空间数学，不引入概率或表现推断。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成该阶段核对后立即停止；只有新增条件具有已验证规则或证据，并且能够独立复算时，才允许继续缩小候选。",
+      "claim_type": "editorial",
+      "evidence_note": "执行stop_after_final_stage要求及新增筛选条件的证据门槛。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>固定和值15至30后，五星直选的100000个有序候选保留78004个，排除21996个。</p><p>下面把起点、两端排除和最终保留的计算展开，便于逐项复核。</p><h2>先定义候选空间</h2><p>五星直选按位置区分候选，每个位置可取0至9，允许重复数字，也保留前导零。</p><p>因此，起点空间为10×10×10×10×10＝100000个有序候选。</p><p>和值就是五个位置数字相加，最小为0，最大为45。</p><p>本篇唯一筛选阶段为“和值15–30”：selector=五星，metric=digit_sum，min=15，max=30，两个端点都保留。</p><p>这些参数由系统研究合同预设，须在查看样本前固定；它们不归属于来源推荐，也不由演示样本推导。</p><p>附带案例的标签为“演示数据，不是真实开奖记录”；本次计算只使用完整候选空间，不使用案例中的样本统计。</p><h2>逐项计算排除与保留数量</h2><p>区间外的候选分为和值0至14与和值31至45两组。</p><h3>先算低和值一端</h3><p>用x₁至x₅表示各位置数字，C(n,k)表示从n个元素中选取k个的组合数。</p><p>先暂时不限制每个位置的数字上限，满足x₁＋x₂＋x₃＋x₄＋x₅≤14的非负整数解共有C(19,5)＝11628个。</p><p>这个计数可以用隔板法复核：增加一个表示剩余额度的非负变量，把不等式转为总和固定的等式。</p><p>若指定某个位置至少为10，先减去10，剩余总和上限为4，对应C(9,5)＝126个解。</p><p>总和不超过14时，不可能同时有两个位置至少为10，因此需要扣除的越界解共有5×126＝630个。</p><p>所以，和值0至14的合法候选共有11628−630＝10998个。</p><h3>再算高和值一端</h3><p>把每个位置的数字d替换为9−d，和值S就变为45−S，这是一一对应的映射。</p><p>因此，和值31至45与和值0至14的候选数量相同，也有10998个。</p><h2>核对起点、终点和总排除</h2><p>总排除数量为10998＋10998＝21996个，最终保留数量为100000−21996＝78004个。</p><p>反向核对：78004＋21996＝100000，保留集合与排除集合恰好覆盖起点空间。</p><h2>实际怎么操作</h2><ol><li>先记录并冻结上述筛选参数，再查看样本，避免看完样本后调整边界。</li><li>建立00000至99999的完整有序候选集，检查总数为100000，并保留前导零。</li><li>逐个相加五位数字，只保留15≤digit_sum≤30的候选。</li><li>核对保留78004个、排除21996个，并检查两者相加等于100000。</li><li>保存参数和核对结果，完成本篇合同后停止筛选。</li></ol><h2>为什么这些数字不是命中率</h2><p>这里的注数计算只核对单个有序候选的数量，不提供命中率或预测优势结论。</p><p>集合计数回答的是哪些候选满足固定条件；评价预测表现则需要另外的验证证据。本篇没有提供这类证据。</p><h2>边界与停止条件</h2><p>不要把演示样本条数当成理论候选空间，也不要把区间参数写成来源推荐。样本中的描述性统计不能替代完整空间的枚举核对。</p><p>完成该阶段核对后立即停止；只有新增条件具有已验证规则或证据，并且能够独立复算时，才允许继续缩小候选。</p><p>本篇没有提供第二条已验证筛选条件，不临时加入位置、冷热或遗漏过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "cafa49ffb1f28f04e4904ba1eb29b06e566381a5b14893ce7ae27c56d2e6a822",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261102",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "3519851e4b91c8c930cfb60fadaeecf59b1836bc46ce045d48d403f423b03f0c",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选和值注数计算：固定和值15至30，用组合计数与对称映射逐项核对100000个候选如何保留78004个、排除21996个，并给出复算步骤和停止条件。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "唯一主筛选为和值15–30，含端点；筛选后保留78004个有序候选，排除21996个。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选；本篇没有此类新增条件，完成主筛选即停止。",
+    "parameter_freeze_rule": "查看样本前固定selector=五星、metric=digit_sum、min=15、max=30及含端点判断；参数属于系统研究设定，不归属于来源，也不依据演示样本调整。",
+    "starting_space": "从00000至99999的完整有序五位数字串出发，共100000个候选，保留前导零和重复数字。",
+    "steps": [
+      "在查看样本前记录并冻结selector=五星、metric=digit_sum、min=15、max=30。",
+      "按固定五位宽度建立完整候选集，核对筛选前为100000个。",
+      "对每个候选计算五位数字之和，仅保留15≤digit_sum≤30的候选。",
+      "用低端10998个与高端10998个的计数复核总排除21996个，检查保留78004个。",
+      "检查78004＋21996＝100000，保存核对结果并停止，不临时拼接第二过滤器。"
+    ],
+    "stop_condition": "完成唯一阶段“和值15–30”，确认起点100000、终点78004、总排除21996后停止。"
+  },
+  "primary_keyword": "分分彩五星直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0417ec5d038732fe016ae840410b8c819fa08eb67dd9f9fa0d",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "核对五星直选的候选空间计算，逐项确认100000到78004以及排除21996个的确定性结果",
+  "secondary_keywords": [
+    "分分彩五星直选和值注数计算",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "五星直选和值怎么算才不混淆？复核候选空间的关键点",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-sum-range-space-math",
+  "source_refs": [
+    "BRBCW-006020"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "固定系统研究参数和值15至30，从完整有序空间出发，用组合计数算出两端各排除10998个，复核100000个候选保留78004个、排除21996个；附操作步骤，并明确完成唯一筛选阶段后停止。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "和值区间",
+    "候选空间",
+    "注数计算"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "sum_range"
+  ],
+  "title": "五星直选和值怎么算才不混淆？复核候选空间的关键点",
+  "title_candidates": [
+    "候选空间为什么会变？五星直选和值的计算过程一次理清",
+    "先算注数，再谈五星直选和值：组合数学能说明到哪一步",
+    "从输入到结果：五星直选和值的空间计算与停止条件",
+    "五星直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的五星直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？五星直选和值的计算过程一次理清",
+      "先算注数，再谈五星直选和值：组合数学能说明到哪一步",
+      "从输入到结果：五星直选和值的空间计算与停止条件",
+      "五星直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的五星直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-e4f3482c8b9bfe8b",
+          "score": 0.8260869565217391,
+          "title": "前四直选奇偶怎么算才不混淆？复核候选空间的关键点"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2727,
+          "intent_term_hits": [
+            "五星",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "五星",
+            "直选",
+            "和值",
+            "候选空间",
+            "五星直选和值"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "五星直选和值怎么算才不混淆？复核候选空间的关键点"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

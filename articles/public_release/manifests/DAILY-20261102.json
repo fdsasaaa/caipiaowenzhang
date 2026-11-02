@@ -1,0 +1,42 @@
+{
+  "approved_public_release_count": 3,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-3519851e4b91c8c9",
+      "content_hash": "856d1a750457f5e07c196064a0d01527aa1a7bd3030af96fcf6b1e7ba05b7dfd",
+      "fingerprint": "fc319d083c8a99460c846f0dfa7b6ee4dbf0ee9e9d8620541e0b3a0f2b098206",
+      "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-3519851e4b91c8c9.public-r1.json",
+      "primary_keyword": "分分彩五星直选和值注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-3519851e4b91c8c9:public-r1",
+      "slug": "ffc-five-direct-sum-range-space-math"
+    },
+    {
+      "article_id": "LCM-ANGLE-819b975da420036f",
+      "content_hash": "7614ea1cefac0a6ab44f34ecc73a5c824481e9acad15cdd2b5bd197edfee0c89",
+      "fingerprint": "6361b88a9b5379854cd2f4d46afbfe94e1df38f553463a5a7306a847c9be5162",
+      "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-819b975da420036f.public-r1.json",
+      "primary_keyword": "分分彩中三直选频率参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-819b975da420036f:public-r1",
+      "slug": "ffc-middle3-frequency-window-parameter-boundary"
+    },
+    {
+      "article_id": "LCM-ANGLE-ebe5e6f7504025cc",
+      "content_hash": "d872d141a1b9290ef14cdae4df1fc50beccab0179e688b8ecbc0d1f5e52410a8",
+      "fingerprint": "7a5b315a12a739fa345d6c430688dc62f7808bde037ba16841ba154d0a34f3eb",
+      "path": "articles/public_release/DAILY-20261102/LCM-ANGLE-ebe5e6f7504025cc.public-r1.json",
+      "primary_keyword": "分分彩前二组选和值参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-ebe5e6f7504025cc:public-r1",
+      "slug": "ffc-front2-group-sum-range-parameter-boundary"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 3,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261102",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

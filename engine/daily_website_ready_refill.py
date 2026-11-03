@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from .ai_generation import GenerationError
+from .daily_refill_diagnostics import controller_diagnostics, error_category, select_candidates
 from .daily_website_ready import (
     DailyProductionError,
     POLICY_PATH,
@@ -76,7 +77,7 @@ def _fatal_report(day: str, policy: dict, exc: Exception) -> dict:
         "website_sync_attempted": False,
         "scheduled": False,
         "published": False,
-        "error": str(exc),
+        "error": error_category(str(exc)),
         "recorded_at": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -156,25 +157,19 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
             provider_id="",
             batch_size=min(int(policy.get("internal_batch_size") or 20), round_approved_target),
         )
-        candidates: list[dict] = []
         remaining_attempt_budget = max_generation_attempts - total_attempted
         candidate_limit = min(candidate_pool_per_round, remaining_attempt_budget)
-        for row in plan.get("candidates", []):
-            blueprint = row.get("blueprint") or {}
-            article_id = str(blueprint.get("article_id") or "")
-            if not article_id or article_id in attempted_ids or article_id in frozen:
-                continue
-            if not _keyword_allowed(str(blueprint.get("primary_keyword") or ""), policy):
-                continue
-            candidates.append(row)
-            if len(candidates) >= candidate_limit:
-                break
+        candidates, candidate_filter_counts = select_candidates(
+            plan.get("candidates", []), attempted_ids, frozen, policy,
+            candidate_limit, _keyword_allowed,
+        )
 
         if not candidates:
             stop_reason = "candidate_capacity_exhausted"
             rounds.append({
                 "round": round_index,
                 "status": "NO_CANDIDATES",
+                "candidate_filter_counts": candidate_filter_counts,
                 "website_ready_before": len(public_ready),
                 "website_ready_after": len(public_ready),
             })
@@ -246,7 +241,7 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
                 public_failed.append({
                     "article_id": article_id,
                     "round": round_index,
-                    "error": str(exc),
+                    "error": error_category(str(exc)),
                 })
 
         round_report = {
@@ -254,6 +249,8 @@ def run_daily_refill(*, now: datetime | None = None, policy_path: Path | None = 
             "status": result.get("status"),
             "production_stop_reason": result.get("stop_reason"),
             "candidate_count_offered": len(candidates),
+            "candidate_filter_counts": candidate_filter_counts,
+            "controller_diagnostics": controller_diagnostics(result),
             "attempted": int(result.get("attempted") or 0),
             "generated": int(result.get("generated") or 0),
             "approved": int(result.get("approved") or 0),
@@ -394,7 +391,7 @@ def main() -> int:
             report = _fatal_report(day, policy, exc)
             _write_report(day, report)
         except Exception:
-            report = {"status": "FATAL_ERROR", "error": str(exc)}
+            report = {"status": "FATAL_ERROR", "error": error_category(str(exc))}
         print(json.dumps({"ok": False, **report}, ensure_ascii=False, indent=2))
         return 7
 
@@ -405,3 +402,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

@@ -1,0 +1,399 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "说明和值区间、跨度区间及阶段顺序均归系统研究预设；逐层复算静态候选空间，区分演示样本计算与来源经验，并明确完成合同阶段后停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 604,
+    "final_space": 396,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值9–18",
+      "跨度2–6"
+    ],
+    "starting_space": 1000,
+    "static_stage_labels": [
+      "和值9–18",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "71124c948f7546c35a27",
+  "approved_at": "2026-11-03T08:22:28.178649+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-f020fe4011653fcb",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:1000->670>span_range[min=2,max=6/static]:670->396",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三直选和值跨度参数设置",
+    "reader_question": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 604,
+      "final_space": 396,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值9–18",
+        "跨度2–6"
+      ],
+      "starting_space": 1000,
+      "static_stage_labels": [
+        "和值9–18",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前三直选和值跨度参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-171697158c894f6a",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文把和值9–18、跨度2–6，以及先和值后跨度的顺序，固定为系统研究预设。",
+      "claim_type": "editorial",
+      "evidence_note": "参数归属和阶段顺序来自系统研究合同，不归因于来源文章。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这些具体设置不是来源推荐，也不是从演示样本中反推出来的。",
+      "claim_type": "editorial",
+      "evidence_note": "合同明确禁止来源参数归因，且两个静态阶段均未从演示样本推导参数。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇交付的是参数归属说明和候选空间复算，不据此声称预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "文章范围与角度合同一致，不作预测表现声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "前三直选按位置区分三位数字，每位可取0至9，保留前导零，因此完整候选空间为10×10×10＝1000个有序组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按已验证的前三直选有序三位空间计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值是三位数字相加，跨度是三位数字中的最大值减最小值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "使用规则库中的和值与跨度定义。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的区间都包含端点：和值满足9≤a+b+c≤18，跨度满足2≤max(a,b,c)−min(a,b,c)≤6。",
+      "claim_type": "calculation",
+      "evidence_note": "将系统冻结的上下限写成可复算判断式；规则支持指标计算，不代表推荐这些参数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按case_bundle指定文字披露演示性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "以演示号码27333为例，取前三位得到273，和值为2+7+3＝12，跨度为7−2＝5。",
+      "claim_type": "calculation",
+      "evidence_note": "仅使用演示号码27333及其前三位计算。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个演示组合同时满足已固定的和值区间和跨度区间。",
+      "claim_type": "calculation",
+      "evidence_note": "演示组合的和值12处于9至18之间，跨度5处于2至6之间。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本篇没有按样本频率、冷热或遗漏生成数字池，候选空间计数也不依赖这条演示号码。",
+      "claim_type": "editorial",
+      "evidence_note": "本次合同仅包含两个静态阶段，evidence_mode为static_only。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源提到相关筛选技巧，但其经验性说法在本文中仍属未验证内容；这里只用BRBCW-001479标记技巧家族的来源归属。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅保留Draft Packet允许的宽泛技巧来源归属，不补充原文细节或表现结论。",
+      "support_refs": [
+        "BRBCW-001479"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "该来源不能为本篇的具体区间、阶段顺序或演示样本计算作证。",
+      "claim_type": "editorial",
+      "evidence_note": "执行来源使用边界：具体生产参数归系统研究，演示计算仅归case_bundle。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第一层从1000个有序组合开始，逐个计算a+b+c，只保留和值9–18的组合，得到670个，排除1000−670＝330个。",
+      "claim_type": "calculation",
+      "evidence_note": "机器已验证的静态第一层：before_space=1000，after_space=670，excluded_space=330。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层只遍历上一层保留的670个组合，逐个计算max(a,b,c)−min(a,b,c)，保留跨度2–6的组合，得到396个，本层排除670−396＝274个。",
+      "claim_type": "calculation",
+      "evidence_note": "机器已验证的静态第二层，在第一层结果内继续计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "全部合同阶段完成后，候选空间由1000个缩为396个，总排除330+274＝604个，也等于1000−396。",
+      "claim_type": "calculation",
+      "evidence_note": "两个静态阶段的总体空间核对，与机器合同完全一致。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里统计的是满足固定条件的有序组合数量，不能把空间缩小解释为预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "候选空间计算的解释边界，不引入命中或未来表现声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从1000个缩到670个，排除330个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从670个缩到396个，排除274个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从1000个缩到396个，总排除604个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<p>本文把和值9–18、跨度2–6，以及先和值后跨度的顺序，固定为系统研究预设。这些具体设置不是来源推荐，也不是从演示样本中反推出来的。</p><p>本篇交付的是参数归属说明和候选空间复算，不据此声称预测优势。</p><h2>哪些参数归系统研究</h2><p>阅读分分彩前三直选和值跨度参数设置时，先分清“指标怎么算”和“区间由谁选”。</p><p>前三直选按位置区分三位数字，每位可取0至9，保留前导零，因此完整候选空间为10×10×10＝1000个有序组合。和值是三位数字相加，跨度是三位数字中的最大值减最小值。</p><p>这里的区间都包含端点：和值满足9≤a+b+c≤18，跨度满足2≤max(a,b,c)−min(a,b,c)≤6。</p><p>复算时应把区间、端点和执行顺序一并写入参数记录。规则定义负责计算口径，系统研究记录负责说明本次为什么使用这些设置；不要把两者混写。</p><h2>哪些结果由演示样本计算</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>以演示号码27333为例，取前三位得到273，和值为2+7+3＝12，跨度为7−2＝5。这个演示组合同时满足已固定的和值区间和跨度区间。</p><p>本篇没有按样本频率、冷热或遗漏生成数字池，候选空间计数也不依赖这条演示号码。</p><p>演示号码只用来展示取位、相加和求差的过程。不要因为例子通过了条件，就回头把区间解释成从样本中发现的经验。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到相关筛选技巧，但其经验性说法在本文中仍属未验证内容；这里只用BRBCW-001479标记技巧家族的来源归属。</p><p>该来源不能为本篇的具体区间、阶段顺序或演示样本计算作证。</p><p>整理研究笔记时，可分别记录“来源经验”“系统预设”“规则复算”和“演示计算”。引用来源时保留限定语，记录参数时写明系统归属，避免读者误以为原文给出了本篇方案。</p><h2>实际怎么操作：按步骤复算</h2><ol><li><p>先冻结参数记录：选择前三直选，先执行和值9–18，再执行跨度2–6，两个区间都包含端点；在查看演示样本前完成记录。</p></li><li><p>建立候选清单：让a、b、c分别遍历0至9，按位置保存每个组合，并保留前导零。</p></li><li><p>第一层从1000个有序组合开始，逐个计算a+b+c，只保留和值9–18的组合，得到670个，排除1000−670＝330个。</p></li><li><p>第二层只遍历上一层保留的670个组合，逐个计算max(a,b,c)−min(a,b,c)，保留跨度2–6的组合，得到396个，本层排除670−396＝274个。</p></li><li><p>全部合同阶段完成后，候选空间由1000个缩为396个，总排除330+274＝604个，也等于1000−396。</p></li><li><p>核对每层清单和排除数，保存本次参数版本，然后停止筛选；如需展示样本，再按上文的演示口径单独计算。</p></li></ol><h2>为什么不能事后改参数</h2><p>操作要求是先固定参数，再看样本。不要看到某个例子未通过，就扩大区间；也不要为了让保留清单更短而临时收窄区间。</p><p>确需调整时，应另建研究版本，记录修改理由，并在下一次实验观察前冻结参数。旧版本的结果应按旧设置保留，不与新设置混在一起解释。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这里统计的是满足固定条件的有序组合数量，不能把空间缩小解释为预测优势。</p><p>复算检查的是清单是否正确执行了条件。不要把“算对了”改写为对后续结果的承诺，也不要用演示例子的通过情况替代独立验证。</p><p>本文不讨论未核验的平台经济参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>执行完跨度层并核对总数后，本次流程结束。不要继续叠加奇偶、大小、冷热或遗漏条件。</p><p>只有新增条件具有已验证规则或证据、能够复算，并在下一次实验前冻结，才允许在新的研究版本中继续缩小候选。当前版本到最后一层即停止。</p>",
+  "content_format": "html",
+  "content_hash": "7fbc15ceba43c17b5929f0d67421226ba2f1473d7793ab32b1e38c62c5a82329",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261103",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "171697158c894f6a323f0b7cb2f1bbb1b9eccff79827cdd5b029ed9448c54fc6",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三直选和值跨度参数设置：区分系统研究预设、来源经验与演示计算，按先和值后跨度的固定顺序复算候选空间，明确参数归属及停止条件。",
+  "play": "前三直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "全部合同阶段完成后为396个有序组合；第一层1000→670，排除330个；第二层670→396，排除274个；总排除604个。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算，且在下一次实验前冻结，才允许在新的研究版本中继续缩小候选；本次不增加合同外过滤器。",
+    "parameter_freeze_rule": "在查看演示样本前，固定前三直选口径、和值9–18、跨度2–6、包含端点以及先和值后跨度的执行顺序；这些设置归系统研究，不归因于来源，也不由样本反推。",
+    "starting_space": "1000个有序三位组合，每位取0至9，保留位置差异和前导零。",
+    "steps": [
+      "查看样本前记录并冻结参数、端点和阶段顺序。",
+      "枚举a、b、c分别取0至9的完整有序组合，保留前导零。",
+      "逐个计算和值，仅保留9≤a+b+c≤18的组合：1000→670，排除330个。",
+      "仅在第一层结果内计算跨度，保留2≤max(a,b,c)−min(a,b,c)≤6的组合：670→396，排除274个。",
+      "核对最终396个组合以及总排除604个的算式，保存参数版本和各层清单。",
+      "完成最后一层后停止；演示号码另行标注并计算，不据其表现改动参数。"
+    ],
+    "stop_condition": "完成第二层跨度2–6并核对最终396个候选后停止；任何额外新过滤器必须另有已验证规则或证据、可复算，并在下一次实验前冻结。"
+  },
+  "primary_keyword": "分分彩前三直选和值跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0be38b4f0d695997016ae99970f1b481a0808f26b1a7c3e973",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "区分前三直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前三直选和值跨度参数设置",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front3-sum-span-parameter-boundary",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "本篇说明分分彩前三直选的和值、跨度区间及执行顺序属于系统研究预设，来源仅承担宽泛技巧归属。通过固定条件的逐层复算和单独标注的演示计算，说明参数不能事后调整、空间缩小不证明预测优势，以及完成合同阶段后必须停止的边界。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值跨度",
+    "参数设置",
+    "系统研究",
+    "来源边界"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+  "title_candidates": [
+    "哪些参数能提前固定？前三直选和值跨度的边界先说清",
+    "来源经验和系统参数有什么区别？用前三直选和值跨度拆开看",
+    "从参数到结果：前三直选和值跨度哪些能预设，哪些不能事后改",
+    "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前三直选和值跨度的边界先说清",
+      "来源经验和系统参数有什么区别？用前三直选和值跨度拆开看",
+      "从参数到结果：前三直选和值跨度哪些能预设，哪些不能事后改",
+      "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 29
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e868a293e174484e",
+          "score": 0.4528301886792453,
+          "title": "前四直选和值为什么容易算错？关键在输入、计算和常见误区"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1111,
+          "intent_term_hits": [
+            "前三",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "和值",
+            "跨度",
+            "前三直选和值跨度"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

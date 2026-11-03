@@ -1,0 +1,22 @@
+{
+  "approved_public_release_count": 1,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-171697158c894f6a",
+      "content_hash": "a303a454b0c3e158178b35853099e9d81ff5ea252c864cb638b6d13be1443e1a",
+      "fingerprint": "e1a6100173c376137525ab71ddb6598c18190ba138902268d94c9fd101c7765d",
+      "path": "articles/public_release/DAILY-20261103/LCM-ANGLE-171697158c894f6a.public-r1.json",
+      "primary_keyword": "分分彩前三直选和值跨度参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-171697158c894f6a:public-r1",
+      "slug": "ffc-front3-sum-span-parameter-boundary"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 1,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261103",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

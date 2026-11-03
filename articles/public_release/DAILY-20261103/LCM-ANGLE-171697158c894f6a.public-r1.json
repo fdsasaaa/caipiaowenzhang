@@ -1,0 +1,205 @@
+{
+  "angle_signature": "71124c948f7546c35a27",
+  "approved_at": "2026-11-03T08:40:06.856832+00:00",
+  "article_id": "LCM-ANGLE-171697158c894f6a",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前三直选按位置区分三位数字，每位可取0至9，并保留前导零。完整空间包含10×10×10＝1000个有序组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已验证的前三直选机制说明，组合计数来自三个位置各有10种取值。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值是三位数字之和；跨度是三位数字中的最大值减去最小值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "仅说明指标的计算定义，不附带具体参数区间或筛选方案。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "说明本文结论的适用边界，不主张任何参数具有预测效果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果研究者看完结果后反复修改条件，再用同一批结果评价修改后的条件，就可能把随机波动误当成可重复的规律。",
+      "claim_type": "methodology",
+      "evidence_note": "用于解释事后调参的研究风险，不报告具体实验结果或效果大小。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本外验证是把已冻结的研究定义用于未参与参数选择的数据，并按预先确定的口径记录结果。",
+      "claim_type": "methodology",
+      "evidence_note": "提供教育性的验证方法说明，不构成选号或投注执行方案。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究分分彩前三直选的和值、跨度参数时，需要先分清三件事：玩法规则定义了什么，研究者自行设定了什么，历史数据实际支持什么。本文围绕参数记录与验证方法展开，不给出具体区间或候选号码。</p><h2>和值与跨度描述什么</h2><p>前三直选按位置区分三位数字，每位可取0至9，并保留前导零。完整空间包含10×10×10＝1000个有序组合。</p><p>和值是三位数字之和；跨度是三位数字中的最大值减去最小值。这两个指标用于描述组合的结构特征。</p><p>指标定义与参数选择需要分别说明。规则可以确定和值、跨度怎样计算，却不能据此证明某个研究区间更适合预测后续结果。</p><h2>参数为什么要提前记录</h2><p>研究记录应写清指标定义、区间端点是否包含、数据范围、缺失记录的处理方式，以及准备采用的评价口径。如果研究涉及多个条件，也应说明它们之间的关系。</p><p>这些内容应在查看用于评价的样本结果之前确定，形成可核对的预注册记录。参数来自研究者的设定，就应明确标注，不能仅因某篇经验文章讨论过类似技巧，便把具体设置归为该文章的推荐。</p><p>如果研究者看完结果后反复修改条件，再用同一批结果评价修改后的条件，就可能把随机波动误当成可重复的规律。</p><h2>空间计数与历史表现分别回答什么</h2><p>组合数学可以回答：在明确的规则和条件下，有多少有序组合属于某一类。这类计数用于检查分类是否完整、计算口径是否一致。</p><p>历史复盘则观察某段已有数据中的结构分布。记录结果时，需要同时交代样本范围和参数版本，避免把不同设置下的结果混在一起。</p><p><strong>结构分类或历史样本表现不能单独证明未来预测优势。</strong>某一类组合的数量较少，或者在某段历史中出现得较多，都不足以单独支持对后续结果的判断。</p><h2>怎样理解样本外验证</h2><p>样本外验证是把已冻结的研究定义用于未参与参数选择的数据，并按预先确定的口径记录结果。它关注的是研究结论能否经受独立数据的检验。</p><p>如果需要修改参数，应建立新的研究版本，保留修改理由及旧版本结果。参与过参数修改的数据，应标明其用途，避免再次把它当作独立验证依据。</p><p>即使观察到差异，也应结合样本量、随机波动及尝试过的参数数量谨慎解释，不宜只挑选表现较好的片段展示。</p><h2>复盘结论的边界</h2><p>一份清楚的研究记录，应让读者能够区分规则定义、研究假设、计算结果和解释意见。经验来源可以说明研究思路的由来，但具体结论仍需要对应的证据。</p><p>本文的讨论范围是组合数学、参数预注册与历史研究方法。计算正确说明计算口径得到执行；对未来是否存在预测优势，仍需独立证据，不能由筛选后的空间大小或个别历史片段推导。</p>",
+  "content_format": "html",
+  "content_hash": "a303a454b0c3e158178b35853099e9d81ff5ea252c864cb638b6d13be1443e1a",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261103",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "e1a6100173c376137525ab71ddb6598c18190ba138902268d94c9fd101c7765d",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "解释分分彩前三直选中和值、跨度的规则定义，说明参数预注册、历史复盘与样本外验证的区别，以及为何结构分类和历史表现不能单独证明未来预测优势。",
+  "parent_content_hash": "7fbc15ceba43c17b5929f0d67421226ba2f1473d7793ab32b1e38c62c5a82329",
+  "parent_fingerprint": "171697158c894f6a323f0b7cb2f1bbb1b9eccff79827cdd5b029ed9448c54fc6",
+  "play": "前三直选",
+  "primary_keyword": "分分彩前三直选和值跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0be38b4f0d695997016ae99970f1b481a0808f26b1a7c3e973",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-03T08:40:06.856849+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-171697158c894f6a:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-DIRECT-V1"
+  ],
+  "search_intent": "面向搜索“分分彩前三直选和值跨度参数设置”的读者，解释指标定义、研究参数的来源与预注册要求，区分组合计数、历史复盘和预测证据。",
+  "secondary_keywords": [
+    "分分彩前三直选和值跨度参数设置",
+    "分分彩技巧",
+    "前三直选技巧",
+    "分分彩前三直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front3-sum-span-parameter-boundary",
+  "source_batch_id": "DAILY-20261103",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三直选",
+  "summary": "从前三直选的组合机制出发，说明和值与跨度的定义、参数预注册及样本外验证的作用，解释事后调参与选择性展示的风险，并明确历史结构表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "前三直选",
+    "和值跨度",
+    "参数设置",
+    "系统研究",
+    "来源边界"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+  "title_candidates": [
+    "哪些参数能提前固定？前三直选和值跨度的边界先说清",
+    "来源经验和系统参数有什么区别？用前三直选和值跨度拆开看",
+    "从参数到结果：前三直选和值跨度哪些能预设，哪些不能事后改",
+    "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？前三直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前三直选和值跨度的边界先说清",
+      "来源经验和系统参数有什么区别？用前三直选和值跨度拆开看",
+      "从参数到结果：前三直选和值跨度哪些能预设，哪些不能事后改",
+      "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？前三直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 29
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-e868a293e174484e",
+          "score": 0.4528301886792453,
+          "title": "前四直选和值为什么容易算错？关键在输入、计算和常见误区"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2593,
+          "intent_term_hits": [
+            "前三",
+            "直选",
+            "和值",
+            "跨度",
+            "前三直选和值跨度"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "直选",
+            "和值",
+            "跨度",
+            "风险",
+            "前三直选和值跨度"
+          ],
+          "subject_play": "前三直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

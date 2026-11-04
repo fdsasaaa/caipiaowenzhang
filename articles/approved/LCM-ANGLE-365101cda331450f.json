@@ -1,0 +1,350 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "明确前四奇偶筛选的静态参数归系统研究所有，复算候选空间，并用指定演示数据说明参数与样本的边界；完成唯一主筛选后停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 6250,
+    "final_space": 3750,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好2个单号"
+    ],
+    "starting_space": 10000,
+    "static_stage_labels": [
+      "恰好2个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "79af1bca16a3b94c018c",
+  "approved_at": "2026-11-04T07:59:49.736992+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-cf29f950f939562f",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=2/static]:10000->3750",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前四直选奇偶参数设置",
+    "reader_question": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 6250,
+      "final_space": 3750,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好2个单号"
+      ],
+      "starting_space": 10000,
+      "static_stage_labels": [
+        "恰好2个单号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前四直选奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-365101cda331450f",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文把“前四、odd_count、odd_count=2”固定为系统研究预设，阶段名称为“恰好2个单号”。",
+      "claim_type": "editorial",
+      "evidence_note": "参数归属及阶段名称由生产筛选合同指定，属于系统研究设置。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这项设置在查看演示样本前确定，具体参数不能写成来源推荐，也不能据此宣称预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "遵循参数预冻结、禁止来源参数归因及不宣称预测优势的合同要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "按本文采用的前四直选机制，候选由有顺序的四位数字组成，每位可取0至9，允许重复，也保留首位为0的组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按给定前四直选机制及 ordered_4digit 候选空间解释。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "因此，筛选前的理论候选空间是10×10×10×10＝10000个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "四个位置分别具有十种取值，按乘法原理计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "单号是1、3、5、7、9，双号是0、2、4、6、8，0按双号处理。",
+      "claim_type": "rule_fact",
+      "evidence_note": "使用数字奇偶定义解释筛选指标。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "“恰好2个单号”只限制前四中的单号数量，不固定单号所在的位置。",
+      "claim_type": "editorial",
+      "evidence_note": "解释合同参数 odd_count=2 的含义，不额外添加位置过滤条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "四个位置中选择两个放单号，共有6种位置安排；每种安排的各位都有5种数字可选，因此保留空间为6×5×5×5×5＝3750个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "位置选择数为组合数C(4,2)=6，每个位置对应五个符合奇偶要求的数字。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本次主筛选排除10000－3750＝6250个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "用初始候选空间减去主筛选后空间。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "使用 case_bundle 要求的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示条目14664取前四为1466，奇偶结构为单双双双，其中单号数量为1，因此不符合已固定的筛选条件。",
+      "claim_type": "calculation",
+      "evidence_note": "依据 case_bundle 的 latest_draw 与 latest.values，逐位检查奇偶，并与冻结条件比较。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个演示结果只展示如何执行条件，不用于反推参数，也不构成预测证据。",
+      "claim_type": "editorial",
+      "evidence_note": "演示数据只用于描述和执行说明，不参与本篇静态参数生成。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源材料仅作为奇偶筛选这一类经验思路的归档线索，相关经验尚未独立验证。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅作技巧家族层面的来源归属，不推断原文具体参数或效果。",
+      "support_refs": [
+        "BRBCW-004589"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "本篇的取位范围、单号数量条件和停止位置均由系统研究合同确定，不能归给原文。",
+      "claim_type": "editorial",
+      "evidence_note": "落实来源参数归因限制。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "候选空间计算由玩法机制支持；演示条目的检查由演示数据支持；两者都不能替来源经验补出效果证明。",
+      "claim_type": "editorial",
+      "evidence_note": "区分规则、演示和来源三类证据职责。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成主筛选并核对候选规模后立即停止，不临时追加和值、跨度、冷热或遗漏条件。",
+      "claim_type": "editorial",
+      "evidence_note": "本篇只允许执行合同指定的唯一静态筛选阶段。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且能够复算时，才允许在另行明确的研究方案中继续缩小候选；本篇到既定阶段结束。",
+      "claim_type": "editorial",
+      "evidence_note": "落实新增条件的证据门槛，同时保留本篇执行后停止的边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>本文把“前四、odd_count、odd_count=2”固定为系统研究预设，阶段名称为“恰好2个单号”。这项设置在查看演示样本前确定，具体参数不能写成来源推荐，也不能据此宣称预测优势。</p><h2>哪些参数归系统研究</h2><p>先把设置写清楚：selector为“前四”，metric为“odd_count”，参数为“odd_count=2”。这里的单号指奇数数字。</p><p>“恰好2个单号”只限制前四中的单号数量，不固定单号所在的位置。不要在执行时悄悄加上某个位置必须为单号的要求，否则已经改变了研究条件。</p><h2>先算理论空间，再看演示</h2><p>按本文采用的前四直选机制，候选由有顺序的四位数字组成，每位可取0至9，允许重复，也保留首位为0的组合。因此，筛选前的理论候选空间是10×10×10×10＝10000个有序组合。</p><p>单号是1、3、5、7、9，双号是0、2、4、6、8，0按双号处理。</p><p>四个位置中选择两个放单号，共有6种位置安排；每种安排的各位都有5种数字可选，因此保留空间为6×5×5×5×5＝3750个有序组合。本次主筛选排除10000－3750＝6250个有序组合。</p><h2>哪些结果由演示样本计算</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>演示条目14664取前四为1466，奇偶结构为单双双双，其中单号数量为1，因此不符合已固定的筛选条件。</p><p>这个演示结果只展示如何执行条件，不用于反推参数，也不构成预测证据。演示条目有多少，与理论候选空间是不同的概念，不能拿样本条数作为筛选前的空间。</p><h2>来源能支持什么、不能支持什么</h2><p>来源材料仅作为奇偶筛选这一类经验思路的归档线索，相关经验尚未独立验证。</p><p>本篇的取位范围、单号数量条件和停止位置均由系统研究合同确定，不能归给原文。候选空间计算由玩法机制支持；演示条目的检查由演示数据支持；两者都不能替来源经验补出效果证明。</p><h2>实际怎么操作</h2><ol><li>查看样本前，记录取位范围、统计指标、固定参数和停止位置，并保存这份设置。</li><li>按前四直选机制列出完整有序候选，保留首位为0及数字重复的组合。</li><li>逐个统计候选前四中的单号数量，仅保留符合冻结条件的候选，不附加位置要求。</li><li>用上文的位置安排与乘法计算核对保留规模，再用初始规模减去保留规模，检查排除数量。</li><li>把演示条目单独用于检查取位和奇偶计数是否正确，记录结果后按停止条件结束。</li></ol><h2>为什么不能事后改参数</h2><p>如果看过样本后，为了让某个条目通过而修改单号数量，就把原先的静态设置换掉了。这样无法分清结果来自预先确定的条件，还是来自观察后的调整。</p><p>操作记录应保留原设置和检查结果。若要研究其他条件，应另建方案，重新说明参数归属与观察顺序，不把修改后的结果混入本篇。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>空间变小只回答哪些组合被保留，不能单凭这一点判断筛选效果。读者需要分别核对参数是谁定的、计算是否正确、效果有没有独立证据。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成主筛选并核对候选规模后立即停止，不临时追加和值、跨度、冷热或遗漏条件。</p><p>只有新增条件具有已验证规则或证据，并且能够复算时，才允许在另行明确的研究方案中继续缩小候选；本篇到既定阶段结束。</p>",
+  "content_format": "html",
+  "content_hash": "ada806a9dc2b742ec9d353a9e1a85cf8bb696c5d9cfa2d478b8268f664775510",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261104",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "365101cda331450f70a9bfa97e1d64ca539d33b581734dbec3accccba20d5dda",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前四直选奇偶参数设置：说明静态参数的系统研究归属，复算筛选前后候选空间，用演示数据核对执行方法，并明确来源经验、参数设置和预测证据的边界。",
+  "play": "前四直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后保留3750个有序组合，排除6250个有序组合。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许在另行明确的研究方案中继续缩小候选；本篇完成唯一主筛选后停止。",
+    "parameter_freeze_rule": "查看样本前固定selector=前四、metric=odd_count、params.odd_count=2及停止位置；这些设置归系统研究，不归来源，也不由演示数据推导。",
+    "starting_space": "筛选前为10000个有序四位数字组合，包含首位为0及数字重复的组合。",
+    "steps": [
+      "在查看演示样本前保存取位范围、指标、参数和停止条件。",
+      "建立前四直选完整有序候选空间，检查首位为0和重复数字没有被误删。",
+      "统计每个候选的单号数量，仅保留恰好2个单号的候选，不限制单号位置。",
+      "按6×5×5×5×5复算保留规模，再以10000减去3750核对排除规模。",
+      "单独使用演示条目核对取位与奇偶计数，记录检查结果，不反向修改参数。",
+      "完成规模核对后停止，不追加缺少已验证依据的其他过滤器。"
+    ],
+    "stop_condition": "完成“恰好2个单号”阶段、核对保留3750及排除6250后停止；本篇不设置第二筛选阶段。"
+  },
+  "primary_keyword": "分分彩前四直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0c82636c70c1f26e016aeae598abb487d188038ef935e01dd1",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "区分前四直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩前四直选奇偶参数设置",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先定规则还是先看样本？这一玩法参数问题这样区分",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front4-odd-even-parameter-boundary",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "围绕分分彩前四直选奇偶参数设置，明确静态筛选条件属于系统研究预设，解释候选空间的复算方法，并用演示条目检查执行过程。来源仅承担经验思路的归档归属，演示样本不负责生成参数，完成主筛选后按合同停止。",
+  "tags": [
+    "分分彩",
+    "前四直选",
+    "奇偶参数",
+    "系统研究",
+    "证据边界"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "先定规则还是先看样本？这一玩法参数问题这样区分",
+  "title_candidates": [
+    "哪些参数能提前固定？前四直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用前四直选奇偶拆开看",
+    "从参数到结果：前四直选奇偶哪些能预设，哪些不能事后改",
+    "前四直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前四直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用前四直选奇偶拆开看",
+      "从参数到结果：前四直选奇偶哪些能预设，哪些不能事后改",
+      "前四直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-6f058f0954d5ee63",
+          "score": 0.375,
+          "title": "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.0952,
+          "intent_term_hits": [
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "参数",
+            "样本"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先定规则还是先看样本？这一玩法参数问题这样区分"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

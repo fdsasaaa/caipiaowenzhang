@@ -1,0 +1,199 @@
+{
+  "angle_signature": "d815c6fb5cb95ce0aea3",
+  "approved_at": "2026-11-04T08:18:31.745293+00:00",
+  "article_id": "LCM-ANGLE-232b05b772844e1d",
+  "case_scope": "mechanics_only",
+  "category": "技巧研究",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选按两个位置区分顺序，每个位置均有0至9这10种取值，因此理论组合总数为10×10＝100。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已验证的后二直选位置规则；100为两个位置取值数量的乘积，不涉及筛选方案或开奖样本。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两个位置的数字相加，和值范围为0至18。设和值为s，其对应的有序组合数为：s在0至9时，数量为s＋1；s在10至18时，数量为19－s。",
+      "claim_type": "calculation",
+      "evidence_note": "由两个位置各取0至9的规则推导：固定和值后，统计满足取值边界的有序数字对。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把全部和值类别的组合数相加，应回到100；对于事先定义的和值类别，类别内数量与类别外数量之和也应为100。",
+      "claim_type": "calculation",
+      "evidence_note": "不同和值类别互不重叠，并共同覆盖全部有序组合；类别内外的计数关系由集合划分直接得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "预先固定参数、区分探索样本与样本外数据，并记录后续修改，有助于检查研究结论是否依赖事后挑选。",
+      "claim_type": "methodology",
+      "evidence_note": "属于公开版的研究方法说明，不声称已完成样本外检验，也不报告任何实测效果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "用于明确组合计数、历史描述与未来预测结论之间的证据边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先分清位置与组合</h2><p>核对后二直选和值注数，首先要明确计数对象：这里统计的是按位置区分的理论有序组合。</p><p>后二直选的两个位置各有0至9这10种取值，因此理论组合总数为10×10＝100。两个位置的取值不同时，交换位置会形成另一个有序组合，计数时需要区分。</p><p>本文只解释规则与组合数学，不列出具体候选号码，也不提供逐期选择方案。</p><h2>和值类别怎样计数</h2><p>两个位置的数字相加，和值范围为0至18。设和值为s，其对应的有序组合数可以分成两段理解。</p><p>s在0至9时，组合数为s＋1；s在10至18时，组合数为19－s。这是两个位置取值边界共同决定的计数结果。</p><p>各和值类别的组合数量并不相同。比较类别数量时，应先按规则计算，不能把每个和值类别都当成同样大小。</p><h2>用总量关系检查计算</h2><p>把全部和值类别的组合数相加，应回到100。这可以用于检查是否出现漏计，或是否把有序组合误当成不区分顺序的组合。</p><p>对于事先定义的和值类别，类别内数量与类别外数量之和也应为100。两种方向的计算应当一致。</p><p>这些等式核对的是分类与计数是否自洽。它们本身没有检验任何未来预测效果。</p><h2>历史复盘需要哪些边界</h2><p>如果研究涉及历史样本，可以在查看结果前记录分类参数、样本范围和评价指标，并区分用于探索的数据与用于样本外验证的数据。</p><p>预先固定参数、区分探索样本与样本外数据，并记录后续修改，有助于检查研究结论是否依赖事后挑选。修改后的分析应说明修改发生的时间与原因。</p><p>历史复盘还应考虑随机波动，避免仅凭局部表现作出过强解释。本文没有提供历史样本检验结果。</p><h2>组合数量不等于预测优势</h2><p>某个类别包含多少组合，是组合数学问题；它是否具有未来预测价值，则需要另外的证据。类别数量减少，只表示分类范围发生变化。</p><p>结构分类或历史样本表现不能单独证明未来预测优势。不能把组合数量、历史出现次数或局部样本表现直接写成未来命中率、收益保证或稳定盈利能力。</p>",
+  "content_format": "html",
+  "content_hash": "047ae2569e6deed937a84f411c3dc9914de715e0ae6e330be7797393251dd284",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261104",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "c7f6d0c8e0e5c1682850395ca326c9d1ca9957c35f6c2a40278d6f5315b45cfd",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从有序组合出发，解释后二直选和值注数的计算公式与总量复核方法，并说明参数预注册、样本外验证及历史表现的证据边界。",
+  "parent_content_hash": "1b0a50098e5c76a21870d3270c90eccff019a8eaeb3b3b79b7f751d7709b90a7",
+  "parent_fingerprint": "232b05b772844e1d0426bfbde59bc613cefc58603d9f67bec64e22be0b6e734b",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0789f64b27097c90016aeae79dc09087d1bb4fa0005e81c4f0",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-04T08:18:31.745314+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-232b05b772844e1d:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "围绕“分分彩后二直选和值注数计算”，理解有序候选空间、和值类别计数及类别内外数量的复核关系，厘清组合计数与未来预测效果的区别。",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从输入到结果：后二直选和值的空间计算与样本外验证",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-后二直选-sum_range-space_math",
+  "source_batch_id": "DAILY-20261104",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "以后二直选的有序位置规则为基础，说明100个理论组合的来源、不同和值的通用计数公式，以及类别内外数量的复核关系。不复用具体筛选区间或执行步骤，并明确结构分类和历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值注数计算",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "从输入到结果：后二直选和值的空间计算与样本外验证",
+  "title_candidates": [
+    "候选空间为什么会变？后二直选和值的计算过程一次理清",
+    "先算注数，再谈后二直选和值：组合数学能说明到哪一步",
+    "从输入到结果：后二直选和值的空间计算与样本外验证",
+    "后二直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂后二直选的后二直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？后二直选和值的计算过程一次理清",
+      "先算注数，再谈后二直选和值：组合数学能说明到哪一步",
+      "从输入到结果：后二直选和值的空间计算与样本外验证",
+      "后二直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂后二直选的后二直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-300458fdcf25b6c9",
+          "score": 0.7916666666666666,
+          "title": "从输入到结果：五星直选大小奇偶的空间计算与样本外验证"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3182,
+          "intent_term_hits": [
+            "后二",
+            "直选",
+            "和值",
+            "后二直选和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "样本",
+            "后二直选和值"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从输入到结果：后二直选和值的空间计算与样本外验证"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,32 @@
+{
+  "approved_public_release_count": 2,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-232b05b772844e1d",
+      "content_hash": "047ae2569e6deed937a84f411c3dc9914de715e0ae6e330be7797393251dd284",
+      "fingerprint": "c7f6d0c8e0e5c1682850395ca326c9d1ca9957c35f6c2a40278d6f5315b45cfd",
+      "path": "articles/public_release/DAILY-20261104/LCM-ANGLE-232b05b772844e1d.public-r1.json",
+      "primary_keyword": "分分彩后二直选和值注数计算",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-232b05b772844e1d:public-r1",
+      "slug": "分分彩-后二直选-sum_range-space_math"
+    },
+    {
+      "article_id": "LCM-ANGLE-365101cda331450f",
+      "content_hash": "827eb603176e945dc5641d34cfcd991e486722a6eeaf36c33e98617df8fd3c13",
+      "fingerprint": "232f3c04634be59eb1934989acc37cdd28697b159d62ef2affbf6244b521289a",
+      "path": "articles/public_release/DAILY-20261104/LCM-ANGLE-365101cda331450f.public-r1.json",
+      "primary_keyword": "分分彩前四直选奇偶参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-365101cda331450f:public-r1",
+      "slug": "ffc-front4-odd-even-parameter-boundary"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 2,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261104",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

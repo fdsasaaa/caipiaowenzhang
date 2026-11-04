@@ -1,0 +1,215 @@
+{
+  "angle_signature": "79af1bca16a3b94c018c",
+  "approved_at": "2026-11-04T08:17:36.290359+00:00",
+  "article_id": "LCM-ANGLE-365101cda331450f",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前四直选按有顺序的四位数字组合讨论，每位可取0至9，允许数字重复，也保留首位为0的组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已批准父稿引用的前四直选机制，说明位置顺序、每位取值、重复及首位为0的处理方式。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "四个位置各有10种取值，因此完整理论空间为10×10×10×10＝10000个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "由四个有序位置各有10种取值，按乘法原理直接计算；该数量是理论空间规模。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "十进制数字中，奇数与偶数各有5个，0按偶数处理。",
+      "claim_type": "rule_fact",
+      "evidence_note": "沿用父稿规则依据中的奇偶分类口径，不列出具体数字池。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "如果仅按四个位置中的奇数数量分类，奇数数量为k的类别规模可写为C(4,k)×5⁴，其中k为0至4之间的整数。",
+      "claim_type": "calculation",
+      "evidence_note": "先从四个位置中选择k个奇数位置，再对每个位置计入5种相应取值，得到通用分类公式；未指定采用哪一类。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "研究预设参数、来源经验和样本检查应分别记录，不能把研究者自行确定的条件写成来源材料的推荐。",
+      "claim_type": "methodology",
+      "evidence_note": "公开稿提出的研究归属与记录原则，不作为已验证的玩法效果结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "看过样本后调整条件，再用同一批样本说明条件有效，会混淆参数形成与效果评估。",
+      "claim_type": "methodology",
+      "evidence_note": "说明事后调整与重复使用样本的评估局限，不声称任何特定参数具有实际优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确公开正文的证据边界，避免将组合计数或历史复盘解释为预测承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>讨论分分彩前四直选的奇偶参数时，首先要分清：条件由谁提出、何时确定，以及样本究竟用于检查什么。本文从组合数学和研究方法出发，解释参数预设、来源经验与历史复盘之间的区别。</p><h2>研究预设与来源经验分别记录</h2><p>研究预设参数、来源经验和样本检查应分别记录，不能把研究者自行确定的条件写成来源材料的推荐。</p><p>来源材料可以作为研究问题的线索。具体采用什么统计口径、如何划分类别、以什么标准评价结果，则应在研究记录中另行说明。经验的出处与效果是否得到验证，是两个不同的问题。</p><h2>先理解前四直选的理论空间</h2><p>前四直选按有顺序的四位数字组合讨论，每位可取0至9，允许数字重复，也保留首位为0的组合。</p><p>四个位置各有10种取值，因此完整理论空间为10×10×10×10＝10000个有序组合。这里计算的是玩法机制下的全部可能组合，历史资料收录了多少条记录则属于样本规模。</p><p>位置顺序是理解这一机制的关键。仅描述奇数数量，与进一步规定奇数所在的位置，属于不同的研究条件，应分别表述。</p><h2>奇偶分类如何用数学表达</h2><p>十进制数字中，奇数与偶数各有5个，0按偶数处理。</p><p>如果仅按四个位置中的奇数数量分类，奇数数量为k的类别规模可写为C(4,k)×5⁴，其中k为0至4之间的整数。</p><p>C(4,k)表示从四个位置中选出k个奇数位置的方式数；其余部分来自各位置对应的数字取值数量。这一公式用于解释分类规模，本文不据此指定应采用哪一类。</p><h2>预注册让研究过程更清楚</h2><p>预注册可以理解为：在查看用于评价的样本之前，留下带有时间记录的研究说明。说明应涵盖研究问题、取位范围、统计指标、分类定义与评价方法。</p><p>看过样本后调整条件，再用同一批样本说明条件有效，会混淆参数形成与效果评估。若观察结果引出了新问题，可以把它记录为新的研究假设，并与原来的分析分开。</p><h2>历史复盘与样本外验证各看什么</h2><p>历史复盘适合检查定义是否一致、数据处理是否正确，以及观察结果如何随样本区间变化。复盘时应区分规则计算、数据记录和研究者的解释。</p><p>样本外验证的基本思路，是将参与形成条件的数据与用于评价的数据分开。评价指标和比较基准也宜提前说明，避免只挑选有利的区间或结果展示。</p><p>随机波动、样本数量和反复尝试条件等因素，都应纳入结果讨论。某段历史中的差异，需要结合这些因素审视。</p><h2>分类规模不等于预测优势</h2><p><strong>结构分类或历史样本表现不能单独证明未来预测优势。</strong></p><p>组合计数回答某类结构包含多少个有序组合；历史统计描述已观察到的数据。两者承担的证据角色不同，不能用分类规模替代效果验证。</p><p>阅读此类研究时，可以关注参数来源是否明确、观察顺序是否透明、计算是否可复核，以及结论是否超出了证据范围。本文用于玩法机制与研究方法教育，不提供候选号码、逐期选择或投注执行方案。</p>",
+  "content_format": "html",
+  "content_hash": "827eb603176e945dc5641d34cfcd991e486722a6eeaf36c33e98617df8fd3c13",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261104",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "232f3c04634be59eb1934989acc37cdd28697b159d62ef2affbf6244b521289a",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从组合数学与研究方法理解前四直选奇偶参数，区分研究预设、来源经验和历史复盘，解释理论空间、预注册与样本外验证的证据边界。",
+  "parent_content_hash": "ada806a9dc2b742ec9d353a9e1a85cf8bb696c5d9cfa2d478b8268f664775510",
+  "parent_fingerprint": "365101cda331450f70a9bfa97e1d64ca539d33b581734dbec3accccba20d5dda",
+  "play": "前四直选",
+  "primary_keyword": "分分彩前四直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0c82636c70c1f26e016aeae598abb487d188038ef935e01dd1",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-04T08:17:36.290377+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-365101cda331450f:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT4-DIRECT-V1"
+  ],
+  "search_intent": "回应“分分彩前四直选奇偶参数设置”的信息查询需求，区分研究预设参数与来源经验，解释组合空间、预注册和样本外验证，并明确历史结构不能单独证明未来预测优势。",
+  "secondary_keywords": [
+    "分分彩前四直选奇偶参数设置",
+    "分分彩技巧",
+    "前四直选技巧",
+    "分分彩前四直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先定规则还是先看样本？前四直选参数问题这样区分",
+  "site_category_key": "tzjq",
+  "slug": "ffc-front4-odd-even-parameter-boundary",
+  "source_batch_id": "DAILY-20261104",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前四直选",
+  "summary": "以教育与研究视角解释前四直选的有序组合机制和奇偶分类数学，厘清参数预设、来源经验及样本检查的不同作用，并说明预注册、历史复盘与样本外验证的基本原则及证据边界。",
+  "tags": [
+    "分分彩",
+    "前四直选",
+    "奇偶参数",
+    "系统研究",
+    "证据边界"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "先定规则还是先看样本？前四直选参数问题这样区分",
+  "title_candidates": [
+    "哪些参数能提前固定？前四直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用前四直选奇偶拆开看",
+    "从参数到结果：前四直选奇偶哪些能预设，哪些不能事后改",
+    "前四直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？前四直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前四直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用前四直选奇偶拆开看",
+      "从参数到结果：前四直选奇偶哪些能预设，哪些不能事后改",
+      "前四直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？前四直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-IDEA-6f058f0954d5ee63",
+          "score": 0.2916666666666667,
+          "title": "先看规则，再看案例：这一玩法里的五星直选频率怎样正确理解"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2857,
+          "intent_term_hits": [
+            "前四",
+            "直选",
+            "参数",
+            "样本"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前四",
+            "直选",
+            "参数",
+            "样本"
+          ],
+          "subject_play": "前四直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先定规则还是先看样本？前四直选参数问题这样区分"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

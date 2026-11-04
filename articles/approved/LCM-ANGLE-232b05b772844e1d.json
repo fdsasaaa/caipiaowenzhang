@@ -1,0 +1,298 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "space_math",
+    "deliverable_summary": "把候选空间的确定性数学过程算清楚：起点100、终点58、排除42。",
+    "evidence_mode": "static_only",
+    "excluded_space": 42,
+    "final_space": 58,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "核对后二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值6–12"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "d815c6fb5cb95ce0aea3",
+  "approved_at": "2026-11-04T08:07:49.154944+00:00",
+  "article_angle_contract": {
+    "angle_type": "space_math",
+    "contract_id": "AAC-7c6fb644138d4fbb",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选和值注数计算",
+    "reader_question": "核对后二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+    "required_deliverable": "把候选空间的确定性数学过程算清楚：起点100、终点58、排除42。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 42,
+      "final_space": 58,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值6–12"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12"
+      ]
+    },
+    "required_outline": [
+      "先定义候选空间",
+      "逐层计算保留与排除数量",
+      "核对起点、终点和总排除",
+      "为什么这些数字不是命中率",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "核对后二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把候选空间的确定性数学过程算清楚：起点100、终点58、排除42。",
+    "title": "分分彩后二直选和值注数计算：100个候选为什么变成58个，排除42个怎么算",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-232b05b772844e1d",
+  "case_scope": "mechanics_only",
+  "category": "技巧研究",
+  "claim_evidence": [
+    {
+      "claim_text": "本文的演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "按案例包要求明确标注演示数据性质。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按给定玩法规则，后二直选的候选空间是两个位置各取0至9组成的有序数字对，起点为10×10=100个。",
+      "claim_type": "calculation",
+      "evidence_note": "依据已核验的后二直选位数机制计算两个位置的有序组合数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇只使用一个和值筛选：保留和值6至12，端点都包含在内。",
+      "claim_type": "editorial",
+      "evidence_note": "说明本篇系统研究合同中的唯一筛选及参数，不将参数归因于来源。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "两个数字的和值为6、7、8、9、10、11、12时，对应有序候选数依次是7、8、9、10、9、8、7个。",
+      "claim_type": "calculation",
+      "evidence_note": "逐个按有序数字对计数；同和值下交换位置仍分别计为不同候选。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "相加得到7+8+9+10+9+8+7=58，因此主筛选后剩58个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "对和值6至12各和值对应的有序候选数求和。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值0至5共有1+2+3+4+5+6=21个候选，和值13至18共有6+5+4+3+2+1=21个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "分别统计筛选区间之外两侧的有序数字对。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "两侧合计排除21+21=42个；也可用100−58=42复核。",
+      "claim_type": "calculation",
+      "evidence_note": "以区间外计数及起点减终点两种方式复核排除数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这里的100、58和42是候选空间的组合计数，不是命中率、成功率或未来结果的预测。",
+      "claim_type": "editorial",
+      "evidence_note": "解释候选集合缩小的含义与边界，不作预测优势声称。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果没有新增且已验证、可复算的条件，就在和值6至12这一层停止，不临时增加第二个过滤器。",
+      "claim_type": "editorial",
+      "evidence_note": "按实操合同明确停止条件。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>先定义候选空间</h2><p>本文核对的问题很具体：后二直选从100个候选开始，按和值6至12保留后为什么是58个，排除数为什么是42个。</p><p>按给定玩法规则，后二直选的候选空间是两个位置各取0至9组成的有序数字对，起点为10×10=100个。这里按位置区分顺序，例如前后位置互换时，作为有序候选分别计算。</p><p>本文的演示数据，不是真实开奖记录。演示样本用于说明数据性质，不参与理论候选空间的计算。</p><h2>逐层计算保留与排除数量</h2><p>本篇只使用一个和值筛选：保留和值6至12，端点都包含在内。这是系统研究合同预先固定的参数，不是来源推荐，也不是从演示样本中反推出来的。</p><p>两个数字的和值为6、7、8、9、10、11、12时，对应有序候选数依次是7、8、9、10、9、8、7个。按和值逐项相加：7+8+9+10+9+8+7=58，因此主筛选后剩58个候选。</p><p>再从区间外复核：和值0至5共有1+2+3+4+5+6=21个候选，和值13至18共有6+5+4+3+2+1=21个候选。两侧合计排除21+21=42个；也可用100−58=42复核。</p><h2>实际怎么操作：按固定参数复算</h2><ol><li>先按后二直选的两个有序位置建立候选空间，确认筛选前为100个。</li><li>在查看任何样本前，固定唯一主筛选为和值6至12，且包含两个端点。</li><li>按和值分别计数：7、8、9、10、9、8、7个。</li><li>把保留数相加，得到58；再把和值区间外两侧相加，得到排除数42。</li><li>核对100−58=42，并在这一层结束计算。</li></ol><h2>为什么这些数字不是命中率</h2><p>这里的100、58和42是候选空间的组合计数，不是命中率、成功率或未来结果的预测。候选集合变小，只说明按固定条件排除了一部分组合，不能据此声称筛选带来预测优势。</p><h2>边界与停止条件</h2><p>和值范围是本篇系统研究合同指定的静态参数；来源参数归属不在本次说明范围内。本文不讨论未核验的平台经济参数。</p><p>如果没有新增且已验证、可复算的条件，就在和值6至12这一层停止，不临时增加第二个过滤器。只有新增条件具有已验证规则或证据，并且计算过程可复算时，才允许继续缩小候选空间。</p>",
+  "content_format": "html",
+  "content_hash": "1b0a50098e5c76a21870d3270c90eccff019a8eaeb3b3b79b7f751d7709b90a7",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261104",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "232b05b772844e1d0426bfbde59bc613cefc58603d9f67bec64e22be0b6e734b",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "space_math",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值注数计算：按和值6至12核对100个候选保留58个、排除42个的确定性过程，并说明操作步骤与停止条件。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "58个候选：和值6至12（含端点）的有序二位数字对。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选空间；不得临时拼接未经验证的过滤器。",
+    "parameter_freeze_rule": "查看样本前固定唯一主筛选参数：后二直选两个有序数字的和值范围为6至12，端点包含；不得依据演示样本调整参数。",
+    "starting_space": "100个候选：两个位置分别取0至9，共10×10个有序数字对。",
+    "steps": [
+      "确定后二直选的有序候选空间，筛选前为100个。",
+      "在查看样本前固定和值6至12（含端点）这一项主筛选。",
+      "逐个和值计数：7、8、9、10、9、8、7个，合计保留58个。",
+      "统计区间外候选：低侧21个、高侧21个，合计排除42个。",
+      "用100−58=42复核排除数，并在合同规定的最终阶段停止。"
+    ],
+    "stop_condition": "完成和值6至12这一唯一主筛选后停止；没有新增且已验证、可复算的规则或证据时，不增加第二过滤器。"
+  },
+  "primary_keyword": "分分彩后二直选和值注数计算",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0789f64b27097c90016aeae79dc09087d1bb4fa0005e81c4f0",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "核对后二直选的候选空间计算，逐项确认100到58以及排除42个的确定性结果",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "后二直选和值怎么算才不混淆？复核候选空间的关键点",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-后二直选-sum_range-space_math",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "按固定的和值6至12筛选后二直选候选空间：从100个有序候选保留58个，排除42个。文章逐项复算计数，并说明参数预先固定、完成主筛选后停止，不把空间缩小解释为预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值注数计算",
+    "候选空间"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "后二直选和值怎么算才不混淆？复核候选空间的关键点",
+  "title_candidates": [
+    "候选空间为什么会变？后二直选和值的计算过程一次理清",
+    "先算注数，再谈后二直选和值：组合数学能说明到哪一步",
+    "从输入到结果：后二直选和值的空间计算与停止条件",
+    "后二直选和值怎么算才不混淆？复核候选空间的关键点",
+    "看懂这一玩法的后二直选和值，先分清计算结果和预测结论"
+  ],
+  "title_review": {
+    "candidates": [
+      "候选空间为什么会变？后二直选和值的计算过程一次理清",
+      "先算注数，再谈后二直选和值：组合数学能说明到哪一步",
+      "从输入到结果：后二直选和值的空间计算与停止条件",
+      "后二直选和值怎么算才不混淆？复核候选空间的关键点",
+      "看懂这一玩法的后二直选和值，先分清计算结果和预测结论"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 24
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-e4f3482c8b9bfe8b",
+          "score": 0.8260869565217391,
+          "title": "前四直选奇偶怎么算才不混淆？复核候选空间的关键点"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "analysis",
+            "editorial_colon",
+            "from_to_colon",
+            "question_how",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2727,
+          "intent_term_hits": [
+            "后二",
+            "直选",
+            "候选空间"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "候选空间",
+            "后二直选和值"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "后二直选和值怎么算才不混淆？复核候选空间的关键点"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

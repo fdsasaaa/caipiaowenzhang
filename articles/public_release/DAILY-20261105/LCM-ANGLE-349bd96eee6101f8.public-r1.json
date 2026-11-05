@@ -1,0 +1,189 @@
+{
+  "angle_signature": "8cc27e6edc16c84a7310",
+  "approved_at": "2026-11-05T08:36:11.614755+00:00",
+  "article_id": "LCM-ANGLE-349bd96eee6101f8",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "一星直选按个位位置考察单个数字，理论候选范围为0至9。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法位置与候选范围依据已核验的一星直选机制。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "频次排序、观察窗口、并列处理方式和保留数量属于研究参数；应在查看统计结果前预先确定，并保持记录可复核。",
+      "claim_type": "methodology",
+      "evidence_note": "这是参数预注册与复核方法说明，不代表相关参数具有预测效力。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "范围与风险说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本复算结果与既有记录出现差异时，应如实保留差异并暂停对该结果作确定性解释。",
+      "claim_type": "methodology",
+      "evidence_note": "这是研究记录与复核边界，不提供选号或执行建议。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究一星直选的冷热频率时，需要区分玩法规则、事先设定的统计方法与样本计算结果。频率描述的是给定历史样本中的出现情况，不等同于对后续结果的判断。</p><p>本文聚焦参数如何记录、历史统计如何复核，以及出现记录差异时应如何谨慎解释；不提供选号结果或投注建议。</p><h2>机制与研究参数</h2><p>一星直选关注个位上的单个数字，理论候选范围为0至9。这个范围属于玩法机制，不是某种彩票历史表现得出的结论。</p><p>观察多少期、如何排列频次、频次相同时如何处理，以及研究中如何描述候选规模，都属于统计方法的参数。为了减少事后调整带来的偏差，研究者可以在查看样本统计之前记录这些设定及其版本。</p><p>参数预先登记的作用是让分析过程更透明、更容易复核；它本身并不证明某种筛选方式有效。</p><h2>历史样本与复核</h2><p>历史频次是对既定样本的描述。复核时，应明确数据来源、样本范围、统计口径和计算规则，并确认记录的结果确实由这些输入和规则得出。</p><p>如果既有记录与按所述规则复算的结果不一致，应保留差异并检查输入、统计过程和记录版本。不能为了让结果吻合而在看到统计结果后改动原有参数。</p><p>复核通过也只说明计算过程与记录一致，不意味着结果能够预测未来。结构分类或历史样本表现不能单独证明未来预测优势。</p><h2>冷热频率的解释边界</h2><p>“热”与“冷”在此是对样本内频次相对高低的简写，不是未来结果的保证。样本长度、随机波动以及分析方式都会影响观察到的频次结构。</p><p>候选范围或统计类别发生变化，只能说明分析对象或描述方式发生变化；不能据此推断后续结果，也不能把历史排序包装成预测优势。</p><h2>研究记录与常见误区</h2><p>清晰的研究记录应把玩法机制、预先登记的方法和样本计算结果分开陈述，并说明哪些内容已经复核、哪些仍存在不确定性。</p><p>不要把来源材料的宽泛经验表述成具体参数背书，也不要把可重复计算误解为效果已获验证。若数据或计算口径存在疑问，应先澄清并记录限制，再对结论保持克制。</p>",
+  "content_format": "html",
+  "content_hash": "0c20f9ac6e16dfb286a5648360afeda28d0af81b09a8f1884a4f45ad30f6492b",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "02be671850203c44c878474cca61448254b2f0092bb098720990be74bc0aac89",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "介绍一星直选冷热频率研究中的玩法机制、参数预注册与历史样本复核，并说明频次分类不能单独证明未来预测优势。",
+  "parent_content_hash": "d5c4ef1950ea03b54c866c137b1f3c7a420391f19dceef180d635b11cdaf63d9",
+  "parent_fingerprint": "349bd96eee6101f8c73f5cec89dce44d450a6a699a2e3c92cbd8564dcebf9d7e",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选冷热参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_08d2d0b522790c6f016aec38f47b0487d18b632246b318ddc7",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-05T08:36:11.614777+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-349bd96eee6101f8:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "了解一星直选冷热频率研究中参数如何预先登记、历史样本如何复核，以及如何区分统计描述与预测结论。",
+  "secondary_keywords": [
+    "分分彩一星直选冷热参数设置",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩冷热频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+  "site_category_key": "tzjq",
+  "slug": "ffc-yixing-zhixuan-cold-hot-parameter-boundary",
+  "source_batch_id": "DAILY-20261105",
+  "source_refs": [
+    "BRBCW-008754"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "以教育和研究为导向，说明一星直选冷热频率分析中的机制、预先登记参数和复核边界。历史频次仅描述样本，结构分类或样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "冷热参数",
+    "参数边界",
+    "演示数据",
+    "复算检查"
+  ],
+  "technique_atoms": [
+    "cold_hot_split"
+  ],
+  "title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+  "title_candidates": [
+    "哪些参数能提前固定？一星直选冷热的边界先说清",
+    "来源经验和系统参数有什么区别？用一星直选冷热拆开看",
+    "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+    "一星直选冷热为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？一星直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？一星直选冷热的边界先说清",
+      "来源经验和系统参数有什么区别？用一星直选冷热拆开看",
+      "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+      "一星直选冷热为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？一星直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-53b41dc9762697c7",
+          "score": 0.8333333333333334,
+          "title": "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2727,
+          "intent_term_hits": [
+            "直选",
+            "冷热",
+            "参数",
+            "一星直选冷热"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "冷热",
+            "参数",
+            "一星直选冷热"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

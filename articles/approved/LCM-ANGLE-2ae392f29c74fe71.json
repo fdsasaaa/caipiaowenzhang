@@ -1,0 +1,298 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "明确后二直选奇偶筛选中的静态参数属于系统研究预设，来源仅提供技巧背景；复算候选空间变化，区分演示样本与参数依据，并在唯一筛选阶段完成后停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 50,
+    "final_space": 50,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "恰好1个单号"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "恰好1个单号"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "80af4f9ed857b77b10e8",
+  "approved_at": "2026-11-05T08:23:53.880674+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-c9c6b462ea0f7e96",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "odd_even_filter[odd_count=1/static]:100->50",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选奇偶参数设置",
+    "reader_question": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 50,
+      "final_space": 50,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "恰好1个单号"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "恰好1个单号"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩后二直选奇偶参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-2ae392f29c74fe71",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文的 selector 固定为“后二”，metric 固定为 odd_count，参数固定为 odd_count=1，阶段名称为“恰好1个单号”。",
+      "claim_type": "editorial",
+      "evidence_note": "由系统研究筛选合同指定，属于静态研究预设，不是来源推荐，也不是样本推导结果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "后二直选按末两位的顺序区分候选，每位可以取0至9，因此筛选前的理论候选空间为10×10=100个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "按后二直选位置与数字范围复算有序候选空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "单号为1、3、5、7、9，双号为0、2、4、6、8，各有5个数字。",
+      "claim_type": "rule_fact",
+      "evidence_note": "按数字奇偶定义分类，0归入双号。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "满足“恰好1个单号”的候选分为单双和双单，保留规模为5×5+5×5=50个有序组合，排除规模为100−50=50个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "在固定 odd_count=1 条件下，按互斥的两种位置排列计数；核验的是数学覆盖量，不是参数效果。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "案例包要求使用的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "案例包所列的最后一条演示记录为03575，取后二得到75，其中7和5都是单号，odd_count=2，不符合固定的 odd_count=1 条件。",
+      "claim_type": "calculation",
+      "evidence_note": "仅对演示记录进行取位与奇偶计数，不用于选择或修改参数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源提到奇偶筛选这一类经验方法；其经验效果尚未在本文中独立验证。",
+      "claim_type": "source_claim",
+      "evidence_note": "来源只支持广义技巧家族的出处，不支持具体参数、阶段设置或预测效果。",
+      "support_refs": [
+        "BRBCW-004589"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "本篇的参数值、冻结时点和停止位置都属于系统研究设定，不能写成来源推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "依据参数归属合同明确编辑边界。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文只核验规则与覆盖量，不把候选减少当成预测优势的证据。",
+      "claim_type": "editorial",
+      "evidence_note": "限定本文结论范围，不作预测效果声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>哪些参数归系统研究</h2><p>做分分彩后二直选奇偶参数设置，先要分清“参数从哪里来”和“计算是否正确”。计算能复核，并不代表参数就是来源推荐。</p><p>本文的 selector 固定为“后二”，metric 固定为 odd_count，参数固定为 odd_count=1，阶段名称为“恰好1个单号”。</p><p>这里的“单号”指奇数数字，不是单个候选号码。上述配置是系统研究预设，应先保存，再查看演示样本；不能根据样本表现倒过来选择参数。</p><h2>实际怎么操作：先冻结，再复算</h2><ol><li>建立参数记录，写下取位、指标、参数值和停止条件，并在观察样本前冻结。</li><li>列出后二直选的完整有序候选集合，不用演示记录条数代替理论空间。</li><li>对每个候选逐位判断奇偶，计算 odd_count，只保留符合预设条件的候选。</li><li>独立复核保留量与排除量，确认两者相加等于起始空间。</li><li>把演示记录用于检查取位和计数过程；完成主筛选后停止，不临时追加其他指标。</li></ol><p>后二直选按末两位的顺序区分候选，每位可以取0至9，因此筛选前的理论候选空间为10×10=100个有序组合。</p><p>单号为1、3、5、7、9，双号为0、2、4、6、8，各有5个数字。</p><p>满足“恰好1个单号”的候选分为单双和双单，保留规模为5×5+5×5=50个有序组合，排除规模为100−50=50个有序组合。</p><p>这项复算说明固定条件覆盖了哪些候选，不是在评价该参数是否更适合后续结果。</p><h2>哪些结果由演示样本计算</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>案例包所列的最后一条演示记录为03575，取后二得到75，其中7和5都是单号，odd_count=2，不符合固定的 odd_count=1 条件。</p><p>这只是一次取位与分类演示。记录不符合条件时，应如实记下结果，而不是为了让它通过就修改配置。</p><p>本篇没有使用样本生成数字池，也没有用样本中的频率、和值或跨度决定参数。演示记录数量与理论候选空间是不同概念，不能混用。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到奇偶筛选这一类经验方法；其经验效果尚未在本文中独立验证。</p><p>来源可用于交代方法背景，但不能替这份演示数据作证，也不能替具体配置背书。</p><p>本篇的参数值、冻结时点和停止位置都属于系统研究设定，不能写成来源推荐。</p><p>规则引用则用于复核玩法机制与组合计数。来源背景、规则依据和演示材料应分别记录，不互相替代。</p><h2>为什么不能事后改参数</h2><p>如果看完记录再改保留条件，研究问题就变了。这样得到的展示不再是对原先固定方案的检查。</p><p>需要研究其他配置时，应另建研究记录，重新写清参数和观察边界；不要覆盖原配置后仍把结果描述为预先设定。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>本文只核验规则与覆盖量，不把候选减少当成预测优势的证据。</p><p>分类演示不能代替效果验证，历史描述也不能直接用作未来判断。本文不讨论未核验的平台经济参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>执行固定奇偶筛选、核对候选规模并记录结果后，本篇流程即停止。</p><p>不要因为保留集合看起来仍然较大，就临时叠加和值、跨度或冷热条件。只有新增条件具有已验证规则或证据，并且能够复算时，才允许在另行明确的研究流程中继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "a21f318cfaf90a775e50a11aa3e091bbcbbb5e164744883b31b1500469b76cb4",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "2ae392f29c74fe717652d22719c028788afcfd83d244174cb0c36a79d6a5cb86",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选奇偶参数设置：说明固定奇偶参数为何属于系统研究预设，复算筛选前后的候选空间，区分来源经验与演示数据，并明确完成主筛选后的停止条件。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "主筛选后保留50个有序组合，排除50个有序组合。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据并可复算时，才允许在另行明确的研究流程中继续缩小候选；本文完成唯一静态阶段后不追加过滤器。",
+    "parameter_freeze_rule": "在查看样本前冻结 selector=后二、metric=odd_count、params={odd_count:1}，同时固定选择规则与停止条件；这些设置属于系统研究预设，不归属于来源推荐。",
+    "starting_space": "后二直选的完整理论候选空间为100个有序两位数组合，不是演示样本条数。",
+    "steps": [
+      "先记录并冻结 selector=后二、metric=odd_count、odd_count=1，阶段名称为“恰好1个单号”。",
+      "依据后二直选机制建立包含100个有序组合的完整候选空间。",
+      "逐个计算候选中的单号数量，仅保留 odd_count=1 的候选。",
+      "复算单双与双单的覆盖量，确认保留50个、排除50个，合计100个。",
+      "将案例仅用于核对取位与奇偶计数，保留演示标签，不据此修改参数。",
+      "完成主筛选后停止，记录参数归属、计算依据和结果，不临时追加第二过滤器。"
+    ],
+    "stop_condition": "唯一的“恰好1个单号”静态阶段完成且候选规模核对一致后立即停止；没有第二条已验证规则或证据时，不继续过滤。"
+  },
+  "primary_keyword": "分分彩后二直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0f5aed378d61528f016aec3cc6af7487d08d3542bf53b362b1",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩后二直选奇偶参数设置",
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last-two-odd-even-parameter-boundary",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "本文区分分分彩后二直选奇偶筛选中的系统研究预设、规则计算与演示材料：具体参数不是来源推荐，候选空间缩小也不证明预测优势。操作上先冻结参数，再复算覆盖量，完成唯一主筛选后停止。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "奇偶参数",
+    "参数边界",
+    "系统研究预设"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+  "title_candidates": [
+    "哪些参数能提前固定？后二直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用后二直选奇偶拆开看",
+    "从参数到结果：后二直选奇偶哪些能预设，哪些不能事后改",
+    "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？后二直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用后二直选奇偶拆开看",
+      "从参数到结果：后二直选奇偶哪些能预设，哪些不能事后改",
+      "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-171697158c894f6a",
+          "score": 0.8148148148148148,
+          "title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.12,
+          "intent_term_hits": [
+            "后二",
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "奇偶",
+            "后二直选奇偶"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

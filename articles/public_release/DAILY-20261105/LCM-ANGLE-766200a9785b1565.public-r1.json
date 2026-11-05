@@ -1,0 +1,208 @@
+{
+  "angle_signature": "6af717cb9fbf6125cdd1",
+  "approved_at": "2026-11-05T08:37:11.538747+00:00",
+  "article_id": "LCM-ANGLE-766200a9785b1565",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选取末两位并保留位置顺序，每一位有十种数字取值，因此完整空间包含10×10＝100种有序结果。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据已核验的后二直选机制说明取位、位置顺序与取值数量；总数由两个位置的取值数量相乘得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "将前一位记为a、后一位记为b，和值为a＋b，跨度为|a－b|。",
+      "claim_type": "rule_fact",
+      "evidence_note": "和值与跨度的定义来自已核验玩法机制。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "同一组固定的和值与跨度条件，如果仅作条件交集，交换检查顺序不会改变最终分类结果，但会改变中间各层的计数。",
+      "claim_type": "calculation",
+      "evidence_note": "由和值、跨度的确定性定义和集合交集的交换律推得；限定为同一组固定条件，不涉及根据中间结果调整参数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "属于公开正文的证据边界与风险说明，不主张任何参数具有预测效果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "在同一批样本上反复修改条件，再用该批样本评价修改后的表现，会引入事后选择偏差。",
+      "claim_type": "methodology",
+      "evidence_note": "属于研究方法说明，用于解释参数预注册和区分开发样本与验证样本的必要性；不作为特定玩法效果的实证结论。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究分分彩后二直选的和值与跨度参数时，需要区分三个问题：玩法如何定义、研究者预先设定了什么，以及研究结果能支持什么结论。计算正确，只能说明计算符合既定口径；参数的预测价值仍需独立证据。</p><h2>先理解和值与跨度</h2><p>后二直选取末两位并保留位置顺序，每一位有十种数字取值，因此完整空间包含10×10＝100种有序结果。位置顺序属于玩法机制，统计时不能随意合并。</p><p>将前一位记为a、后一位记为b，和值为a＋b，跨度为|a－b|。两者描述的是有序结果的数值特征，定义本身不包含对未来结果的判断。</p><h2>参数归属与预先登记</h2><p>研究记录应区分玩法规则、研究者选择的条件，以及观察样本后得到的统计结果。方法类别的来源，也应与具体参数的设定者分开说明。</p><p>参数预注册的作用，是留下观察结果之前的研究约定。记录内容可包括指标定义、区间端点口径、检查顺序、样本范围和评价标准。本文不指定具体区间或筛选方案。</p><p>若研究问题发生变化，可以建立新版本，并保留修改理由和时间。新旧版本应分别报告，避免把后来的调整写成最初就已确定的设计。</p><h2>分层计数能说明什么</h2><p>和值与跨度可以用于对完整结果空间作结构分类。分类记录应清楚说明每层统计的对象，避免把完整空间的计数与某段历史样本中的出现次数混为一谈。</p><p>同一组固定的和值与跨度条件，如果仅作条件交集，交换检查顺序不会改变最终分类结果，但会改变中间各层的计数。若条件随中间结果调整，就已经改变了研究设计。</p><p>分类后保留的结果数量，是组合数学问题。它本身不能回答未来结果是否更容易落入该类别。</p><h2>历史复盘与样本外验证</h2><p>在同一批样本上反复修改条件，再用该批样本评价修改后的表现，会引入事后选择偏差。复盘报告应交代参数是否提前固定，以及是否尝试过其他版本。</p><p>样本外验证可用于观察预先确定的方法在未参与参数选择的数据中的表现。评价时还应考虑样本规模、随机波动和比较基准，避免仅凭一段表现作出结论。</p><p><strong>结构分类或历史样本表现不能单独证明未来预测优势。</strong>本篇讨论的是规则理解、参数归属与研究证据边界，不提供候选号码或下一期建议。</p>",
+  "content_format": "html",
+  "content_hash": "1f4bd51f3c3d507341e62b5a80dd42a4432a2a22db0c896011c73431db5dade8",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "c750c88c40699a37a7415734b2479e1bd17d0794b9666bafa5555630a600dcd8",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从后二直选的和值与跨度定义出发，解释参数预注册、分层计数、历史复盘与样本外验证，厘清结构分类和未来预测优势之间的证据边界。",
+  "parent_content_hash": "d6f30f437f1ed29d65af6de83692fc8519e7811505bf15296a1afa5643f2f738",
+  "parent_fingerprint": "766200a9785b156583177f19d755670878f44e327d7a02193f7c2cc6525f2870",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选和值跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_06d18d2bce171316016aec3bc1aed487d2acd964f3179b513b",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-05T08:37:11.538766+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-766200a9785b1565:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "理解分分彩后二直选和值跨度参数设置的规则基础与研究边界，区分预先设定的参数、来源经验和样本结果，并了解为何计算正确或历史表现不能单独证明预测优势。",
+  "secondary_keywords": [
+    "分分彩后二直选和值跨度参数设置",
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+  "site_category_key": "tzjq",
+  "slug": "ffc-houer-zhixuan-hezhi-kuadu-parameter-boundary",
+  "source_batch_id": "DAILY-20261105",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "以教育与研究视角解释后二直选的有序结果空间、和值与跨度定义，说明参数归属、预注册和分层计数的含义，并讨论事后调整、历史复盘及样本外验证的证据边界，不提供具体筛选区间或执行方案。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值跨度",
+    "系统研究参数",
+    "参数冻结",
+    "来源边界"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+  "title_candidates": [
+    "哪些参数能提前固定？后二直选和值跨度的边界先说清",
+    "来源经验和系统参数有什么区别？用后二直选和值跨度拆开看",
+    "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+    "后二直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？后二直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？后二直选和值跨度的边界先说清",
+      "来源经验和系统参数有什么区别？用后二直选和值跨度拆开看",
+      "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+      "后二直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？后二直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-349bd96eee6101f8",
+          "score": 0.8,
+          "title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.4167,
+          "intent_term_hits": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度",
+            "参数",
+            "后二直选和值跨度"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度",
+            "参数",
+            "后二直选和值跨度"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

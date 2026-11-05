@@ -1,0 +1,52 @@
+{
+  "approved_public_release_count": 4,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-00c64ba19234dee7",
+      "content_hash": "c9df96f508bee611dcb39172d268c3120fb1918ada35e02ad2891cd3db377204",
+      "fingerprint": "d9a9f1ea6d5d7667224ebf9418f961e743a362bd143c519d798a2c70eae436e2",
+      "path": "articles/public_release/DAILY-20261105/LCM-ANGLE-00c64ba19234dee7.public-r1.json",
+      "primary_keyword": "分分彩前三组选3和值参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-00c64ba19234dee7:public-r1",
+      "slug": "分分彩-前三组选3-sum-range-parameter-boundary"
+    },
+    {
+      "article_id": "LCM-ANGLE-2ae392f29c74fe71",
+      "content_hash": "829d24f8d4d940805b7c707983c1772451695a3d5c3a0e444f44eb0fd481faf0",
+      "fingerprint": "72c0609b469addc4febd417d79fe31e449e0971ad51a21b8d1f106565ba4d420",
+      "path": "articles/public_release/DAILY-20261105/LCM-ANGLE-2ae392f29c74fe71.public-r1.json",
+      "primary_keyword": "分分彩后二直选奇偶参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-2ae392f29c74fe71:public-r1",
+      "slug": "ffc-last-two-odd-even-parameter-boundary"
+    },
+    {
+      "article_id": "LCM-ANGLE-349bd96eee6101f8",
+      "content_hash": "0c20f9ac6e16dfb286a5648360afeda28d0af81b09a8f1884a4f45ad30f6492b",
+      "fingerprint": "02be671850203c44c878474cca61448254b2f0092bb098720990be74bc0aac89",
+      "path": "articles/public_release/DAILY-20261105/LCM-ANGLE-349bd96eee6101f8.public-r1.json",
+      "primary_keyword": "分分彩一星直选冷热参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-349bd96eee6101f8:public-r1",
+      "slug": "ffc-yixing-zhixuan-cold-hot-parameter-boundary"
+    },
+    {
+      "article_id": "LCM-ANGLE-766200a9785b1565",
+      "content_hash": "1f4bd51f3c3d507341e62b5a80dd42a4432a2a22db0c896011c73431db5dade8",
+      "fingerprint": "c750c88c40699a37a7415734b2479e1bd17d0794b9666bafa5555630a600dcd8",
+      "path": "articles/public_release/DAILY-20261105/LCM-ANGLE-766200a9785b1565.public-r1.json",
+      "primary_keyword": "分分彩后二直选和值跨度参数设置",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-766200a9785b1565:public-r1",
+      "slug": "ffc-houer-zhixuan-hezhi-kuadu-parameter-boundary"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 4,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261105",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

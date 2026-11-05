@@ -1,0 +1,197 @@
+{
+  "angle_signature": "80af4f9ed857b77b10e8",
+  "approved_at": "2026-11-05T08:39:25.164919+00:00",
+  "article_id": "LCM-ANGLE-2ae392f29c74fe71",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "后二直选按末两位的顺序区分结果，每个位置有10种数字取值，因此理论空间为10×10＝100个有序组合。",
+      "claim_type": "rule_fact",
+      "evidence_note": "玩法位置、顺序要求与各位置取值范围依据规则引用；理论组合数由两个位置的取值数量相乘得到。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "十进制数字中，奇数与偶数各有5个。按两个位置的奇偶关系，可以分成奇奇、奇偶、偶奇、偶偶四类，每类均有5×5＝25个有序组合。",
+      "claim_type": "calculation",
+      "evidence_note": "依据规则规定的十进制取值范围进行奇偶分类。每个位置在任一奇偶类别中均有5种取值，两位置组合数为5×5。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确分类计算与预测效果之间的证据边界，不对任何参数作效果承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "研究记录应区分预先设定的参数与观察样本后提出的探索性修改。",
+      "claim_type": "methodology",
+      "evidence_note": "研究透明度与参数预注册的编辑性方法说明，不构成具体筛选配置。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本外验证可以帮助检查结论是否依赖某一段历史资料，但仍需考虑样本量、随机波动和重复比较的影响。",
+      "claim_type": "methodology",
+      "evidence_note": "说明历史研究的验证边界，不声称任何具体方法已经获得验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<h2>奇偶参数研究先区分两个问题</h2><p>讨论分分彩后二直选的奇偶参数时，需要分别回答：分类计算是否正确，以及参数是否具有充分的研究依据。这两个问题需要不同的证据。</p><p>本文围绕规则、组合数学和研究方法展开，不给出具体筛选配置。结构分类或历史样本表现不能单独证明未来预测优势。</p><h2>有序组合与奇偶分类</h2><p>后二直选按末两位的顺序区分结果，每个位置有10种数字取值，因此理论空间为10×10＝100个有序组合。</p><p>十进制数字中，奇数与偶数各有5个。按两个位置的奇偶关系，可以分成奇奇、奇偶、偶奇、偶偶四类，每类均有5×5＝25个有序组合。</p><p>这些数字描述的是理论空间中的分类规模。分类数量本身不足以说明某一类别更值得期待，也不能直接推出实际出现频率或未来效果。</p><h2>为什么要记录参数的形成时间</h2><p>研究记录应区分预先设定的参数与观察样本后提出的探索性修改。前者用于检验事先明确的问题，后者用于形成新的研究问题。</p><p>如果依据已经看到的结果修改条件，再把修改后的表现称为原设定的验证结果，就会混淆探索与检验。参数预注册的作用，是让研究问题、评价口径和观察范围保持可追溯。</p><p>某个参数出现在演示材料中，也不等于它获得了来源推荐。规则依据、方法背景与研究者自行作出的设定，应在文字中分别交代。</p><h2>历史复盘与样本外验证</h2><p>历史复盘可以用于检查取位、分类和计数是否一致。理论组合总数与历史记录条数属于不同概念，不能互相替代。</p><p>样本外验证可以帮助检查结论是否依赖某一段历史资料，但仍需考虑样本量、随机波动和重复比较的影响。一个条件在已观察资料中表现突出，仍需要进一步证据才能解释其意义。</p><p>演示数据也应清楚标注用途，避免读者将分类示例理解为真实历史表现或效果证明。</p><h2>如何阅读研究结论</h2><p>阅读相关文章时，可以留意结论究竟来自规则计算、历史描述，还是尚待检验的假设。计算可复核，只能支持对应的数学结论，不能自动替参数效果背书。</p><p>候选空间变小、某段历史比例较高、个别记录符合条件，都不足以单独建立未来预测优势。公开研究应保留这些证据边界，并如实呈现不确定性。</p>",
+  "content_format": "html",
+  "content_hash": "829d24f8d4d940805b7c707983c1772451695a3d5c3a0e444f44eb0fd481faf0",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "72c0609b469addc4febd417d79fe31e449e0971ad51a21b8d1f106565ba4d420",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "解释后二直选奇偶分类的组合数学，区分预设参数与事后修改，说明历史复盘、样本外验证及预测优势的证据边界。",
+  "parent_content_hash": "a21f318cfaf90a775e50a11aa3e091bbcbbb5e164744883b31b1500469b76cb4",
+  "parent_fingerprint": "2ae392f29c74fe717652d22719c028788afcfd83d244174cb0c36a79d6a5cb86",
+  "play": "后二直选",
+  "primary_keyword": "分分彩后二直选奇偶参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0f5aed378d61528f016aec3cc6af7487d08d3542bf53b362b1",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-05T08:39:25.164939+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-2ae392f29c74fe71:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "理解分分彩后二直选奇偶参数的研究设置，区分预设参数、规则计算与来源经验，并明确历史表现不能单独证明未来预测优势。",
+  "secondary_keywords": [
+    "分分彩后二直选奇偶参数设置",
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩奇偶筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+  "site_category_key": "tzjq",
+  "slug": "ffc-last-two-odd-even-parameter-boundary",
+  "source_batch_id": "DAILY-20261105",
+  "source_refs": [
+    "BRBCW-004589"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "从后二直选的有序组合与奇偶分类出发，解释参数预注册、历史复盘和样本外验证的作用，明确分类规模与历史表现的证据边界，不提供具体筛选配置或执行方案。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "奇偶参数",
+    "参数边界",
+    "系统研究预设"
+  ],
+  "technique_atoms": [
+    "odd_even_filter"
+  ],
+  "title": "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+  "title_candidates": [
+    "哪些参数能提前固定？后二直选奇偶的边界先说清",
+    "来源经验和系统参数有什么区别？用后二直选奇偶拆开看",
+    "从参数到结果：后二直选奇偶哪些能预设，哪些不能事后改",
+    "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？后二直选参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？后二直选奇偶的边界先说清",
+      "来源经验和系统参数有什么区别？用后二直选奇偶拆开看",
+      "从参数到结果：后二直选奇偶哪些能预设，哪些不能事后改",
+      "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？后二直选参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 27
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-171697158c894f6a",
+          "score": 0.8148148148148148,
+          "title": "前三直选和值跨度为什么不能看完结果再调？常见误区与风险边界"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.24,
+          "intent_term_hits": [
+            "后二",
+            "直选",
+            "奇偶",
+            "后二直选奇偶"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "奇偶",
+            "后二直选奇偶"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "后二直选奇偶为什么不能看完结果再调？常见误区与风险边界"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

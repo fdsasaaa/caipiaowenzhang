@@ -1,0 +1,306 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "说明和值9–18是系统研究预设参数，不是来源推荐；候选空间缩减和演示样本描述都不证明预测优势。",
+    "evidence_mode": "static_only",
+    "excluded_space": 44,
+    "final_space": 46,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分前三组选3中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "和值9–18"
+    ],
+    "starting_space": 90,
+    "static_stage_labels": [
+      "和值9–18"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "c701d0cb6c0c48b20e5e",
+  "approved_at": "2026-11-05T08:26:26.936835+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-856753f5880054bf",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=9,max=18/static]:90->46",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩前三组选3和值参数设置",
+    "reader_question": "区分前三组选3中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 44,
+      "final_space": 46,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "和值9–18"
+      ],
+      "starting_space": 90,
+      "static_stage_labels": [
+        "和值9–18"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分前三组选3中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩前三组选3和值参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-00c64ba19234dee7",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本篇只讨论玩法机制和参数边界，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "编辑范围说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文使用的样本材料必须标为“演示数据，不是真实开奖记录”。",
+      "claim_type": "editorial",
+      "evidence_note": "演示材料的标签来自 case_bundle。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "按规则参考所定义的前三组选3候选空间，本例筛选前有90个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "按规则参考中的玩法机制和本篇固定候选空间口径计算。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把和值范围固定为9至18后，保留46个候选，排除44个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "这是按已固定的和值筛选条件对候选空间进行的静态计算；不代表命中能力。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "这些演示样本可用于展示和值、跨度或频数等描述性统计怎样计算，但不能据此把参数说成由样本推导。",
+      "claim_type": "calculation",
+      "evidence_note": "仅说明 case_bundle 演示数据的用途和边界，不将样本统计作为参数来源。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源资料在本文中只作为和值筛选这一宽泛技巧方向的未验证线索；它不能证明来源推荐了9至18这一具体参数。",
+      "claim_type": "source_claim",
+      "evidence_note": "来源只支持宽泛技巧方向的归属线索；具体生产参数由系统研究合同定义。",
+      "support_refs": [
+        "BRBCW-001458"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "把参数在看样本前固定，可以避免看过样本后再挑选更合意的区间。",
+      "claim_type": "editorial",
+      "evidence_note": "按本文参数冻结原则给出的操作说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "完成和值9–18这一层后，当前合同要求停止，不临时增加第二个过滤条件。",
+      "claim_type": "editorial",
+      "evidence_note": "停止条件来自本篇 primary_filter_spec 和生产筛选合同。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件具有已验证规则或证据，并且能够复算时，才允许继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "本文的后续筛选政策。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "候选数减少只说明筛选条件改变了候选集合，不构成预测优势的证明。",
+      "claim_type": "editorial",
+      "evidence_note": "对静态候选空间计算边界的说明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>“和值9–18”是本文的系统研究预设，不是来源文章推荐的参数。筛选前后候选空间的变化可以复算，但不能据此推出预测优势。文中涉及的样本材料标为“演示数据，不是真实开奖记录”。</p><h2>哪些参数归系统研究</h2><p>本篇讨论的是分分彩前三组选3。固定筛选条件为前三位数字和值范围9至18，指标是和值，操作是按这个范围保留候选。这个范围属于系统研究预设，参数在观察样本前固定，不从演示样本倒推，也不归给来源。</p><p>按本篇采用的玩法规则口径，筛选前候选空间是90个；使用和值9至18这一层后，保留46个，明确排除44个。这里的候选空间是理论玩法空间，不是演示样本的条数。</p><h2>哪些结果由演示样本计算</h2><p>演示数据，不是真实开奖记录。演示材料可以用来展示如何整理和值、跨度或频数等描述性统计，但这些统计只描述给定材料，不负责决定本篇的和值区间。</p><p>因此要分清两件事：和值9至18是系统预设参数；从演示材料算出的统计结果属于样本描述。不能把后者写成来源参数，也不能因为样本中出现某种特征，就事后改写前者的来历。</p><h2>来源能支持什么、不能支持什么</h2><p>来源资料在本文中只作为和值筛选这一宽泛技巧方向的未验证线索。来源提到的方向不等于来源推荐本篇的具体范围；本文没有把9至18归因于来源。</p><p>来源线索不能替代规则核验，也不能证明某个参数有效。本文的具体参数归属系统研究，候选空间计算依据规则参考，二者不是来源经验的结论。</p><h2>为什么不能事后改参数</h2><p>参数要先固定，再查看样本。若看过样本后才挑选区间，读者就无法判断区间究竟是预先设定，还是根据已有材料挑出来的。本文将和值9至18作为固定参数，不因演示统计而临时调整。</p><h2>实际怎么操作</h2><ol><li>先确认目标是分分彩前三组选3，并按同一玩法口径确定理论候选空间。</li><li>记录筛选前空间：90个候选。此数是候选空间规模，不是演示样本条数。</li><li>在查看样本前固定唯一主筛选：前三位和值，范围9至18。</li><li>按固定条件复算筛选结果：保留46个候选，并记录排除44个候选。</li><li>把演示材料单独标为“演示数据，不是真实开奖记录”，只用来演示描述性统计，不用它更改参数。</li><li>完成这一层后停止；除非新增条件具有已验证规则或证据且可复算，否则不继续缩小候选。</li></ol><h2>边界与误区</h2><p>筛选后候选变少，是静态集合计算的结果，不表示筛出的候选更可能出现。本文不把和值区间或演示统计包装成预测优势，也不把来源线索写成具体参数推荐。</p><p>本篇合同只有“和值9–18”这一层。完成后按停止条件结束，不临时拼接第二个过滤器。本文不讨论未核验的平台经济参数。</p>",
+  "content_format": "html",
+  "content_hash": "e21a05e1910ff9707ca7b037a92e8bb7683f6045db3a03f5a14ea3aa50d63e00",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "00c64ba19234dee7e4451f503c8665fd413b56d44916fefd70f9a183ad4ccfe8",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩前三组选3和值参数设置说明：区分系统研究预设、来源线索与演示样本计算，复算候选空间变化，并明确参数不代表预测优势。",
+  "play": "前三组选3",
+  "practical_guidance": {
+    "after_primary_filter_space": "按前三组选3和值9至18的固定主筛选复算，候选空间为46个。",
+    "next_step_policy": "只有新增条件具有已验证规则或证据，并且能够复算时，才允许继续缩小候选空间。",
+    "parameter_freeze_rule": "在查看演示样本前固定指标为前三位和值、区间为9至18；参数归系统研究，不根据样本事后调整，也不归因于来源。",
+    "starting_space": "筛选前候选空间为90个；这是理论候选空间，不是演示样本条数。",
+    "steps": [
+      "确认目标玩法为分分彩前三组选3，并固定候选空间口径。",
+      "记录筛选前候选空间为90个。",
+      "在观察样本前固定唯一主筛选：前三位和值9至18。",
+      "按规则口径复算，保留46个候选，排除44个候选。",
+      "将样本标为“演示数据，不是真实开奖记录”，只作描述性演示，不用来倒推参数。",
+      "完成主筛选后停止；只有新增条件具有已验证规则或证据且可复算时，才允许继续缩小候选。"
+    ],
+    "stop_condition": "完成和值9至18这一层后停止，不临时增加第二过滤器；只有新增条件具备已验证规则或证据并可复算时，才允许继续。"
+  },
+  "primary_keyword": "分分彩前三组选3和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0b4194220769fb5b016aec3d76d5e087d2b9c7e5093548be3e",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+  ],
+  "search_intent": "区分前三组选3中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "前三组选3技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三组选3-sum-range-parameter-boundary",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三组选3",
+  "summary": "说明分分彩前三组选3中，和值9至18是系统研究预设而非来源推荐；静态候选空间从90个复算至46个，排除44个。演示数据只用于描述性计算，不构成预测优势证据。",
+  "tags": [
+    "分分彩",
+    "前三组选3",
+    "和值参数",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？前三组选3和值的边界先说清",
+    "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+    "从参数到结果：前三组选3和值哪些能预设，哪些不能事后改",
+    "前三组选3和值为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前三组选3和值的边界先说清",
+      "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+      "从参数到结果：前三组选3和值哪些能预设，哪些不能事后改",
+      "前三组选3和值为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-819b975da420036f",
+          "score": 0.8163265306122449,
+          "title": "来源经验和系统参数有什么区别？用中三直选频率拆开看"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "numeric",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [
+            "3"
+          ],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.375,
+          "intent_term_hits": [
+            "前三",
+            "组选3",
+            "组选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "组选3",
+            "组选",
+            "和值",
+            "参数",
+            "前三组选3和值"
+          ],
+          "subject_play": "前三组选3"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用前三组选3和值拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

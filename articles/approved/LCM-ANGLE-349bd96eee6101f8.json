@@ -1,0 +1,327 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "说明生成前冻结的系统选择规则、演示样本统计结果与来源归属之间的边界；保留合同规定的候选规模和参数，同时揭示合同数字池与样本排序结果不一致，停止执行，不把合同记录冒充已复算通过的结果。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 5,
+    "final_space": 5,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分一星直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+    "sample_stage_labels": [
+      "近12期热号前5数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期热号前5数字池"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "8cc27e6edc16c84a7310",
+  "approved_at": "2026-11-05T08:07:44.552306+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-ab378bae7ee0bcae",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "cold_hot_split[lookback=12,top_n=5/sample]:10->5",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选冷热参数设置",
+    "reader_question": "区分一星直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+    "required_deliverable": "解释参数归属边界：规则先冻结，样本型具体结果由演示数据计算，来源不得替系统参数背书。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 5,
+      "final_space": 5,
+      "sample_stage_labels": [
+        "近12期热号前5数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期热号前5数字池"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分一星直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释参数归属边界：规则先冻结，样本型具体结果由演示数据计算，来源不得替系统参数背书。",
+    "title": "分分彩一星直选冷热参数设置：哪些规则先冻结，哪些数字池只能由演示样本算出来",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-349bd96eee6101f8",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文使用的案例标记为：演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "采用 case_bundle 指定的演示标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本篇按个位的一星直选口径研究，起始候选是0至9，共10个单数字候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据给定一星直选末位机制引用；演示记录条数不参与理论候选空间计数。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本篇系统选择规则是：固定观察近12期，按出现频次从高到低排列，同频时按数字从小到大排列，取前5个数字。",
+      "claim_type": "editorial",
+      "evidence_note": "系统研究合同定义的选择规则，不属于来源推荐或经验证的预测规律。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "合同原样记录为：selector=个位；metric=top_frequency_digit_pool；lookback=12；top_n=5；production_top_n_policy=5；ranking=frequency_desc_then_digit_asc；ranking_source=full_frequency_table_top5；digits=[0,1,3,5,6]。",
+      "claim_type": "editorial",
+      "evidence_note": "逐项保留 case_bundle.primary_filter_spec 中的选择器、指标与参数；此处只是合同记录，不证明 digits 与样本计算一致。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "本合同只有“近12期热号前5数字池”这一阶段，规定主筛选后保留5个候选，排除5个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "合同规定 starting_space=10、after_filter_space=5、excluded_space=5；这里登记合同规模，不宣称样本数字池已通过一致性检查。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "供本次统计使用的近12期个位序列，按从早到晚排列为：9、4、4、7、0、4、8、1、4、5、9、1。",
+      "claim_type": "calculation",
+      "evidence_note": "取 case_bundle.draws 最后12条的个位，与给定 sum_series 一致；本句描述演示样本。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "逐个计数得到：0出现1次，1出现2次，2出现0次，3出现0次，4出现4次，5出现1次，6出现0次，7出现1次，8出现1次，9出现2次。",
+      "claim_type": "calculation",
+      "evidence_note": "逐项对应 case_bundle.frequency.frequency，频次总和为12。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "严格应用冻结的排序规则，前5个数字依次为4、1、9、0、5；按数字升序展示这个集合，则是[0,1,4,5,9]。",
+      "claim_type": "calculation",
+      "evidence_note": "4的频次最高；1与9同频按数字升序；频次为1的数字按0、5、7、8排序，取其中0和5补足前5。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这与合同记录的digits=[0,1,3,5,6]不一致：合同池包含样本中未出现的3和6，却没有纳入频次更高的4和9。",
+      "claim_type": "calculation",
+      "evidence_note": "比较 case_bundle.primary_filter_spec.params.digits 与完整频次表及冻结排序规则；明确披露数据内部冲突。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源材料在本篇只承担冷热频率技巧的宽泛归属说明，其相关经验尚未独立验证。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅采用 source_use 对 broad 技巧家族的归属许可，不将具体观察窗口、排序规则或数字池归因给来源。",
+      "support_refs": [
+        "BRBCW-008754"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "本文只讨论玩法机制、参数归属和复算检查，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "mechanics_only 的编辑范围声明。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这里的频次只描述给定演示样本，不能据此认定筛选具有预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "case_bundle 的 claim_scope 为 descriptive_only，predictive_guarantee 为 false。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p>分分彩一星直选冷热参数设置，首先要分清选择规则和具体数字池的归属：规则由系统研究预先固定，数字池应由样本按规则算出，来源不能替这些参数背书。本次材料还存在数字池与排序结果不一致的问题，需要把这个问题公开保留。</p><p><strong>本文使用的案例标记为：演示数据，不是真实开奖记录。</strong></p><h2>哪些参数归系统研究</h2><p>本篇按个位的一星直选口径研究，起始候选是0至9，共10个单数字候选。</p><p>本篇系统选择规则是：固定观察近12期，按出现频次从高到低排列，同频时按数字从小到大排列，取前5个数字。</p><p>观察窗口、排序方法、并列处理和保留数量都属于系统研究选择。它们需要在查看样本统计之前冻结；具体选出哪些数字，则应在读取样本后确定。</p><p>合同原样记录为：<code>selector=个位；metric=top_frequency_digit_pool；lookback=12；top_n=5；production_top_n_policy=5；ranking=frequency_desc_then_digit_asc；ranking_source=full_frequency_table_top5；digits=[0,1,3,5,6]</code>。</p><p>本合同只有“近12期热号前5数字池”这一阶段，规定主筛选后保留5个候选，排除5个候选。</p><p>这里的规模是合同规定的候选空间，不能拿演示记录的条数替代。合同写下了具体数字池，也不代表它已经通过复算。</p><h2>哪些结果由演示样本计算</h2><p>供本次统计使用的近12期个位序列，按从早到晚排列为：9、4、4、7、0、4、8、1、4、5、9、1。</p><p>逐个计数得到：0出现1次，1出现2次，2出现0次，3出现0次，4出现4次，5出现1次，6出现0次，7出现1次，8出现1次，9出现2次。</p><p>严格应用冻结的排序规则，前5个数字依次为4、1、9、0、5；按数字升序展示这个集合，则是[0,1,4,5,9]。</p><p><strong>这与合同记录的digits=[0,1,3,5,6]不一致：合同池包含样本中未出现的3和6，却没有纳入频次更高的4和9。</strong></p><p>因此，本次只能确认合同规定的规模，不能把合同数字池写成已由样本确定性算出的结果。复算集合用于指出差异，不在本文中擅自替换主筛选参数。</p><h2>来源能支持什么、不能支持什么</h2><p>来源材料在本篇只承担冷热频率技巧的宽泛归属说明，其相关经验尚未独立验证。</p><p>观察窗口、保留数量、并列排序以及具体数字池均不得写成来源推荐。来源归属、系统研究选择和演示计算应分别记录；来源不能消除本次发现的计算差异。</p><h2>实际怎么操作</h2><ol><li>先登记研究位置、理论候选范围和唯一主筛选阶段，单独保存演示样本，避免混淆样本条数与候选规模。</li><li>在读取频次前冻结观察窗口、排序规则、并列处理和保留数量，保留参数版本。</li><li>按固定窗口提取个位，建立包含全部数字的频次表，未出现的数字也要保留在表中。</li><li>按冻结规则排序并截取数字池，再与合同记录逐项核对，不能只检查集合大小。</li><li>记录合同规定的筛选前后规模和排除数量；若集合不一致，标记复算未通过，保留差异并停止执行。</li><li>一致性检查通过后，也应在合同规定阶段结束；只有新增条件具有已验证规则或证据并可复算时，才允许继续缩小候选。</li></ol><h2>为什么不能事后改参数</h2><p>看到样本后再改变窗口、并列排序或保留数量，会让读者无法判断结果究竟来自原规则，还是来自事后调整。遇到不一致，应检查输入、计算过程和合同版本，不能为了让记录看起来吻合而改写规则。</p><p>需要修订时，应另存版本并说明修订原因。当前版本仍应保留未通过核对的状态。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>这里的频次只描述给定演示样本，不能据此认定筛选具有预测优势。</p><p>“热号”在本文只是频次排序的标签。候选集合变小、参数预先冻结、计算过程可重复，各自有明确作用，但都不能代替效果验证。</p><p>本文只讨论玩法机制、参数归属和复算检查，不讨论未核验的平台经济参数。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本次发现合同数字池与样本排序结果不一致，应在核对处停止，不将该池作为可执行结果。待输入或合同修订并复核一致后，仍按原定阶段结束，不临时追加遗漏、奇偶或其他过滤条件。</p><p>只有新增条件具有已验证规则或证据并可复算时，才允许在另行明确的研究合同中继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "d5c4ef1950ea03b54c866c137b1f3c7a420391f19dceef180d635b11cdaf63d9",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "349bd96eee6101f8c73f5cec89dce44d450a6a699a2e3c92cbd8564dcebf9d7e",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选冷热参数设置：分清系统预先冻结的选择规则、演示样本算出的数字池与来源归属，并展示合同数字池不一致时的复算检查与停止条件。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "合同规定主筛选后为5个单数字候选，排除5个；当前合同数字池与样本复算集合不一致，该规模不能作为数字池已通过校验的证明。",
+    "next_step_policy": "先解决合同数字池与冻结规则复算结果不一致的问题；只有新增条件具有已验证规则/证据并可复算时，才允许在另行明确的研究合同中继续缩小候选。",
+    "parameter_freeze_rule": "查看样本前冻结selector=个位、metric=top_frequency_digit_pool、lookback=12、top_n=5、production_top_n_policy=5、ranking=frequency_desc_then_digit_asc、ranking_source=full_frequency_table_top5。具体数字池属于样本解析结果，不要求在观察前固定；合同原记录digits=[0,1,3,5,6]必须保留，并标记其与复算不一致。",
+    "starting_space": "个位一星直选的理论起始空间为0至9，共10个单数字候选；演示窗口长度不属于候选空间规模。",
+    "steps": [
+      "登记个位一星直选的理论起始空间和唯一阶段“近12期热号前5数字池”。",
+      "查看样本前固定观察近12期、频次降序、同频数字升序及取前5个的选择规则。",
+      "从演示数据提取固定窗口的个位，统计0至9的完整频次表。",
+      "按冻结规则排序，得到依次为4、1、9、0、5的复算集合，与合同原记录digits=[0,1,3,5,6]核对。",
+      "记录合同空间从10到5、排除5；同时标记集合核对未通过，不将合同池作为可执行结果。",
+      "停止当前执行，保留输入、规则版本和差异；修订并复核一致后也不临时追加过滤器。"
+    ],
+    "stop_condition": "当前材料的合同数字池与样本计算不一致，立即停止执行并保留差异；后续修订复核通过，也必须在唯一主筛选阶段结束，不临时拼接未经验证的第二过滤器。"
+  },
+  "primary_keyword": "分分彩一星直选冷热参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_08d2d0b522790c6f016aec38f47b0487d18b632246b318ddc7",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "区分一星直选中生成前冻结的选择规则与演示样本确定性算出的具体数字池，避免把样本结果写成来源推荐",
+  "secondary_keywords": [
+    "分分彩一星直选冷热参数设置",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩冷热频率"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+  "site_category_key": "tzjq",
+  "slug": "ffc-yixing-zhixuan-cold-hot-parameter-boundary",
+  "source_refs": [
+    "BRBCW-008754"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "围绕分分彩一星直选冷热参数设置，说明选择规则由系统研究预先冻结，具体数字池应由演示样本计算，来源只能承担宽泛技巧归属。当前材料的合同数字池与冻结规则复算结果不一致，文章保留原参数、公开差异并明确停止条件。",
+  "tags": [
+    "分分彩",
+    "一星直选",
+    "冷热参数",
+    "参数边界",
+    "演示数据",
+    "复算检查"
+  ],
+  "technique_atoms": [
+    "cold_hot_split"
+  ],
+  "title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+  "title_candidates": [
+    "哪些参数能提前固定？一星直选冷热的边界先说清",
+    "来源经验和系统参数有什么区别？用一星直选冷热拆开看",
+    "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+    "一星直选冷热为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？一星直选冷热的边界先说清",
+      "来源经验和系统参数有什么区别？用一星直选冷热拆开看",
+      "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改",
+      "一星直选冷热为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-53b41dc9762697c7",
+          "score": 0.8333333333333334,
+          "title": "从参数到结果：中三直选奇偶哪些能预设，哪些不能事后改"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1818,
+          "intent_term_hits": [
+            "直选"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "冷热",
+            "参数",
+            "一星直选冷热"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

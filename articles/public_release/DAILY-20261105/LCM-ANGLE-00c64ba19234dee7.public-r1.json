@@ -1,0 +1,209 @@
+{
+  "angle_signature": "c701d0cb6c0c48b20e5e",
+  "approved_at": "2026-11-05T08:40:28.885504+00:00",
+  "article_id": "LCM-ANGLE-00c64ba19234dee7",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "前三组选3的结构是三个数字中恰有两个相同，另一个不同；按组选口径，同一数字组合的不同排列不重复计数。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据父稿所列规则口径说明前三组选3的结构与组选计数方式。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "重复数字有10种选择，与它不同的数字有9种选择，因此理论组选空间为10×9＝90种。",
+      "claim_type": "calculation",
+      "evidence_note": "由规则中的数字取值范围及恰有两个数字相同的结构推导；该数值描述完整理论空间，不是样本条数。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值是三个数字相加的结果；设重复数字为a、另一个数字为b，则和值为2a＋b，其中a与b不同。",
+      "claim_type": "rule_fact",
+      "evidence_note": "依据前三组选3结构与和值定义作符号化表达，不列举具体组合。",
+      "support_refs": [
+        "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "预注册让读者能够区分事先提出的研究问题与看过结果后形成的解释，但预注册本身不证明参数有效。",
+      "claim_type": "methodology",
+      "evidence_note": "研究方法与解释边界说明，不宣称某项参数已通过验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确公开内容的推断边界，避免把结构统计或历史表现解释为未来优势。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果反复查看验证结果并据此修改参数，这部分材料就已参与参数选择，不能继续当作未参与选择的样本外证据。",
+      "claim_type": "methodology",
+      "evidence_note": "说明样本外验证的基本方法边界，不报告任何实际验证结果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究分分彩前三组选3的和值参数时，首先要分清参数从哪里来：来源文章提出的经验方向、研究者事先设定的条件，以及从样本中观察到的特征，属于不同层次。把它们分开记录，才能判断一项结论究竟获得了什么支持。</p><p>本文围绕参数设置的研究含义展开，解释玩法结构、参数归属和验证方法，不提供具体筛选区间或号码建议。</p><h2>先理解组选3与和值</h2><p>前三组选3的结构是三个数字中恰有两个相同，另一个不同；按组选口径，同一数字组合的不同排列不重复计数。</p><p>重复数字有10种选择，与它不同的数字有9种选择，因此理论组选空间为10×9＝90种。这里计算的是完整理论空间，不是历史样本条数。</p><p>和值是三个数字相加的结果。设重复数字为a、另一个数字为b，则和值为2a＋b，其中a与b不同。和值描述了组合的一项结构特征。</p><h2>来源经验与研究参数如何区分</h2><p>来源经验可以提供研究问题，例如是否值得观察和值分布。但“提到和值”与“推荐某个具体参数”是两种不同的表述，不能互相替代。</p><p>本篇所承接的研究设定中，具体和值条件属于研究者预设，不应归为来源推荐。来源对宽泛方向的讨论，也不能替代对玩法规则和具体结论的核验。</p><p>公开研究说明应交代参数的提出者、设定依据，以及设定发生在查看样本之前还是之后。参数归属清楚，读者才能判断证据支持到哪一步。</p><h2>参数预注册解决什么问题</h2><p>参数预注册是事先记录研究问题、指标定义、样本范围和评价方法。它让读者能够区分事先提出的研究问题与看过结果后形成的解释，但预注册本身不证明参数有效。</p><p>研究者在查看材料后发现的新特征，可以作为探索性发现记录。若将它重新写成原先就确定的条件，就会掩盖参数选择过程，使结果难以评价。</p><h2>空间计算与样本统计各说明什么</h2><p>按结构条件分类后，各类包含多少组合，是静态集合计算；某类在给定材料中出现多少次，是样本统计。两者回答的问题不同，报告时需要分别说明计数对象。</p><p>某一类别包含的组合较少，并不自动构成该类别未来更容易出现的证据。结构分类或历史样本表现不能单独证明未来预测优势。</p><p>若使用演示材料，应明确标注“演示数据，不是真实开奖记录”。演示材料可以帮助解释统计方法，不能被当作真实历史表现的证据。本文不报告演示样本结果。</p><h2>历史复盘与样本外验证</h2><p>历史复盘适合检查定义是否一致、计算是否可复核，以及参数是否在观察结果后发生变化。讨论结果时，还应考虑样本规模、随机波动和尝试过多少种条件。</p><p>样本外验证关注未参与参数选择的材料。如果反复查看验证结果并据此修改参数，这部分材料就已参与参数选择，不能继续当作未参与选择的样本外证据。</p><p>评价一项研究时，应同时查看参数来源、规则依据、样本使用方式和结论边界。一次符合预期的表现，仍需要放在完整研究过程与随机波动中理解。</p>",
+  "content_format": "html",
+  "content_hash": "c9df96f508bee611dcb39172d268c3120fb1918ada35e02ad2891cd3db377204",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "d9a9f1ea6d5d7667224ebf9418f961e743a362bd143c519d798a2c70eae436e2",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "解释分分彩前三组选3和值参数的研究含义，区分来源经验、研究预设与样本统计，说明组合数学、参数预注册和样本外验证的边界。",
+  "parent_content_hash": "e21a05e1910ff9707ca7b037a92e8bb7683f6045db3a03f5a14ea3aa50d63e00",
+  "parent_fingerprint": "00c64ba19234dee7e4451f503c8665fd413b56d44916fefd70f9a183ad4ccfe8",
+  "play": "前三组选3",
+  "primary_keyword": "分分彩前三组选3和值参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0b4194220769fb5b016aec3d76d5e087d2b9c7e5093548be3e",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-05T08:40:28.885525+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-00c64ba19234dee7:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-DERIVED-MECH-FRONT3-GROUP3-V1"
+  ],
+  "search_intent": "帮助读者理解分分彩前三组选3和值参数如何在研究中定义，区分系统研究预设与来源经验，并理解空间计算、历史复盘和样本外验证不能单独证明预测优势。",
+  "secondary_keywords": [
+    "分分彩技巧",
+    "前三组选3技巧",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-前三组选3-sum-range-parameter-boundary",
+  "source_batch_id": "DAILY-20261105",
+  "source_refs": [
+    "BRBCW-001458"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "前三组选3",
+  "summary": "从前三组选3的组合结构与和值定义出发，解释来源经验、研究预设和样本统计的区别，并说明参数预注册、历史复盘与样本外验证的用途。结构分类或历史样本表现不能单独证明未来预测优势，正文不提供具体筛选区间或执行方案。",
+  "tags": [
+    "分分彩",
+    "前三组选3",
+    "和值参数",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "sum_range"
+  ],
+  "title": "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+  "title_candidates": [
+    "哪些参数能提前固定？前三组选3和值的边界先说清",
+    "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+    "从参数到结果：前三组选3和值哪些能预设，哪些不能事后改",
+    "前三组选3和值为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？前三组选3参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？前三组选3和值的边界先说清",
+      "来源经验和系统参数有什么区别？用前三组选3和值拆开看",
+      "从参数到结果：前三组选3和值哪些能预设，哪些不能事后改",
+      "前三组选3和值为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？前三组选3参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 26
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-819b975da420036f",
+          "score": 0.8163265306122449,
+          "title": "来源经验和系统参数有什么区别？用中三直选频率拆开看"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "numeric",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [
+            "3"
+          ],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.4583,
+          "intent_term_hits": [
+            "前三",
+            "组选3",
+            "组选",
+            "和值",
+            "参数",
+            "前三组选3和值"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "前三",
+            "组选3",
+            "组选",
+            "和值",
+            "参数",
+            "前三组选3和值"
+          ],
+          "subject_play": "前三组选3"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "来源经验和系统参数有什么区别？用前三组选3和值拆开看"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

@@ -1,0 +1,389 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "明确和值6–12、跨度2–6及执行顺序均为系统研究预设；逐层复算候选空间，区分静态计算与演示样本，并说明来源归属、参数冻结和完成末层后的停止边界。",
+    "evidence_mode": "static_only",
+    "excluded_space": 64,
+    "final_space": 36,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 2,
+    "stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "starting_space": 100,
+    "static_stage_labels": [
+      "和值6–12",
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "6af717cb9fbf6125cdd1",
+  "approved_at": "2026-11-05T08:19:54.315366+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-5e78b4ea34bcf87c",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "sum_range[min=6,max=12/static]:100->58>span_range[min=2,max=6/static]:58->36",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩后二直选和值跨度参数设置",
+    "reader_question": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 64,
+      "final_space": 36,
+      "sample_stage_labels": [],
+      "stage_count": 2,
+      "stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ],
+      "starting_space": 100,
+      "static_stage_labels": [
+        "和值6–12",
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩后二直选和值跨度参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-766200a9785b1565",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本篇的和值6–12、跨度2–6，以及先和值、后跨度的顺序，全部归系统研究预设。",
+      "claim_type": "editorial",
+      "evidence_note": "参数及顺序归属由系统研究合同明确；这是研究设定元数据，不作为来源推荐或效果证据。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "这些设置在观察演示样本前固定，不由演示样本反推，也不能写成来源推荐。",
+      "claim_type": "editorial",
+      "evidence_note": "对应参数预冻结、非样本推导及禁止来源参数归属的合同要求。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本文按已核验的后二直选机制复算：取末两位并保留位置顺序，每位可取0至9，因此00至99共有10×10＝100个有序候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "使用后二直选的位置机制和有序二位候选空间定义；保留前导零。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "把前一位记为a、后一位记为b，和值按a＋b计算，跨度按两位数字之差的绝对值计算。",
+      "claim_type": "rule_fact",
+      "evidence_note": "后二两位的和值与跨度计算定义。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第一层“和值6–12”从100个候选开始，保留58个，排除100－58＝42个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统冻结和值区间后，对完整有序二位空间进行静态枚举，与演示样本无关。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "和值依次为6、7、8、9、10、11、12时，有序候选个数分别为7、8、9、10、9、8、7，相加得到58。",
+      "claim_type": "calculation",
+      "evidence_note": "对每个目标和值枚举满足a＋b的有序数字对，求和为58。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第二层“跨度2–6”只检查上一层留下的58个候选，保留36个，排除58－36＝22个。",
+      "claim_type": "calculation",
+      "evidence_note": "在和值筛选结果上执行冻结的跨度区间，不能重新从完整空间独立计数。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "在上述各和值组内，再保留跨度处于2至6且包含端点的有序数字对，各组剩余个数依次为6、4、6、4、6、4、6，相加得到36。",
+      "claim_type": "calculation",
+      "evidence_note": "按和值6至12分组，分别枚举满足2≤|a－b|≤6的有序数字对。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "全部合同阶段完成后，候选空间由100个缩小到36个，总共排除42＋22＝64个，也等于100－36。",
+      "claim_type": "calculation",
+      "evidence_note": "两层静态筛选的排除数量相加，与起点减去终点一致。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "指定的演示标签，适用于本节使用的case_bundle内容。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "仅看所给演示记录89765，其末两位为65，和值为6＋5＝11，跨度为6－5＝1。",
+      "claim_type": "calculation",
+      "evidence_note": "从case_bundle提供的演示记录提取末两位并直接计算，不使用存在不同统计口径的样本汇总。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个演示末两位符合和值条件，但不符合跨度条件，因此在第二层被排除。",
+      "claim_type": "calculation",
+      "evidence_note": "演示末两位的和值11落入冻结和值区间，跨度1落在冻结跨度区间之外。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这里由演示样本计算的只是该记录的末两位、和值、跨度及通过情况，前文的候选空间计数来自完整空间的静态枚举。",
+      "claim_type": "editorial",
+      "evidence_note": "说明样本演示与静态规则计算的证据归属，样本不参与阈值选择。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源提到的和值、跨度类经验在本文只作为方法类别的来源线索，相关经验效果未验证。",
+      "claim_type": "source_claim",
+      "evidence_note": "来源材料仅支持广义技巧类别归属，不支持具体参数、阶段顺序或预测效果。",
+      "support_refs": [
+        "BRBCW-001479"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "本文没有把演示通过情况或空间缩小解释为预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "限定文章结论范围，不主张表现或预测效果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "第1层候选空间从100个缩到58个，排除42个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "第2层候选空间从58个缩到36个，排除22个。",
+      "claim_type": "calculation",
+      "evidence_note": "系统依据Draft Packet中的合同阶段逐项枚举得到；该阶段基于已验证玩法空间和系统预冻结静态参数；不证明预测优势。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "完整多层筛选从100个缩到36个，总排除64个。",
+      "claim_type": "calculation",
+      "evidence_note": "由系统汇总全部合同阶段的确定性候选空间结果；整体证据按最强依赖来源归类。",
+      "support_refs": [
+        "SSC-HIST-MECH-2STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    }
+  ],
+  "content": "<p>本篇的和值6–12、跨度2–6，以及先和值、后跨度的顺序，全部归系统研究预设。这些设置在观察演示样本前固定，不由演示样本反推，也不能写成来源推荐。</p><h2>哪些参数归系统研究</h2><p>请把研究记录分成两栏：一栏记参数和顺序的设定者，另一栏记计算所依据的玩法机制。核验计算是否正确，与证明参数是否有预测价值，是不同的检查任务。</p><p>本文按已核验的后二直选机制复算：取末两位并保留位置顺序，每位可取0至9，因此00至99共有10×10＝100个有序候选。</p><p>把前一位记为a、后一位记为b，和值按a＋b计算，跨度按两位数字之差的绝对值计算。</p><h2>固定参数后，逐层怎么算</h2><h3>第一层：和值6–12</h3><p>第一层“和值6–12”从100个候选开始，保留58个，排除100－58＝42个。</p><p>和值依次为6、7、8、9、10、11、12时，有序候选个数分别为7、8、9、10、9、8、7，相加得到58。</p><h3>第二层：跨度2–6</h3><p>第二层“跨度2–6”只检查上一层留下的58个候选，保留36个，排除58－36＝22个。</p><p>在上述各和值组内，再保留跨度处于2至6且包含端点的有序数字对，各组剩余个数依次为6、4、6、4、6、4、6，相加得到36。</p><p>全部合同阶段完成后，候选空间由100个缩小到36个，总共排除42＋22＝64个，也等于100－36。</p><h2>哪些结果由演示样本计算</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>仅看所给演示记录89765，其末两位为65，和值为6＋5＝11，跨度为6－5＝1。</p><p>这个演示末两位符合和值条件，但不符合跨度条件，因此在第二层被排除。</p><p>这里由演示样本计算的只是该记录的末两位、和值、跨度及通过情况，前文的候选空间计数来自完整空间的静态枚举。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到的和值、跨度类经验在本文只作为方法类别的来源线索，相关经验效果未验证。</p><p>引用来源时，应只交代经验类别从哪里来；具体区间、执行顺序和冻结要求，应标明为本篇系统研究设置。不要在参数后面附上来源编号，让读者误以为原文指定了这些数值。</p><h2>实际怎么操作</h2><ol><li>先建立参数记录，写清本文两个静态区间、执行顺序和包含端点的口径，在查看演示样本前冻结。</li><li>列出完整有序候选空间，保留前导零，按位置分别记录两位数字。</li><li>逐个计算和值，按第一层条件保留候选，并用上文各和值组的计数核对。</li><li>仅对上一层保留项计算跨度，按第二层条件继续筛选，并核对各组剩余数量。</li><li>记录每层筛选前、筛选后和排除数量，核对总排除数量；另页记录演示样本的计算过程，避免混用证据。</li><li>完成最后一层后保存结果并停止，不因演示记录被排除而改区间或追加条件。</li></ol><h2>为什么不能事后改参数</h2><p>复算时应保持当前参数版本不变。即使想尝试其他区间，也应另建实验记录，先写明选择依据、计算方式和冻结时间，再观察样本；不要把修改后的结果接回本次记录。</p><h2>边界与误区：不把筛选包装成预测优势</h2><p>本文没有把演示通过情况或空间缩小解释为预测优势。</p><p>检查时请分别回答：参数是谁设的，计算能否复算，效果是否另有证据。不要用“候选更少”代替效果验证，也不要用演示记录的通过或排除情况替参数背书。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>本次完成跨度层后停止。只有新增条件具有已验证规则或证据、计算过程可复算，并在下一次实验观察样本前冻结，才允许在新的实验中继续缩小候选。</p>",
+  "content_format": "html",
+  "content_hash": "d6f30f437f1ed29d65af6de83692fc8519e7811505bf15296a1afa5643f2f738",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261105",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "766200a9785b156583177f19d755670878f44e327d7a02193f7c2cc6525f2870",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩后二直选和值跨度参数设置：说明和值6–12、跨度2–6属于系统研究预设，逐层复算候选空间，区分来源经验与演示样本，并明确参数冻结和末层停止条件。",
+  "play": "后二直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "全部合同阶段完成后为36个有序候选；第一层100→58，排除42个；第二层58→36，排除22个；合计排除64个。",
+    "next_step_policy": "本次完成全部合同阶段即停止；只有新增条件具有已验证规则或证据且可复算，并在下一次实验观察样本前冻结，才允许在新实验中继续缩小候选。",
+    "parameter_freeze_rule": "观察演示样本前固定和值6–12、跨度2–6、包含端点的口径及先和值后跨度的顺序；参数归system_research，不归来源，也不由演示样本反推。",
+    "starting_space": "整个pipeline从00至99的100个有序二位候选开始，保留位置顺序和前导零。",
+    "steps": [
+      "在查看演示样本前记录并冻结全部参数、顺序和边界口径。",
+      "枚举00至99的有序二位候选，以两位数字之和计算和值。",
+      "执行和值6–12层：100个保留58个，排除42个。",
+      "只对保留项计算两位数字之差的绝对值，执行跨度2–6层：58个保留36个，排除22个。",
+      "核对总排除数量为64个，将静态空间计数与演示样本的计算分开记录。",
+      "保存末层结果并停止；修改参数或追加条件须另立实验并满足新增证据与预冻结要求。"
+    ],
+    "stop_condition": "完成第二层“跨度2–6”后停止，最终保留36个候选；本次不得临时追加合同外过滤器，也不得因演示样本结果而修改已冻结参数。"
+  },
+  "primary_keyword": "分分彩后二直选和值跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_06d18d2bce171316016aec3bc1aed487d2acd964f3179b513b",
+  "rule_refs": [
+    "SSC-HIST-MECH-2STAR-LAST-V1"
+  ],
+  "search_intent": "区分后二直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩后二直选和值跨度参数设置",
+    "分分彩技巧",
+    "后二直选技巧",
+    "分分彩后二直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选",
+    "分分彩和值区间"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+  "site_category_key": "tzjq",
+  "slug": "ffc-houer-zhixuan-hezhi-kuadu-parameter-boundary",
+  "source_refs": [
+    "BRBCW-001479"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "后二直选",
+  "summary": "本篇说明分分彩后二直选和值跨度参数设置中的归属边界：静态区间及顺序由系统研究预先固定，来源只交代方法类别，演示样本只用于展示计算。按合同逐层复算候选空间，并在最后一层完成后停止，不将筛选结果解释为预测优势。",
+  "tags": [
+    "分分彩",
+    "后二直选",
+    "和值跨度",
+    "系统研究参数",
+    "参数冻结",
+    "来源边界"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range",
+    "sum_range"
+  ],
+  "title": "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+  "title_candidates": [
+    "哪些参数能提前固定？后二直选和值跨度的边界先说清",
+    "来源经验和系统参数有什么区别？用后二直选和值跨度拆开看",
+    "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+    "后二直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？后二直选和值跨度的边界先说清",
+      "来源经验和系统参数有什么区别？用后二直选和值跨度拆开看",
+      "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改",
+      "后二直选和值跨度为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 28
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-349bd96eee6101f8",
+          "score": 0.8,
+          "title": "从参数到结果：一星直选冷热哪些能预设，哪些不能事后改"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.2083,
+          "intent_term_hits": [
+            "后二",
+            "直选",
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "后二",
+            "直选",
+            "和值",
+            "跨度",
+            "参数",
+            "后二直选和值跨度"
+          ],
+          "subject_play": "后二直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "从参数到结果：后二直选和值跨度哪些能预设，哪些不能事后改"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

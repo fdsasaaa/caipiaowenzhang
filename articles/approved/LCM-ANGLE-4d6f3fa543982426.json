@@ -1,0 +1,322 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "parameter_boundary",
+    "deliverable_summary": "明确跨度2–6是系统研究预设；用玩法机制复算候选空间，用演示数据解释跨度计算，区分来源经验、系统参数与样本结果，并在唯一静态筛选阶段完成后停止。",
+    "evidence_mode": "static_only",
+    "excluded_space": 56380,
+    "final_space": 43620,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "sample_stage_labels": [],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "跨度2–6"
+    ],
+    "starting_space": 100000,
+    "static_stage_labels": [
+      "跨度2–6"
+    ],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "221d2e95860ed328044c",
+  "approved_at": "2026-11-07T07:20:55.142177+00:00",
+  "article_angle_contract": {
+    "angle_type": "parameter_boundary",
+    "contract_id": "AAC-603e841ab28fb9d3",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "span_range[min=2,max=6/static]:100000->43620",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩五星直选跨度参数设置",
+    "reader_question": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "required_deliverable": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "required_machine_facts": {
+      "evidence_mode": "static_only",
+      "excluded_space": 56380,
+      "final_space": 43620,
+      "sample_stage_labels": [],
+      "stage_count": 1,
+      "stage_labels": [
+        "跨度2–6"
+      ],
+      "starting_space": 100000,
+      "static_stage_labels": [
+        "跨度2–6"
+      ]
+    },
+    "required_outline": [
+      "哪些参数归系统研究",
+      "哪些结果由演示样本计算",
+      "来源能支持什么、不能支持什么",
+      "为什么不能事后改参数",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "解释静态参数归属边界：系统研究预设不等于来源推荐，也不等于预测优势。",
+    "title": "分分彩五星直选跨度参数设置：哪些参数是系统研究预设，为什么不能写成来源推荐",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-4d6f3fa543982426",
+  "case_scope": "mechanics_only",
+  "category": "投注技巧",
+  "claim_evidence": [
+    {
+      "claim_text": "本文的跨度下限2、上限6，以及先固定参数再观察样本的顺序，都由系统研究合同预设，不能写成来源推荐，也不是根据演示样本挑出的区间。",
+      "claim_type": "editorial",
+      "evidence_note": "primary_filter_spec与production_filter_contract明确参数归属为system_research，参数并非由演示数据推导，且禁止归为来源推荐。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本篇唯一主筛选设置为：selector=五星，metric=span，min=2，max=6，阶段名称为“跨度2–6”。",
+      "claim_type": "editorial",
+      "evidence_note": "逐项采用主筛选合同；此处声明研究设置，不声称该参数得到来源推荐或效果验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "五星直选按位置区分五位数字，每位可取0至9，首位为0的排列也在候选空间内，因此筛选前共有10^5=100000个有序候选。",
+      "claim_type": "calculation",
+      "evidence_note": "依据五星直选有序五位数字机制，用乘法原理计算完整空间。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "跨度按这五位数字中的最大值减去最小值计算，筛选时保留2≤span≤6的候选。",
+      "claim_type": "rule_fact",
+      "evidence_note": "跨度定义由规则机制支持；保留区间来自本文已明确归属于系统研究的主筛选设置。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "采用case_bundle.must_label_as指定标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "以演示记录87283为例，最大数字是8，最小数字是2，跨度为8−2=6，落在已固定的区间内。",
+      "claim_type": "calculation",
+      "evidence_note": "仅使用case_bundle.latest_draw与对应数字复算跨度；不将其表述为真实开奖记录。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "来源提到相关筛选经验，但这类经验在本文中尚未独立验证，只用于交代方法背景。",
+      "claim_type": "source_claim",
+      "evidence_note": "仅承认来源对宽泛技巧家族的背景归属，不补充未提供的原文细节，不将具体参数归于来源。",
+      "support_refs": [
+        "BRBCW-002590"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "对固定跨度d，最小数字有10−d种取值；固定最小值和最大值后，同时包含这两个端点的五位排列数为(d+1)^5−2d^5+(d−1)^5。",
+      "claim_type": "calculation",
+      "evidence_note": "在有序五位数字空间中，对跨度d固定上下端点，按容斥原理扣除缺少任一端点的排列，再加回同时缺少两端点的排列。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "依次代入d=2、3、4、5、6，各跨度对应的候选数为1440、5460、12600、23250、10870之和的说法是错误的；应统一按同一公式计算。",
+      "claim_type": "editorial",
+      "evidence_note": "此项不适用。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "主筛选后的候选数为Σ[d=2至6](10−d)×[(d+1)^5−2d^5+(d−1)^5]=43620。",
+      "claim_type": "calculation",
+      "evidence_note": "由已验证五位有序空间机制与固定跨度容斥计数式求和，结果与主筛选合同一致；不依赖演示样本。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本阶段筛掉100000−43620=56380个候选，排除的是跨度小于2或大于6的排列。",
+      "claim_type": "calculation",
+      "evidence_note": "完整候选空间减去跨度区间内的候选空间，排除条件为保留条件的补集。",
+      "support_refs": [
+        "SSC-HIST-MECH-5STAR-DIRECT-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "候选空间变小只是固定条件下的计数结果，本文没有据此证明预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "主筛选合同明确predictive_advantage_claimed=false；计数不能充当效果验证。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>本文的跨度下限2、上限6，以及先固定参数再观察样本的顺序，都由系统研究合同预设，不能写成来源推荐，也不是根据演示样本挑出的区间。</p><p>阅读这篇分分彩五星直选跨度参数设置说明，重点是分清参数由谁设定、结果怎样复算，以及操作到哪里结束。</p><h2>哪些参数归系统研究</h2><p>本篇唯一主筛选设置为：selector=五星，metric=span，min=2，max=6，阶段名称为“跨度2–6”。</p><p>这里的上下限是研究设置，使用它们是为了固定复算条件。不要把“系统选择了这个区间”改写成“原文建议使用这个区间”。</p><p>五星直选按位置区分五位数字，每位可取0至9，首位为0的排列也在候选空间内，因此筛选前共有10^5=100000个有序候选。</p><p>跨度按这五位数字中的最大值减去最小值计算，筛选时保留2≤span≤6的候选。</p><h2>哪些结果由演示样本计算</h2><p><strong>演示数据，不是真实开奖记录。</strong></p><p>以演示记录87283为例，最大数字是8，最小数字是2，跨度为8−2=6，落在已固定的区间内。</p><p>这段演示只帮助读者检查跨度算法与区间判断。参数来自系统合同，不能倒过来说，因为这个例子落入区间，所以区间选得有效。</p><p>演示样本的记录数量也不能代替完整理论候选空间；本篇没有用样本另建筛选阶段。</p><h2>来源能支持什么、不能支持什么</h2><p>来源提到相关筛选经验，但这类经验在本文中尚未独立验证，只用于交代方法背景。</p><p>来源归属、系统设置和样本计算应分开记录：来源交代经验背景，系统合同确定本篇采用的参数，演示数据只展示计算过程。</p><p>不要把来源标识放在演示计算旁边充当证明，也不要把规则能够支持的空间计算扩展成对参数效果的认可。</p><h2>实际怎么操作：固定参数后复算</h2><ol><li>先写下研究设置，冻结选择对象、跨度指标、上下限和保留条件，再查看演示记录。</li><li>建立完整的有序五位候选空间，保留前导零与位置顺序，不从演示记录列表起算。</li><li>对每个候选计算最大数字减最小数字，只执行已经冻结的跨度条件。</li><li>用下面的计数公式核对筛选结果，并核对排除数量。</li><li>单独检查演示记录的跨度算法，避免将演示检查结果用于改写区间。</li><li>保存设置和复算结果，完成本阶段后停止，不追加位置、和值或频率条件。</li></ol><p>对固定跨度d，最小数字有10−d种取值；固定最小值和最大值后，同时包含这两个端点的五位排列数为(d+1)^5−2d^5+(d−1)^5。</p><p>这个式子先统计端点区间内的排列，再扣掉缺少任一端点的情况，最后加回同时缺少两个端点而被重复扣除的情况。</p><p>主筛选后的候选数为Σ[d=2至6](10−d)×[(d+1)^5−2d^5+(d−1)^5]=43620。</p><p>本阶段筛掉100000−43620=56380个候选，排除的是跨度小于2或大于6的排列。</p><h2>为什么不能事后改参数</h2><p>如果先看样本，再按样本表现调整上下限，原来的固定条件就被换掉了。此时应作为另一个研究版本重新记录，不能继续沿用原设置的解释。</p><p>本篇要求先冻结参数，再检查样本；样本是否落入区间，都不触发现场调参。</p><h2>边界与误区：不把统计筛选包装成预测优势</h2><p>候选空间变小只是固定条件下的计数结果，本文没有据此证明预测优势。</p><p>复算回答的是“这个条件留下哪些排列”，演示回答的是“跨度怎么算”。两者都没有完成对预测效果的独立验证。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>完成跨度阶段、核对保留与排除数量并保存记录后，本篇流程结束。</p><p>只有新增条件具有已验证规则或证据，并且能够复算时，才允许在另立的研究流程中继续缩小候选；当前合同仍在本阶段结束，不临时追加过滤器。</p>",
+  "content_format": "html",
+  "content_hash": "4bf8e0c72bbf11c27f57d18cc5900c66737129b120f192a32c519caaf3c0f746",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261107",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "4d6f3fa5439824260523fe1d16af1c18e5d0990e611e079510589663aa9bf37b",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "parameter_boundary",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩五星直选跨度参数设置说明：区分系统研究预设、来源经验与演示计算，解释跨度区间的候选空间复算方法、参数冻结要求和停止条件，明确筛选结果不证明预测优势。",
+  "play": "五星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "唯一主筛选“跨度2–6”后保留43620个有序五位候选，排除56380个候选。",
+    "next_step_policy": "当前合同完成唯一跨度阶段后停止；只有新增条件具有已验证规则或证据并可复算时，才允许在另立的研究流程中继续缩小候选，不能临时拼接第二过滤器。",
+    "parameter_freeze_rule": "查看样本前固定selector=五星、metric=span、min=2、max=6及保留条件；这些是系统研究预设，不能归为来源推荐，也不能根据演示结果现场调整。",
+    "starting_space": "完整有序五位数字空间为100000个候选，包含首位为0的排列；演示样本条数不作为理论候选空间。",
+    "steps": [
+      "观察样本前记录并冻结selector=五星、metric=span、min=2、max=6，确认唯一阶段为“跨度2–6”。",
+      "从完整的100000个有序五位候选起算，保留位置顺序与前导零。",
+      "逐个计算最大数字减最小数字，仅保留2≤span≤6的候选。",
+      "按固定跨度的容斥计数公式求和，核对保留43620个、排除56380个候选。",
+      "将87283仅作为演示记录检查跨度算法，不用该记录反推或调整参数。",
+      "保存参数和复算记录，完成唯一静态阶段后停止。"
+    ],
+    "stop_condition": "完成跨度2–6筛选并核对候选空间后立即停止；本篇不增加样本阶段，也不追加未经验证的新条件。"
+  },
+  "primary_keyword": "分分彩五星直选跨度参数设置",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_0f8dabd9482ce333016aeed109858887d185db8610972f7dfc",
+  "rule_refs": [
+    "SSC-HIST-MECH-5STAR-DIRECT-V1"
+  ],
+  "search_intent": "区分五星直选中的系统研究预设参数与来源经验，明确具体参数不是原文推荐也不证明预测优势",
+  "secondary_keywords": [
+    "分分彩五星直选跨度参数设置",
+    "分分彩技巧",
+    "五星直选技巧",
+    "分分彩五星直选投注技巧",
+    "分分彩位置筛选",
+    "分分彩跨度筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "先定规则还是先看样本？这一玩法参数问题这样区分",
+  "site_category_key": "tzjq",
+  "slug": "ffc-five-direct-span-parameter-boundary",
+  "source_refs": [
+    "BRBCW-002590"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "五星直选",
+  "summary": "本文把跨度区间明确归于系统研究预设，区分来源背景、规则支持的空间计算与演示样本计算。读者可按先冻结参数、再复算、最后停止的步骤检查筛选过程，不把具体参数写成原文推荐，也不把空间缩小解释为预测优势。",
+  "tags": [
+    "分分彩",
+    "五星直选",
+    "跨度参数",
+    "系统研究",
+    "参数边界"
+  ],
+  "technique_atoms": [
+    "position_filter",
+    "span_range"
+  ],
+  "title": "先定规则还是先看样本？这一玩法参数问题这样区分",
+  "title_candidates": [
+    "哪些参数能提前固定？五星直选跨度的边界先说清",
+    "来源经验和系统参数有什么区别？用五星直选跨度拆开看",
+    "从参数到结果：五星直选跨度哪些能预设，哪些不能事后改",
+    "五星直选跨度为什么不能看完结果再调？常见误区与风险边界",
+    "先定规则还是先看样本？这一玩法参数问题这样区分"
+  ],
+  "title_review": {
+    "candidates": [
+      "哪些参数能提前固定？五星直选跨度的边界先说清",
+      "来源经验和系统参数有什么区别？用五星直选跨度拆开看",
+      "从参数到结果：五星直选跨度哪些能预设，哪些不能事后改",
+      "五星直选跨度为什么不能看完结果再调？常见误区与风险边界",
+      "先定规则还是先看样本？这一玩法参数问题这样区分"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 23
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-365101cda331450f",
+          "score": 0.8181818181818182,
+          "title": "先定规则还是先看样本？前四直选参数问题这样区分"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "from_to_colon",
+            "question",
+            "question_contrast",
+            "question_why"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.0952,
+          "intent_term_hits": [
+            "参数"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "参数",
+            "样本"
+          ],
+          "subject_play": "五星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "先定规则还是先看样本？这一玩法参数问题这样区分"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

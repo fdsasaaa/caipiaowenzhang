@@ -1,0 +1,350 @@
+{
+  "angle_approval_passed": true,
+  "angle_contract_verified": true,
+  "angle_delivery": {
+    "angle_type": "execution_checklist",
+    "deliverable_summary": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "evidence_mode": "sample_only",
+    "excluded_space": 2,
+    "final_space": 8,
+    "parameter_owner": "system_research",
+    "predictive_advantage_claimed": false,
+    "reader_question": "按固定顺序执行近12期当前遗漏≥2数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "sample_stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "source_parameter_attribution_allowed": false,
+    "stage_count": 1,
+    "stage_labels": [
+      "近12期当前遗漏≥2数字池"
+    ],
+    "starting_space": 10,
+    "static_stage_labels": [],
+    "stop_after_final_stage": true
+  },
+  "angle_signature": "b82584dc1a2896536a84",
+  "approved_at": "2026-11-07T07:46:03.664509+00:00",
+  "article_angle_contract": {
+    "angle_type": "execution_checklist",
+    "contract_id": "AAC-7eac9a9f14d5c578",
+    "parameter_owner": "system_research",
+    "pipeline_signature": "omission_threshold[lookback=12,threshold=2/sample]:10->8",
+    "predictive_advantage_claimed": false,
+    "primary_keyword": "分分彩一星直选遗漏筛选步骤",
+    "reader_question": "按固定顺序执行近12期当前遗漏≥2数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "required_deliverable": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "required_machine_facts": {
+      "evidence_mode": "sample_only",
+      "excluded_space": 2,
+      "final_space": 8,
+      "sample_stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "stage_count": 1,
+      "stage_labels": [
+        "近12期当前遗漏≥2数字池"
+      ],
+      "starting_space": 10,
+      "static_stage_labels": []
+    },
+    "required_outline": [
+      "执行前检查参数",
+      "实际操作步骤清单",
+      "每一步如何核对结果",
+      "何时必须停止",
+      "边界与误区：不把统计筛选包装成预测优势",
+      "停止条件：完成合同后不临时加新过滤器"
+    ],
+    "search_intent": "按固定顺序执行近12期当前遗漏≥2数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+    "source_parameter_attribution_allowed": false,
+    "stop_after_final_stage": true,
+    "summary_goal": "把机器合同改写成可执行清单，读者能照步骤复算并知道何时停止。",
+    "title": "分分彩一星直选遗漏筛选步骤：实际操作按哪几步做，筛到8个后什么时候必须停止",
+    "version": "1.0"
+  },
+  "article_angle_contract_version": "1.0",
+  "article_id": "LCM-ANGLE-06feaaf5bbfa1a30",
+  "case_scope": "mechanics_only",
+  "category": "技巧讲解",
+  "claim_evidence": [
+    {
+      "claim_text": "本文讨论的是一星直选的个位候选筛选流程。",
+      "claim_type": "rule_fact",
+      "evidence_note": "文章范围与玩法由 Draft Packet 固定；不扩展未提供的玩法细节。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "本文只讨论筛选机制，不讨论未核验的平台经济参数。",
+      "claim_type": "editorial",
+      "evidence_note": "遵循 mechanics_only 范围限制。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "执行前要先固定位置、回看期数、遗漏阈值和比较符号。",
+      "claim_type": "editorial",
+      "evidence_note": "这是对机器合同的执行化改写，参数来自本篇系统合同。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "本合同的筛选位置是个位，回看窗口是近12期，阈值是当前遗漏≥2。",
+      "claim_type": "calculation",
+      "evidence_note": "合同参数由 primary_filter_spec 给出。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "筛选前的个位数字候选空间是10个数字。",
+      "claim_type": "calculation",
+      "evidence_note": "ordered_1digit 候选空间，starting_space=10。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "演示数据，不是真实开奖记录。",
+      "claim_type": "editorial",
+      "evidence_note": "必须使用的案例标签。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "在这组演示数据中，当前遗漏达到阈值的数字池为0、1、2、3、5、6、7、9。",
+      "claim_type": "calculation",
+      "evidence_note": "直接复述 case_bundle 的 candidates_meeting_threshold。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这组数字池包含8个候选数字。",
+      "claim_type": "calculation",
+      "evidence_note": "对演示数字池逐项计数。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "因此，主筛选后空间是8个候选，排除空间是2个候选。",
+      "claim_type": "calculation",
+      "evidence_note": "10减去8等于2，使用合同中的 starting_space、after_filter_space 和 excluded_space。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "被排除的数字是4和8。",
+      "claim_type": "calculation",
+      "evidence_note": "由0至9的完整数字集合与演示数字池对照得到。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "这个筛选结果只描述演示样本当下的状态，不表示高遗漏数字下一期更可能出现。",
+      "claim_type": "editorial",
+      "evidence_note": "遵循 case_bundle 的 method_note 与 predictive_guarantee=false。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    },
+    {
+      "claim_text": "筛选到主筛选后的8个候选后，应停止本合同流程。",
+      "claim_type": "editorial",
+      "evidence_note": "合同 stop_after_primary_filter=true。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "只有新增条件同时具备已验证规则或证据，并且能够重新复算，才允许继续缩小候选空间。",
+      "claim_type": "editorial",
+      "evidence_note": "执行合同要求的 next_step_policy。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "来源只作为相关技巧家族的未验证线索，不能被写成本文的具体参数来源。",
+      "claim_type": "source_claim",
+      "evidence_note": "source_use 明确禁止将来源归因到生产参数。",
+      "support_refs": [
+        "BRBCW-003939"
+      ],
+      "support_type": "source_unverified"
+    },
+    {
+      "claim_text": "遗漏、频率、和值和跨度在本篇中只用于描述已提供的演示状态，不能单独包装成预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "遵循 case_bundle descriptive_only 与 predictive_guarantee=false。",
+      "support_refs": [
+        "case_bundle"
+      ],
+      "support_type": "synthetic_case"
+    }
+  ],
+  "content": "<p><strong>先说结论：</strong>这篇文章只给出一条可重复执行的人工清单：先固定个位、近12期和当前遗漏≥2，再从10个个位数字中核对数字池，得到8个候选后停止。</p><p>本文讨论的是一星直选的个位候选筛选流程。本文只讨论筛选机制，不讨论未核验的平台经济参数。</p><h2>执行前检查参数</h2><p>执行前要先固定位置、回看期数、遗漏阈值和比较符号。否则，先看样本再改参数，结果就无法复算。</p><ul><li><strong>位置：</strong>个位。</li><li><strong>窗口：</strong>近12期。</li><li><strong>指标：</strong>当前遗漏。</li><li><strong>条件：</strong>当前遗漏≥2。</li><li><strong>候选类型：</strong>一位数字的有序候选空间。</li></ul><p>本合同的筛选位置是个位，回看窗口是近12期，阈值是当前遗漏≥2。参数由系统研究合同固定，不能把具体数字池写成来源推荐。</p><h2>实际操作步骤</h2><h3>第1步：写下完整候选空间</h3><p>先把个位的完整数字空间写成0、1、2、3、4、5、6、7、8、9。筛选前的个位数字候选空间是10个数字。</p><p>这一步只记录起点，不先删除任何数字。这样后面才能核对到底排除了多少。</p><h3>第2步：固定近12期窗口</h3><p>从待检查的演示数据中固定近12期窗口，位置只看个位。不要把回看期数临时改成其他长度，也不要在看见结果后调整阈值。</p><p>本案例必须标注：演示数据，不是真实开奖记录。</p><h3>第3步：逐个核对当前遗漏</h3><p>对0至9逐个检查当前遗漏值，只保留达到“≥2”的数字。演示数据给出的数字池为0、1、2、3、5、6、7、9。</p><p>这组数字池包含8个候选数字。被排除的数字是4和8。</p><h3>第4步：复算空间变化</h3><p>筛选前有10个候选，主筛选后有8个候选，因此本次排除2个候选。也可以用完整数字表逐项打勾：保留8项，未保留2项。</p><p>因此，主筛选后空间是8个候选，排除空间是2个候选。若手工计数不是这个结果，应回到第3步检查位置、窗口、阈值和比较符号。</p><h3>第5步：记录最终状态并停止</h3><p>把最终数字池、筛选前空间、筛选后空间和排除数量一起记录。完成“近12期当前遗漏≥2数字池”这一阶段后，不再在本合同内增加第二个过滤器。</p><h2>每一步如何核对结果</h2><ol><li>核对位置：表格列必须对应个位，不能混入其他位置。</li><li>核对窗口：使用固定的近12期，不因结果变化而移动窗口。</li><li>核对条件：每个数字都按当前遗漏≥2判断，不能把“等于2”改成“超过2”。</li><li>核对数字池：逐项对照0至9，确认保留的是0、1、2、3、5、6、7、9。</li><li>核对数量：起点为10，保留8个，排除2个。</li></ol><h2>何时必须停止</h2><p>筛选到主筛选后的8个候选后，应停止本合同流程。这里的停止不是对下一结果作判断，而是表示本篇规定的唯一主筛选已经完成。</p><p>只有新增条件同时具备已验证规则或证据，并且能够重新复算，才允许继续缩小候选空间。当前 Draft Packet 没有提供第二条可追加的已验证过滤规则，因此不能为了减少候选而临时加入频率、和值、跨度、邻号或奇偶条件。</p><h2>边界与误区</h2><p>这个筛选结果只描述演示样本当下的状态，不表示高遗漏数字下一期更可能出现。遗漏、频率、和值和跨度在本篇中只用于描述已提供的演示状态，不能单独包装成预测优势。</p><p>来源只作为相关技巧家族的未验证线索，不能被写成本文的具体参数来源。本文的近12期、阈值≥2、个位和停止顺序，均按系统研究合同执行。</p><p>不要把演示数据中的数字、遗漏值或其他统计字段写成真实开奖记录。也不要把一次筛选得到的8个候选，改写成命中保证或未来结果承诺。</p><h2>停止条件：完成合同后不临时加新过滤器</h2><p>人工操作清单到这里结束：固定参数，建立10个数字的起点，按近12期当前遗漏≥2筛选，得到8个候选，确认排除2个，然后停止。</p><p>若未来要增加筛选阶段，必须先有新增条件的已验证规则或证据，并能说明输入、计算方式和复算结果；在这些条件出现前，保持本次8个候选的最终状态。</p>",
+  "content_format": "html",
+  "content_hash": "9a3d72f84c33f39fd95f3cb54a6ca79ce479b4ec2f96724757b3fe7eeed42810",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261107",
+  "creator_first_contract_version": "1.0",
+  "editorial_contract_version": "1.0",
+  "fingerprint": "06feaaf5bbfa1a3070190591483b486579fb7ba4842fdbab8fb25bd95df5452b",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "分分彩一星直选遗漏筛选步骤案例讲解：先固定参数，再用可复算演示数据展示筛选步骤、候选空间和停止条件，不把历史统计包装成预测结论。",
+  "play": "一星直选",
+  "practical_guidance": {
+    "after_primary_filter_space": "8个候选数字",
+    "next_step_policy": "只有新增条件同时具备已验证规则或证据，并且能够重新复算，才允许继续缩小候选空间；本合同完成主筛选后停止。",
+    "parameter_freeze_rule": "先固定个位、近12期、当前遗漏≥2和比较符号，再查看并计算演示数据；不得根据结果临时改参数。",
+    "starting_space": "10个个位数字候选",
+    "steps": [
+      "固定筛选位置为个位，固定回看窗口为近12期，固定当前遗漏≥2。",
+      "写出0至9的完整个位候选空间，并记录起点为10个候选。",
+      "逐个核对演示数据中的当前遗漏，只保留0、1、2、3、5、6、7、9。",
+      "复算保留8个候选、排除2个候选，并核对位置、窗口和比较符号。",
+      "记录主筛选结果，完成“近12期当前遗漏≥2数字池”后停止，不临时增加第二过滤器。"
+    ],
+    "stop_condition": "主筛选完成且得到8个候选后停止；没有新增的已验证规则或证据并可复算时，不继续缩小候选。"
+  },
+  "primary_keyword": "分分彩一星直选遗漏筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_006f99d76c7cde71016aeed6cbcf7087d2b506c66aa8cf78f8",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "按固定顺序执行近12期当前遗漏≥2数字池，检查参数、候选空间和停止条件，形成可重复的人工操作清单",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏筛选步骤",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "做到哪一步应该停？一星直选遗漏的复核清单",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-omission_threshold-position_filter-execution_checklist",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "把分分彩一星直选的近12期当前遗漏≥2筛选合同改写成可执行清单：从10个个位候选开始，复算得到8个候选，明确排除2个并在主筛选完成后停止。",
+  "tags": [
+    "分分彩一星直选遗漏筛选步骤",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "做到哪一步应该停？一星直选遗漏的复核清单",
+  "title_candidates": [
+    "做到哪一步应该停？一星直选遗漏的复核清单",
+    "一星直选遗漏怎么检查才不漏步骤？先看输入、输出和停止条件",
+    "从规则到复核：这一玩法这套筛选流程最容易错在哪里",
+    "先固定步骤，再看结果：一星直选遗漏的执行边界",
+    "一星直选遗漏不是越筛越好，关键在什么时候停止"
+  ],
+  "title_review": {
+    "candidates": [
+      "做到哪一步应该停？一星直选遗漏的复核清单",
+      "一星直选遗漏怎么检查才不漏步骤？先看输入、输出和停止条件",
+      "从规则到复核：这一玩法这套筛选流程最容易错在哪里",
+      "先固定步骤，再看结果：一星直选遗漏的执行边界",
+      "一星直选遗漏不是越筛越好，关键在什么时候停止"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 20
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-68ce325edd5f6fc5",
+          "score": 0.7894736842105263,
+          "title": "做到哪一步应该停？前二直选和值的复核清单"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question",
+            "question_contrast"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.1111,
+          "intent_term_hits": [
+            "遗漏"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "遗漏",
+            "一星直选遗漏"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "做到哪一步应该停？一星直选遗漏的复核清单"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}

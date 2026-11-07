@@ -1,0 +1,22 @@
+{
+  "approved_public_release_count": 1,
+  "articles": [
+    {
+      "article_id": "LCM-ANGLE-06feaaf5bbfa1a30",
+      "content_hash": "ee1d785d590ad43d8290471271dc895f41d012c25cb8083c34e5a957b465b6a5",
+      "fingerprint": "4eb9ee45454120d2a2fac5b60487431985e2b9895671c677780328af35822b92",
+      "path": "articles/public_release/DAILY-20261107/LCM-ANGLE-06feaaf5bbfa1a30.public-r1.json",
+      "primary_keyword": "分分彩一星直选遗漏筛选步骤",
+      "release_revision": 1,
+      "revision_id": "LCM-ANGLE-06feaaf5bbfa1a30:public-r1",
+      "slug": "分分彩-一星直选-omission_threshold-position_filter-execution_checklist"
+    }
+  ],
+  "canary_ingestion_allowed": true,
+  "expected_count": 1,
+  "revision_kind": "website_public_release",
+  "schema_version": 1,
+  "source_batch_id": "DAILY-20261107",
+  "status": "complete",
+  "website_batch_ingestion_allowed": true
+}

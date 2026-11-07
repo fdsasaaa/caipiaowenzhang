@@ -1,0 +1,203 @@
+{
+  "angle_signature": "b82584dc1a2896536a84",
+  "approved_at": "2026-11-07T07:53:41.351459+00:00",
+  "article_id": "LCM-ANGLE-06feaaf5bbfa1a30",
+  "case_scope": "mechanics_only",
+  "category": "技巧讲解",
+  "claim_evidence": [
+    {
+      "claim_text": "本文讨论的一星直选以个位为观察位置，该位置的完整单个数字空间包含10种可能取值。",
+      "claim_type": "rule_fact",
+      "evidence_note": "沿用已通过内部验证的parent中关于一星直选个位及完整数字空间的机制说明。",
+      "support_refs": [
+        "SSC-HIST-MECH-1STAR-LAST-V1"
+      ],
+      "support_type": "verified_rule"
+    },
+    {
+      "claim_text": "研究中的“当前遗漏”用于描述截至观察时点，某个取值连续未出现的期数。",
+      "claim_type": "methodology",
+      "evidence_note": "作为本文研究口径的定义，不涉及具体遗漏值、筛选阈值或候选名单。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "如果有限的回看窗口内没有出现某个取值，仅凭该窗口不能确定它在窗口之前已经连续缺失了多久。",
+      "claim_type": "methodology",
+      "evidence_note": "说明有限观察窗口的数据边界，防止把窗口长度直接当作完整遗漏值。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "在同一观察范围内，若每个可能取值只归入一个类别，则各类别数量之和应等于完整空间的大小。",
+      "claim_type": "calculation",
+      "evidence_note": "依据互斥且覆盖完整空间的分类定义进行数量核对，不使用具体案例或候选数字。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "结构分类或历史样本表现不能单独证明未来预测优势。",
+      "claim_type": "editorial",
+      "evidence_note": "明确历史描述与未来预测之间的证据边界，不作收益、命中率或稳定性承诺。",
+      "support_refs": [],
+      "support_type": "editorial"
+    },
+    {
+      "claim_text": "样本外验证应将已经确定的研究口径用于未参与参数选择的数据，并保留全部验证结果。",
+      "claim_type": "methodology",
+      "evidence_note": "提供一般研究方法说明，不声称本文已经完成验证或获得任何有效性结果。",
+      "support_refs": [],
+      "support_type": "editorial"
+    }
+  ],
+  "content": "<p>研究分分彩一星直选遗漏时，“做到哪一步应该停”可以理解为一个复核边界问题：定义、数据和分类计算核对完成后，就结束本次记录；需要修改条件时，另立研究版本。本文围绕这一主题解释研究顺序，不提供具体候选号码或下一期建议。</p><h2>先理解位置与遗漏</h2><p>本文讨论的一星直选以个位为观察位置，该位置的完整单个数字空间包含10种可能取值。研究记录需要明确观察的是哪个位置，避免把其他位置的数据混入同一统计。</p><p>研究中的“当前遗漏”用于描述截至观察时点，某个取值连续未出现的期数。它记录的是已经发生的状态，本身不构成对下一次结果的判断。</p><p>如果有限的回看窗口内没有出现某个取值，仅凭该窗口不能确定它在窗口之前已经连续缺失了多久。复盘时应说明历史数据是否足够，并将无法确定的状态单独标注。</p><h2>把研究口径写在计算之前</h2><p>一份可复核的研究记录，应先写明观察位置、数据范围、遗漏定义、分类条件和比较符号，同时说明缺失数据如何处理。这些内容构成参数预注册的基本记录。</p><p>参数应在查看待评估结果之前确定。如果研究者看过结果后修改条件，应保留修改记录，并将其作为新的探索版本，避免把调整后的结果当成原方案的独立验证。</p><p>本文不指定回看期数或遗漏阈值。这里关注的是研究口径能否被清楚表达、由他人复算，以及不同版本能否被区分。</p><h2>复核分类与数量关系</h2><p>遗漏分类完成后，可以检查数据来源、位置标签、观察时点和计算口径是否一致，再核对分类是否有重复或遗漏。</p><p>在同一观察范围内，若每个可能取值只归入一个类别，则各类别数量之和应等于完整空间的大小。这项数量关系可以帮助发现计数问题。</p><p>数量核对回答的是分类计算是否自洽。对分类是否具有预测价值，需要另外提出可检验的问题，并提供相应证据。</p><h2>何时结束本次复核</h2><p>当预先声明的口径已经核对、数据边界已经标注、分类计算能够复现时，可以结束本次研究记录。这里的“停止”指完成复核，不涉及投注或资金管理。</p><p>若之后希望加入其他统计条件，应另行记录研究问题、条件定义和验证安排。不要仅因当前分类结果不符合预期，就不断追加条件并覆盖原记录。</p><p>保留原版本、修改原因和复算结果，有助于读者分清哪些结论来自事先设定，哪些来自看过数据后的探索。</p><h2>历史复盘还需要哪些证据</h2><p>结构分类或历史样本表现不能单独证明未来预测优势。某类状态在一段历史数据中的表现，只能作为进一步研究的线索。</p><p>样本外验证应将已经确定的研究口径用于未参与参数选择的数据，并保留全部验证结果。评估时还应考虑随机波动、数据质量，以及反复尝试不同条件对结果解释的影响。</p><p>本文只说明规则机制和研究复核方法，没有报告真实开奖记录的统计结果，也没有提供已完成的样本外验证。因此，不能据此得出某种遗漏分类更容易命中或能够稳定盈利的结论。</p>",
+  "content_format": "html",
+  "content_hash": "ee1d785d590ad43d8290471271dc895f41d012c25cb8083c34e5a957b465b6a5",
+  "content_type": "technique_article",
+  "creator_batch_id": "DAILY-20261107",
+  "creator_first_contract_version": "1.0",
+  "fingerprint": "4eb9ee45454120d2a2fac5b60487431985e2b9895671c677780328af35822b92",
+  "generation_contract_version": "2.0",
+  "information_gain_type": "execution_checklist",
+  "internal_links": [],
+  "lottery": "时时彩",
+  "meta_description": "从研究复核角度理解分分彩一星直选遗漏，说明位置机制、遗漏定义、参数预注册、分类数量核对与样本外验证，明确历史表现不能单独证明未来预测优势。",
+  "parent_content_hash": "9a3d72f84c33f39fd95f3cb54a6ca79ce479b4ec2f96724757b3fe7eeed42810",
+  "parent_fingerprint": "06feaaf5bbfa1a3070190591483b486579fb7ba4842fdbab8fb25bd95df5452b",
+  "play": "一星直选",
+  "primary_keyword": "分分彩一星直选遗漏筛选步骤",
+  "primary_seo_cluster_id": "ffc_research",
+  "provider_id": "",
+  "provider_response_id": "resp_006f99d76c7cde71016aeed6cbcf7087d2b506c66aa8cf78f8",
+  "public_release_review": {
+    "review_contract": "website-public-release-editorial-v1",
+    "reviewed_at": "2026-11-07T07:53:41.351472+00:00",
+    "status": "approved"
+  },
+  "release_revision": 1,
+  "revision_id": "LCM-ANGLE-06feaaf5bbfa1a30:public-r1",
+  "revision_kind": "website_public_release",
+  "rule_refs": [
+    "SSC-HIST-MECH-1STAR-LAST-V1"
+  ],
+  "search_intent": "了解分分彩一星直选遗漏筛选的研究顺序，掌握参数记录、数据边界、分类复核与停止追加条件的原则，并理解历史描述与未来预测之间的区别。",
+  "secondary_keywords": [
+    "分分彩一星直选遗漏筛选步骤",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩一星直选投注技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "secondary_seo_cluster_ids": [],
+  "seo_title": "做到哪一步应该停？一星直选遗漏的复核清单",
+  "site_category_key": "tzjq",
+  "slug": "分分彩-一星直选-omission_threshold-position_filter-execution_checklist",
+  "source_batch_id": "DAILY-20261107",
+  "source_refs": [
+    "BRBCW-003939"
+  ],
+  "status": "approved",
+  "subject_lottery": "分分彩",
+  "subject_play": "一星直选",
+  "summary": "将一星直选遗漏筛选改写为教育与研究导向的复核说明，涵盖位置机制、遗漏定义、参数预注册、分类数量核对和研究停止边界，不提供具体候选或执行方案，并明确结构分类及历史样本表现不能单独证明未来预测优势。",
+  "tags": [
+    "分分彩一星直选遗漏筛选步骤",
+    "分分彩技巧",
+    "一星直选技巧",
+    "分分彩遗漏阈值",
+    "分分彩位置筛选"
+  ],
+  "technique_atoms": [
+    "omission_threshold",
+    "position_filter"
+  ],
+  "title": "做到哪一步应该停？一星直选遗漏的复核清单",
+  "title_candidates": [
+    "做到哪一步应该停？一星直选遗漏的复核清单",
+    "一星直选遗漏怎么检查才不漏步骤？先看输入、输出和停止条件",
+    "从规则到复核：一星直选这套筛选流程最容易错在哪里",
+    "先固定步骤，再看结果：一星直选遗漏的执行边界",
+    "一星直选遗漏不是越筛越好，关键在什么时候停止"
+  ],
+  "title_review": {
+    "candidates": [
+      "做到哪一步应该停？一星直选遗漏的复核清单",
+      "一星直选遗漏怎么检查才不漏步骤？先看输入、输出和停止条件",
+      "从规则到复核：一星直选这套筛选流程最容易错在哪里",
+      "先固定步骤，再看结果：一星直选遗漏的执行边界",
+      "一星直选遗漏不是越筛越好，关键在什么时候停止"
+    ],
+    "contract_version": "1.0",
+    "gates": {
+      "TITLE_CLICKABILITY_CHECK": {
+        "details": {
+          "length": 20
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_DUPLICATION_CHECK": {
+        "details": {
+          "article_id": "LCM-ANGLE-68ce325edd5f6fc5",
+          "score": 0.7894736842105263,
+          "title": "做到哪一步应该停？前二直选和值的复核清单"
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_KEYWORD_DIVERSITY": {
+        "details": {
+          "candidate_count": 5,
+          "candidates_without_lottery_prefix": 5,
+          "distinct_structures": [
+            "editorial_colon",
+            "from_to_colon",
+            "plain",
+            "question",
+            "question_contrast"
+          ],
+          "unique_count": 5
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_NUMERIC_CLAIM_VERIFIED": {
+        "details": {
+          "numeric_claims": [],
+          "unsupported": []
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_SEARCH_INTENT_CHECK": {
+        "details": {
+          "bigram_overlap": 0.3333,
+          "intent_term_hits": [
+            "直选",
+            "遗漏",
+            "一星直选遗漏"
+          ]
+        },
+        "passed": true,
+        "reasons": []
+      },
+      "TITLE_TOPIC_MATCH": {
+        "details": {
+          "matched_terms": [
+            "直选",
+            "遗漏",
+            "一星直选遗漏"
+          ],
+          "subject_play": "一星直选"
+        },
+        "passed": true,
+        "reasons": []
+      }
+    },
+    "passed": true,
+    "selected_title": "做到哪一步应该停？一星直选遗漏的复核清单"
+  },
+  "title_selection_reason": "正文完成后生成候选；按主题匹配、重复度、关键词结构多样性、数字真实性、搜索意图和可读性Gate选择。",
+  "title_seo_contract_version": "1.0"
+}
